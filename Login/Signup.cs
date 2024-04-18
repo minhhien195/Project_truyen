@@ -20,6 +20,7 @@ namespace Login
 
         private void Signup_Load(object sender, EventArgs e)
         {
+            //Bo góc panel
             System.Drawing.Drawing2D.GraphicsPath path = new System.Drawing.Drawing2D.GraphicsPath();
             int cornerRadius = 20; // Điều chỉnh giá trị này để thay đổi bán kính bo góc
 
@@ -33,11 +34,20 @@ namespace Login
             // Thiết lập Region của Panel bằng GraphicsPath
             panel1.Region = new Region(path);
 
-            //PrivateFontCollection fontCollection = new PrivateFontCollection();
-           // fontCollection.AddFontFile(".\\Resources\\LeagueSpartan-VariableFont_wght.ttf");
 
-            //Font customFont = new Font(fontCollection.Families[0], 12f, FontStyle.Regular);
-            //label1.Font = customFont; // Thay label1 bằng control mà bạn muốn áp dụng font
+            //Căn giữa panel
+            panel1.Location = new Point(
+                (this.Width - panel1.Width) / 2, // Tính toán vị trí theo trục X
+                (this.Height - panel1.Height) / 2 // Tính toán vị trí theo trục Y
+            );
+            panel1.Anchor = AnchorStyles.None; // Đảm bảo label không bị ràng buộc bởi các thuộc tính Anchor
+            
+            //Căn giữa signup label
+            Sign_up_label.Location = new Point(
+                (panel1.Width - Sign_up_label.Width) / 2, // Tính toán vị trí theo trục X
+                13
+            );
+            Sign_up_label.Anchor = AnchorStyles.None; // Đảm bảo label không bị ràng buộc bởi các thuộc tính Anchor
         }
 
         private void label1_Click(object sender, EventArgs e)
