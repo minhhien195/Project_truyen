@@ -123,7 +123,7 @@
             // 
             this.ptrHide1.BackColor = System.Drawing.Color.White;
             resources.ApplyResources(this.ptrHide1, "ptrHide1");
-            this.ptrHide1.Image = global::Login.Properties.Resources.hide1;
+            this.ptrHide1.Image = global::Login.Properties.Resources.hide;
             this.ptrHide1.Name = "ptrHide1";
             this.ptrHide1.TabStop = false;
             this.ptrHide1.Click += new System.EventHandler(this.ptrHide1_Click);
@@ -132,7 +132,7 @@
             // 
             this.prtHide.BackColor = System.Drawing.Color.White;
             resources.ApplyResources(this.prtHide, "prtHide");
-            this.prtHide.Image = global::Login.Properties.Resources.hide1;
+            this.prtHide.Image = global::Login.Properties.Resources.hide;
             this.prtHide.Name = "prtHide";
             this.prtHide.TabStop = false;
             this.prtHide.Click += new System.EventHandler(this.prtHide_Click);
@@ -231,33 +231,10 @@
             // 
             // txtTenDN
             // 
-<<<<<<< HEAD
             this.txtTenDN.BorderStyle = System.Windows.Forms.BorderStyle.None;
             resources.ApplyResources(this.txtTenDN, "txtTenDN");
             this.txtTenDN.Name = "txtTenDN";
             this.txtTenDN.TextChanged += new System.EventHandler(this.txtTenDN_TextChanged);
-=======
-            resources.ApplyResources(this.textBox4, "textBox4");
-            this.textBox4.Name = "textBox4";
-            // 
-            // textBox3
-            // 
-            resources.ApplyResources(this.textBox3, "textBox3");
-            this.textBox3.Name = "textBox3";
-            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
-            // 
-            // textBox2
-            // 
-            resources.ApplyResources(this.textBox2, "textBox2");
-            this.textBox2.Name = "textBox2";
-            // 
-            // textBox1
-            // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            resources.ApplyResources(this.textBox1, "textBox1");
-            this.textBox1.Name = "textBox1";
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
->>>>>>> master
             // 
             // Sign_up_label
             // 

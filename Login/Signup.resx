@@ -768,10 +768,9 @@
   <data name="&gt;&gt;txtTenDN.Parent" xml:space="preserve">
     <value>panel1</value>
   </data>
-<<<<<<< HEAD
   <data name="&gt;&gt;txtTenDN.ZOrder" xml:space="preserve">
     <value>20</value>
-=======
+  </data>
   <data name="&gt;&gt;textBox4.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
@@ -855,7 +854,6 @@
   </data>
   <data name="&gt;&gt;textBox1.ZOrder" xml:space="preserve">
     <value>5</value>
->>>>>>> master
   </data>
   <data name="Sign_up_label.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>

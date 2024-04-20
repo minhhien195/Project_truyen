@@ -150,14 +150,6 @@ namespace Login
             }
         }
 
-        private void ptrHide1_Click(object sender, EventArgs e)
-        {
-            ptrView1.BringToFront();
-            if (txtXNMK.PasswordChar == '*')
-            {
-                txtXNMK.PasswordChar = '\0';
-            }
-        }
 
         private void ptrView1_Click(object sender, EventArgs e)
         {
@@ -165,6 +157,15 @@ namespace Login
             if (txtXNMK.PasswordChar == '\0')
             {
                 txtXNMK.PasswordChar = '*';
+            }
+        }
+
+        private void ptrHide1_Click_1(object sender, EventArgs e)
+        {
+            ptrView1.BringToFront();
+            if (txtXNMK.PasswordChar == '*')
+            {
+                txtXNMK.PasswordChar = '\0';
             }
         }
     }
