@@ -231,10 +231,33 @@
             // 
             // txtTenDN
             // 
+<<<<<<< HEAD
             this.txtTenDN.BorderStyle = System.Windows.Forms.BorderStyle.None;
             resources.ApplyResources(this.txtTenDN, "txtTenDN");
             this.txtTenDN.Name = "txtTenDN";
             this.txtTenDN.TextChanged += new System.EventHandler(this.txtTenDN_TextChanged);
+=======
+            resources.ApplyResources(this.textBox4, "textBox4");
+            this.textBox4.Name = "textBox4";
+            // 
+            // textBox3
+            // 
+            resources.ApplyResources(this.textBox3, "textBox3");
+            this.textBox3.Name = "textBox3";
+            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            // 
+            // textBox2
+            // 
+            resources.ApplyResources(this.textBox2, "textBox2");
+            this.textBox2.Name = "textBox2";
+            // 
+            // textBox1
+            // 
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.textBox1, "textBox1");
+            this.textBox1.Name = "textBox1";
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+>>>>>>> master
             // 
             // Sign_up_label
             // 
@@ -253,7 +276,7 @@
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.BackgroundImage = global::Login.Properties.Resources.image1;
+            this.BackgroundImage = global::Login.Properties.Resources.background;
             this.Controls.Add(this.panel1);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.DoubleBuffered = true;
