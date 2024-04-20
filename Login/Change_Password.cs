@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Firebase.Auth.Providers;
+using Firebase.Auth;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FirebaseAdmin.Auth;
 
 namespace Login
 {
@@ -82,6 +85,16 @@ namespace Login
                 (panel1.Width - Changepwd_label.Width) / 2, // Tính toán vị trí theo trục X
                 13
             );
+
+            //Căn giữa Warning
+            lbChangpwd.Location = new Point(
+                (panel1.Width - lbChangpwd.Width) / 2, // Tính toán vị trí theo trục X
+                65
+            );
+            pictureBox1.Location = new Point(
+                (lbChangpwd.Width) / 2 - 60, // Tính toán vị trí theo trục X
+                68
+            );
             Changepwd_label.Anchor = AnchorStyles.None; // Đảm bảo label không bị ràng buộc bởi các thuộc tính Anchor
         }
         private string RemoveDiacritics(string text)
@@ -130,6 +143,16 @@ namespace Login
 
             // Đặt con trỏ văn bản lại vị trí cuối cùng
             txtXNMK.SelectionStart = txtXNMK.Text.Length;
+            if (txtXNMK.Text != txtMK.Text)
+            {
+                ptrNotsame.Visible = true;
+                lbNotsame.Visible = true;
+            }
+            else
+            {
+                ptrNotsame.Visible = false;
+                lbNotsame.Visible = false;
+            }
         }
 
         private void prtHide_Click(object sender, EventArgs e)
@@ -166,6 +189,77 @@ namespace Login
             if (txtXNMK.PasswordChar == '*')
             {
                 txtXNMK.PasswordChar = '\0';
+            }
+        }
+        bool isNullMK = false, isNullXNMK = false, lengthMK = false;
+        private async void btnXacnhan_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtMK.Text))
+            {
+                isNullMK = true;
+            }    
+            else
+            {
+                isNullMK = false;
+            }
+            if (string.IsNullOrEmpty (txtXNMK.Text))
+            {
+                isNullXNMK = true;
+            }
+            else
+            {
+                isNullXNMK = false;
+            }
+            if (txtMK.Text.Length < 6) 
+            {
+                lengthMK = true;
+            }
+            else
+            {
+                lengthMK = false;
+            }    
+            var config = new FirebaseAuthConfig
+            {
+                ApiKey = "AIzaSyD4vuUbOi3UxFUXfsmJ1kczNioKwmKaynA",
+                AuthDomain = "healtruyen.firebaseapp.com",
+                Providers = new Firebase.Auth.Providers.FirebaseAuthProvider[]
+                {
+                    new EmailProvider()
+                }
+            };
+            var client = new FirebaseAuthClient(config);
+            var uid = "";
+            var email = "";
+            var displayName = "";
+
+            if (isNullMK == false && isNullXNMK == false && lengthMK == false)
+            {
+                uid = client.User.Uid;
+                email = client.User.Info.Email;
+                displayName = client.User.Info.DisplayName;
+                UserRecordArgs userRecordArgs = new UserRecordArgs()
+                {
+                    Uid = uid,
+                    Email = email,
+                    EmailVerified = true,
+                    Password = txtMK.Text,
+                    DisplayName = displayName,
+                };
+                UserRecord userRecord = await FirebaseAuth.DefaultInstance.UpdateUserAsync(userRecordArgs);
+                //MessageBox.Show($"{uid}, {email}, {displayName},Cập nhật mật khẩu thành công", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Cập nhật mật khẩu thành công", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Hide();
+                Login login = new Login();
+                login.ShowDialog();
+                this.Close();
+            }
+            else if (lengthMK == true)
+            {
+                MessageBox.Show("Mật khẩu phải lớn hơn 5 ký tự", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }    
+            else
+            {
+                MessageBox.Show("Bạn chưa thể thay đổi mật khẩu", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
     }

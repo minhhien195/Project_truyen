@@ -455,10 +455,5 @@ namespace Login
             login.ShowDialog();
             this.Close();
         }
-
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }
