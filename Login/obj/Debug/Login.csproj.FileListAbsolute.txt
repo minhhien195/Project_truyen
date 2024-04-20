@@ -78,6 +78,28 @@ C:\TLHT\HK2_2023-2024\LapTrinhMangCanBan\HealTruyen\src\Login\obj\Debug\vi-VN\Lo
 C:\TLHT\HK2_2023-2024\LapTrinhMangCanBan\HealTruyen\src\Login\obj\Debug\Login.csproj.Up2Date
 C:\TLHT\HK2_2023-2024\LapTrinhMangCanBan\HealTruyen\src\Login\obj\Debug\Login.exe
 C:\TLHT\HK2_2023-2024\LapTrinhMangCanBan\HealTruyen\src\Login\obj\Debug\Login.pdb
+<<<<<<< HEAD
+E:\HK4_UIT\LTMCB\Project\Login\Login\bin\Debug\Firebase.Auth.dll
+E:\HK4_UIT\LTMCB\Project\Login\Login\bin\Debug\Firebase.dll
+E:\HK4_UIT\LTMCB\Project\Login\Login\bin\Debug\FireSharp.dll
+E:\HK4_UIT\LTMCB\Project\Login\Login\bin\Debug\LiteDB.dll
+E:\HK4_UIT\LTMCB\Project\Login\Login\bin\Debug\Microsoft.Threading.Tasks.dll
+E:\HK4_UIT\LTMCB\Project\Login\Login\bin\Debug\Microsoft.Threading.Tasks.Extensions.Desktop.dll
+E:\HK4_UIT\LTMCB\Project\Login\Login\bin\Debug\Microsoft.Threading.Tasks.Extensions.dll
+E:\HK4_UIT\LTMCB\Project\Login\Login\bin\Debug\System.Net.Http.Extensions.dll
+E:\HK4_UIT\LTMCB\Project\Login\Login\bin\Debug\System.Net.Http.Primitives.dll
+E:\HK4_UIT\LTMCB\Project\Login\Login\bin\Debug\System.Reactive.dll
+E:\HK4_UIT\LTMCB\Project\Login\Login\bin\Debug\Firebase.xml
+E:\HK4_UIT\LTMCB\Project\Login\Login\bin\Debug\Firebase.Auth.xml
+E:\HK4_UIT\LTMCB\Project\Login\Login\bin\Debug\LiteDB.xml
+E:\HK4_UIT\LTMCB\Project\Login\Login\bin\Debug\Microsoft.Threading.Tasks.xml
+E:\HK4_UIT\LTMCB\Project\Login\Login\bin\Debug\Microsoft.Threading.Tasks.Extensions.xml
+E:\HK4_UIT\LTMCB\Project\Login\Login\bin\Debug\Microsoft.Threading.Tasks.Extensions.Desktop.xml
+E:\HK4_UIT\LTMCB\Project\Login\Login\bin\Debug\System.Net.Http.Extensions.xml
+E:\HK4_UIT\LTMCB\Project\Login\Login\bin\Debug\System.Net.Http.Primitives.xml
+E:\HK4_UIT\LTMCB\Project\Login\Login\bin\Debug\System.Reactive.xml
+E:\HK4_UIT\LTMCB\Project\Login\Login\obj\Debug\Login.csproj.App.config
+=======
 C:\TLHT\HK2_2023-2024\LapTrinhMangCanBan\HealTruyen\src\Login\obj\Debug\Login.Login.resources
 C:\TLHT\HK2_2023-2024\LapTrinhMangCanBan\HealTruyen\src\Login\bin\Debug\Firebase.Auth.dll
 C:\TLHT\HK2_2023-2024\LapTrinhMangCanBan\HealTruyen\src\Login\bin\Debug\FirebaseAdmin.dll
@@ -102,3 +124,4 @@ C:\TLHT\HK2_2023-2024\LapTrinhMangCanBan\HealTruyen\src\Login\bin\Debug\Google.A
 C:\TLHT\HK2_2023-2024\LapTrinhMangCanBan\HealTruyen\src\Login\bin\Debug\Google.Apis.Core.pdb
 C:\TLHT\HK2_2023-2024\LapTrinhMangCanBan\HealTruyen\src\Login\bin\Debug\Google.Apis.Core.xml
 C:\TLHT\HK2_2023-2024\LapTrinhMangCanBan\HealTruyen\src\Login\bin\Debug\System.Collections.Immutable.xml
+>>>>>>> master
