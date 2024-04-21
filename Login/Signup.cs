@@ -218,8 +218,22 @@ namespace Login
             }    
 
         }
-
-        private async void txtEmail_TextChanged(object sender, EventArgs e)
+        private async Task KT_email(FirebaseAuthClient client)
+        {
+            string email = txtEmail.Text;
+            var result = await client.FetchSignInMethodsForEmailAsync(email);
+            if (result.UserExists)
+            {
+                ptrWarning.Visible = true;
+                lbemail.Visible = true;
+            }
+            else
+            {
+                ptrWarning.Visible = false;
+                lbemail.Visible = false;
+            }
+        }
+        private void txtEmail_TextChanged(object sender, EventArgs e)
         {
             string inputText = txtEmail.Text;
 
@@ -246,8 +260,10 @@ namespace Login
             var r = new System.Text.RegularExpressions.Regex(@"[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?");
             if (r.IsMatch(txtEmail.Text))
             {
-                await KT_email(client);
+                ptrWarning.Visible = false;
+                //await KT_email(client);
                 lbemailKhonghople.Visible = false;
+                lbemail.Visible = false;
             }
             else
             {
@@ -259,21 +275,7 @@ namespace Login
 
 
         
-        private async Task KT_email(FirebaseAuthClient client)
-        {
-            string email = txtEmail.Text;
-            var result = await client.FetchSignInMethodsForEmailAsync(email);
-            if (result.UserExists)
-            {
-                ptrWarning.Visible = true;
-                lbemail.Visible = true;
-            }
-            else
-            {
-                ptrWarning.Visible = false;
-                lbemail.Visible= false;
-            }
-        }
+        
         private void txtEmail_Leave(object sender, EventArgs e)
         {
             
@@ -385,6 +387,7 @@ namespace Login
             {
                 isNULLEmail = false;
             }
+            
             var config = new FirebaseAuthConfig
             {
                 ApiKey = "AIzaSyD4vuUbOi3UxFUXfsmJ1kczNioKwmKaynA",
@@ -395,72 +398,61 @@ namespace Login
                 }
             };
             var client = new FirebaseAuthClient(config);
-            
-            IFirebaseConfig _firebaseConfig = new FirebaseConfig
+            try
             {
-                AuthSecret = "38QvLmnKMHlQtJ9yZzCqqWytxeXimwt06ZnFfSc2",
-                BasePath = "https://healtruyen-default-rtdb.asia-southeast1.firebasedatabase.app/"
-            };
-            IFirebaseClient client1 = new FireSharp.FirebaseClient(_firebaseConfig);
-            var path = $"Nguoi_dung/";
-            FirebaseResponse response = await client1.GetAsync(path);
-            var dictionary = JsonConvert.DeserializeObject<Dictionary<string, object>>(response.Body);
-            var dem = "";
-            foreach (var i in dictionary)
-            {
-                dem = i.Key;
-            }
-            var dem1 = Convert.ToInt32(dem);
-            dem1 += 1;
-            int cnt = 0;
-            if (dem1 >= 0 && dem1 < 10)
-                cnt = 2;
-            else if (dem1 >= 10 && dem1 <= 99)
-                cnt = 1;
-            else
-                cnt = 0;
-            dem = "";
-            for (int i = 0; i < cnt; i++)
-            {
-                dem += "0";
-            }
-            dem += dem1; 
-            if (txtMK.Text.Length < 6)
-            {
-                lengthMK = true;
-                
-            }
-            else
-            {
-                lengthMK = false;
-            }
-            if (ptrWarning.Visible == false && ptrNotsame.Visible == false && lbNotsame.Visible == false && isTicked == true
-                && isNullDN == false && isNullMK == false && isNULLXNMK == false && isNULLEmail == false && lengthMK == false)
-            {
-                
-                await client.CreateUserWithEmailAndPasswordAsync(txtEmail.Text, txtMK.Text, txtTenDN.Text);
-                var uid = client.User.Uid;
-                Nguoi_dung nguoi_Dung = new Nguoi_dung()
+                IFirebaseConfig _firebaseConfig = new FirebaseConfig
                 {
-                    TK_dangnhap = txtTenDN.Text,
-                    Email = txtEmail.Text,
-                    Vaitro = 0,
-                    ID_Nguoidung = uid
+                    AuthSecret = "38QvLmnKMHlQtJ9yZzCqqWytxeXimwt06ZnFfSc2",
+                    BasePath = "https://healtruyen-default-rtdb.asia-southeast1.firebasedatabase.app/"
                 };
-                SetResponse res = await client1.SetAsync(path + dem, nguoi_Dung);
-                this.Hide();
-                Login login = new Login();
-                login.ShowDialog();
-                this.Close();
-            }   
-            else if (lengthMK == true)
-            {
-                MessageBox.Show("Mật khẩu phải lớn hơn 5 ký tự", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                IFirebaseClient client1 = new FireSharp.FirebaseClient(_firebaseConfig);
+                var path = $"Nguoi_dung/";
+                if (txtMK.Text.Length < 6)
+                {
+                    lengthMK = true;
+
+                }
+                else
+                {
+                    lengthMK = false;
+                }
+                if (ptrWarning.Visible == false && ptrNotsame.Visible == false && lbNotsame.Visible == false && isTicked == true
+                    && isNullDN == false && isNullMK == false && isNULLXNMK == false && isNULLEmail == false && lengthMK == false)
+                {
+
+                    await client.CreateUserWithEmailAndPasswordAsync(txtEmail.Text, txtMK.Text, txtTenDN.Text);
+                    var uid = client.User.Uid;
+                    Nguoi_dung nguoi_Dung = new Nguoi_dung()
+                    {
+                        TK_dangnhap = txtTenDN.Text,
+                        Email = txtEmail.Text,
+                        Vaitro = 0,
+                        ID_Nguoidung = uid
+                    };
+                    SetResponse res = await client1.SetAsync(path + uid, nguoi_Dung);
+                    this.Hide();
+                    Login login = new Login();
+                    login.Show();
+                    //this.Close();
+                }
+                else if (lengthMK == true)
+                {
+                    MessageBox.Show("Mật khẩu phải lớn hơn 5 ký tự", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    MessageBox.Show("Bạn chưa thể đăng ký", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
-            else 
+            catch (FirebaseAuthException ex)
             {
-                MessageBox.Show("Bạn chưa thể đăng ký", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }    
+                if (ex.Reason.ToString() == "EmailExists")
+                {
+                    ptrWarning.Visible = true;
+                    lbemail.Visible = true;
+                }
+            }
+               
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -468,8 +460,8 @@ namespace Login
             linkLabel1.ActiveLinkColor = Color.Red;
             this.Hide();
             Login login = new Login();
-            login.ShowDialog();
-            this.Close();
+            login.Show();
+            //this.Close();
         }
     }
 }

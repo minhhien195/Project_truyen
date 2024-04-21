@@ -30,9 +30,6 @@ namespace Login
         {
 
         }
-
-        
-
         private void Login_Load(object sender, EventArgs e)
         {
             linkLabel1.LinkBehavior = LinkBehavior.NeverUnderline;
@@ -97,23 +94,31 @@ namespace Login
             };
 
             var client = new FirebaseAuthClient(config);
+            
 
             try
             {
                 UserCredential userCredential = await SignIn( client, txtEmail.Text, txtMK.Text);
                 if (userCredential != null)
                 {
-                    MessageBox.Show("Sigin succeed!");
+                    this.Hide();
+                    HomePage homePage = new HomePage(userCredential, client);
+                    homePage.Show();   
+
                 }
                 else
                 {
-                    MessageBox.Show("Email chưa tồn tại");
+                    MessageBox.Show("Email không tồn tại");
                 }
             }
             catch (Firebase.Auth.FirebaseAuthException ex)
             {
                 //MessageBox.Show("error");
-                MessageBox.Show(ex.Reason.ToString());
+                if (ex.Reason.ToString() == "WrongPassword")
+                {
+                    ptrWarning1.Visible = true;
+                    labelMKsai.Visible = true;
+                }
                 return;
             }
         }
@@ -174,7 +179,8 @@ namespace Login
 
         private void label5_Click(object sender, EventArgs e)
         {
-
+            ptrWarning1.Visible = true;
+            labelMKsai.Visible = true;
         }
         
 
@@ -207,6 +213,7 @@ namespace Login
             {
                 ptrWarning1.Visible = false;
                 labelMKinvalid.Visible = false;
+                labelMKsai.Visible = false;
             }
         }
 
@@ -278,6 +285,13 @@ namespace Login
             this.Hide();
             forget_Password.Show();
             //this.Close();
+        }
+
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Hide();
+            Signup signup = new Signup();
+            signup.Show();
         }
     }
 }
