@@ -219,7 +219,7 @@ namespace Login
 
         }
 
-        private void txtEmail_TextChanged(object sender, EventArgs e)
+        private async void txtEmail_TextChanged(object sender, EventArgs e)
         {
             string inputText = txtEmail.Text;
 
@@ -233,39 +233,6 @@ namespace Login
 
             // Đặt con trỏ văn bản lại vị trí cuối cùng
             txtEmail.SelectionStart = txtEmail.Text.Length;
-
-        }
-
-
-        private void txtEmail_Enter(object sender, EventArgs e)
-        {
-            if (txtEmail.Text == "Enter Email")
-            {
-                txtEmail.Text = string.Empty; // Xóa văn bản gợi ý
-            }
-        }
-        private async Task KT_email(FirebaseAuthClient client)
-        {
-            string email = txtEmail.Text;
-            var result = await client.FetchSignInMethodsForEmailAsync(email);
-            if (result.UserExists)
-            {
-                ptrWarning.Visible = true;
-                lbemail.Visible = true;
-            }
-            else
-            {
-                ptrWarning.Visible = false;
-                lbemail.Visible= false;
-            }
-        }
-        private async void txtEmail_Leave(object sender, EventArgs e)
-        {
-            if (string.IsNullOrEmpty(txtEmail.Text))
-            {
-                byte[] t = Encoding.UTF8.GetBytes("Enter Email");
-                txtEmail.Text = Encoding.UTF8.GetString(t); // Khôi phục văn bản gợi ý nếu không có nội dung
-            }
             var config = new FirebaseAuthConfig
             {
                 ApiKey = "AIzaSyD4vuUbOi3UxFUXfsmJ1kczNioKwmKaynA",
@@ -286,8 +253,37 @@ namespace Login
             {
                 ptrWarning.Visible = true;
                 lbemailKhonghople.Visible = true;
-            }    
+            }
+
+        }
+
+
+        
+        private async Task KT_email(FirebaseAuthClient client)
+        {
+            string email = txtEmail.Text;
+            var result = await client.FetchSignInMethodsForEmailAsync(email);
+            if (result.UserExists)
+            {
+                ptrWarning.Visible = true;
+                lbemail.Visible = true;
+            }
+            else
+            {
+                ptrWarning.Visible = false;
+                lbemail.Visible= false;
+            }
+        }
+        private void txtEmail_Leave(object sender, EventArgs e)
+        {
             
+
+            if (string.IsNullOrEmpty(txtEmail.Text))
+            {
+                ptrWarning.Visible = false;
+                lbemailKhonghople.Visible = false;
+                lbemail.Visible = false;
+            }
         }
 
         private void prtHide_Click(object sender, EventArgs e)
@@ -314,6 +310,26 @@ namespace Login
             if (txtXNMK.PasswordChar == '*')
             {
                 txtXNMK.PasswordChar = '\0';
+            }
+        }
+
+        private void txtEmail_MouseLeave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtEmail.Text))
+            {
+                ptrWarning.Visible = false;
+                lbemailKhonghople.Visible = false;
+                lbemail.Visible = false;
+            }
+        }
+
+        private void txtEmail_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtEmail.Text))
+            {
+                ptrWarning.Visible = false;
+                lbemailKhonghople.Visible = false;
+                lbemail.Visible = false;
             }
         }
 

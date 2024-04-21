@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Signup));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lbemailKhonghople = new System.Windows.Forms.Label();
             this.lbemail = new System.Windows.Forms.Label();
             this.ptrNotsame = new System.Windows.Forms.PictureBox();
             this.lbNotsame = new System.Windows.Forms.Label();
@@ -51,7 +52,6 @@
             this.btnDKy = new System.Windows.Forms.Button();
             this.txtTenDN = new System.Windows.Forms.TextBox();
             this.Sign_up_label = new System.Windows.Forms.Label();
-            this.lbemailKhonghople = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptrNotsame)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptrWarning)).BeginInit();
@@ -90,6 +90,12 @@
             this.panel1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.panel1.Name = "panel1";
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // lbemailKhonghople
+            // 
+            resources.ApplyResources(this.lbemailKhonghople, "lbemailKhonghople");
+            this.lbemailKhonghople.ForeColor = System.Drawing.Color.IndianRed;
+            this.lbemailKhonghople.Name = "lbemailKhonghople";
             // 
             // lbemail
             // 
@@ -193,8 +199,9 @@
             resources.ApplyResources(this.txtEmail, "txtEmail");
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
-            this.txtEmail.Enter += new System.EventHandler(this.txtEmail_Enter);
             this.txtEmail.Leave += new System.EventHandler(this.txtEmail_Leave);
+            this.txtEmail.MouseLeave += new System.EventHandler(this.txtEmail_MouseLeave);
+            this.txtEmail.MouseMove += new System.Windows.Forms.MouseEventHandler(this.txtEmail_MouseMove);
             // 
             // txtXNMK
             // 
@@ -241,12 +248,6 @@
             resources.ApplyResources(this.Sign_up_label, "Sign_up_label");
             this.Sign_up_label.Name = "Sign_up_label";
             this.Sign_up_label.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // lbemailKhonghople
-            // 
-            resources.ApplyResources(this.lbemailKhonghople, "lbemailKhonghople");
-            this.lbemailKhonghople.ForeColor = System.Drawing.Color.IndianRed;
-            this.lbemailKhonghople.Name = "lbemailKhonghople";
             // 
             // Signup
             // 
