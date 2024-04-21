@@ -131,3 +131,4 @@ C:\TLHT\HK2_2023-2024\LapTrinhMangCanBan\HealTruyen\src\Login\bin\Debug\Microsof
 C:\TLHT\HK2_2023-2024\LapTrinhMangCanBan\HealTruyen\src\Login\bin\Debug\System.Diagnostics.DiagnosticSource.xml
 C:\TLHT\HK2_2023-2024\LapTrinhMangCanBan\HealTruyen\src\Login\bin\Debug\System.Linq.Async.xml
 C:\TLHT\HK2_2023-2024\LapTrinhMangCanBan\HealTruyen\src\Login\bin\Debug\System.Net.Http.WinHttpHandler.xml
+C:\TLHT\HK2_2023-2024\LapTrinhMangCanBan\HealTruyen\src\Login\obj\Debug\Login.HomePage.resources

@@ -29,7 +29,10 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.showPwd = new System.Windows.Forms.PictureBox();
+            this.labelMKinvalid = new System.Windows.Forms.Label();
+            this.ptrWarning1 = new System.Windows.Forms.PictureBox();
+            this.lbemailKhonghople = new System.Windows.Forms.Label();
+            this.ptrWarning = new System.Windows.Forms.PictureBox();
             this.hidePwd = new System.Windows.Forms.PictureBox();
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.label4 = new System.Windows.Forms.Label();
@@ -37,23 +40,22 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.txtMK = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.ptrWarning = new System.Windows.Forms.PictureBox();
-            this.lbemailKhonghople = new System.Windows.Forms.Label();
-            this.ptrWarning1 = new System.Windows.Forms.PictureBox();
-            this.labelMKinvalid = new System.Windows.Forms.Label();
+            this.showPwd = new System.Windows.Forms.PictureBox();
+            this.txtMK = new System.Windows.Forms.TextBox();
+            this.labelMKsai = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.showPwd)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hidePwd)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptrWarning)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptrWarning1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptrWarning)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hidePwd)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.showPwd)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel1.Controls.Add(this.labelMKsai);
             this.panel1.Controls.Add(this.labelMKinvalid);
             this.panel1.Controls.Add(this.ptrWarning1);
             this.panel1.Controls.Add(this.lbemailKhonghople);
@@ -74,23 +76,59 @@
             this.panel1.Size = new System.Drawing.Size(623, 516);
             this.panel1.TabIndex = 0;
             // 
-            // showPwd
+            // labelMKinvalid
             // 
-            this.showPwd.BackColor = System.Drawing.Color.White;
-            this.showPwd.Image = global::Login.Properties.Resources.view;
-            this.showPwd.Location = new System.Drawing.Point(496, 231);
-            this.showPwd.Name = "showPwd";
-            this.showPwd.Size = new System.Drawing.Size(43, 35);
-            this.showPwd.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.showPwd.TabIndex = 10;
-            this.showPwd.TabStop = false;
-            this.showPwd.Click += new System.EventHandler(this.showPwd_Click);
+            this.labelMKinvalid.AutoSize = true;
+            this.labelMKinvalid.Font = new System.Drawing.Font("League Spartan", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.labelMKinvalid.ForeColor = System.Drawing.Color.IndianRed;
+            this.labelMKinvalid.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.labelMKinvalid.Location = new System.Drawing.Point(106, 284);
+            this.labelMKinvalid.Name = "labelMKinvalid";
+            this.labelMKinvalid.Size = new System.Drawing.Size(210, 30);
+            this.labelMKinvalid.TabIndex = 28;
+            this.labelMKinvalid.Text = "Mật khẩu không hợp lệ";
+            this.labelMKinvalid.Visible = false;
+            // 
+            // ptrWarning1
+            // 
+            this.ptrWarning1.Image = global::Login.Properties.Resources.exclamation;
+            this.ptrWarning1.Location = new System.Drawing.Point(72, 284);
+            this.ptrWarning1.Name = "ptrWarning1";
+            this.ptrWarning1.Size = new System.Drawing.Size(28, 24);
+            this.ptrWarning1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptrWarning1.TabIndex = 26;
+            this.ptrWarning1.TabStop = false;
+            this.ptrWarning1.Visible = false;
+            // 
+            // lbemailKhonghople
+            // 
+            this.lbemailKhonghople.AutoSize = true;
+            this.lbemailKhonghople.Font = new System.Drawing.Font("League Spartan", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lbemailKhonghople.ForeColor = System.Drawing.Color.IndianRed;
+            this.lbemailKhonghople.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lbemailKhonghople.Location = new System.Drawing.Point(106, 176);
+            this.lbemailKhonghople.Name = "lbemailKhonghople";
+            this.lbemailKhonghople.Size = new System.Drawing.Size(176, 30);
+            this.lbemailKhonghople.TabIndex = 25;
+            this.lbemailKhonghople.Text = "Email không hợp lệ";
+            this.lbemailKhonghople.Visible = false;
+            // 
+            // ptrWarning
+            // 
+            this.ptrWarning.Image = global::Login.Properties.Resources.exclamation;
+            this.ptrWarning.Location = new System.Drawing.Point(72, 176);
+            this.ptrWarning.Name = "ptrWarning";
+            this.ptrWarning.Size = new System.Drawing.Size(28, 24);
+            this.ptrWarning.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptrWarning.TabIndex = 11;
+            this.ptrWarning.TabStop = false;
+            this.ptrWarning.Visible = false;
             // 
             // hidePwd
             // 
             this.hidePwd.BackColor = System.Drawing.Color.White;
             this.hidePwd.Image = global::Login.Properties.Resources.hide;
-            this.hidePwd.Location = new System.Drawing.Point(496, 231);
+            this.hidePwd.Location = new System.Drawing.Point(496, 237);
             this.hidePwd.Name = "hidePwd";
             this.hidePwd.Size = new System.Drawing.Size(43, 35);
             this.hidePwd.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -109,6 +147,7 @@
             this.linkLabel2.TabIndex = 9;
             this.linkLabel2.TabStop = true;
             this.linkLabel2.Text = "Đăng ký";
+            this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
             // 
             // label4
             // 
@@ -137,7 +176,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("League Spartan SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label3.Location = new System.Drawing.Point(66, 193);
+            this.label3.Location = new System.Drawing.Point(66, 199);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(108, 35);
             this.label3.TabIndex = 5;
@@ -166,17 +205,6 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // txtMK
-            // 
-            this.txtMK.Font = new System.Drawing.Font("League Spartan", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMK.Location = new System.Drawing.Point(72, 231);
-            this.txtMK.Multiline = true;
-            this.txtMK.Name = "txtMK";
-            this.txtMK.PasswordChar = '*';
-            this.txtMK.Size = new System.Drawing.Size(479, 38);
-            this.txtMK.TabIndex = 2;
-            this.txtMK.TextChanged += new System.EventHandler(this.txtMK_TextChanged);
-            // 
             // txtEmail
             // 
             this.txtEmail.Font = new System.Drawing.Font("League Spartan", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
@@ -201,53 +229,41 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Đăng nhập";
             // 
-            // ptrWarning
+            // showPwd
             // 
-            this.ptrWarning.Image = global::Login.Properties.Resources.exclamation;
-            this.ptrWarning.Location = new System.Drawing.Point(72, 176);
-            this.ptrWarning.Name = "ptrWarning";
-            this.ptrWarning.Size = new System.Drawing.Size(28, 24);
-            this.ptrWarning.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ptrWarning.TabIndex = 11;
-            this.ptrWarning.TabStop = false;
-            this.ptrWarning.Visible = false;
+            this.showPwd.BackColor = System.Drawing.Color.White;
+            this.showPwd.Image = global::Login.Properties.Resources.view;
+            this.showPwd.Location = new System.Drawing.Point(496, 237);
+            this.showPwd.Name = "showPwd";
+            this.showPwd.Size = new System.Drawing.Size(43, 35);
+            this.showPwd.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.showPwd.TabIndex = 10;
+            this.showPwd.TabStop = false;
+            this.showPwd.Click += new System.EventHandler(this.showPwd_Click);
             // 
-            // lbemailKhonghople
+            // txtMK
             // 
-            this.lbemailKhonghople.AutoSize = true;
-            this.lbemailKhonghople.Font = new System.Drawing.Font("League Spartan SemiBold", 8F, System.Drawing.FontStyle.Bold);
-            this.lbemailKhonghople.ForeColor = System.Drawing.Color.IndianRed;
-            this.lbemailKhonghople.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lbemailKhonghople.Location = new System.Drawing.Point(106, 179);
-            this.lbemailKhonghople.Name = "lbemailKhonghople";
-            this.lbemailKhonghople.Size = new System.Drawing.Size(124, 21);
-            this.lbemailKhonghople.TabIndex = 25;
-            this.lbemailKhonghople.Text = "Email không hợp lệ";
-            this.lbemailKhonghople.Visible = false;
+            this.txtMK.Font = new System.Drawing.Font("League Spartan", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMK.Location = new System.Drawing.Point(72, 237);
+            this.txtMK.Multiline = true;
+            this.txtMK.Name = "txtMK";
+            this.txtMK.PasswordChar = '*';
+            this.txtMK.Size = new System.Drawing.Size(479, 38);
+            this.txtMK.TabIndex = 2;
+            this.txtMK.TextChanged += new System.EventHandler(this.txtMK_TextChanged);
             // 
-            // ptrWarning1
+            // labelMKsai
             // 
-            this.ptrWarning1.Image = global::Login.Properties.Resources.exclamation;
-            this.ptrWarning1.Location = new System.Drawing.Point(72, 281);
-            this.ptrWarning1.Name = "ptrWarning1";
-            this.ptrWarning1.Size = new System.Drawing.Size(28, 24);
-            this.ptrWarning1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ptrWarning1.TabIndex = 26;
-            this.ptrWarning1.TabStop = false;
-            this.ptrWarning1.Visible = false;
-            // 
-            // labelMKinvalid
-            // 
-            this.labelMKinvalid.AutoSize = true;
-            this.labelMKinvalid.Font = new System.Drawing.Font("League Spartan SemiBold", 8F, System.Drawing.FontStyle.Bold);
-            this.labelMKinvalid.ForeColor = System.Drawing.Color.IndianRed;
-            this.labelMKinvalid.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelMKinvalid.Location = new System.Drawing.Point(106, 284);
-            this.labelMKinvalid.Name = "labelMKinvalid";
-            this.labelMKinvalid.Size = new System.Drawing.Size(150, 21);
-            this.labelMKinvalid.TabIndex = 28;
-            this.labelMKinvalid.Text = "Mật khẩu không hợp lệ";
-            this.labelMKinvalid.Visible = false;
+            this.labelMKsai.AutoSize = true;
+            this.labelMKsai.Font = new System.Drawing.Font("League Spartan", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.labelMKsai.ForeColor = System.Drawing.Color.IndianRed;
+            this.labelMKsai.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.labelMKsai.Location = new System.Drawing.Point(106, 284);
+            this.labelMKsai.Name = "labelMKsai";
+            this.labelMKsai.Size = new System.Drawing.Size(125, 30);
+            this.labelMKsai.TabIndex = 29;
+            this.labelMKsai.Text = "Mật khẩu sai";
+            this.labelMKsai.Visible = false;
             // 
             // Login
             // 
@@ -268,10 +284,10 @@
             this.Load += new System.EventHandler(this.Login_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.showPwd)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hidePwd)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptrWarning)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptrWarning1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptrWarning)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hidePwd)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.showPwd)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -294,6 +310,7 @@
         private System.Windows.Forms.PictureBox ptrWarning1;
         private System.Windows.Forms.Label lbemailKhonghople;
         private System.Windows.Forms.Label labelMKinvalid;
+        private System.Windows.Forms.Label labelMKsai;
     }
 }
 

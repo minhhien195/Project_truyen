@@ -40,6 +40,7 @@ namespace Login
 
         private void Forget_Password_Load(object sender, EventArgs e)
         {
+            linkLabel2.LinkBehavior = LinkBehavior.NeverUnderline;
             //Bo góc panel
             System.Drawing.Drawing2D.GraphicsPath path = new System.Drawing.Drawing2D.GraphicsPath();
             System.Drawing.Drawing2D.GraphicsPath path1 = new System.Drawing.Drawing2D.GraphicsPath();
@@ -117,6 +118,64 @@ namespace Login
         private void opacityTimer_Tick(object sender, EventArgs e)
         {
 
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            var r = new System.Text.RegularExpressions.Regex(@"[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?");
+            if (r.IsMatch(textBox1.Text))
+            {
+                ptrWarning.Visible = false;
+                lbemailKhonghople.Visible = false;
+            }
+            else
+            {
+                ptrWarning.Visible = true;
+                lbemailKhonghople.Visible = true;
+            }
+        }
+
+        private void textBox1_MouseHover(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(textBox1.Text))
+            {
+                ptrWarning.Visible = false;
+                lbemailKhonghople.Visible = false;
+            }
+        }
+
+        private void textBox1_MouseLeave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(textBox1.Text))
+            {
+                ptrWarning.Visible = false;
+                lbemailKhonghople.Visible = false;
+            }
+        }
+
+        private void textBox1_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (string.IsNullOrEmpty(textBox1.Text))
+            {
+                ptrWarning.Visible = false;
+                lbemailKhonghople.Visible = false;
+            }
+        }
+
+        private void textBox1_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(textBox1.Text))
+            {
+                ptrWarning.Visible = false;
+                lbemailKhonghople.Visible = false;
+            }
+        }
+
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Hide();
+            Login login = new Login();
+            login.Show();
         }
     }
 }
