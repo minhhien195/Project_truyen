@@ -7,6 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Firebase.Auth.Providers;
+using Firebase.Auth;
+using System.Windows.Forms.VisualStyles;
+using System.Runtime.InteropServices;
 
 namespace Login
 {
@@ -15,6 +19,23 @@ namespace Login
         public Forget_Password()
         {
             InitializeComponent();
+        }
+
+        private const int AW_BLEND = 0x00080000;
+        private const int AW_HIDE = 0x00010000;
+        private const int AW_ACTIVATE = 0x00020000;
+
+        [DllImport("user32.dll")]
+        private static extern bool AnimateWindow(IntPtr hWnd, int time, int flags);
+
+        private void FadeIn(Form form, int duration = 500)
+        {
+            AnimateWindow(form.Handle, duration, AW_BLEND | AW_ACTIVATE);
+        }
+
+        private void FadeOut(Form form, int duration = 500)
+        {
+            AnimateWindow(form.Handle, duration, AW_BLEND | AW_HIDE);
         }
 
         private void Forget_Password_Load(object sender, EventArgs e)
@@ -60,7 +81,40 @@ namespace Login
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private async void button1_Click(object sender, EventArgs e)
+        {
+            var config = new FirebaseAuthConfig
+            {
+                ApiKey = "AIzaSyD4vuUbOi3UxFUXfsmJ1kczNioKwmKaynA",
+                AuthDomain = "healtruyen.firebaseapp.com",
+                Providers = new Firebase.Auth.Providers.FirebaseAuthProvider[]
+                {
+                new EmailProvider()
+                }
+            };
+
+            var client = new FirebaseAuthClient(config);
+
+            try
+            {
+                string email = textBox1.Text;
+                await client.ResetEmailPasswordAsync(email);
+                DialogResult dr = MessageBox.Show("Reset Password Succeeded, please check your email to complete", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                if (dr == DialogResult.OK)
+                {
+                    this.Hide();
+                    Login login = new Login();
+                    login.Show();
+                }
+            }
+            catch (Exception ex) 
+            {
+                MessageBox.Show("Reset Password Failed, please try again later", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void opacityTimer_Tick(object sender, EventArgs e)
         {
 
         }

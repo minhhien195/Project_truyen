@@ -4,6 +4,26 @@
         <name>Google.Api.Gax</name>
     </assembly>
     <members>
+        <member name="T:Google.Api.Gax.ApiTransports">
+            <summary>
+            The transports that can be used to make calls to an API.
+            </summary>
+        </member>
+        <member name="F:Google.Api.Gax.ApiTransports.None">
+            <summary>
+            No transports specified.
+            </summary>
+        </member>
+        <member name="F:Google.Api.Gax.ApiTransports.Grpc">
+            <summary>
+            Native gRPC support via binary protobuf serialization.
+            </summary>
+        </member>
+        <member name="F:Google.Api.Gax.ApiTransports.Rest">
+            <summary>
+            "REST"-like support via JSON.
+            </summary>
+        </member>
         <member name="T:Google.Api.Gax.BatchingSettings">
             <summary>
             Batching settings used to specify the conditions under which a batch of data
@@ -228,10 +248,28 @@
             <param name="clock"><see cref="T:Google.Api.Gax.IClock"/> to use for deadline calculation.</param>
             <returns>The calculated absolute deadline, or null if no deadline should be used.</returns>
         </member>
+        <member name="T:Google.Api.Gax.FieldFormats">
+            <summary>
+            Convenience methods for handling field formats documented in https://google.aip.dev/202.
+            </summary>
+        </member>
+        <member name="M:Google.Api.Gax.FieldFormats.GenerateUuid4">
+            <summary>
+            Generates a UUID v4 value and formats it as xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx,
+            using lower-case letters for hex digits.
+            </summary>
+        </member>
         <member name="T:Google.Api.Gax.FlowControlSettings">
             <summary>
             Settings used to control data flow.
             </summary>
+            <remarks>
+            The precise meaning of the settings in this class
+            is context-sensitive. For example, when used by a library which creates multiple
+            streams of data, the flow control settings may restrict flow on a per-stream basis,
+            or on an aggregate basis. Please consult the documentation of the library that consumes
+            these settings for more details on how they're used in that context.
+            </remarks>
         </member>
         <member name="M:Google.Api.Gax.FlowControlSettings.#ctor(System.Nullable{System.Int64},System.Nullable{System.Int64})">
             <summary>
@@ -264,7 +302,7 @@
             Construct details of Google App Engine
             </summary>
             <param name="gcloudProject">The Project ID associated with your application,
-            which is visible in the Google Cloud Platform Console. Must not be <c>null</c>.</param>
+            which is visible in the Google Cloud Console. Must not be <c>null</c>.</param>
             <param name="gaeInstance">The name of the current instance. Must not be <c>null</c>.</param>
             <param name="gaeService">The service name specified in your application's app.yaml file,
             or if no service name is specified, it is set to default. Must not be <c>null</c>.</param>
@@ -272,7 +310,7 @@
         </member>
         <member name="P:Google.Api.Gax.GaePlatformDetails.ProjectId">
             <summary>
-            The Project ID associated with your application, which is visible in the Google Cloud Platform Console.
+            The Project ID associated with your application, which is visible in the Google Cloud Console.
             </summary>
         </member>
         <member name="P:Google.Api.Gax.GaePlatformDetails.InstanceId">
@@ -742,17 +780,17 @@
         </member>
         <member name="P:Google.Api.Gax.GkePlatformDetails.ProjectId">
             <summary>
-            The Project ID associated with your application, which is visible in the Google Cloud Platform Console.
+            The Project ID associated with your application, which is visible in the Google Cloud Console.
             </summary>
         </member>
         <member name="P:Google.Api.Gax.GkePlatformDetails.ClusterName">
             <summary>
-            The cluster name, which is visible in the Google Cloud Platform Console.
+            The cluster name, which is visible in the Google Cloud Console.
             </summary>
         </member>
         <member name="P:Google.Api.Gax.GkePlatformDetails.Location">
             <summary>
-            The cluster location, which is visible in the Google Cloud Platform Console.
+            The cluster location, which is visible in the Google Cloud Console.
             This is equivalent to the value of the <code>&lt;zone-name&gt;</code> part in
             <see cref="P:Google.Api.Gax.GkePlatformDetails.Zone"/>
             </summary>
@@ -1476,6 +1514,16 @@
             </summary>
             <returns>Execution platform information.</returns>
         </member>
+        <member name="M:Google.Api.Gax.Platform.GetEffectiveMetadataHost">
+            <summary>
+            Determine the metadata host to use. In order of priority, this will use:
+            - GCE_METADATA_HOST environment variable, if set and non-empty
+            - METADATA_EMULATOR_HOST environment variable, if set and non-empty.
+              This is the undocumented but the de-facto mechanism for using an emulator.
+            - The hard-coded IP address of "169.254.169.254". We use the IP address rather
+              than the IP name to avoid a DNS lookup, which can cause intermittent failures.
+            </summary>
+        </member>
         <member name="M:Google.Api.Gax.Platform.#ctor">
             <summary>
             Construct with no details.
@@ -1743,7 +1791,7 @@
         </member>
         <member name="T:Google.Api.Gax.ResourceNames.BillingAccountName">
             <summary>
-            Resource name for the 'billing account' resource which is widespread across Google Cloud Platform.
+            Resource name for the 'billing account' resource which is widespread across Google Cloud.
             While most resource names are generated on a per-API basis, many APIs use a billing account resource, and it's
             useful to be able to pass values from one API to another.
             </summary>
@@ -1903,7 +1951,7 @@
         </member>
         <member name="T:Google.Api.Gax.ResourceNames.FolderName">
             <summary>
-            Resource name for the 'folder' resource which is widespread across Google Cloud Platform.
+            Resource name for the 'folder' resource which is widespread across Google Cloud.
             While most resource names are generated on a per-API basis, many APIs use a folder resource, and it's
             useful to be able to pass values from one API to another.
             </summary>
@@ -2055,7 +2103,7 @@
         </member>
         <member name="T:Google.Api.Gax.ResourceNames.LocationName">
             <summary>
-            Resource name for the 'location' resource which is widespread across Google Cloud Platform.
+            Resource name for the 'location' resource which is widespread across Google Cloud.
             While most resource names are generated on a per-API basis, many APIs use a location resource, and it's
             useful to be able to pass values from one API to another.
             </summary>
@@ -2229,7 +2277,7 @@
         </member>
         <member name="T:Google.Api.Gax.ResourceNames.OrganizationName">
             <summary>
-            Resource name for the 'organization' resource which is widespread across Google Cloud Platform.
+            Resource name for the 'organization' resource which is widespread across Google Cloud.
             While most resource names are generated on a per-API basis, many APIs use an organization resource, and it's
             useful to be able to pass values from one API to another.
             </summary>
@@ -2387,7 +2435,7 @@
         </member>
         <member name="T:Google.Api.Gax.ResourceNames.ProjectName">
             <summary>
-            Resource name for the 'project' resource which is widespread across Google Cloud Platform.
+            Resource name for the 'project' resource which is widespread across Google Cloud.
             While most resource names are generated on a per-API basis, many APIs use a project resource, and it's
             useful to be able to pass values from one API to another.
             </summary>
@@ -2801,6 +2849,17 @@
         <member name="M:Google.Api.Gax.VersionHeaderBuilder.AppendDotNetEnvironment">
             <summary>
             Appends the .NET environment information to the list.
+            </summary>
+        </member>
+        <member name="M:Google.Api.Gax.VersionHeaderBuilder.IsHeaderNameValueValid(System.String)">
+            <summary>
+            Whether the name or value that are supposed to be included in a header are valid
+            </summary>
+        </member>
+        <member name="M:Google.Api.Gax.VersionHeaderBuilder.FormatInformationalVersion(System.String)">
+            <summary>
+            Formats an AssemblyInformationalVersionAttribute value to avoid losing useful information,
+            but also avoid including unnecessary hex that is appended automatically.
             </summary>
         </member>
         <member name="M:Google.Api.Gax.VersionHeaderBuilder.ToString">
