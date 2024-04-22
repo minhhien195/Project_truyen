@@ -14,6 +14,8 @@ using Firebase.Auth;
 using FirebaseAdmin;
 using FirebaseAdmin.Auth;
 using FirebaseAdmin.Messaging;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+using System.Globalization;
 
 namespace Login
 {
@@ -28,11 +30,11 @@ namespace Login
         {
 
         }
-
-        
-
         private void Login_Load(object sender, EventArgs e)
         {
+            linkLabel1.LinkBehavior = LinkBehavior.NeverUnderline;
+            linkLabel2.LinkBehavior = LinkBehavior.NeverUnderline;
+
             //Bo góc panel
             System.Drawing.Drawing2D.GraphicsPath path = new System.Drawing.Drawing2D.GraphicsPath();
             System.Drawing.Drawing2D.GraphicsPath path1 = new System.Drawing.Drawing2D.GraphicsPath();
@@ -47,22 +49,22 @@ namespace Login
             path.CloseAllFigures();
 
             path1.AddArc(0, 0, cornerRadius, cornerRadius, 180, 90);
-            path1.AddArc(textBox1.Width - cornerRadius, 0, cornerRadius, cornerRadius, 270, 90);
-            path1.AddArc(textBox1.Width - cornerRadius, textBox1.Height - cornerRadius, cornerRadius, cornerRadius, 0, 90);
-            path1.AddArc(0, textBox1.Height - cornerRadius, cornerRadius, cornerRadius, 90, 90);
+            path1.AddArc(txtEmail.Width - cornerRadius, 0, cornerRadius, cornerRadius, 270, 90);
+            path1.AddArc(txtEmail.Width - cornerRadius, txtEmail.Height - cornerRadius, cornerRadius, cornerRadius, 0, 90);
+            path1.AddArc(0, txtEmail.Height - cornerRadius, cornerRadius, cornerRadius, 90, 90);
             path1.CloseAllFigures();
 
             path2.AddArc(0, 0, cornerRadius, cornerRadius, 180, 90);
-            path2.AddArc(textBox2.Width - cornerRadius, 0, cornerRadius, cornerRadius, 270, 90);
-            path2.AddArc(textBox2.Width - cornerRadius, textBox2.Height - cornerRadius, cornerRadius, cornerRadius, 0, 90);
-            path2.AddArc(0, textBox2.Height - cornerRadius, cornerRadius, cornerRadius, 90, 90);
+            path2.AddArc(txtMK.Width - cornerRadius, 0, cornerRadius, cornerRadius, 270, 90);
+            path2.AddArc(txtMK.Width - cornerRadius, txtMK.Height - cornerRadius, cornerRadius, cornerRadius, 0, 90);
+            path2.AddArc(0, txtMK.Height - cornerRadius, cornerRadius, cornerRadius, 90, 90);
             path2.CloseAllFigures();
 
 
             // Thiết lập Region của Panel bằng GraphicsPath
             panel1.Region = new Region(path);
-            textBox1.Region = new Region(path1);
-            textBox2.Region = new Region(path2);
+            txtEmail.Region = new Region(path1);
+            txtMK.Region = new Region(path2);
 
             //Căn giữa panel
             panel1.Location = new Point(
@@ -80,18 +82,7 @@ namespace Login
 
         private async void button1_Click(object sender, EventArgs e)
         {
-            //string pathToFirebaseConfig = @"C:\TLHT\HK2_2023-2024\LapTrinhMangCanBan\HealTruyen\healtruyen-firebase-adminsdk-ww2hz-70b28e08d2.json";
-
-            // Khởi tạo FirebaseApp
-            /*FirebaseApp app = FirebaseApp.Create(new AppOptions()
-            {
-                Credential = Google.Apis.Auth.OAuth2.GoogleCredential.FromFile(pathToFirebaseConfig)
-            });*/
-
-            // Khởi tạo FirebaseAuth
-            //FirebaseAuth auth = FirebaseAuth.GetAuth(app);
-
-            //config Firebase Authentication
+            
             var config = new FirebaseAuthConfig
             {
                 ApiKey = "AIzaSyD4vuUbOi3UxFUXfsmJ1kczNioKwmKaynA",
@@ -103,19 +94,31 @@ namespace Login
             };
 
             var client = new FirebaseAuthClient(config);
+            
 
             try
             {
-                UserCredential userCredential = await SignIn( client, textBox1.Text, textBox2.Text);
+                UserCredential userCredential = await SignIn( client, txtEmail.Text, txtMK.Text);
                 if (userCredential != null)
                 {
-                    MessageBox.Show("Sigin succeed!");
+                    this.Hide();
+                    HomePage homePage = new HomePage(userCredential, client);
+                    homePage.Show();   
+
+                }
+                else
+                {
+                    MessageBox.Show("Email không tồn tại");
                 }
             }
             catch (Firebase.Auth.FirebaseAuthException ex)
             {
                 //MessageBox.Show("error");
-                MessageBox.Show(ex.Reason.ToString());
+                if (ex.Reason.ToString() == "WrongPassword")
+                {
+                    ptrWarning1.Visible = true;
+                    labelMKsai.Visible = true;
+                }
                 return;
             }
         }
@@ -124,6 +127,7 @@ namespace Login
         static async Task<UserCredential> SignIn( FirebaseAuthClient client, string Email, string Password)
         {
             string email = Email;
+
 
             //check user exists
             /*var result = await app.GetUserByEmailAsync(email);
@@ -153,6 +157,141 @@ namespace Login
                 
             }
 
+        }
+
+        private void hidePwd_Click(object sender, EventArgs e)
+        {
+            showPwd.BringToFront();
+            if (txtMK.PasswordChar == '*')
+            {
+                txtMK.PasswordChar = '\0';
+            }
+        }
+
+        private void showPwd_Click(object sender, EventArgs e)
+        {
+            hidePwd.BringToFront();
+            if (txtMK.PasswordChar == '\0')
+            {
+                txtMK.PasswordChar = '*';
+            }
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+            ptrWarning1.Visible = true;
+            labelMKsai.Visible = true;
+        }
+        
+
+        private void txtEmail_TextChanged(object sender, EventArgs e)
+        {
+           
+            var r = new System.Text.RegularExpressions.Regex(@"[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?");
+            if (r.IsMatch(txtEmail.Text))
+            {
+                ptrWarning.Visible = false;
+                lbemailKhonghople.Visible = false;
+            }
+            else
+            {
+                ptrWarning.Visible = true;
+                lbemailKhonghople.Visible = true;
+            }
+        }
+
+        private void txtMK_TextChanged(object sender, EventArgs e)
+        {
+            
+            if (txtMK.Text.Length < 6)
+            {
+                ptrWarning1.Visible = true;
+                labelMKinvalid.Visible = true;
+
+            }
+            else
+            {
+                ptrWarning1.Visible = false;
+                labelMKinvalid.Visible = false;
+                labelMKsai.Visible = false;
+            }
+        }
+
+        private void txtEmail_Leave(object sender, EventArgs e)
+        {
+
+            if (string.IsNullOrEmpty(txtEmail.Text))
+            {
+                ptrWarning.Visible = false;
+                lbemailKhonghople.Visible = false;
+            }
+        }
+
+        private void txtEmail_MouseLeave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtEmail.Text))
+            {
+                ptrWarning.Visible = false;
+                lbemailKhonghople.Visible = false;
+            }
+        }
+
+        private void txtEmail_MouseHover(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtEmail.Text))
+            {
+                ptrWarning.Visible = false;
+                lbemailKhonghople.Visible = false;
+            }
+        }
+
+        private void txtEmail_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Kiểm tra nếu ký tự là một trong các ký tự có dấu tiếng Việt
+            if (IsVietnameseDiacritic(e.KeyChar))
+            {
+                // Thay thế ký tự có dấu thành ký tự không dấu
+                e.KeyChar = RemoveVietnameseDiacritic(e.KeyChar);
+            }
+        }
+
+        // Kiểm tra xem ký tự có phải là một ký tự có dấu tiếng Việt hay không
+        private bool IsVietnameseDiacritic(char c)
+        {
+            string diacritics = "àáảãạăằắẳẵặâầấẩẫậèéẻẽẹêềếểễệìíỉĩịòóỏõọôồốổỗộơờớởỡợùúủũụưừứửữựỳýỷỹỵđ";
+
+            return diacritics.Contains(c);
+        }
+
+        // Xóa dấu của ký tự tiếng Việt
+        private char RemoveVietnameseDiacritic(char c)
+        {
+            string withDiacritic = "àáảãạăằắẳẵặâầấẩẫậèéẻẽẹêềếểễệìíỉĩịòóỏõọôồốổỗộơờớởỡợùúủũụưừứửữựỳýỷỹỵđ";
+            Dictionary<int, string> test = new Dictionary<int, string>();
+            string withoutDiacritic = "aaaaaaaaaaaaaaaaaeeeeeeeeeeeiiiiiooooooooooooooooouuuuuuuuuuuyyyyyd";
+
+            int index = withDiacritic.IndexOf(c);
+            if (index >= 0)
+            {
+                c = withoutDiacritic[index];
+            }
+
+            return c;
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Forget_Password forget_Password = new Forget_Password();
+            this.Hide();
+            forget_Password.Show();
+            //this.Close();
+        }
+
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Hide();
+            Signup signup = new Signup();
+            signup.Show();
         }
     }
 }
