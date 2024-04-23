@@ -61,6 +61,8 @@ namespace Novel
             public string description { get; set; }
             [FirestoreProperty("Trang_thai")]
             public int status { get; set; }
+            [FirestoreProperty("ID_nguoidang")]
+            public string id_nguoidang { get; set; }
         }
         public async static Task<Chapter> getNovel(string nameNovel, string numChapter)
         {
@@ -137,7 +139,8 @@ namespace Novel
                         ID_Truyen = id,
                         Noi_dung = content,
                         TG_dangtai = System.DateTime.UtcNow,
-                        Tieu_de = title
+                        Tieu_de = title,
+                        
                     };
                     string chapID = "";
                     int cnt = 4 - numChapter.Length;
@@ -154,7 +157,7 @@ namespace Novel
 
         }
 
-        public static async void createNovel(string bia_sach, string so_luong_chuong, string tac_gia, string ten_truyen, string[] the_loai, string tom_tat, int trang_thai)
+        public static async void createNovel(string userID, string bia_sach, string so_luong_chuong, string tac_gia, string ten_truyen, string[] the_loai, string tom_tat, int trang_thai)
         {
             FirestoreDb db = FirestoreDb.Create("healtruyen");
             Novel novel = new Novel()
@@ -171,7 +174,8 @@ namespace Novel
                 author = tac_gia,
                 nameNovel = ten_truyen,
                 type = the_loai,
-                status = 1
+                status = 1,
+                id_nguoidang = userID
             };
             CollectionReference truyen = db.Collection("Truyen");
             QuerySnapshot qs = await truyen.GetSnapshotAsync();

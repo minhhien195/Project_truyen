@@ -205,6 +205,7 @@
     </Compile>
     <Compile Include="API_Album.cs" />
     <Compile Include="API_Reading_History.cs" />
+    <Compile Include="API_thongbao.cs" />
     <Compile Include="API_Truyen.cs" />
     <Compile Include="Change_Password.cs">
       <SubType>Form</SubType>
