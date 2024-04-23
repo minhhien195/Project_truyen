@@ -132,3 +132,16 @@ C:\TLHT\HK2_2023-2024\LapTrinhMangCanBan\HealTruyen\src\Login\bin\Debug\System.D
 C:\TLHT\HK2_2023-2024\LapTrinhMangCanBan\HealTruyen\src\Login\bin\Debug\System.Linq.Async.xml
 C:\TLHT\HK2_2023-2024\LapTrinhMangCanBan\HealTruyen\src\Login\bin\Debug\System.Net.Http.WinHttpHandler.xml
 C:\TLHT\HK2_2023-2024\LapTrinhMangCanBan\HealTruyen\src\Login\obj\Debug\Login.HomePage.resources
+D:\GitHub\Project_truyen\Login\obj\Debug\App.csproj.App.config
+D:\GitHub\Project_truyen\Login\obj\Debug\App.csproj.AssemblyReference.cache
+D:\GitHub\Project_truyen\Login\obj\Debug\Login.Change_Password.resources
+D:\GitHub\Project_truyen\Login\obj\Debug\Login.Forget_Password.resources
+D:\GitHub\Project_truyen\Login\obj\Debug\Login.HomePage.resources
+D:\GitHub\Project_truyen\Login\obj\Debug\Login.Login.resources
+D:\GitHub\Project_truyen\Login\obj\Debug\Login.Properties.Resources.resources
+D:\GitHub\Project_truyen\Login\obj\Debug\Login.Signup.resources
+D:\GitHub\Project_truyen\Login\obj\Debug\Login.Signup.vi-VN.resources
+D:\GitHub\Project_truyen\Login\obj\Debug\App.csproj.GenerateResource.cache
+D:\GitHub\Project_truyen\Login\obj\Debug\App.csproj.CoreCompileInputs.cache
+D:\GitHub\Project_truyen\Login\obj\Debug\Login.exe
+D:\GitHub\Project_truyen\Login\obj\Debug\Login.pdb
