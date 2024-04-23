@@ -213,6 +213,7 @@
     <Compile Include="Change_Password.Designer.cs">
       <DependentUpon>Change_Password.cs</DependentUpon>
     </Compile>
+    <Compile Include="API_Tim_Kiem.cs" />
     <Compile Include="Forget_Password.cs">
       <SubType>Form</SubType>
     </Compile>
