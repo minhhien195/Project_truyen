@@ -229,53 +229,25 @@
             // 
             // btnDKy
             // 
-<<<<<<< Updated upstream
             resources.ApplyResources(this.btnDKy, "btnDKy");
             this.btnDKy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(44)))), ((int)(((byte)(36)))));
             this.btnDKy.ForeColor = System.Drawing.SystemColors.Control;
             this.btnDKy.Name = "btnDKy";
             this.btnDKy.UseVisualStyleBackColor = false;
             this.btnDKy.Click += new System.EventHandler(this.btnDKy_Click);
-=======
-            resources.ApplyResources(this.button1, "button1");
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(44)))), ((int)(((byte)(36)))));
-            this.button1.ForeColor = System.Drawing.SystemColors.Control;
-            this.button1.Name = "button1";
-            this.button1.UseVisualStyleBackColor = false;
->>>>>>> Stashed changes
             // 
             // txtTenDN
             // 
-<<<<<<< Updated upstream
             this.txtTenDN.BorderStyle = System.Windows.Forms.BorderStyle.None;
             resources.ApplyResources(this.txtTenDN, "txtTenDN");
             this.txtTenDN.Name = "txtTenDN";
             this.txtTenDN.TextChanged += new System.EventHandler(this.txtTenDN_TextChanged);
-=======
-            resources.ApplyResources(this.textBox4, "textBox4");
-            this.textBox4.Name = "textBox4";
-            // 
-            // textBox3
-            // 
-            resources.ApplyResources(this.textBox3, "textBox3");
-            this.textBox3.Name = "textBox3";
-            // 
-            // textBox2
-            // 
-            resources.ApplyResources(this.textBox2, "textBox2");
-            this.textBox2.Name = "textBox2";
-            // 
-            // textBox1
-            // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            resources.ApplyResources(this.textBox1, "textBox1");
-            this.textBox1.Name = "textBox1";
->>>>>>> Stashed changes
             // 
             // Sign_up_label
             // 
             resources.ApplyResources(this.Sign_up_label, "Sign_up_label");
             this.Sign_up_label.Name = "Sign_up_label";
+            this.Sign_up_label.Click += new System.EventHandler(this.label1_Click);
             // 
             // Signup
             // 

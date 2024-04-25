@@ -71,7 +71,7 @@ namespace BXH
             if (res.Body != "null")
             {
                 var novels = JsonConvert.DeserializeObject<List<Novel>>(res.Body);
-                sortedBXH = novels.ThenByDescending(n => n.numRead).ToList();
+                sortedBXH = novels.OrderByDescending(n => n.numRead).ToList();
             }
             return sortedBXH;
         }
