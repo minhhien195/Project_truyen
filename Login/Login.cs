@@ -26,6 +26,10 @@ namespace Login
             InitializeComponent();
         }
 
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
         private void Login_Load(object sender, EventArgs e)
         {
             linkLabel1.LinkBehavior = LinkBehavior.NeverUnderline;

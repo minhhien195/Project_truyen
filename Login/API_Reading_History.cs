@@ -24,7 +24,7 @@ namespace Readinghistory
     {
         public string ten_truyen { get; set; }
         public int Chuong_doccuoi { get; set; }
-        public string TG_doccuoi { get; set; }
+        public long TG_doccuoi { get; set; }
         public int tong_chuong { get; set; }
         public string Tacgia { get; set; }
         public string image { get; set; }
@@ -60,8 +60,6 @@ namespace Readinghistory
         public string description { get; set; }
         [FirestoreProperty("Trang_thai")]
         public int status { get; set; }
-        [FirestoreProperty("ID_nguoidang")]
-        public string id_nguoidang { get; set; }
     }
     public class CRUD_lsd
     {
@@ -141,14 +139,14 @@ namespace Readinghistory
             // Get the current time
             System.DateTime currentTime = System.DateTime.UtcNow;
             // Convert the current time to a Unix timestamp
-            //long timestamp = (long)(currentTime - new System.DateTime(1970, 1, 1)).TotalSeconds;
+            long timestamp = (long)(currentTime - new System.DateTime(1970, 1, 1)).TotalSeconds;
 
             // Tạo một đối tượng chứa các giá trị cần cập nhật
             Lich_su_doc lsd = new Lich_su_doc()
             {
                 ten_truyen = tentruyen,
                 Chuong_doccuoi = Convert.ToInt32(idchuong),
-                TG_doccuoi = currentTime.ToString(),
+                TG_doccuoi = timestamp,
                 tong_chuong = sochuong,
                 Tacgia = tacgia,
                 image = anh

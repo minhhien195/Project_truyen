@@ -24,13 +24,14 @@ namespace Album_truyen
     {
         public string Tentruyen { get; set; }
         public int Chuong_dangdoc { get; set; }
-        public string TG_them { get; set; }
+        public long TG_them { get; set; }
         public int tong_chuong { get; set; }
         public string Tacgia { get; set; }
         public string image { get; set; }
         public string The_loai { get; set; }
         public bool Thong_bao { get; set; }
         public int Trang_thai { get; set; }
+
     }
     public class Novel
     {
@@ -62,8 +63,6 @@ namespace Album_truyen
         public string description { get; set; }
         [FirestoreProperty("Trang_thai")]
         public int status { get; set; }
-        [FirestoreProperty("ID_nguoidang")]
-        public string id_nguoidang { get; set; }
     }
     public class CRUD_lsd
     {
@@ -118,14 +117,14 @@ namespace Album_truyen
             // Get the current time
             System.DateTime currentTime = System.DateTime.UtcNow;
             // Convert the current time to a Unix timestamp
-           // long timestamp = (long)(currentTime - new System.DateTime(1970, 1, 1)).TotalSeconds;
+            long timestamp = (long)(currentTime - new System.DateTime(1970, 1, 1)).TotalSeconds;
 
             // Tạo một đối tượng chứa các giá trị cần cập nhật
             Album alb = new Album()
             {
                 Tentruyen = tentruyen,
                 Chuong_dangdoc = Convert.ToInt32(idchuong),
-                TG_them = currentTime.ToString(),
+                TG_them = timestamp,
                 tong_chuong = sochuong,
                 Tacgia = tacgia,
                 image = anh,
