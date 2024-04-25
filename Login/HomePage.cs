@@ -77,30 +77,36 @@ namespace Login
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
                 string fileName = openFileDialog.FileName;
-                Bitmap bitmap = new Bitmap(fileName);
-
-                using (MemoryStream memoryStream = new MemoryStream())
+                string extend = System.IO.Path.GetExtension(fileName);
+                if (extend == ".png" || extend == ".jpg")
                 {
-                    bitmap.Save(memoryStream, System.Drawing.Imaging.ImageFormat.Png);
-                    byte[] imageBytes1 = memoryStream.ToArray();
+                    Bitmap bitmap = new Bitmap(openFileDialog.FileName);
+                    using (MemoryStream memoryStream = new MemoryStream())
+                    {
+                        bitmap.Save(memoryStream, System.Drawing.Imaging.ImageFormat.Png);
+                        byte[] imageBytes1 = memoryStream.ToArray();
 
-                    // Convert byte array to base64 string
-                    string base64String1 = Convert.ToBase64String(imageBytes1);
-                    // Set the data in Firebase
-                    var setResponse = await ifclient.SetAsync("Nguoi_dung/" + ID + "/Anh_dai_dien", base64String1);
-                    MessageBox.Show("Avatar uploaded successfully!");
+                        // Convert byte array to base64 string
+                        string base64String1 = Convert.ToBase64String(imageBytes1);
+                        // Set the data in Firebase
+                        var setResponse = await ifclient.SetAsync("Nguoi_dung/" + ID + "/Anh_dai_dien", base64String1);
+                        MessageBox.Show("Avatar uploaded successfully!");
 
+                    }
+                    FirebaseResponse response = await ifclient.GetAsync("Nguoi_dung/" + ID + "/Anh_dai_dien");
+                    string base64String2 = response.ResultAs<string>();
+                    byte[] imageBytes2 = Convert.FromBase64String(base64String2);
+
+                    using (MemoryStream memoryStream = new MemoryStream(imageBytes2))
+                    {
+                        bitmap = new Bitmap(memoryStream);
+                        pictureBox1.Image = bitmap;
+                        pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+                    }
                 }
-                FirebaseResponse response = await ifclient.GetAsync("Nguoi_dung/" + ID + "/Anh_dai_dien");
-                string base64String2 = response.ResultAs<string>();
-                byte[] imageBytes2 = Convert.FromBase64String(base64String2);
+                else MessageBox.Show("Error file","Use file have .png or .jpg",MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
-                using (MemoryStream memoryStream = new MemoryStream(imageBytes2))
-                {
-                    bitmap = new Bitmap(memoryStream);
-                    pictureBox1.Image = bitmap;
-                    pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-                }
+                
 
             }
             
