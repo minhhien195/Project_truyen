@@ -1,0 +1,10 @@
+D:\GitHub\Project_truyen\TrangChu\bin\Debug\TrangChu.exe.config
+D:\GitHub\Project_truyen\TrangChu\bin\Debug\TrangChu.exe
+D:\GitHub\Project_truyen\TrangChu\bin\Debug\TrangChu.pdb
+D:\GitHub\Project_truyen\TrangChu\obj\Debug\TrangChu.csproj.AssemblyReference.cache
+D:\GitHub\Project_truyen\TrangChu\obj\Debug\TrangChu.Properties.Resources.resources
+D:\GitHub\Project_truyen\TrangChu\obj\Debug\TrangChu.TrangChu.resources
+D:\GitHub\Project_truyen\TrangChu\obj\Debug\TrangChu.csproj.GenerateResource.cache
+D:\GitHub\Project_truyen\TrangChu\obj\Debug\TrangChu.csproj.CoreCompileInputs.cache
+D:\GitHub\Project_truyen\TrangChu\obj\Debug\TrangChu.exe
+D:\GitHub\Project_truyen\TrangChu\obj\Debug\TrangChu.pdb

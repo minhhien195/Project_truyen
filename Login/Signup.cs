@@ -119,6 +119,7 @@ namespace Login
             );
             Sign_up_label.Anchor = AnchorStyles.None; // Đảm bảo label không bị ràng buộc bởi các thuộc tính Anchor
         }
+<<<<<<< Updated upstream
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -465,5 +466,8 @@ namespace Login
             login.Show();
             //this.Close();
         }
+=======
+
+>>>>>>> Stashed changes
     }
 }
