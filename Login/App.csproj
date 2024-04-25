@@ -204,6 +204,7 @@
       <DependentUpon>AlbumTruyen.cs</DependentUpon>
     </Compile>
     <Compile Include="API-Decutruyen.cs" />
+    <Compile Include="API-TimKiemTruyen.cs" />
     <Compile Include="API_Album.cs" />
     <Compile Include="API_Reading_History.cs" />
     <Compile Include="API_Truyen.cs" />
