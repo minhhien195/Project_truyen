@@ -206,12 +206,20 @@
     <Compile Include="API-Decutruyen.cs" />
     <Compile Include="API_Album.cs" />
     <Compile Include="API_Reading_History.cs" />
+    <Compile Include="API_thongbao.cs" />
+    <Compile Include="API_Tim_Kiem.cs" />
     <Compile Include="API_Truyen.cs" />
     <Compile Include="Change_Password.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Change_Password.Designer.cs">
       <DependentUpon>Change_Password.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chi_Tiet_Truyen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chi_Tiet_Truyen.Designer.cs">
+      <DependentUpon>Chi_Tiet_Truyen.cs</DependentUpon>
     </Compile>
     <Compile Include="Forget_Password.cs">
       <SubType>Form</SubType>
