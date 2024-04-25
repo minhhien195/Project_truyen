@@ -17,7 +17,7 @@ using System.Security.Cryptography;
 using Google.Cloud.Firestore;
 using Firebase.Auth.Providers;
 
-namespace Login
+namespace thongbao
 {
     internal class API_thongbao
     {
