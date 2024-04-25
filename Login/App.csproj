@@ -203,6 +203,7 @@
     <Compile Include="AlbumTruyen.Designer.cs">
       <DependentUpon>AlbumTruyen.cs</DependentUpon>
     </Compile>
+    <Compile Include="API-Decutruyen.cs" />
     <Compile Include="API_Album.cs" />
     <Compile Include="API_Reading_History.cs" />
     <Compile Include="API_Truyen.cs" />
@@ -212,7 +213,6 @@
     <Compile Include="Change_Password.Designer.cs">
       <DependentUpon>Change_Password.cs</DependentUpon>
     </Compile>
-    <Compile Include="API_Tim_Kiem.cs" />
     <Compile Include="Forget_Password.cs">
       <SubType>Form</SubType>
     </Compile>
