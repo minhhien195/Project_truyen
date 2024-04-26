@@ -279,3 +279,4 @@ D:\code\C#\Project_truyen\Login\bin\Debug\System.Threading.Tasks.Extensions.xml
 D:\code\C#\Project_truyen\Login\bin\Debug\System.ValueTuple.xml
 D:\code\C#\Project_truyen\Login\obj\Debug\vi-VN\Login.resources.dll
 D:\code\C#\Project_truyen\Login\obj\Debug\App.csproj.Up2Date
+D:\code\C#\Project_truyen\Login\obj\Debug\Login.AccountInfo.resources
