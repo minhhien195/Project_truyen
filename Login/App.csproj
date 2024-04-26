@@ -266,6 +266,7 @@
     </Compile>
     <EmbeddedResource Include="AccountInfo.resx">
       <DependentUpon>AccountInfo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AlbumTruyen.resx">
       <DependentUpon>AlbumTruyen.cs</DependentUpon>
     </EmbeddedResource>
