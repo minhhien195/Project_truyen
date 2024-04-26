@@ -123,7 +123,12 @@ namespace Login.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-
+        public static System.Drawing.Bitmap hide1 {
+            get {
+                object obj = ResourceManager.GetObject("hide1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
         
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
@@ -138,9 +143,39 @@ namespace Login.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap images {
+            get {
+                object obj = ResourceManager.GetObject("images", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap images1 {
+            get {
+                object obj = ResourceManager.GetObject("images1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap left_arrow1 {
             get {
                 object obj = ResourceManager.GetObject("left-arrow1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap Logo {
+            get {
+                object obj = ResourceManager.GetObject("Logo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

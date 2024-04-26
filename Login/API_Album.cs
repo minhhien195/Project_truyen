@@ -15,7 +15,7 @@ using System.Net;
 using System.Reactive;
 
 
-namespace Album_truyen
+namespace AlbumTruyen
 {
     internal class API_Album
     {
