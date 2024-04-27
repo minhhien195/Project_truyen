@@ -15,6 +15,7 @@ using FireSharp.Config;
 using FireSharp.Interfaces;
 using FireSharp.Response;
 using System.Drawing.Drawing2D;
+using Google.Protobuf.WellKnownTypes;
 
 namespace Login
 {
@@ -28,14 +29,18 @@ namespace Login
             AuthSecret = "38QvLmnKMHlQtJ9yZzCqqWytxeXimwt06ZnFfSc2",
             BasePath = "https://healtruyen-default-rtdb.asia-southeast1.firebasedatabase.app/"
         };
-        public AccountInfo()
+        public AccountInfo(UserCredential userCredential, FirebaseAuthClient firebaseAuthClient)
         {
             InitializeComponent();
             ifclient = new FireSharp.FirebaseClient(config);
+            this.user = userCredential;
+            this.client = firebaseAuthClient;
         }
 
         private async void AccountInfo_Load(object sender, EventArgs e)
         {
+            label1.Text = user.User.Info.DisplayName;
+            string ID = user.User.Info.Uid;
             GraphicsPath grpath = new GraphicsPath();
             grpath.AddEllipse(0, 0, pictureBox1.Width, pictureBox1.Height);
             Region rg = new System.Drawing.Region(grpath);
@@ -44,9 +49,8 @@ namespace Login
             grpath2.AddEllipse(0, 0, pictureBox2.Width, pictureBox2.Height);
             Region rg2 = new System.Drawing.Region(grpath2);
             pictureBox2.Region = rg2;
-            //roundPictureBox1 = new RoundPictureBox();
-            //string ID = user.User.Info.Uid;
-            string ID = "E87tvNxeBuRVWjGecxM0Vrh0RU72";
+            //string ID = "E87tvNxeBuRVWjGecxM0Vrh0RU72";
+            label3.Text = ID;
             //string base64String = "iVBORw0KGgoAAAANSUhEUgAAA8AAAAMACAIAAABkXJl4AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAP";
             FirebaseResponse response = await ifclient.GetAsync("Nguoi_dung/E87tvNxeBuRVWjGecxM0Vrh0RU72/Anh_dai_dien");
             string base64String = response.ResultAs<string>();
@@ -76,8 +80,8 @@ namespace Login
 
         private async void loadava_Click(object sender, EventArgs e)
         {
-            //string ID = user.User.Info.Uid;
-            string ID = "E87tvNxeBuRVWjGecxM0Vrh0RU72";
+            string ID = user.User.Info.Uid;
+            //string ID = "E87tvNxeBuRVWjGecxM0Vrh0RU72";
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.Filter = "Image Files (*.png;*.jpg)|*.png;*.jpg";
             if (openFileDialog.ShowDialog() == DialogResult.OK)
@@ -115,10 +119,56 @@ namespace Login
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
+            
+        }
+
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
 
         }
 
-        private void pictureBox3_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            AccountInfo Form = new AccountInfo(user,client);
+            this.Close();
+            Form.Show();
+            
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            NvUpdate Form = new NvUpdate(user, client);
+            Form.Show();
+        }
+
+        private void btnBaocao_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
         {
 
         }
