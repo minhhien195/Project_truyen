@@ -21,8 +21,8 @@ namespace Novel
     {
         public class Chapter
         {
-            [FirestoreProperty("Ten")]
-            public string Name { get; set; }
+            [FirestoreProperty("ID_Truyen")]
+            public string idBook { get; set; }
             [FirestoreProperty("Noi_dung")]
             public string Content { get; set; }
             [FirestoreProperty("TG_dangtai")]

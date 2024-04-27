@@ -470,7 +470,7 @@
             this.flowLayoutPanel2.Controls.Add(this.ibtnVesau1trang);
             this.flowLayoutPanel2.Location = new System.Drawing.Point(795, 959);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(580, 66);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(404, 66);
             this.flowLayoutPanel2.TabIndex = 1;
             // 
             // ibtnContiep
