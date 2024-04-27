@@ -16,8 +16,8 @@ namespace Login
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AccountInfo());
-            Application.Run(new AlbumTruyen());
+            Application.Run(new Login());
+            //Application.Run(new AccountInfo());
         }
     }
 }

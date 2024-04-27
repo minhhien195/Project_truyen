@@ -183,6 +183,16 @@ namespace Login.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap phongcanh {
+            get {
+                object obj = ResourceManager.GetObject("phongcanh", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap Untick {
             get {
                 object obj = ResourceManager.GetObject("Untick", resourceCulture);

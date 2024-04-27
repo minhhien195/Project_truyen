@@ -55,16 +55,16 @@ namespace Nhantin
 
             List<message> result = new List<message>();
 
-            if (res != null && res.Body != null)
+            /*if (res != null && res.Body != null)
             {
                 // Chuyển đổi dữ liệu JSON thành danh sách tin nhắn
-                var messageData = JsonConvert.DeserializeObject
+                var messageData = JsonConvert.DeserializeObject(res.Body);
             // Nếu danh sách tin nhắn không null, thêm vào danh sách kết quả
             if (messageData != null)
                 {
                     result.AddRange(messageData);
                 }
-            }
+            }*/
             return result;
         }
     }

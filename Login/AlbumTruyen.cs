@@ -145,6 +145,11 @@ namespace Login
 
         }
 
+        private void AlbumTruyen_Load(object sender, EventArgs e)
+        {
+
+        }
+
 
 
         /*private Form activeForm = null;

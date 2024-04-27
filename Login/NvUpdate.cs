@@ -14,11 +14,12 @@ using Firebase.Auth.Providers;
 using FireSharp.Config;
 using FireSharp.Interfaces;
 using FireSharp.Response;
-using static Google.Rpc.Context.AttributeContext.Types;
+using System.Drawing.Drawing2D;
+using Google.Protobuf.WellKnownTypes;
 
 namespace Login
 {
-    public partial class HomePage : Form
+    public partial class NvUpdate : Form
     {
         UserCredential user;
         FirebaseAuthClient client;
@@ -28,20 +29,30 @@ namespace Login
             AuthSecret = "38QvLmnKMHlQtJ9yZzCqqWytxeXimwt06ZnFfSc2",
             BasePath = "https://healtruyen-default-rtdb.asia-southeast1.firebasedatabase.app/"
         };
-        public HomePage(UserCredential userCredential, FirebaseAuthClient firebaseAuthClient)
+        public NvUpdate(UserCredential userCredential, FirebaseAuthClient firebaseAuthClient)
         {
             InitializeComponent();
+            ifclient = new FireSharp.FirebaseClient(config);
             this.user = userCredential;
             this.client = firebaseAuthClient;
-            ifclient = new FireSharp.FirebaseClient(config);
-
         }
 
-        private async void HomePage_Load(object sender, EventArgs e)
+        private async void AccountInfo_Load(object sender, EventArgs e)
         {
-            label2.Text = user.User.Info.DisplayName;
+            label1.Text = user.User.Info.DisplayName;
             string ID = user.User.Info.Uid;
-            FirebaseResponse response = await ifclient.GetAsync("Nguoi_dung/" + ID + "/Anh_dai_dien");
+            GraphicsPath grpath = new GraphicsPath();
+            grpath.AddEllipse(0, 0, pictureBox1.Width, pictureBox1.Height);
+            Region rg = new System.Drawing.Region(grpath);
+            pictureBox1.Region = rg;
+            GraphicsPath grpath2 = new GraphicsPath();
+            grpath2.AddEllipse(0, 0, pictureBox2.Width, pictureBox2.Height);
+            Region rg2 = new System.Drawing.Region(grpath2);
+            pictureBox2.Region = rg2;
+            //string ID = "E87tvNxeBuRVWjGecxM0Vrh0RU72";
+            //label3.Text = ID;
+            //string base64String = "iVBORw0KGgoAAAANSUhEUgAAA8AAAAMACAIAAABkXJl4AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAP";
+            FirebaseResponse response = await ifclient.GetAsync("Nguoi_dung/E87tvNxeBuRVWjGecxM0Vrh0RU72/Anh_dai_dien");
             string base64String = response.ResultAs<string>();
             /*if (base64String == "")
             {
@@ -57,21 +68,20 @@ namespace Login
                 Bitmap bitmap = new Bitmap(memoryStream);
                 pictureBox1.Image = bitmap;
                 pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+                pictureBox2.Image = bitmap;
+                pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             }
         }
 
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void pictureBox2_Click(object sender, EventArgs e)
         {
-            client.SignOut();
-            this.Hide();
-            Login login = new Login();
-            login.Show();
 
         }
 
         private async void loadava_Click(object sender, EventArgs e)
         {
             string ID = user.User.Info.Uid;
+            //string ID = "E87tvNxeBuRVWjGecxM0Vrh0RU72";
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.Filter = "Image Files (*.png;*.jpg)|*.png;*.jpg";
             if (openFileDialog.ShowDialog() == DialogResult.OK)
@@ -100,17 +110,68 @@ namespace Login
                     bitmap = new Bitmap(memoryStream);
                     pictureBox1.Image = bitmap;
                     pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+                    pictureBox2.Image = bitmap;
+                    pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
                 }
 
             }
-
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
+
+        }
+
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
             this.Hide();
-            AccountInfo accountInfo = new AccountInfo(user,client);
+            AccountInfo accountInfo = new AccountInfo(user, client);
             accountInfo.Show();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            AccountInfo Form = new AccountInfo(user, client);
+            this.Close();
+            Form.Show();
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnBaocao_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
+
 }

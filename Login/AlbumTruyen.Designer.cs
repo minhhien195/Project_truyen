@@ -47,8 +47,8 @@
             this.panelheader = new System.Windows.Forms.Panel();
             this.ibtnXmark = new FontAwesome.Sharp.IconButton();
             this.panelClose = new System.Windows.Forms.Panel();
-            this.panelLogo = new System.Windows.Forms.Panel();
             this.btnbars = new System.Windows.Forms.Button();
+            this.panelLogo = new System.Windows.Forms.Panel();
             this.process1 = new System.Diagnostics.Process();
             this.panelMenu.SuspendLayout();
             this.panelHEALTruyenSubmenu.SuspendLayout();
@@ -71,10 +71,11 @@
             this.panelMenu.Controls.Add(this.ibtnTrangchu);
             this.panelMenu.Controls.Add(this.panelheader);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelMenu.Font = new System.Drawing.Font("League Spartan", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panelMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
+            this.panelMenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(378, 1024);
+            this.panelMenu.Size = new System.Drawing.Size(336, 819);
             this.panelMenu.TabIndex = 0;
             // 
             // panelHEALTruyenSubmenu
@@ -84,9 +85,10 @@
             this.panelHEALTruyenSubmenu.Controls.Add(this.btnChat);
             this.panelHEALTruyenSubmenu.Controls.Add(this.btnHelpandError);
             this.panelHEALTruyenSubmenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelHEALTruyenSubmenu.Location = new System.Drawing.Point(0, 675);
+            this.panelHEALTruyenSubmenu.Location = new System.Drawing.Point(0, 541);
+            this.panelHEALTruyenSubmenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelHEALTruyenSubmenu.Name = "panelHEALTruyenSubmenu";
-            this.panelHEALTruyenSubmenu.Size = new System.Drawing.Size(378, 182);
+            this.panelHEALTruyenSubmenu.Size = new System.Drawing.Size(336, 146);
             this.panelHEALTruyenSubmenu.TabIndex = 9;
             // 
             // btnThongbao
@@ -96,11 +98,12 @@
             this.btnThongbao.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(229)))), ((int)(((byte)(250)))));
             this.btnThongbao.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(229)))), ((int)(((byte)(250)))));
             this.btnThongbao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThongbao.Font = new System.Drawing.Font("League Spartan Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThongbao.Location = new System.Drawing.Point(0, 120);
+            this.btnThongbao.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThongbao.Location = new System.Drawing.Point(0, 96);
+            this.btnThongbao.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnThongbao.Name = "btnThongbao";
-            this.btnThongbao.Padding = new System.Windows.Forms.Padding(60, 0, 0, 0);
-            this.btnThongbao.Size = new System.Drawing.Size(378, 60);
+            this.btnThongbao.Padding = new System.Windows.Forms.Padding(53, 0, 0, 0);
+            this.btnThongbao.Size = new System.Drawing.Size(336, 48);
             this.btnThongbao.TabIndex = 2;
             this.btnThongbao.Text = "Thông báo";
             this.btnThongbao.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -114,11 +117,12 @@
             this.btnChat.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(229)))), ((int)(((byte)(250)))));
             this.btnChat.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(229)))), ((int)(((byte)(250)))));
             this.btnChat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnChat.Font = new System.Drawing.Font("League Spartan Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChat.Location = new System.Drawing.Point(0, 60);
+            this.btnChat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChat.Location = new System.Drawing.Point(0, 48);
+            this.btnChat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnChat.Name = "btnChat";
-            this.btnChat.Padding = new System.Windows.Forms.Padding(60, 0, 0, 0);
-            this.btnChat.Size = new System.Drawing.Size(378, 60);
+            this.btnChat.Padding = new System.Windows.Forms.Padding(53, 0, 0, 0);
+            this.btnChat.Size = new System.Drawing.Size(336, 48);
             this.btnChat.TabIndex = 1;
             this.btnChat.Text = "Chat";
             this.btnChat.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -132,11 +136,12 @@
             this.btnHelpandError.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(229)))), ((int)(((byte)(250)))));
             this.btnHelpandError.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(229)))), ((int)(((byte)(250)))));
             this.btnHelpandError.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHelpandError.Font = new System.Drawing.Font("League Spartan Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHelpandError.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHelpandError.Location = new System.Drawing.Point(0, 0);
+            this.btnHelpandError.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnHelpandError.Name = "btnHelpandError";
-            this.btnHelpandError.Padding = new System.Windows.Forms.Padding(60, 0, 0, 0);
-            this.btnHelpandError.Size = new System.Drawing.Size(378, 60);
+            this.btnHelpandError.Padding = new System.Windows.Forms.Padding(53, 0, 0, 0);
+            this.btnHelpandError.Size = new System.Drawing.Size(336, 48);
             this.btnHelpandError.TabIndex = 0;
             this.btnHelpandError.Text = "Trợ giúp và báo lỗi";
             this.btnHelpandError.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -150,18 +155,19 @@
             this.ibtnHEALTruyen.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
             this.ibtnHEALTruyen.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
             this.ibtnHEALTruyen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ibtnHEALTruyen.Font = new System.Drawing.Font("League Spartan SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ibtnHEALTruyen.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ibtnHEALTruyen.ForeColor = System.Drawing.SystemColors.ControlText;
             this.ibtnHEALTruyen.IconChar = FontAwesome.Sharp.IconChar.ThumbTack;
             this.ibtnHEALTruyen.IconColor = System.Drawing.Color.Black;
             this.ibtnHEALTruyen.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.ibtnHEALTruyen.IconSize = 38;
             this.ibtnHEALTruyen.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ibtnHEALTruyen.Location = new System.Drawing.Point(0, 615);
+            this.ibtnHEALTruyen.Location = new System.Drawing.Point(0, 493);
+            this.ibtnHEALTruyen.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ibtnHEALTruyen.Name = "ibtnHEALTruyen";
-            this.ibtnHEALTruyen.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.ibtnHEALTruyen.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
             this.ibtnHEALTruyen.Rotation = 30D;
-            this.ibtnHEALTruyen.Size = new System.Drawing.Size(378, 60);
+            this.ibtnHEALTruyen.Size = new System.Drawing.Size(336, 48);
             this.ibtnHEALTruyen.TabIndex = 8;
             this.ibtnHEALTruyen.Text = "  HEALTruyen";
             this.ibtnHEALTruyen.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -175,9 +181,10 @@
             this.panelTieudeSubmenu.Controls.Add(this.btnBXH);
             this.panelTieudeSubmenu.Controls.Add(this.btnadvancedsearch);
             this.panelTieudeSubmenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelTieudeSubmenu.Location = new System.Drawing.Point(0, 494);
+            this.panelTieudeSubmenu.Location = new System.Drawing.Point(0, 396);
+            this.panelTieudeSubmenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelTieudeSubmenu.Name = "panelTieudeSubmenu";
-            this.panelTieudeSubmenu.Size = new System.Drawing.Size(378, 121);
+            this.panelTieudeSubmenu.Size = new System.Drawing.Size(336, 97);
             this.panelTieudeSubmenu.TabIndex = 7;
             // 
             // btnBXH
@@ -187,11 +194,12 @@
             this.btnBXH.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(229)))), ((int)(((byte)(250)))));
             this.btnBXH.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(229)))), ((int)(((byte)(250)))));
             this.btnBXH.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBXH.Font = new System.Drawing.Font("League Spartan Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBXH.Location = new System.Drawing.Point(0, 60);
+            this.btnBXH.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBXH.Location = new System.Drawing.Point(0, 48);
+            this.btnBXH.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnBXH.Name = "btnBXH";
-            this.btnBXH.Padding = new System.Windows.Forms.Padding(60, 0, 0, 0);
-            this.btnBXH.Size = new System.Drawing.Size(378, 60);
+            this.btnBXH.Padding = new System.Windows.Forms.Padding(53, 0, 0, 0);
+            this.btnBXH.Size = new System.Drawing.Size(336, 48);
             this.btnBXH.TabIndex = 1;
             this.btnBXH.Text = "Bảng xếp hạng";
             this.btnBXH.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -205,11 +213,12 @@
             this.btnadvancedsearch.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(229)))), ((int)(((byte)(250)))));
             this.btnadvancedsearch.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(229)))), ((int)(((byte)(250)))));
             this.btnadvancedsearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnadvancedsearch.Font = new System.Drawing.Font("League Spartan Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnadvancedsearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnadvancedsearch.Location = new System.Drawing.Point(0, 0);
+            this.btnadvancedsearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnadvancedsearch.Name = "btnadvancedsearch";
-            this.btnadvancedsearch.Padding = new System.Windows.Forms.Padding(60, 0, 0, 0);
-            this.btnadvancedsearch.Size = new System.Drawing.Size(378, 60);
+            this.btnadvancedsearch.Padding = new System.Windows.Forms.Padding(53, 0, 0, 0);
+            this.btnadvancedsearch.Size = new System.Drawing.Size(336, 48);
             this.btnadvancedsearch.TabIndex = 0;
             this.btnadvancedsearch.Text = "Tìm kiếm nâng cao";
             this.btnadvancedsearch.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -223,17 +232,18 @@
             this.ibtnTieude.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
             this.ibtnTieude.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
             this.ibtnTieude.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ibtnTieude.Font = new System.Drawing.Font("League Spartan SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ibtnTieude.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ibtnTieude.ForeColor = System.Drawing.SystemColors.ControlText;
             this.ibtnTieude.IconChar = FontAwesome.Sharp.IconChar.BookOpen;
             this.ibtnTieude.IconColor = System.Drawing.Color.Black;
             this.ibtnTieude.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.ibtnTieude.IconSize = 38;
             this.ibtnTieude.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ibtnTieude.Location = new System.Drawing.Point(0, 434);
+            this.ibtnTieude.Location = new System.Drawing.Point(0, 348);
+            this.ibtnTieude.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ibtnTieude.Name = "ibtnTieude";
-            this.ibtnTieude.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.ibtnTieude.Size = new System.Drawing.Size(378, 60);
+            this.ibtnTieude.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
+            this.ibtnTieude.Size = new System.Drawing.Size(336, 48);
             this.ibtnTieude.TabIndex = 6;
             this.ibtnTieude.Text = "  Tiêu đề";
             this.ibtnTieude.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -248,9 +258,10 @@
             this.panelTheodoiSubmenu.Controls.Add(this.btnBookmark);
             this.panelTheodoiSubmenu.Controls.Add(this.btnAlbum);
             this.panelTheodoiSubmenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelTheodoiSubmenu.Location = new System.Drawing.Point(0, 252);
+            this.panelTheodoiSubmenu.Location = new System.Drawing.Point(0, 202);
+            this.panelTheodoiSubmenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelTheodoiSubmenu.Name = "panelTheodoiSubmenu";
-            this.panelTheodoiSubmenu.Size = new System.Drawing.Size(378, 182);
+            this.panelTheodoiSubmenu.Size = new System.Drawing.Size(336, 146);
             this.panelTheodoiSubmenu.TabIndex = 5;
             // 
             // btnLichsudoc
@@ -260,11 +271,12 @@
             this.btnLichsudoc.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(229)))), ((int)(((byte)(250)))));
             this.btnLichsudoc.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(229)))), ((int)(((byte)(250)))));
             this.btnLichsudoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLichsudoc.Font = new System.Drawing.Font("League Spartan Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLichsudoc.Location = new System.Drawing.Point(0, 120);
+            this.btnLichsudoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLichsudoc.Location = new System.Drawing.Point(0, 96);
+            this.btnLichsudoc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLichsudoc.Name = "btnLichsudoc";
-            this.btnLichsudoc.Padding = new System.Windows.Forms.Padding(60, 0, 0, 0);
-            this.btnLichsudoc.Size = new System.Drawing.Size(378, 60);
+            this.btnLichsudoc.Padding = new System.Windows.Forms.Padding(53, 0, 0, 0);
+            this.btnLichsudoc.Size = new System.Drawing.Size(336, 48);
             this.btnLichsudoc.TabIndex = 2;
             this.btnLichsudoc.Text = "Lịch sử đọc";
             this.btnLichsudoc.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -278,11 +290,12 @@
             this.btnBookmark.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(229)))), ((int)(((byte)(250)))));
             this.btnBookmark.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(229)))), ((int)(((byte)(250)))));
             this.btnBookmark.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBookmark.Font = new System.Drawing.Font("League Spartan Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBookmark.Location = new System.Drawing.Point(0, 60);
+            this.btnBookmark.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBookmark.Location = new System.Drawing.Point(0, 48);
+            this.btnBookmark.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnBookmark.Name = "btnBookmark";
-            this.btnBookmark.Padding = new System.Windows.Forms.Padding(60, 0, 0, 0);
-            this.btnBookmark.Size = new System.Drawing.Size(378, 60);
+            this.btnBookmark.Padding = new System.Windows.Forms.Padding(53, 0, 0, 0);
+            this.btnBookmark.Size = new System.Drawing.Size(336, 48);
             this.btnBookmark.TabIndex = 1;
             this.btnBookmark.Text = "Bookmark";
             this.btnBookmark.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -296,11 +309,12 @@
             this.btnAlbum.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(229)))), ((int)(((byte)(250)))));
             this.btnAlbum.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(229)))), ((int)(((byte)(250)))));
             this.btnAlbum.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAlbum.Font = new System.Drawing.Font("League Spartan Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAlbum.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAlbum.Location = new System.Drawing.Point(0, 0);
+            this.btnAlbum.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAlbum.Name = "btnAlbum";
-            this.btnAlbum.Padding = new System.Windows.Forms.Padding(60, 0, 0, 0);
-            this.btnAlbum.Size = new System.Drawing.Size(378, 60);
+            this.btnAlbum.Padding = new System.Windows.Forms.Padding(53, 0, 0, 0);
+            this.btnAlbum.Size = new System.Drawing.Size(336, 48);
             this.btnAlbum.TabIndex = 0;
             this.btnAlbum.Text = "Album";
             this.btnAlbum.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -314,17 +328,18 @@
             this.ibtnTheodoi.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
             this.ibtnTheodoi.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
             this.ibtnTheodoi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ibtnTheodoi.Font = new System.Drawing.Font("League Spartan SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ibtnTheodoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ibtnTheodoi.ForeColor = System.Drawing.SystemColors.ControlText;
             this.ibtnTheodoi.IconChar = FontAwesome.Sharp.IconChar.Bookmark;
             this.ibtnTheodoi.IconColor = System.Drawing.Color.Black;
             this.ibtnTheodoi.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.ibtnTheodoi.IconSize = 38;
             this.ibtnTheodoi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ibtnTheodoi.Location = new System.Drawing.Point(0, 192);
+            this.ibtnTheodoi.Location = new System.Drawing.Point(0, 154);
+            this.ibtnTheodoi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ibtnTheodoi.Name = "ibtnTheodoi";
-            this.ibtnTheodoi.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.ibtnTheodoi.Size = new System.Drawing.Size(378, 60);
+            this.ibtnTheodoi.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
+            this.ibtnTheodoi.Size = new System.Drawing.Size(336, 48);
             this.ibtnTheodoi.TabIndex = 4;
             this.ibtnTheodoi.Text = "  Theo dõi";
             this.ibtnTheodoi.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -339,17 +354,18 @@
             this.ibtnTrangchu.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
             this.ibtnTrangchu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
             this.ibtnTrangchu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ibtnTrangchu.Font = new System.Drawing.Font("League Spartan SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ibtnTrangchu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ibtnTrangchu.ForeColor = System.Drawing.SystemColors.ControlText;
             this.ibtnTrangchu.IconChar = FontAwesome.Sharp.IconChar.House;
             this.ibtnTrangchu.IconColor = System.Drawing.Color.Black;
             this.ibtnTrangchu.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.ibtnTrangchu.IconSize = 38;
             this.ibtnTrangchu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ibtnTrangchu.Location = new System.Drawing.Point(0, 132);
+            this.ibtnTrangchu.Location = new System.Drawing.Point(0, 106);
+            this.ibtnTrangchu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ibtnTrangchu.Name = "ibtnTrangchu";
-            this.ibtnTrangchu.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.ibtnTrangchu.Size = new System.Drawing.Size(378, 60);
+            this.ibtnTrangchu.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
+            this.ibtnTrangchu.Size = new System.Drawing.Size(336, 48);
             this.ibtnTrangchu.TabIndex = 1;
             this.ibtnTrangchu.Text = "  Trang chủ";
             this.ibtnTrangchu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -363,8 +379,9 @@
             this.panelheader.Controls.Add(this.ibtnXmark);
             this.panelheader.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelheader.Location = new System.Drawing.Point(0, 0);
+            this.panelheader.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelheader.Name = "panelheader";
-            this.panelheader.Size = new System.Drawing.Size(378, 132);
+            this.panelheader.Size = new System.Drawing.Size(336, 106);
             this.panelheader.TabIndex = 0;
             // 
             // ibtnXmark
@@ -377,9 +394,10 @@
             this.ibtnXmark.IconColor = System.Drawing.Color.Black;
             this.ibtnXmark.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.ibtnXmark.IconSize = 38;
-            this.ibtnXmark.Location = new System.Drawing.Point(308, 54);
+            this.ibtnXmark.Location = new System.Drawing.Point(274, 43);
+            this.ibtnXmark.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ibtnXmark.Name = "ibtnXmark";
-            this.ibtnXmark.Size = new System.Drawing.Size(43, 36);
+            this.ibtnXmark.Size = new System.Drawing.Size(38, 29);
             this.ibtnXmark.TabIndex = 1;
             this.ibtnXmark.UseVisualStyleBackColor = true;
             this.ibtnXmark.Click += new System.EventHandler(this.ibtnXmark_Click);
@@ -390,20 +408,12 @@
             this.panelClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.panelClose.Controls.Add(this.btnbars);
             this.panelClose.Controls.Add(this.panelLogo);
-            this.panelClose.Location = new System.Drawing.Point(384, 0);
+            this.panelClose.Location = new System.Drawing.Point(341, 0);
+            this.panelClose.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelClose.Name = "panelClose";
-            this.panelClose.Size = new System.Drawing.Size(229, 132);
+            this.panelClose.Size = new System.Drawing.Size(204, 106);
             this.panelClose.TabIndex = 3;
             this.panelClose.Visible = false;
-            // 
-            // panelLogo
-            // 
-            this.panelLogo.BackgroundImage = global::Login.Properties.Resources.Logo;
-            this.panelLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panelLogo.Location = new System.Drawing.Point(27, 3);
-            this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(199, 126);
-            this.panelLogo.TabIndex = 1;
             // 
             // btnbars
             // 
@@ -413,12 +423,23 @@
             this.btnbars.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
             this.btnbars.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
             this.btnbars.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnbars.Location = new System.Drawing.Point(3, 50);
+            this.btnbars.Location = new System.Drawing.Point(3, 40);
+            this.btnbars.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnbars.Name = "btnbars";
-            this.btnbars.Size = new System.Drawing.Size(40, 36);
+            this.btnbars.Size = new System.Drawing.Size(36, 29);
             this.btnbars.TabIndex = 0;
             this.btnbars.UseVisualStyleBackColor = true;
             this.btnbars.Click += new System.EventHandler(this.btnbars_Click);
+            // 
+            // panelLogo
+            // 
+            this.panelLogo.BackgroundImage = global::Login.Properties.Resources.Logo;
+            this.panelLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panelLogo.Location = new System.Drawing.Point(24, 2);
+            this.panelLogo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panelLogo.Name = "panelLogo";
+            this.panelLogo.Size = new System.Drawing.Size(177, 101);
+            this.panelLogo.TabIndex = 1;
             // 
             // process1
             // 
@@ -432,15 +453,17 @@
             // 
             // AlbumTruyen
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
-            this.ClientSize = new System.Drawing.Size(1898, 1024);
+            this.ClientSize = new System.Drawing.Size(1687, 819);
             this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.panelClose);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "AlbumTruyen";
             this.Text = "AlbumTruyen";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.AlbumTruyen_Load);
             this.panelMenu.ResumeLayout(false);
             this.panelHEALTruyenSubmenu.ResumeLayout(false);
             this.panelTieudeSubmenu.ResumeLayout(false);

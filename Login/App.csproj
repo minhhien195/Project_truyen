@@ -216,6 +216,7 @@
       <DependentUpon>AlbumTruyen.cs</DependentUpon>
     </Compile>
     <Compile Include="API-Decutruyen.cs" />
+    <Compile Include="API-nhantin.cs" />
     <Compile Include="API-TimKiemTruyen.cs" />
     <Compile Include="API_Album.cs" />
     <Compile Include="API_Reading_History.cs" />
@@ -226,6 +227,12 @@
     </Compile>
     <Compile Include="Change_Password.Designer.cs">
       <DependentUpon>Change_Password.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fix.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fix.Designer.cs">
+      <DependentUpon>Fix.cs</DependentUpon>
     </Compile>
     <Compile Include="Forget_Password.cs">
       <SubType>Form</SubType>
@@ -244,6 +251,12 @@
     </Compile>
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NvUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NvUpdate.Designer.cs">
+      <DependentUpon>NvUpdate.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -273,6 +286,9 @@
     <EmbeddedResource Include="Change_Password.resx">
       <DependentUpon>Change_Password.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Fix.resx">
+      <DependentUpon>Fix.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forget_Password.resx">
       <DependentUpon>Forget_Password.cs</DependentUpon>
     </EmbeddedResource>
@@ -281,6 +297,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NvUpdate.resx">
+      <DependentUpon>NvUpdate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
@@ -394,6 +413,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\images.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\phongcanh.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />
