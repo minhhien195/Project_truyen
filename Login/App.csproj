@@ -264,13 +264,11 @@
     <Compile Include="Signup.Designer.cs">
       <DependentUpon>Signup.cs</DependentUpon>
     </Compile>
-<<<<<<< HEAD
     <EmbeddedResource Include="AccountInfo.resx">
       <DependentUpon>AccountInfo.cs</DependentUpon>
-=======
+    </EmbeddedResource>
     <EmbeddedResource Include="AlbumTruyen.resx">
       <DependentUpon>AlbumTruyen.cs</DependentUpon>
->>>>>>> 9e8ad5bd609b327e54e4f2f8fb299e7c366f649d
     </EmbeddedResource>
     <EmbeddedResource Include="Change_Password.resx">
       <DependentUpon>Change_Password.cs</DependentUpon>

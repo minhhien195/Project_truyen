@@ -16,11 +16,8 @@ namespace Login
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-<<<<<<< HEAD
             Application.Run(new AccountInfo());
-=======
             Application.Run(new AlbumTruyen());
->>>>>>> 9e8ad5bd609b327e54e4f2f8fb299e7c366f649d
         }
     }
 }

@@ -279,9 +279,7 @@ D:\code\C#\Project_truyen\Login\bin\Debug\System.Threading.Tasks.Extensions.xml
 D:\code\C#\Project_truyen\Login\bin\Debug\System.ValueTuple.xml
 D:\code\C#\Project_truyen\Login\obj\Debug\vi-VN\Login.resources.dll
 D:\code\C#\Project_truyen\Login\obj\Debug\App.csproj.Up2Date
-<<<<<<< HEAD
 D:\code\C#\Project_truyen\Login\obj\Debug\Login.AccountInfo.resources
-=======
 E:\HK4_UIT\LTMCB\Project\Login\Login\bin\Debug\grpc_csharp_ext.x86.dll
 E:\HK4_UIT\LTMCB\Project\Login\Login\bin\Debug\grpc_csharp_ext.x64.dll
 E:\HK4_UIT\LTMCB\Project\Login\Login\bin\Debug\libgrpc_csharp_ext.x64.so
@@ -418,4 +416,5 @@ E:\HK4_UIT\LTMCB\Project\Login\Login\obj\Debug\vi-VN\Login.resources.dll
 E:\HK4_UIT\LTMCB\Project\Login\Login\obj\Debug\App.csproj.Up2Date
 E:\HK4_UIT\LTMCB\Project\Login\Login\obj\Debug\Login.exe
 E:\HK4_UIT\LTMCB\Project\Login\Login\obj\Debug\Login.pdb
->>>>>>> 9e8ad5bd609b327e54e4f2f8fb299e7c366f649d
+D:\code\C#\Project_truyen\Login\bin\Debug\FontAwesome.Sharp.dll
+D:\code\C#\Project_truyen\Login\obj\Debug\Login.AlbumTruyen.resources
