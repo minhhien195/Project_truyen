@@ -28,452 +28,596 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panelMenu = new System.Windows.Forms.Panel();
-            this.panelHEALTruyenSubmenu = new System.Windows.Forms.Panel();
-            this.btnThongbao = new System.Windows.Forms.Button();
-            this.btnChat = new System.Windows.Forms.Button();
-            this.btnHelpandError = new System.Windows.Forms.Button();
-            this.ibtnHEALTruyen = new FontAwesome.Sharp.IconButton();
-            this.panelTieudeSubmenu = new System.Windows.Forms.Panel();
-            this.btnBXH = new System.Windows.Forms.Button();
-            this.btnadvancedsearch = new System.Windows.Forms.Button();
-            this.ibtnTieude = new FontAwesome.Sharp.IconButton();
-            this.panelTheodoiSubmenu = new System.Windows.Forms.Panel();
-            this.btnLichsudoc = new System.Windows.Forms.Button();
-            this.btnBookmark = new System.Windows.Forms.Button();
-            this.btnAlbum = new System.Windows.Forms.Button();
-            this.ibtnTheodoi = new FontAwesome.Sharp.IconButton();
-            this.ibtnTrangchu = new FontAwesome.Sharp.IconButton();
-            this.panelheader = new System.Windows.Forms.Panel();
-            this.ibtnXmark = new FontAwesome.Sharp.IconButton();
-            this.panelClose = new System.Windows.Forms.Panel();
-            this.panelLogo = new System.Windows.Forms.Panel();
-            this.btnbars = new System.Windows.Forms.Button();
-            this.process1 = new System.Diagnostics.Process();
-            this.panelMenu.SuspendLayout();
-            this.panelHEALTruyenSubmenu.SuspendLayout();
-            this.panelTieudeSubmenu.SuspendLayout();
-            this.panelTheodoiSubmenu.SuspendLayout();
-            this.panelheader.SuspendLayout();
-            this.panelClose.SuspendLayout();
+            this.lbduongke = new System.Windows.Forms.Label();
+            this.lbAlbum = new System.Windows.Forms.Label();
+            this.panelAlbumTruyen = new System.Windows.Forms.Panel();
+            this.panelTruyen1 = new System.Windows.Forms.Panel();
+            this.ibtnTatthongbao1 = new FontAwesome.Sharp.IconButton();
+            this.ibtnThongbao1 = new FontAwesome.Sharp.IconButton();
+            this.ibtnXoa1 = new FontAwesome.Sharp.IconButton();
+            this.ibtnchuongdangdoc1 = new FontAwesome.Sharp.IconButton();
+            this.ibtnsochuong1 = new FontAwesome.Sharp.IconButton();
+            this.lbTenanh1 = new System.Windows.Forms.Label();
+            this.ptrAnh1 = new System.Windows.Forms.PictureBox();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnTacgia1 = new System.Windows.Forms.Button();
+            this.btnTinhtrang1 = new System.Windows.Forms.Button();
+            this.btnTheloai1 = new System.Windows.Forms.Button();
+            this.ibtnBetoiLon = new FontAwesome.Sharp.IconButton();
+            this.iconSplitButton1 = new FontAwesome.Sharp.IconSplitButton();
+            this.ibtnChiaseAlbum = new FontAwesome.Sharp.IconButton();
+            this.ibtnVetrc1trang = new FontAwesome.Sharp.IconButton();
+            this.ibtnTrang1 = new FontAwesome.Sharp.IconButton();
+            this.ibtnTrang2 = new FontAwesome.Sharp.IconButton();
+            this.ibtnTrang3 = new FontAwesome.Sharp.IconButton();
+            this.ibtnVesau1trang = new FontAwesome.Sharp.IconButton();
+            this.panelTenAlbum = new System.Windows.Forms.Panel();
+            this.ibtnLontoiBe = new FontAwesome.Sharp.IconButton();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.ibtnContiep = new FontAwesome.Sharp.IconButton();
+            this.ibtnTrang4 = new FontAwesome.Sharp.IconButton();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnGo = new System.Windows.Forms.Button();
+            this.rtbTimtrangAlbum = new System.Windows.Forms.RichTextBox();
+            this.panelAlbumTruyen.SuspendLayout();
+            this.panelTruyen1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptrAnh1)).BeginInit();
+            this.flowLayoutPanel1.SuspendLayout();
+            this.panelTenAlbum.SuspendLayout();
+            this.flowLayoutPanel2.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panelMenu
+            // lbduongke
             // 
-            this.panelMenu.AutoScroll = true;
-            this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(227)))), ((int)(((byte)(243)))));
-            this.panelMenu.Controls.Add(this.panelHEALTruyenSubmenu);
-            this.panelMenu.Controls.Add(this.ibtnHEALTruyen);
-            this.panelMenu.Controls.Add(this.panelTieudeSubmenu);
-            this.panelMenu.Controls.Add(this.ibtnTieude);
-            this.panelMenu.Controls.Add(this.panelTheodoiSubmenu);
-            this.panelMenu.Controls.Add(this.ibtnTheodoi);
-            this.panelMenu.Controls.Add(this.ibtnTrangchu);
-            this.panelMenu.Controls.Add(this.panelheader);
-            this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelMenu.Font = new System.Drawing.Font("League Spartan", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panelMenu.Location = new System.Drawing.Point(0, 0);
-            this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(378, 1024);
-            this.panelMenu.TabIndex = 0;
+            this.lbduongke.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lbduongke.Enabled = false;
+            this.lbduongke.Font = new System.Drawing.Font("League Spartan", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbduongke.ForeColor = System.Drawing.Color.Black;
+            this.lbduongke.Location = new System.Drawing.Point(10, 60);
+            this.lbduongke.Name = "lbduongke";
+            this.lbduongke.Size = new System.Drawing.Size(1804, 1);
+            this.lbduongke.TabIndex = 0;
             // 
-            // panelHEALTruyenSubmenu
+            // lbAlbum
             // 
-            this.panelHEALTruyenSubmenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(236)))), ((int)(((byte)(250)))));
-            this.panelHEALTruyenSubmenu.Controls.Add(this.btnThongbao);
-            this.panelHEALTruyenSubmenu.Controls.Add(this.btnChat);
-            this.panelHEALTruyenSubmenu.Controls.Add(this.btnHelpandError);
-            this.panelHEALTruyenSubmenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelHEALTruyenSubmenu.Location = new System.Drawing.Point(0, 675);
-            this.panelHEALTruyenSubmenu.Name = "panelHEALTruyenSubmenu";
-            this.panelHEALTruyenSubmenu.Size = new System.Drawing.Size(378, 182);
-            this.panelHEALTruyenSubmenu.TabIndex = 9;
+            this.lbAlbum.AutoSize = true;
+            this.lbAlbum.Font = new System.Drawing.Font("League Spartan SemiBold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbAlbum.Location = new System.Drawing.Point(9, 19);
+            this.lbAlbum.Name = "lbAlbum";
+            this.lbAlbum.Size = new System.Drawing.Size(184, 41);
+            this.lbAlbum.TabIndex = 1;
+            this.lbAlbum.Text = "Album Truyện";
             // 
-            // btnThongbao
+            // panelAlbumTruyen
             // 
-            this.btnThongbao.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnThongbao.FlatAppearance.BorderSize = 0;
-            this.btnThongbao.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(229)))), ((int)(((byte)(250)))));
-            this.btnThongbao.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(229)))), ((int)(((byte)(250)))));
-            this.btnThongbao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThongbao.Font = new System.Drawing.Font("League Spartan Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThongbao.Location = new System.Drawing.Point(0, 120);
-            this.btnThongbao.Name = "btnThongbao";
-            this.btnThongbao.Padding = new System.Windows.Forms.Padding(60, 0, 0, 0);
-            this.btnThongbao.Size = new System.Drawing.Size(378, 60);
-            this.btnThongbao.TabIndex = 2;
-            this.btnThongbao.Text = "Thông báo";
-            this.btnThongbao.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThongbao.UseVisualStyleBackColor = true;
-            this.btnThongbao.Click += new System.EventHandler(this.btnThongbao_Click);
+            this.panelAlbumTruyen.AutoScroll = true;
+            this.panelAlbumTruyen.Controls.Add(this.panelTruyen1);
+            this.panelAlbumTruyen.Location = new System.Drawing.Point(38, 102);
+            this.panelAlbumTruyen.Name = "panelAlbumTruyen";
+            this.panelAlbumTruyen.Size = new System.Drawing.Size(1804, 813);
+            this.panelAlbumTruyen.TabIndex = 4;
             // 
-            // btnChat
+            // panelTruyen1
             // 
-            this.btnChat.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnChat.FlatAppearance.BorderSize = 0;
-            this.btnChat.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(229)))), ((int)(((byte)(250)))));
-            this.btnChat.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(229)))), ((int)(((byte)(250)))));
-            this.btnChat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnChat.Font = new System.Drawing.Font("League Spartan Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChat.Location = new System.Drawing.Point(0, 60);
-            this.btnChat.Name = "btnChat";
-            this.btnChat.Padding = new System.Windows.Forms.Padding(60, 0, 0, 0);
-            this.btnChat.Size = new System.Drawing.Size(378, 60);
-            this.btnChat.TabIndex = 1;
-            this.btnChat.Text = "Chat";
-            this.btnChat.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnChat.UseVisualStyleBackColor = true;
-            this.btnChat.Click += new System.EventHandler(this.btnChat_Click);
+            this.panelTruyen1.Controls.Add(this.ibtnTatthongbao1);
+            this.panelTruyen1.Controls.Add(this.ibtnThongbao1);
+            this.panelTruyen1.Controls.Add(this.ibtnXoa1);
+            this.panelTruyen1.Controls.Add(this.ibtnchuongdangdoc1);
+            this.panelTruyen1.Controls.Add(this.ibtnsochuong1);
+            this.panelTruyen1.Controls.Add(this.lbTenanh1);
+            this.panelTruyen1.Controls.Add(this.ptrAnh1);
+            this.panelTruyen1.Controls.Add(this.flowLayoutPanel1);
+            this.panelTruyen1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelTruyen1.Location = new System.Drawing.Point(0, 0);
+            this.panelTruyen1.Name = "panelTruyen1";
+            this.panelTruyen1.Size = new System.Drawing.Size(1804, 219);
+            this.panelTruyen1.TabIndex = 0;
             // 
-            // btnHelpandError
+            // ibtnTatthongbao1
             // 
-            this.btnHelpandError.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnHelpandError.FlatAppearance.BorderSize = 0;
-            this.btnHelpandError.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(229)))), ((int)(((byte)(250)))));
-            this.btnHelpandError.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(229)))), ((int)(((byte)(250)))));
-            this.btnHelpandError.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHelpandError.Font = new System.Drawing.Font("League Spartan Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHelpandError.Location = new System.Drawing.Point(0, 0);
-            this.btnHelpandError.Name = "btnHelpandError";
-            this.btnHelpandError.Padding = new System.Windows.Forms.Padding(60, 0, 0, 0);
-            this.btnHelpandError.Size = new System.Drawing.Size(378, 60);
-            this.btnHelpandError.TabIndex = 0;
-            this.btnHelpandError.Text = "Trợ giúp và báo lỗi";
-            this.btnHelpandError.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHelpandError.UseVisualStyleBackColor = true;
-            this.btnHelpandError.Click += new System.EventHandler(this.btnHelpandError_Click);
+            this.ibtnTatthongbao1.FlatAppearance.BorderSize = 0;
+            this.ibtnTatthongbao1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
+            this.ibtnTatthongbao1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
+            this.ibtnTatthongbao1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ibtnTatthongbao1.IconChar = FontAwesome.Sharp.IconChar.BellSlash;
+            this.ibtnTatthongbao1.IconColor = System.Drawing.Color.Black;
+            this.ibtnTatthongbao1.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.ibtnTatthongbao1.IconSize = 42;
+            this.ibtnTatthongbao1.Location = new System.Drawing.Point(1725, 75);
+            this.ibtnTatthongbao1.Name = "ibtnTatthongbao1";
+            this.ibtnTatthongbao1.Size = new System.Drawing.Size(36, 51);
+            this.ibtnTatthongbao1.TabIndex = 6;
+            this.ibtnTatthongbao1.UseVisualStyleBackColor = true;
             // 
-            // ibtnHEALTruyen
+            // ibtnThongbao1
             // 
-            this.ibtnHEALTruyen.Dock = System.Windows.Forms.DockStyle.Top;
-            this.ibtnHEALTruyen.FlatAppearance.BorderSize = 0;
-            this.ibtnHEALTruyen.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
-            this.ibtnHEALTruyen.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
-            this.ibtnHEALTruyen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ibtnHEALTruyen.Font = new System.Drawing.Font("League Spartan SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ibtnHEALTruyen.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.ibtnHEALTruyen.IconChar = FontAwesome.Sharp.IconChar.ThumbTack;
-            this.ibtnHEALTruyen.IconColor = System.Drawing.Color.Black;
-            this.ibtnHEALTruyen.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ibtnHEALTruyen.IconSize = 38;
-            this.ibtnHEALTruyen.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ibtnHEALTruyen.Location = new System.Drawing.Point(0, 615);
-            this.ibtnHEALTruyen.Name = "ibtnHEALTruyen";
-            this.ibtnHEALTruyen.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.ibtnHEALTruyen.Rotation = 30D;
-            this.ibtnHEALTruyen.Size = new System.Drawing.Size(378, 60);
-            this.ibtnHEALTruyen.TabIndex = 8;
-            this.ibtnHEALTruyen.Text = "  HEALTruyen";
-            this.ibtnHEALTruyen.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ibtnHEALTruyen.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.ibtnHEALTruyen.UseVisualStyleBackColor = true;
-            this.ibtnHEALTruyen.Click += new System.EventHandler(this.ibtnHEALTruyen_Click);
+            this.ibtnThongbao1.FlatAppearance.BorderSize = 0;
+            this.ibtnThongbao1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
+            this.ibtnThongbao1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
+            this.ibtnThongbao1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ibtnThongbao1.IconChar = FontAwesome.Sharp.IconChar.Bell;
+            this.ibtnThongbao1.IconColor = System.Drawing.Color.Black;
+            this.ibtnThongbao1.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.ibtnThongbao1.IconSize = 38;
+            this.ibtnThongbao1.Location = new System.Drawing.Point(1757, 75);
+            this.ibtnThongbao1.Name = "ibtnThongbao1";
+            this.ibtnThongbao1.Size = new System.Drawing.Size(36, 40);
+            this.ibtnThongbao1.TabIndex = 5;
+            this.ibtnThongbao1.UseVisualStyleBackColor = true;
             // 
-            // panelTieudeSubmenu
+            // ibtnXoa1
             // 
-            this.panelTieudeSubmenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(236)))), ((int)(((byte)(250)))));
-            this.panelTieudeSubmenu.Controls.Add(this.btnBXH);
-            this.panelTieudeSubmenu.Controls.Add(this.btnadvancedsearch);
-            this.panelTieudeSubmenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelTieudeSubmenu.Location = new System.Drawing.Point(0, 494);
-            this.panelTieudeSubmenu.Name = "panelTieudeSubmenu";
-            this.panelTieudeSubmenu.Size = new System.Drawing.Size(378, 121);
-            this.panelTieudeSubmenu.TabIndex = 7;
+            this.ibtnXoa1.FlatAppearance.BorderSize = 0;
+            this.ibtnXoa1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
+            this.ibtnXoa1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
+            this.ibtnXoa1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ibtnXoa1.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
+            this.ibtnXoa1.IconColor = System.Drawing.Color.Black;
+            this.ibtnXoa1.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.ibtnXoa1.IconSize = 38;
+            this.ibtnXoa1.Location = new System.Drawing.Point(1757, 14);
+            this.ibtnXoa1.Name = "ibtnXoa1";
+            this.ibtnXoa1.Size = new System.Drawing.Size(36, 40);
+            this.ibtnXoa1.TabIndex = 4;
+            this.ibtnXoa1.UseVisualStyleBackColor = true;
             // 
-            // btnBXH
+            // ibtnchuongdangdoc1
             // 
-            this.btnBXH.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnBXH.FlatAppearance.BorderSize = 0;
-            this.btnBXH.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(229)))), ((int)(((byte)(250)))));
-            this.btnBXH.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(229)))), ((int)(((byte)(250)))));
-            this.btnBXH.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBXH.Font = new System.Drawing.Font("League Spartan Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBXH.Location = new System.Drawing.Point(0, 60);
-            this.btnBXH.Name = "btnBXH";
-            this.btnBXH.Padding = new System.Windows.Forms.Padding(60, 0, 0, 0);
-            this.btnBXH.Size = new System.Drawing.Size(378, 60);
-            this.btnBXH.TabIndex = 1;
-            this.btnBXH.Text = "Bảng xếp hạng";
-            this.btnBXH.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBXH.UseVisualStyleBackColor = true;
-            this.btnBXH.Click += new System.EventHandler(this.btnBXH_Click);
+            this.ibtnchuongdangdoc1.AutoSize = true;
+            this.ibtnchuongdangdoc1.FlatAppearance.BorderSize = 0;
+            this.ibtnchuongdangdoc1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
+            this.ibtnchuongdangdoc1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
+            this.ibtnchuongdangdoc1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ibtnchuongdangdoc1.Font = new System.Drawing.Font("League Spartan", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ibtnchuongdangdoc1.IconChar = FontAwesome.Sharp.IconChar.Bookmark;
+            this.ibtnchuongdangdoc1.IconColor = System.Drawing.Color.Black;
+            this.ibtnchuongdangdoc1.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.ibtnchuongdangdoc1.IconSize = 32;
+            this.ibtnchuongdangdoc1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ibtnchuongdangdoc1.Location = new System.Drawing.Point(177, 98);
+            this.ibtnchuongdangdoc1.Name = "ibtnchuongdangdoc1";
+            this.ibtnchuongdangdoc1.Size = new System.Drawing.Size(198, 40);
+            this.ibtnchuongdangdoc1.TabIndex = 3;
+            this.ibtnchuongdangdoc1.Text = "  52 chương";
+            this.ibtnchuongdangdoc1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ibtnchuongdangdoc1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.ibtnchuongdangdoc1.UseVisualStyleBackColor = true;
             // 
-            // btnadvancedsearch
+            // ibtnsochuong1
             // 
-            this.btnadvancedsearch.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnadvancedsearch.FlatAppearance.BorderSize = 0;
-            this.btnadvancedsearch.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(229)))), ((int)(((byte)(250)))));
-            this.btnadvancedsearch.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(229)))), ((int)(((byte)(250)))));
-            this.btnadvancedsearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnadvancedsearch.Font = new System.Drawing.Font("League Spartan Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnadvancedsearch.Location = new System.Drawing.Point(0, 0);
-            this.btnadvancedsearch.Name = "btnadvancedsearch";
-            this.btnadvancedsearch.Padding = new System.Windows.Forms.Padding(60, 0, 0, 0);
-            this.btnadvancedsearch.Size = new System.Drawing.Size(378, 60);
-            this.btnadvancedsearch.TabIndex = 0;
-            this.btnadvancedsearch.Text = "Tìm kiếm nâng cao";
-            this.btnadvancedsearch.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnadvancedsearch.UseVisualStyleBackColor = true;
-            this.btnadvancedsearch.Click += new System.EventHandler(this.btnadvancedsearch_Click);
+            this.ibtnsochuong1.AutoSize = true;
+            this.ibtnsochuong1.FlatAppearance.BorderSize = 0;
+            this.ibtnsochuong1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
+            this.ibtnsochuong1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
+            this.ibtnsochuong1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ibtnsochuong1.Font = new System.Drawing.Font("League Spartan", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ibtnsochuong1.IconChar = FontAwesome.Sharp.IconChar.LayerGroup;
+            this.ibtnsochuong1.IconColor = System.Drawing.Color.Black;
+            this.ibtnsochuong1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ibtnsochuong1.IconSize = 32;
+            this.ibtnsochuong1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ibtnsochuong1.Location = new System.Drawing.Point(177, 54);
+            this.ibtnsochuong1.Name = "ibtnsochuong1";
+            this.ibtnsochuong1.Size = new System.Drawing.Size(198, 40);
+            this.ibtnsochuong1.TabIndex = 2;
+            this.ibtnsochuong1.Text = "  151 chương";
+            this.ibtnsochuong1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ibtnsochuong1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.ibtnsochuong1.UseVisualStyleBackColor = true;
             // 
-            // ibtnTieude
+            // lbTenanh1
             // 
-            this.ibtnTieude.Dock = System.Windows.Forms.DockStyle.Top;
-            this.ibtnTieude.FlatAppearance.BorderSize = 0;
-            this.ibtnTieude.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
-            this.ibtnTieude.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
-            this.ibtnTieude.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ibtnTieude.Font = new System.Drawing.Font("League Spartan SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ibtnTieude.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.ibtnTieude.IconChar = FontAwesome.Sharp.IconChar.BookOpen;
-            this.ibtnTieude.IconColor = System.Drawing.Color.Black;
-            this.ibtnTieude.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ibtnTieude.IconSize = 38;
-            this.ibtnTieude.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ibtnTieude.Location = new System.Drawing.Point(0, 434);
-            this.ibtnTieude.Name = "ibtnTieude";
-            this.ibtnTieude.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.ibtnTieude.Size = new System.Drawing.Size(378, 60);
-            this.ibtnTieude.TabIndex = 6;
-            this.ibtnTieude.Text = "  Tiêu đề";
-            this.ibtnTieude.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ibtnTieude.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.ibtnTieude.UseVisualStyleBackColor = true;
-            this.ibtnTieude.Click += new System.EventHandler(this.ibtnTieude_Click);
+            this.lbTenanh1.AutoSize = true;
+            this.lbTenanh1.Font = new System.Drawing.Font("League Spartan SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTenanh1.Location = new System.Drawing.Point(181, 14);
+            this.lbTenanh1.Name = "lbTenanh1";
+            this.lbTenanh1.Size = new System.Drawing.Size(575, 36);
+            this.lbTenanh1.TabIndex = 1;
+            this.lbTenanh1.Text = "Theo Giang Hồ Bắt Đầu, Liều Thành Võ Đạo Chân Quân";
+            this.lbTenanh1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.lbTenanh1_MouseClick);
+            this.lbTenanh1.MouseLeave += new System.EventHandler(this.lbTenanh1_MouseLeave);
+            this.lbTenanh1.MouseHover += new System.EventHandler(this.lbTenanh1_MouseHover);
             // 
-            // panelTheodoiSubmenu
+            // ptrAnh1
             // 
-            this.panelTheodoiSubmenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(236)))), ((int)(((byte)(250)))));
-            this.panelTheodoiSubmenu.Controls.Add(this.btnLichsudoc);
-            this.panelTheodoiSubmenu.Controls.Add(this.btnBookmark);
-            this.panelTheodoiSubmenu.Controls.Add(this.btnAlbum);
-            this.panelTheodoiSubmenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelTheodoiSubmenu.Location = new System.Drawing.Point(0, 252);
-            this.panelTheodoiSubmenu.Name = "panelTheodoiSubmenu";
-            this.panelTheodoiSubmenu.Size = new System.Drawing.Size(378, 182);
-            this.panelTheodoiSubmenu.TabIndex = 5;
+            this.ptrAnh1.BackgroundImage = global::Login.Properties.Resources.Album_truyen;
+            this.ptrAnh1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ptrAnh1.Location = new System.Drawing.Point(19, 14);
+            this.ptrAnh1.Name = "ptrAnh1";
+            this.ptrAnh1.Size = new System.Drawing.Size(152, 193);
+            this.ptrAnh1.TabIndex = 0;
+            this.ptrAnh1.TabStop = false;
             // 
-            // btnLichsudoc
+            // flowLayoutPanel1
             // 
-            this.btnLichsudoc.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnLichsudoc.FlatAppearance.BorderSize = 0;
-            this.btnLichsudoc.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(229)))), ((int)(((byte)(250)))));
-            this.btnLichsudoc.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(229)))), ((int)(((byte)(250)))));
-            this.btnLichsudoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLichsudoc.Font = new System.Drawing.Font("League Spartan Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLichsudoc.Location = new System.Drawing.Point(0, 120);
-            this.btnLichsudoc.Name = "btnLichsudoc";
-            this.btnLichsudoc.Padding = new System.Windows.Forms.Padding(60, 0, 0, 0);
-            this.btnLichsudoc.Size = new System.Drawing.Size(378, 60);
-            this.btnLichsudoc.TabIndex = 2;
-            this.btnLichsudoc.Text = "Lịch sử đọc";
-            this.btnLichsudoc.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLichsudoc.UseVisualStyleBackColor = true;
-            this.btnLichsudoc.Click += new System.EventHandler(this.btnLichsudoc_Click);
+            this.flowLayoutPanel1.Controls.Add(this.btnTacgia1);
+            this.flowLayoutPanel1.Controls.Add(this.btnTinhtrang1);
+            this.flowLayoutPanel1.Controls.Add(this.btnTheloai1);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(184, 156);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(774, 51);
+            this.flowLayoutPanel1.TabIndex = 13;
             // 
-            // btnBookmark
+            // btnTacgia1
             // 
-            this.btnBookmark.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnBookmark.FlatAppearance.BorderSize = 0;
-            this.btnBookmark.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(229)))), ((int)(((byte)(250)))));
-            this.btnBookmark.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(229)))), ((int)(((byte)(250)))));
-            this.btnBookmark.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBookmark.Font = new System.Drawing.Font("League Spartan Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBookmark.Location = new System.Drawing.Point(0, 60);
-            this.btnBookmark.Name = "btnBookmark";
-            this.btnBookmark.Padding = new System.Windows.Forms.Padding(60, 0, 0, 0);
-            this.btnBookmark.Size = new System.Drawing.Size(378, 60);
-            this.btnBookmark.TabIndex = 1;
-            this.btnBookmark.Text = "Bookmark";
-            this.btnBookmark.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBookmark.UseVisualStyleBackColor = true;
-            this.btnBookmark.Click += new System.EventHandler(this.btnBookmark_Click);
+            this.btnTacgia1.AutoSize = true;
+            this.btnTacgia1.FlatAppearance.BorderSize = 4;
+            this.btnTacgia1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btnTacgia1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.btnTacgia1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTacgia1.Font = new System.Drawing.Font("League Spartan SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTacgia1.ForeColor = System.Drawing.Color.Red;
+            this.btnTacgia1.Location = new System.Drawing.Point(3, 3);
+            this.btnTacgia1.Margin = new System.Windows.Forms.Padding(3, 3, 10, 3);
+            this.btnTacgia1.Name = "btnTacgia1";
+            this.btnTacgia1.Size = new System.Drawing.Size(138, 45);
+            this.btnTacgia1.TabIndex = 12;
+            this.btnTacgia1.Text = "Chân Một Túy";
+            this.btnTacgia1.UseVisualStyleBackColor = true;
             // 
-            // btnAlbum
+            // btnTinhtrang1
             // 
-            this.btnAlbum.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnAlbum.FlatAppearance.BorderSize = 0;
-            this.btnAlbum.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(229)))), ((int)(((byte)(250)))));
-            this.btnAlbum.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(229)))), ((int)(((byte)(250)))));
-            this.btnAlbum.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAlbum.Font = new System.Drawing.Font("League Spartan Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAlbum.Location = new System.Drawing.Point(0, 0);
-            this.btnAlbum.Name = "btnAlbum";
-            this.btnAlbum.Padding = new System.Windows.Forms.Padding(60, 0, 0, 0);
-            this.btnAlbum.Size = new System.Drawing.Size(378, 60);
-            this.btnAlbum.TabIndex = 0;
-            this.btnAlbum.Text = "Album";
-            this.btnAlbum.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAlbum.UseVisualStyleBackColor = true;
-            this.btnAlbum.Click += new System.EventHandler(this.btnAlbum_Click);
+            this.btnTinhtrang1.AutoSize = true;
+            this.btnTinhtrang1.FlatAppearance.BorderSize = 4;
+            this.btnTinhtrang1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btnTinhtrang1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.btnTinhtrang1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTinhtrang1.Font = new System.Drawing.Font("League Spartan SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTinhtrang1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(110)))), ((int)(((byte)(0)))));
+            this.btnTinhtrang1.Location = new System.Drawing.Point(154, 3);
+            this.btnTinhtrang1.Margin = new System.Windows.Forms.Padding(3, 3, 10, 3);
+            this.btnTinhtrang1.Name = "btnTinhtrang1";
+            this.btnTinhtrang1.Size = new System.Drawing.Size(109, 45);
+            this.btnTinhtrang1.TabIndex = 11;
+            this.btnTinhtrang1.Text = "Đang ra";
+            this.btnTinhtrang1.UseVisualStyleBackColor = true;
             // 
-            // ibtnTheodoi
+            // btnTheloai1
             // 
-            this.ibtnTheodoi.Dock = System.Windows.Forms.DockStyle.Top;
-            this.ibtnTheodoi.FlatAppearance.BorderSize = 0;
-            this.ibtnTheodoi.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
-            this.ibtnTheodoi.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
-            this.ibtnTheodoi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ibtnTheodoi.Font = new System.Drawing.Font("League Spartan SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ibtnTheodoi.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.ibtnTheodoi.IconChar = FontAwesome.Sharp.IconChar.Bookmark;
-            this.ibtnTheodoi.IconColor = System.Drawing.Color.Black;
-            this.ibtnTheodoi.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.ibtnTheodoi.IconSize = 38;
-            this.ibtnTheodoi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ibtnTheodoi.Location = new System.Drawing.Point(0, 192);
-            this.ibtnTheodoi.Name = "ibtnTheodoi";
-            this.ibtnTheodoi.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.ibtnTheodoi.Size = new System.Drawing.Size(378, 60);
-            this.ibtnTheodoi.TabIndex = 4;
-            this.ibtnTheodoi.Text = "  Theo dõi";
-            this.ibtnTheodoi.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ibtnTheodoi.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.ibtnTheodoi.UseVisualStyleBackColor = true;
-            this.ibtnTheodoi.Click += new System.EventHandler(this.ibtnTheodoi_Click);
+            this.btnTheloai1.AutoSize = true;
+            this.btnTheloai1.FlatAppearance.BorderSize = 4;
+            this.btnTheloai1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btnTheloai1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.btnTheloai1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTheloai1.Font = new System.Drawing.Font("League Spartan SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTheloai1.ForeColor = System.Drawing.Color.Blue;
+            this.btnTheloai1.Location = new System.Drawing.Point(276, 3);
+            this.btnTheloai1.Name = "btnTheloai1";
+            this.btnTheloai1.Size = new System.Drawing.Size(147, 45);
+            this.btnTheloai1.TabIndex = 10;
+            this.btnTheloai1.Text = "Huyền huyễn";
+            this.btnTheloai1.UseVisualStyleBackColor = true;
             // 
-            // ibtnTrangchu
+            // ibtnBetoiLon
             // 
-            this.ibtnTrangchu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.ibtnTrangchu.FlatAppearance.BorderSize = 0;
-            this.ibtnTrangchu.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
-            this.ibtnTrangchu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
-            this.ibtnTrangchu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ibtnTrangchu.Font = new System.Drawing.Font("League Spartan SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ibtnTrangchu.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.ibtnTrangchu.IconChar = FontAwesome.Sharp.IconChar.House;
-            this.ibtnTrangchu.IconColor = System.Drawing.Color.Black;
-            this.ibtnTrangchu.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ibtnTrangchu.IconSize = 38;
-            this.ibtnTrangchu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ibtnTrangchu.Location = new System.Drawing.Point(0, 132);
-            this.ibtnTrangchu.Name = "ibtnTrangchu";
-            this.ibtnTrangchu.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.ibtnTrangchu.Size = new System.Drawing.Size(378, 60);
-            this.ibtnTrangchu.TabIndex = 1;
-            this.ibtnTrangchu.Text = "  Trang chủ";
-            this.ibtnTrangchu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ibtnTrangchu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.ibtnTrangchu.UseVisualStyleBackColor = true;
+            this.ibtnBetoiLon.FlatAppearance.BorderSize = 0;
+            this.ibtnBetoiLon.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
+            this.ibtnBetoiLon.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
+            this.ibtnBetoiLon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ibtnBetoiLon.IconChar = FontAwesome.Sharp.IconChar.ArrowDownShortWide;
+            this.ibtnBetoiLon.IconColor = System.Drawing.Color.Black;
+            this.ibtnBetoiLon.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ibtnBetoiLon.IconSize = 38;
+            this.ibtnBetoiLon.Location = new System.Drawing.Point(1767, 27);
+            this.ibtnBetoiLon.Name = "ibtnBetoiLon";
+            this.ibtnBetoiLon.Size = new System.Drawing.Size(44, 33);
+            this.ibtnBetoiLon.TabIndex = 2;
+            this.ibtnBetoiLon.UseVisualStyleBackColor = true;
             // 
-            // panelheader
+            // iconSplitButton1
             // 
-            this.panelheader.BackgroundImage = global::Login.Properties.Resources.Logo;
-            this.panelheader.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panelheader.Controls.Add(this.ibtnXmark);
-            this.panelheader.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelheader.Location = new System.Drawing.Point(0, 0);
-            this.panelheader.Name = "panelheader";
-            this.panelheader.Size = new System.Drawing.Size(378, 132);
-            this.panelheader.TabIndex = 0;
+            this.iconSplitButton1.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.iconSplitButton1.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconSplitButton1.IconColor = System.Drawing.Color.Black;
+            this.iconSplitButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconSplitButton1.IconSize = 48;
+            this.iconSplitButton1.Name = "iconSplitButton1";
+            this.iconSplitButton1.Rotation = 0D;
+            this.iconSplitButton1.Size = new System.Drawing.Size(23, 23);
+            this.iconSplitButton1.Text = "iconSplitButton1";
             // 
-            // ibtnXmark
+            // ibtnChiaseAlbum
             // 
-            this.ibtnXmark.FlatAppearance.BorderSize = 0;
-            this.ibtnXmark.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
-            this.ibtnXmark.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
-            this.ibtnXmark.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ibtnXmark.IconChar = FontAwesome.Sharp.IconChar.Xmark;
-            this.ibtnXmark.IconColor = System.Drawing.Color.Black;
-            this.ibtnXmark.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ibtnXmark.IconSize = 38;
-            this.ibtnXmark.Location = new System.Drawing.Point(308, 54);
-            this.ibtnXmark.Name = "ibtnXmark";
-            this.ibtnXmark.Size = new System.Drawing.Size(43, 36);
-            this.ibtnXmark.TabIndex = 1;
-            this.ibtnXmark.UseVisualStyleBackColor = true;
-            this.ibtnXmark.Click += new System.EventHandler(this.ibtnXmark_Click);
+            this.ibtnChiaseAlbum.AutoSize = true;
+            this.ibtnChiaseAlbum.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(44)))), ((int)(((byte)(36)))));
+            this.ibtnChiaseAlbum.FlatAppearance.BorderSize = 0;
+            this.ibtnChiaseAlbum.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ibtnChiaseAlbum.Font = new System.Drawing.Font("League Spartan SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ibtnChiaseAlbum.ForeColor = System.Drawing.Color.White;
+            this.ibtnChiaseAlbum.IconChar = FontAwesome.Sharp.IconChar.DesktopAlt;
+            this.ibtnChiaseAlbum.IconColor = System.Drawing.Color.White;
+            this.ibtnChiaseAlbum.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ibtnChiaseAlbum.IconSize = 42;
+            this.ibtnChiaseAlbum.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ibtnChiaseAlbum.Location = new System.Drawing.Point(38, 970);
+            this.ibtnChiaseAlbum.Name = "ibtnChiaseAlbum";
+            this.ibtnChiaseAlbum.Size = new System.Drawing.Size(229, 54);
+            this.ibtnChiaseAlbum.TabIndex = 5;
+            this.ibtnChiaseAlbum.Text = "Chia sẻ Album";
+            this.ibtnChiaseAlbum.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ibtnChiaseAlbum.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.ibtnChiaseAlbum.UseVisualStyleBackColor = false;
             // 
-            // panelClose
+            // ibtnVetrc1trang
             // 
-            this.panelClose.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.panelClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.panelClose.Controls.Add(this.btnbars);
-            this.panelClose.Controls.Add(this.panelLogo);
-            this.panelClose.Location = new System.Drawing.Point(384, 0);
-            this.panelClose.Name = "panelClose";
-            this.panelClose.Size = new System.Drawing.Size(229, 132);
-            this.panelClose.TabIndex = 3;
-            this.panelClose.Visible = false;
+            this.ibtnVetrc1trang.AutoSize = true;
+            this.ibtnVetrc1trang.FlatAppearance.BorderSize = 0;
+            this.ibtnVetrc1trang.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
+            this.ibtnVetrc1trang.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
+            this.ibtnVetrc1trang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ibtnVetrc1trang.IconChar = FontAwesome.Sharp.IconChar.Backward;
+            this.ibtnVetrc1trang.IconColor = System.Drawing.Color.Black;
+            this.ibtnVetrc1trang.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ibtnVetrc1trang.IconSize = 38;
+            this.ibtnVetrc1trang.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.ibtnVetrc1trang.Location = new System.Drawing.Point(3, 3);
+            this.ibtnVetrc1trang.Name = "ibtnVetrc1trang";
+            this.ibtnVetrc1trang.Size = new System.Drawing.Size(44, 53);
+            this.ibtnVetrc1trang.TabIndex = 6;
+            this.ibtnVetrc1trang.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ibtnVetrc1trang.UseVisualStyleBackColor = true;
             // 
-            // panelLogo
+            // ibtnTrang1
             // 
-            this.panelLogo.BackgroundImage = global::Login.Properties.Resources.Logo;
-            this.panelLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panelLogo.Location = new System.Drawing.Point(27, 3);
-            this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(199, 126);
-            this.panelLogo.TabIndex = 1;
+            this.ibtnTrang1.AutoSize = true;
+            this.ibtnTrang1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(201)))), ((int)(((byte)(249)))));
+            this.ibtnTrang1.FlatAppearance.BorderSize = 0;
+            this.ibtnTrang1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
+            this.ibtnTrang1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
+            this.ibtnTrang1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ibtnTrang1.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.ibtnTrang1.IconColor = System.Drawing.Color.Black;
+            this.ibtnTrang1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ibtnTrang1.Location = new System.Drawing.Point(53, 3);
+            this.ibtnTrang1.Name = "ibtnTrang1";
+            this.ibtnTrang1.Size = new System.Drawing.Size(54, 54);
+            this.ibtnTrang1.TabIndex = 7;
+            this.ibtnTrang1.Text = "1";
+            this.ibtnTrang1.UseVisualStyleBackColor = false;
             // 
-            // btnbars
+            // ibtnTrang2
             // 
-            this.btnbars.BackgroundImage = global::Login.Properties.Resources.images1;
-            this.btnbars.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnbars.FlatAppearance.BorderSize = 0;
-            this.btnbars.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
-            this.btnbars.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
-            this.btnbars.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnbars.Location = new System.Drawing.Point(3, 50);
-            this.btnbars.Name = "btnbars";
-            this.btnbars.Size = new System.Drawing.Size(40, 36);
-            this.btnbars.TabIndex = 0;
-            this.btnbars.UseVisualStyleBackColor = true;
-            this.btnbars.Click += new System.EventHandler(this.btnbars_Click);
+            this.ibtnTrang2.AutoSize = true;
+            this.ibtnTrang2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(201)))), ((int)(((byte)(249)))));
+            this.ibtnTrang2.FlatAppearance.BorderSize = 0;
+            this.ibtnTrang2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
+            this.ibtnTrang2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
+            this.ibtnTrang2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ibtnTrang2.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.ibtnTrang2.IconColor = System.Drawing.Color.Black;
+            this.ibtnTrang2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ibtnTrang2.Location = new System.Drawing.Point(113, 3);
+            this.ibtnTrang2.Name = "ibtnTrang2";
+            this.ibtnTrang2.Size = new System.Drawing.Size(54, 54);
+            this.ibtnTrang2.TabIndex = 8;
+            this.ibtnTrang2.Text = "2";
+            this.ibtnTrang2.UseVisualStyleBackColor = false;
             // 
-            // process1
+            // ibtnTrang3
             // 
-            this.process1.StartInfo.Domain = "";
-            this.process1.StartInfo.LoadUserProfile = false;
-            this.process1.StartInfo.Password = null;
-            this.process1.StartInfo.StandardErrorEncoding = null;
-            this.process1.StartInfo.StandardOutputEncoding = null;
-            this.process1.StartInfo.UserName = "";
-            this.process1.SynchronizingObject = this;
+            this.ibtnTrang3.AutoSize = true;
+            this.ibtnTrang3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(201)))), ((int)(((byte)(249)))));
+            this.ibtnTrang3.FlatAppearance.BorderSize = 0;
+            this.ibtnTrang3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
+            this.ibtnTrang3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
+            this.ibtnTrang3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ibtnTrang3.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.ibtnTrang3.IconColor = System.Drawing.Color.Black;
+            this.ibtnTrang3.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ibtnTrang3.Location = new System.Drawing.Point(173, 3);
+            this.ibtnTrang3.Name = "ibtnTrang3";
+            this.ibtnTrang3.Size = new System.Drawing.Size(54, 54);
+            this.ibtnTrang3.TabIndex = 9;
+            this.ibtnTrang3.Text = "3";
+            this.ibtnTrang3.UseVisualStyleBackColor = false;
+            // 
+            // ibtnVesau1trang
+            // 
+            this.ibtnVesau1trang.AutoSize = true;
+            this.ibtnVesau1trang.FlatAppearance.BorderSize = 0;
+            this.ibtnVesau1trang.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
+            this.ibtnVesau1trang.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
+            this.ibtnVesau1trang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ibtnVesau1trang.IconChar = FontAwesome.Sharp.IconChar.Forward;
+            this.ibtnVesau1trang.IconColor = System.Drawing.Color.Black;
+            this.ibtnVesau1trang.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ibtnVesau1trang.IconSize = 38;
+            this.ibtnVesau1trang.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.ibtnVesau1trang.Location = new System.Drawing.Point(353, 3);
+            this.ibtnVesau1trang.Name = "ibtnVesau1trang";
+            this.ibtnVesau1trang.Size = new System.Drawing.Size(44, 53);
+            this.ibtnVesau1trang.TabIndex = 12;
+            this.ibtnVesau1trang.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ibtnVesau1trang.UseVisualStyleBackColor = true;
+            // 
+            // panelTenAlbum
+            // 
+            this.panelTenAlbum.Controls.Add(this.ibtnLontoiBe);
+            this.panelTenAlbum.Controls.Add(this.lbAlbum);
+            this.panelTenAlbum.Controls.Add(this.lbduongke);
+            this.panelTenAlbum.Controls.Add(this.ibtnBetoiLon);
+            this.panelTenAlbum.Location = new System.Drawing.Point(28, 17);
+            this.panelTenAlbum.Name = "panelTenAlbum";
+            this.panelTenAlbum.Size = new System.Drawing.Size(1814, 73);
+            this.panelTenAlbum.TabIndex = 18;
+            // 
+            // ibtnLontoiBe
+            // 
+            this.ibtnLontoiBe.FlatAppearance.BorderSize = 0;
+            this.ibtnLontoiBe.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
+            this.ibtnLontoiBe.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
+            this.ibtnLontoiBe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ibtnLontoiBe.IconChar = FontAwesome.Sharp.IconChar.ArrowUpShortWide;
+            this.ibtnLontoiBe.IconColor = System.Drawing.Color.Black;
+            this.ibtnLontoiBe.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ibtnLontoiBe.IconSize = 38;
+            this.ibtnLontoiBe.Location = new System.Drawing.Point(1704, 24);
+            this.ibtnLontoiBe.Name = "ibtnLontoiBe";
+            this.ibtnLontoiBe.Size = new System.Drawing.Size(44, 33);
+            this.ibtnLontoiBe.TabIndex = 3;
+            this.ibtnLontoiBe.UseVisualStyleBackColor = true;
+            // 
+            // flowLayoutPanel2
+            // 
+            this.flowLayoutPanel2.AutoSize = true;
+            this.flowLayoutPanel2.Controls.Add(this.ibtnVetrc1trang);
+            this.flowLayoutPanel2.Controls.Add(this.ibtnTrang1);
+            this.flowLayoutPanel2.Controls.Add(this.ibtnTrang2);
+            this.flowLayoutPanel2.Controls.Add(this.ibtnTrang3);
+            this.flowLayoutPanel2.Controls.Add(this.ibtnContiep);
+            this.flowLayoutPanel2.Controls.Add(this.ibtnTrang4);
+            this.flowLayoutPanel2.Controls.Add(this.ibtnVesau1trang);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(795, 959);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(580, 66);
+            this.flowLayoutPanel2.TabIndex = 1;
+            // 
+            // ibtnContiep
+            // 
+            this.ibtnContiep.AutoSize = true;
+            this.ibtnContiep.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(201)))), ((int)(((byte)(249)))));
+            this.ibtnContiep.FlatAppearance.BorderSize = 0;
+            this.ibtnContiep.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
+            this.ibtnContiep.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
+            this.ibtnContiep.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ibtnContiep.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.ibtnContiep.IconColor = System.Drawing.Color.Black;
+            this.ibtnContiep.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ibtnContiep.Location = new System.Drawing.Point(233, 3);
+            this.ibtnContiep.Name = "ibtnContiep";
+            this.ibtnContiep.Size = new System.Drawing.Size(54, 54);
+            this.ibtnContiep.TabIndex = 10;
+            this.ibtnContiep.Text = "...";
+            this.ibtnContiep.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.ibtnContiep.UseVisualStyleBackColor = false;
+            // 
+            // ibtnTrang4
+            // 
+            this.ibtnTrang4.AutoSize = true;
+            this.ibtnTrang4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(201)))), ((int)(((byte)(249)))));
+            this.ibtnTrang4.FlatAppearance.BorderSize = 0;
+            this.ibtnTrang4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
+            this.ibtnTrang4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
+            this.ibtnTrang4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ibtnTrang4.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.ibtnTrang4.IconColor = System.Drawing.Color.Black;
+            this.ibtnTrang4.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ibtnTrang4.Location = new System.Drawing.Point(293, 3);
+            this.ibtnTrang4.Name = "ibtnTrang4";
+            this.ibtnTrang4.Size = new System.Drawing.Size(54, 54);
+            this.ibtnTrang4.TabIndex = 11;
+            this.ibtnTrang4.Text = "10";
+            this.ibtnTrang4.UseVisualStyleBackColor = false;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.AutoSize = true;
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.5F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65.5F));
+            this.tableLayoutPanel1.Controls.Add(this.btnGo, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.rtbTimtrangAlbum, 0, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(1716, 964);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(174, 60);
+            this.tableLayoutPanel1.TabIndex = 23;
+            // 
+            // btnGo
+            // 
+            this.btnGo.AutoSize = true;
+            this.btnGo.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(139)))), ((int)(((byte)(205)))));
+            this.btnGo.FlatAppearance.BorderSize = 4;
+            this.btnGo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
+            this.btnGo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
+            this.btnGo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGo.Location = new System.Drawing.Point(63, 3);
+            this.btnGo.Name = "btnGo";
+            this.btnGo.Size = new System.Drawing.Size(61, 54);
+            this.btnGo.TabIndex = 15;
+            this.btnGo.Text = "Tới\r\n";
+            this.btnGo.UseVisualStyleBackColor = true;
+            // 
+            // rtbTimtrangAlbum
+            // 
+            this.rtbTimtrangAlbum.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(201)))), ((int)(((byte)(249)))));
+            this.rtbTimtrangAlbum.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.rtbTimtrangAlbum.Font = new System.Drawing.Font("League Spartan", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtbTimtrangAlbum.Location = new System.Drawing.Point(3, 3);
+            this.rtbTimtrangAlbum.MaxLength = 3;
+            this.rtbTimtrangAlbum.Multiline = false;
+            this.rtbTimtrangAlbum.Name = "rtbTimtrangAlbum";
+            this.rtbTimtrangAlbum.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
+            this.rtbTimtrangAlbum.Size = new System.Drawing.Size(54, 54);
+            this.rtbTimtrangAlbum.TabIndex = 16;
+            this.rtbTimtrangAlbum.Text = "1";
+            this.rtbTimtrangAlbum.ZoomFactor = 1.5F;
             // 
             // AlbumTruyen
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
             this.ClientSize = new System.Drawing.Size(1898, 1024);
-            this.Controls.Add(this.panelMenu);
-            this.Controls.Add(this.panelClose);
+            this.Controls.Add(this.flowLayoutPanel2);
+            this.Controls.Add(this.ibtnChiaseAlbum);
+            this.Controls.Add(this.panelAlbumTruyen);
+            this.Controls.Add(this.panelTenAlbum);
+            this.Controls.Add(this.tableLayoutPanel1);
+            this.Font = new System.Drawing.Font("League Spartan SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "AlbumTruyen";
-            this.Text = "AlbumTruyen";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.panelMenu.ResumeLayout(false);
-            this.panelHEALTruyenSubmenu.ResumeLayout(false);
-            this.panelTieudeSubmenu.ResumeLayout(false);
-            this.panelTheodoiSubmenu.ResumeLayout(false);
-            this.panelheader.ResumeLayout(false);
-            this.panelClose.ResumeLayout(false);
+            this.Load += new System.EventHandler(this.AlbumTruyen_Load);
+            this.panelAlbumTruyen.ResumeLayout(false);
+            this.panelTruyen1.ResumeLayout(false);
+            this.panelTruyen1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptrAnh1)).EndInit();
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanel1.PerformLayout();
+            this.panelTenAlbum.ResumeLayout(false);
+            this.panelTenAlbum.PerformLayout();
+            this.flowLayoutPanel2.ResumeLayout(false);
+            this.flowLayoutPanel2.PerformLayout();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
-
         #endregion
 
-        private System.Windows.Forms.Panel panelMenu;
-        private System.Windows.Forms.Panel panelheader;
-        private FontAwesome.Sharp.IconButton ibtnTrangchu;
-        private System.Windows.Forms.Button btnbars;
-        private System.Windows.Forms.Panel panelHEALTruyenSubmenu;
-        private System.Windows.Forms.Button btnThongbao;
-        private System.Windows.Forms.Button btnChat;
-        private System.Windows.Forms.Button btnHelpandError;
-        private FontAwesome.Sharp.IconButton ibtnHEALTruyen;
-        private System.Windows.Forms.Panel panelTieudeSubmenu;
-        private System.Windows.Forms.Button btnBXH;
-        private System.Windows.Forms.Button btnadvancedsearch;
-        private FontAwesome.Sharp.IconButton ibtnTieude;
-        private System.Windows.Forms.Panel panelTheodoiSubmenu;
-        private System.Windows.Forms.Button btnBookmark;
-        private System.Windows.Forms.Button btnAlbum;
-        private FontAwesome.Sharp.IconButton ibtnTheodoi;
-        private System.Windows.Forms.Button btnLichsudoc;
-        private FontAwesome.Sharp.IconButton ibtnXmark;
-        private System.Windows.Forms.Panel panelLogo;
-        private System.Windows.Forms.Panel panelClose;
-        private System.Diagnostics.Process process1;
+        private FontAwesome.Sharp.IconSplitButton iconSplitButton1;
+        private System.Windows.Forms.Label lbduongke;
+        private System.Windows.Forms.Label lbAlbum;
+        private FontAwesome.Sharp.IconButton ibtnBetoiLon;
+        private System.Windows.Forms.Panel panelAlbumTruyen;
+        private System.Windows.Forms.Panel panelTruyen1;
+        private System.Windows.Forms.PictureBox ptrAnh1;
+        private System.Windows.Forms.Label lbTenanh1;
+        private FontAwesome.Sharp.IconButton ibtnchuongdangdoc1;
+        private FontAwesome.Sharp.IconButton ibtnsochuong1;
+        private FontAwesome.Sharp.IconButton ibtnTatthongbao1;
+        private FontAwesome.Sharp.IconButton ibtnThongbao1;
+        private FontAwesome.Sharp.IconButton ibtnXoa1;
+        private FontAwesome.Sharp.IconButton ibtnChiaseAlbum;
+        private FontAwesome.Sharp.IconButton ibtnVetrc1trang;
+        private FontAwesome.Sharp.IconButton ibtnTrang1;
+        private FontAwesome.Sharp.IconButton ibtnTrang2;
+        private FontAwesome.Sharp.IconButton ibtnTrang3;
+        private FontAwesome.Sharp.IconButton ibtnVesau1trang;
+        private System.Windows.Forms.Button btnTheloai1;
+        private System.Windows.Forms.Button btnTacgia1;
+        private System.Windows.Forms.Button btnTinhtrang1;
+        private System.Windows.Forms.Panel panelTenAlbum;
+        private FontAwesome.Sharp.IconButton ibtnLontoiBe;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+        private FontAwesome.Sharp.IconButton ibtnContiep;
+        private FontAwesome.Sharp.IconButton ibtnTrang4;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Button btnGo;
+        private System.Windows.Forms.RichTextBox rtbTimtrangAlbum;
     }
 }

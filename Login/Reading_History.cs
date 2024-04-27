@@ -16,5 +16,10 @@ namespace Login
         {
             InitializeComponent();
         }
+
+        private void Reading_History_Load(object sender, EventArgs e)
+        {
+            rtbTimtrangAlbum.SelectionAlignment = HorizontalAlignment.Center;
+        }
     }
 }
