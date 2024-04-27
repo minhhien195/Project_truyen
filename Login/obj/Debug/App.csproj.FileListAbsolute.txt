@@ -137,3 +137,6 @@ E:\HK4_UIT\LTMCB\Project\Login\Login\obj\Debug\vi-VN\Login.resources.dll
 E:\HK4_UIT\LTMCB\Project\Login\Login\obj\Debug\App.csproj.Up2Date
 E:\HK4_UIT\LTMCB\Project\Login\Login\obj\Debug\Login.exe
 E:\HK4_UIT\LTMCB\Project\Login\Login\obj\Debug\Login.pdb
+E:\HK4_UIT\LTMCB\Project\Login\Login\obj\Debug\Login.Chi_Tiet_Truyen.resources
+E:\HK4_UIT\LTMCB\Project\Login\Login\obj\Debug\Login.Danh_Gia_CTT.resources
+E:\HK4_UIT\LTMCB\Project\Login\Login\obj\Debug\Login.Danh_Sach_Chuong_CTT.resources
