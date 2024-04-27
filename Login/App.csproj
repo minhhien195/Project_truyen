@@ -216,6 +216,7 @@
       <DependentUpon>AlbumTruyen.cs</DependentUpon>
     </Compile>
     <Compile Include="API-Decutruyen.cs" />
+    <Compile Include="API-nhantin.cs" />
     <Compile Include="API_Album.cs" />
     <Compile Include="API_Reading_History.cs" />
     <Compile Include="API_thongbao.cs" />
@@ -226,6 +227,24 @@
     </Compile>
     <Compile Include="Change_Password.Designer.cs">
       <DependentUpon>Change_Password.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chi_Tiet_Truyen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chi_Tiet_Truyen.Designer.cs">
+      <DependentUpon>Chi_Tiet_Truyen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Danh_Gia_CTT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Danh_Gia_CTT.Designer.cs">
+      <DependentUpon>Danh_Gia_CTT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Danh_Sach_Chuong_CTT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Danh_Sach_Chuong_CTT.Designer.cs">
+      <DependentUpon>Danh_Sach_Chuong_CTT.cs</DependentUpon>
     </Compile>
     <Compile Include="Forget_Password.cs">
       <SubType>Form</SubType>
@@ -279,6 +298,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Change_Password.resx">
       <DependentUpon>Change_Password.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chi_Tiet_Truyen.resx">
+      <DependentUpon>Chi_Tiet_Truyen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Danh_Gia_CTT.resx">
+      <DependentUpon>Danh_Gia_CTT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Danh_Sach_Chuong_CTT.resx">
+      <DependentUpon>Danh_Sach_Chuong_CTT.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forget_Password.resx">
       <DependentUpon>Forget_Password.cs</DependentUpon>
