@@ -63,6 +63,14 @@ namespace Login.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap Album_truyen
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("Album_truyen", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
         public static System.Drawing.Bitmap albumicon {
             get {
                 object obj = ResourceManager.GetObject("albumicon", resourceCulture);
@@ -443,9 +451,14 @@ namespace Login.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap titleicon {
-            get {
+        public static System.Drawing.Bitmap titleicon
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("titleicon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
         public static System.Drawing.Bitmap Logo {
             get {
                 object obj = ResourceManager.GetObject("Logo", resourceCulture);
