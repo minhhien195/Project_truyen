@@ -184,5 +184,10 @@ namespace Login
             btnRatingMenu.ForeColor = Color.Red;
             btnRatingMenu.Font = new Font("League Spartan", 16, FontStyle.Regular);
         }
+
+        private void btnCommentMenu_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

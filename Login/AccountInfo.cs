@@ -52,7 +52,7 @@ namespace Login
             //string ID = "E87tvNxeBuRVWjGecxM0Vrh0RU72";
             label3.Text = ID;
             //string base64String = "iVBORw0KGgoAAAANSUhEUgAAA8AAAAMACAIAAABkXJl4AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAP";
-            FirebaseResponse response = await ifclient.GetAsync("Nguoi_dung/E87tvNxeBuRVWjGecxM0Vrh0RU72/Anh_dai_dien");
+            FirebaseResponse response = await ifclient.GetAsync("Nguoi_dung/"+ID+"/Anh_dai_dien");
             string base64String = response.ResultAs<string>();
             /*if (base64String == "")
             {
