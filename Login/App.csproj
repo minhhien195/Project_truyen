@@ -270,6 +270,12 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="Nhan_tin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nhan_tin.Designer.cs">
+      <DependentUpon>Nhan_tin.cs</DependentUpon>
+    </Compile>
     <Compile Include="NvUpdate.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -330,6 +336,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nhan_tin.resx">
+      <DependentUpon>Nhan_tin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NvUpdate.resx">
       <DependentUpon>NvUpdate.cs</DependentUpon>
