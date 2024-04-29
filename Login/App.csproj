@@ -222,6 +222,24 @@
     <Compile Include="API_thongbao.cs" />
     <Compile Include="API_Tim_Kiem.cs" />
     <Compile Include="API_Truyen.cs" />
+    <Compile Include="Bang_Xep_Hang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bang_Xep_Hang.Designer.cs">
+      <DependentUpon>Bang_Xep_Hang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BXH_De_Cu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BXH_De_Cu.Designer.cs">
+      <DependentUpon>BXH_De_Cu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BXH_Doc_Nhieu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BXH_Doc_Nhieu.Designer.cs">
+      <DependentUpon>BXH_Doc_Nhieu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Change_Password.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -312,6 +330,15 @@
     </Compile>
     <EmbeddedResource Include="AlbumTruyen.resx">
       <DependentUpon>AlbumTruyen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bang_Xep_Hang.resx">
+      <DependentUpon>Bang_Xep_Hang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BXH_De_Cu.resx">
+      <DependentUpon>BXH_De_Cu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BXH_Doc_Nhieu.resx">
+      <DependentUpon>BXH_Doc_Nhieu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Change_Password.resx">
       <DependentUpon>Change_Password.cs</DependentUpon>
@@ -465,6 +492,12 @@
   <ItemGroup>
     <None Include="Resources\phongcanh.jpg" />
     <None Include="Resources\Album_truyen.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trendingicon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cover1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />
