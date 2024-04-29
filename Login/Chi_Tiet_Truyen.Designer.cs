@@ -119,7 +119,7 @@
             // btnBookMark
             // 
             btnBookMark.AutoSize = true;
-            btnBookMark.BackColor = System.Drawing.Color.Transparent;
+            btnBookMark.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
             btnBookMark.Dock = System.Windows.Forms.DockStyle.Fill;
             btnBookMark.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             btnBookMark.Font = new System.Drawing.Font("League Spartan SemiBold", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
@@ -175,7 +175,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
             this.label8.Font = new System.Drawing.Font("League Spartan", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label8.Location = new System.Drawing.Point(524, 312);
             this.label8.Name = "label8";
@@ -185,6 +185,7 @@
             // 
             // tableLayoutPanel2
             // 
+            this.tableLayoutPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
             this.tableLayoutPanel2.ColumnCount = 4;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
@@ -226,7 +227,7 @@
             this.panelChildForm.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelChildForm.AutoSize = true;
-            this.panelChildForm.BackgroundImage = global::Login.Properties.Resources.background2;
+            this.panelChildForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
             this.panelChildForm.Controls.Add(this.panel6);
             this.panelChildForm.Controls.Add(this.labelNewChap);
             this.panelChildForm.Controls.Add(this.label11);
@@ -239,11 +240,13 @@
             this.panelChildForm.Controls.Add(this.introContent);
             this.panelChildForm.Location = new System.Drawing.Point(81, 588);
             this.panelChildForm.Name = "panelChildForm";
-            this.panelChildForm.Size = new System.Drawing.Size(1645, 783);
+            this.panelChildForm.Size = new System.Drawing.Size(1582, 783);
             this.panelChildForm.TabIndex = 96;
             // 
             // panel6
             // 
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
+            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel6.Controls.Add(this.label12);
             this.panel6.Controls.Add(this.pictureBox19);
             this.panel6.Controls.Add(this.pictureBox18);
@@ -257,7 +260,7 @@
             this.panel6.Controls.Add(this.labelAuthorIntro);
             this.panel6.Controls.Add(this.pictureAuthorIntro);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel6.Location = new System.Drawing.Point(1214, 0);
+            this.panel6.Location = new System.Drawing.Point(1151, 0);
             this.panel6.Margin = new System.Windows.Forms.Padding(0);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(431, 783);
@@ -267,9 +270,9 @@
             // 
             this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.Color.Transparent;
+            this.label12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
             this.label12.Font = new System.Drawing.Font("League Spartan", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label12.Location = new System.Drawing.Point(66, 697);
+            this.label12.Location = new System.Drawing.Point(64, 695);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(310, 26);
             this.label12.TabIndex = 108;
@@ -278,6 +281,7 @@
             // 
             // pictureBox19
             // 
+            this.pictureBox19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
             this.pictureBox19.Image = global::Login.Properties.Resources.rightarrow;
             this.pictureBox19.Location = new System.Drawing.Point(312, 578);
             this.pictureBox19.Name = "pictureBox19";
@@ -288,6 +292,7 @@
             // 
             // pictureBox18
             // 
+            this.pictureBox18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
             this.pictureBox18.Image = global::Login.Properties.Resources.leftarrow;
             this.pictureBox18.Location = new System.Drawing.Point(89, 583);
             this.pictureBox18.Name = "pictureBox18";
@@ -298,6 +303,7 @@
             // 
             // pictureBox17
             // 
+            this.pictureBox17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
             this.pictureBox17.Image = global::Login.Properties.Resources.coverbooktest;
             this.pictureBox17.Location = new System.Drawing.Point(156, 508);
             this.pictureBox17.Margin = new System.Windows.Forms.Padding(0);
@@ -311,9 +317,9 @@
             // 
             this.labelChapterAuthorInfo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.labelChapterAuthorInfo.AutoSize = true;
-            this.labelChapterAuthorInfo.BackColor = System.Drawing.Color.Transparent;
+            this.labelChapterAuthorInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
             this.labelChapterAuthorInfo.Font = new System.Drawing.Font("League Spartan Medium", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.labelChapterAuthorInfo.Location = new System.Drawing.Point(271, 448);
+            this.labelChapterAuthorInfo.Location = new System.Drawing.Point(269, 446);
             this.labelChapterAuthorInfo.Name = "labelChapterAuthorInfo";
             this.labelChapterAuthorInfo.Size = new System.Drawing.Size(89, 45);
             this.labelChapterAuthorInfo.TabIndex = 105;
@@ -323,9 +329,9 @@
             // 
             this.labelBookAuthorInfo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.labelBookAuthorInfo.AutoSize = true;
-            this.labelBookAuthorInfo.BackColor = System.Drawing.Color.Transparent;
+            this.labelBookAuthorInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
             this.labelBookAuthorInfo.Font = new System.Drawing.Font("League Spartan Medium", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.labelBookAuthorInfo.Location = new System.Drawing.Point(114, 448);
+            this.labelBookAuthorInfo.Location = new System.Drawing.Point(112, 446);
             this.labelBookAuthorInfo.Name = "labelBookAuthorInfo";
             this.labelBookAuthorInfo.Size = new System.Drawing.Size(29, 45);
             this.labelBookAuthorInfo.TabIndex = 104;
@@ -335,9 +341,9 @@
             // 
             this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.Transparent;
+            this.label10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
             this.label10.Font = new System.Drawing.Font("League Spartan Medium", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label10.Location = new System.Drawing.Point(228, 403);
+            this.label10.Location = new System.Drawing.Point(226, 401);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(154, 45);
             this.label10.TabIndex = 103;
@@ -347,9 +353,9 @@
             // 
             this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
             this.label7.Font = new System.Drawing.Font("League Spartan Medium", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label7.Location = new System.Drawing.Point(63, 403);
+            this.label7.Location = new System.Drawing.Point(61, 401);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(141, 45);
             this.label7.TabIndex = 102;
@@ -357,6 +363,7 @@
             // 
             // pictureBox16
             // 
+            this.pictureBox16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
             this.pictureBox16.Image = global::Login.Properties.Resources.bookicon;
             this.pictureBox16.Location = new System.Drawing.Point(279, 355);
             this.pictureBox16.Name = "pictureBox16";
@@ -367,6 +374,7 @@
             // 
             // pictureBox15
             // 
+            this.pictureBox15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
             this.pictureBox15.Image = global::Login.Properties.Resources.albumicon;
             this.pictureBox15.Location = new System.Drawing.Point(111, 355);
             this.pictureBox15.Name = "pictureBox15";
@@ -379,9 +387,9 @@
             // 
             this.labelAuthorIntro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.labelAuthorIntro.AutoSize = true;
-            this.labelAuthorIntro.BackColor = System.Drawing.Color.Transparent;
+            this.labelAuthorIntro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
             this.labelAuthorIntro.Font = new System.Drawing.Font("League Spartan SemiBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.labelAuthorIntro.Location = new System.Drawing.Point(169, 257);
+            this.labelAuthorIntro.Location = new System.Drawing.Point(167, 255);
             this.labelAuthorIntro.Name = "labelAuthorIntro";
             this.labelAuthorIntro.Size = new System.Drawing.Size(104, 45);
             this.labelAuthorIntro.TabIndex = 99;
@@ -390,9 +398,9 @@
             // pictureAuthorIntro
             // 
             this.pictureAuthorIntro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureAuthorIntro.BackColor = System.Drawing.Color.Transparent;
+            this.pictureAuthorIntro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
             this.pictureAuthorIntro.Image = global::Login.Properties.Resources.avatardefault;
-            this.pictureAuthorIntro.Location = new System.Drawing.Point(173, 118);
+            this.pictureAuthorIntro.Location = new System.Drawing.Point(171, 116);
             this.pictureAuthorIntro.Name = "pictureAuthorIntro";
             this.pictureAuthorIntro.Size = new System.Drawing.Size(100, 100);
             this.pictureAuthorIntro.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -401,7 +409,7 @@
             // 
             // labelNewChap
             // 
-            this.labelNewChap.BackColor = System.Drawing.Color.Transparent;
+            this.labelNewChap.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
             this.labelNewChap.Font = new System.Drawing.Font("League Spartan", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.labelNewChap.Location = new System.Drawing.Point(207, 654);
             this.labelNewChap.Name = "labelNewChap";
@@ -412,7 +420,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.Transparent;
+            this.label11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
             this.label11.Font = new System.Drawing.Font("League Spartan SemiBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label11.Location = new System.Drawing.Point(21, 654);
             this.label11.Name = "label11";
@@ -422,7 +430,7 @@
             // 
             // pictureBox14
             // 
-            this.pictureBox14.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
             this.pictureBox14.Image = global::Login.Properties.Resources.decuiconden;
             this.pictureBox14.Location = new System.Drawing.Point(128, 583);
             this.pictureBox14.Name = "pictureBox14";
@@ -434,7 +442,7 @@
             // labelremNum
             // 
             this.labelremNum.AutoSize = true;
-            this.labelremNum.BackColor = System.Drawing.Color.Transparent;
+            this.labelremNum.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
             this.labelremNum.Font = new System.Drawing.Font("League Spartan", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.labelremNum.Location = new System.Drawing.Point(174, 578);
             this.labelremNum.Name = "labelremNum";
@@ -445,7 +453,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.Transparent;
+            this.label9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
             this.label9.Font = new System.Drawing.Font("League Spartan SemiBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label9.Location = new System.Drawing.Point(21, 578);
             this.label9.Name = "label9";
@@ -455,7 +463,7 @@
             // 
             // pictureBox13
             // 
-            this.pictureBox13.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
             this.pictureBox13.Image = global::Login.Properties.Resources.hearticon;
             this.pictureBox13.Location = new System.Drawing.Point(128, 508);
             this.pictureBox13.Name = "pictureBox13";
@@ -467,7 +475,7 @@
             // labelLike
             // 
             this.labelLike.AutoSize = true;
-            this.labelLike.BackColor = System.Drawing.Color.Transparent;
+            this.labelLike.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
             this.labelLike.Font = new System.Drawing.Font("League Spartan", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.labelLike.Location = new System.Drawing.Point(174, 503);
             this.labelLike.Name = "labelLike";
@@ -478,7 +486,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
             this.label4.Font = new System.Drawing.Font("League Spartan SemiBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label4.Location = new System.Drawing.Point(21, 503);
             this.label4.Name = "label4";
@@ -488,7 +496,7 @@
             // 
             // introContent
             // 
-            this.introContent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.introContent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
             this.introContent.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.introContent.Font = new System.Drawing.Font("League Spartan", 16.15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.introContent.Location = new System.Drawing.Point(16, 16);
@@ -500,7 +508,7 @@
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.tableLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
             this.tableLayoutPanel1.ColumnCount = 4;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
@@ -521,7 +529,7 @@
             // 
             // btnRatingMenu
             // 
-            this.btnRatingMenu.BackgroundImage = global::Login.Properties.Resources.background2;
+            this.btnRatingMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
             this.btnRatingMenu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnRatingMenu.FlatAppearance.BorderSize = 0;
             this.btnRatingMenu.Location = new System.Drawing.Point(882, 0);
@@ -530,12 +538,12 @@
             this.btnRatingMenu.Size = new System.Drawing.Size(296, 100);
             this.btnRatingMenu.TabIndex = 4;
             this.btnRatingMenu.Text = "Đánh giá";
-            this.btnRatingMenu.UseVisualStyleBackColor = true;
+            this.btnRatingMenu.UseVisualStyleBackColor = false;
             this.btnRatingMenu.Click += new System.EventHandler(this.btnRatingMenu_Click);
             // 
             // btnCommentMenu
             // 
-            this.btnCommentMenu.BackgroundImage = global::Login.Properties.Resources.background2;
+            this.btnCommentMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
             this.btnCommentMenu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnCommentMenu.FlatAppearance.BorderSize = 0;
             this.btnCommentMenu.Location = new System.Drawing.Point(588, 0);
@@ -544,13 +552,13 @@
             this.btnCommentMenu.Size = new System.Drawing.Size(294, 100);
             this.btnCommentMenu.TabIndex = 3;
             this.btnCommentMenu.Text = "Bình luận";
-            this.btnCommentMenu.UseVisualStyleBackColor = true;
+            this.btnCommentMenu.UseVisualStyleBackColor = false;
             this.btnCommentMenu.Click += new System.EventHandler(this.btnCommentMenu_Click);
             // 
             // btnNumChapMenu
             // 
             this.btnNumChapMenu.AutoSize = true;
-            this.btnNumChapMenu.BackgroundImage = global::Login.Properties.Resources.background2;
+            this.btnNumChapMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
             this.btnNumChapMenu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnNumChapMenu.FlatAppearance.BorderSize = 0;
             this.btnNumChapMenu.Location = new System.Drawing.Point(294, 0);
@@ -559,13 +567,12 @@
             this.btnNumChapMenu.Size = new System.Drawing.Size(294, 100);
             this.btnNumChapMenu.TabIndex = 2;
             this.btnNumChapMenu.Text = "Danh sách chương";
-            this.btnNumChapMenu.UseVisualStyleBackColor = true;
+            this.btnNumChapMenu.UseVisualStyleBackColor = false;
             this.btnNumChapMenu.Click += new System.EventHandler(this.btnNumChapMenu_Click);
             // 
             // btnIntroMenu
             // 
-            this.btnIntroMenu.BackColor = System.Drawing.Color.Transparent;
-            this.btnIntroMenu.BackgroundImage = global::Login.Properties.Resources.background2;
+            this.btnIntroMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
             this.btnIntroMenu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnIntroMenu.FlatAppearance.BorderSize = 0;
             this.btnIntroMenu.Font = new System.Drawing.Font("League Spartan", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
@@ -582,7 +589,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
             this.label5.Font = new System.Drawing.Font("League Spartan", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label5.Location = new System.Drawing.Point(891, 252);
             this.label5.Name = "label5";
@@ -592,7 +599,7 @@
             // 
             // pictureBox11
             // 
-            this.pictureBox11.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
             this.pictureBox11.Image = global::Login.Properties.Resources.followicon1;
             this.pictureBox11.Location = new System.Drawing.Point(867, 268);
             this.pictureBox11.Name = "pictureBox11";
@@ -603,7 +610,7 @@
             // 
             // pictureBox10
             // 
-            this.pictureBox10.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
             this.pictureBox10.Image = global::Login.Properties.Resources.eyeicon;
             this.pictureBox10.Location = new System.Drawing.Point(705, 267);
             this.pictureBox10.Name = "pictureBox10";
@@ -615,7 +622,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
             this.label2.Font = new System.Drawing.Font("League Spartan", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label2.Location = new System.Drawing.Point(542, 278);
             this.label2.Name = "label2";
@@ -626,7 +633,7 @@
             // labelNumChapterUpdate
             // 
             this.labelNumChapterUpdate.AutoSize = true;
-            this.labelNumChapterUpdate.BackColor = System.Drawing.Color.Transparent;
+            this.labelNumChapterUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
             this.labelNumChapterUpdate.Font = new System.Drawing.Font("League Spartan", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.labelNumChapterUpdate.Location = new System.Drawing.Point(541, 254);
             this.labelNumChapterUpdate.Name = "labelNumChapterUpdate";
@@ -637,7 +644,7 @@
             // labelNumRating
             // 
             this.labelNumRating.AutoSize = true;
-            this.labelNumRating.BackColor = System.Drawing.Color.Transparent;
+            this.labelNumRating.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
             this.labelNumRating.Font = new System.Drawing.Font("League Spartan", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.labelNumRating.Location = new System.Drawing.Point(481, 312);
             this.labelNumRating.Name = "labelNumRating";
@@ -648,7 +655,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
             this.label6.Font = new System.Drawing.Font("League Spartan", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label6.Location = new System.Drawing.Point(444, 312);
             this.label6.Name = "label6";
@@ -659,7 +666,7 @@
             // labelRating
             // 
             this.labelRating.AutoSize = true;
-            this.labelRating.BackColor = System.Drawing.Color.Transparent;
+            this.labelRating.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
             this.labelRating.Font = new System.Drawing.Font("League Spartan", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.labelRating.Location = new System.Drawing.Point(410, 312);
             this.labelRating.Name = "labelRating";
@@ -669,7 +676,7 @@
             // 
             // pictureBox12
             // 
-            this.pictureBox12.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
             this.pictureBox12.Image = global::Login.Properties.Resources.staricon;
             this.pictureBox12.Location = new System.Drawing.Point(379, 316);
             this.pictureBox12.Name = "pictureBox12";
@@ -681,7 +688,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
             this.label3.Font = new System.Drawing.Font("League Spartan", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label3.Location = new System.Drawing.Point(730, 275);
             this.label3.Name = "label3";
@@ -692,7 +699,7 @@
             // labelNumReading
             // 
             this.labelNumReading.AutoSize = true;
-            this.labelNumReading.BackColor = System.Drawing.Color.Transparent;
+            this.labelNumReading.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
             this.labelNumReading.Font = new System.Drawing.Font("League Spartan", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.labelNumReading.Location = new System.Drawing.Point(729, 251);
             this.labelNumReading.Name = "labelNumReading";
@@ -703,7 +710,7 @@
             // labelNumFollow
             // 
             this.labelNumFollow.AutoSize = true;
-            this.labelNumFollow.BackColor = System.Drawing.Color.Transparent;
+            this.labelNumFollow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
             this.labelNumFollow.Font = new System.Drawing.Font("League Spartan", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.labelNumFollow.Location = new System.Drawing.Point(892, 276);
             this.labelNumFollow.Name = "labelNumFollow";
@@ -713,7 +720,7 @@
             // 
             // pictureBox9
             // 
-            this.pictureBox9.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
             this.pictureBox9.Image = global::Login.Properties.Resources.bookicon;
             this.pictureBox9.Location = new System.Drawing.Point(517, 270);
             this.pictureBox9.Name = "pictureBox9";
@@ -728,6 +735,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelAuthor.AutoSize = true;
+            this.labelAuthor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
             this.labelAuthor.Font = new System.Drawing.Font("League Spartan", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.labelAuthor.ForeColor = System.Drawing.Color.Green;
             this.labelAuthor.Location = new System.Drawing.Point(28, 6);
@@ -739,7 +747,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
             this.label1.Font = new System.Drawing.Font("League Spartan", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label1.Location = new System.Drawing.Point(404, 276);
             this.label1.Name = "label1";
@@ -750,7 +758,7 @@
             // labelNumChapter
             // 
             this.labelNumChapter.AutoSize = true;
-            this.labelNumChapter.BackColor = System.Drawing.Color.Transparent;
+            this.labelNumChapter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
             this.labelNumChapter.Font = new System.Drawing.Font("League Spartan", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.labelNumChapter.Location = new System.Drawing.Point(403, 252);
             this.labelNumChapter.Name = "labelNumChapter";
@@ -764,6 +772,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelStatus.AutoSize = true;
+            this.labelStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
             this.labelStatus.Font = new System.Drawing.Font("League Spartan", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.labelStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.labelStatus.Location = new System.Drawing.Point(28, 6);
@@ -774,7 +783,7 @@
             // 
             // panelStatus
             // 
-            this.panelStatus.BackColor = System.Drawing.Color.Transparent;
+            this.panelStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
             this.panelStatus.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelStatus.Controls.Add(this.labelStatus);
             this.panelStatus.Location = new System.Drawing.Point(753, 187);
@@ -785,6 +794,7 @@
             // labelShortName
             // 
             this.labelShortName.AutoSize = true;
+            this.labelShortName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
             this.labelShortName.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelShortName.Font = new System.Drawing.Font("League Spartan", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.labelShortName.ForeColor = System.Drawing.Color.Red;
@@ -798,7 +808,7 @@
             // 
             // pictureBox8
             // 
-            this.pictureBox8.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
             this.pictureBox8.Image = global::Login.Properties.Resources.bookicon;
             this.pictureBox8.Location = new System.Drawing.Point(379, 268);
             this.pictureBox8.Name = "pictureBox8";
@@ -809,7 +819,7 @@
             // 
             // panelType
             // 
-            this.panelType.BackColor = System.Drawing.Color.Transparent;
+            this.panelType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
             this.panelType.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelType.Controls.Add(this.labelType);
             this.panelType.Location = new System.Drawing.Point(939, 187);
@@ -823,6 +833,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelType.AutoSize = true;
+            this.labelType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
             this.labelType.Font = new System.Drawing.Font("League Spartan", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.labelType.ForeColor = System.Drawing.Color.Blue;
             this.labelType.Location = new System.Drawing.Point(3, 0);
@@ -833,7 +844,7 @@
             // 
             // panelShortName
             // 
-            this.panelShortName.BackColor = System.Drawing.Color.Transparent;
+            this.panelShortName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
             this.panelShortName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelShortName.Controls.Add(this.labelShortName);
             this.panelShortName.Location = new System.Drawing.Point(565, 187);
@@ -843,7 +854,7 @@
             // 
             // panelAuthor
             // 
-            this.panelAuthor.BackColor = System.Drawing.Color.Transparent;
+            this.panelAuthor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
             this.panelAuthor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelAuthor.Controls.Add(this.labelAuthor);
             this.panelAuthor.Location = new System.Drawing.Point(379, 187);
@@ -854,7 +865,7 @@
             // nameBook
             // 
             this.nameBook.AutoSize = true;
-            this.nameBook.BackColor = System.Drawing.Color.Transparent;
+            this.nameBook.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
             this.nameBook.Font = new System.Drawing.Font("League Spartan", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.nameBook.Location = new System.Drawing.Point(368, 114);
             this.nameBook.Name = "nameBook";
@@ -864,6 +875,7 @@
             // 
             // coverBookImg
             // 
+            this.coverBookImg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
             this.coverBookImg.Image = global::Login.Properties.Resources.coverbooktest;
             this.coverBookImg.Location = new System.Drawing.Point(81, 114);
             this.coverBookImg.Margin = new System.Windows.Forms.Padding(0);
@@ -879,8 +891,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.AutoSize = true;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(227)))), ((int)(((byte)(243)))));
-            this.BackgroundImage = global::Login.Properties.Resources.background2;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
             this.ClientSize = new System.Drawing.Size(1902, 1033);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.tableLayoutPanel2);
