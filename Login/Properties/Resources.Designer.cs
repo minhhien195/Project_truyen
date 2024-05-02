@@ -363,6 +363,16 @@ namespace Login.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap left_arrow11 {
+            get {
+                object obj = ResourceManager.GetObject("left-arrow11", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap leftarrow {
             get {
                 object obj = ResourceManager.GetObject("leftarrow", resourceCulture);
@@ -456,6 +466,16 @@ namespace Login.Properties {
         public static System.Drawing.Bitmap searchicon {
             get {
                 object obj = ResourceManager.GetObject("searchicon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap searchicon2 {
+            get {
+                object obj = ResourceManager.GetObject("searchicon2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
