@@ -85,7 +85,7 @@
             this.lbAlbum.Font = new System.Drawing.Font("League Spartan SemiBold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbAlbum.Location = new System.Drawing.Point(9, 19);
             this.lbAlbum.Name = "lbAlbum";
-            this.lbAlbum.Size = new System.Drawing.Size(184, 41);
+            this.lbAlbum.Size = new System.Drawing.Size(158, 36);
             this.lbAlbum.TabIndex = 1;
             this.lbAlbum.Text = "Album Truyện";
             // 
@@ -212,9 +212,10 @@
             this.lbTenanh1.Font = new System.Drawing.Font("League Spartan SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTenanh1.Location = new System.Drawing.Point(181, 14);
             this.lbTenanh1.Name = "lbTenanh1";
-            this.lbTenanh1.Size = new System.Drawing.Size(575, 36);
+            this.lbTenanh1.Size = new System.Drawing.Size(487, 30);
             this.lbTenanh1.TabIndex = 1;
             this.lbTenanh1.Text = "Theo Giang Hồ Bắt Đầu, Liều Thành Võ Đạo Chân Quân";
+            this.lbTenanh1.Click += new System.EventHandler(this.lbTenanh1_Click);
             this.lbTenanh1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.lbTenanh1_MouseClick);
             this.lbTenanh1.MouseLeave += new System.EventHandler(this.lbTenanh1_MouseLeave);
             this.lbTenanh1.MouseHover += new System.EventHandler(this.lbTenanh1_MouseHover);

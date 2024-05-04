@@ -438,3 +438,4 @@ D:\GitHub\Login\obj\Debug\vi-VN\Login.resources.dll
 D:\GitHub\Login\obj\Debug\App.csproj.Up2Date
 D:\GitHub\Login\obj\Debug\Login.exe
 D:\GitHub\Login\obj\Debug\Login.pdb
+C:\TLHT\HK2_2023-2024\LapTrinhMangCanBan\HealTruyen\src\Login\obj\Debug\Login.Bookmark.resources

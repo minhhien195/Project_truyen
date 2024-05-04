@@ -42,5 +42,9 @@ namespace Login
             lbTenanh1.ForeColor = Color.Black;
         }
 
+        private void lbTenanh1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
