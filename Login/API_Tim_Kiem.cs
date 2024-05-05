@@ -40,9 +40,9 @@ namespace Login
         [FirestoreProperty("Trang_thai")]
         public int status { get; set; }
     }
-    public static class API_Tim_Kiem
+    public class API_Tim_Kiem
     {
-        public static async Task<List<string>> Search (string tuKhoa)
+        public async Task<List<string>> Search (string tuKhoa)
         {
             string project = "healtruyen";
             FirestoreDb db = FirestoreDb.Create(project);
@@ -69,7 +69,7 @@ namespace Login
             return result;
         }
 
-        public static async Task<List<string>> advanceSearch(string tuKhoa, string danhGia, string tacGia, string theLoai, string tinhTrang)
+        public async Task<List<string>> advanceSearch(string tuKhoa, string danhGia, string tacGia, string theLoai, string tinhTrang)
         {
             string project = "healtruyen";
             FirestoreDb db = FirestoreDb.Create(project);

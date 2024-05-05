@@ -15,6 +15,7 @@ using System.Net;
 using System.Reactive;
 
 
+
 namespace AlbumTruyen
 {
     internal class API_Album
@@ -64,23 +65,23 @@ namespace AlbumTruyen
         [FirestoreProperty("Trang_thai")]
         public int status { get; set; }
     }
-    public class CRUD_lsd
+    public class CRUD_album
     {
         IFirebaseConfig _firebaseConfig = new FirebaseConfig
         {
             AuthSecret = "38QvLmnKMHlQtJ9yZzCqqWytxeXimwt06ZnFfSc2",
             BasePath = "https://healtruyen-default-rtdb.asia-southeast1.firebasedatabase.app/"
         };
-        public async Task<List<Dictionary<string, Dictionary<string, object>>>> Lay_album(string userId, string idtruyen, string idchuong, bool thongbao)
+        public async Task<Dictionary<string, Dictionary<string, object>>> Lay_album(string userId)
         {
             IFirebaseClient client = new FireSharp.FirebaseClient(_firebaseConfig);
             var path = "Nguoi_dung/" + userId + "Album/";
             FirebaseResponse res = await client.GetAsync(path);
             // Chuyển đổi dữ liệu trả về thành Dictionary<string, Dictionary<string, object>>
-            List<Dictionary<string, Dictionary<string, object>>> readingAlbum = new List<Dictionary<string, Dictionary<string, object>>>();
+            Dictionary<string, Dictionary<string, object>> readingAlbum = new Dictionary<string, Dictionary<string, object>>();
             if (res.Body != "null")
             {
-                readingAlbum = JsonConvert.DeserializeObject<List<Dictionary<string, Dictionary<string, object>>>>(res.Body);
+                readingAlbum = JsonConvert.DeserializeObject<Dictionary<string, Dictionary<string, object>>>(res.Body);
             }
             /* // chuyển từ base64 thành ảnh
              byte[] imageBytes = Convert.FromBase64String(anh);
@@ -196,13 +197,14 @@ namespace AlbumTruyen
 
         }*/
 
-        public async Task<bool> xoa_album(string userId, string idtruyen)
+        public async Task xoa_album(string userId, string idtruyen)
         {
             IFirebaseClient client = new FireSharp.FirebaseClient(_firebaseConfig);
             // Xác định đường dẫn để xóa trong Realtime Database
             var path = $"Nguoi_dung/{userId}/Album/{idtruyen}";
-            var response = await client.DeleteAsync(path);
-            return response.StatusCode == HttpStatusCode.OK;
+            await client.DeleteAsync(path);
+            //var response = await client.DeleteAsync(path);
+            // return response.StatusCode == HttpStatusCode.OK;
         }
 
     }
