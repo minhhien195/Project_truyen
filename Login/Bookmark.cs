@@ -50,15 +50,16 @@ namespace Login
                 string idTruyen = item.Key;
                 DocumentReference doc = db.Collection("Truyen").Document(idTruyen);
                 DocumentSnapshot snapshot = await doc.GetSnapshotAsync();
-
                 
                 string imgBase64 = snapshot.GetValue<string>("Anh");
-                FirebaseResponse res = await client.GetAsync("Nguoi_dung/" + user.User.Uid + "/Bookmark/" + idTruyen + "/Chuong_Dang_Doc");
+                FirebaseResponse res = await client.GetAsync("Nguoi_dung/" + user.User.Uid + "/Bookmark/" + idTruyen + "/Chuong_Da_Doc");
                 string idChuongDangDoc = res.ResultAs<string>();
+                int tongChuong = snapshot.GetValue<int>("So_chuong");
                 Panel panel = new Panel();
                 this.Controls.Add(panel);
                 panel.AutoSize = true;
                 panel.Dock = DockStyle.Top;
+                panel.AutoScroll = true;
 
                 Panel panelPicture = new Panel();
                 panelPicture.AutoSize = true;
@@ -90,7 +91,7 @@ namespace Login
                 Label labelChuong = new Label();
                 labelChuong.Font = new Font("League Spartan", 16, FontStyle.Regular);
                 labelChuong.Location = new Point(panelPicture.Width + 9, labelName.Location.Y + labelName.Height + 33);
-                labelChuong.Text = "Chương đánh dấu: " + int.Parse(idChuongDangDoc).ToString();
+                labelChuong.Text = "Chương đánh dấu: " + int.Parse(idChuongDangDoc).ToString() + "/" + tongChuong.ToString();
                 labelChuong.Anchor = AnchorStyles.Top | AnchorStyles.Left;
                 labelChuong.AutoSize = true;
 
@@ -117,7 +118,7 @@ namespace Login
                 iconButton.Click += async (s, ev) =>
                 {
                     panel.Visible = false;
-                    await client.DeleteAsync("Nguoi_dung/" + user.User.Uid + "/Bookmark");
+                    await client.DeleteAsync("Nguoi_dung/" + user.User.Uid + "/Bookmark/" + idTruyen);
                 };
             }
         }
