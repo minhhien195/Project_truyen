@@ -50,6 +50,9 @@
             this.btnbars = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.process1 = new System.Diagnostics.Process();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.tbsearch = new System.Windows.Forms.TextBox();
             this.paneltop = new System.Windows.Forms.Panel();
             this.btnSearch = new System.Windows.Forms.Button();
@@ -108,6 +111,7 @@
             this.panelTheodoiSubmenu.SuspendLayout();
             this.panelheader.SuspendLayout();
             this.panelClose.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.paneltop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.truyen4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.truyen3)).BeginInit();
@@ -519,6 +523,44 @@
             this.process1.StartInfo.UserName = "";
             this.process1.SynchronizingObject = this;
             // 
+            // panel4
+            // 
+            this.panel4.AutoSize = true;
+            this.panel4.Controls.Add(this.iconButton1);
+            this.panel4.Controls.Add(this.textBox1);
+            this.panel4.Location = new System.Drawing.Point(818, 485);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(262, 54);
+            this.panel4.TabIndex = 4;
+            // 
+            // iconButton1
+            // 
+            this.iconButton1.AutoSize = true;
+            this.iconButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(227)))), ((int)(((byte)(243)))));
+            this.iconButton1.FlatAppearance.BorderSize = 0;
+            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton1.Font = new System.Drawing.Font("League Spartan", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
+            this.iconButton1.IconColor = System.Drawing.Color.Black;
+            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton1.IconSize = 38;
+            this.iconButton1.Location = new System.Drawing.Point(205, 3);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.Size = new System.Drawing.Size(44, 44);
+            this.iconButton1.TabIndex = 1;
+            this.iconButton1.UseVisualStyleBackColor = false;
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(227)))), ((int)(((byte)(243)))));
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.Font = new System.Drawing.Font("League Spartan", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(3, 4);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(246, 44);
+            this.textBox1.TabIndex = 2;
+            this.textBox1.Text = "Tìm kiếm";
             // tbsearch
             // 
             this.tbsearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(227)))), ((int)(((byte)(243)))));
@@ -1228,6 +1270,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
+            this.ClientSize = new System.Drawing.Size(1898, 1024);
+            this.Controls.Add(this.panel4);
             this.ClientSize = new System.Drawing.Size(1904, 1041);
             this.Controls.Add(this.dangxem);
             this.Controls.Add(this.sangtac);
@@ -1255,6 +1299,8 @@
             this.panelTheodoiSubmenu.ResumeLayout(false);
             this.panelheader.ResumeLayout(false);
             this.panelClose.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.paneltop.ResumeLayout(false);
             this.paneltop.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.truyen4)).EndInit();
@@ -1304,6 +1350,9 @@
         private System.Windows.Forms.Panel panelLogo;
         private System.Windows.Forms.Panel panelClose;
         private System.Diagnostics.Process process1;
+        private System.Windows.Forms.Panel panel4;
+        private FontAwesome.Sharp.IconButton iconButton1;
+        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.PictureBox pbAvt;
         private System.Windows.Forms.TextBox tbsearch;
         private System.Windows.Forms.Button btnSearch;

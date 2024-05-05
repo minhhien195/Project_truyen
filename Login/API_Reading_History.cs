@@ -69,7 +69,7 @@ namespace Readinghistory
             AuthSecret = "38QvLmnKMHlQtJ9yZzCqqWytxeXimwt06ZnFfSc2",
             BasePath = "https://healtruyen-default-rtdb.asia-southeast1.firebasedatabase.app/"
         };
-        public async Task<List<Dictionary<string, Dictionary<string, object>>>> Lay_lichsudoc(string userId, string idtruyen, string idchuong)
+        public async Task<Dictionary<string, Dictionary<string, object>>> Lay_lichsudoc(string userId, string idtruyen, string idchuong)
         {
             /* IFirebaseClient client = new FireSharp.FirebaseClient(_firebaseConfig);
              FirestoreDb db = FirestoreDb.Create("healtruyen");
@@ -103,10 +103,10 @@ namespace Readinghistory
             var path = "Nguoi_dung/" + userId + "lichsudoc/";
             FirebaseResponse res = await client.GetAsync(path);
             // Chuyển đổi dữ liệu trả về thành Dictionary<string, Dictionary<string, object>>
-            List<Dictionary<string, Dictionary<string, object>>> readingHistory = new List<Dictionary<string, Dictionary<string, object>>>();
+            Dictionary<string, Dictionary<string, object>> readingHistory = new Dictionary<string, Dictionary<string, object>>();
             if (res.Body != "null")
             {
-                readingHistory = JsonConvert.DeserializeObject<List<Dictionary<string, Dictionary<string, object>>>>(res.Body);
+                readingHistory = JsonConvert.DeserializeObject<Dictionary<string, Dictionary<string, object>>>(res.Body);
             }
             /* // chuyển từ base64 thành ảnh
              byte[] imageBytes = Convert.FromBase64String(anh);

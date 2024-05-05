@@ -21,5 +21,7 @@ namespace Login
         {
             rtbTimtrangAlbum.SelectionAlignment = HorizontalAlignment.Center;
         }
+
+        
     }
 }
