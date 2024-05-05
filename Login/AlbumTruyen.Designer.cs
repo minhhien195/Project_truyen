@@ -207,7 +207,7 @@
             this.lbAlbum.Font = new System.Drawing.Font("League Spartan SemiBold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbAlbum.Location = new System.Drawing.Point(9, 19);
             this.lbAlbum.Name = "lbAlbum";
-            this.lbAlbum.Size = new System.Drawing.Size(184, 41);
+            this.lbAlbum.Size = new System.Drawing.Size(158, 36);
             this.lbAlbum.TabIndex = 1;
             this.lbAlbum.Text = "Album Truyện";
             // 

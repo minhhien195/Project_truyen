@@ -547,5 +547,9 @@ namespace Login
             }
         }
 
+        private void lbTenanh1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

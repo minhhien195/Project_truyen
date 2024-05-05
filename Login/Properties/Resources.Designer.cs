@@ -63,14 +63,16 @@ namespace Login.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap Album_truyen
-        {
-            get
-            {
+        public static System.Drawing.Bitmap Album_truyen {
+            get {
                 object obj = ResourceManager.GetObject("Album_truyen", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap albumicon {
             get {
                 object obj = ResourceManager.GetObject("albumicon", resourceCulture);
@@ -144,6 +146,16 @@ namespace Login.Properties {
         public static System.Drawing.Bitmap checkmark {
             get {
                 object obj = ResourceManager.GetObject("checkmark", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap cover1 {
+            get {
+                object obj = ResourceManager.GetObject("cover1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -351,6 +363,16 @@ namespace Login.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap left_arrow11 {
+            get {
+                object obj = ResourceManager.GetObject("left-arrow11", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap leftarrow {
             get {
                 object obj = ResourceManager.GetObject("leftarrow", resourceCulture);
@@ -371,9 +393,9 @@ namespace Login.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap logo {
+        public static System.Drawing.Bitmap Logo {
             get {
-                object obj = ResourceManager.GetObject("logo", resourceCulture);
+                object obj = ResourceManager.GetObject("Logo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -391,9 +413,29 @@ namespace Login.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap logo2 {
+            get {
+                object obj = ResourceManager.GetObject("logo2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap newratingicon {
             get {
                 object obj = ResourceManager.GetObject("newratingicon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap phongcanh {
+            get {
+                object obj = ResourceManager.GetObject("phongcanh", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -431,6 +473,16 @@ namespace Login.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap searchicon2 {
+            get {
+                object obj = ResourceManager.GetObject("searchicon2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap sendicon {
             get {
                 object obj = ResourceManager.GetObject("sendicon", resourceCulture);
@@ -451,17 +503,9 @@ namespace Login.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap titleicon
-        {
-            get
-            {
-                object obj = ResourceManager.GetObject("titleicon", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        public static System.Drawing.Bitmap Logo {
+        public static System.Drawing.Bitmap titleicon {
             get {
-                object obj = ResourceManager.GetObject("Logo", resourceCulture);
+                object obj = ResourceManager.GetObject("titleicon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -469,9 +513,9 @@ namespace Login.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap phongcanh {
+        public static System.Drawing.Bitmap trendingicon {
             get {
-                object obj = ResourceManager.GetObject("phongcanh", resourceCulture);
+                object obj = ResourceManager.GetObject("trendingicon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
