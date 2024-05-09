@@ -156,6 +156,8 @@
             this.ibtnChiaseAlbum = new FontAwesome.Sharp.IconButton();
             this.panelTenAlbum = new System.Windows.Forms.Panel();
             this.ibtnLontoiBe = new FontAwesome.Sharp.IconButton();
+            this.tbLinkShare = new System.Windows.Forms.TextBox();
+            this.btnAccessAlbum = new System.Windows.Forms.Button();
             this.panelAlbumTruyen.SuspendLayout();
             this.panelTruyen10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptrAnh10)).BeginInit();
@@ -242,9 +244,10 @@
             this.panelTruyen10.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTruyen10.Location = new System.Drawing.Point(0, 1971);
             this.panelTruyen10.Name = "panelTruyen10";
-            this.panelTruyen10.Size = new System.Drawing.Size(1803, 219);
+            this.panelTruyen10.Size = new System.Drawing.Size(1808, 219);
             this.panelTruyen10.TabIndex = 9;
             this.panelTruyen10.Tag = "001";
+            this.panelTruyen10.Visible = false;
             // 
             // ibtnTatthongbao10
             // 
@@ -348,7 +351,7 @@
             this.lbTenTruyen10.Font = new System.Drawing.Font("League Spartan SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTenTruyen10.Location = new System.Drawing.Point(181, 14);
             this.lbTenTruyen10.Name = "lbTenTruyen10";
-            this.lbTenTruyen10.Size = new System.Drawing.Size(575, 36);
+            this.lbTenTruyen10.Size = new System.Drawing.Size(487, 30);
             this.lbTenTruyen10.TabIndex = 1;
             this.lbTenTruyen10.Text = "Theo Giang Hồ Bắt Đầu, Liều Thành Võ Đạo Chân Quân";
             // 
@@ -435,9 +438,10 @@
             this.panelTruyen9.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTruyen9.Location = new System.Drawing.Point(0, 1752);
             this.panelTruyen9.Name = "panelTruyen9";
-            this.panelTruyen9.Size = new System.Drawing.Size(1803, 219);
+            this.panelTruyen9.Size = new System.Drawing.Size(1808, 219);
             this.panelTruyen9.TabIndex = 8;
             this.panelTruyen9.Tag = "001";
+            this.panelTruyen9.Visible = false;
             // 
             // ibtnTatthongbao9
             // 
@@ -541,7 +545,7 @@
             this.lbTenTruyen9.Font = new System.Drawing.Font("League Spartan SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTenTruyen9.Location = new System.Drawing.Point(181, 14);
             this.lbTenTruyen9.Name = "lbTenTruyen9";
-            this.lbTenTruyen9.Size = new System.Drawing.Size(575, 36);
+            this.lbTenTruyen9.Size = new System.Drawing.Size(487, 30);
             this.lbTenTruyen9.TabIndex = 1;
             this.lbTenTruyen9.Text = "Theo Giang Hồ Bắt Đầu, Liều Thành Võ Đạo Chân Quân";
             // 
@@ -628,9 +632,10 @@
             this.panelTruyen8.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTruyen8.Location = new System.Drawing.Point(0, 1533);
             this.panelTruyen8.Name = "panelTruyen8";
-            this.panelTruyen8.Size = new System.Drawing.Size(1803, 219);
+            this.panelTruyen8.Size = new System.Drawing.Size(1808, 219);
             this.panelTruyen8.TabIndex = 7;
             this.panelTruyen8.Tag = "001";
+            this.panelTruyen8.Visible = false;
             // 
             // ibtnTatthongbao8
             // 
@@ -734,7 +739,7 @@
             this.lbTenTruyen8.Font = new System.Drawing.Font("League Spartan SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTenTruyen8.Location = new System.Drawing.Point(181, 14);
             this.lbTenTruyen8.Name = "lbTenTruyen8";
-            this.lbTenTruyen8.Size = new System.Drawing.Size(575, 36);
+            this.lbTenTruyen8.Size = new System.Drawing.Size(487, 30);
             this.lbTenTruyen8.TabIndex = 1;
             this.lbTenTruyen8.Text = "Theo Giang Hồ Bắt Đầu, Liều Thành Võ Đạo Chân Quân";
             // 
@@ -821,9 +826,10 @@
             this.panelTruyen7.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTruyen7.Location = new System.Drawing.Point(0, 1314);
             this.panelTruyen7.Name = "panelTruyen7";
-            this.panelTruyen7.Size = new System.Drawing.Size(1803, 219);
+            this.panelTruyen7.Size = new System.Drawing.Size(1808, 219);
             this.panelTruyen7.TabIndex = 6;
             this.panelTruyen7.Tag = "001";
+            this.panelTruyen7.Visible = false;
             // 
             // ibtnTatthongbao7
             // 
@@ -927,7 +933,7 @@
             this.lbTenTruyen7.Font = new System.Drawing.Font("League Spartan SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTenTruyen7.Location = new System.Drawing.Point(181, 14);
             this.lbTenTruyen7.Name = "lbTenTruyen7";
-            this.lbTenTruyen7.Size = new System.Drawing.Size(575, 36);
+            this.lbTenTruyen7.Size = new System.Drawing.Size(487, 30);
             this.lbTenTruyen7.TabIndex = 1;
             this.lbTenTruyen7.Text = "Theo Giang Hồ Bắt Đầu, Liều Thành Võ Đạo Chân Quân";
             // 
@@ -1014,9 +1020,10 @@
             this.panelTruyen6.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTruyen6.Location = new System.Drawing.Point(0, 1095);
             this.panelTruyen6.Name = "panelTruyen6";
-            this.panelTruyen6.Size = new System.Drawing.Size(1803, 219);
+            this.panelTruyen6.Size = new System.Drawing.Size(1808, 219);
             this.panelTruyen6.TabIndex = 5;
             this.panelTruyen6.Tag = "001";
+            this.panelTruyen6.Visible = false;
             // 
             // ibtnTatthongbao6
             // 
@@ -1120,7 +1127,7 @@
             this.lbTenTruyen6.Font = new System.Drawing.Font("League Spartan SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTenTruyen6.Location = new System.Drawing.Point(181, 14);
             this.lbTenTruyen6.Name = "lbTenTruyen6";
-            this.lbTenTruyen6.Size = new System.Drawing.Size(575, 36);
+            this.lbTenTruyen6.Size = new System.Drawing.Size(487, 30);
             this.lbTenTruyen6.TabIndex = 1;
             this.lbTenTruyen6.Text = "Theo Giang Hồ Bắt Đầu, Liều Thành Võ Đạo Chân Quân";
             // 
@@ -1207,9 +1214,10 @@
             this.panelTruyen5.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTruyen5.Location = new System.Drawing.Point(0, 876);
             this.panelTruyen5.Name = "panelTruyen5";
-            this.panelTruyen5.Size = new System.Drawing.Size(1803, 219);
+            this.panelTruyen5.Size = new System.Drawing.Size(1808, 219);
             this.panelTruyen5.TabIndex = 4;
             this.panelTruyen5.Tag = "001";
+            this.panelTruyen5.Visible = false;
             // 
             // ibtnTatthongbao5
             // 
@@ -1313,7 +1321,7 @@
             this.lbTenTruyen5.Font = new System.Drawing.Font("League Spartan SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTenTruyen5.Location = new System.Drawing.Point(181, 14);
             this.lbTenTruyen5.Name = "lbTenTruyen5";
-            this.lbTenTruyen5.Size = new System.Drawing.Size(575, 36);
+            this.lbTenTruyen5.Size = new System.Drawing.Size(487, 30);
             this.lbTenTruyen5.TabIndex = 1;
             this.lbTenTruyen5.Text = "Theo Giang Hồ Bắt Đầu, Liều Thành Võ Đạo Chân Quân";
             // 
@@ -1400,9 +1408,10 @@
             this.panelTruyen4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTruyen4.Location = new System.Drawing.Point(0, 657);
             this.panelTruyen4.Name = "panelTruyen4";
-            this.panelTruyen4.Size = new System.Drawing.Size(1803, 219);
+            this.panelTruyen4.Size = new System.Drawing.Size(1808, 219);
             this.panelTruyen4.TabIndex = 3;
             this.panelTruyen4.Tag = "001";
+            this.panelTruyen4.Visible = false;
             // 
             // ibtnTatthongbao4
             // 
@@ -1506,7 +1515,7 @@
             this.lbTenTruyen4.Font = new System.Drawing.Font("League Spartan SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTenTruyen4.Location = new System.Drawing.Point(181, 14);
             this.lbTenTruyen4.Name = "lbTenTruyen4";
-            this.lbTenTruyen4.Size = new System.Drawing.Size(575, 36);
+            this.lbTenTruyen4.Size = new System.Drawing.Size(487, 30);
             this.lbTenTruyen4.TabIndex = 1;
             this.lbTenTruyen4.Text = "Theo Giang Hồ Bắt Đầu, Liều Thành Võ Đạo Chân Quân";
             // 
@@ -1593,9 +1602,10 @@
             this.panelTruyen3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTruyen3.Location = new System.Drawing.Point(0, 438);
             this.panelTruyen3.Name = "panelTruyen3";
-            this.panelTruyen3.Size = new System.Drawing.Size(1803, 219);
+            this.panelTruyen3.Size = new System.Drawing.Size(1808, 219);
             this.panelTruyen3.TabIndex = 2;
             this.panelTruyen3.Tag = "001";
+            this.panelTruyen3.Visible = false;
             // 
             // ibtnTatthongbao3
             // 
@@ -1699,7 +1709,7 @@
             this.lbTenTruyen3.Font = new System.Drawing.Font("League Spartan SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTenTruyen3.Location = new System.Drawing.Point(181, 14);
             this.lbTenTruyen3.Name = "lbTenTruyen3";
-            this.lbTenTruyen3.Size = new System.Drawing.Size(575, 36);
+            this.lbTenTruyen3.Size = new System.Drawing.Size(487, 30);
             this.lbTenTruyen3.TabIndex = 1;
             this.lbTenTruyen3.Text = "Theo Giang Hồ Bắt Đầu, Liều Thành Võ Đạo Chân Quân";
             // 
@@ -1786,9 +1796,10 @@
             this.panelTruyen2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTruyen2.Location = new System.Drawing.Point(0, 219);
             this.panelTruyen2.Name = "panelTruyen2";
-            this.panelTruyen2.Size = new System.Drawing.Size(1803, 219);
+            this.panelTruyen2.Size = new System.Drawing.Size(1808, 219);
             this.panelTruyen2.TabIndex = 1;
             this.panelTruyen2.Tag = "001";
+            this.panelTruyen2.Visible = false;
             // 
             // ibtnTatthongbao2
             // 
@@ -1892,7 +1903,7 @@
             this.lbTenTruyen2.Font = new System.Drawing.Font("League Spartan SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTenTruyen2.Location = new System.Drawing.Point(181, 14);
             this.lbTenTruyen2.Name = "lbTenTruyen2";
-            this.lbTenTruyen2.Size = new System.Drawing.Size(575, 36);
+            this.lbTenTruyen2.Size = new System.Drawing.Size(487, 30);
             this.lbTenTruyen2.TabIndex = 1;
             this.lbTenTruyen2.Text = "Theo Giang Hồ Bắt Đầu, Liều Thành Võ Đạo Chân Quân";
             // 
@@ -1979,9 +1990,10 @@
             this.panelTruyen1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTruyen1.Location = new System.Drawing.Point(0, 0);
             this.panelTruyen1.Name = "panelTruyen1";
-            this.panelTruyen1.Size = new System.Drawing.Size(1803, 219);
+            this.panelTruyen1.Size = new System.Drawing.Size(1808, 219);
             this.panelTruyen1.TabIndex = 0;
             this.panelTruyen1.Tag = "001";
+            this.panelTruyen1.Visible = false;
             // 
             // ibtnTatthongbao1
             // 
@@ -2085,7 +2097,7 @@
             this.lbTenTruyen1.Font = new System.Drawing.Font("League Spartan SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTenTruyen1.Location = new System.Drawing.Point(181, 14);
             this.lbTenTruyen1.Name = "lbTenTruyen1";
-            this.lbTenTruyen1.Size = new System.Drawing.Size(575, 36);
+            this.lbTenTruyen1.Size = new System.Drawing.Size(487, 30);
             this.lbTenTruyen1.TabIndex = 1;
             this.lbTenTruyen1.Text = "Theo Giang Hồ Bắt Đầu, Liều Thành Võ Đạo Chân Quân";
             // 
@@ -2208,9 +2220,12 @@
             this.ibtnChiaseAlbum.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ibtnChiaseAlbum.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.ibtnChiaseAlbum.UseVisualStyleBackColor = false;
+            this.ibtnChiaseAlbum.Click += new System.EventHandler(this.ibtnChiaseAlbum_Click);
             // 
             // panelTenAlbum
             // 
+            this.panelTenAlbum.Controls.Add(this.btnAccessAlbum);
+            this.panelTenAlbum.Controls.Add(this.tbLinkShare);
             this.panelTenAlbum.Controls.Add(this.ibtnLontoiBe);
             this.panelTenAlbum.Controls.Add(this.lbAlbum);
             this.panelTenAlbum.Controls.Add(this.lbduongke);
@@ -2235,6 +2250,23 @@
             this.ibtnLontoiBe.Size = new System.Drawing.Size(44, 33);
             this.ibtnLontoiBe.TabIndex = 3;
             this.ibtnLontoiBe.UseVisualStyleBackColor = true;
+            // 
+            // tbLinkShare
+            // 
+            this.tbLinkShare.Location = new System.Drawing.Point(1391, 20);
+            this.tbLinkShare.Name = "tbLinkShare";
+            this.tbLinkShare.Size = new System.Drawing.Size(288, 26);
+            this.tbLinkShare.TabIndex = 4;
+            // 
+            // btnAccessAlbum
+            // 
+            this.btnAccessAlbum.Location = new System.Drawing.Point(1220, 19);
+            this.btnAccessAlbum.Name = "btnAccessAlbum";
+            this.btnAccessAlbum.Size = new System.Drawing.Size(165, 36);
+            this.btnAccessAlbum.TabIndex = 5;
+            this.btnAccessAlbum.Text = "Truy cập Album";
+            this.btnAccessAlbum.UseVisualStyleBackColor = true;
+            this.btnAccessAlbum.Click += new System.EventHandler(this.btnAccessAlbum_Click);
             // 
             // AlbumTruyen
             // 
@@ -2435,5 +2467,7 @@
         private System.Windows.Forms.Button btnTacgia7;
         private System.Windows.Forms.Button btnTinhtrang7;
         private System.Windows.Forms.Button btnTheloai7;
+        private System.Windows.Forms.TextBox tbLinkShare;
+        private System.Windows.Forms.Button btnAccessAlbum;
     }
 }
