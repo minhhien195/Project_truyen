@@ -118,5 +118,11 @@ namespace Login
             AlbumTruyen bookmark = new AlbumTruyen(user);
             bookmark.Show();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Hotro_baoloi hotro_Baoloi = new Hotro_baoloi(user);
+            hotro_Baoloi.Show();
+        }
     }
 }
