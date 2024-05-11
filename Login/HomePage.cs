@@ -115,7 +115,7 @@ namespace Login
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Bookmark bookmark = new Bookmark(user);
+            AlbumTruyen bookmark = new AlbumTruyen(user);
             bookmark.Show();
         }
 

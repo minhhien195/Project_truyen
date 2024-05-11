@@ -44,6 +44,8 @@
             this.label11 = new System.Windows.Forms.Label();
             this.panel53 = new System.Windows.Forms.Panel();
             this.lbSuco = new System.Windows.Forms.Label();
+            this.ibtnBaocaosuco = new FontAwesome.Sharp.IconButton();
+            this.ibtnBaocao = new FontAwesome.Sharp.IconButton();
             this.panelSubmenuChat = new System.Windows.Forms.Panel();
             this.panelSubmenuSudungchat = new System.Windows.Forms.Panel();
             this.panel57 = new System.Windows.Forms.Panel();
@@ -54,6 +56,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.panel47 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
+            this.ibtnSudungChat = new FontAwesome.Sharp.IconButton();
+            this.ibtnChat = new FontAwesome.Sharp.IconButton();
             this.paneSubmenuTuongtactruyen = new System.Windows.Forms.Panel();
             this.panelSubmenuLichsudoc = new System.Windows.Forms.Panel();
             this.panel65 = new System.Windows.Forms.Panel();
@@ -67,6 +71,7 @@
             this.lbLSDBuoc1 = new System.Windows.Forms.Label();
             this.panel50 = new System.Windows.Forms.Panel();
             this.lbLichsudoc = new System.Windows.Forms.Label();
+            this.ibtnLichsudoc = new FontAwesome.Sharp.IconButton();
             this.panelSubmenuDanhdau = new System.Windows.Forms.Panel();
             this.panel64 = new System.Windows.Forms.Panel();
             this.lbNDDDBuoc3 = new System.Windows.Forms.Label();
@@ -79,11 +84,13 @@
             this.lbDDBuoc1 = new System.Windows.Forms.Label();
             this.panel46 = new System.Windows.Forms.Panel();
             this.lbDanhdau = new System.Windows.Forms.Label();
+            this.ibtnDanhdau = new FontAwesome.Sharp.IconButton();
             this.panelSubmenuThemAlbum = new System.Windows.Forms.Panel();
             this.panel61 = new System.Windows.Forms.Panel();
             this.lbNDTALBuoc5_2 = new System.Windows.Forms.Label();
             this.lbTALBuoc5 = new System.Windows.Forms.Label();
             this.lbNDTALBuoc5_1 = new System.Windows.Forms.Label();
+            this.ibtnThongbao = new FontAwesome.Sharp.IconButton();
             this.panel43 = new System.Windows.Forms.Panel();
             this.lbNDTALBuoc4 = new System.Windows.Forms.Label();
             this.lbTALBuoc4 = new System.Windows.Forms.Label();
@@ -98,6 +105,7 @@
             this.lbTALBuoc1 = new System.Windows.Forms.Label();
             this.panel41 = new System.Windows.Forms.Panel();
             this.lbThemAlbum = new System.Windows.Forms.Label();
+            this.ibtnThemAlbum = new FontAwesome.Sharp.IconButton();
             this.panelSubmenuDecu = new System.Windows.Forms.Panel();
             this.panel62 = new System.Windows.Forms.Panel();
             this.lbNDDCBuoc4 = new System.Windows.Forms.Label();
@@ -113,6 +121,7 @@
             this.lbDCBuoc1 = new System.Windows.Forms.Label();
             this.panel36 = new System.Windows.Forms.Panel();
             this.lbDecu = new System.Windows.Forms.Label();
+            this.ibtnDecu = new FontAwesome.Sharp.IconButton();
             this.panelSubmenuDanhgia = new System.Windows.Forms.Panel();
             this.panel59 = new System.Windows.Forms.Panel();
             this.lbNDDGBuoc3 = new System.Windows.Forms.Label();
@@ -125,6 +134,7 @@
             this.lbDGBuoc1 = new System.Windows.Forms.Label();
             this.panel35 = new System.Windows.Forms.Panel();
             this.lbDanhgia = new System.Windows.Forms.Label();
+            this.ibtnDanhgia = new FontAwesome.Sharp.IconButton();
             this.panelSubmenuBinhluan = new System.Windows.Forms.Panel();
             this.panel60 = new System.Windows.Forms.Panel();
             this.lbNDBLBuoc3 = new System.Windows.Forms.Label();
@@ -137,6 +147,7 @@
             this.lbBLBuoc1 = new System.Windows.Forms.Label();
             this.panel31 = new System.Windows.Forms.Panel();
             this.lbBinhluan = new System.Windows.Forms.Label();
+            this.ibtnBinhluan = new FontAwesome.Sharp.IconButton();
             this.panelSubmenuTimkiem = new System.Windows.Forms.Panel();
             this.panel58 = new System.Windows.Forms.Panel();
             this.lbNDTKTBuoc4 = new System.Windows.Forms.Label();
@@ -152,7 +163,9 @@
             this.lbTKTBuoc1 = new System.Windows.Forms.Label();
             this.panel28 = new System.Windows.Forms.Panel();
             this.lbTimkiemtruyen = new System.Windows.Forms.Label();
+            this.ibtnTimkiemtruyen = new FontAwesome.Sharp.IconButton();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.ibtnTuongtactruyen = new FontAwesome.Sharp.IconButton();
             this.panelSubmenuQLTK = new System.Windows.Forms.Panel();
             this.panelSubmenuThaydoi = new System.Windows.Forms.Panel();
             this.panel27 = new System.Windows.Forms.Panel();
@@ -169,6 +182,7 @@
             this.lbTDBuoc1 = new System.Windows.Forms.Label();
             this.panel22 = new System.Windows.Forms.Panel();
             this.lbThaydoi = new System.Windows.Forms.Label();
+            this.ibtnTennguoidung = new FontAwesome.Sharp.IconButton();
             this.panelSubmenuDangnhap = new System.Windows.Forms.Panel();
             this.panel21 = new System.Windows.Forms.Panel();
             this.lbNDDXBuoc2 = new System.Windows.Forms.Label();
@@ -201,42 +215,28 @@
             this.lbDNBuoc1 = new System.Windows.Forms.Label();
             this.panel10 = new System.Windows.Forms.Panel();
             this.lbHDDangnhap = new System.Windows.Forms.Label();
-            this.lbVande = new System.Windows.Forms.Label();
-            this.panelNoidungcaithien = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.btnXacnhan = new System.Windows.Forms.Button();
-            this.btnHuy = new System.Windows.Forms.Button();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.lbChitiet = new System.Windows.Forms.Label();
-            this.rtbChitiet = new System.Windows.Forms.RichTextBox();
-            this.panelReturn = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.lbduongke = new System.Windows.Forms.Label();
-            this.lbCaithien = new System.Windows.Forms.Label();
-            this.cbBoxchude = new System.Windows.Forms.ComboBox();
-            this.ibtnBaocaosuco = new FontAwesome.Sharp.IconButton();
-            this.ibtnBaocao = new FontAwesome.Sharp.IconButton();
-            this.ibtnSudungChat = new FontAwesome.Sharp.IconButton();
-            this.ibtnChat = new FontAwesome.Sharp.IconButton();
-            this.ibtnLichsudoc = new FontAwesome.Sharp.IconButton();
-            this.ibtnDanhdau = new FontAwesome.Sharp.IconButton();
-            this.ibtnThongbao = new FontAwesome.Sharp.IconButton();
-            this.ibtnThemAlbum = new FontAwesome.Sharp.IconButton();
-            this.ibtnDecu = new FontAwesome.Sharp.IconButton();
-            this.ibtnDanhgia = new FontAwesome.Sharp.IconButton();
-            this.ibtnBinhluan = new FontAwesome.Sharp.IconButton();
-            this.ibtnTimkiemtruyen = new FontAwesome.Sharp.IconButton();
-            this.ibtnTuongtactruyen = new FontAwesome.Sharp.IconButton();
-            this.ibtnTennguoidung = new FontAwesome.Sharp.IconButton();
             this.ibtnDangnhap = new FontAwesome.Sharp.IconButton();
             this.ibtnQuanlyTK = new FontAwesome.Sharp.IconButton();
-            this.ibtnReturn = new FontAwesome.Sharp.IconButton();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.lbVande = new System.Windows.Forms.Label();
+            this.panelNoidungcaithien = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnHuy = new System.Windows.Forms.Button();
+            this.btnXacnhan = new System.Windows.Forms.Button();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.lbCaithien = new System.Windows.Forms.Label();
+            this.rtbChitiet = new System.Windows.Forms.RichTextBox();
+            this.cbBoxchude = new System.Windows.Forms.ComboBox();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.lbChitiet = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.panelReturn = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.ibtnReturn = new FontAwesome.Sharp.IconButton();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.lbduongke = new System.Windows.Forms.Label();
             this.panelHotro_baoloi.SuspendLayout();
             this.panelVandethuonggap.SuspendLayout();
             this.paneNoidungvande.SuspendLayout();
@@ -311,12 +311,12 @@
             this.panel11.SuspendLayout();
             this.panel10.SuspendLayout();
             this.panelNoidungcaithien.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             this.panelReturn.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel8.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelHotro_baoloi
@@ -499,6 +499,52 @@
             this.lbSuco.TabIndex = 0;
             this.lbSuco.Text = "Hướng dẫn báo cáo sự cố";
             // 
+            // ibtnBaocaosuco
+            // 
+            this.ibtnBaocaosuco.AutoSize = true;
+            this.ibtnBaocaosuco.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
+            this.ibtnBaocaosuco.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ibtnBaocaosuco.FlatAppearance.BorderSize = 0;
+            this.ibtnBaocaosuco.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ibtnBaocaosuco.Font = new System.Drawing.Font("League Spartan", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ibtnBaocaosuco.IconChar = FontAwesome.Sharp.IconChar.AngleDown;
+            this.ibtnBaocaosuco.IconColor = System.Drawing.Color.Black;
+            this.ibtnBaocaosuco.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ibtnBaocaosuco.IconSize = 32;
+            this.ibtnBaocaosuco.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ibtnBaocaosuco.Location = new System.Drawing.Point(0, 0);
+            this.ibtnBaocaosuco.Name = "ibtnBaocaosuco";
+            this.ibtnBaocaosuco.Size = new System.Drawing.Size(851, 46);
+            this.ibtnBaocaosuco.TabIndex = 19;
+            this.ibtnBaocaosuco.Text = "    Phản hồi lỗi khi sử dụng.";
+            this.ibtnBaocaosuco.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ibtnBaocaosuco.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.ibtnBaocaosuco.UseVisualStyleBackColor = false;
+            this.ibtnBaocaosuco.Click += new System.EventHandler(this.ibtnBaocaosuco_Click);
+            // 
+            // ibtnBaocao
+            // 
+            this.ibtnBaocao.AutoSize = true;
+            this.ibtnBaocao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(227)))), ((int)(((byte)(243)))));
+            this.ibtnBaocao.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ibtnBaocao.FlatAppearance.BorderSize = 0;
+            this.ibtnBaocao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ibtnBaocao.Font = new System.Drawing.Font("League Spartan", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ibtnBaocao.IconChar = FontAwesome.Sharp.IconChar.AngleDown;
+            this.ibtnBaocao.IconColor = System.Drawing.Color.Black;
+            this.ibtnBaocao.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ibtnBaocao.IconSize = 32;
+            this.ibtnBaocao.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ibtnBaocao.Location = new System.Drawing.Point(70, 2193);
+            this.ibtnBaocao.Name = "ibtnBaocao";
+            this.ibtnBaocao.Size = new System.Drawing.Size(851, 46);
+            this.ibtnBaocao.TabIndex = 7;
+            this.ibtnBaocao.Text = "    Báo cáo sự cố khi sử dụng";
+            this.ibtnBaocao.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ibtnBaocao.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.ibtnBaocao.UseVisualStyleBackColor = false;
+            this.ibtnBaocao.Click += new System.EventHandler(this.ibtnBaocao_Click);
+            // 
             // panelSubmenuChat
             // 
             this.panelSubmenuChat.AutoSize = true;
@@ -602,6 +648,52 @@
             this.label7.Size = new System.Drawing.Size(290, 30);
             this.label7.TabIndex = 0;
             this.label7.Text = "Hướng dẫn chat với quản trị viên";
+            // 
+            // ibtnSudungChat
+            // 
+            this.ibtnSudungChat.AutoSize = true;
+            this.ibtnSudungChat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
+            this.ibtnSudungChat.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ibtnSudungChat.FlatAppearance.BorderSize = 0;
+            this.ibtnSudungChat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ibtnSudungChat.Font = new System.Drawing.Font("League Spartan", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ibtnSudungChat.IconChar = FontAwesome.Sharp.IconChar.AngleDown;
+            this.ibtnSudungChat.IconColor = System.Drawing.Color.Black;
+            this.ibtnSudungChat.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ibtnSudungChat.IconSize = 32;
+            this.ibtnSudungChat.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ibtnSudungChat.Location = new System.Drawing.Point(0, 0);
+            this.ibtnSudungChat.Name = "ibtnSudungChat";
+            this.ibtnSudungChat.Size = new System.Drawing.Size(851, 46);
+            this.ibtnSudungChat.TabIndex = 18;
+            this.ibtnSudungChat.Text = "    Cách sử dụng chat để nhắn tin với quản trị viên.";
+            this.ibtnSudungChat.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ibtnSudungChat.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.ibtnSudungChat.UseVisualStyleBackColor = false;
+            this.ibtnSudungChat.Click += new System.EventHandler(this.ibtnSudungChat_Click);
+            // 
+            // ibtnChat
+            // 
+            this.ibtnChat.AutoSize = true;
+            this.ibtnChat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(227)))), ((int)(((byte)(243)))));
+            this.ibtnChat.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ibtnChat.FlatAppearance.BorderSize = 0;
+            this.ibtnChat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ibtnChat.Font = new System.Drawing.Font("League Spartan", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ibtnChat.IconChar = FontAwesome.Sharp.IconChar.AngleDown;
+            this.ibtnChat.IconColor = System.Drawing.Color.Black;
+            this.ibtnChat.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ibtnChat.IconSize = 32;
+            this.ibtnChat.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ibtnChat.Location = new System.Drawing.Point(70, 2008);
+            this.ibtnChat.Name = "ibtnChat";
+            this.ibtnChat.Size = new System.Drawing.Size(851, 46);
+            this.ibtnChat.TabIndex = 5;
+            this.ibtnChat.Text = "    Sử dụng chat";
+            this.ibtnChat.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ibtnChat.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.ibtnChat.UseVisualStyleBackColor = false;
+            this.ibtnChat.Click += new System.EventHandler(this.ibtnChat_Click);
             // 
             // paneSubmenuTuongtactruyen
             // 
@@ -750,6 +842,29 @@
             this.lbLichsudoc.TabIndex = 0;
             this.lbLichsudoc.Text = "Hướng dẫn xem lịch sử đọc truyện";
             // 
+            // ibtnLichsudoc
+            // 
+            this.ibtnLichsudoc.AutoSize = true;
+            this.ibtnLichsudoc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
+            this.ibtnLichsudoc.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ibtnLichsudoc.FlatAppearance.BorderSize = 0;
+            this.ibtnLichsudoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ibtnLichsudoc.Font = new System.Drawing.Font("League Spartan", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ibtnLichsudoc.IconChar = FontAwesome.Sharp.IconChar.AngleDown;
+            this.ibtnLichsudoc.IconColor = System.Drawing.Color.Black;
+            this.ibtnLichsudoc.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ibtnLichsudoc.IconSize = 32;
+            this.ibtnLichsudoc.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ibtnLichsudoc.Location = new System.Drawing.Point(0, 1155);
+            this.ibtnLichsudoc.Name = "ibtnLichsudoc";
+            this.ibtnLichsudoc.Size = new System.Drawing.Size(851, 46);
+            this.ibtnLichsudoc.TabIndex = 17;
+            this.ibtnLichsudoc.Text = "    Xem lịch sử đọc truyện";
+            this.ibtnLichsudoc.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ibtnLichsudoc.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.ibtnLichsudoc.UseVisualStyleBackColor = false;
+            this.ibtnLichsudoc.Click += new System.EventHandler(this.ibtnLichsudoc_Click);
+            // 
             // panelSubmenuDanhdau
             // 
             this.panelSubmenuDanhdau.AutoSize = true;
@@ -874,6 +989,29 @@
             this.lbDanhdau.TabIndex = 0;
             this.lbDanhdau.Text = "Hướng dẫn đánh dấu truyện";
             // 
+            // ibtnDanhdau
+            // 
+            this.ibtnDanhdau.AutoSize = true;
+            this.ibtnDanhdau.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
+            this.ibtnDanhdau.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ibtnDanhdau.FlatAppearance.BorderSize = 0;
+            this.ibtnDanhdau.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ibtnDanhdau.Font = new System.Drawing.Font("League Spartan", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ibtnDanhdau.IconChar = FontAwesome.Sharp.IconChar.AngleDown;
+            this.ibtnDanhdau.IconColor = System.Drawing.Color.Black;
+            this.ibtnDanhdau.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ibtnDanhdau.IconSize = 32;
+            this.ibtnDanhdau.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ibtnDanhdau.Location = new System.Drawing.Point(0, 986);
+            this.ibtnDanhdau.Name = "ibtnDanhdau";
+            this.ibtnDanhdau.Size = new System.Drawing.Size(851, 46);
+            this.ibtnDanhdau.TabIndex = 15;
+            this.ibtnDanhdau.Text = "    Đánh dấu truyện";
+            this.ibtnDanhdau.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ibtnDanhdau.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.ibtnDanhdau.UseVisualStyleBackColor = false;
+            this.ibtnDanhdau.Click += new System.EventHandler(this.ibtnDanhdau_Click);
+            // 
             // panelSubmenuThemAlbum
             // 
             this.panelSubmenuThemAlbum.AutoSize = true;
@@ -931,6 +1069,22 @@
             this.lbNDTALBuoc5_1.Size = new System.Drawing.Size(42, 30);
             this.lbNDTALBuoc5_1.TabIndex = 11;
             this.lbNDTALBuoc5_1.Text = "Bật";
+            // 
+            // ibtnThongbao
+            // 
+            this.ibtnThongbao.AutoSize = true;
+            this.ibtnThongbao.FlatAppearance.BorderSize = 0;
+            this.ibtnThongbao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ibtnThongbao.IconChar = FontAwesome.Sharp.IconChar.Bell;
+            this.ibtnThongbao.IconColor = System.Drawing.Color.Black;
+            this.ibtnThongbao.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.ibtnThongbao.IconSize = 25;
+            this.ibtnThongbao.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ibtnThongbao.Location = new System.Drawing.Point(203, 3);
+            this.ibtnThongbao.Name = "ibtnThongbao";
+            this.ibtnThongbao.Size = new System.Drawing.Size(35, 34);
+            this.ibtnThongbao.TabIndex = 12;
+            this.ibtnThongbao.UseVisualStyleBackColor = true;
             // 
             // panel43
             // 
@@ -1072,6 +1226,29 @@
             this.lbThemAlbum.Size = new System.Drawing.Size(271, 30);
             this.lbThemAlbum.TabIndex = 0;
             this.lbThemAlbum.Text = "Hướng dẫn thêm album truyện";
+            // 
+            // ibtnThemAlbum
+            // 
+            this.ibtnThemAlbum.AutoSize = true;
+            this.ibtnThemAlbum.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
+            this.ibtnThemAlbum.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ibtnThemAlbum.FlatAppearance.BorderSize = 0;
+            this.ibtnThemAlbum.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ibtnThemAlbum.Font = new System.Drawing.Font("League Spartan", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ibtnThemAlbum.IconChar = FontAwesome.Sharp.IconChar.AngleDown;
+            this.ibtnThemAlbum.IconColor = System.Drawing.Color.Black;
+            this.ibtnThemAlbum.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ibtnThemAlbum.IconSize = 32;
+            this.ibtnThemAlbum.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ibtnThemAlbum.Location = new System.Drawing.Point(0, 750);
+            this.ibtnThemAlbum.Name = "ibtnThemAlbum";
+            this.ibtnThemAlbum.Size = new System.Drawing.Size(851, 46);
+            this.ibtnThemAlbum.TabIndex = 13;
+            this.ibtnThemAlbum.Text = "    Thêm album truyện";
+            this.ibtnThemAlbum.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ibtnThemAlbum.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.ibtnThemAlbum.UseVisualStyleBackColor = false;
+            this.ibtnThemAlbum.Click += new System.EventHandler(this.ibtnThemAlbum_Click);
             // 
             // panelSubmenuDecu
             // 
@@ -1229,6 +1406,29 @@
             this.lbDecu.TabIndex = 0;
             this.lbDecu.Text = "Hướng dẫn đề cử truyện";
             // 
+            // ibtnDecu
+            // 
+            this.ibtnDecu.AutoSize = true;
+            this.ibtnDecu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
+            this.ibtnDecu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ibtnDecu.FlatAppearance.BorderSize = 0;
+            this.ibtnDecu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ibtnDecu.Font = new System.Drawing.Font("League Spartan", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ibtnDecu.IconChar = FontAwesome.Sharp.IconChar.AngleDown;
+            this.ibtnDecu.IconColor = System.Drawing.Color.Black;
+            this.ibtnDecu.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ibtnDecu.IconSize = 32;
+            this.ibtnDecu.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ibtnDecu.Location = new System.Drawing.Point(0, 548);
+            this.ibtnDecu.Name = "ibtnDecu";
+            this.ibtnDecu.Size = new System.Drawing.Size(851, 46);
+            this.ibtnDecu.TabIndex = 11;
+            this.ibtnDecu.Text = "    Đề cử truyện";
+            this.ibtnDecu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ibtnDecu.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.ibtnDecu.UseVisualStyleBackColor = false;
+            this.ibtnDecu.Click += new System.EventHandler(this.ibtnDecu_Click);
+            // 
             // panelSubmenuDanhgia
             // 
             this.panelSubmenuDanhgia.AutoSize = true;
@@ -1352,6 +1552,29 @@
             this.lbDanhgia.Size = new System.Drawing.Size(246, 30);
             this.lbDanhgia.TabIndex = 0;
             this.lbDanhgia.Text = "Hướng dẫn đánh giá truyện";
+            // 
+            // ibtnDanhgia
+            // 
+            this.ibtnDanhgia.AutoSize = true;
+            this.ibtnDanhgia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
+            this.ibtnDanhgia.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ibtnDanhgia.FlatAppearance.BorderSize = 0;
+            this.ibtnDanhgia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ibtnDanhgia.Font = new System.Drawing.Font("League Spartan", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ibtnDanhgia.IconChar = FontAwesome.Sharp.IconChar.AngleDown;
+            this.ibtnDanhgia.IconColor = System.Drawing.Color.Black;
+            this.ibtnDanhgia.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ibtnDanhgia.IconSize = 32;
+            this.ibtnDanhgia.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ibtnDanhgia.Location = new System.Drawing.Point(0, 376);
+            this.ibtnDanhgia.Name = "ibtnDanhgia";
+            this.ibtnDanhgia.Size = new System.Drawing.Size(851, 46);
+            this.ibtnDanhgia.TabIndex = 9;
+            this.ibtnDanhgia.Text = "    Đánh giá truyện";
+            this.ibtnDanhgia.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ibtnDanhgia.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.ibtnDanhgia.UseVisualStyleBackColor = false;
+            this.ibtnDanhgia.Click += new System.EventHandler(this.ibtnDanhgia_Click);
             // 
             // panelSubmenuBinhluan
             // 
@@ -1478,6 +1701,29 @@
             this.lbBinhluan.Size = new System.Drawing.Size(248, 30);
             this.lbBinhluan.TabIndex = 0;
             this.lbBinhluan.Text = "Hướng dẫn bình luận truyện";
+            // 
+            // ibtnBinhluan
+            // 
+            this.ibtnBinhluan.AutoSize = true;
+            this.ibtnBinhluan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
+            this.ibtnBinhluan.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ibtnBinhluan.FlatAppearance.BorderSize = 0;
+            this.ibtnBinhluan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ibtnBinhluan.Font = new System.Drawing.Font("League Spartan", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ibtnBinhluan.IconChar = FontAwesome.Sharp.IconChar.AngleDown;
+            this.ibtnBinhluan.IconColor = System.Drawing.Color.Black;
+            this.ibtnBinhluan.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ibtnBinhluan.IconSize = 32;
+            this.ibtnBinhluan.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ibtnBinhluan.Location = new System.Drawing.Point(0, 207);
+            this.ibtnBinhluan.Name = "ibtnBinhluan";
+            this.ibtnBinhluan.Size = new System.Drawing.Size(851, 46);
+            this.ibtnBinhluan.TabIndex = 7;
+            this.ibtnBinhluan.Text = "    Bình luận truyện";
+            this.ibtnBinhluan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ibtnBinhluan.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.ibtnBinhluan.UseVisualStyleBackColor = false;
+            this.ibtnBinhluan.Click += new System.EventHandler(this.ibtnBinhluan_Click);
             // 
             // panelSubmenuTimkiem
             // 
@@ -1634,6 +1880,29 @@
             this.lbTimkiemtruyen.TabIndex = 0;
             this.lbTimkiemtruyen.Text = "Hướng dẫn tìm kiếm truyện";
             // 
+            // ibtnTimkiemtruyen
+            // 
+            this.ibtnTimkiemtruyen.AutoSize = true;
+            this.ibtnTimkiemtruyen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
+            this.ibtnTimkiemtruyen.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ibtnTimkiemtruyen.FlatAppearance.BorderSize = 0;
+            this.ibtnTimkiemtruyen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ibtnTimkiemtruyen.Font = new System.Drawing.Font("League Spartan", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ibtnTimkiemtruyen.IconChar = FontAwesome.Sharp.IconChar.AngleDown;
+            this.ibtnTimkiemtruyen.IconColor = System.Drawing.Color.Black;
+            this.ibtnTimkiemtruyen.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ibtnTimkiemtruyen.IconSize = 32;
+            this.ibtnTimkiemtruyen.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ibtnTimkiemtruyen.Location = new System.Drawing.Point(0, 0);
+            this.ibtnTimkiemtruyen.Name = "ibtnTimkiemtruyen";
+            this.ibtnTimkiemtruyen.Size = new System.Drawing.Size(851, 46);
+            this.ibtnTimkiemtruyen.TabIndex = 5;
+            this.ibtnTimkiemtruyen.Text = "    Tìm kiếm truyện";
+            this.ibtnTimkiemtruyen.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ibtnTimkiemtruyen.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.ibtnTimkiemtruyen.UseVisualStyleBackColor = false;
+            this.ibtnTimkiemtruyen.Click += new System.EventHandler(this.ibtnTimkiemtruyen_Click);
+            // 
             // panel3
             // 
             this.panel3.AutoSize = true;
@@ -1642,6 +1911,29 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(851, 0);
             this.panel3.TabIndex = 3;
+            // 
+            // ibtnTuongtactruyen
+            // 
+            this.ibtnTuongtactruyen.AutoSize = true;
+            this.ibtnTuongtactruyen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(227)))), ((int)(((byte)(243)))));
+            this.ibtnTuongtactruyen.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ibtnTuongtactruyen.FlatAppearance.BorderSize = 0;
+            this.ibtnTuongtactruyen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ibtnTuongtactruyen.Font = new System.Drawing.Font("League Spartan", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ibtnTuongtactruyen.IconChar = FontAwesome.Sharp.IconChar.AngleDown;
+            this.ibtnTuongtactruyen.IconColor = System.Drawing.Color.Black;
+            this.ibtnTuongtactruyen.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ibtnTuongtactruyen.IconSize = 32;
+            this.ibtnTuongtactruyen.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ibtnTuongtactruyen.Location = new System.Drawing.Point(70, 638);
+            this.ibtnTuongtactruyen.Name = "ibtnTuongtactruyen";
+            this.ibtnTuongtactruyen.Size = new System.Drawing.Size(851, 46);
+            this.ibtnTuongtactruyen.TabIndex = 2;
+            this.ibtnTuongtactruyen.Text = "    Tương tác truyện";
+            this.ibtnTuongtactruyen.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ibtnTuongtactruyen.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.ibtnTuongtactruyen.UseVisualStyleBackColor = false;
+            this.ibtnTuongtactruyen.Click += new System.EventHandler(this.ibtnTuongtactruyen_Click);
             // 
             // panelSubmenuQLTK
             // 
@@ -1810,6 +2102,29 @@
             this.lbThaydoi.Size = new System.Drawing.Size(182, 30);
             this.lbThaydoi.TabIndex = 0;
             this.lbThaydoi.Text = "Hướng dẫn thay đổi";
+            // 
+            // ibtnTennguoidung
+            // 
+            this.ibtnTennguoidung.AutoSize = true;
+            this.ibtnTennguoidung.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
+            this.ibtnTennguoidung.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ibtnTennguoidung.FlatAppearance.BorderSize = 0;
+            this.ibtnTennguoidung.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ibtnTennguoidung.Font = new System.Drawing.Font("League Spartan", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ibtnTennguoidung.IconChar = FontAwesome.Sharp.IconChar.AngleDown;
+            this.ibtnTennguoidung.IconColor = System.Drawing.Color.Black;
+            this.ibtnTennguoidung.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ibtnTennguoidung.IconSize = 32;
+            this.ibtnTennguoidung.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ibtnTennguoidung.Location = new System.Drawing.Point(0, 387);
+            this.ibtnTennguoidung.Name = "ibtnTennguoidung";
+            this.ibtnTennguoidung.Size = new System.Drawing.Size(851, 46);
+            this.ibtnTennguoidung.TabIndex = 3;
+            this.ibtnTennguoidung.Text = "    Thay đổi tên người dùng hoặc ảnh đại diện";
+            this.ibtnTennguoidung.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ibtnTennguoidung.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.ibtnTennguoidung.UseVisualStyleBackColor = false;
+            this.ibtnTennguoidung.Click += new System.EventHandler(this.ibtnTennguoidung_Click);
             // 
             // panelSubmenuDangnhap
             // 
@@ -2142,534 +2457,6 @@
             this.lbHDDangnhap.TabIndex = 0;
             this.lbHDDangnhap.Text = "Hướng dẫn đăng nhập";
             // 
-            // lbVande
-            // 
-            this.lbVande.AutoSize = true;
-            this.lbVande.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lbVande.Font = new System.Drawing.Font("League Spartan Medium", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbVande.Location = new System.Drawing.Point(0, 0);
-            this.lbVande.Name = "lbVande";
-            this.lbVande.Padding = new System.Windows.Forms.Padding(70, 30, 10, 10);
-            this.lbVande.Size = new System.Drawing.Size(292, 70);
-            this.lbVande.TabIndex = 0;
-            this.lbVande.Text = "Các vấn đề thường gặp";
-            // 
-            // panelNoidungcaithien
-            // 
-            this.panelNoidungcaithien.AutoSize = true;
-            this.panelNoidungcaithien.Controls.Add(this.panel1);
-            this.panelNoidungcaithien.Controls.Add(this.tableLayoutPanel1);
-            this.panelNoidungcaithien.Controls.Add(this.panel2);
-            this.panelNoidungcaithien.Controls.Add(this.panel4);
-            this.panelNoidungcaithien.Controls.Add(this.panel6);
-            this.panelNoidungcaithien.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelNoidungcaithien.Location = new System.Drawing.Point(0, 56);
-            this.panelNoidungcaithien.Name = "panelNoidungcaithien";
-            this.panelNoidungcaithien.Size = new System.Drawing.Size(991, 386);
-            this.panelNoidungcaithien.TabIndex = 5;
-            // 
-            // panel2
-            // 
-            this.panel2.AutoSize = true;
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(991, 0);
-            this.panel2.TabIndex = 11;
-            // 
-            // panel4
-            // 
-            this.panel4.AutoSize = true;
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(0, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(991, 0);
-            this.panel4.TabIndex = 12;
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(227)))), ((int)(((byte)(243)))));
-            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richTextBox1.Font = new System.Drawing.Font("League Spartan", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox1.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.richTextBox1.Location = new System.Drawing.Point(70, 101);
-            this.richTextBox1.Margin = new System.Windows.Forms.Padding(70, 3, 70, 15);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Horizontal;
-            this.richTextBox1.Size = new System.Drawing.Size(868, 35);
-            this.richTextBox1.TabIndex = 9;
-            this.richTextBox1.Text = "Khác...";
-            this.richTextBox1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.richTextBox1_MouseClick);
-            this.richTextBox1.Leave += new System.EventHandler(this.richTextBox1_Leave);
-            // 
-            // btnXacnhan
-            // 
-            this.btnXacnhan.AutoSize = true;
-            this.btnXacnhan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(44)))), ((int)(((byte)(36)))));
-            this.btnXacnhan.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnXacnhan.FlatAppearance.BorderSize = 0;
-            this.btnXacnhan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnXacnhan.Font = new System.Drawing.Font("League Spartan", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXacnhan.ForeColor = System.Drawing.Color.Transparent;
-            this.btnXacnhan.Location = new System.Drawing.Point(129, 3);
-            this.btnXacnhan.Margin = new System.Windows.Forms.Padding(15, 3, 100, 3);
-            this.btnXacnhan.Name = "btnXacnhan";
-            this.btnXacnhan.Size = new System.Drawing.Size(97, 44);
-            this.btnXacnhan.TabIndex = 8;
-            this.btnXacnhan.Text = "Xác nhận";
-            this.btnXacnhan.UseVisualStyleBackColor = false;
-            this.btnXacnhan.Click += new System.EventHandler(this.btnXacnhan_Click);
-            // 
-            // btnHuy
-            // 
-            this.btnHuy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnHuy.AutoSize = true;
-            this.btnHuy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(113)))), ((int)(((byte)(121)))));
-            this.btnHuy.FlatAppearance.BorderSize = 0;
-            this.btnHuy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHuy.Font = new System.Drawing.Font("League Spartan", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHuy.ForeColor = System.Drawing.Color.Transparent;
-            this.btnHuy.Location = new System.Drawing.Point(43, 3);
-            this.btnHuy.Name = "btnHuy";
-            this.btnHuy.Size = new System.Drawing.Size(68, 44);
-            this.btnHuy.TabIndex = 7;
-            this.btnHuy.Text = "Hủy";
-            this.btnHuy.UseVisualStyleBackColor = false;
-            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
-            // 
-            // panel6
-            // 
-            this.panel6.AutoSize = true;
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel6.Location = new System.Drawing.Point(0, 0);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(991, 0);
-            this.panel6.TabIndex = 14;
-            // 
-            // lbChitiet
-            // 
-            this.lbChitiet.AutoSize = true;
-            this.lbChitiet.Font = new System.Drawing.Font("League Spartan", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbChitiet.Location = new System.Drawing.Point(70, 151);
-            this.lbChitiet.Margin = new System.Windows.Forms.Padding(70, 0, 3, 0);
-            this.lbChitiet.Name = "lbChitiet";
-            this.lbChitiet.Size = new System.Drawing.Size(75, 30);
-            this.lbChitiet.TabIndex = 5;
-            this.lbChitiet.Text = "Chi tiết";
-            // 
-            // rtbChitiet
-            // 
-            this.rtbChitiet.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(227)))), ((int)(((byte)(243)))));
-            this.rtbChitiet.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.rtbChitiet.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rtbChitiet.Font = new System.Drawing.Font("League Spartan", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtbChitiet.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.rtbChitiet.Location = new System.Drawing.Point(70, 184);
-            this.rtbChitiet.Margin = new System.Windows.Forms.Padding(70, 3, 70, 3);
-            this.rtbChitiet.Name = "rtbChitiet";
-            this.rtbChitiet.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Horizontal;
-            this.rtbChitiet.Size = new System.Drawing.Size(868, 123);
-            this.rtbChitiet.TabIndex = 6;
-            this.rtbChitiet.Text = "Vui lòng chia sẻ chi tiết nhất có thể...";
-            this.rtbChitiet.MouseClick += new System.Windows.Forms.MouseEventHandler(this.rtbChitiet_MouseClick);
-            this.rtbChitiet.Leave += new System.EventHandler(this.rtbChitiet_Leave);
-            // 
-            // panelReturn
-            // 
-            this.panelReturn.AutoSize = true;
-            this.panelReturn.Controls.Add(this.panel7);
-            this.panelReturn.Controls.Add(this.panel8);
-            this.panelReturn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelReturn.Location = new System.Drawing.Point(0, 0);
-            this.panelReturn.Name = "panelReturn";
-            this.panelReturn.Size = new System.Drawing.Size(991, 56);
-            this.panelReturn.TabIndex = 2;
-            // 
-            // panel7
-            // 
-            this.panel7.AutoSize = true;
-            this.panel7.Controls.Add(this.ibtnReturn);
-            this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel7.Location = new System.Drawing.Point(0, 5);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(991, 51);
-            this.panel7.TabIndex = 2;
-            // 
-            // panel8
-            // 
-            this.panel8.AutoSize = true;
-            this.panel8.Controls.Add(this.lbduongke);
-            this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel8.Location = new System.Drawing.Point(0, 0);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(991, 5);
-            this.panel8.TabIndex = 3;
-            // 
-            // lbduongke
-            // 
-            this.lbduongke.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lbduongke.Font = new System.Drawing.Font("League Spartan", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbduongke.Location = new System.Drawing.Point(24, 3);
-            this.lbduongke.Name = "lbduongke";
-            this.lbduongke.Size = new System.Drawing.Size(981, 2);
-            this.lbduongke.TabIndex = 1;
-            // 
-            // lbCaithien
-            // 
-            this.lbCaithien.AutoSize = true;
-            this.lbCaithien.Font = new System.Drawing.Font("League Spartan Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCaithien.Location = new System.Drawing.Point(3, 0);
-            this.lbCaithien.Name = "lbCaithien";
-            this.lbCaithien.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.lbCaithien.Size = new System.Drawing.Size(410, 36);
-            this.lbCaithien.TabIndex = 3;
-            this.lbCaithien.Text = "Chúng tôi cần cải thiện như thế nào?";
-            // 
-            // cbBoxchude
-            // 
-            this.cbBoxchude.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(227)))), ((int)(((byte)(243)))));
-            this.cbBoxchude.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cbBoxchude.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbBoxchude.Font = new System.Drawing.Font("League Spartan", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbBoxchude.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.cbBoxchude.FormattingEnabled = true;
-            this.cbBoxchude.Items.AddRange(new object[] {
-            "Đăng nhập",
-            "Đăng ký",
-            "Quên mật khẩu",
-            "Không thể thay đổi tên người dùng",
-            "Không thể thay đổi ảnh đại diện",
-            "Không thể thêm Album truyện",
-            "Không thể đánh dấu truyện",
-            "Không thể bình luận truyện",
-            "Không thể đánh giá truyện",
-            "Không thể đề cử truyện",
-            "Không thể thích truyện",
-            "Không thể đọc truyện",
-            "Truyện không gửi thông báo khi có chương mới"});
-            this.cbBoxchude.Location = new System.Drawing.Point(70, 39);
-            this.cbBoxchude.Margin = new System.Windows.Forms.Padding(70, 3, 70, 15);
-            this.cbBoxchude.Name = "cbBoxchude";
-            this.cbBoxchude.Size = new System.Drawing.Size(868, 44);
-            this.cbBoxchude.TabIndex = 4;
-            this.cbBoxchude.Text = "    Chọn chủ đề";
-            // 
-            // ibtnBaocaosuco
-            // 
-            this.ibtnBaocaosuco.AutoSize = true;
-            this.ibtnBaocaosuco.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
-            this.ibtnBaocaosuco.Dock = System.Windows.Forms.DockStyle.Top;
-            this.ibtnBaocaosuco.FlatAppearance.BorderSize = 0;
-            this.ibtnBaocaosuco.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ibtnBaocaosuco.Font = new System.Drawing.Font("League Spartan", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ibtnBaocaosuco.IconChar = FontAwesome.Sharp.IconChar.AngleDown;
-            this.ibtnBaocaosuco.IconColor = System.Drawing.Color.Black;
-            this.ibtnBaocaosuco.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ibtnBaocaosuco.IconSize = 32;
-            this.ibtnBaocaosuco.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ibtnBaocaosuco.Location = new System.Drawing.Point(0, 0);
-            this.ibtnBaocaosuco.Name = "ibtnBaocaosuco";
-            this.ibtnBaocaosuco.Size = new System.Drawing.Size(851, 46);
-            this.ibtnBaocaosuco.TabIndex = 19;
-            this.ibtnBaocaosuco.Text = "    Phản hồi lỗi khi sử dụng.";
-            this.ibtnBaocaosuco.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ibtnBaocaosuco.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.ibtnBaocaosuco.UseVisualStyleBackColor = false;
-            this.ibtnBaocaosuco.Click += new System.EventHandler(this.ibtnBaocaosuco_Click);
-            // 
-            // ibtnBaocao
-            // 
-            this.ibtnBaocao.AutoSize = true;
-            this.ibtnBaocao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(227)))), ((int)(((byte)(243)))));
-            this.ibtnBaocao.Dock = System.Windows.Forms.DockStyle.Top;
-            this.ibtnBaocao.FlatAppearance.BorderSize = 0;
-            this.ibtnBaocao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ibtnBaocao.Font = new System.Drawing.Font("League Spartan", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ibtnBaocao.IconChar = FontAwesome.Sharp.IconChar.AngleDown;
-            this.ibtnBaocao.IconColor = System.Drawing.Color.Black;
-            this.ibtnBaocao.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ibtnBaocao.IconSize = 32;
-            this.ibtnBaocao.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ibtnBaocao.Location = new System.Drawing.Point(70, 2193);
-            this.ibtnBaocao.Name = "ibtnBaocao";
-            this.ibtnBaocao.Size = new System.Drawing.Size(851, 46);
-            this.ibtnBaocao.TabIndex = 7;
-            this.ibtnBaocao.Text = "    Báo cáo sự cố khi sử dụng";
-            this.ibtnBaocao.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ibtnBaocao.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.ibtnBaocao.UseVisualStyleBackColor = false;
-            this.ibtnBaocao.Click += new System.EventHandler(this.ibtnBaocao_Click);
-            // 
-            // ibtnSudungChat
-            // 
-            this.ibtnSudungChat.AutoSize = true;
-            this.ibtnSudungChat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
-            this.ibtnSudungChat.Dock = System.Windows.Forms.DockStyle.Top;
-            this.ibtnSudungChat.FlatAppearance.BorderSize = 0;
-            this.ibtnSudungChat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ibtnSudungChat.Font = new System.Drawing.Font("League Spartan", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ibtnSudungChat.IconChar = FontAwesome.Sharp.IconChar.AngleDown;
-            this.ibtnSudungChat.IconColor = System.Drawing.Color.Black;
-            this.ibtnSudungChat.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ibtnSudungChat.IconSize = 32;
-            this.ibtnSudungChat.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ibtnSudungChat.Location = new System.Drawing.Point(0, 0);
-            this.ibtnSudungChat.Name = "ibtnSudungChat";
-            this.ibtnSudungChat.Size = new System.Drawing.Size(851, 46);
-            this.ibtnSudungChat.TabIndex = 18;
-            this.ibtnSudungChat.Text = "    Cách sử dụng chat để nhắn tin với quản trị viên.";
-            this.ibtnSudungChat.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ibtnSudungChat.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.ibtnSudungChat.UseVisualStyleBackColor = false;
-            this.ibtnSudungChat.Click += new System.EventHandler(this.ibtnSudungChat_Click);
-            // 
-            // ibtnChat
-            // 
-            this.ibtnChat.AutoSize = true;
-            this.ibtnChat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(227)))), ((int)(((byte)(243)))));
-            this.ibtnChat.Dock = System.Windows.Forms.DockStyle.Top;
-            this.ibtnChat.FlatAppearance.BorderSize = 0;
-            this.ibtnChat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ibtnChat.Font = new System.Drawing.Font("League Spartan", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ibtnChat.IconChar = FontAwesome.Sharp.IconChar.AngleDown;
-            this.ibtnChat.IconColor = System.Drawing.Color.Black;
-            this.ibtnChat.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ibtnChat.IconSize = 32;
-            this.ibtnChat.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ibtnChat.Location = new System.Drawing.Point(70, 2008);
-            this.ibtnChat.Name = "ibtnChat";
-            this.ibtnChat.Size = new System.Drawing.Size(851, 46);
-            this.ibtnChat.TabIndex = 5;
-            this.ibtnChat.Text = "    Sử dụng chat";
-            this.ibtnChat.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ibtnChat.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.ibtnChat.UseVisualStyleBackColor = false;
-            this.ibtnChat.Click += new System.EventHandler(this.ibtnChat_Click);
-            // 
-            // ibtnLichsudoc
-            // 
-            this.ibtnLichsudoc.AutoSize = true;
-            this.ibtnLichsudoc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
-            this.ibtnLichsudoc.Dock = System.Windows.Forms.DockStyle.Top;
-            this.ibtnLichsudoc.FlatAppearance.BorderSize = 0;
-            this.ibtnLichsudoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ibtnLichsudoc.Font = new System.Drawing.Font("League Spartan", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ibtnLichsudoc.IconChar = FontAwesome.Sharp.IconChar.AngleDown;
-            this.ibtnLichsudoc.IconColor = System.Drawing.Color.Black;
-            this.ibtnLichsudoc.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ibtnLichsudoc.IconSize = 32;
-            this.ibtnLichsudoc.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ibtnLichsudoc.Location = new System.Drawing.Point(0, 1155);
-            this.ibtnLichsudoc.Name = "ibtnLichsudoc";
-            this.ibtnLichsudoc.Size = new System.Drawing.Size(851, 46);
-            this.ibtnLichsudoc.TabIndex = 17;
-            this.ibtnLichsudoc.Text = "    Xem lịch sử đọc truyện";
-            this.ibtnLichsudoc.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ibtnLichsudoc.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.ibtnLichsudoc.UseVisualStyleBackColor = false;
-            this.ibtnLichsudoc.Click += new System.EventHandler(this.ibtnLichsudoc_Click);
-            // 
-            // ibtnDanhdau
-            // 
-            this.ibtnDanhdau.AutoSize = true;
-            this.ibtnDanhdau.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
-            this.ibtnDanhdau.Dock = System.Windows.Forms.DockStyle.Top;
-            this.ibtnDanhdau.FlatAppearance.BorderSize = 0;
-            this.ibtnDanhdau.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ibtnDanhdau.Font = new System.Drawing.Font("League Spartan", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ibtnDanhdau.IconChar = FontAwesome.Sharp.IconChar.AngleDown;
-            this.ibtnDanhdau.IconColor = System.Drawing.Color.Black;
-            this.ibtnDanhdau.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ibtnDanhdau.IconSize = 32;
-            this.ibtnDanhdau.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ibtnDanhdau.Location = new System.Drawing.Point(0, 986);
-            this.ibtnDanhdau.Name = "ibtnDanhdau";
-            this.ibtnDanhdau.Size = new System.Drawing.Size(851, 46);
-            this.ibtnDanhdau.TabIndex = 15;
-            this.ibtnDanhdau.Text = "    Đánh dấu truyện";
-            this.ibtnDanhdau.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ibtnDanhdau.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.ibtnDanhdau.UseVisualStyleBackColor = false;
-            this.ibtnDanhdau.Click += new System.EventHandler(this.ibtnDanhdau_Click);
-            // 
-            // ibtnThongbao
-            // 
-            this.ibtnThongbao.AutoSize = true;
-            this.ibtnThongbao.FlatAppearance.BorderSize = 0;
-            this.ibtnThongbao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ibtnThongbao.IconChar = FontAwesome.Sharp.IconChar.Bell;
-            this.ibtnThongbao.IconColor = System.Drawing.Color.Black;
-            this.ibtnThongbao.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.ibtnThongbao.IconSize = 25;
-            this.ibtnThongbao.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ibtnThongbao.Location = new System.Drawing.Point(203, 3);
-            this.ibtnThongbao.Name = "ibtnThongbao";
-            this.ibtnThongbao.Size = new System.Drawing.Size(35, 34);
-            this.ibtnThongbao.TabIndex = 12;
-            this.ibtnThongbao.UseVisualStyleBackColor = true;
-            // 
-            // ibtnThemAlbum
-            // 
-            this.ibtnThemAlbum.AutoSize = true;
-            this.ibtnThemAlbum.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
-            this.ibtnThemAlbum.Dock = System.Windows.Forms.DockStyle.Top;
-            this.ibtnThemAlbum.FlatAppearance.BorderSize = 0;
-            this.ibtnThemAlbum.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ibtnThemAlbum.Font = new System.Drawing.Font("League Spartan", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ibtnThemAlbum.IconChar = FontAwesome.Sharp.IconChar.AngleDown;
-            this.ibtnThemAlbum.IconColor = System.Drawing.Color.Black;
-            this.ibtnThemAlbum.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ibtnThemAlbum.IconSize = 32;
-            this.ibtnThemAlbum.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ibtnThemAlbum.Location = new System.Drawing.Point(0, 750);
-            this.ibtnThemAlbum.Name = "ibtnThemAlbum";
-            this.ibtnThemAlbum.Size = new System.Drawing.Size(851, 46);
-            this.ibtnThemAlbum.TabIndex = 13;
-            this.ibtnThemAlbum.Text = "    Thêm album truyện";
-            this.ibtnThemAlbum.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ibtnThemAlbum.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.ibtnThemAlbum.UseVisualStyleBackColor = false;
-            this.ibtnThemAlbum.Click += new System.EventHandler(this.ibtnThemAlbum_Click);
-            // 
-            // ibtnDecu
-            // 
-            this.ibtnDecu.AutoSize = true;
-            this.ibtnDecu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
-            this.ibtnDecu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.ibtnDecu.FlatAppearance.BorderSize = 0;
-            this.ibtnDecu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ibtnDecu.Font = new System.Drawing.Font("League Spartan", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ibtnDecu.IconChar = FontAwesome.Sharp.IconChar.AngleDown;
-            this.ibtnDecu.IconColor = System.Drawing.Color.Black;
-            this.ibtnDecu.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ibtnDecu.IconSize = 32;
-            this.ibtnDecu.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ibtnDecu.Location = new System.Drawing.Point(0, 548);
-            this.ibtnDecu.Name = "ibtnDecu";
-            this.ibtnDecu.Size = new System.Drawing.Size(851, 46);
-            this.ibtnDecu.TabIndex = 11;
-            this.ibtnDecu.Text = "    Đề cử truyện";
-            this.ibtnDecu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ibtnDecu.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.ibtnDecu.UseVisualStyleBackColor = false;
-            this.ibtnDecu.Click += new System.EventHandler(this.ibtnDecu_Click);
-            // 
-            // ibtnDanhgia
-            // 
-            this.ibtnDanhgia.AutoSize = true;
-            this.ibtnDanhgia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
-            this.ibtnDanhgia.Dock = System.Windows.Forms.DockStyle.Top;
-            this.ibtnDanhgia.FlatAppearance.BorderSize = 0;
-            this.ibtnDanhgia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ibtnDanhgia.Font = new System.Drawing.Font("League Spartan", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ibtnDanhgia.IconChar = FontAwesome.Sharp.IconChar.AngleDown;
-            this.ibtnDanhgia.IconColor = System.Drawing.Color.Black;
-            this.ibtnDanhgia.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ibtnDanhgia.IconSize = 32;
-            this.ibtnDanhgia.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ibtnDanhgia.Location = new System.Drawing.Point(0, 376);
-            this.ibtnDanhgia.Name = "ibtnDanhgia";
-            this.ibtnDanhgia.Size = new System.Drawing.Size(851, 46);
-            this.ibtnDanhgia.TabIndex = 9;
-            this.ibtnDanhgia.Text = "    Đánh giá truyện";
-            this.ibtnDanhgia.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ibtnDanhgia.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.ibtnDanhgia.UseVisualStyleBackColor = false;
-            this.ibtnDanhgia.Click += new System.EventHandler(this.ibtnDanhgia_Click);
-            // 
-            // ibtnBinhluan
-            // 
-            this.ibtnBinhluan.AutoSize = true;
-            this.ibtnBinhluan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
-            this.ibtnBinhluan.Dock = System.Windows.Forms.DockStyle.Top;
-            this.ibtnBinhluan.FlatAppearance.BorderSize = 0;
-            this.ibtnBinhluan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ibtnBinhluan.Font = new System.Drawing.Font("League Spartan", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ibtnBinhluan.IconChar = FontAwesome.Sharp.IconChar.AngleDown;
-            this.ibtnBinhluan.IconColor = System.Drawing.Color.Black;
-            this.ibtnBinhluan.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ibtnBinhluan.IconSize = 32;
-            this.ibtnBinhluan.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ibtnBinhluan.Location = new System.Drawing.Point(0, 207);
-            this.ibtnBinhluan.Name = "ibtnBinhluan";
-            this.ibtnBinhluan.Size = new System.Drawing.Size(851, 46);
-            this.ibtnBinhluan.TabIndex = 7;
-            this.ibtnBinhluan.Text = "    Bình luận truyện";
-            this.ibtnBinhluan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ibtnBinhluan.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.ibtnBinhluan.UseVisualStyleBackColor = false;
-            this.ibtnBinhluan.Click += new System.EventHandler(this.ibtnBinhluan_Click);
-            // 
-            // ibtnTimkiemtruyen
-            // 
-            this.ibtnTimkiemtruyen.AutoSize = true;
-            this.ibtnTimkiemtruyen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
-            this.ibtnTimkiemtruyen.Dock = System.Windows.Forms.DockStyle.Top;
-            this.ibtnTimkiemtruyen.FlatAppearance.BorderSize = 0;
-            this.ibtnTimkiemtruyen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ibtnTimkiemtruyen.Font = new System.Drawing.Font("League Spartan", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ibtnTimkiemtruyen.IconChar = FontAwesome.Sharp.IconChar.AngleDown;
-            this.ibtnTimkiemtruyen.IconColor = System.Drawing.Color.Black;
-            this.ibtnTimkiemtruyen.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ibtnTimkiemtruyen.IconSize = 32;
-            this.ibtnTimkiemtruyen.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ibtnTimkiemtruyen.Location = new System.Drawing.Point(0, 0);
-            this.ibtnTimkiemtruyen.Name = "ibtnTimkiemtruyen";
-            this.ibtnTimkiemtruyen.Size = new System.Drawing.Size(851, 46);
-            this.ibtnTimkiemtruyen.TabIndex = 5;
-            this.ibtnTimkiemtruyen.Text = "    Tìm kiếm truyện";
-            this.ibtnTimkiemtruyen.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ibtnTimkiemtruyen.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.ibtnTimkiemtruyen.UseVisualStyleBackColor = false;
-            this.ibtnTimkiemtruyen.Click += new System.EventHandler(this.ibtnTimkiemtruyen_Click);
-            // 
-            // ibtnTuongtactruyen
-            // 
-            this.ibtnTuongtactruyen.AutoSize = true;
-            this.ibtnTuongtactruyen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(227)))), ((int)(((byte)(243)))));
-            this.ibtnTuongtactruyen.Dock = System.Windows.Forms.DockStyle.Top;
-            this.ibtnTuongtactruyen.FlatAppearance.BorderSize = 0;
-            this.ibtnTuongtactruyen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ibtnTuongtactruyen.Font = new System.Drawing.Font("League Spartan", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ibtnTuongtactruyen.IconChar = FontAwesome.Sharp.IconChar.AngleDown;
-            this.ibtnTuongtactruyen.IconColor = System.Drawing.Color.Black;
-            this.ibtnTuongtactruyen.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ibtnTuongtactruyen.IconSize = 32;
-            this.ibtnTuongtactruyen.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ibtnTuongtactruyen.Location = new System.Drawing.Point(70, 638);
-            this.ibtnTuongtactruyen.Name = "ibtnTuongtactruyen";
-            this.ibtnTuongtactruyen.Size = new System.Drawing.Size(851, 46);
-            this.ibtnTuongtactruyen.TabIndex = 2;
-            this.ibtnTuongtactruyen.Text = "    Tương tác truyện";
-            this.ibtnTuongtactruyen.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ibtnTuongtactruyen.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.ibtnTuongtactruyen.UseVisualStyleBackColor = false;
-            this.ibtnTuongtactruyen.Click += new System.EventHandler(this.ibtnTuongtactruyen_Click);
-            // 
-            // ibtnTennguoidung
-            // 
-            this.ibtnTennguoidung.AutoSize = true;
-            this.ibtnTennguoidung.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
-            this.ibtnTennguoidung.Dock = System.Windows.Forms.DockStyle.Top;
-            this.ibtnTennguoidung.FlatAppearance.BorderSize = 0;
-            this.ibtnTennguoidung.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ibtnTennguoidung.Font = new System.Drawing.Font("League Spartan", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ibtnTennguoidung.IconChar = FontAwesome.Sharp.IconChar.AngleDown;
-            this.ibtnTennguoidung.IconColor = System.Drawing.Color.Black;
-            this.ibtnTennguoidung.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ibtnTennguoidung.IconSize = 32;
-            this.ibtnTennguoidung.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ibtnTennguoidung.Location = new System.Drawing.Point(0, 387);
-            this.ibtnTennguoidung.Name = "ibtnTennguoidung";
-            this.ibtnTennguoidung.Size = new System.Drawing.Size(851, 46);
-            this.ibtnTennguoidung.TabIndex = 3;
-            this.ibtnTennguoidung.Text = "    Thay đổi tên người dùng hoặc ảnh đại diện";
-            this.ibtnTennguoidung.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ibtnTennguoidung.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.ibtnTennguoidung.UseVisualStyleBackColor = false;
-            this.ibtnTennguoidung.Click += new System.EventHandler(this.ibtnTennguoidung_Click);
-            // 
             // ibtnDangnhap
             // 
             this.ibtnDangnhap.AutoSize = true;
@@ -2716,51 +2503,31 @@
             this.ibtnQuanlyTK.UseVisualStyleBackColor = false;
             this.ibtnQuanlyTK.Click += new System.EventHandler(this.ibtnQuanlyTK_Click);
             // 
-            // ibtnReturn
+            // lbVande
             // 
-            this.ibtnReturn.AutoSize = true;
-            this.ibtnReturn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ibtnReturn.FlatAppearance.BorderSize = 0;
-            this.ibtnReturn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(229)))), ((int)(((byte)(250)))));
-            this.ibtnReturn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(229)))), ((int)(((byte)(250)))));
-            this.ibtnReturn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ibtnReturn.Font = new System.Drawing.Font("League Spartan SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ibtnReturn.IconChar = FontAwesome.Sharp.IconChar.ArrowLeft;
-            this.ibtnReturn.IconColor = System.Drawing.Color.Black;
-            this.ibtnReturn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ibtnReturn.IconSize = 38;
-            this.ibtnReturn.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.ibtnReturn.Location = new System.Drawing.Point(12, 2);
-            this.ibtnReturn.Name = "ibtnReturn";
-            this.ibtnReturn.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.ibtnReturn.Size = new System.Drawing.Size(268, 46);
-            this.ibtnReturn.TabIndex = 0;
-            this.ibtnReturn.Text = " Trợ giúp và Báo lỗi";
-            this.ibtnReturn.TextAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.ibtnReturn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.ibtnReturn.UseVisualStyleBackColor = true;
+            this.lbVande.AutoSize = true;
+            this.lbVande.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lbVande.Font = new System.Drawing.Font("League Spartan Medium", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbVande.Location = new System.Drawing.Point(0, 0);
+            this.lbVande.Name = "lbVande";
+            this.lbVande.Padding = new System.Windows.Forms.Padding(70, 30, 10, 10);
+            this.lbVande.Size = new System.Drawing.Size(292, 70);
+            this.lbVande.TabIndex = 0;
+            this.lbVande.Text = "Các vấn đề thường gặp";
             // 
-            // tableLayoutPanel1
+            // panelNoidungcaithien
             // 
-            this.tableLayoutPanel1.AutoSize = true;
-            this.tableLayoutPanel1.ColumnCount = 1;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel1.Controls.Add(this.lbCaithien, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.rtbChitiet, 0, 4);
-            this.tableLayoutPanel1.Controls.Add(this.cbBoxchude, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.richTextBox1, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.lbChitiet, 0, 3);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 5;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(991, 310);
-            this.tableLayoutPanel1.TabIndex = 15;
+            this.panelNoidungcaithien.AutoSize = true;
+            this.panelNoidungcaithien.Controls.Add(this.panel1);
+            this.panelNoidungcaithien.Controls.Add(this.tableLayoutPanel1);
+            this.panelNoidungcaithien.Controls.Add(this.panel2);
+            this.panelNoidungcaithien.Controls.Add(this.panel4);
+            this.panelNoidungcaithien.Controls.Add(this.panel6);
+            this.panelNoidungcaithien.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelNoidungcaithien.Location = new System.Drawing.Point(0, 56);
+            this.panelNoidungcaithien.Name = "panelNoidungcaithien";
+            this.panelNoidungcaithien.Size = new System.Drawing.Size(991, 386);
+            this.panelNoidungcaithien.TabIndex = 5;
             // 
             // panel1
             // 
@@ -2787,6 +2554,239 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(326, 50);
             this.tableLayoutPanel2.TabIndex = 9;
+            // 
+            // btnHuy
+            // 
+            this.btnHuy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnHuy.AutoSize = true;
+            this.btnHuy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(113)))), ((int)(((byte)(121)))));
+            this.btnHuy.FlatAppearance.BorderSize = 0;
+            this.btnHuy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHuy.Font = new System.Drawing.Font("League Spartan", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHuy.ForeColor = System.Drawing.Color.Transparent;
+            this.btnHuy.Location = new System.Drawing.Point(43, 3);
+            this.btnHuy.Name = "btnHuy";
+            this.btnHuy.Size = new System.Drawing.Size(68, 44);
+            this.btnHuy.TabIndex = 7;
+            this.btnHuy.Text = "Hủy";
+            this.btnHuy.UseVisualStyleBackColor = false;
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
+            // 
+            // btnXacnhan
+            // 
+            this.btnXacnhan.AutoSize = true;
+            this.btnXacnhan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(44)))), ((int)(((byte)(36)))));
+            this.btnXacnhan.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnXacnhan.FlatAppearance.BorderSize = 0;
+            this.btnXacnhan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnXacnhan.Font = new System.Drawing.Font("League Spartan", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXacnhan.ForeColor = System.Drawing.Color.Transparent;
+            this.btnXacnhan.Location = new System.Drawing.Point(129, 3);
+            this.btnXacnhan.Margin = new System.Windows.Forms.Padding(15, 3, 100, 3);
+            this.btnXacnhan.Name = "btnXacnhan";
+            this.btnXacnhan.Size = new System.Drawing.Size(97, 44);
+            this.btnXacnhan.TabIndex = 8;
+            this.btnXacnhan.Text = "Xác nhận";
+            this.btnXacnhan.UseVisualStyleBackColor = false;
+            this.btnXacnhan.Click += new System.EventHandler(this.btnXacnhan_Click);
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.AutoSize = true;
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel1.Controls.Add(this.lbCaithien, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.rtbChitiet, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.cbBoxchude, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.richTextBox1, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.lbChitiet, 0, 3);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 5;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(991, 310);
+            this.tableLayoutPanel1.TabIndex = 15;
+            // 
+            // lbCaithien
+            // 
+            this.lbCaithien.AutoSize = true;
+            this.lbCaithien.Font = new System.Drawing.Font("League Spartan Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCaithien.Location = new System.Drawing.Point(3, 0);
+            this.lbCaithien.Name = "lbCaithien";
+            this.lbCaithien.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.lbCaithien.Size = new System.Drawing.Size(410, 36);
+            this.lbCaithien.TabIndex = 3;
+            this.lbCaithien.Text = "Chúng tôi cần cải thiện như thế nào?";
+            // 
+            // rtbChitiet
+            // 
+            this.rtbChitiet.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(227)))), ((int)(((byte)(243)))));
+            this.rtbChitiet.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.rtbChitiet.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rtbChitiet.Font = new System.Drawing.Font("League Spartan", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtbChitiet.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.rtbChitiet.Location = new System.Drawing.Point(70, 184);
+            this.rtbChitiet.Margin = new System.Windows.Forms.Padding(70, 3, 70, 3);
+            this.rtbChitiet.Name = "rtbChitiet";
+            this.rtbChitiet.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Horizontal;
+            this.rtbChitiet.Size = new System.Drawing.Size(868, 123);
+            this.rtbChitiet.TabIndex = 6;
+            this.rtbChitiet.Text = "Vui lòng chia sẻ chi tiết nhất có thể...";
+            this.rtbChitiet.MouseClick += new System.Windows.Forms.MouseEventHandler(this.rtbChitiet_MouseClick);
+            this.rtbChitiet.Leave += new System.EventHandler(this.rtbChitiet_Leave);
+            // 
+            // cbBoxchude
+            // 
+            this.cbBoxchude.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(227)))), ((int)(((byte)(243)))));
+            this.cbBoxchude.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cbBoxchude.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbBoxchude.Font = new System.Drawing.Font("League Spartan", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbBoxchude.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.cbBoxchude.FormattingEnabled = true;
+            this.cbBoxchude.Items.AddRange(new object[] {
+            "Đăng nhập",
+            "Đăng ký",
+            "Quên mật khẩu",
+            "Không thể thay đổi tên người dùng",
+            "Không thể thay đổi ảnh đại diện",
+            "Không thể thêm Album truyện",
+            "Không thể đánh dấu truyện",
+            "Không thể bình luận truyện",
+            "Không thể đánh giá truyện",
+            "Không thể đề cử truyện",
+            "Không thể thích truyện",
+            "Không thể đọc truyện",
+            "Truyện không gửi thông báo khi có chương mới"});
+            this.cbBoxchude.Location = new System.Drawing.Point(70, 39);
+            this.cbBoxchude.Margin = new System.Windows.Forms.Padding(70, 3, 70, 15);
+            this.cbBoxchude.Name = "cbBoxchude";
+            this.cbBoxchude.Size = new System.Drawing.Size(868, 44);
+            this.cbBoxchude.TabIndex = 4;
+            this.cbBoxchude.Text = "    Chọn chủ đề";
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(227)))), ((int)(((byte)(243)))));
+            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richTextBox1.Font = new System.Drawing.Font("League Spartan", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox1.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.richTextBox1.Location = new System.Drawing.Point(70, 101);
+            this.richTextBox1.Margin = new System.Windows.Forms.Padding(70, 3, 70, 15);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Horizontal;
+            this.richTextBox1.Size = new System.Drawing.Size(868, 35);
+            this.richTextBox1.TabIndex = 9;
+            this.richTextBox1.Text = "Khác...";
+            this.richTextBox1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.richTextBox1_MouseClick);
+            this.richTextBox1.Leave += new System.EventHandler(this.richTextBox1_Leave);
+            // 
+            // lbChitiet
+            // 
+            this.lbChitiet.AutoSize = true;
+            this.lbChitiet.Font = new System.Drawing.Font("League Spartan", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbChitiet.Location = new System.Drawing.Point(70, 151);
+            this.lbChitiet.Margin = new System.Windows.Forms.Padding(70, 0, 3, 0);
+            this.lbChitiet.Name = "lbChitiet";
+            this.lbChitiet.Size = new System.Drawing.Size(75, 30);
+            this.lbChitiet.TabIndex = 5;
+            this.lbChitiet.Text = "Chi tiết";
+            // 
+            // panel2
+            // 
+            this.panel2.AutoSize = true;
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(991, 0);
+            this.panel2.TabIndex = 11;
+            // 
+            // panel4
+            // 
+            this.panel4.AutoSize = true;
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(991, 0);
+            this.panel4.TabIndex = 12;
+            // 
+            // panel6
+            // 
+            this.panel6.AutoSize = true;
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel6.Location = new System.Drawing.Point(0, 0);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(991, 0);
+            this.panel6.TabIndex = 14;
+            // 
+            // panelReturn
+            // 
+            this.panelReturn.AutoSize = true;
+            this.panelReturn.Controls.Add(this.panel7);
+            this.panelReturn.Controls.Add(this.panel8);
+            this.panelReturn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelReturn.Location = new System.Drawing.Point(0, 0);
+            this.panelReturn.Name = "panelReturn";
+            this.panelReturn.Size = new System.Drawing.Size(991, 56);
+            this.panelReturn.TabIndex = 2;
+            // 
+            // panel7
+            // 
+            this.panel7.AutoSize = true;
+            this.panel7.Controls.Add(this.ibtnReturn);
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel7.Location = new System.Drawing.Point(0, 5);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(991, 51);
+            this.panel7.TabIndex = 2;
+            // 
+            // ibtnReturn
+            // 
+            this.ibtnReturn.AutoSize = true;
+            this.ibtnReturn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ibtnReturn.FlatAppearance.BorderSize = 0;
+            this.ibtnReturn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(229)))), ((int)(((byte)(250)))));
+            this.ibtnReturn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(229)))), ((int)(((byte)(250)))));
+            this.ibtnReturn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ibtnReturn.Font = new System.Drawing.Font("League Spartan SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ibtnReturn.IconChar = FontAwesome.Sharp.IconChar.ArrowLeft;
+            this.ibtnReturn.IconColor = System.Drawing.Color.Black;
+            this.ibtnReturn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ibtnReturn.IconSize = 38;
+            this.ibtnReturn.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.ibtnReturn.Location = new System.Drawing.Point(12, 2);
+            this.ibtnReturn.Name = "ibtnReturn";
+            this.ibtnReturn.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.ibtnReturn.Size = new System.Drawing.Size(268, 46);
+            this.ibtnReturn.TabIndex = 0;
+            this.ibtnReturn.Text = " Trợ giúp và Báo lỗi";
+            this.ibtnReturn.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.ibtnReturn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.ibtnReturn.UseVisualStyleBackColor = true;
+            // 
+            // panel8
+            // 
+            this.panel8.AutoSize = true;
+            this.panel8.Controls.Add(this.lbduongke);
+            this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel8.Location = new System.Drawing.Point(0, 0);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(991, 5);
+            this.panel8.TabIndex = 3;
+            // 
+            // lbduongke
+            // 
+            this.lbduongke.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lbduongke.Font = new System.Drawing.Font("League Spartan", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbduongke.Location = new System.Drawing.Point(24, 3);
+            this.lbduongke.Name = "lbduongke";
+            this.lbduongke.Size = new System.Drawing.Size(981, 2);
+            this.lbduongke.TabIndex = 1;
             // 
             // Hotro_baoloi
             // 
@@ -2948,17 +2948,17 @@
             this.panel10.PerformLayout();
             this.panelNoidungcaithien.ResumeLayout(false);
             this.panelNoidungcaithien.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             this.panelReturn.ResumeLayout(false);
             this.panelReturn.PerformLayout();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             this.panel8.ResumeLayout(false);
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.tableLayoutPanel2.ResumeLayout(false);
-            this.tableLayoutPanel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
