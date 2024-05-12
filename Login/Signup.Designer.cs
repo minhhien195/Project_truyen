@@ -52,6 +52,8 @@
             this.btnDKy = new System.Windows.Forms.Button();
             this.txtTenDN = new System.Windows.Forms.TextBox();
             this.Sign_up_label = new System.Windows.Forms.Label();
+            this.ptrGreater = new System.Windows.Forms.PictureBox();
+            this.lbMKlonhon5kytu = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptrNotsame)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptrWarning)).BeginInit();
@@ -59,12 +61,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.prtHide)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptrView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptrView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptrGreater)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             resources.ApplyResources(this.panel1, "panel1");
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(227)))), ((int)(((byte)(243)))));
+            this.panel1.Controls.Add(this.lbMKlonhon5kytu);
+            this.panel1.Controls.Add(this.ptrGreater);
             this.panel1.Controls.Add(this.lbemailKhonghople);
             this.panel1.Controls.Add(this.lbemail);
             this.panel1.Controls.Add(this.ptrNotsame);
@@ -249,6 +254,20 @@
             this.Sign_up_label.Name = "Sign_up_label";
             this.Sign_up_label.Click += new System.EventHandler(this.label1_Click);
             // 
+            // ptrGreater
+            // 
+            this.ptrGreater.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(227)))), ((int)(((byte)(243)))));
+            this.ptrGreater.Image = global::Login.Properties.Resources.exclamation;
+            resources.ApplyResources(this.ptrGreater, "ptrGreater");
+            this.ptrGreater.Name = "ptrGreater";
+            this.ptrGreater.TabStop = false;
+            // 
+            // lbMKlonhon5kytu
+            // 
+            resources.ApplyResources(this.lbMKlonhon5kytu, "lbMKlonhon5kytu");
+            this.lbMKlonhon5kytu.ForeColor = System.Drawing.Color.IndianRed;
+            this.lbMKlonhon5kytu.Name = "lbMKlonhon5kytu";
+            // 
             // Signup
             // 
             resources.ApplyResources(this, "$this");
@@ -269,6 +288,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.prtHide)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptrView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptrView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptrGreater)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -299,5 +319,7 @@
         private System.Windows.Forms.Label lbNotsame;
         private System.Windows.Forms.Label lbemail;
         private System.Windows.Forms.Label lbemailKhonghople;
+        private System.Windows.Forms.Label lbMKlonhon5kytu;
+        private System.Windows.Forms.PictureBox ptrGreater;
     }
 }

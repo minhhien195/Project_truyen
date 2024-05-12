@@ -109,7 +109,9 @@ namespace Login
                 }
                 else
                 {
-                    MessageBox.Show("Email không tồn tại");
+                    labelEmailkhongtontai.Visible = true;
+                    ptrWarning.Visible = true;
+                    //MessageBox.Show("Email không tồn tại");
                 }
             }
             catch (Firebase.Auth.FirebaseAuthException ex)
@@ -226,6 +228,11 @@ namespace Login
                 ptrWarning.Visible = false;
                 lbemailKhonghople.Visible = false;
             }
+            if (labelEmailkhongtontai.Visible == true)
+            {
+                labelEmailkhongtontai.Visible = false;
+                ptrWarning.Visible = false;
+            }    
         }
 
         private void txtEmail_MouseLeave(object sender, EventArgs e)
@@ -234,6 +241,11 @@ namespace Login
             {
                 ptrWarning.Visible = false;
                 lbemailKhonghople.Visible = false;
+            }
+            if (labelEmailkhongtontai.Visible == true)
+            {
+                labelEmailkhongtontai.Visible = false;
+                ptrWarning.Visible = false;
             }
         }
 
@@ -293,6 +305,16 @@ namespace Login
             this.Hide();
             Signup signup = new Signup();
             signup.Show();
+        }
+
+
+        private void txtEmail_Enter(object sender, EventArgs e)
+        {
+            if (labelEmailkhongtontai.Visible == true)
+            {
+                labelEmailkhongtontai.Visible = false;
+                ptrWarning.Visible = false;
+            }
         }
     }
 }
