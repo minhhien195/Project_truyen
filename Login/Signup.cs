@@ -189,6 +189,11 @@ namespace Login
 
             // Đặt con trỏ văn bản lại vị trí cuối cùng
             txtMK.SelectionStart = txtMK.Text.Length;
+            if (lbMKlonhon5kytu.Visible == true)
+            {
+                lbMKlonhon5kytu.Visible = false;
+                ptrGreater.Visible = false;
+            }    
         }
 
         private void txtXNMK_TextChanged(object sender, EventArgs e)
@@ -411,11 +416,20 @@ namespace Login
                 if (txtMK.Text.Length < 6)
                 {
                     lengthMK = true;
-
                 }
-                else
+                else if (txtMK.Text.Length >= 6 && txtXNMK.Text == txtMK.Text)
                 {
                     lengthMK = false;
+                    ptrNotsame.Visible = false;
+                    lbNotsame.Visible = false;
+                }
+                else if (txtMK.Text.Length >= 6 && txtXNMK.Text != txtMK.Text)
+                {
+                    lengthMK = true;
+                    lbMKlonhon5kytu.Visible = false;
+                    ptrGreater.Visible = false;
+                    lbNotsame.Visible = true;
+                    ptrNotsame.Visible = true;
                 }
                 if (ptrWarning.Visible == false && ptrNotsame.Visible == false && lbNotsame.Visible == false && isTicked == true
                     && isNullDN == false && isNullMK == false && isNULLXNMK == false && isNULLEmail == false && lengthMK == false)
@@ -439,7 +453,15 @@ namespace Login
                 }
                 else if (lengthMK == true)
                 {
-                    MessageBox.Show("Mật khẩu phải lớn hơn 5 ký tự", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    if (txtMK.Text.Length < 6)
+                    {
+                        lbMKlonhon5kytu.Visible = true;
+                        ptrGreater.Visible = true;
+                        ptrNotsame.Visible = false;
+                        lbNotsame.Visible = false;
+                    }
+                    
+                    //MessageBox.Show("Mật khẩu phải lớn hơn 5 ký tự", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {
