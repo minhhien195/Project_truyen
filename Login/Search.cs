@@ -35,7 +35,7 @@ namespace Login
             Panel result = new Panel();
             result.Dock = DockStyle.Top;
             result.AutoSize = true;
-            result.Size = new Size(1149, 72);
+            result.Size = new Size(1149, 508);
             result.Anchor = AnchorStyles.Top | AnchorStyles.Left;
             result.Visible = true;
             result.Margin = new Padding(0, 0, 0, 50);

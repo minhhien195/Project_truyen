@@ -17,7 +17,6 @@ using Firebase.Database;
 using Firebase.Database.Query;
 using Firebase.Auth.Providers;
 using Firebase.Auth;
-using System.Windows.Documents;
 using System.IO;
 using FireSharp.Response;
 using System.Security.Cryptography;
@@ -42,9 +41,7 @@ namespace Login
         Dictionary<string, Dictionary<string, object>> albumtruyen = new Dictionary<string, Dictionary<string, object>>();
         List<Dictionary<string, object>> noidung_album = new List<Dictionary<string, object>>();
         List<string> idtruyen = new List<string>();
-        Font tentruyen = new Font("League Spartan SemiBold", 12.0f);
-        Font chuong = new Font("League Spartan", 9.0f);
-        Font Border = new Font("League Spartan SemiBold", 9.0f);
+        private List<IconButton> toggleButtons;
         string uid;
         private async void Danhsach_album()
         {
@@ -78,7 +75,7 @@ namespace Login
             else
             {
                 TextBox textBox = new TextBox();
-                Font font = new Font("League Spartan SemiBold", 24.0f);
+                Font font = new Font("League Spartan SemiBold", 24.0f, FontStyle.Bold);
                 textBox.Text = "Lỗi! Không thể tải Album truyện.";
                 textBox.Font = font;
                 textBox.ForeColor = Color.Red;
@@ -98,274 +95,314 @@ namespace Login
                 noidung_album.Add(innerDictionary);
             }
         }
-        private void Album(int start, int end)
+        private async void Album()
         {
             int sl_truyen = noidung_album.Count;
             if (sl_truyen != 0)
             {
-                int an_panel = end - sl_truyen;
-                if (an_panel != 0)
-                    panelTruyen10.Visible = false;
-                if (an_panel - 1 != 0)
-                    panelTruyen9.Visible = false;
-                if (an_panel - 2 != 0)
-                    panelTruyen8.Visible = false;
-                if (an_panel - 3 != 0)
-                    panelTruyen7.Visible = false;
-                if (an_panel - 4 != 0)
-                    panelTruyen6.Visible = false;
-                if (an_panel - 5 != 0)
-                    panelTruyen5.Visible = false;
-                if (an_panel - 6 != 0)
-                    panelTruyen4.Visible = false;
-                if (an_panel - 7 != 0)
-                    panelTruyen3.Visible = false;
-                if (an_panel - 8 != 0)
-                    panelTruyen2.Visible = false;
+                Panel result = new Panel();
+                result.Dock = DockStyle.Top;
+                result.AutoSize = true;
+                result.Size = new Size(1898, 893);
+                result.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+                result.Visible = true;
+                result.Margin = new Padding(0, 0, 0, 50);
+                result.Height = Convert.ToInt32(this.Height / 14);
+                this.Controls.Add(result);
 
-                for (int i = start; i < sl_truyen; i++)
+                Label space = new Label();
+                space.AutoSize = true;
+                space.Font = new Font("League Spartan", 23F, FontStyle.Regular);
+                space.Text = " ";
+
+                Label album_name = new Label();
+                album_name.Text = "ALBUM TRUYỆN";
+                album_name.Font = new Font("League Spartan", 14F, FontStyle.Bold);
+                album_name.AutoSize = true;
+                album_name.Location = new Point(9, 19);
+                album_name.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+                album_name.Visible = true;
+
+                Button truycap = new Button();
+                truycap.AutoSize = true;
+                truycap.FlatAppearance.BorderSize = 0;
+                truycap.BackColor = Color.Salmon;
+                truycap.FlatAppearance.MouseOverBackColor = Color.White;
+                truycap.FlatAppearance.MouseDownBackColor = Color.White;
+                truycap.FlatStyle = FlatStyle.Flat;
+                truycap.Font = new Font("League Spartan SemiBold", 12F, FontStyle.Bold);
+                truycap.ForeColor = Color.Red;
+                truycap.Location = new Point(1204, 16);
+                truycap.Margin = new Padding(3, 3, 3, 3);
+                truycap.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+                truycap.Visible = true;
+                truycap.Name = "btnAccessAlbum";
+                truycap.Click += btnAccessAlbum_Click;
+
+                TextBox linkshare = new TextBox();
+                linkshare.Font = new Font("League Spartan", 12F, FontStyle.Regular);
+                linkshare.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+                linkshare.Name = "tbLinkShare";
+                linkshare.Location = new Point(1357, 24);
+                linkshare.Margin = new Padding(3, 3, 3, 3);
+                linkshare.Visible = true;
+
+                Label duong_ke = new Label();
+                duong_ke.FlatStyle = FlatStyle.Flat;
+                duong_ke.BorderStyle = BorderStyle.Fixed3D;
+                duong_ke.Location = new Point(10, 60);
+                duong_ke.Size = new Size(1804, 1);
+                duong_ke.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+                duong_ke.Visible = true;
+
+                result.Controls.Add(album_name);
+                result.Controls.Add(linkshare);
+                result.Controls.Add(truycap);
+                result.Controls.Add(duong_ke);
+                result.Controls.Add(space);
+
+                int i = 0;
+                foreach (var idtruyen in idtruyen)
                 {
-                    Dictionary<string, object> temp = new Dictionary<string, object>(noidung_album[i]);
-                    // Chuyển chuỗi Base64 thành mảng byte
-                    byte[] imageBytes = Convert.FromBase64String(temp["image"].ToString());
-                    // Tạo MemoryStream từ mảng byte
-                    using (MemoryStream ms = new MemoryStream(imageBytes))
+                    FirestoreDb db = FirestoreDb.Create("healtruyen");
+                    DocumentReference docReference = db.Collection("Truyen").Document(idtruyen);
+                    DocumentSnapshot snapshot = await docReference.GetSnapshotAsync();
+                    if (snapshot.Exists)
                     {
-                        // Đọc hình ảnh từ MemoryStream
-                        Image image = Image.FromStream(ms);
+                        Panel panel = new Panel();
+                        panel.Dock = DockStyle.Top;
+                        panel.AutoScroll = true;
+                        panel.AutoSize = true;
+                        panel.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+                        panel.Visible = true;
+                        this.Controls.Add(panel);
 
-                        // Hiển thị hình ảnh trên PictureBox
-                        if (i == start)
-                            ptrAnh1.Image = image;
-                        else if (i == start + 1)
-                            ptrAnh2.Image = image;
-                        else if (i == start + 2)
-                            ptrAnh3.Image = image;
-                        else if (i == start + 3)
-                            ptrAnh4.Image = image;
-                        else if (i == start + 4)
-                            ptrAnh5.Image = image;
-                        else if (i == start + 5)
-                            ptrAnh6.Image = image;
-                        else if (i == start + 6)
-                            ptrAnh7.Image = image;
-                        else if (i == start + 7)
-                            ptrAnh8.Image = image;
-                        else if (i == start + 8)
-                            ptrAnh9.Image = image;
-                        else if (i == start + 9)
-                            ptrAnh10.Image = image;
-                    }
-                    if (i == start)
-                    {
-                        lbTenTruyen1.Text = temp["Tentruyen"].ToString();
-                        ibtnsochuong1.Text = "  " + temp["tong_chuong"].ToString();
-                        ibtnchuongdangdoc1.Text = "  " + temp["Chuong_dangdoc"].ToString();
-                        btnTacgia1.Text = temp["Tacgia"].ToString();
-                        if (Convert.ToInt32(temp["Trang_thai"]) == 0)
+                        Panel panel1 = new Panel();
+                        panel1.Dock = DockStyle.Top;
+                        panel1.AutoSize = true;
+                        panel1.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+                        panel1.Visible = true;
+                        panel1.Tag = idtruyen;
+
+                        panel.Controls.Add(panel1);
+
+                        Panel panel2 = new Panel();
+                        panel2.Location = new Point(0, 0);
+                        panel2.Width = 149;
+                        panel2.Height = 183;
+                        panel2.Padding = new Padding(10, 0, 0, 0);
+                        panel2.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+                        panel2.Visible = true;
+
+                        // Chuyển chuỗi Base64 thành mảng byte
+                        byte[] imageBytes = Convert.FromBase64String(snapshot.GetValue<string>("Anh"));
+                        // Tạo MemoryStream từ mảng byte
+                        Image image;
+                        using (MemoryStream ms = new MemoryStream(imageBytes))
                         {
-                            btnTinhtrang1.Text = "Dừng cập nhật";
+                            // Đọc hình ảnh từ MemoryStream
+                            image = Image.FromStream(ms);
+
                         }
-                        else if (Convert.ToInt32(temp["Trang_thai"]) == 1)
-                        {
-                            btnTinhtrang1.Text = "Đang cập nhật";
-                        }
+                        PictureBox anh = new PictureBox();
+                        anh.Location = new Point(0, 0);
+                        anh.Dock = DockStyle.Fill;
+                        anh.SizeMode = PictureBoxSizeMode.StretchImage;
+                        anh.Image = image;
+                        anh.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+                        anh.Visible = true;
+
+                        panel2.Controls.Add(anh);
+
+                        Label ten_truyen = new Label();
+                        ten_truyen.Text = snapshot.GetValue<string>("Ten");
+                        ten_truyen.AutoSize = true;
+                        ten_truyen.Location = new Point(anh.Width + 25, 3);
+                        ten_truyen.Font = new Font("League Spartan", 12F, FontStyle.Bold);
+                        ten_truyen.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+                        ten_truyen.Visible = true;
+
+                        IconButton chuong = new IconButton();
+                        chuong.Text = "  " + snapshot.GetValue<int>("So_chuong").ToString() + " chương";
+                        chuong.AutoSize = true;
+                        chuong.FlatAppearance.BorderSize = 0;
+                        chuong.FlatAppearance.MouseDownBackColor = Color.FromArgb(220, 247, 253);
+                        chuong.FlatAppearance.MouseOverBackColor = Color.FromArgb(220, 247, 253);
+                        chuong.FlatStyle = FlatStyle.Flat;
+                        chuong.Font = new Font("League Spartan", 9F, FontStyle.Regular);
+                        chuong.IconChar = IconChar.LayerGroup;
+                        chuong.IconColor = Color.Black;
+                        chuong.IconSize = 32;
+                        chuong.IconFont = IconFont.Auto;
+                        chuong.ImageAlign = ContentAlignment.MiddleLeft;
+                        chuong.TextAlign = ContentAlignment.MiddleLeft;
+                        chuong.TextImageRelation = TextImageRelation.ImageBeforeText;
+                        chuong.Location = new Point(anh.Width + 25, 54);
+                        chuong.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+                        chuong.Visible = true;
+
+                        IconButton chuong_dangdoc = new IconButton();
+                        chuong_dangdoc.Text = "  " + noidung_album[i]["Chuong_dangdoc"].ToString() + " chương";
+                        chuong_dangdoc.AutoSize = true;
+                        chuong_dangdoc.FlatAppearance.BorderSize = 0;
+                        chuong_dangdoc.FlatAppearance.MouseDownBackColor = Color.FromArgb(220, 247, 253);
+                        chuong_dangdoc.FlatAppearance.MouseOverBackColor = Color.FromArgb(220, 247, 253);
+                        chuong_dangdoc.FlatStyle = FlatStyle.Flat;
+                        chuong_dangdoc.Font = new Font("League Spartan", 9F, FontStyle.Regular);
+                        chuong_dangdoc.IconChar = IconChar.Bookmark;
+                        chuong_dangdoc.IconColor = Color.Black;
+                        chuong_dangdoc.IconSize = 32;
+                        chuong_dangdoc.IconFont = IconFont.Auto;
+                        chuong_dangdoc.ImageAlign = ContentAlignment.MiddleLeft;
+                        chuong_dangdoc.TextAlign = ContentAlignment.MiddleLeft;
+                        chuong_dangdoc.TextImageRelation = TextImageRelation.ImageBeforeText;
+                        chuong_dangdoc.Location = new Point(anh.Width + 25, 98);
+                        chuong_dangdoc.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+                        chuong_dangdoc.Visible = true;
+
+                        TableLayoutPanel trang_thai = new TableLayoutPanel();
+                        trang_thai.AutoSize = true;
+                        trang_thai.Location = new Point(anh.Width + 25, 156);
+                        trang_thai.Width = 340;
+                        trang_thai.Height = 61;
+                        trang_thai.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+                        trang_thai.Visible = true;
+                        trang_thai.RowCount = 1;
+                        trang_thai.ColumnCount = 3;
+                        trang_thai.ColumnStyles.Add(new ColumnStyle(SizeType.AutoSize));
+                        trang_thai.ColumnStyles.Add(new ColumnStyle(SizeType.AutoSize));
+                        trang_thai.ColumnStyles.Add(new ColumnStyle(SizeType.AutoSize));
+
+                        Button tac_gia = new Button();
+                        tac_gia.AutoSize = true;
+                        tac_gia.FlatAppearance.BorderSize = 4;
+                        tac_gia.FlatAppearance.MouseOverBackColor = Color.White;
+                        tac_gia.FlatAppearance.MouseDownBackColor = Color.White;
+                        tac_gia.FlatStyle = FlatStyle.Flat;
+                        tac_gia.Font = new Font("League Spartan SemiBold", 9F, FontStyle.Bold);
+                        tac_gia.ForeColor = Color.Red;
+                        tac_gia.Margin = new Padding(3, 3, 6, 3);
+                        tac_gia.Text = snapshot.GetValue<string>("Tac_gia");
+                        tac_gia.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+                        tac_gia.Visible = true;
+
+
+                        Button trang_thai_truyen = new Button();
+                        trang_thai_truyen.AutoSize = true;
+                        trang_thai_truyen.FlatAppearance.BorderSize = 4;
+                        trang_thai_truyen.FlatAppearance.MouseOverBackColor = Color.White;
+                        trang_thai_truyen.FlatAppearance.MouseDownBackColor = Color.White;
+                        trang_thai_truyen.FlatStyle = FlatStyle.Flat;
+                        trang_thai_truyen.Font = new Font("League Spartan SemiBold", 9F, FontStyle.Bold);
+                        trang_thai_truyen.ForeColor = Color.FromArgb(0, 110, 0);
+                        trang_thai_truyen.Margin = new Padding(3, 3, 6, 3);
+                        if (snapshot.GetValue<int>("Trang_thai") == 0)
+                            trang_thai_truyen.Text = "Dừng cập nhật";
+                        else if (snapshot.GetValue<int>("Trang_thai") == 1)
+                            trang_thai_truyen.Text = "Đang tiến hành";
                         else
-                        {
-                            btnTinhtrang1.Text = "Hoàn thành";
-                        }
-                        btnTheloai1.Text = temp["The_loai"].ToString();
-                        panelTruyen1.Tag = idtruyen[i];
-                    }  
-                    else if (i == start + 1)
-                    {
-                        lbTenTruyen2.Text = temp["Tentruyen"].ToString();
-                        ibtnsochuong2.Text = "  " + temp["tong_chuong"].ToString();
-                        ibtnchuongdangdoc2.Text = "  " + temp["Chuong_dangdoc"].ToString();
-                        btnTacgia2.Text = temp["Tacgia"].ToString();
-                        if (Convert.ToInt32(temp["Trang_thai"]) == 0)
-                        {
-                            btnTinhtrang2.Text = "Dừng cập nhật";
-                        }
-                        else if (Convert.ToInt32(temp["Trang_thai"]) == 1)
-                        {
-                            btnTinhtrang2.Text = "Đang cập nhật";
-                        }
-                        else
-                        {
-                            btnTinhtrang2.Text = "Hoàn thành";
-                        }
-                        btnTheloai2.Text = temp["The_loai"].ToString();
-                        panelTruyen2.Tag = idtruyen[i];
+                            trang_thai_truyen.Text = "Hoàn thành";
+                        trang_thai_truyen.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+                        trang_thai_truyen.Visible = true;
+
+                        Button the_loai = new Button();
+                        the_loai.AutoSize = true;
+                        the_loai.FlatAppearance.BorderSize = 4;
+                        the_loai.FlatAppearance.MouseOverBackColor = Color.White;
+                        the_loai.FlatAppearance.MouseDownBackColor = Color.White;
+                        the_loai.FlatStyle = FlatStyle.Flat;
+                        the_loai.Font = new Font("League Spartan SemiBold", 9F, FontStyle.Bold);
+                        the_loai.ForeColor = Color.Blue;
+                        the_loai.Margin = new Padding(3, 3, 10, 3);
+                        the_loai.Text = snapshot.GetValue<List<string>>("The_loai")[0];
+                        the_loai.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+                        the_loai.Visible = true;
+
+                        IconButton delete = new IconButton();
+                        delete.Text = "";
+                        delete.AutoSize = true;
+                        delete.FlatAppearance.BorderSize = 0;
+                        delete.FlatAppearance.MouseDownBackColor = Color.FromArgb(220, 247, 253);
+                        delete.FlatAppearance.MouseOverBackColor = Color.FromArgb(220, 247, 253);
+                        delete.FlatStyle = FlatStyle.Flat;
+                        delete.Font = new Font("League Spartan", 9F, FontStyle.Regular);
+                        delete.IconChar = IconChar.TrashAlt;
+                        delete.IconColor = Color.Black;
+                        delete.IconSize = 38;
+                        delete.IconFont = IconFont.Auto;
+                        delete.ImageAlign = ContentAlignment.MiddleCenter;
+                        delete.TextAlign = ContentAlignment.MiddleCenter;
+                        delete.TextImageRelation = TextImageRelation.Overlay;
+                        delete.Location = new Point(1757, 14);
+                        delete.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+                        delete.Click += deleteButton_Click;
+                        delete.Visible = true;
+
+                        IconButton thong_bao_tat = new IconButton();
+                        thong_bao_tat.Text = "";
+                        thong_bao_tat.AutoSize = true;
+                        thong_bao_tat.FlatAppearance.BorderSize = 0;
+                        thong_bao_tat.FlatAppearance.MouseDownBackColor = Color.FromArgb(220, 247, 253);
+                        thong_bao_tat.FlatAppearance.MouseOverBackColor = Color.FromArgb(220, 247, 253);
+                        thong_bao_tat.FlatStyle = FlatStyle.Flat;
+                        thong_bao_tat.Font = new Font("League Spartan", 9F, FontStyle.Regular);
+                        thong_bao_tat.IconChar = IconChar.Bell;
+                        thong_bao_tat.IconColor = Color.Black;
+                        thong_bao_tat.IconSize = 32;
+                        thong_bao_tat.IconFont = IconFont.Auto;
+                        thong_bao_tat.ImageAlign = ContentAlignment.MiddleCenter;
+                        thong_bao_tat.TextAlign = ContentAlignment.MiddleCenter;
+                        thong_bao_tat.TextImageRelation = TextImageRelation.Overlay;
+                        thong_bao_tat.Location = new Point(1757, 70);
+                        thong_bao_tat.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+                        thong_bao_tat.Click += Notification_turnoff_Click;
+                        thong_bao_tat.Visible = true;
+                        thong_bao_tat.Tag = i;
+                        toggleButtons.Add(thong_bao_tat);
+
+                        IconButton thong_bao_bat = new IconButton();
+                        thong_bao_bat.Text = "";
+                        thong_bao_bat.AutoSize = true;
+                        thong_bao_bat.FlatAppearance.BorderSize = 0;
+                        thong_bao_bat.FlatAppearance.MouseDownBackColor = Color.FromArgb(220, 247, 253);
+                        thong_bao_bat.FlatAppearance.MouseOverBackColor = Color.FromArgb(220, 247, 253);
+                        thong_bao_bat.FlatStyle = FlatStyle.Flat;
+                        thong_bao_bat.Font = new Font("League Spartan", 9F, FontStyle.Regular);
+                        thong_bao_bat.IconChar = IconChar.BellSlash;
+                        thong_bao_bat.IconColor = Color.Black;
+                        thong_bao_bat.IconSize = 32;
+                        thong_bao_bat.IconFont = IconFont.Auto;
+                        thong_bao_bat.ImageAlign = ContentAlignment.MiddleCenter;
+                        thong_bao_bat.TextAlign = ContentAlignment.MiddleCenter;
+                        thong_bao_bat.TextImageRelation = TextImageRelation.Overlay;
+                        thong_bao_bat.Location = new Point(1757, 70);
+                        thong_bao_bat.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+                        thong_bao_bat.Click += Notification_turnon_Click;
+                        thong_bao_bat.Visible = false;
+                        thong_bao_bat.Tag = i + 1;
+                        toggleButtons.Add(thong_bao_bat);
+
+                        Label space1 = new Label();
+                        space1.AutoSize = true;
+                        space1.Font = new Font("League Spartan", 20F, FontStyle.Regular);
+                        space1.Text = " ";
+
+                        trang_thai.Controls.Add(tac_gia);
+                        trang_thai.Controls.Add(trang_thai_truyen);
+                        trang_thai.Controls.Add(the_loai);
+
+                        panel1.Controls.Add(panel2);
+                        panel1.Controls.Add(ten_truyen);
+                        panel1.Controls.Add(chuong);
+                        panel1.Controls.Add(chuong_dangdoc);
+                        panel1.Controls.Add(trang_thai);
+                        panel1.Controls.Add(space1);
+                        panel1.Controls.Add(delete);
+                        panel1.Controls.Add(thong_bao_tat);
+                        panel1.Controls.Add(thong_bao_bat);
+                        panel.BringToFront();
                     }
-                    else if (i == start + 2)
-                    {
-                        lbTenTruyen3.Text = temp["Tentruyen"].ToString();
-                        ibtnsochuong3.Text = "  " + temp["tong_chuong"].ToString();
-                        ibtnchuongdangdoc3.Text = "  " + temp["Chuong_dangdoc"].ToString();
-                        btnTacgia3.Text = temp["Tacgia"].ToString();
-                        if (Convert.ToInt32(temp["Trang_thai"]) == 0)
-                        {
-                            btnTinhtrang3.Text = "Dừng cập nhật";
-                        }
-                        else if (Convert.ToInt32(temp["Trang_thai"]) == 1)
-                        {
-                            btnTinhtrang3.Text = "Đang cập nhật";
-                        }
-                        else
-                        {
-                            btnTinhtrang3.Text = "Hoàn thành";
-                        }
-                        btnTheloai3.Text = temp["The_loai"].ToString();
-                        panelTruyen3.Tag = idtruyen[i];
-                    }
-                    else if (i == start + 3)
-                    {
-                        lbTenTruyen4.Text = temp["Tentruyen"].ToString();
-                        ibtnsochuong4.Text = "  " + temp["tong_chuong"].ToString();
-                        ibtnchuongdangdoc4.Text = "  " + temp["Chuong_dangdoc"].ToString();
-                        btnTacgia4.Text = temp["Tacgia"].ToString();
-                        if (Convert.ToInt32(temp["Trang_thai"]) == 0)
-                        {
-                            btnTinhtrang4.Text = "Dừng cập nhật";
-                        }
-                        else if (Convert.ToInt32(temp["Trang_thai"]) == 1)
-                        {
-                            btnTinhtrang4.Text = "Đang cập nhật";
-                        }
-                        else
-                        {
-                            btnTinhtrang4.Text = "Hoàn thành";
-                        }
-                        btnTheloai4.Text = temp["The_loai"].ToString();
-                        panelTruyen4.Tag = idtruyen[i];
-                    }
-                    else if (i == start + 4)
-                    {
-                        lbTenTruyen5.Text = temp["Tentruyen"].ToString();
-                        ibtnsochuong5.Text = "  " + temp["tong_chuong"].ToString();
-                        ibtnchuongdangdoc5.Text = "  " + temp["Chuong_dangdoc"].ToString();
-                        btnTacgia5.Text = temp["Tacgia"].ToString();
-                        if (Convert.ToInt32(temp["Trang_thai"]) == 0)
-                        {
-                            btnTinhtrang5.Text = "Dừng cập nhật";
-                        }
-                        else if (Convert.ToInt32(temp["Trang_thai"]) == 1)
-                        {
-                            btnTinhtrang5.Text = "Đang cập nhật";
-                        }
-                        else
-                        {
-                            btnTinhtrang5.Text = "Hoàn thành";
-                        }
-                        btnTheloai5.Text = temp["The_loai"].ToString();
-                        panelTruyen5.Tag = idtruyen[i];
-                    }
-                    else if (i == start + 5)
-                    {
-                        lbTenTruyen6.Text = temp["Tentruyen"].ToString();
-                        ibtnsochuong6.Text = "  " + temp["tong_chuong"].ToString();
-                        ibtnchuongdangdoc6.Text = "  " + temp["Chuong_dangdoc"].ToString();
-                        btnTacgia6.Text = temp["Tacgia"].ToString();
-                        if (Convert.ToInt32(temp["Trang_thai"]) == 0)
-                        {
-                            btnTinhtrang6.Text = "Dừng cập nhật";
-                        }
-                        else if (Convert.ToInt32(temp["Trang_thai"]) == 1)
-                        {
-                            btnTinhtrang6.Text = "Đang cập nhật";
-                        }
-                        else
-                        {
-                            btnTinhtrang6.Text = "Hoàn thành";
-                        }
-                        btnTheloai6.Text = temp["The_loai"].ToString();
-                        panelTruyen6.Tag = idtruyen[i];
-                    }
-                    else if (i == start + 6)
-                    {
-                        lbTenTruyen7.Text = temp["Tentruyen"].ToString();
-                        ibtnsochuong7.Text = "  " + temp["tong_chuong"].ToString();
-                        ibtnchuongdangdoc7.Text = "  " + temp["Chuong_dangdoc"].ToString();
-                        btnTacgia7.Text = temp["Tacgia"].ToString();
-                        if (Convert.ToInt32(temp["Trang_thai"]) == 0)
-                        {
-                            btnTinhtrang7.Text = "Dừng cập nhật";
-                        }
-                        else if (Convert.ToInt32(temp["Trang_thai"]) == 1)
-                        {
-                            btnTinhtrang7.Text = "Đang cập nhật";
-                        }
-                        else
-                        {
-                            btnTinhtrang7.Text = "Hoàn thành";
-                        }
-                        btnTheloai7.Text = temp["The_loai"].ToString();
-                        panelTruyen7.Tag = idtruyen[i];
-                    }
-                    else if (i == start + 7)
-                    {
-                        lbTenTruyen8.Text = temp["Tentruyen"].ToString();
-                        ibtnsochuong8.Text = "  " + temp["tong_chuong"].ToString();
-                        ibtnchuongdangdoc8.Text = "  " + temp["Chuong_dangdoc"].ToString();
-                        btnTacgia8.Text = temp["Tacgia"].ToString();
-                        if (Convert.ToInt32(temp["Trang_thai"]) == 0)
-                        {
-                            btnTinhtrang8.Text = "Dừng cập nhật";
-                        }
-                        else if (Convert.ToInt32(temp["Trang_thai"]) == 1)
-                        {
-                            btnTinhtrang8.Text = "Đang cập nhật";
-                        }
-                        else
-                        {
-                            btnTinhtrang8.Text = "Hoàn thành";
-                        }
-                        btnTheloai8.Text = temp["The_loai"].ToString();
-                        panelTruyen8.Tag = idtruyen[i];
-                    }
-                    else if (i == start + 8)
-                    {
-                        lbTenTruyen9.Text = temp["Tentruyen"].ToString();
-                        ibtnsochuong9.Text = "  " + temp["tong_chuong"].ToString();
-                        ibtnchuongdangdoc9.Text = "  " + temp["Chuong_dangdoc"].ToString();
-                        btnTacgia9.Text = temp["Tacgia"].ToString();
-                        if (Convert.ToInt32(temp["Trang_thai"]) == 0)
-                        {
-                            btnTinhtrang9.Text = "Dừng cập nhật";
-                        }
-                        else if (Convert.ToInt32(temp["Trang_thai"]) == 1)
-                        {
-                            btnTinhtrang9.Text = "Đang cập nhật";
-                        }
-                        else
-                        {
-                            btnTinhtrang9.Text = "Hoàn thành";
-                        }
-                        btnTheloai9.Text = temp["The_loai"].ToString();
-                        panelTruyen9.Tag = idtruyen[i];
-                    }
-                    else if (i == start + 9)
-                    {
-                        lbTenTruyen10.Text = temp["Tentruyen"].ToString();
-                        ibtnsochuong10.Text = "  " + temp["tong_chuong"].ToString();
-                        ibtnchuongdangdoc10.Text = "  " + temp["Chuong_dangdoc"].ToString();
-                        btnTacgia10.Text = temp["Tacgia"].ToString();
-                        if (Convert.ToInt32(temp["Trang_thai"]) == 0)
-                        {
-                            btnTinhtrang10.Text = "Dừng cập nhật";
-                        }
-                        else if (Convert.ToInt32(temp["Trang_thai"]) == 1)
-                        {
-                            btnTinhtrang10.Text = "Đang cập nhật";
-                        }
-                        else
-                        {
-                            btnTinhtrang10.Text = "Hoàn thành";
-                        }
-                        btnTheloai10.Text = temp["The_loai"].ToString();
-                        panelTruyen10.Tag = idtruyen[i];
-                    }
+                    i++;
                 }
             }
             else
@@ -374,6 +411,11 @@ namespace Login
                 ibtnChiaseAlbum.Visible = false;
             }
             
+        }
+
+        private void Thong_bao_tat_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         private void deleteButton_Click(object sender, EventArgs e)
@@ -434,6 +476,7 @@ namespace Login
             Panel panel = iconButton.Parent as Panel;
             // Lấy thông tin truyện từ panel
             string idtruyen = panel.Tag as string;
+            int position = (int)iconButton.Tag;
             string buttonName = iconButton.Name;
             if (albumtruyen.ContainsKey(idtruyen))
             {
@@ -442,47 +485,16 @@ namespace Login
                 await thongbao.Tat_Bat_thongbao_album(uid, idtruyen, thong_tin_truyen["Chuong_dangdoc"].ToString(),
                     thong_tin_truyen["Tentruyen"].ToString(), thong_tin_truyen["Tacgia"].ToString(), thong_tin_truyen["image"].ToString(),
                     thong_tin_truyen["The_loai"].ToString(), Convert.ToInt32(thong_tin_truyen["Trang_thai"].ToString()),
-                    Convert.ToInt32(thong_tin_truyen["tong_chuong"].ToString()), false);
-            }
-            if (buttonName == "ibtnTatthongbao1")
-            {
-                ibtnThongbao1.BringToFront();
-            }    
-            else if (buttonName == "ibtnTatthongbao2")
-            {
-                ibtnThongbao2.BringToFront();
-            }
-            else if (buttonName == "ibtnTatthongbao3")
-            {
-                ibtnThongbao3.BringToFront();
-            }
-            else if (buttonName == "ibtnTatthongbao4")
-            {
-                ibtnThongbao4.BringToFront();
-            }
-            else if (buttonName == "ibtnTatthongbao5")
-            {
-                ibtnThongbao5.BringToFront();
-            }
-            else if (buttonName == "ibtnTatthongbao6")
-            {
-                ibtnThongbao6.BringToFront();
-            }
-            else if (buttonName == "ibtnTatthongbao7")
-            {
-                ibtnThongbao7.BringToFront();
-            }
-            else if (buttonName == "ibtnTatthongbao8")
-            {
-                ibtnThongbao8.BringToFront();
-            }
-            else if (buttonName == "ibtnTatthongbao9")
-            {
-                ibtnThongbao9.BringToFront();
-            }
-            else if (buttonName == "ibtnTatthongbao10")
-            {
-                ibtnThongbao10.BringToFront();
+                    Convert.ToInt32(thong_tin_truyen["tong_chuong"].ToString()), true);
+                foreach (IconButton button in toggleButtons)
+                {
+                    if ((int)button.Tag == position - 1)
+                    {
+                        button.Visible = true;
+                        iconButton.Visible = false;
+                        break;
+                    }
+                }
             }
 
         }
@@ -498,6 +510,7 @@ namespace Login
             Panel panel = iconButton.Parent as Panel;
             // Lấy thông tin truyện từ panel
             string idtruyen = panel.Tag as string;
+            int position = (int)iconButton.Tag;
             string buttonName = iconButton.Name;
             if (albumtruyen.ContainsKey(idtruyen))
             {
@@ -507,46 +520,15 @@ namespace Login
                     thong_tin_truyen["Tentruyen"].ToString(), thong_tin_truyen["Tacgia"].ToString(), thong_tin_truyen["image"].ToString(),
                     thong_tin_truyen["The_loai"].ToString(), Convert.ToInt32(thong_tin_truyen["Trang_thai"].ToString()),
                     Convert.ToInt32(thong_tin_truyen["tong_chuong"].ToString()), false);
-            }
-            if (buttonName == "ibtnThongbao1")
-            {
-                ibtnTatthongbao1.BringToFront();
-            }
-            else if (buttonName == "ibtnThongbao2")
-            {
-                ibtnTatthongbao2.BringToFront();
-            }
-            else if (buttonName == "ibtnThongbao3")
-            {
-                ibtnTatthongbao3.BringToFront();
-            }
-            else if (buttonName == "ibtnThongbao4")
-            {
-                ibtnTatthongbao4.BringToFront();
-            }
-            else if (buttonName == "ibtnThongbao5")
-            {
-                ibtnTatthongbao5.BringToFront();
-            }
-            else if (buttonName == "ibtnThongbao6")
-            {
-                ibtnTatthongbao6.BringToFront();
-            }
-            else if (buttonName == "ibtnThongbao7")
-            {
-                ibtnTatthongbao7.BringToFront();
-            }
-            else if (buttonName == "ibtnThongbao8")
-            {
-                ibtnTatthongbao8.BringToFront();
-            }
-            else if (buttonName == "ibtnThongbao9")
-            {
-                ibtnTatthongbao9.BringToFront();
-            }
-            else if (buttonName == "ibtnThongbao10")
-            {
-                ibtnTatthongbao10.BringToFront();
+                foreach (IconButton button in toggleButtons)
+                {
+                    if ((int)button.Tag == position + 1)
+                    {
+                        button.Visible = true;
+                        iconButton.Visible = false;
+                        break;
+                    }
+                }
             }
         }
 
@@ -637,6 +619,7 @@ namespace Login
 
             if (result != null)
             {
+                int i = 0;
                 foreach (var item in result.Keys)
                 {
                     string idTruyen = item;
@@ -663,117 +646,239 @@ namespace Login
                     }
 
                     Panel panel = new Panel();
-                    panelAlbumTruyen.Controls.Add(panel);
-
                     panel.Dock = DockStyle.Top;
-                    panel.BringToFront();
                     panel.AutoScroll = true;
                     panel.AutoSize = true;
+                    panel.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+                    panel.Visible = true;
+                    this.Controls.Add(panel);
 
-                    Panel panelPicture = new Panel();
-                    panel.Controls.Add(panelPicture);
-                    panelPicture.AutoSize = true;
-                    panelPicture.Location = new Point(19, 14);
-                    panelPicture.Width = 152;
-                    panelPicture.Height = 193;
-                    panelPicture.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+                    Panel panel1 = new Panel();
+                    panel1.Dock = DockStyle.Top;
+                    panel1.AutoSize = true;
+                    panel1.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+                    panel1.Visible = true;
+                    panel1.Tag = idtruyen;
 
-                    PictureBox pictureBox = new PictureBox();
-                    panelPicture.Controls.Add(pictureBox);
-                    pictureBox.Dock = DockStyle.Fill;
+                    panel.Controls.Add(panel1);
 
-                    byte[] imageBytes = Convert.FromBase64String(imgBase64);
+                    Panel panel2 = new Panel();
+                    panel2.Location = new Point(0, 0);
+                    panel2.Width = 149;
+                    panel2.Height = 183;
+                    panel2.Padding = new Padding(10, 0, 0, 0);
+                    panel2.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+                    panel2.Visible = true;
 
-                    using (MemoryStream memoryStream = new MemoryStream(imageBytes))
+                    // Chuyển chuỗi Base64 thành mảng byte
+                    byte[] imageBytes = Convert.FromBase64String(snapshot.GetValue<string>("Anh"));
+                    // Tạo MemoryStream từ mảng byte
+                    Image image;
+                    using (MemoryStream ms = new MemoryStream(imageBytes))
                     {
-                        Bitmap bitmap = new Bitmap(memoryStream);
-                        pictureBox.Image = bitmap;
-                        pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+                        // Đọc hình ảnh từ MemoryStream
+                        image = Image.FromStream(ms);
+
                     }
+                    PictureBox anh = new PictureBox();
+                    anh.Location = new Point(0, 0);
+                    anh.Dock = DockStyle.Fill;
+                    anh.SizeMode = PictureBoxSizeMode.StretchImage;
+                    anh.Image = image;
+                    anh.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+                    anh.Visible = true;
 
-                    Label lbTenTruyen = new Label();
-                    panel.Controls.Add(lbTenTruyen);
-                    lbTenTruyen.Font = new Font("League Spartan SemiBold", 12);
-                    lbTenTruyen.AutoSize = true;
-                    lbTenTruyen.Location = new Point(
-                        panelPicture.Location.X + panelPicture.Width + 10,
-                        panelPicture.Location.Y
-                    );
-                    lbTenTruyen.Text = tenTruyen;
-                    lbTenTruyen.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+                    panel2.Controls.Add(anh);
 
-                    IconButton ibtnTongChuong = new IconButton();
-                    panel.Controls.Add(ibtnTongChuong);
-                    ibtnTongChuong.Anchor = AnchorStyles.Top | AnchorStyles.Left;
-                    ibtnTongChuong.Font = new Font("League Spartan", 9, FontStyle.Regular);
-                    ibtnTongChuong.Text = tongChuong.ToString() + " chương";
-                    ibtnTongChuong.IconChar = IconChar.LayerGroup;
-                    ibtnTongChuong.Width = 198;
-                    ibtnTongChuong.Height = 40;
-                    ibtnTongChuong.IconColor = Color.Black;
-                    ibtnTongChuong.IconSize = 32;
-                    ibtnTongChuong.ForeColor = Color.Black;
-                    ibtnTongChuong.FlatStyle = FlatStyle.Flat;
-                    ibtnTongChuong.FlatAppearance.BorderSize = 0;
-                    ibtnTongChuong.BackColor = Color.FromArgb(220, 247, 253);
-                    ibtnTongChuong.TextAlign = ContentAlignment.MiddleLeft;
-                    ibtnTongChuong.TextImageRelation = TextImageRelation.ImageBeforeText;
-                    ibtnTongChuong.Location = new Point(
-                        lbTenTruyen.Location.X,
-                        lbTenTruyen.Location.Y + lbTenTruyen.Height + 10
-                    );
+                    Label ten_truyen = new Label();
+                    ten_truyen.Text = snapshot.GetValue<string>("Ten");
+                    ten_truyen.AutoSize = true;
+                    ten_truyen.Location = new Point(anh.Width + 25, 3);
+                    ten_truyen.Font = new Font("League Spartan", 12F, FontStyle.Bold);
+                    ten_truyen.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+                    ten_truyen.Visible = true;
 
-                    FlowLayoutPanel flowLayoutPanel = new FlowLayoutPanel();
-                    panel.Controls.Add(flowLayoutPanel);
+                    IconButton chuong = new IconButton();
+                    chuong.Text = "  " + tongChuong + " chương";
+                    chuong.AutoSize = true;
+                    chuong.FlatAppearance.BorderSize = 0;
+                    chuong.FlatAppearance.MouseDownBackColor = Color.FromArgb(220, 247, 253);
+                    chuong.FlatAppearance.MouseOverBackColor = Color.FromArgb(220, 247, 253);
+                    chuong.FlatStyle = FlatStyle.Flat;
+                    chuong.Font = new Font("League Spartan", 9F, FontStyle.Regular);
+                    chuong.IconChar = IconChar.LayerGroup;
+                    chuong.IconColor = Color.Black;
+                    chuong.IconSize = 32;
+                    chuong.IconFont = IconFont.Auto;
+                    chuong.ImageAlign = ContentAlignment.MiddleLeft;
+                    chuong.TextAlign = ContentAlignment.MiddleLeft;
+                    chuong.TextImageRelation = TextImageRelation.ImageBeforeText;
+                    chuong.Location = new Point(anh.Width + 25, 54);
+                    chuong.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+                    chuong.Visible = true;
 
-                    Button btnTacGia = new Button();
-                    btnTacGia.Text = tacGia.ToString();
-                    btnTacGia.Font = new Font("League Spartan", 9, FontStyle.Bold);
-                    btnTacGia.ForeColor = Color.Red;
-                    btnTacGia.FlatStyle = FlatStyle.Flat;
-                    btnTacGia.FlatAppearance.BorderSize = 4;
-                    btnTacGia.Width = 138;
-                    btnTacGia.Height = 45;
-                    btnTacGia.Margin = new Padding(3, 3, 10, 3);
-                    btnTacGia.Location = new Point(0, 0);
+                    IconButton chuong_dangdoc = new IconButton();
+                    chuong_dangdoc.Text = "  " + noidung_album[i]["Chuong_dangdoc"].ToString() + " chương";
+                    chuong_dangdoc.AutoSize = true;
+                    chuong_dangdoc.FlatAppearance.BorderSize = 0;
+                    chuong_dangdoc.FlatAppearance.MouseDownBackColor = Color.FromArgb(220, 247, 253);
+                    chuong_dangdoc.FlatAppearance.MouseOverBackColor = Color.FromArgb(220, 247, 253);
+                    chuong_dangdoc.FlatStyle = FlatStyle.Flat;
+                    chuong_dangdoc.Font = new Font("League Spartan", 9F, FontStyle.Regular);
+                    chuong_dangdoc.IconChar = IconChar.Bookmark;
+                    chuong_dangdoc.IconColor = Color.Black;
+                    chuong_dangdoc.IconSize = 32;
+                    chuong_dangdoc.IconFont = IconFont.Auto;
+                    chuong_dangdoc.ImageAlign = ContentAlignment.MiddleLeft;
+                    chuong_dangdoc.TextAlign = ContentAlignment.MiddleLeft;
+                    chuong_dangdoc.TextImageRelation = TextImageRelation.ImageBeforeText;
+                    chuong_dangdoc.Location = new Point(anh.Width + 25, 98);
+                    chuong_dangdoc.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+                    chuong_dangdoc.Visible = true;
 
-                    Button btnTrangThai = new Button();
-                    btnTrangThai.Text = trangThai.ToString();
-                    btnTrangThai.Font = new Font("League Spartan", 9, FontStyle.Bold);
-                    btnTrangThai.ForeColor = Color.Green;
-                    btnTrangThai.FlatStyle = FlatStyle.Flat;
-                    btnTrangThai.FlatAppearance.BorderSize = 4;
-                    btnTrangThai.Width = 109;
-                    btnTrangThai.Height = 45;
-                    btnTrangThai.Margin = new Padding(3, 3, 10, 3);
-                    btnTrangThai.Location = new Point(btnTacGia.Location.X + btnTacGia.Width + 3, 0);
+                    TableLayoutPanel trang_thai = new TableLayoutPanel();
+                    trang_thai.AutoSize = true;
+                    trang_thai.Location = new Point(anh.Width + 25, 156);
+                    trang_thai.Width = 340;
+                    trang_thai.Height = 61;
+                    trang_thai.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+                    trang_thai.Visible = true;
+                    trang_thai.RowCount = 1;
+                    trang_thai.ColumnCount = 3;
+                    trang_thai.ColumnStyles.Add(new ColumnStyle(SizeType.AutoSize));
+                    trang_thai.ColumnStyles.Add(new ColumnStyle(SizeType.AutoSize));
+                    trang_thai.ColumnStyles.Add(new ColumnStyle(SizeType.AutoSize));
 
-                    Button btnTheLoai = new Button();
-                    btnTheLoai.Text = theLoai.ToString();
-                    btnTheLoai.Font = new Font("League Spartan", 9, FontStyle.Bold);
-                    btnTheLoai.ForeColor = Color.Blue;
-                    btnTheLoai.FlatStyle = FlatStyle.Flat;
-                    btnTheLoai.FlatAppearance.BorderSize = 4;
-                    btnTheLoai.Width = 147;
-                    btnTheLoai.Height = 45;
-                    btnTheLoai.Margin = new Padding(3, 3, 10, 3);
-                    btnTheLoai.Location = new Point(btnTrangThai.Location.X + btnTacGia.Width + 3, 0);
+                    Button tac_gia = new Button();
+                    tac_gia.AutoSize = true;
+                    tac_gia.FlatAppearance.BorderSize = 4;
+                    tac_gia.FlatAppearance.MouseOverBackColor = Color.White;
+                    tac_gia.FlatAppearance.MouseDownBackColor = Color.White;
+                    tac_gia.FlatStyle = FlatStyle.Flat;
+                    tac_gia.Font = new Font("League Spartan SemiBold", 9F, FontStyle.Bold);
+                    tac_gia.ForeColor = Color.Red;
+                    tac_gia.Margin = new Padding(3, 3, 6, 3);
+                    tac_gia.Text = tacGia;
+                    tac_gia.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+                    tac_gia.Visible = true;
 
 
-                    flowLayoutPanel.FlowDirection = FlowDirection.LeftToRight;
-                    flowLayoutPanel.Location = new Point(
-                        lbTenTruyen.Location.X,
-                        panelPicture.Location.Y + panelPicture.Height - btnTacGia.Height - 3
-                    );
-                    flowLayoutPanel.AutoSize = true;
-                    flowLayoutPanel.Controls.Add(btnTacGia);
-                    flowLayoutPanel.Controls.Add(btnTrangThai);
-                    flowLayoutPanel.Controls.Add(btnTheLoai);
-                    flowLayoutPanel.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+                    Button trang_thai_truyen = new Button();
+                    trang_thai_truyen.AutoSize = true;
+                    trang_thai_truyen.FlatAppearance.BorderSize = 4;
+                    trang_thai_truyen.FlatAppearance.MouseOverBackColor = Color.White;
+                    trang_thai_truyen.FlatAppearance.MouseDownBackColor = Color.White;
+                    trang_thai_truyen.FlatStyle = FlatStyle.Flat;
+                    trang_thai_truyen.Font = new Font("League Spartan SemiBold", 9F, FontStyle.Bold);
+                    trang_thai_truyen.ForeColor = Color.FromArgb(0, 110, 0);
+                    trang_thai_truyen.Margin = new Padding(3, 3, 6, 3);
+                    trang_thai_truyen.Text = trangThai;
+                    trang_thai_truyen.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+                    trang_thai_truyen.Visible = true;
 
-                    MessageBox.Show(flowLayoutPanel.Location.Y.ToString());
+                    Button the_loai = new Button();
+                    the_loai.AutoSize = true;
+                    the_loai.FlatAppearance.BorderSize = 4;
+                    the_loai.FlatAppearance.MouseOverBackColor = Color.White;
+                    the_loai.FlatAppearance.MouseDownBackColor = Color.White;
+                    the_loai.FlatStyle = FlatStyle.Flat;
+                    the_loai.Font = new Font("League Spartan SemiBold", 9F, FontStyle.Bold);
+                    the_loai.ForeColor = Color.Blue;
+                    the_loai.Margin = new Padding(3, 3, 10, 3);
+                    the_loai.Text = theLoai;
+                    the_loai.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+                    the_loai.Visible = true;
+
+                    IconButton delete = new IconButton();
+                    delete.Text = "";
+                    delete.AutoSize = true;
+                    delete.FlatAppearance.BorderSize = 0;
+                    delete.FlatAppearance.MouseDownBackColor = Color.FromArgb(220, 247, 253);
+                    delete.FlatAppearance.MouseOverBackColor = Color.FromArgb(220, 247, 253);
+                    delete.FlatStyle = FlatStyle.Flat;
+                    delete.Font = new Font("League Spartan", 9F, FontStyle.Regular);
+                    delete.IconChar = IconChar.TrashAlt;
+                    delete.IconColor = Color.Black;
+                    delete.IconSize = 38;
+                    delete.IconFont = IconFont.Auto;
+                    delete.ImageAlign = ContentAlignment.MiddleCenter;
+                    delete.TextAlign = ContentAlignment.MiddleCenter;
+                    delete.TextImageRelation = TextImageRelation.Overlay;
+                    delete.Location = new Point(1757, 14);
+                    delete.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+                    delete.Click += deleteButton_Click;
+                    delete.Visible = true;
+
+                    IconButton thong_bao_tat = new IconButton();
+                    thong_bao_tat.Text = "";
+                    thong_bao_tat.AutoSize = true;
+                    thong_bao_tat.FlatAppearance.BorderSize = 0;
+                    thong_bao_tat.FlatAppearance.MouseDownBackColor = Color.FromArgb(220, 247, 253);
+                    thong_bao_tat.FlatAppearance.MouseOverBackColor = Color.FromArgb(220, 247, 253);
+                    thong_bao_tat.FlatStyle = FlatStyle.Flat;
+                    thong_bao_tat.Font = new Font("League Spartan", 9F, FontStyle.Regular);
+                    thong_bao_tat.IconChar = IconChar.Bell;
+                    thong_bao_tat.IconColor = Color.Black;
+                    thong_bao_tat.IconSize = 32;
+                    thong_bao_tat.IconFont = IconFont.Auto;
+                    thong_bao_tat.ImageAlign = ContentAlignment.MiddleCenter;
+                    thong_bao_tat.TextAlign = ContentAlignment.MiddleCenter;
+                    thong_bao_tat.TextImageRelation = TextImageRelation.Overlay;
+                    thong_bao_tat.Location = new Point(1757, 70);
+                    thong_bao_tat.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+                    thong_bao_tat.Click += Notification_turnoff_Click;
+                    thong_bao_tat.Visible = true;
+                    thong_bao_tat.Tag = i;
+                    toggleButtons.Add(thong_bao_tat);
+
+                    IconButton thong_bao_bat = new IconButton();
+                    thong_bao_bat.Text = "";
+                    thong_bao_bat.AutoSize = true;
+                    thong_bao_bat.FlatAppearance.BorderSize = 0;
+                    thong_bao_bat.FlatAppearance.MouseDownBackColor = Color.FromArgb(220, 247, 253);
+                    thong_bao_bat.FlatAppearance.MouseOverBackColor = Color.FromArgb(220, 247, 253);
+                    thong_bao_bat.FlatStyle = FlatStyle.Flat;
+                    thong_bao_bat.Font = new Font("League Spartan", 9F, FontStyle.Regular);
+                    thong_bao_bat.IconChar = IconChar.BellSlash;
+                    thong_bao_bat.IconColor = Color.Black;
+                    thong_bao_bat.IconSize = 32;
+                    thong_bao_bat.IconFont = IconFont.Auto;
+                    thong_bao_bat.ImageAlign = ContentAlignment.MiddleCenter;
+                    thong_bao_bat.TextAlign = ContentAlignment.MiddleCenter;
+                    thong_bao_bat.TextImageRelation = TextImageRelation.Overlay;
+                    thong_bao_bat.Location = new Point(1757, 70);
+                    thong_bao_bat.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+                    thong_bao_bat.Click += Notification_turnon_Click;
+                    thong_bao_bat.Visible = false;
+                    thong_bao_bat.Tag = i + 1;
+                    toggleButtons.Add(thong_bao_bat);
+
+                    Label space1 = new Label();
+                    space1.AutoSize = true;
+                    space1.Font = new Font("League Spartan", 20F, FontStyle.Regular);
+                    space1.Text = " ";
+
+                    trang_thai.Controls.Add(tac_gia);
+                    trang_thai.Controls.Add(trang_thai_truyen);
+                    trang_thai.Controls.Add(the_loai);
+
+                    panel1.Controls.Add(panel2);
+                    panel1.Controls.Add(ten_truyen);
+                    panel1.Controls.Add(chuong);
+                    panel1.Controls.Add(chuong_dangdoc);
+                    panel1.Controls.Add(trang_thai);
+                    panel1.Controls.Add(space1);
+                    panel1.Controls.Add(delete);
+                    panel1.Controls.Add(thong_bao_tat);
+                    panel1.Controls.Add(thong_bao_bat);
+                    panel.BringToFront();
+
+                    i++;
+
+                    //MessageBox.Show(flowLayoutPanel.Location.Y.ToString());
                 }
             }
         }
+
     }
 }
