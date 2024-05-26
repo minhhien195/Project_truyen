@@ -13,6 +13,7 @@ using FireSharp.Response;
 using FireSharp;
 using Newtonsoft.Json;
 using System.Net;
+using AlbumTruyen;
 
 namespace Readinghistory
 {
@@ -24,7 +25,7 @@ namespace Readinghistory
     {
         public string ten_truyen { get; set; }
         public int Chuong_doccuoi { get; set; }
-        public long TG_doccuoi { get; set; }
+        public string TG_doccuoi { get; set; }
         public int tong_chuong { get; set; }
         public string Tacgia { get; set; }
         public string image { get; set; }
@@ -69,7 +70,7 @@ namespace Readinghistory
             AuthSecret = "38QvLmnKMHlQtJ9yZzCqqWytxeXimwt06ZnFfSc2",
             BasePath = "https://healtruyen-default-rtdb.asia-southeast1.firebasedatabase.app/"
         };
-        public async Task<Dictionary<string, Dictionary<string, object>>> Lay_lichsudoc(string userId, string idtruyen, string idchuong)
+        public async Task<Dictionary<string, Dictionary<string, object>>> Lay_lichsudoc(string userId)
         {
             /* IFirebaseClient client = new FireSharp.FirebaseClient(_firebaseConfig);
              FirestoreDb db = FirestoreDb.Create("healtruyen");
@@ -139,7 +140,7 @@ namespace Readinghistory
             // Get the current time
             System.DateTime currentTime = System.DateTime.UtcNow;
             // Convert the current time to a Unix timestamp
-            long timestamp = (long)(currentTime - new System.DateTime(1970, 1, 1)).TotalSeconds;
+            string timestamp = DateTime.Now.ToString();
 
             // Tạo một đối tượng chứa các giá trị cần cập nhật
             Lich_su_doc lsd = new Lich_su_doc()
@@ -234,13 +235,17 @@ namespace Readinghistory
             
         }*/
 
-        public async Task<bool> xoa_lichsudoc(string userId, string idtruyen)
+        public async Task xoa_lichsudoc(string userId, string idtruyen)
         {
             IFirebaseClient client = new FireSharp.FirebaseClient(_firebaseConfig);
             // Xác định đường dẫn để xóa trong Realtime Database
             var path = $"Nguoi_dung/{userId}/lichsudoc/{idtruyen}";
-            var response = await client.DeleteAsync(path);
-            return response.StatusCode == HttpStatusCode.OK;
+            await client.DeleteAsync(path);
+        }
+        private async void Xoa_truyen_theo_idtruyen(string idtruyen, string uid)
+        {
+            CRUD_album album = new CRUD_album();
+            await album.xoa_album(uid, idtruyen);
         }
     }
 }

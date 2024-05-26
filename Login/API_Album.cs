@@ -25,7 +25,7 @@ namespace AlbumTruyen
     {
         public string Tentruyen { get; set; }
         public int Chuong_dangdoc { get; set; }
-        public long TG_them { get; set; }
+        public string TG_them { get; set; }
         public int tong_chuong { get; set; }
         public string Tacgia { get; set; }
         public string image { get; set; }
@@ -118,7 +118,7 @@ namespace AlbumTruyen
             // Get the current time
             System.DateTime currentTime = System.DateTime.UtcNow;
             // Convert the current time to a Unix timestamp
-            long timestamp = (long)(currentTime - new System.DateTime(1970, 1, 1)).TotalSeconds;
+            string timestamp = DateTime.Now.ToString();
 
             // Tạo một đối tượng chứa các giá trị cần cập nhật
             Album alb = new Album()
