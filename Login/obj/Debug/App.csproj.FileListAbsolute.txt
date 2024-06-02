@@ -150,3 +150,8 @@ E:\HK4_UIT\LTMCB\Project\Login\Login\obj\Debug\vi-VN\Login.resources.dll
 E:\HK4_UIT\LTMCB\Project\Login\Login\obj\Debug\App.csproj.Up2Date
 E:\HK4_UIT\LTMCB\Project\Login\Login\obj\Debug\Login.exe
 E:\HK4_UIT\LTMCB\Project\Login\Login\obj\Debug\Login.pdb
+E:\HK4_UIT\LTMCB\Project\Login\Login\obj\Debug\Login.Inserted.resources
+E:\HK4_UIT\LTMCB\Project\Login\Login\obj\Debug\Login.InsertChapter.resources
+E:\HK4_UIT\LTMCB\Project\Login\Login\obj\Debug\Login.InsertNovel.resources
+E:\HK4_UIT\LTMCB\Project\Login\Login\obj\Debug\Login.Popup.resources
+E:\HK4_UIT\LTMCB\Project\Login\Login\obj\Debug\Login.Danhgia.resources

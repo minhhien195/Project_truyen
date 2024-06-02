@@ -28,7 +28,9 @@ namespace Login
         }
         private void Reading_History_Load(object sender, EventArgs e)
         {
-            
+            Danhsach_album();
+            Khoi_tao_album();
+            Album();
         }
         Dictionary<string, Dictionary<string, object>> lsdtruyen = new Dictionary<string, Dictionary<string, object>>();
         List<Dictionary<string, object>> noidung_lsd = new List<Dictionary<string, object>>();
@@ -75,7 +77,6 @@ namespace Login
         }
         private void Khoi_tao_album()
         {
-
             // Truy xuất từ điển trong mỗi phần tử
             foreach (var dictionary in lsdtruyen)
             {

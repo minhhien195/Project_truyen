@@ -2768,6 +2768,7 @@
             this.ibtnReturn.TextAlign = System.Drawing.ContentAlignment.TopLeft;
             this.ibtnReturn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.ibtnReturn.UseVisualStyleBackColor = true;
+            this.ibtnReturn.Click += new System.EventHandler(this.ibtnReturn_Click);
             // 
             // panel8
             // 
