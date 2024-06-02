@@ -33,7 +33,7 @@ namespace Login
 
         private async void Danh_Sach_Chuong_Load(object sender, EventArgs e)
         {
-            /*QuerySnapshot qs = await chapter.GetSnapshotAsync();
+            QuerySnapshot qs = await chapter.GetSnapshotAsync();
 
             foreach (var item in qs)
             {
@@ -50,7 +50,7 @@ namespace Login
                     // Thêm label vào Controls của Form
                     this.Controls.Add(label);
                 }
-            }*/
+            }
         }
     }
 }
