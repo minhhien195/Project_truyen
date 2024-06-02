@@ -16,7 +16,8 @@ namespace Login
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Chi_Tiet_Truyen());
+            Application.Run(new Popup());
+
         }
     }
 }

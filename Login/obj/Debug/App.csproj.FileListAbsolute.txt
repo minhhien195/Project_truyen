@@ -151,6 +151,13 @@ E:\HK4_UIT\LTMCB\Project\Login\Login\obj\Debug\App.csproj.Up2Date
 E:\HK4_UIT\LTMCB\Project\Login\Login\obj\Debug\Login.exe
 E:\HK4_UIT\LTMCB\Project\Login\Login\obj\Debug\Login.pdb
 <<<<<<< HEAD
+E:\HK4_UIT\LTMCB\Project\Login\Login\obj\Debug\Login.Inserted.resources
+E:\HK4_UIT\LTMCB\Project\Login\Login\obj\Debug\Login.InsertChapter.resources
+E:\HK4_UIT\LTMCB\Project\Login\Login\obj\Debug\Login.InsertNovel.resources
+E:\HK4_UIT\LTMCB\Project\Login\Login\obj\Debug\Login.Popup.resources
+E:\HK4_UIT\LTMCB\Project\Login\Login\obj\Debug\Login.Danhgia.resources
+=======
+<<<<<<< HEAD
 C:\TLHT\HK2_2023-2024\LapTrinhMangCanBan\HealTruyen\src\Login\bin\Debug\grpc_csharp_ext.x86.dll
 C:\TLHT\HK2_2023-2024\LapTrinhMangCanBan\HealTruyen\src\Login\bin\Debug\grpc_csharp_ext.x64.dll
 C:\TLHT\HK2_2023-2024\LapTrinhMangCanBan\HealTruyen\src\Login\bin\Debug\libgrpc_csharp_ext.x64.so
@@ -305,3 +312,4 @@ C:\TLHT\HK2_2023-2024\LapTrinhMangCanBan\HealTruyen\src\Login\obj\Debug\Login.Du
 C:\TLHT\HK2_2023-2024\LapTrinhMangCanBan\HealTruyen\src\Login\obj\Debug\Login.Doc_Truyen.resources
 =======
 >>>>>>> c0e74c3a0d2968325974a256e350ea6b0a9f5cbf
+>>>>>>> 3adbc24c7b90b7ddee866d6ba6f3ab2f3a90c14f
