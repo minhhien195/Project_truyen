@@ -252,6 +252,18 @@
     <Compile Include="Change_Password.Designer.cs">
       <DependentUpon>Change_Password.cs</DependentUpon>
     </Compile>
+    <Compile Include="Doc_Truyen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Doc_Truyen.Designer.cs">
+      <DependentUpon>Doc_Truyen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Duyet_Truyen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Duyet_Truyen.Designer.cs">
+      <DependentUpon>Duyet_Truyen.cs</DependentUpon>
+    </Compile>
     <Compile Include="Fix.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -369,6 +381,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Change_Password.resx">
       <DependentUpon>Change_Password.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Doc_Truyen.resx">
+      <DependentUpon>Doc_Truyen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Duyet_Truyen.resx">
+      <DependentUpon>Duyet_Truyen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Fix.resx">
       <DependentUpon>Fix.cs</DependentUpon>

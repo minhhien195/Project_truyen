@@ -8,34 +8,60 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FireSharp.Config;
+using FireSharp.Interfaces;
 using FontAwesome.Sharp;
 using Google.Cloud.Firestore;
+using Firebase.Auth;
+using Novel;
+using FireSharp.Response;
 
 namespace Login
 {
-    public partial class BXH_Doc_Nhieu : Form
+    public partial class Duyet_Truyen : Form
     {
-        public BXH_Doc_Nhieu()
+        UserCredential user;
+        IFirebaseClient client;
+        IFirebaseConfig config = new FirebaseConfig
+        {
+            AuthSecret = "38QvLmnKMHlQtJ9yZzCqqWytxeXimwt06ZnFfSc2",
+            BasePath = "https://healtruyen-default-rtdb.asia-southeast1.firebasedatabase.app/"
+        };
+        public Duyet_Truyen(UserCredential user)
         {
             InitializeComponent();
+            this.user = user;
+            client = new FireSharp.FirebaseClient(config);
         }
 
-        async private void BXH_Doc_Nhieu_Load(object sender, EventArgs e)
+        async private void Duyet_Truyen_Load(object sender, EventArgs e)
         {
             string project = "healtruyen";
             FirestoreDb db = FirestoreDb.Create(project);
-            List<Novel> list = new List<Novel>();
+
+            Panel childFormPanel = new Panel();
+            this.Controls.Add(childFormPanel);
+            childFormPanel.Dock = DockStyle.Fill;
+            childFormPanel.AutoSize = true;
+            childFormPanel.AutoScroll = true;
 
             Panel header = new Panel();
             childFormPanel.Controls.Add(header);
             header.Dock = DockStyle.Top;
             header.AutoSize = true;
+            
+            Label hdLabel = new Label();
+            header.Controls.Add(hdLabel);
+            hdLabel.Dock = DockStyle.Top;
+            hdLabel.AutoSize = true;
+            hdLabel.Font = new Font("League Spartan", 20, FontStyle.Bold);
+            hdLabel.Text = "Duyệt Truyện";
 
-            CollectionReference collection = db.Collection("Truyen");
-            Query q = collection.OrderByDescending("Luot_thich");
+            CollectionReference collection = db.Collection("Dang_Truyen");
             QuerySnapshot qs = await collection.GetSnapshotAsync();
 
-
+            CollectionReference collection1 = db.Collection("Truyen");
+            QuerySnapshot qs1 = await collection1.GetSnapshotAsync();
 
             if (qs.Documents.Count <= 0)
             {
@@ -46,16 +72,15 @@ namespace Login
                 childFormPanel.Controls.Add(panelList);
 
                 Label noti = new Label();
-                panelList.Controls.Add(noti);
+                panelList.Controls.Add(hdLabel);
                 noti.Dock = DockStyle.Top;
                 noti.AutoSize = true;
                 noti.Font = new Font("League Spartan", 20, FontStyle.Bold);
                 noti.Text = "Không có truyện cần duyệt";
-            }
+            } 
             else
             {
-                int i = 1;
-                foreach (var item in qs.Documents)
+                foreach (var item in  qs.Documents)
                 {
                     Dictionary<string, object> novel = item.ToDictionary();
                     Panel panelList = new Panel();
@@ -64,14 +89,6 @@ namespace Login
                     panelList.BringToFront();
                     childFormPanel.Controls.Add(panelList);
                     panelList.BringToFront();
-
-                    Label rank = new Label();
-                    panelList.Controls.Add(rank);
-                    rank.Dock = DockStyle.Top;
-                    rank.AutoSize = true;
-                    rank.Font = new Font("League Spartan", 14, FontStyle.Regular);
-                    rank.Text = "Hạng " + i.ToString();
-                    i++;
 
 
                     TableLayoutPanel tableLayoutPanel = new TableLayoutPanel();
@@ -111,7 +128,7 @@ namespace Login
 
                     Label description = new Label();
                     panelRight.Controls.Add(description);
-                    description.Dock = DockStyle.Fill;
+                    description.Dock = DockStyle.Top;
                     description.AutoSize = false;
                     description.Text = novel["Tom_tat"].ToString();
                     description.Height = 126;
@@ -120,7 +137,7 @@ namespace Login
 
                     TableLayoutPanel info = new TableLayoutPanel();
                     panelRight.Controls.Add(info);
-                    info.Dock = DockStyle.Bottom;
+                    info.Dock = DockStyle.Top;
                     info.AutoSize = false;
                     info.RowCount = 1;
                     info.ColumnCount = 3;
@@ -148,7 +165,7 @@ namespace Login
                     recom.FlatStyle = FlatStyle.Flat;
                     recom.FlatAppearance.BorderSize = 0;
                     recom.Font = new Font("League Spartan", 14, FontStyle.Regular);
-                    recom.IconChar = IconChar.Eye;
+                    recom.IconChar = IconChar.ArrowCircleUp;
                     recom.IconFont = IconFont.Auto;
                     recom.IconSize = 48;
                     recom.Text = novel["De_cu"].ToString();
@@ -162,17 +179,76 @@ namespace Login
                     type.FlatAppearance.BorderSize = 0;
                     type.Font = new Font("League Spartan", 14, FontStyle.Regular);
                     object typeList = novel["The_loai"];
+                    int sizeArray = 0;
                     if (typeList is List<object> typeList1)
                     {
-                        List<string> typeStringList = typeList1.Select(j => j.ToString()).ToList();
+                        string[] typeStringList = typeList1.Select(j => j.ToString()).ToArray();
+                        sizeArray = typeStringList.Length;
                         type.Text = typeStringList[0];
                     }
-
+                    string[] typeStringArray= new string[sizeArray];
+                    if (typeList is List<object> typeList2)
+                    {
+                        typeStringArray = typeList2.Select(j => j.ToString()).ToArray();
+                    }
                     type.TextAlign = ContentAlignment.MiddleRight;
                     type.TextImageRelation = TextImageRelation.ImageBeforeText;
 
+                    TableLayoutPanel btn = new TableLayoutPanel();
+                    panelRight.Controls.Add(btn);
+                    btn.Dock = DockStyle.Top;
+                    btn.AutoSize = false;
+                    btn.RowCount = 1;
+                    btn.ColumnCount = 3;
+                    btn.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50));
+                    btn.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25));
+                    btn.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25));
+
+                    Button cancel = new Button();
+                    btn.Controls.Add(cancel, 1, 0);
+                    cancel.Dock = DockStyle.Fill;
+                    cancel.FlatStyle = FlatStyle.Flat;
+                    cancel.FlatAppearance.BorderSize = 0;
+                    cancel.BackColor = Color.Silver;
+                    cancel.Text = "Từ chối";
+                    cancel.Margin = new Padding(10);
+                    cancel.Click += (s, ev) =>
+                    {
+                        Interact.deleteNovel(novel["Ten"].ToString(), "Duyet_truyen");
+                        MessageBox.Show("Từ chối duyệt truyện thành công");
+                    };
+
+                    Button confirm = new Button();
+                    btn.Controls.Add(confirm, 2, 0);
+                    confirm.Dock = DockStyle.Fill;
+                    confirm.FlatStyle = FlatStyle.Flat;
+                    confirm.FlatAppearance.BorderSize = 0;
+                    confirm.BackColor = Color.FromArgb(191, 44, 36);
+                    confirm.Text = "Xác nhận";
+                    confirm.Margin = new Padding(10);
+                    
+                    confirm.Click += async (s, ev) =>
+                    {
+                        Task<string> res = Interact.createNovel(
+                            novel["Anh"].ToString(), 
+                            novel["So_chuong"].ToString(),
+                            novel["Tac_gia"].ToString(),
+                            novel["Ten"].ToString(),
+                            typeStringArray,
+                            novel["Tom_tat"].ToString(),
+                            "Truyen"
+                            );
+                        string novelid = res.Result;
+                        FirebaseResponse resf = await client.GetAsync("Nguoi_dung/" + user.User.Uid + "/Duyentruyen");
+                        string idChuongDangDoc = resf.ResultAs<string>();
+                        idChuongDangDoc = idChuongDangDoc + "," + novelid;
+                        FirebaseResponse response = await client.UpdateAsync("Nguoi_dung/" + user.User.Uid + "/Duyentruyen", idChuongDangDoc);
+                    };
+
                 }
+                
             }
+
         }
     }
 }
