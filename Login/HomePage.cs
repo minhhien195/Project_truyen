@@ -14,6 +14,7 @@ using Firebase.Auth.Providers;
 using FireSharp.Config;
 using FireSharp.Interfaces;
 using FireSharp.Response;
+using Google.Protobuf;
 using static Google.Rpc.Context.AttributeContext.Types;
 
 namespace Login
@@ -58,6 +59,21 @@ namespace Login
                 pictureBox1.Image = bitmap;
                 pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             }*/
+            string dateString = "5/26/2024 6:58:51 PM";
+            DateTime startDateTime = DateTime.Parse(dateString);
+            DateTime currentDateTime = DateTime.Now;
+
+            TimeSpan elapsedTime = currentDateTime - startDateTime;
+            int elapsedDays = elapsedTime.Days;
+            int elapsedMinutes = (int)elapsedTime.TotalMinutes;
+            int elapsedhours = (int)elapsedTime.TotalHours;
+            int elapsedMilliseconds = (int)elapsedTime.TotalDays;
+            MessageBox.Show(DateTime.UtcNow.ToString());
+            MessageBox.Show(elapsedTime.ToString());
+            MessageBox.Show(elapsedDays.ToString());
+            MessageBox.Show(elapsedMinutes.ToString());
+            MessageBox.Show(elapsedhours.ToString());
+            MessageBox.Show(elapsedMilliseconds.ToString());
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -117,6 +133,12 @@ namespace Login
         {
             AlbumTruyen bookmark = new AlbumTruyen(user);
             bookmark.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Hotro_baoloi hotro_Baoloi = new Hotro_baoloi(user);
+            hotro_Baoloi.Show();
         }
     }
 }

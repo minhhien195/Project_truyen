@@ -300,6 +300,12 @@
     <Compile Include="HomePage.Designer.cs">
       <DependentUpon>HomePage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Hotro_baoloi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Hotro_baoloi.Designer.cs">
+      <DependentUpon>Hotro_baoloi.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -342,6 +348,12 @@
     </Compile>
     <Compile Include="Signup.Designer.cs">
       <DependentUpon>Signup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Trogiup_baoloi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Trogiup_baoloi.Designer.cs">
+      <DependentUpon>Trogiup_baoloi.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="AccountInfo.resx">
       <DependentUpon>AccountInfo.cs</DependentUpon>
@@ -394,6 +406,9 @@
     <EmbeddedResource Include="HomePage.resx">
       <DependentUpon>HomePage.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Hotro_baoloi.resx">
+      <DependentUpon>Hotro_baoloi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -423,6 +438,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Trang_chu.resx">
       <DependentUpon>Trang_chu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Trogiup_baoloi.resx">
+      <DependentUpon>Trogiup_baoloi.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
