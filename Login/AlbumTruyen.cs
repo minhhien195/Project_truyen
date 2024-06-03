@@ -36,7 +36,9 @@ namespace Login
 
         private void AlbumTruyen_Load(object sender, EventArgs e)
         {
-
+            Danhsach_album();
+            Khoi_tao_album();
+            Album();
         }
         Dictionary<string, Dictionary<string, object>> albumtruyen = new Dictionary<string, Dictionary<string, object>>();
         List<Dictionary<string, object>> noidung_album = new List<Dictionary<string, object>>();

@@ -39,6 +39,8 @@ namespace Novel
             public int comment { get; set; }
             [FirestoreProperty("Danh_gia")]
             public int numRating { get; set; }
+            [FirestoreProperty("Diem_danhgia")]
+            public int totalRating { get; set; }
             [FirestoreProperty("Danh_gia_Tb")]
             public int avgRating { get; set; }
             [FirestoreProperty("De_cu")]
@@ -154,7 +156,8 @@ namespace Novel
 
         }
 
-        public static async void createNovel(string bia_sach, string so_luong_chuong, string tac_gia, string ten_truyen, string[] the_loai, string tom_tat, int trang_thai)
+        public static async Task<string> createNovel(string bia_sach, string so_luong_chuong, string tac_gia, string ten_truyen, string[] the_loai, string tom_tat, string dbString)
+
         {
             FirestoreDb db = FirestoreDb.Create("healtruyen");
             Novel novel = new Novel()
@@ -163,6 +166,7 @@ namespace Novel
                 cntChapter = Convert.ToInt32(so_luong_chuong),
                 comment = 0,
                 numRating = 0,
+                totalRating = 0,
                 avgRating = 0,
                 recommend = 0,
                 like = 0,
@@ -171,9 +175,10 @@ namespace Novel
                 author = tac_gia,
                 nameNovel = ten_truyen,
                 type = the_loai,
+                description = tom_tat,
                 status = 1
             };
-            CollectionReference truyen = db.Collection("Truyen");
+            CollectionReference truyen = db.Collection(dbString);
             QuerySnapshot qs = await truyen.GetSnapshotAsync();
             int order = qs.Count + 1;
             string novelId = "";
@@ -184,6 +189,7 @@ namespace Novel
             novelId += order.ToString();
             DocumentReference novelUp = truyen.Document(novelId);
             await novelUp.CreateAsync(novel);
+            return novelId;
         }
 
         public async static void editNovel(string nameNovel, string field, string value)
@@ -198,12 +204,35 @@ namespace Novel
             {
                 id = snapshots.Documents[0].Id;
             }
-            Dictionary<string, object> updates = new Dictionary<string, object>
+            if (field == "Trang_thai" || field == "So_chuong" || field == "Luot_xem" || field == "Luot_thich" 
+                || field == "De_cu" || field == "Danh_gia" || field == "Binh_luan")
             {
-                { field, value }
-            };
-            DocumentReference doc = truyen.Document(id);
-            await doc.UpdateAsync(updates);
+                Dictionary<string, object> updates = new Dictionary<string, object>
+                {
+                    { field, Convert.ToInt32(value) }
+                };
+                DocumentReference doc = truyen.Document(id);
+                await doc.UpdateAsync(updates);
+            }
+            else if (field == "Danh_gia_Tb")
+            {
+                Dictionary<string, object> updates = new Dictionary<string, object>
+                {
+                    { field, Convert.ToDouble(value) }
+                };
+                DocumentReference doc = truyen.Document(id);
+                await doc.UpdateAsync(updates);
+            }
+            else
+            {
+                Dictionary<string, object> updates = new Dictionary<string, object>
+                {
+                    { field, value }
+                };
+                DocumentReference doc = truyen.Document(id);
+                await doc.UpdateAsync(updates);
+            }
+            
         }
 
         public async static void editChap(string nameNovel, string numChap, string field, string value)
@@ -238,10 +267,10 @@ namespace Novel
             await doc.UpdateAsync(updates);
         }
 
-        public async static void deleteNovel(string nameNovel)
+        public async static void deleteNovel(string nameNovel, string dbString)
         {
             FirestoreDb db = FirestoreDb.Create("healtruyen");
-            CollectionReference truyen = db.Collection("Truyen");
+            CollectionReference truyen = db.Collection(dbString);
             nameNovel = nameNovel.ToUpper();
             Query q = truyen.WhereEqualTo("Ten", nameNovel);
             QuerySnapshot snapshots = await q.GetSnapshotAsync();

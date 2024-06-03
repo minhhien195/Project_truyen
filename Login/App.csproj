@@ -252,6 +252,24 @@
     <Compile Include="Change_Password.Designer.cs">
       <DependentUpon>Change_Password.cs</DependentUpon>
     </Compile>
+    <Compile Include="Danhgia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Danhgia.Designer.cs">
+      <DependentUpon>Danhgia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Doc_Truyen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Doc_Truyen.Designer.cs">
+      <DependentUpon>Doc_Truyen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Duyet_Truyen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Duyet_Truyen.Designer.cs">
+      <DependentUpon>Duyet_Truyen.cs</DependentUpon>
+    </Compile>
     <Compile Include="Fix.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -294,6 +312,24 @@
     <Compile Include="Hotro_baoloi.Designer.cs">
       <DependentUpon>Hotro_baoloi.cs</DependentUpon>
     </Compile>
+    <Compile Include="InsertChapter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InsertChapter.Designer.cs">
+      <DependentUpon>InsertChapter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inserted.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inserted.Designer.cs">
+      <DependentUpon>Inserted.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InsertNovel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InsertNovel.Designer.cs">
+      <DependentUpon>InsertNovel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -311,6 +347,12 @@
     </Compile>
     <Compile Include="NvUpdate.Designer.cs">
       <DependentUpon>NvUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup.Designer.cs">
+      <DependentUpon>Popup.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -370,6 +412,15 @@
     <EmbeddedResource Include="Change_Password.resx">
       <DependentUpon>Change_Password.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Danhgia.resx">
+      <DependentUpon>Danhgia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Doc_Truyen.resx">
+      <DependentUpon>Doc_Truyen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Duyet_Truyen.resx">
+      <DependentUpon>Duyet_Truyen.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Fix.resx">
       <DependentUpon>Fix.cs</DependentUpon>
     </EmbeddedResource>
@@ -391,6 +442,15 @@
     <EmbeddedResource Include="Hotro_baoloi.resx">
       <DependentUpon>Hotro_baoloi.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="InsertChapter.resx">
+      <DependentUpon>InsertChapter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inserted.resx">
+      <DependentUpon>Inserted.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InsertNovel.resx">
+      <DependentUpon>InsertNovel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -399,6 +459,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NvUpdate.resx">
       <DependentUpon>NvUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup.resx">
+      <DependentUpon>Popup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
