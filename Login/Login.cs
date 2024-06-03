@@ -102,8 +102,8 @@ namespace Login
                 if (userCredential != null)
                 {
                     this.Hide();
-                    HomePage form = new HomePage(userCredential, client);
-                    //Trang_chu form = new Trang_chu(userCredential, client, true);
+                    /*                    HomePage form = new HomePage(userCredential, client);*/
+                    Trang_chu form = new Trang_chu(userCredential, client);
                     form.Show();   
 
                 }
