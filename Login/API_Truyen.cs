@@ -97,6 +97,47 @@ namespace Novel
             }
         }
 
+        public async static Task<Novel> getInfoNovel(string nameNovel)
+        {
+            string project = "healtruyen";
+            FirestoreDb db = FirestoreDb.Create(project);
+            CollectionReference collectionReference = db.Collection("Truyen");
+            nameNovel = nameNovel.ToUpper();
+            Query q = collectionReference.WhereEqualTo("Ten", nameNovel);
+            QuerySnapshot qs = await q.GetSnapshotAsync();
+            if (qs.Documents.Count == 0)
+            {
+                return null;
+            }
+            DocumentReference collectionRef = db.Collection("Truyen").Document(qs.Documents[0].Id);
+            DocumentSnapshot snapshot = await collectionRef.GetSnapshotAsync();
+            if (snapshot.Exists)
+            {
+
+                Novel novel = snapshot.ConvertTo<Novel>();
+                return novel;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public async static Task<string> getIdNovel(string nameNovel)
+        {
+            string project = "healtruyen";
+            FirestoreDb db = FirestoreDb.Create(project);
+            CollectionReference collectionReference = db.Collection("Truyen");
+            nameNovel = nameNovel.ToUpper();
+            Query q = collectionReference.WhereEqualTo("Ten", nameNovel);
+            QuerySnapshot qs = await q.GetSnapshotAsync();
+            if (qs.Documents.Count == 0)
+            {
+                return null;
+            }
+            return qs.Documents[0].Id;
+        }
+
         public static async void pushChapter(string nameNovel, string numChapter, string title, string content)
         {
 

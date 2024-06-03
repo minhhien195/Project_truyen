@@ -1,3 +1,5 @@
+<<<<<<< HEAD
+=======
 E:\HK4_UIT\LTMCB\Project\Login\Login\bin\Debug\grpc_csharp_ext.x86.dll
 E:\HK4_UIT\LTMCB\Project\Login\Login\bin\Debug\grpc_csharp_ext.x64.dll
 E:\HK4_UIT\LTMCB\Project\Login\Login\bin\Debug\libgrpc_csharp_ext.x64.so
@@ -312,6 +314,7 @@ E:\HK4_UIT\LTMCB\Project\Login\Login\obj\Debug\Login.Popup.resources
 E:\HK4_UIT\LTMCB\Project\Login\Login\obj\Debug\Login.Danhgia.resources
 =======
 <<<<<<< HEAD
+>>>>>>> 1f714e08c4567446662ac8126aeb7e763cdeaf79
 C:\TLHT\HK2_2023-2024\LapTrinhMangCanBan\HealTruyen\src\Login\bin\Debug\grpc_csharp_ext.x86.dll
 C:\TLHT\HK2_2023-2024\LapTrinhMangCanBan\HealTruyen\src\Login\bin\Debug\grpc_csharp_ext.x64.dll
 C:\TLHT\HK2_2023-2024\LapTrinhMangCanBan\HealTruyen\src\Login\bin\Debug\libgrpc_csharp_ext.x64.so
@@ -441,20 +444,29 @@ C:\TLHT\HK2_2023-2024\LapTrinhMangCanBan\HealTruyen\src\Login\obj\Debug\Login.Bo
 C:\TLHT\HK2_2023-2024\LapTrinhMangCanBan\HealTruyen\src\Login\obj\Debug\Login.BXH_De_Cu.resources
 C:\TLHT\HK2_2023-2024\LapTrinhMangCanBan\HealTruyen\src\Login\obj\Debug\Login.BXH_Doc_Nhieu.resources
 C:\TLHT\HK2_2023-2024\LapTrinhMangCanBan\HealTruyen\src\Login\obj\Debug\Login.Change_Password.resources
+C:\TLHT\HK2_2023-2024\LapTrinhMangCanBan\HealTruyen\src\Login\obj\Debug\Login.Danhgia.resources
+C:\TLHT\HK2_2023-2024\LapTrinhMangCanBan\HealTruyen\src\Login\obj\Debug\Login.Doc_Truyen.resources
+C:\TLHT\HK2_2023-2024\LapTrinhMangCanBan\HealTruyen\src\Login\obj\Debug\Login.Duyet_Truyen.resources
 C:\TLHT\HK2_2023-2024\LapTrinhMangCanBan\HealTruyen\src\Login\obj\Debug\Login.Fix.resources
 C:\TLHT\HK2_2023-2024\LapTrinhMangCanBan\HealTruyen\src\Login\obj\Debug\Login.Chi_Tiet_Truyen.resources
 C:\TLHT\HK2_2023-2024\LapTrinhMangCanBan\HealTruyen\src\Login\obj\Debug\Login.Danh_Gia_CTT.resources
 C:\TLHT\HK2_2023-2024\LapTrinhMangCanBan\HealTruyen\src\Login\obj\Debug\Login.Danh_Sach_Chuong_CTT.resources
 C:\TLHT\HK2_2023-2024\LapTrinhMangCanBan\HealTruyen\src\Login\obj\Debug\Login.Forget_Password.resources
 C:\TLHT\HK2_2023-2024\LapTrinhMangCanBan\HealTruyen\src\Login\obj\Debug\Login.HomePage.resources
+C:\TLHT\HK2_2023-2024\LapTrinhMangCanBan\HealTruyen\src\Login\obj\Debug\Login.Hotro_baoloi.resources
+C:\TLHT\HK2_2023-2024\LapTrinhMangCanBan\HealTruyen\src\Login\obj\Debug\Login.InsertChapter.resources
+C:\TLHT\HK2_2023-2024\LapTrinhMangCanBan\HealTruyen\src\Login\obj\Debug\Login.Inserted.resources
+C:\TLHT\HK2_2023-2024\LapTrinhMangCanBan\HealTruyen\src\Login\obj\Debug\Login.InsertNovel.resources
 C:\TLHT\HK2_2023-2024\LapTrinhMangCanBan\HealTruyen\src\Login\obj\Debug\Login.Login.resources
 C:\TLHT\HK2_2023-2024\LapTrinhMangCanBan\HealTruyen\src\Login\obj\Debug\Login.Nhan_tin.resources
 C:\TLHT\HK2_2023-2024\LapTrinhMangCanBan\HealTruyen\src\Login\obj\Debug\Login.NvUpdate.resources
+C:\TLHT\HK2_2023-2024\LapTrinhMangCanBan\HealTruyen\src\Login\obj\Debug\Login.Popup.resources
 C:\TLHT\HK2_2023-2024\LapTrinhMangCanBan\HealTruyen\src\Login\obj\Debug\Login.Properties.Resources.resources
 C:\TLHT\HK2_2023-2024\LapTrinhMangCanBan\HealTruyen\src\Login\obj\Debug\Login.Reading_History.resources
 C:\TLHT\HK2_2023-2024\LapTrinhMangCanBan\HealTruyen\src\Login\obj\Debug\Login.Search.resources
 C:\TLHT\HK2_2023-2024\LapTrinhMangCanBan\HealTruyen\src\Login\obj\Debug\Login.Signup.resources
 C:\TLHT\HK2_2023-2024\LapTrinhMangCanBan\HealTruyen\src\Login\obj\Debug\Login.Trang_chu.resources
+C:\TLHT\HK2_2023-2024\LapTrinhMangCanBan\HealTruyen\src\Login\obj\Debug\Login.Trogiup_baoloi.resources
 C:\TLHT\HK2_2023-2024\LapTrinhMangCanBan\HealTruyen\src\Login\obj\Debug\Login.Signup.vi-VN.resources
 C:\TLHT\HK2_2023-2024\LapTrinhMangCanBan\HealTruyen\src\Login\obj\Debug\App.csproj.GenerateResource.cache
 C:\TLHT\HK2_2023-2024\LapTrinhMangCanBan\HealTruyen\src\Login\obj\Debug\App.csproj.CoreCompileInputs.cache
@@ -462,9 +474,12 @@ C:\TLHT\HK2_2023-2024\LapTrinhMangCanBan\HealTruyen\src\Login\obj\Debug\vi-VN\Lo
 C:\TLHT\HK2_2023-2024\LapTrinhMangCanBan\HealTruyen\src\Login\obj\Debug\App.csproj.Up2Date
 C:\TLHT\HK2_2023-2024\LapTrinhMangCanBan\HealTruyen\src\Login\obj\Debug\Login.exe
 C:\TLHT\HK2_2023-2024\LapTrinhMangCanBan\HealTruyen\src\Login\obj\Debug\Login.pdb
+<<<<<<< HEAD
+=======
 C:\TLHT\HK2_2023-2024\LapTrinhMangCanBan\HealTruyen\src\Login\obj\Debug\Login.Duyet_Truyen.resources
 C:\TLHT\HK2_2023-2024\LapTrinhMangCanBan\HealTruyen\src\Login\obj\Debug\Login.Doc_Truyen.resources
 =======
 >>>>>>> c0e74c3a0d2968325974a256e350ea6b0a9f5cbf
 >>>>>>> 3adbc24c7b90b7ddee866d6ba6f3ab2f3a90c14f
 >>>>>>> 40f96957b5a6b61d8ce6a068700f4d5a392996ab
+>>>>>>> 1f714e08c4567446662ac8126aeb7e763cdeaf79
