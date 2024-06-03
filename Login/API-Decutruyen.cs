@@ -51,7 +51,7 @@ namespace BXH
         public async Task<List<Novel>> SortBXH_decu(string TOP, string ID_truyen)
         {
             IFirebaseClient client = new FireSharp.FirebaseClient(_firebaseConfig);
-            var path = "BXH/De_cu/" + TOP + ID_truyen;
+            var path = "BXH/De_cu/Luot_decu" + TOP + ID_truyen;
             FirebaseResponse res = await client.GetAsync(path);
             List<Novel> sortedBXH = new List<Novel>();
             if (res.Body != "null")
@@ -65,7 +65,7 @@ namespace BXH
         public async Task<List<Novel>> SortBXH_views(string TOP, string ID_truyen)
         {
             IFirebaseClient client = new FireSharp.FirebaseClient(_firebaseConfig);
-            var path = "BXH/De_cu/" + TOP + ID_truyen;
+            var path = "BXH/De_cu/Luot_view" + TOP + ID_truyen;
             FirebaseResponse res = await client.GetAsync(path);
             List<Novel> sortedBXH = new List<Novel>();
             if (res.Body != "null")
@@ -74,12 +74,12 @@ namespace BXH
                 sortedBXH = novels.OrderByDescending(n => n.numRead).ToList();
             }
             return sortedBXH;
-        }
+        }   
 
         public async Task<List<Novel>> SortBXH_dangxem(string TOP, string ID_truyen)
         {
             IFirebaseClient client = new FireSharp.FirebaseClient(_firebaseConfig);
-            var path = "BXH/De_cu/" + TOP + ID_truyen;
+            var path = "BXH/De_cu/All" + TOP + ID_truyen;
             FirebaseResponse res = await client.GetAsync(path);
             List<Novel> novels = new List<Novel>();
 
