@@ -266,6 +266,7 @@
             this.iconButton4.IconChar = FontAwesome.Sharp.IconChar.ArrowCircleUp;
             this.iconButton4.IconColor = System.Drawing.Color.Black;
             this.iconButton4.IconFont = FontAwesome.Sharp.IconFont.Auto;
+
             this.iconButton4.Location = new System.Drawing.Point(344, 3);
             this.iconButton4.Name = "iconButton4";
             this.iconButton4.Size = new System.Drawing.Size(335, 61);
