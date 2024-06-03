@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="label3.Text" xml:space="preserve">
+    <value>« B.faloo mạng tiểu thuyết độc nhất vô nhị ký hợp đồng tiểu thuyết: Ta có thể phục chế thiên phú » « nên thư vì Manga « Ta Có Thể Phục Chế Thiên Phú » nguyên bản tiểu thuyết » Toàn dân thiên phú thời đại, người cùng hung thú cùng tồn tại, mỗi người lấy giác tỉnh thiên phú đi lên Võ Giả con đường làm vinh danh...</value>
+  </data>
   <data name="contentChap.Text" xml:space="preserve">
     <value>Quân Tiêu Dao xuyên qua Huyền Huyễn thế giới, trở thành Hoang Cổ thế gia Thần tử, ủng có vô địch bối cảnh, kinh thế thiên phú, càng đạt được đánh dấu hệ thống, bắt đầu đánh dấu một bộ đại thành Hoang Cổ thánh thể.
 
@@ -193,8 +196,5 @@ Tại Thanh Đồng tiên điện đánh dấu, thu hoạch được bát tinh b
 J Thần sách mới, cùng tác Cửu Kiếp Kiếm Ma.
 
 </value>
-  </data>
-  <data name="label3.Text" xml:space="preserve">
-    <value>« B.faloo mạng tiểu thuyết độc nhất vô nhị ký hợp đồng tiểu thuyết: Ta có thể phục chế thiên phú » « nên thư vì Manga « Ta Có Thể Phục Chế Thiên Phú » nguyên bản tiểu thuyết » Toàn dân thiên phú thời đại, người cùng hung thú cùng tồn tại, mỗi người lấy giác tỉnh thiên phú đi lên Võ Giả con đường làm vinh danh...</value>
   </data>
 </root>
