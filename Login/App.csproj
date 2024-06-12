@@ -234,6 +234,12 @@
     <Compile Include="Bang_Xep_Hang.Designer.cs">
       <DependentUpon>Bang_Xep_Hang.cs</DependentUpon>
     </Compile>
+    <Compile Include="Bookmark.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bookmark.Designer.cs">
+      <DependentUpon>Bookmark.cs</DependentUpon>
+    </Compile>
     <Compile Include="BXH_De_Cu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -251,6 +257,24 @@
     </Compile>
     <Compile Include="Change_Password.Designer.cs">
       <DependentUpon>Change_Password.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Danhgia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Danhgia.Designer.cs">
+      <DependentUpon>Danhgia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Doc_Truyen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Doc_Truyen.Designer.cs">
+      <DependentUpon>Doc_Truyen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Duyet_Truyen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Duyet_Truyen.Designer.cs">
+      <DependentUpon>Duyet_Truyen.cs</DependentUpon>
     </Compile>
     <Compile Include="Fix.cs">
       <SubType>Form</SubType>
@@ -288,6 +312,30 @@
     <Compile Include="HomePage.Designer.cs">
       <DependentUpon>HomePage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Hotro_baoloi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Hotro_baoloi.Designer.cs">
+      <DependentUpon>Hotro_baoloi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InsertChapter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InsertChapter.Designer.cs">
+      <DependentUpon>InsertChapter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inserted.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inserted.Designer.cs">
+      <DependentUpon>Inserted.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InsertNovel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InsertNovel.Designer.cs">
+      <DependentUpon>InsertNovel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -305,6 +353,12 @@
     </Compile>
     <Compile Include="NvUpdate.Designer.cs">
       <DependentUpon>NvUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup.Designer.cs">
+      <DependentUpon>Popup.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -324,12 +378,24 @@
     </Compile>
     <Compile Include="Setting.Designer.cs">
       <DependentUpon>Setting.cs</DependentUpon>
+</Compile>
+    <Compile Include="Search.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Search.Designer.cs">
+      <DependentUpon>Search.cs</DependentUpon>
     </Compile>
     <Compile Include="Signup.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Signup.Designer.cs">
       <DependentUpon>Signup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Trogiup_baoloi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Trogiup_baoloi.Designer.cs">
+      <DependentUpon>Trogiup_baoloi.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="AccountInfo.resx">
       <DependentUpon>AccountInfo.cs</DependentUpon>
@@ -349,6 +415,9 @@
     <EmbeddedResource Include="Bang_Xep_Hang.resx">
       <DependentUpon>Bang_Xep_Hang.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Bookmark.resx">
+      <DependentUpon>Bookmark.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BXH_De_Cu.resx">
       <DependentUpon>BXH_De_Cu.cs</DependentUpon>
     </EmbeddedResource>
@@ -357,6 +426,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Change_Password.resx">
       <DependentUpon>Change_Password.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Danhgia.resx">
+      <DependentUpon>Danhgia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Doc_Truyen.resx">
+      <DependentUpon>Doc_Truyen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Duyet_Truyen.resx">
+      <DependentUpon>Duyet_Truyen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Fix.resx">
       <DependentUpon>Fix.cs</DependentUpon>
@@ -376,6 +454,18 @@
     <EmbeddedResource Include="HomePage.resx">
       <DependentUpon>HomePage.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Hotro_baoloi.resx">
+      <DependentUpon>Hotro_baoloi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InsertChapter.resx">
+      <DependentUpon>InsertChapter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inserted.resx">
+      <DependentUpon>Inserted.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InsertNovel.resx">
+      <DependentUpon>InsertNovel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -384,6 +474,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NvUpdate.resx">
       <DependentUpon>NvUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup.resx">
+      <DependentUpon>Popup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
@@ -395,6 +488,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Setting.resx">
       <DependentUpon>Setting.cs</DependentUpon>
+	</EmbeddedResource>
+    <EmbeddedResource Include="Search.resx">
+      <DependentUpon>Search.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Signup.resx">
       <DependentUpon>Signup.cs</DependentUpon>
@@ -405,6 +501,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Trang_chu.resx">
       <DependentUpon>Trang_chu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Trogiup_baoloi.resx">
+      <DependentUpon>Trogiup_baoloi.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

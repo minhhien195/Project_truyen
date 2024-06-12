@@ -313,8 +313,8 @@ namespace thongbao
                 await client.SetAsync("Nguoi_dung/" + item + "Thong_bao/" + dem, thong_bao);
             }    
         }
-        public async Task Tat_thongbao_album(string userId, string idtruyen, string idchuong, 
-            string tentruyen, string tacgia, string anh, string theloai, int status, int sochuong )
+        public async Task Tat_Bat_thongbao_album(string userId, string idtruyen, string idchuong, 
+            string tentruyen, string tacgia, string anh, string theloai, int status, int sochuong, bool thongbao)
         {
             IFirebaseClient client = new FireSharp.FirebaseClient(_firebaseConfig);
             // Xác định đường dẫn để xóa trong Realtime Database
@@ -332,7 +332,7 @@ namespace thongbao
                 Tacgia = tacgia,
                 image = anh,
                 The_loai = theloai,
-                Thong_bao = false,
+                Thong_bao = thongbao,
                 Trang_thai = status
             };
 

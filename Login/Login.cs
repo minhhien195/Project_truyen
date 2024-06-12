@@ -102,13 +102,20 @@ namespace Login
                 if (userCredential != null)
                 {
                     this.Hide();
+<<<<<<< HEAD
                     HomePage form = new HomePage(userCredential, client);
+=======
+                    /*                    HomePage form = new HomePage(userCredential, client);*/
+                    Trang_chu form = new Trang_chu(userCredential, client);
+>>>>>>> 5693b9a42bdaccbaa777e982de86c3ac6419c80c
                     form.Show();   
 
                 }
                 else
                 {
-                    MessageBox.Show("Email không tồn tại");
+                    labelEmailkhongtontai.Visible = true;
+                    ptrWarning.Visible = true;
+                    //MessageBox.Show("Email không tồn tại");
                 }
             }
             catch (Firebase.Auth.FirebaseAuthException ex)
@@ -225,6 +232,11 @@ namespace Login
                 ptrWarning.Visible = false;
                 lbemailKhonghople.Visible = false;
             }
+            if (labelEmailkhongtontai.Visible == true)
+            {
+                labelEmailkhongtontai.Visible = false;
+                ptrWarning.Visible = false;
+            }    
         }
 
         private void txtEmail_MouseLeave(object sender, EventArgs e)
@@ -233,6 +245,11 @@ namespace Login
             {
                 ptrWarning.Visible = false;
                 lbemailKhonghople.Visible = false;
+            }
+            if (labelEmailkhongtontai.Visible == true)
+            {
+                labelEmailkhongtontai.Visible = false;
+                ptrWarning.Visible = false;
             }
         }
 
@@ -292,6 +309,16 @@ namespace Login
             this.Hide();
             Signup signup = new Signup();
             signup.Show();
+        }
+
+
+        private void txtEmail_Enter(object sender, EventArgs e)
+        {
+            if (labelEmailkhongtontai.Visible == true)
+            {
+                labelEmailkhongtontai.Visible = false;
+                ptrWarning.Visible = false;
+            }
         }
     }
 }

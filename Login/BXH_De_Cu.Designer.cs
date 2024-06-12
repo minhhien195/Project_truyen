@@ -90,11 +90,12 @@
             this.tableLayoutPanel2.Controls.Add(this.pictureBox1, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.panel2, 1, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 35);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 41);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1155, 239);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1224, 239);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
             // pictureBox1
@@ -104,7 +105,7 @@
             this.pictureBox1.Image = global::Login.Properties.Resources.cover1;
             this.pictureBox1.Location = new System.Drawing.Point(3, 3);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(167, 233);
+            this.pictureBox1.Size = new System.Drawing.Size(177, 233);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -117,10 +118,11 @@
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(176, 3);
+            this.panel2.Location = new System.Drawing.Point(186, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(976, 233);
+            this.panel2.Size = new System.Drawing.Size(1035, 233);
             this.panel2.TabIndex = 1;
+            this.panel2.Visible = false;
             // 
             // tableLayoutPanel3
             // 
@@ -138,7 +140,7 @@
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 67F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(976, 67);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(1035, 67);
             this.tableLayoutPanel3.TabIndex = 3;
             // 
             // iconButton2
@@ -153,7 +155,7 @@
             this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton2.Location = new System.Drawing.Point(3, 3);
             this.iconButton2.Name = "iconButton2";
-            this.iconButton2.Size = new System.Drawing.Size(316, 61);
+            this.iconButton2.Size = new System.Drawing.Size(335, 61);
             this.iconButton2.TabIndex = 3;
             this.iconButton2.Text = "Kiếm Thần Vô Địch";
             this.iconButton2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -170,9 +172,9 @@
             this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.ArrowCircleUp;
             this.iconButton1.IconColor = System.Drawing.Color.Black;
             this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.Location = new System.Drawing.Point(325, 3);
+            this.iconButton1.Location = new System.Drawing.Point(344, 3);
             this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(316, 61);
+            this.iconButton1.Size = new System.Drawing.Size(335, 61);
             this.iconButton1.TabIndex = 1;
             this.iconButton1.Text = "30000";
             this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -186,9 +188,9 @@
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("League Spartan", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.button1.Location = new System.Drawing.Point(647, 3);
+            this.button1.Location = new System.Drawing.Point(685, 3);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(326, 61);
+            this.button1.Size = new System.Drawing.Size(347, 61);
             this.button1.TabIndex = 2;
             this.button1.Text = "Huyền Huyễn";
             this.button1.UseVisualStyleBackColor = false;
@@ -200,7 +202,7 @@
             this.label3.Font = new System.Drawing.Font("League Spartan", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label3.Location = new System.Drawing.Point(0, 41);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(976, 126);
+            this.label3.Size = new System.Drawing.Size(1035, 126);
             this.label3.TabIndex = 1;
             this.label3.Text = resources.GetString("label3.Text");
             // 
@@ -232,7 +234,8 @@
             this.tableLayoutPanel5.RowCount = 1;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 67F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(976, 67);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(1035, 67);
+
             this.tableLayoutPanel5.TabIndex = 3;
             // 
             // iconButton3
@@ -247,7 +250,7 @@
             this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton3.Location = new System.Drawing.Point(3, 3);
             this.iconButton3.Name = "iconButton3";
-            this.iconButton3.Size = new System.Drawing.Size(316, 61);
+            this.iconButton3.Size = new System.Drawing.Size(335, 61);
             this.iconButton3.TabIndex = 3;
             this.iconButton3.Text = "Kiếm Thần Vô Địch";
             this.iconButton3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -264,9 +267,9 @@
             this.iconButton4.IconChar = FontAwesome.Sharp.IconChar.ArrowCircleUp;
             this.iconButton4.IconColor = System.Drawing.Color.Black;
             this.iconButton4.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton4.Location = new System.Drawing.Point(325, 3);
+            this.iconButton4.Location = new System.Drawing.Point(344, 3);
             this.iconButton4.Name = "iconButton4";
-            this.iconButton4.Size = new System.Drawing.Size(316, 61);
+            this.iconButton4.Size = new System.Drawing.Size(335, 61);
             this.iconButton4.TabIndex = 1;
             this.iconButton4.Text = "30000";
             this.iconButton4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -280,9 +283,9 @@
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("League Spartan", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.button2.Location = new System.Drawing.Point(647, 3);
+            this.button2.Location = new System.Drawing.Point(685, 3);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(326, 61);
+            this.button2.Size = new System.Drawing.Size(347, 61);
             this.button2.TabIndex = 2;
             this.button2.Text = "Huyền Huyễn";
             this.button2.UseVisualStyleBackColor = false;
@@ -294,7 +297,7 @@
             this.label4.Font = new System.Drawing.Font("League Spartan", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label4.Location = new System.Drawing.Point(0, 41);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(976, 126);
+            this.label4.Size = new System.Drawing.Size(1035, 126);
             this.label4.TabIndex = 1;
             this.label4.Text = resources.GetString("label4.Text");
             // 
@@ -330,9 +333,9 @@
             this.panel4.Controls.Add(this.label4);
             this.panel4.Controls.Add(this.label5);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(176, 3);
+            this.panel4.Location = new System.Drawing.Point(186, 3);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(976, 234);
+            this.panel4.Size = new System.Drawing.Size(1035, 234);
             this.panel4.TabIndex = 1;
             // 
             // tableLayoutPanel4
@@ -349,7 +352,7 @@
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(1155, 240);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(1224, 240);
             this.tableLayoutPanel4.TabIndex = 1;
             // 
             // pictureBox2
@@ -359,7 +362,7 @@
             this.pictureBox2.Image = global::Login.Properties.Resources.cover1;
             this.pictureBox2.Location = new System.Drawing.Point(3, 3);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(167, 234);
+            this.pictureBox2.Size = new System.Drawing.Size(177, 234);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
@@ -383,7 +386,7 @@
             this.label7.Font = new System.Drawing.Font("League Spartan", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label7.Location = new System.Drawing.Point(0, 41);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(976, 126);
+            this.label7.Size = new System.Drawing.Size(1035, 126);
             this.label7.TabIndex = 1;
             this.label7.Text = resources.GetString("label7.Text");
             // 
@@ -406,9 +409,9 @@
             this.button3.FlatAppearance.BorderSize = 0;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("League Spartan", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.button3.Location = new System.Drawing.Point(647, 3);
+            this.button3.Location = new System.Drawing.Point(685, 3);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(326, 61);
+            this.button3.Size = new System.Drawing.Size(347, 61);
             this.button3.TabIndex = 2;
             this.button3.Text = "Huyền Huyễn";
             this.button3.UseVisualStyleBackColor = false;
@@ -429,7 +432,7 @@
             this.tableLayoutPanel7.RowCount = 1;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 67F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(976, 67);
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(1035, 67);
             this.tableLayoutPanel7.TabIndex = 3;
             // 
             // iconButton5
@@ -444,7 +447,7 @@
             this.iconButton5.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton5.Location = new System.Drawing.Point(3, 3);
             this.iconButton5.Name = "iconButton5";
-            this.iconButton5.Size = new System.Drawing.Size(316, 61);
+            this.iconButton5.Size = new System.Drawing.Size(335, 61);
             this.iconButton5.TabIndex = 3;
             this.iconButton5.Text = "Kiếm Thần Vô Địch";
             this.iconButton5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -461,9 +464,9 @@
             this.iconButton6.IconChar = FontAwesome.Sharp.IconChar.ArrowCircleUp;
             this.iconButton6.IconColor = System.Drawing.Color.Black;
             this.iconButton6.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton6.Location = new System.Drawing.Point(325, 3);
+            this.iconButton6.Location = new System.Drawing.Point(344, 3);
             this.iconButton6.Name = "iconButton6";
-            this.iconButton6.Size = new System.Drawing.Size(316, 61);
+            this.iconButton6.Size = new System.Drawing.Size(335, 61);
             this.iconButton6.TabIndex = 1;
             this.iconButton6.Text = "30000";
             this.iconButton6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -478,9 +481,9 @@
             this.panel6.Controls.Add(this.label7);
             this.panel6.Controls.Add(this.label8);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel6.Location = new System.Drawing.Point(176, 3);
+            this.panel6.Location = new System.Drawing.Point(186, 3);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(976, 234);
+            this.panel6.Size = new System.Drawing.Size(1035, 234);
             this.panel6.TabIndex = 1;
             // 
             // tableLayoutPanel6
@@ -497,7 +500,7 @@
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 1;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(1155, 240);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(1224, 240);
             this.tableLayoutPanel6.TabIndex = 1;
             // 
             // pictureBox3
@@ -507,7 +510,7 @@
             this.pictureBox3.Image = global::Login.Properties.Resources.cover1;
             this.pictureBox3.Location = new System.Drawing.Point(3, 3);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(167, 234);
+            this.pictureBox3.Size = new System.Drawing.Size(177, 234);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 0;
             this.pictureBox3.TabStop = false;
@@ -521,8 +524,9 @@
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel5.Location = new System.Drawing.Point(0, 275);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1155, 275);
+            this.panel5.Size = new System.Drawing.Size(1224, 275);
             this.panel5.TabIndex = 2;
+            this.panel5.Visible = false;
             // 
             // panel3
             // 
@@ -534,8 +538,9 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 274);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1155, 550);
+            this.panel3.Size = new System.Drawing.Size(1224, 550);
             this.panel3.TabIndex = 2;
+            this.panel3.Visible = false;
             // 
             // label6
             // 
@@ -559,8 +564,9 @@
             this.panelList1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelList1.Location = new System.Drawing.Point(0, 0);
             this.panelList1.Name = "panelList1";
-            this.panelList1.Size = new System.Drawing.Size(1155, 824);
+            this.panelList1.Size = new System.Drawing.Size(1224, 824);
             this.panelList1.TabIndex = 1;
+            this.panelList1.Visible = false;
             // 
             // childFormPanel
             // 
@@ -571,17 +577,19 @@
             this.childFormPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.childFormPanel.Location = new System.Drawing.Point(0, 0);
             this.childFormPanel.Name = "childFormPanel";
-            this.childFormPanel.Size = new System.Drawing.Size(1176, 551);
+            this.childFormPanel.Size = new System.Drawing.Size(1245, 551);
             this.childFormPanel.TabIndex = 3;
             // 
             // BXH_De_Cu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1176, 551);
+            this.ClientSize = new System.Drawing.Size(1245, 551);
             this.Controls.Add(this.childFormPanel);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "BXH_De_Cu";
             this.Text = "BXH_De_Cu";
+            this.Load += new System.EventHandler(this.BXH_De_Cu_Load);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
