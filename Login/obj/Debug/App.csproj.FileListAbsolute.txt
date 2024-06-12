@@ -438,3 +438,9 @@ D:\GitHub\Login\obj\Debug\vi-VN\Login.resources.dll
 D:\GitHub\Login\obj\Debug\App.csproj.Up2Date
 D:\GitHub\Login\obj\Debug\Login.exe
 D:\GitHub\Login\obj\Debug\Login.pdb
+D:\code\C#\Project_truyen\Login\obj\Debug\Login.Bang_Xep_Hang.resources
+D:\code\C#\Project_truyen\Login\obj\Debug\Login.BXH_De_Cu.resources
+D:\code\C#\Project_truyen\Login\obj\Debug\Login.BXH_Doc_Nhieu.resources
+D:\code\C#\Project_truyen\Login\obj\Debug\Login.Nhan_tin.resources
+D:\code\C#\Project_truyen\Login\obj\Debug\Login.Setting.resources
+D:\code\C#\Project_truyen\Login\obj\Debug\Login.Announcement.resources

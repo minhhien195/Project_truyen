@@ -16,6 +16,7 @@ using Firebase.Auth;
 using System.Security.Cryptography;
 using Google.Cloud.Firestore;
 using Firebase.Auth.Providers;
+using System.Windows;
 
 namespace thongbao
 {
@@ -337,16 +338,17 @@ namespace thongbao
 
             await client.UpdateAsync(path, alb);
         }
-        public async Task<List<Dictionary<string, Dictionary<string, object>>>> Lay_thongbao(string userId, string message, string stt_thongbao)
+        public async Task<Dictionary<string, Dictionary<string, object>>> Lay_thongbao(string userId)
         {
             IFirebaseClient client = new FireSharp.FirebaseClient(_firebaseConfig);
-            var path = "Nguoi_dung/" + userId + "Thong_bao/";
+            var path = "Nguoi_dung/" + userId + "/Thong_bao/";
             FirebaseResponse res = await client.GetAsync(path);
             // Chuyển đổi dữ liệu trả về thành Dictionary<string, Dictionary<string, object>>
-            List<Dictionary<string, Dictionary<string, object>>> thongbao = new List<Dictionary<string, Dictionary<string, object>>>();
+            Dictionary<string, Dictionary<string, object>> thongbao = new Dictionary<string, Dictionary<string, object>>();
             if (res.Body != "null")
             {
-                thongbao = JsonConvert.DeserializeObject<List<Dictionary<string, Dictionary<string, object>>>>(res.Body);
+                
+                thongbao = JsonConvert.DeserializeObject<Dictionary<string, Dictionary<string, object>>>(res.Body);
             }
             return thongbao;
         }

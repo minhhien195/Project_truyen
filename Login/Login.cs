@@ -102,7 +102,7 @@ namespace Login
                 if (userCredential != null)
                 {
                     this.Hide();
-                    Trang_chu form = new Trang_chu(userCredential, client, true);
+                    HomePage form = new HomePage(userCredential, client);
                     form.Show();   
 
                 }

@@ -112,5 +112,12 @@ namespace Login
             AccountInfo accountInfo = new AccountInfo(user,client);
             accountInfo.Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Setting form = new Setting(user,client);
+            this.Close();
+            form.Show();
+        }
     }
 }

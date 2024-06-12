@@ -137,10 +137,7 @@ namespace Login
 
         private void button3_Click(object sender, EventArgs e)
         {
-            AccountInfo Form = new AccountInfo(user, client);
-            this.Close();
-            Form.Show();
-
+            
         }
 
         private void label5_Click(object sender, EventArgs e)

@@ -215,6 +215,12 @@
     <Compile Include="AlbumTruyen.Designer.cs">
       <DependentUpon>AlbumTruyen.cs</DependentUpon>
     </Compile>
+    <Compile Include="Announcement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Announcement.Designer.cs">
+      <DependentUpon>Announcement.cs</DependentUpon>
+    </Compile>
     <Compile Include="API-Decutruyen.cs" />
     <Compile Include="API-nhantin.cs" />
     <Compile Include="API_Album.cs" />
@@ -313,6 +319,12 @@
     <Compile Include="Reading_History.Designer.cs">
       <DependentUpon>Reading_History.cs</DependentUpon>
     </Compile>
+    <Compile Include="Setting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Setting.Designer.cs">
+      <DependentUpon>Setting.cs</DependentUpon>
+    </Compile>
     <Compile Include="Signup.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -330,6 +342,9 @@
     </Compile>
     <EmbeddedResource Include="AlbumTruyen.resx">
       <DependentUpon>AlbumTruyen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Announcement.resx">
+      <DependentUpon>Announcement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Bang_Xep_Hang.resx">
       <DependentUpon>Bang_Xep_Hang.cs</DependentUpon>
@@ -377,6 +392,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reading_History.resx">
       <DependentUpon>Reading_History.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Setting.resx">
+      <DependentUpon>Setting.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Signup.resx">
       <DependentUpon>Signup.cs</DependentUpon>
