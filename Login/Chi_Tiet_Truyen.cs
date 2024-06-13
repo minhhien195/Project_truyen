@@ -157,7 +157,7 @@ namespace Login
 
         private void btnIntroMenu_Click(object sender, EventArgs e)
         {
-            panel6.Visible = true;
+            panel2.Visible = true;
             activeForm.Close();
             btnNumChapMenu.ForeColor = Color.Black;
             btnNumChapMenu.Font = new Font("League Spartan", 16, FontStyle.Regular);
@@ -172,7 +172,7 @@ namespace Login
 
         private void btnRatingMenu_Click(object sender, EventArgs e)
         {
-            panel6.Visible = false;
+            panel2.Visible = false;
             openChildForm(new Danh_Gia_CTT());
             btnNumChapMenu.ForeColor = Color.Black;
             btnNumChapMenu.Font = new Font("League Spartan", 16, FontStyle.Regular);
@@ -187,7 +187,17 @@ namespace Login
 
         private void btnCommentMenu_Click(object sender, EventArgs e)
         {
+            panel2.Visible = false;
+            openChildForm(new Binh_Luan_CTT());
+            btnNumChapMenu.ForeColor = Color.Black;
+            btnNumChapMenu.Font = new Font("League Spartan", 16, FontStyle.Regular);
 
+            btnIntroMenu.ForeColor = Color.Black;
+            btnIntroMenu.Font = new Font("League Spartan", 16, FontStyle.Regular);
+            btnCommentMenu.ForeColor = Color.Red;
+            btnCommentMenu.Font = new Font("League Spartan", 16, FontStyle.Regular);
+            btnRatingMenu.ForeColor = Color.Black;
+            btnRatingMenu.Font = new Font("League Spartan", 16, FontStyle.Regular);
         }
     }
 }
