@@ -57,10 +57,205 @@ namespace Login
 
         private async void Doc_Truyen_Load(object sender, EventArgs e)
         {
-            Task<Interact.Chapter> res = Interact.getNovel(nameTruyen, "1");
-            Interact.Chapter chapter = new Interact.Chapter();
-            chapter = await res;
-            contentChap.Text = chapter.Content;
+            string numChapter = "1";
+            string project = "healtruyen";
+            FirestoreDb db = FirestoreDb.Create(project);
+            CollectionReference collectionReference = db.Collection("Truyen");
+            nameTruyen = nameTruyen.ToUpper();
+            Query q = collectionReference.WhereEqualTo("Ten", nameTruyen);
+            QuerySnapshot qs = await q.GetSnapshotAsync();
+            if (qs.Documents.Count == 0)
+            {
+                return;
+            }
+            string chapId = "";
+            int cnt = 4 - numChapter.Length;
+            for (int i = 0; i < cnt; i++)
+            {
+                chapId += "0";
+            }
+            chapId += numChapter;
+            DocumentReference collectionRef = db.Collection("Truyen").Document(qs.Documents[0].Id).Collection("Chuong").Document(chapId);
+            DocumentSnapshot snapshot = await collectionRef.GetSnapshotAsync();
+            if (snapshot.Exists)
+            {
+
+                Interact.Chapter chapter = snapshot.ConvertTo<Interact.Chapter>();
+                contentChap.Text = chapter.Content;
+                labelName.Text = chapter.Title;
+                Task<Interact.Novel> res1 = Interact.getInfoNovel(nameTruyen);
+                Interact.Novel novel = new Interact.Novel();
+                novel = await res1;
+                iconButton2.Text = novel.author;
+                numChap = novel.cntChapter;
+                Task<string> res2 = Interact.getIdNovel(nameTruyen);
+                idTruyen = await res2;
+                IFirebaseConfig _firebaseConfig = new FirebaseConfig
+                {
+                    AuthSecret = "38QvLmnKMHlQtJ9yZzCqqWytxeXimwt06ZnFfSc2",
+                    BasePath = "https://healtruyen-default-rtdb.asia-southeast1.firebasedatabase.app/"
+                };
+                IFirebaseClient client = new FireSharp.FirebaseClient(_firebaseConfig);
+                FirebaseResponse res3 = await client.GetAsync("Truyen/" + idTruyen + "/Binh_luan/");
+                var dict = JsonConvert.DeserializeObject<Dictionary<string, object>>(res3.Body);
+
+                if (dict.Count == 0) return;
+                //show data
+                var dem = 0;
+                foreach (var i in dict)
+                {
+                    dem = Convert.ToInt32(i.Key);
+                }
+                for (int i = 1; i <= dem; i++)
+                {
+                    FirebaseResponse res4 = await client.GetAsync("Truyen/" + idTruyen + "/Binh_luan/" + i.ToString());
+
+                    Binhluan binhluan = res4.ResultAs<Binhluan>();
+
+                    Panel panel = new Panel();
+                    panel5.Controls.Add(panel);
+                    panel.Dock = DockStyle.Top;
+                    panel.BringToFront();
+                    panel.Height = 216;
+
+                    TableLayoutPanel tableLayoutPanel = new TableLayoutPanel();
+                    panel.Controls.Add(tableLayoutPanel);
+                    tableLayoutPanel.Dock = DockStyle.Fill;
+                    tableLayoutPanel.RowCount = 1;
+                    tableLayoutPanel.ColumnCount = 2;
+                    tableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 10));
+                    tableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 90));
+
+
+
+                    PictureBox pictureBox = new PictureBox();
+                    tableLayoutPanel.Controls.Add(pictureBox, 0, 0);
+                    pictureBox.Dock = DockStyle.Fill;
+
+                    FirebaseResponse res5 = await client.GetAsync("Nguoi_dung/" + user.User.Uid + "/Anh_dai_dien");
+                    string base64String = res5.ResultAs<string>();
+                    byte[] imageBytes = Convert.FromBase64String(base64String);
+                    pictureBox.SizeMode = PictureBoxSizeMode.Zoom;
+                    using (MemoryStream memoryStream = new MemoryStream(imageBytes))
+                    {
+                        Bitmap bitmap = new Bitmap(memoryStream);
+                        pictureBox.Image = bitmap;
+                    }
+
+                    Panel panel1 = new Panel();
+                    tableLayoutPanel.Controls.Add(panel1);
+                    panel1.Dock = DockStyle.Fill;
+
+                    TableLayoutPanel tableLayoutPanel1 = new TableLayoutPanel();
+                    panel1.Controls.Add(tableLayoutPanel1);
+                    tableLayoutPanel1.Dock = DockStyle.Top;
+                    tableLayoutPanel1.BringToFront();
+                    tableLayoutPanel1.RowCount = 1;
+                    tableLayoutPanel1.ColumnCount = 3;
+                    tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20));
+                    tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20));
+                    tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 60));
+
+                    Label labelName = new Label();
+                    tableLayoutPanel1.Controls.Add(labelName, 0, 0);
+                    labelName.AutoSize = true;
+                    labelName.Font = new Font("League Spartan", 16, FontStyle.Regular);
+                    labelName.Text = user.User.Info.DisplayName;
+
+                    Label date = new Label();
+                    tableLayoutPanel1.Controls.Add(date, 1, 0);
+                    date.AutoSize = true;
+                    date.Font = new Font("League Spartan", 16, FontStyle.Regular);
+                    string dateStr = binhluan.TG_binh_luan.Split(' ').First<string>();
+                    dateStr = "0" + dateStr;
+                    System.DateTime dateTime = System.DateTime.Parse(dateStr, CultureInfo.InvariantCulture);
+                    System.DateTime dateNow = System.DateTime.Now;
+                    TimeSpan elapsedTime = dateNow - dateTime;
+                    int elapsedSeconds = (int)elapsedTime.TotalSeconds;
+                    int elapsedMinutes = (int)elapsedTime.TotalMinutes;
+                    int elapsedHours = (int)elapsedTime.TotalHours;
+                    int elapsedDays = (int)elapsedTime.TotalDays;
+                    int elapsedMonth = elapsedDays / 30;
+                    int elapsedYear = elapsedMonth / 12;
+                    if (elapsedYear > 0)
+                    {
+                        date.Text = elapsedYear.ToString() + " năm trước";
+                    }
+                    else if (elapsedMonth > 0)
+                    {
+                        date.Text = elapsedMonth.ToString() + " tháng trước";
+                    }
+                    else if (elapsedDays > 0)
+                    {
+                        date.Text = elapsedDays.ToString() + " ngày trước";
+                    }
+                    else if (elapsedHours > 0)
+                    {
+                        date.Text = elapsedHours.ToString() + " giờ trước";
+                    }
+                    else if (elapsedMinutes > 0)
+                    {
+                        date.Text = elapsedMinutes.ToString() + " phút trước";
+                    }
+                    else
+                    {
+                        date.Text = elapsedSeconds.ToString() + " giây trước";
+                    }
+
+
+                    Label content = new Label();
+                    panel1.Controls.Add(content);
+                    content.Font = new Font("League Spartan", 14, FontStyle.Regular);
+                    content.Dock = DockStyle.Fill;
+                    content.Text = binhluan.Noi_dung;
+
+                    TableLayoutPanel tableLayoutPanel2 = new TableLayoutPanel();
+                    panel1.Controls.Add(tableLayoutPanel2);
+                    tableLayoutPanel2.Dock = DockStyle.Bottom;
+                    tableLayoutPanel2.RowCount = 1;
+                    tableLayoutPanel2.ColumnCount = 3;
+                    tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 76));
+                    tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 12));
+                    tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 12));
+
+                    IconButton btnLike = new IconButton();
+                    tableLayoutPanel2.Controls.Add(btnLike, 1, 0);
+                    btnLike.Dock = DockStyle.Fill;
+                    btnLike.Font = new Font("League Spartan", 12, FontStyle.Regular);
+                    btnLike.IconChar = IconChar.Heart;
+                    btnLike.IconSize = 30;
+                    btnLike.Text = "Thích";
+                    btnLike.TextAlign = ContentAlignment.MiddleRight;
+                    btnLike.TextImageRelation = TextImageRelation.ImageBeforeText;
+                    btnLike.Click += (s, ev) =>
+                    {
+                        //Hàm click code ở đây
+                    };
+
+                    IconButton btnReport = new IconButton();
+                    tableLayoutPanel2.Controls.Add(btnLike, 2, 0);
+                    btnReport.Dock = DockStyle.Fill;
+                    btnReport.Font = new Font("League Spartan", 12, FontStyle.Regular);
+                    btnReport.IconChar = IconChar.Flag;
+                    btnReport.IconSize = 30;
+                    btnReport.Text = "Tố cáo";
+                    btnReport.TextAlign = ContentAlignment.MiddleRight;
+                    btnReport.TextImageRelation = TextImageRelation.ImageBeforeText;
+                    btnReport.Click += (s, ev) =>
+                    {
+                        //Hàm click code ở đây
+                    };
+
+                }
+            }
+            else
+            {
+                return;
+            }
+            /*Task<Interact.Chapter> res = Interact.getNovel(nameTruyen, "1");*/
+            /*Interact.Chapter chapter = new Interact.Chapter();*/
+            /*var chapter = await res;*/
+            /*contentChap.Text = chapter.Content;
             labelName.Text = chapter.Title;
             Task<Interact.Novel> res1 = Interact.getInfoNovel(nameTruyen);
             Interact.Novel novel = new Interact.Novel();
@@ -224,7 +419,7 @@ namespace Login
                 {
                     //Hàm click code ở đây
                 };
-            }
+            }*/
             
             
         }
@@ -270,17 +465,19 @@ namespace Login
             {
                 using (Danhgia danhgia = new Danhgia(idTruyen, nameTruyen))
                 {
-                    formBackground.StartPosition = FormStartPosition.Manual;
+                    formBackground.StartPosition = FormStartPosition.CenterScreen;
                     formBackground.FormBorderStyle = FormBorderStyle.None;
                     formBackground.ShowInTaskbar = false;
                     formBackground.Opacity = .50d;
                     formBackground.BackColor = System.Drawing.Color.Black;
-                    formBackground.WindowState = FormWindowState.Maximized;
+                    /*formBackground.WindowState = FormWindowState.Maximized;*/
                     formBackground.TopMost = true;
                     formBackground.Location = this.Location;
                     formBackground.Show();
 
                     danhgia.Owner = formBackground;
+                    danhgia.StartPosition = FormStartPosition.CenterScreen;
+                    /*danhgia.BringToFront();*/
                     danhgia.ShowDialog();
 
                     formBackground.Dispose();
@@ -290,6 +487,7 @@ namespace Login
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+                throw;
             }
             finally
             {
@@ -353,6 +551,9 @@ namespace Login
             iconButtonRecom.IconColor = System.Drawing.Color.IndianRed;
         }
 
+        private void label3_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }
