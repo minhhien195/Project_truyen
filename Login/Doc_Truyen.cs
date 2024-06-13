@@ -10,6 +10,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Firebase.Auth;
+using FirebaseAdmin;
+using FirebaseAdmin.Auth;
 using FireSharp.Config;
 using FireSharp.Interfaces;
 using FireSharp.Response;
@@ -41,7 +43,7 @@ namespace Login
             public string TG_binh_luan { get; set; }
             public bool To_cao {  get; set; }
         }
-        public Doc_Truyen(string nameTruyen, UserCredential user)
+        public Doc_Truyen()
         {
             InitializeComponent();
             this.nameTruyen = nameTruyen;
@@ -57,6 +59,11 @@ namespace Login
 
         private async void Doc_Truyen_Load(object sender, EventArgs e)
         {
+            UserRecord updatedUser = await FirebaseAuth.DefaultInstance.GetUserAsync("E87tvNxeBuRVWjGecxM0Vrh0RU72");
+            if (updatedUser == null)
+            {
+                MessageBox.Show("ok");
+            }
             Task<Interact.Chapter> res = Interact.getNovel(nameTruyen, "1");
             Interact.Chapter chapter = new Interact.Chapter();
             chapter = await res;
