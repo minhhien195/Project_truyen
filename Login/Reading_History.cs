@@ -373,5 +373,15 @@ namespace Login
                 this.Hide();
             }
         }
+
+        private void lbLSD_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ibtnThoigian_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

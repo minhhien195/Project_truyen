@@ -166,7 +166,7 @@
             this.panelChildForm.Controls.Add(this.panel1);
             this.panelChildForm.Location = new System.Drawing.Point(81, 588);
             this.panelChildForm.Name = "panelChildForm";
-            this.panelChildForm.Size = new System.Drawing.Size(1616, 783);
+            this.panelChildForm.Size = new System.Drawing.Size(1540, 783);
             this.panelChildForm.TabIndex = 96;
             // 
             // panel6
@@ -186,7 +186,7 @@
             this.panel6.Controls.Add(this.labelAuthorIntro);
             this.panel6.Controls.Add(this.pictureAuthorIntro);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel6.Location = new System.Drawing.Point(1185, 0);
+            this.panel6.Location = new System.Drawing.Point(1109, 0);
             this.panel6.Margin = new System.Windows.Forms.Padding(0);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(431, 783);

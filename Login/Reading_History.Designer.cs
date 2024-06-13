@@ -62,9 +62,10 @@
             this.lbLSD.Font = new System.Drawing.Font("League Spartan SemiBold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbLSD.Location = new System.Drawing.Point(9, 19);
             this.lbLSD.Name = "lbLSD";
-            this.lbLSD.Size = new System.Drawing.Size(151, 41);
+            this.lbLSD.Size = new System.Drawing.Size(128, 36);
             this.lbLSD.TabIndex = 1;
             this.lbLSD.Text = "Lịch sử đọc";
+            this.lbLSD.Click += new System.EventHandler(this.lbLSD_Click);
             // 
             // lbduongke
             // 
@@ -141,7 +142,7 @@
             this.lbSochuong1.Font = new System.Drawing.Font("League Spartan SemiBold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbSochuong1.Location = new System.Drawing.Point(182, 132);
             this.lbSochuong1.Name = "lbSochuong1";
-            this.lbSochuong1.Size = new System.Drawing.Size(63, 30);
+            this.lbSochuong1.Size = new System.Drawing.Size(53, 26);
             this.lbSochuong1.TabIndex = 7;
             this.lbSochuong1.Text = "51/151";
             // 
@@ -209,7 +210,7 @@
             // 
             // Reading_History
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 36F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 30F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));

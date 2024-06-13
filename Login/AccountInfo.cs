@@ -42,9 +42,6 @@ namespace Login
             label1.Text = user.User.Info.DisplayName;
             string ID = user.User.Info.Uid;
             GraphicsPath grpath = new GraphicsPath();
-            grpath.AddEllipse(0, 0, pictureBox1.Width, pictureBox1.Height);
-            Region rg = new System.Drawing.Region(grpath);
-            pictureBox1.Region = rg;
             GraphicsPath grpath2 = new GraphicsPath();
             grpath2.AddEllipse(0, 0, pictureBox2.Width, pictureBox2.Height);
             Region rg2 = new System.Drawing.Region(grpath2);
@@ -66,8 +63,7 @@ namespace Login
             using (MemoryStream memoryStream = new MemoryStream(imageBytes))
             {
                 Bitmap bitmap = new Bitmap(memoryStream);
-                pictureBox1.Image = bitmap;
-                pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+                
                 pictureBox2.Image = bitmap;
                 pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             }
@@ -78,44 +74,7 @@ namespace Login
 
         }
 
-        private async void loadava_Click(object sender, EventArgs e)
-        {
-            string ID = user.User.Info.Uid;
-            //string ID = "E87tvNxeBuRVWjGecxM0Vrh0RU72";
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "Image Files (*.png;*.jpg)|*.png;*.jpg";
-            if (openFileDialog.ShowDialog() == DialogResult.OK)
-            {
-                string fileName = openFileDialog.FileName;
-                Bitmap bitmap = new Bitmap(fileName);
-
-                using (MemoryStream memoryStream = new MemoryStream())
-                {
-                    bitmap.Save(memoryStream, System.Drawing.Imaging.ImageFormat.Png);
-                    byte[] imageBytes1 = memoryStream.ToArray();
-
-                    // Convert byte array to base64 string
-                    string base64String1 = Convert.ToBase64String(imageBytes1);
-                    // Set the data in Firebase
-                    var setResponse = await ifclient.SetAsync("Nguoi_dung/" + ID + "/Anh_dai_dien", base64String1);
-                    MessageBox.Show("Avatar uploaded successfully!");
-
-                }
-                FirebaseResponse response = await ifclient.GetAsync("Nguoi_dung/" + ID + "/Anh_dai_dien");
-                string base64String2 = response.ResultAs<string>();
-                byte[] imageBytes2 = Convert.FromBase64String(base64String2);
-
-                using (MemoryStream memoryStream = new MemoryStream(imageBytes2))
-                {
-                    bitmap = new Bitmap(memoryStream);
-                    pictureBox1.Image = bitmap;
-                    pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-                    pictureBox2.Image = bitmap;
-                    pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-                }
-
-            }
-        }
+        
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
@@ -135,10 +94,39 @@ namespace Login
 
         private void button3_Click(object sender, EventArgs e)
         {
-            AccountInfo Form = new AccountInfo(user,client);
-            this.Close();
-            Form.Show();
-            
+            Form formPopup = new Form();
+            try
+            {
+                using (Fix fixForm = new Fix(user,client))
+                {
+                    formPopup.StartPosition = FormStartPosition.CenterScreen;
+                    formPopup.FormBorderStyle = FormBorderStyle.None;
+                    formPopup.Opacity = .70d;
+                    formPopup.BackColor = Color.Black;
+                    /*formPopup.WindowState = FormWindowState.Maximized;*/
+                    formPopup.TopMost = true;
+                    formPopup.Location = this.Location;
+                    formPopup.ShowInTaskbar = false;
+                    formPopup.Show();
+
+                    fixForm.Owner = formPopup;
+                    fixForm.StartPosition = FormStartPosition.CenterScreen;
+                    fixForm.ShowDialog();
+
+                    formPopup.Dispose();
+                }
+            }
+            catch (Exception ex )
+            {
+                throw;
+            }
+            finally
+            {
+                formPopup.Dispose();
+                AccountInfo form = new AccountInfo(user,client);
+                this.Close();
+                form.ShowDialog();
+            }
         }
 
         private void label5_Click(object sender, EventArgs e)
