@@ -49,7 +49,7 @@
             this.label1.Location = new System.Drawing.Point(13, 9);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(140, 48);
+            this.label1.Size = new System.Drawing.Size(119, 40);
             this.label1.TabIndex = 0;
             this.label1.Text = "Đánh giá";
             // 
@@ -58,7 +58,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(15, 72);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(363, 36);
+            this.label2.Size = new System.Drawing.Size(301, 30);
             this.label2.TabIndex = 1;
             this.label2.Text = "Đánh giá bằng số sao mà bạn chọn";
             // 
@@ -226,7 +226,7 @@
             // 
             // Danhgia
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 36F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 30F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(227)))), ((int)(((byte)(243)))));
             this.ClientSize = new System.Drawing.Size(630, 421);
@@ -241,6 +241,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("League Spartan", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Danhgia";
             this.Text = "Danhgia";

@@ -20,9 +20,12 @@ namespace Login
 {
     public partial class Danhgia : Form
     {
-        public Danhgia()
+        string idtruyen, nameNovel;
+        public Danhgia(string idtruyen, string nameNovel)
         {
             InitializeComponent();
+            this.idtruyen = idtruyen;
+            this.nameNovel = nameNovel;
         }
         public class Danh_Gia
         {
@@ -34,7 +37,7 @@ namespace Login
             public bool To_cao { get; set; }
         }
         bool rtb = false;
-        string idtruyen, nameNovel;
+        
         IFirebaseConfig _firebaseConfig = new FirebaseConfig
         {
             AuthSecret = "38QvLmnKMHlQtJ9yZzCqqWytxeXimwt06ZnFfSc2",
@@ -473,11 +476,6 @@ namespace Login
             {
                 MessageBox.Show("Lỗi! Vui lòng nhập đầy đủ thông tin đánh giá.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }    
-        }
-        public Danhgia(string idtruyen, string nameNovel)
-        {
-            this.idtruyen = idtruyen;
-            this.nameNovel = nameNovel;
         }
 
         private void ibtnClose_Click(object sender, EventArgs e)

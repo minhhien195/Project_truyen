@@ -59,7 +59,7 @@ namespace Login
                 pictureBox1.Image = bitmap;
                 pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             }*/
-            string dateString = "5/26/2024 6:58:51 PM";
+            /*string dateString = "5/26/2024 6:58:51 PM";
             DateTime startDateTime = DateTime.Parse(dateString);
             DateTime currentDateTime = DateTime.Now;
 
@@ -73,7 +73,7 @@ namespace Login
             MessageBox.Show(elapsedDays.ToString());
             MessageBox.Show(elapsedMinutes.ToString());
             MessageBox.Show(elapsedhours.ToString());
-            MessageBox.Show(elapsedMilliseconds.ToString());
+            MessageBox.Show(elapsedMilliseconds.ToString());*/
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -139,6 +139,13 @@ namespace Login
         {
             Hotro_baoloi hotro_Baoloi = new Hotro_baoloi(user);
             hotro_Baoloi.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Doc_Truyen form = new Doc_Truyen("TOÀN TRÍ ĐỘC GIẢ",user);
+            form.Show();
         }
     }
 }
