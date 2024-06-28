@@ -347,9 +347,7 @@
     <Compile Include="NvUpdate.Designer.cs">
       <DependentUpon>NvUpdate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Popup.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Popup.cs" />
     <Compile Include="Popup.Designer.cs">
       <DependentUpon>Popup.cs</DependentUpon>
     </Compile>

@@ -216,6 +216,7 @@
             this.label3.Size = new System.Drawing.Size(1182, 167);
             this.label3.TabIndex = 3;
             this.label3.Text = resources.GetString("label3.Text");
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // tableLayoutPanel5
             // 
