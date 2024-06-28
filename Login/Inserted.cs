@@ -49,14 +49,15 @@ namespace Login
                 }
             };
             var client = new FirebaseAuthClient(config);
-            userId = client.User.Uid;
+            /*userId = client.User.Uid;*/
+            userId = "GUV1i10T8CMza3pmH93anGS9WUg1";
             IFirebaseClient client1 = new FireSharp.FirebaseClient(_firebaseConfig);
             var path = "Nguoi_dung/" + userId;
             FirebaseResponse res = await client1.GetAsync(path);
-            Dictionary<string, Dictionary<string, object>> user = new Dictionary<string, Dictionary<string, object>>();
+            Dictionary<string, object> user = new Dictionary<string, object>();
             if (res.Body != "null")
             {
-                user = JsonConvert.DeserializeObject<Dictionary<string, Dictionary<string, object>>>(res.Body);
+                user = JsonConvert.DeserializeObject<Dictionary<string, object>>(res.Body);
             }
             foreach (var item in user)
             {
@@ -70,7 +71,7 @@ namespace Login
         }
         private async void dsTruyen()
         {
-            string truyen = "";
+            string truyen = "001";
             Task<string> dstruyen = dangTruyen();
             var result = await dstruyen;
             if (result != null)
@@ -107,7 +108,7 @@ namespace Login
 
                     Label chuong = new Label();
                     chuong.AutoSize = true;
-                    chuong.Location = new Point(612, 12);
+                    chuong.Location = new Point(408, 12);
                     chuong.Text = snapshot.GetValue<int>("So_chuong") + " chuong";
                     chuong.Visible = true;
                     chuong.Anchor = AnchorStyles.Top | AnchorStyles.Left;
@@ -119,7 +120,10 @@ namespace Login
                     trangthai.BackColor = Color.FromArgb(155, 227, 243);
                     trangthai.FlatStyle = FlatStyle.Flat;
                     trangthai.Anchor = AnchorStyles.Top | AnchorStyles.Left;
-                    trangthai.Location = new Point(959, 12);
+                    trangthai.Location = new Point(639, 12);
+                    trangthai.Items.Add("Tạm dừng");
+                    trangthai.Items.Add("Đang Tiến Hành");
+                    trangthai.Items.Add("Hoàn thành");
                     trangthai.SelectedIndex = 0;
                     trangthai.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
                     int tt = snapshot.GetValue<int>("Trang_thai");
@@ -136,9 +140,7 @@ namespace Login
                         trangthai.Text = "Hoàn thành";
                     }
                     
-                    trangthai.Items.Add("Tạm dừng");
-                    trangthai.Items.Add("Đang Tiến Hành");
-                    trangthai.Items.Add("Hoàn thành");
+                    
 
                     panel.Controls.Add(tentruyen);
                     panel.Controls.Add(chuong);
@@ -164,7 +166,8 @@ namespace Login
                     Interact.editNovel(item.Value, "Trang_thai", "2");
                 }
             }
-            MessageBox.Show("Đã cập nhật trạng thái truyện thành công", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            tb2 tb = new tb2();
+            tb.ShowDialog();
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -175,19 +178,32 @@ namespace Login
             btnUpdate.ForeColor = Color.White;
             ComboBox comboBox = (ComboBox)sender;
             System.Windows.Forms.Panel panel = comboBox.Parent as System.Windows.Forms.Panel;
-            string ten = panel.Tag as string;
+            string ten = "";
+            if (panel != null && panel.Tag != null)
+            {
+                ten = panel.Tag as string;
+                // Rest of the code
+            }
             if (comboBox.SelectedIndex == 0)
             {
-
-                trangthai_id.Add("Tạm dừng", ten);
+                if (!trangthai_id.ContainsKey("Tạm dừng"))
+                {
+                    trangthai_id.Add("Tạm dừng", ten);
+                }
             }
             else if (comboBox.SelectedIndex == 1)
             {
-                trangthai_id.Add("Đang tiến hành", ten);
+                if (!trangthai_id.ContainsKey("Đang tiến hành"))
+                {
+                    trangthai_id.Add("Đang tiến hành", ten);
+                }
             }
             else
             {
-                trangthai_id.Add("Hoàn thành", ten);
+                if (!trangthai_id.ContainsKey("Hoàn thành"))
+                {
+                    trangthai_id.Add("Hoàn thành", ten);
+                }
             }
         }
     }

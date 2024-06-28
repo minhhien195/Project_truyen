@@ -352,7 +352,5 @@ namespace Login
         {
             iconButtonRecom.IconColor = System.Drawing.Color.IndianRed;
         }
-
-
     }
 }

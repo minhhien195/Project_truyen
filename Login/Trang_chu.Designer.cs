@@ -54,74 +54,72 @@
             this.btnsearch = new FontAwesome.Sharp.IconButton();
             this.tbsearch = new System.Windows.Forms.TextBox();
             this.paneltop = new System.Windows.Forms.Panel();
-            this.pbAvt = new System.Windows.Forms.PictureBox();
-            this.truyen1 = new System.Windows.Forms.PictureBox();
-            this.truyen3 = new System.Windows.Forms.PictureBox();
             this.lbup = new System.Windows.Forms.Label();
-            this.truyen5 = new System.Windows.Forms.PictureBox();
             this.lbdecu = new System.Windows.Forms.Label();
-            this.btnLeft = new FontAwesome.Sharp.IconButton();
-            this.btnRight = new FontAwesome.Sharp.IconButton();
             this.bt02gn = new System.Windows.Forms.GroupBox();
-            this.ttt05 = new System.Windows.Forms.Label();
-            this.sc05 = new System.Windows.Forms.Label();
-            this.bt01gn = new FontAwesome.Sharp.IconButton();
-            this.gn01bt = new FontAwesome.Sharp.IconButton();
-            this.tt05 = new System.Windows.Forms.PictureBox();
-            this.tg05 = new System.Windows.Forms.Label();
-            this.tt06 = new System.Windows.Forms.PictureBox();
-            this.iconButton8 = new FontAwesome.Sharp.IconButton();
-            this.ttt06 = new System.Windows.Forms.Label();
-            this.sc06 = new System.Windows.Forms.Label();
-            this.gn02bt = new FontAwesome.Sharp.IconButton();
-            this.tg06 = new System.Windows.Forms.Label();
-            this.iconButton5 = new FontAwesome.Sharp.IconButton();
-            this.iconButton6 = new FontAwesome.Sharp.IconButton();
-            this.ps05 = new System.Windows.Forms.Label();
-            this.iconButton12 = new FontAwesome.Sharp.IconButton();
-            this.ps06 = new System.Windows.Forms.Label();
             this.iconButton13 = new FontAwesome.Sharp.IconButton();
+            this.ps06 = new System.Windows.Forms.Label();
+            this.iconButton12 = new FontAwesome.Sharp.IconButton();
+            this.ps05 = new System.Windows.Forms.Label();
+            this.iconButton6 = new FontAwesome.Sharp.IconButton();
+            this.iconButton5 = new FontAwesome.Sharp.IconButton();
+            this.tg06 = new System.Windows.Forms.Label();
+            this.gn02bt = new FontAwesome.Sharp.IconButton();
+            this.sc06 = new System.Windows.Forms.Label();
+            this.ttt06 = new System.Windows.Forms.Label();
+            this.iconButton8 = new FontAwesome.Sharp.IconButton();
+            this.tt06 = new System.Windows.Forms.PictureBox();
+            this.tg05 = new System.Windows.Forms.Label();
+            this.tt05 = new System.Windows.Forms.PictureBox();
+            this.gn01bt = new FontAwesome.Sharp.IconButton();
+            this.bt01gn = new FontAwesome.Sharp.IconButton();
+            this.sc05 = new System.Windows.Forms.Label();
+            this.ttt05 = new System.Windows.Forms.Label();
             this.sangtac = new System.Windows.Forms.GroupBox();
-            this.tt01 = new System.Windows.Forms.PictureBox();
-            this.tt02 = new System.Windows.Forms.PictureBox();
-            this.st01lb = new FontAwesome.Sharp.IconButton();
-            this.ttt01 = new System.Windows.Forms.Label();
-            this.sc01 = new System.Windows.Forms.Label();
-            this.bt01tg = new FontAwesome.Sharp.IconButton();
-            this.tg01 = new System.Windows.Forms.Label();
-            this.bt02st = new FontAwesome.Sharp.IconButton();
-            this.ttt02 = new System.Windows.Forms.Label();
-            this.sc02 = new System.Windows.Forms.Label();
-            this.bt02tg = new FontAwesome.Sharp.IconButton();
-            this.tg02 = new System.Windows.Forms.Label();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
-            this.iconButton2 = new FontAwesome.Sharp.IconButton();
-            this.ps01 = new System.Windows.Forms.Label();
-            this.iconButton7 = new FontAwesome.Sharp.IconButton();
-            this.ps02 = new System.Windows.Forms.Label();
             this.iconButton9 = new FontAwesome.Sharp.IconButton();
-            this.truyen2 = new System.Windows.Forms.PictureBox();
+            this.ps02 = new System.Windows.Forms.Label();
+            this.iconButton7 = new FontAwesome.Sharp.IconButton();
+            this.ps01 = new System.Windows.Forms.Label();
+            this.iconButton2 = new FontAwesome.Sharp.IconButton();
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.tg02 = new System.Windows.Forms.Label();
+            this.bt02tg = new FontAwesome.Sharp.IconButton();
+            this.sc02 = new System.Windows.Forms.Label();
+            this.ttt02 = new System.Windows.Forms.Label();
+            this.bt02st = new FontAwesome.Sharp.IconButton();
+            this.tg01 = new System.Windows.Forms.Label();
+            this.bt01tg = new FontAwesome.Sharp.IconButton();
+            this.sc01 = new System.Windows.Forms.Label();
+            this.ttt01 = new System.Windows.Forms.Label();
+            this.st01lb = new FontAwesome.Sharp.IconButton();
+            this.tt02 = new System.Windows.Forms.PictureBox();
+            this.tt01 = new System.Windows.Forms.PictureBox();
             this.dangxem = new System.Windows.Forms.GroupBox();
-            this.ttt03 = new System.Windows.Forms.Label();
-            this.sc03 = new System.Windows.Forms.Label();
-            this.bt01dx = new FontAwesome.Sharp.IconButton();
-            this.dx01bt = new FontAwesome.Sharp.IconButton();
-            this.tt03 = new System.Windows.Forms.PictureBox();
-            this.tg03 = new System.Windows.Forms.Label();
-            this.tt04 = new System.Windows.Forms.PictureBox();
-            this.bt02dx = new FontAwesome.Sharp.IconButton();
-            this.ttt04 = new System.Windows.Forms.Label();
-            this.sc04 = new System.Windows.Forms.Label();
-            this.dx02tg = new FontAwesome.Sharp.IconButton();
-            this.tg04 = new System.Windows.Forms.Label();
-            this.iconButton3 = new FontAwesome.Sharp.IconButton();
-            this.iconButton4 = new FontAwesome.Sharp.IconButton();
-            this.ps03 = new System.Windows.Forms.Label();
-            this.iconButton10 = new FontAwesome.Sharp.IconButton();
-            this.ps04 = new System.Windows.Forms.Label();
             this.iconButton11 = new FontAwesome.Sharp.IconButton();
-            this.truyen4 = new System.Windows.Forms.PictureBox();
+            this.ps04 = new System.Windows.Forms.Label();
+            this.iconButton10 = new FontAwesome.Sharp.IconButton();
+            this.ps03 = new System.Windows.Forms.Label();
+            this.iconButton4 = new FontAwesome.Sharp.IconButton();
+            this.iconButton3 = new FontAwesome.Sharp.IconButton();
+            this.tg04 = new System.Windows.Forms.Label();
+            this.dx02tg = new FontAwesome.Sharp.IconButton();
+            this.sc04 = new System.Windows.Forms.Label();
+            this.ttt04 = new System.Windows.Forms.Label();
+            this.bt02dx = new FontAwesome.Sharp.IconButton();
+            this.tt04 = new System.Windows.Forms.PictureBox();
+            this.tg03 = new System.Windows.Forms.Label();
+            this.tt03 = new System.Windows.Forms.PictureBox();
+            this.dx01bt = new FontAwesome.Sharp.IconButton();
+            this.bt01dx = new FontAwesome.Sharp.IconButton();
+            this.sc03 = new System.Windows.Forms.Label();
+            this.ttt03 = new System.Windows.Forms.Label();
             this.panelAll = new System.Windows.Forms.Panel();
+            this.truyen4 = new System.Windows.Forms.PictureBox();
+            this.truyen2 = new System.Windows.Forms.PictureBox();
+            this.truyen5 = new System.Windows.Forms.PictureBox();
+            this.truyen3 = new System.Windows.Forms.PictureBox();
+            this.truyen1 = new System.Windows.Forms.PictureBox();
+            this.pbAvt = new System.Windows.Forms.PictureBox();
             this.panelMenu.SuspendLayout();
             this.panelHEALTruyenSubmenu.SuspendLayout();
             this.panelTieudeSubmenu.SuspendLayout();
@@ -130,22 +128,22 @@
             this.panelClose.SuspendLayout();
             this.panel4.SuspendLayout();
             this.paneltop.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbAvt)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.truyen1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.truyen3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.truyen5)).BeginInit();
             this.bt02gn.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tt05)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tt06)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tt05)).BeginInit();
             this.sangtac.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tt01)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tt02)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.truyen2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tt01)).BeginInit();
             this.dangxem.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tt03)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tt04)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.truyen4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tt03)).BeginInit();
             this.panelAll.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.truyen4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.truyen2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.truyen5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.truyen3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.truyen1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAvt)).BeginInit();
             this.SuspendLayout();
             // 
             // panelMenu
@@ -567,6 +565,7 @@
             this.btnsearch.Size = new System.Drawing.Size(44, 44);
             this.btnsearch.TabIndex = 1;
             this.btnsearch.UseVisualStyleBackColor = false;
+            this.btnsearch.Click += new System.EventHandler(this.btnsearch_Click);
             // 
             // tbsearch
             // 
@@ -589,35 +588,6 @@
             this.paneltop.Size = new System.Drawing.Size(1652, 100);
             this.paneltop.TabIndex = 7;
             // 
-            // pbAvt
-            // 
-            this.pbAvt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(227)))), ((int)(((byte)(243)))));
-            this.pbAvt.BackgroundImage = global::Login.Properties.Resources.avatardefault;
-            this.pbAvt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pbAvt.Location = new System.Drawing.Point(1812, 12);
-            this.pbAvt.Name = "pbAvt";
-            this.pbAvt.Size = new System.Drawing.Size(80, 80);
-            this.pbAvt.TabIndex = 4;
-            this.pbAvt.TabStop = false;
-            // 
-            // truyen1
-            // 
-            this.truyen1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(227)))), ((int)(((byte)(243)))));
-            this.truyen1.Location = new System.Drawing.Point(207, 70);
-            this.truyen1.Name = "truyen1";
-            this.truyen1.Size = new System.Drawing.Size(237, 327);
-            this.truyen1.TabIndex = 22;
-            this.truyen1.TabStop = false;
-            // 
-            // truyen3
-            // 
-            this.truyen3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(227)))), ((int)(((byte)(243)))));
-            this.truyen3.Location = new System.Drawing.Point(887, 70);
-            this.truyen3.Name = "truyen3";
-            this.truyen3.Size = new System.Drawing.Size(237, 327);
-            this.truyen3.TabIndex = 24;
-            this.truyen3.TabStop = false;
-            // 
             // lbup
             // 
             this.lbup.AutoSize = true;
@@ -628,15 +598,6 @@
             this.lbup.TabIndex = 21;
             this.lbup.Text = "Truyện mới cập nhật";
             // 
-            // truyen5
-            // 
-            this.truyen5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
-            this.truyen5.Location = new System.Drawing.Point(1227, 70);
-            this.truyen5.Name = "truyen5";
-            this.truyen5.Size = new System.Drawing.Size(237, 327);
-            this.truyen5.TabIndex = 25;
-            this.truyen5.TabStop = false;
-            // 
             // lbdecu
             // 
             this.lbdecu.AutoSize = true;
@@ -646,39 +607,6 @@
             this.lbdecu.Size = new System.Drawing.Size(81, 40);
             this.lbdecu.TabIndex = 20;
             this.lbdecu.Text = "Đề cử";
-            // 
-            // btnLeft
-            // 
-            this.btnLeft.FlatAppearance.BorderSize = 0;
-            this.btnLeft.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
-            this.btnLeft.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
-            this.btnLeft.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLeft.IconChar = FontAwesome.Sharp.IconChar.ArrowLeft;
-            this.btnLeft.IconColor = System.Drawing.Color.Black;
-            this.btnLeft.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnLeft.Location = new System.Drawing.Point(87, 212);
-            this.btnLeft.Margin = new System.Windows.Forms.Padding(2);
-            this.btnLeft.Name = "btnLeft";
-            this.btnLeft.Size = new System.Drawing.Size(53, 50);
-            this.btnLeft.TabIndex = 19;
-            this.btnLeft.UseVisualStyleBackColor = true;
-            // 
-            // btnRight
-            // 
-            this.btnRight.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnRight.FlatAppearance.BorderSize = 0;
-            this.btnRight.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
-            this.btnRight.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
-            this.btnRight.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRight.IconChar = FontAwesome.Sharp.IconChar.ArrowRight;
-            this.btnRight.IconColor = System.Drawing.Color.Black;
-            this.btnRight.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnRight.Location = new System.Drawing.Point(1523, 212);
-            this.btnRight.Margin = new System.Windows.Forms.Padding(2);
-            this.btnRight.Name = "btnRight";
-            this.btnRight.Size = new System.Drawing.Size(53, 50);
-            this.btnRight.TabIndex = 27;
-            this.btnRight.UseVisualStyleBackColor = true;
             // 
             // bt02gn
             // 
@@ -710,218 +638,35 @@
             this.bt02gn.TabStop = false;
             this.bt02gn.Text = "Gần nhất";
             // 
-            // ttt05
+            // iconButton13
             // 
-            this.ttt05.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.iconButton13.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.ttt05.AutoSize = true;
-            this.ttt05.Location = new System.Drawing.Point(145, 44);
-            this.ttt05.Name = "ttt05";
-            this.ttt05.Size = new System.Drawing.Size(133, 36);
-            this.ttt05.TabIndex = 43;
-            this.ttt05.Text = "tên truyện 1";
+            this.iconButton13.FlatAppearance.BorderSize = 0;
+            this.iconButton13.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
+            this.iconButton13.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
+            this.iconButton13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton13.IconChar = FontAwesome.Sharp.IconChar.PencilAlt;
+            this.iconButton13.IconColor = System.Drawing.Color.Black;
+            this.iconButton13.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton13.IconSize = 24;
+            this.iconButton13.Location = new System.Drawing.Point(113, 346);
+            this.iconButton13.Margin = new System.Windows.Forms.Padding(2);
+            this.iconButton13.Name = "iconButton13";
+            this.iconButton13.Size = new System.Drawing.Size(27, 25);
+            this.iconButton13.TabIndex = 55;
+            this.iconButton13.UseVisualStyleBackColor = true;
             // 
-            // sc05
+            // ps06
             // 
-            this.sc05.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.ps06.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.sc05.AutoSize = true;
-            this.sc05.Location = new System.Drawing.Point(145, 87);
-            this.sc05.Name = "sc05";
-            this.sc05.Size = new System.Drawing.Size(122, 36);
-            this.sc05.TabIndex = 44;
-            this.sc05.Text = "Số chương";
-            // 
-            // bt01gn
-            // 
-            this.bt01gn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.bt01gn.FlatAppearance.BorderSize = 0;
-            this.bt01gn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
-            this.bt01gn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
-            this.bt01gn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt01gn.IconChar = FontAwesome.Sharp.IconChar.Book;
-            this.bt01gn.IconColor = System.Drawing.Color.Black;
-            this.bt01gn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.bt01gn.IconSize = 24;
-            this.bt01gn.Location = new System.Drawing.Point(113, 55);
-            this.bt01gn.Margin = new System.Windows.Forms.Padding(2);
-            this.bt01gn.Name = "bt01gn";
-            this.bt01gn.Size = new System.Drawing.Size(27, 25);
-            this.bt01gn.TabIndex = 42;
-            this.bt01gn.UseVisualStyleBackColor = true;
-            // 
-            // gn01bt
-            // 
-            this.gn01bt.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.gn01bt.FlatAppearance.BorderSize = 0;
-            this.gn01bt.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
-            this.gn01bt.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
-            this.gn01bt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.gn01bt.IconChar = FontAwesome.Sharp.IconChar.Pen;
-            this.gn01bt.IconColor = System.Drawing.Color.Black;
-            this.gn01bt.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.gn01bt.IconSize = 24;
-            this.gn01bt.Location = new System.Drawing.Point(113, 98);
-            this.gn01bt.Margin = new System.Windows.Forms.Padding(2);
-            this.gn01bt.Name = "gn01bt";
-            this.gn01bt.Size = new System.Drawing.Size(27, 25);
-            this.gn01bt.TabIndex = 45;
-            this.gn01bt.UseVisualStyleBackColor = true;
-            // 
-            // tt05
-            // 
-            this.tt05.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.tt05.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
-            this.tt05.Location = new System.Drawing.Point(6, 55);
-            this.tt05.Name = "tt05";
-            this.tt05.Size = new System.Drawing.Size(90, 125);
-            this.tt05.TabIndex = 41;
-            this.tt05.TabStop = false;
-            // 
-            // tg05
-            // 
-            this.tg05.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.tg05.AutoSize = true;
-            this.tg05.Location = new System.Drawing.Point(145, 123);
-            this.tg05.Name = "tg05";
-            this.tg05.Size = new System.Drawing.Size(84, 36);
-            this.tg05.TabIndex = 46;
-            this.tg05.Text = "tác giả";
-            // 
-            // tt06
-            // 
-            this.tt06.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.tt06.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
-            this.tt06.Location = new System.Drawing.Point(6, 238);
-            this.tt06.Name = "tt06";
-            this.tt06.Size = new System.Drawing.Size(90, 120);
-            this.tt06.TabIndex = 47;
-            this.tt06.TabStop = false;
-            // 
-            // iconButton8
-            // 
-            this.iconButton8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.iconButton8.FlatAppearance.BorderSize = 0;
-            this.iconButton8.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
-            this.iconButton8.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
-            this.iconButton8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton8.IconChar = FontAwesome.Sharp.IconChar.Book;
-            this.iconButton8.IconColor = System.Drawing.Color.Black;
-            this.iconButton8.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton8.IconSize = 24;
-            this.iconButton8.Location = new System.Drawing.Point(113, 241);
-            this.iconButton8.Margin = new System.Windows.Forms.Padding(2);
-            this.iconButton8.Name = "iconButton8";
-            this.iconButton8.Size = new System.Drawing.Size(27, 25);
-            this.iconButton8.TabIndex = 48;
-            this.iconButton8.UseVisualStyleBackColor = true;
-            // 
-            // ttt06
-            // 
-            this.ttt06.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.ttt06.AutoSize = true;
-            this.ttt06.Location = new System.Drawing.Point(145, 230);
-            this.ttt06.Name = "ttt06";
-            this.ttt06.Size = new System.Drawing.Size(133, 36);
-            this.ttt06.TabIndex = 49;
-            this.ttt06.Text = "tên truyện 1";
-            // 
-            // sc06
-            // 
-            this.sc06.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.sc06.AutoSize = true;
-            this.sc06.Location = new System.Drawing.Point(145, 268);
-            this.sc06.Name = "sc06";
-            this.sc06.Size = new System.Drawing.Size(122, 36);
-            this.sc06.TabIndex = 50;
-            this.sc06.Text = "Số chương";
-            // 
-            // gn02bt
-            // 
-            this.gn02bt.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.gn02bt.FlatAppearance.BorderSize = 0;
-            this.gn02bt.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
-            this.gn02bt.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
-            this.gn02bt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.gn02bt.IconChar = FontAwesome.Sharp.IconChar.Pen;
-            this.gn02bt.IconColor = System.Drawing.Color.Black;
-            this.gn02bt.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.gn02bt.IconSize = 24;
-            this.gn02bt.Location = new System.Drawing.Point(113, 277);
-            this.gn02bt.Margin = new System.Windows.Forms.Padding(2);
-            this.gn02bt.Name = "gn02bt";
-            this.gn02bt.Size = new System.Drawing.Size(27, 25);
-            this.gn02bt.TabIndex = 51;
-            this.gn02bt.UseVisualStyleBackColor = true;
-            // 
-            // tg06
-            // 
-            this.tg06.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.tg06.AutoSize = true;
-            this.tg06.Location = new System.Drawing.Point(145, 304);
-            this.tg06.Name = "tg06";
-            this.tg06.Size = new System.Drawing.Size(84, 36);
-            this.tg06.TabIndex = 52;
-            this.tg06.Text = "tác giả";
-            // 
-            // iconButton5
-            // 
-            this.iconButton5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.iconButton5.FlatAppearance.BorderSize = 0;
-            this.iconButton5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
-            this.iconButton5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
-            this.iconButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton5.IconChar = FontAwesome.Sharp.IconChar.User;
-            this.iconButton5.IconColor = System.Drawing.Color.Black;
-            this.iconButton5.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton5.IconSize = 24;
-            this.iconButton5.Location = new System.Drawing.Point(113, 315);
-            this.iconButton5.Margin = new System.Windows.Forms.Padding(2);
-            this.iconButton5.Name = "iconButton5";
-            this.iconButton5.Size = new System.Drawing.Size(27, 25);
-            this.iconButton5.TabIndex = 42;
-            this.iconButton5.UseVisualStyleBackColor = true;
-            // 
-            // iconButton6
-            // 
-            this.iconButton6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.iconButton6.FlatAppearance.BorderSize = 0;
-            this.iconButton6.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
-            this.iconButton6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
-            this.iconButton6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton6.IconChar = FontAwesome.Sharp.IconChar.User;
-            this.iconButton6.IconColor = System.Drawing.Color.Black;
-            this.iconButton6.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton6.IconSize = 24;
-            this.iconButton6.Location = new System.Drawing.Point(113, 134);
-            this.iconButton6.Margin = new System.Windows.Forms.Padding(2);
-            this.iconButton6.Name = "iconButton6";
-            this.iconButton6.Size = new System.Drawing.Size(27, 25);
-            this.iconButton6.TabIndex = 53;
-            this.iconButton6.UseVisualStyleBackColor = true;
-            // 
-            // ps05
-            // 
-            this.ps05.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.ps05.AutoSize = true;
-            this.ps05.Location = new System.Drawing.Point(145, 159);
-            this.ps05.Name = "ps05";
-            this.ps05.Size = new System.Drawing.Size(139, 36);
-            this.ps05.TabIndex = 44;
-            this.ps05.Text = "Chương mới";
+            this.ps06.AutoSize = true;
+            this.ps06.Location = new System.Drawing.Point(145, 340);
+            this.ps06.Name = "ps06";
+            this.ps06.Size = new System.Drawing.Size(139, 36);
+            this.ps06.TabIndex = 54;
+            this.ps06.Text = "Chương mới";
             // 
             // iconButton12
             // 
@@ -942,35 +687,218 @@
             this.iconButton12.TabIndex = 45;
             this.iconButton12.UseVisualStyleBackColor = true;
             // 
-            // ps06
+            // ps05
             // 
-            this.ps06.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.ps05.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.ps06.AutoSize = true;
-            this.ps06.Location = new System.Drawing.Point(145, 340);
-            this.ps06.Name = "ps06";
-            this.ps06.Size = new System.Drawing.Size(139, 36);
-            this.ps06.TabIndex = 54;
-            this.ps06.Text = "Chương mới";
+            this.ps05.AutoSize = true;
+            this.ps05.Location = new System.Drawing.Point(145, 159);
+            this.ps05.Name = "ps05";
+            this.ps05.Size = new System.Drawing.Size(139, 36);
+            this.ps05.TabIndex = 44;
+            this.ps05.Text = "Chương mới";
             // 
-            // iconButton13
+            // iconButton6
             // 
-            this.iconButton13.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.iconButton6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.iconButton13.FlatAppearance.BorderSize = 0;
-            this.iconButton13.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
-            this.iconButton13.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
-            this.iconButton13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton13.IconChar = FontAwesome.Sharp.IconChar.PencilAlt;
-            this.iconButton13.IconColor = System.Drawing.Color.Black;
-            this.iconButton13.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton13.IconSize = 24;
-            this.iconButton13.Location = new System.Drawing.Point(113, 346);
-            this.iconButton13.Margin = new System.Windows.Forms.Padding(2);
-            this.iconButton13.Name = "iconButton13";
-            this.iconButton13.Size = new System.Drawing.Size(27, 25);
-            this.iconButton13.TabIndex = 55;
-            this.iconButton13.UseVisualStyleBackColor = true;
+            this.iconButton6.FlatAppearance.BorderSize = 0;
+            this.iconButton6.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
+            this.iconButton6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
+            this.iconButton6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton6.IconChar = FontAwesome.Sharp.IconChar.User;
+            this.iconButton6.IconColor = System.Drawing.Color.Black;
+            this.iconButton6.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton6.IconSize = 24;
+            this.iconButton6.Location = new System.Drawing.Point(113, 134);
+            this.iconButton6.Margin = new System.Windows.Forms.Padding(2);
+            this.iconButton6.Name = "iconButton6";
+            this.iconButton6.Size = new System.Drawing.Size(27, 25);
+            this.iconButton6.TabIndex = 53;
+            this.iconButton6.UseVisualStyleBackColor = true;
+            // 
+            // iconButton5
+            // 
+            this.iconButton5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.iconButton5.FlatAppearance.BorderSize = 0;
+            this.iconButton5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
+            this.iconButton5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
+            this.iconButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton5.IconChar = FontAwesome.Sharp.IconChar.User;
+            this.iconButton5.IconColor = System.Drawing.Color.Black;
+            this.iconButton5.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton5.IconSize = 24;
+            this.iconButton5.Location = new System.Drawing.Point(113, 315);
+            this.iconButton5.Margin = new System.Windows.Forms.Padding(2);
+            this.iconButton5.Name = "iconButton5";
+            this.iconButton5.Size = new System.Drawing.Size(27, 25);
+            this.iconButton5.TabIndex = 42;
+            this.iconButton5.UseVisualStyleBackColor = true;
+            // 
+            // tg06
+            // 
+            this.tg06.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.tg06.AutoSize = true;
+            this.tg06.Location = new System.Drawing.Point(145, 304);
+            this.tg06.Name = "tg06";
+            this.tg06.Size = new System.Drawing.Size(84, 36);
+            this.tg06.TabIndex = 52;
+            this.tg06.Text = "tác giả";
+            // 
+            // gn02bt
+            // 
+            this.gn02bt.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.gn02bt.FlatAppearance.BorderSize = 0;
+            this.gn02bt.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
+            this.gn02bt.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
+            this.gn02bt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.gn02bt.IconChar = FontAwesome.Sharp.IconChar.Pen;
+            this.gn02bt.IconColor = System.Drawing.Color.Black;
+            this.gn02bt.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.gn02bt.IconSize = 24;
+            this.gn02bt.Location = new System.Drawing.Point(113, 277);
+            this.gn02bt.Margin = new System.Windows.Forms.Padding(2);
+            this.gn02bt.Name = "gn02bt";
+            this.gn02bt.Size = new System.Drawing.Size(27, 25);
+            this.gn02bt.TabIndex = 51;
+            this.gn02bt.UseVisualStyleBackColor = true;
+            // 
+            // sc06
+            // 
+            this.sc06.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.sc06.AutoSize = true;
+            this.sc06.Location = new System.Drawing.Point(145, 268);
+            this.sc06.Name = "sc06";
+            this.sc06.Size = new System.Drawing.Size(122, 36);
+            this.sc06.TabIndex = 50;
+            this.sc06.Text = "Số chương";
+            // 
+            // ttt06
+            // 
+            this.ttt06.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.ttt06.AutoSize = true;
+            this.ttt06.Location = new System.Drawing.Point(145, 230);
+            this.ttt06.Name = "ttt06";
+            this.ttt06.Size = new System.Drawing.Size(133, 36);
+            this.ttt06.TabIndex = 49;
+            this.ttt06.Text = "tên truyện 1";
+            // 
+            // iconButton8
+            // 
+            this.iconButton8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.iconButton8.FlatAppearance.BorderSize = 0;
+            this.iconButton8.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
+            this.iconButton8.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
+            this.iconButton8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton8.IconChar = FontAwesome.Sharp.IconChar.Book;
+            this.iconButton8.IconColor = System.Drawing.Color.Black;
+            this.iconButton8.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton8.IconSize = 24;
+            this.iconButton8.Location = new System.Drawing.Point(113, 241);
+            this.iconButton8.Margin = new System.Windows.Forms.Padding(2);
+            this.iconButton8.Name = "iconButton8";
+            this.iconButton8.Size = new System.Drawing.Size(27, 25);
+            this.iconButton8.TabIndex = 48;
+            this.iconButton8.UseVisualStyleBackColor = true;
+            // 
+            // tt06
+            // 
+            this.tt06.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.tt06.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
+            this.tt06.Location = new System.Drawing.Point(6, 238);
+            this.tt06.Name = "tt06";
+            this.tt06.Size = new System.Drawing.Size(90, 120);
+            this.tt06.TabIndex = 47;
+            this.tt06.TabStop = false;
+            // 
+            // tg05
+            // 
+            this.tg05.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.tg05.AutoSize = true;
+            this.tg05.Location = new System.Drawing.Point(145, 123);
+            this.tg05.Name = "tg05";
+            this.tg05.Size = new System.Drawing.Size(84, 36);
+            this.tg05.TabIndex = 46;
+            this.tg05.Text = "tác giả";
+            // 
+            // tt05
+            // 
+            this.tt05.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.tt05.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
+            this.tt05.Location = new System.Drawing.Point(6, 55);
+            this.tt05.Name = "tt05";
+            this.tt05.Size = new System.Drawing.Size(90, 125);
+            this.tt05.TabIndex = 41;
+            this.tt05.TabStop = false;
+            // 
+            // gn01bt
+            // 
+            this.gn01bt.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.gn01bt.FlatAppearance.BorderSize = 0;
+            this.gn01bt.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
+            this.gn01bt.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
+            this.gn01bt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.gn01bt.IconChar = FontAwesome.Sharp.IconChar.Pen;
+            this.gn01bt.IconColor = System.Drawing.Color.Black;
+            this.gn01bt.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.gn01bt.IconSize = 24;
+            this.gn01bt.Location = new System.Drawing.Point(113, 98);
+            this.gn01bt.Margin = new System.Windows.Forms.Padding(2);
+            this.gn01bt.Name = "gn01bt";
+            this.gn01bt.Size = new System.Drawing.Size(27, 25);
+            this.gn01bt.TabIndex = 45;
+            this.gn01bt.UseVisualStyleBackColor = true;
+            // 
+            // bt01gn
+            // 
+            this.bt01gn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.bt01gn.FlatAppearance.BorderSize = 0;
+            this.bt01gn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
+            this.bt01gn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
+            this.bt01gn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt01gn.IconChar = FontAwesome.Sharp.IconChar.Book;
+            this.bt01gn.IconColor = System.Drawing.Color.Black;
+            this.bt01gn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.bt01gn.IconSize = 24;
+            this.bt01gn.Location = new System.Drawing.Point(113, 55);
+            this.bt01gn.Margin = new System.Windows.Forms.Padding(2);
+            this.bt01gn.Name = "bt01gn";
+            this.bt01gn.Size = new System.Drawing.Size(27, 25);
+            this.bt01gn.TabIndex = 42;
+            this.bt01gn.UseVisualStyleBackColor = true;
+            // 
+            // sc05
+            // 
+            this.sc05.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.sc05.AutoSize = true;
+            this.sc05.Location = new System.Drawing.Point(145, 87);
+            this.sc05.Name = "sc05";
+            this.sc05.Size = new System.Drawing.Size(122, 36);
+            this.sc05.TabIndex = 44;
+            this.sc05.Text = "Số chương";
+            // 
+            // ttt05
+            // 
+            this.ttt05.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.ttt05.AutoSize = true;
+            this.ttt05.Location = new System.Drawing.Point(145, 44);
+            this.ttt05.Name = "ttt05";
+            this.ttt05.Size = new System.Drawing.Size(133, 36);
+            this.ttt05.TabIndex = 43;
+            this.ttt05.Text = "tên truyện 1";
             // 
             // sangtac
             // 
@@ -1002,218 +930,35 @@
             this.sangtac.TabStop = false;
             this.sangtac.Text = "Đánh giá cao";
             // 
-            // tt01
+            // iconButton9
             // 
-            this.tt01.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.iconButton9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.tt01.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
-            this.tt01.Location = new System.Drawing.Point(6, 55);
-            this.tt01.Name = "tt01";
-            this.tt01.Size = new System.Drawing.Size(90, 125);
-            this.tt01.TabIndex = 0;
-            this.tt01.TabStop = false;
+            this.iconButton9.FlatAppearance.BorderSize = 0;
+            this.iconButton9.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
+            this.iconButton9.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
+            this.iconButton9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton9.IconChar = FontAwesome.Sharp.IconChar.Star;
+            this.iconButton9.IconColor = System.Drawing.Color.Black;
+            this.iconButton9.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton9.IconSize = 24;
+            this.iconButton9.Location = new System.Drawing.Point(109, 341);
+            this.iconButton9.Margin = new System.Windows.Forms.Padding(2);
+            this.iconButton9.Name = "iconButton9";
+            this.iconButton9.Size = new System.Drawing.Size(27, 25);
+            this.iconButton9.TabIndex = 34;
+            this.iconButton9.UseVisualStyleBackColor = true;
             // 
-            // tt02
+            // ps02
             // 
-            this.tt02.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.ps02.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.tt02.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
-            this.tt02.Location = new System.Drawing.Point(6, 238);
-            this.tt02.Name = "tt02";
-            this.tt02.Size = new System.Drawing.Size(90, 125);
-            this.tt02.TabIndex = 1;
-            this.tt02.TabStop = false;
-            // 
-            // st01lb
-            // 
-            this.st01lb.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.st01lb.FlatAppearance.BorderSize = 0;
-            this.st01lb.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
-            this.st01lb.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
-            this.st01lb.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.st01lb.IconChar = FontAwesome.Sharp.IconChar.Book;
-            this.st01lb.IconColor = System.Drawing.Color.Black;
-            this.st01lb.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.st01lb.IconSize = 24;
-            this.st01lb.Location = new System.Drawing.Point(111, 55);
-            this.st01lb.Margin = new System.Windows.Forms.Padding(2);
-            this.st01lb.Name = "st01lb";
-            this.st01lb.Size = new System.Drawing.Size(27, 25);
-            this.st01lb.TabIndex = 19;
-            this.st01lb.UseVisualStyleBackColor = true;
-            // 
-            // ttt01
-            // 
-            this.ttt01.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.ttt01.AutoSize = true;
-            this.ttt01.Location = new System.Drawing.Point(143, 44);
-            this.ttt01.Name = "ttt01";
-            this.ttt01.Size = new System.Drawing.Size(133, 36);
-            this.ttt01.TabIndex = 20;
-            this.ttt01.Text = "tên truyện 1";
-            // 
-            // sc01
-            // 
-            this.sc01.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.sc01.AutoSize = true;
-            this.sc01.Location = new System.Drawing.Point(143, 82);
-            this.sc01.Name = "sc01";
-            this.sc01.Size = new System.Drawing.Size(122, 36);
-            this.sc01.TabIndex = 21;
-            this.sc01.Text = "Số chương";
-            // 
-            // bt01tg
-            // 
-            this.bt01tg.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.bt01tg.FlatAppearance.BorderSize = 0;
-            this.bt01tg.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
-            this.bt01tg.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
-            this.bt01tg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt01tg.IconChar = FontAwesome.Sharp.IconChar.Pen;
-            this.bt01tg.IconColor = System.Drawing.Color.Black;
-            this.bt01tg.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.bt01tg.IconSize = 24;
-            this.bt01tg.Location = new System.Drawing.Point(111, 93);
-            this.bt01tg.Margin = new System.Windows.Forms.Padding(2);
-            this.bt01tg.Name = "bt01tg";
-            this.bt01tg.Size = new System.Drawing.Size(27, 25);
-            this.bt01tg.TabIndex = 22;
-            this.bt01tg.UseVisualStyleBackColor = true;
-            // 
-            // tg01
-            // 
-            this.tg01.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.tg01.AutoSize = true;
-            this.tg01.Location = new System.Drawing.Point(143, 116);
-            this.tg01.Name = "tg01";
-            this.tg01.Size = new System.Drawing.Size(84, 36);
-            this.tg01.TabIndex = 23;
-            this.tg01.Text = "tác giả";
-            // 
-            // bt02st
-            // 
-            this.bt02st.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.bt02st.FlatAppearance.BorderSize = 0;
-            this.bt02st.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
-            this.bt02st.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
-            this.bt02st.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt02st.IconChar = FontAwesome.Sharp.IconChar.Book;
-            this.bt02st.IconColor = System.Drawing.Color.Black;
-            this.bt02st.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.bt02st.IconSize = 24;
-            this.bt02st.Location = new System.Drawing.Point(112, 238);
-            this.bt02st.Margin = new System.Windows.Forms.Padding(2);
-            this.bt02st.Name = "bt02st";
-            this.bt02st.Size = new System.Drawing.Size(27, 25);
-            this.bt02st.TabIndex = 24;
-            this.bt02st.UseVisualStyleBackColor = true;
-            // 
-            // ttt02
-            // 
-            this.ttt02.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.ttt02.AutoSize = true;
-            this.ttt02.Location = new System.Drawing.Point(144, 227);
-            this.ttt02.Name = "ttt02";
-            this.ttt02.Size = new System.Drawing.Size(139, 36);
-            this.ttt02.TabIndex = 25;
-            this.ttt02.Text = "tên truyện 2";
-            // 
-            // sc02
-            // 
-            this.sc02.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.sc02.AutoSize = true;
-            this.sc02.Location = new System.Drawing.Point(143, 268);
-            this.sc02.Name = "sc02";
-            this.sc02.Size = new System.Drawing.Size(122, 36);
-            this.sc02.TabIndex = 26;
-            this.sc02.Text = "Số chương";
-            // 
-            // bt02tg
-            // 
-            this.bt02tg.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.bt02tg.FlatAppearance.BorderSize = 0;
-            this.bt02tg.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
-            this.bt02tg.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
-            this.bt02tg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt02tg.IconChar = FontAwesome.Sharp.IconChar.User;
-            this.bt02tg.IconColor = System.Drawing.Color.Black;
-            this.bt02tg.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.bt02tg.IconSize = 24;
-            this.bt02tg.Location = new System.Drawing.Point(112, 312);
-            this.bt02tg.Margin = new System.Windows.Forms.Padding(2);
-            this.bt02tg.Name = "bt02tg";
-            this.bt02tg.Size = new System.Drawing.Size(27, 25);
-            this.bt02tg.TabIndex = 27;
-            this.bt02tg.UseVisualStyleBackColor = true;
-            // 
-            // tg02
-            // 
-            this.tg02.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.tg02.AutoSize = true;
-            this.tg02.Location = new System.Drawing.Point(144, 301);
-            this.tg02.Name = "tg02";
-            this.tg02.Size = new System.Drawing.Size(84, 36);
-            this.tg02.TabIndex = 28;
-            this.tg02.Text = "tác giả";
-            // 
-            // iconButton1
-            // 
-            this.iconButton1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.iconButton1.FlatAppearance.BorderSize = 0;
-            this.iconButton1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
-            this.iconButton1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
-            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Pen;
-            this.iconButton1.IconColor = System.Drawing.Color.Black;
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.IconSize = 24;
-            this.iconButton1.Location = new System.Drawing.Point(111, 274);
-            this.iconButton1.Margin = new System.Windows.Forms.Padding(2);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(27, 25);
-            this.iconButton1.TabIndex = 29;
-            this.iconButton1.UseVisualStyleBackColor = true;
-            // 
-            // iconButton2
-            // 
-            this.iconButton2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.iconButton2.FlatAppearance.BorderSize = 0;
-            this.iconButton2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
-            this.iconButton2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
-            this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.User;
-            this.iconButton2.IconColor = System.Drawing.Color.Black;
-            this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton2.IconSize = 24;
-            this.iconButton2.Location = new System.Drawing.Point(111, 122);
-            this.iconButton2.Margin = new System.Windows.Forms.Padding(2);
-            this.iconButton2.Name = "iconButton2";
-            this.iconButton2.Size = new System.Drawing.Size(27, 25);
-            this.iconButton2.TabIndex = 30;
-            this.iconButton2.UseVisualStyleBackColor = true;
-            // 
-            // ps01
-            // 
-            this.ps01.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.ps01.AutoSize = true;
-            this.ps01.Location = new System.Drawing.Point(143, 154);
-            this.ps01.Name = "ps01";
-            this.ps01.Size = new System.Drawing.Size(105, 36);
-            this.ps01.TabIndex = 31;
-            this.ps01.Text = "đánh giá";
+            this.ps02.AutoSize = true;
+            this.ps02.Location = new System.Drawing.Point(141, 335);
+            this.ps02.Name = "ps02";
+            this.ps02.Size = new System.Drawing.Size(105, 36);
+            this.ps02.TabIndex = 33;
+            this.ps02.Text = "đánh giá";
             // 
             // iconButton7
             // 
@@ -1234,44 +979,218 @@
             this.iconButton7.TabIndex = 32;
             this.iconButton7.UseVisualStyleBackColor = true;
             // 
-            // ps02
+            // ps01
             // 
-            this.ps02.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.ps01.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.ps02.AutoSize = true;
-            this.ps02.Location = new System.Drawing.Point(141, 335);
-            this.ps02.Name = "ps02";
-            this.ps02.Size = new System.Drawing.Size(105, 36);
-            this.ps02.TabIndex = 33;
-            this.ps02.Text = "đánh giá";
+            this.ps01.AutoSize = true;
+            this.ps01.Location = new System.Drawing.Point(143, 154);
+            this.ps01.Name = "ps01";
+            this.ps01.Size = new System.Drawing.Size(105, 36);
+            this.ps01.TabIndex = 31;
+            this.ps01.Text = "đánh giá";
             // 
-            // iconButton9
+            // iconButton2
             // 
-            this.iconButton9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.iconButton2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.iconButton9.FlatAppearance.BorderSize = 0;
-            this.iconButton9.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
-            this.iconButton9.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
-            this.iconButton9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton9.IconChar = FontAwesome.Sharp.IconChar.Star;
-            this.iconButton9.IconColor = System.Drawing.Color.Black;
-            this.iconButton9.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton9.IconSize = 24;
-            this.iconButton9.Location = new System.Drawing.Point(109, 341);
-            this.iconButton9.Margin = new System.Windows.Forms.Padding(2);
-            this.iconButton9.Name = "iconButton9";
-            this.iconButton9.Size = new System.Drawing.Size(27, 25);
-            this.iconButton9.TabIndex = 34;
-            this.iconButton9.UseVisualStyleBackColor = true;
+            this.iconButton2.FlatAppearance.BorderSize = 0;
+            this.iconButton2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
+            this.iconButton2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
+            this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.User;
+            this.iconButton2.IconColor = System.Drawing.Color.Black;
+            this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton2.IconSize = 24;
+            this.iconButton2.Location = new System.Drawing.Point(111, 122);
+            this.iconButton2.Margin = new System.Windows.Forms.Padding(2);
+            this.iconButton2.Name = "iconButton2";
+            this.iconButton2.Size = new System.Drawing.Size(27, 25);
+            this.iconButton2.TabIndex = 30;
+            this.iconButton2.UseVisualStyleBackColor = true;
             // 
-            // truyen2
+            // iconButton1
             // 
-            this.truyen2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(227)))), ((int)(((byte)(243)))));
-            this.truyen2.Location = new System.Drawing.Point(547, 70);
-            this.truyen2.Name = "truyen2";
-            this.truyen2.Size = new System.Drawing.Size(237, 327);
-            this.truyen2.TabIndex = 23;
-            this.truyen2.TabStop = false;
+            this.iconButton1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.iconButton1.FlatAppearance.BorderSize = 0;
+            this.iconButton1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
+            this.iconButton1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
+            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Pen;
+            this.iconButton1.IconColor = System.Drawing.Color.Black;
+            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton1.IconSize = 24;
+            this.iconButton1.Location = new System.Drawing.Point(111, 274);
+            this.iconButton1.Margin = new System.Windows.Forms.Padding(2);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.Size = new System.Drawing.Size(27, 25);
+            this.iconButton1.TabIndex = 29;
+            this.iconButton1.UseVisualStyleBackColor = true;
+            // 
+            // tg02
+            // 
+            this.tg02.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.tg02.AutoSize = true;
+            this.tg02.Location = new System.Drawing.Point(144, 301);
+            this.tg02.Name = "tg02";
+            this.tg02.Size = new System.Drawing.Size(84, 36);
+            this.tg02.TabIndex = 28;
+            this.tg02.Text = "tác giả";
+            // 
+            // bt02tg
+            // 
+            this.bt02tg.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.bt02tg.FlatAppearance.BorderSize = 0;
+            this.bt02tg.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
+            this.bt02tg.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
+            this.bt02tg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt02tg.IconChar = FontAwesome.Sharp.IconChar.User;
+            this.bt02tg.IconColor = System.Drawing.Color.Black;
+            this.bt02tg.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.bt02tg.IconSize = 24;
+            this.bt02tg.Location = new System.Drawing.Point(112, 312);
+            this.bt02tg.Margin = new System.Windows.Forms.Padding(2);
+            this.bt02tg.Name = "bt02tg";
+            this.bt02tg.Size = new System.Drawing.Size(27, 25);
+            this.bt02tg.TabIndex = 27;
+            this.bt02tg.UseVisualStyleBackColor = true;
+            // 
+            // sc02
+            // 
+            this.sc02.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.sc02.AutoSize = true;
+            this.sc02.Location = new System.Drawing.Point(143, 268);
+            this.sc02.Name = "sc02";
+            this.sc02.Size = new System.Drawing.Size(122, 36);
+            this.sc02.TabIndex = 26;
+            this.sc02.Text = "Số chương";
+            // 
+            // ttt02
+            // 
+            this.ttt02.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.ttt02.AutoSize = true;
+            this.ttt02.Location = new System.Drawing.Point(144, 227);
+            this.ttt02.Name = "ttt02";
+            this.ttt02.Size = new System.Drawing.Size(139, 36);
+            this.ttt02.TabIndex = 25;
+            this.ttt02.Text = "tên truyện 2";
+            // 
+            // bt02st
+            // 
+            this.bt02st.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.bt02st.FlatAppearance.BorderSize = 0;
+            this.bt02st.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
+            this.bt02st.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
+            this.bt02st.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt02st.IconChar = FontAwesome.Sharp.IconChar.Book;
+            this.bt02st.IconColor = System.Drawing.Color.Black;
+            this.bt02st.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.bt02st.IconSize = 24;
+            this.bt02st.Location = new System.Drawing.Point(112, 238);
+            this.bt02st.Margin = new System.Windows.Forms.Padding(2);
+            this.bt02st.Name = "bt02st";
+            this.bt02st.Size = new System.Drawing.Size(27, 25);
+            this.bt02st.TabIndex = 24;
+            this.bt02st.UseVisualStyleBackColor = true;
+            // 
+            // tg01
+            // 
+            this.tg01.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.tg01.AutoSize = true;
+            this.tg01.Location = new System.Drawing.Point(143, 116);
+            this.tg01.Name = "tg01";
+            this.tg01.Size = new System.Drawing.Size(84, 36);
+            this.tg01.TabIndex = 23;
+            this.tg01.Text = "tác giả";
+            // 
+            // bt01tg
+            // 
+            this.bt01tg.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.bt01tg.FlatAppearance.BorderSize = 0;
+            this.bt01tg.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
+            this.bt01tg.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
+            this.bt01tg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt01tg.IconChar = FontAwesome.Sharp.IconChar.Pen;
+            this.bt01tg.IconColor = System.Drawing.Color.Black;
+            this.bt01tg.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.bt01tg.IconSize = 24;
+            this.bt01tg.Location = new System.Drawing.Point(111, 93);
+            this.bt01tg.Margin = new System.Windows.Forms.Padding(2);
+            this.bt01tg.Name = "bt01tg";
+            this.bt01tg.Size = new System.Drawing.Size(27, 25);
+            this.bt01tg.TabIndex = 22;
+            this.bt01tg.UseVisualStyleBackColor = true;
+            // 
+            // sc01
+            // 
+            this.sc01.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.sc01.AutoSize = true;
+            this.sc01.Location = new System.Drawing.Point(143, 82);
+            this.sc01.Name = "sc01";
+            this.sc01.Size = new System.Drawing.Size(122, 36);
+            this.sc01.TabIndex = 21;
+            this.sc01.Text = "Số chương";
+            // 
+            // ttt01
+            // 
+            this.ttt01.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.ttt01.AutoSize = true;
+            this.ttt01.Location = new System.Drawing.Point(143, 44);
+            this.ttt01.Name = "ttt01";
+            this.ttt01.Size = new System.Drawing.Size(133, 36);
+            this.ttt01.TabIndex = 20;
+            this.ttt01.Text = "tên truyện 1";
+            // 
+            // st01lb
+            // 
+            this.st01lb.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.st01lb.FlatAppearance.BorderSize = 0;
+            this.st01lb.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
+            this.st01lb.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
+            this.st01lb.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.st01lb.IconChar = FontAwesome.Sharp.IconChar.Book;
+            this.st01lb.IconColor = System.Drawing.Color.Black;
+            this.st01lb.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.st01lb.IconSize = 24;
+            this.st01lb.Location = new System.Drawing.Point(111, 55);
+            this.st01lb.Margin = new System.Windows.Forms.Padding(2);
+            this.st01lb.Name = "st01lb";
+            this.st01lb.Size = new System.Drawing.Size(27, 25);
+            this.st01lb.TabIndex = 19;
+            this.st01lb.UseVisualStyleBackColor = true;
+            // 
+            // tt02
+            // 
+            this.tt02.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.tt02.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
+            this.tt02.Location = new System.Drawing.Point(6, 238);
+            this.tt02.Name = "tt02";
+            this.tt02.Size = new System.Drawing.Size(90, 125);
+            this.tt02.TabIndex = 1;
+            this.tt02.TabStop = false;
+            // 
+            // tt01
+            // 
+            this.tt01.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.tt01.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
+            this.tt01.Location = new System.Drawing.Point(6, 55);
+            this.tt01.Name = "tt01";
+            this.tt01.Size = new System.Drawing.Size(90, 125);
+            this.tt01.TabIndex = 0;
+            this.tt01.TabStop = false;
             // 
             // dangxem
             // 
@@ -1303,218 +1222,35 @@
             this.dangxem.TabStop = false;
             this.dangxem.Text = "Đọc nhiều";
             // 
-            // ttt03
+            // iconButton11
             // 
-            this.ttt03.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.iconButton11.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.ttt03.AutoSize = true;
-            this.ttt03.Location = new System.Drawing.Point(144, 44);
-            this.ttt03.Name = "ttt03";
-            this.ttt03.Size = new System.Drawing.Size(133, 36);
-            this.ttt03.TabIndex = 31;
-            this.ttt03.Text = "tên truyện 1";
+            this.iconButton11.FlatAppearance.BorderSize = 0;
+            this.iconButton11.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
+            this.iconButton11.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
+            this.iconButton11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton11.IconChar = FontAwesome.Sharp.IconChar.Eye;
+            this.iconButton11.IconColor = System.Drawing.Color.Black;
+            this.iconButton11.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton11.IconSize = 24;
+            this.iconButton11.Location = new System.Drawing.Point(112, 346);
+            this.iconButton11.Margin = new System.Windows.Forms.Padding(2);
+            this.iconButton11.Name = "iconButton11";
+            this.iconButton11.Size = new System.Drawing.Size(27, 25);
+            this.iconButton11.TabIndex = 43;
+            this.iconButton11.UseVisualStyleBackColor = true;
             // 
-            // sc03
+            // ps04
             // 
-            this.sc03.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.ps04.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.sc03.AutoSize = true;
-            this.sc03.Location = new System.Drawing.Point(144, 82);
-            this.sc03.Name = "sc03";
-            this.sc03.Size = new System.Drawing.Size(122, 36);
-            this.sc03.TabIndex = 32;
-            this.sc03.Text = "Số chương";
-            // 
-            // bt01dx
-            // 
-            this.bt01dx.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.bt01dx.FlatAppearance.BorderSize = 0;
-            this.bt01dx.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
-            this.bt01dx.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
-            this.bt01dx.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt01dx.IconChar = FontAwesome.Sharp.IconChar.Book;
-            this.bt01dx.IconColor = System.Drawing.Color.Black;
-            this.bt01dx.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.bt01dx.IconSize = 24;
-            this.bt01dx.Location = new System.Drawing.Point(112, 55);
-            this.bt01dx.Margin = new System.Windows.Forms.Padding(2);
-            this.bt01dx.Name = "bt01dx";
-            this.bt01dx.Size = new System.Drawing.Size(27, 25);
-            this.bt01dx.TabIndex = 30;
-            this.bt01dx.UseVisualStyleBackColor = true;
-            // 
-            // dx01bt
-            // 
-            this.dx01bt.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.dx01bt.FlatAppearance.BorderSize = 0;
-            this.dx01bt.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
-            this.dx01bt.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
-            this.dx01bt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.dx01bt.IconChar = FontAwesome.Sharp.IconChar.Pen;
-            this.dx01bt.IconColor = System.Drawing.Color.Black;
-            this.dx01bt.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.dx01bt.IconSize = 24;
-            this.dx01bt.Location = new System.Drawing.Point(112, 88);
-            this.dx01bt.Margin = new System.Windows.Forms.Padding(2);
-            this.dx01bt.Name = "dx01bt";
-            this.dx01bt.Size = new System.Drawing.Size(27, 25);
-            this.dx01bt.TabIndex = 33;
-            this.dx01bt.UseVisualStyleBackColor = true;
-            // 
-            // tt03
-            // 
-            this.tt03.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.tt03.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
-            this.tt03.Location = new System.Drawing.Point(6, 55);
-            this.tt03.Name = "tt03";
-            this.tt03.Size = new System.Drawing.Size(90, 125);
-            this.tt03.TabIndex = 29;
-            this.tt03.TabStop = false;
-            // 
-            // tg03
-            // 
-            this.tg03.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.tg03.AutoSize = true;
-            this.tg03.Location = new System.Drawing.Point(144, 118);
-            this.tg03.Name = "tg03";
-            this.tg03.Size = new System.Drawing.Size(84, 36);
-            this.tg03.TabIndex = 34;
-            this.tg03.Text = "tác giả";
-            // 
-            // tt04
-            // 
-            this.tt04.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.tt04.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
-            this.tt04.Location = new System.Drawing.Point(6, 238);
-            this.tt04.Name = "tt04";
-            this.tt04.Size = new System.Drawing.Size(90, 125);
-            this.tt04.TabIndex = 35;
-            this.tt04.TabStop = false;
-            // 
-            // bt02dx
-            // 
-            this.bt02dx.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.bt02dx.FlatAppearance.BorderSize = 0;
-            this.bt02dx.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
-            this.bt02dx.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
-            this.bt02dx.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt02dx.IconChar = FontAwesome.Sharp.IconChar.Book;
-            this.bt02dx.IconColor = System.Drawing.Color.Black;
-            this.bt02dx.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.bt02dx.IconSize = 24;
-            this.bt02dx.Location = new System.Drawing.Point(112, 241);
-            this.bt02dx.Margin = new System.Windows.Forms.Padding(2);
-            this.bt02dx.Name = "bt02dx";
-            this.bt02dx.Size = new System.Drawing.Size(27, 25);
-            this.bt02dx.TabIndex = 36;
-            this.bt02dx.UseVisualStyleBackColor = true;
-            // 
-            // ttt04
-            // 
-            this.ttt04.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.ttt04.AutoSize = true;
-            this.ttt04.Location = new System.Drawing.Point(144, 230);
-            this.ttt04.Name = "ttt04";
-            this.ttt04.Size = new System.Drawing.Size(133, 36);
-            this.ttt04.TabIndex = 37;
-            this.ttt04.Text = "tên truyện 1";
-            // 
-            // sc04
-            // 
-            this.sc04.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.sc04.AutoSize = true;
-            this.sc04.Location = new System.Drawing.Point(144, 268);
-            this.sc04.Name = "sc04";
-            this.sc04.Size = new System.Drawing.Size(122, 36);
-            this.sc04.TabIndex = 38;
-            this.sc04.Text = "Số chương";
-            // 
-            // dx02tg
-            // 
-            this.dx02tg.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.dx02tg.FlatAppearance.BorderSize = 0;
-            this.dx02tg.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
-            this.dx02tg.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
-            this.dx02tg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.dx02tg.IconChar = FontAwesome.Sharp.IconChar.Pen;
-            this.dx02tg.IconColor = System.Drawing.Color.Black;
-            this.dx02tg.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.dx02tg.IconSize = 24;
-            this.dx02tg.Location = new System.Drawing.Point(112, 277);
-            this.dx02tg.Margin = new System.Windows.Forms.Padding(2);
-            this.dx02tg.Name = "dx02tg";
-            this.dx02tg.Size = new System.Drawing.Size(27, 25);
-            this.dx02tg.TabIndex = 39;
-            this.dx02tg.UseVisualStyleBackColor = true;
-            // 
-            // tg04
-            // 
-            this.tg04.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.tg04.AutoSize = true;
-            this.tg04.Location = new System.Drawing.Point(144, 304);
-            this.tg04.Name = "tg04";
-            this.tg04.Size = new System.Drawing.Size(84, 36);
-            this.tg04.TabIndex = 40;
-            this.tg04.Text = "tác giả";
-            // 
-            // iconButton3
-            // 
-            this.iconButton3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.iconButton3.FlatAppearance.BorderSize = 0;
-            this.iconButton3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
-            this.iconButton3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
-            this.iconButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.User;
-            this.iconButton3.IconColor = System.Drawing.Color.Black;
-            this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton3.IconSize = 24;
-            this.iconButton3.Location = new System.Drawing.Point(112, 124);
-            this.iconButton3.Margin = new System.Windows.Forms.Padding(2);
-            this.iconButton3.Name = "iconButton3";
-            this.iconButton3.Size = new System.Drawing.Size(27, 25);
-            this.iconButton3.TabIndex = 31;
-            this.iconButton3.UseVisualStyleBackColor = true;
-            // 
-            // iconButton4
-            // 
-            this.iconButton4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.iconButton4.FlatAppearance.BorderSize = 0;
-            this.iconButton4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
-            this.iconButton4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
-            this.iconButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton4.IconChar = FontAwesome.Sharp.IconChar.User;
-            this.iconButton4.IconColor = System.Drawing.Color.Black;
-            this.iconButton4.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton4.IconSize = 24;
-            this.iconButton4.Location = new System.Drawing.Point(112, 312);
-            this.iconButton4.Margin = new System.Windows.Forms.Padding(2);
-            this.iconButton4.Name = "iconButton4";
-            this.iconButton4.Size = new System.Drawing.Size(27, 25);
-            this.iconButton4.TabIndex = 41;
-            this.iconButton4.UseVisualStyleBackColor = true;
-            // 
-            // ps03
-            // 
-            this.ps03.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.ps03.AutoSize = true;
-            this.ps03.Location = new System.Drawing.Point(144, 154);
-            this.ps03.Name = "ps03";
-            this.ps03.Size = new System.Drawing.Size(104, 36);
-            this.ps03.TabIndex = 35;
-            this.ps03.Text = "lượt xem";
+            this.ps04.AutoSize = true;
+            this.ps04.Location = new System.Drawing.Point(144, 340);
+            this.ps04.Name = "ps04";
+            this.ps04.Size = new System.Drawing.Size(104, 36);
+            this.ps04.TabIndex = 42;
+            this.ps04.Text = "lượt xem";
             // 
             // iconButton10
             // 
@@ -1535,35 +1271,236 @@
             this.iconButton10.TabIndex = 36;
             this.iconButton10.UseVisualStyleBackColor = true;
             // 
-            // ps04
+            // ps03
             // 
-            this.ps04.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.ps03.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.ps04.AutoSize = true;
-            this.ps04.Location = new System.Drawing.Point(144, 340);
-            this.ps04.Name = "ps04";
-            this.ps04.Size = new System.Drawing.Size(104, 36);
-            this.ps04.TabIndex = 42;
-            this.ps04.Text = "lượt xem";
+            this.ps03.AutoSize = true;
+            this.ps03.Location = new System.Drawing.Point(144, 154);
+            this.ps03.Name = "ps03";
+            this.ps03.Size = new System.Drawing.Size(104, 36);
+            this.ps03.TabIndex = 35;
+            this.ps03.Text = "lượt xem";
             // 
-            // iconButton11
+            // iconButton4
             // 
-            this.iconButton11.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.iconButton4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.iconButton11.FlatAppearance.BorderSize = 0;
-            this.iconButton11.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
-            this.iconButton11.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
-            this.iconButton11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton11.IconChar = FontAwesome.Sharp.IconChar.Eye;
-            this.iconButton11.IconColor = System.Drawing.Color.Black;
-            this.iconButton11.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton11.IconSize = 24;
-            this.iconButton11.Location = new System.Drawing.Point(112, 346);
-            this.iconButton11.Margin = new System.Windows.Forms.Padding(2);
-            this.iconButton11.Name = "iconButton11";
-            this.iconButton11.Size = new System.Drawing.Size(27, 25);
-            this.iconButton11.TabIndex = 43;
-            this.iconButton11.UseVisualStyleBackColor = true;
+            this.iconButton4.FlatAppearance.BorderSize = 0;
+            this.iconButton4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
+            this.iconButton4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
+            this.iconButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton4.IconChar = FontAwesome.Sharp.IconChar.User;
+            this.iconButton4.IconColor = System.Drawing.Color.Black;
+            this.iconButton4.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton4.IconSize = 24;
+            this.iconButton4.Location = new System.Drawing.Point(112, 312);
+            this.iconButton4.Margin = new System.Windows.Forms.Padding(2);
+            this.iconButton4.Name = "iconButton4";
+            this.iconButton4.Size = new System.Drawing.Size(27, 25);
+            this.iconButton4.TabIndex = 41;
+            this.iconButton4.UseVisualStyleBackColor = true;
+            // 
+            // iconButton3
+            // 
+            this.iconButton3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.iconButton3.FlatAppearance.BorderSize = 0;
+            this.iconButton3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
+            this.iconButton3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
+            this.iconButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.User;
+            this.iconButton3.IconColor = System.Drawing.Color.Black;
+            this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton3.IconSize = 24;
+            this.iconButton3.Location = new System.Drawing.Point(112, 124);
+            this.iconButton3.Margin = new System.Windows.Forms.Padding(2);
+            this.iconButton3.Name = "iconButton3";
+            this.iconButton3.Size = new System.Drawing.Size(27, 25);
+            this.iconButton3.TabIndex = 31;
+            this.iconButton3.UseVisualStyleBackColor = true;
+            // 
+            // tg04
+            // 
+            this.tg04.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.tg04.AutoSize = true;
+            this.tg04.Location = new System.Drawing.Point(144, 304);
+            this.tg04.Name = "tg04";
+            this.tg04.Size = new System.Drawing.Size(84, 36);
+            this.tg04.TabIndex = 40;
+            this.tg04.Text = "tác giả";
+            // 
+            // dx02tg
+            // 
+            this.dx02tg.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.dx02tg.FlatAppearance.BorderSize = 0;
+            this.dx02tg.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
+            this.dx02tg.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
+            this.dx02tg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.dx02tg.IconChar = FontAwesome.Sharp.IconChar.Pen;
+            this.dx02tg.IconColor = System.Drawing.Color.Black;
+            this.dx02tg.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.dx02tg.IconSize = 24;
+            this.dx02tg.Location = new System.Drawing.Point(112, 277);
+            this.dx02tg.Margin = new System.Windows.Forms.Padding(2);
+            this.dx02tg.Name = "dx02tg";
+            this.dx02tg.Size = new System.Drawing.Size(27, 25);
+            this.dx02tg.TabIndex = 39;
+            this.dx02tg.UseVisualStyleBackColor = true;
+            // 
+            // sc04
+            // 
+            this.sc04.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.sc04.AutoSize = true;
+            this.sc04.Location = new System.Drawing.Point(144, 268);
+            this.sc04.Name = "sc04";
+            this.sc04.Size = new System.Drawing.Size(122, 36);
+            this.sc04.TabIndex = 38;
+            this.sc04.Text = "Số chương";
+            // 
+            // ttt04
+            // 
+            this.ttt04.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.ttt04.AutoSize = true;
+            this.ttt04.Location = new System.Drawing.Point(144, 230);
+            this.ttt04.Name = "ttt04";
+            this.ttt04.Size = new System.Drawing.Size(133, 36);
+            this.ttt04.TabIndex = 37;
+            this.ttt04.Text = "tên truyện 1";
+            // 
+            // bt02dx
+            // 
+            this.bt02dx.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.bt02dx.FlatAppearance.BorderSize = 0;
+            this.bt02dx.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
+            this.bt02dx.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
+            this.bt02dx.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt02dx.IconChar = FontAwesome.Sharp.IconChar.Book;
+            this.bt02dx.IconColor = System.Drawing.Color.Black;
+            this.bt02dx.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.bt02dx.IconSize = 24;
+            this.bt02dx.Location = new System.Drawing.Point(112, 241);
+            this.bt02dx.Margin = new System.Windows.Forms.Padding(2);
+            this.bt02dx.Name = "bt02dx";
+            this.bt02dx.Size = new System.Drawing.Size(27, 25);
+            this.bt02dx.TabIndex = 36;
+            this.bt02dx.UseVisualStyleBackColor = true;
+            // 
+            // tt04
+            // 
+            this.tt04.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.tt04.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
+            this.tt04.Location = new System.Drawing.Point(6, 238);
+            this.tt04.Name = "tt04";
+            this.tt04.Size = new System.Drawing.Size(90, 125);
+            this.tt04.TabIndex = 35;
+            this.tt04.TabStop = false;
+            // 
+            // tg03
+            // 
+            this.tg03.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.tg03.AutoSize = true;
+            this.tg03.Location = new System.Drawing.Point(144, 118);
+            this.tg03.Name = "tg03";
+            this.tg03.Size = new System.Drawing.Size(84, 36);
+            this.tg03.TabIndex = 34;
+            this.tg03.Text = "tác giả";
+            // 
+            // tt03
+            // 
+            this.tt03.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.tt03.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
+            this.tt03.Location = new System.Drawing.Point(6, 55);
+            this.tt03.Name = "tt03";
+            this.tt03.Size = new System.Drawing.Size(90, 125);
+            this.tt03.TabIndex = 29;
+            this.tt03.TabStop = false;
+            // 
+            // dx01bt
+            // 
+            this.dx01bt.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.dx01bt.FlatAppearance.BorderSize = 0;
+            this.dx01bt.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
+            this.dx01bt.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
+            this.dx01bt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.dx01bt.IconChar = FontAwesome.Sharp.IconChar.Pen;
+            this.dx01bt.IconColor = System.Drawing.Color.Black;
+            this.dx01bt.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.dx01bt.IconSize = 24;
+            this.dx01bt.Location = new System.Drawing.Point(112, 88);
+            this.dx01bt.Margin = new System.Windows.Forms.Padding(2);
+            this.dx01bt.Name = "dx01bt";
+            this.dx01bt.Size = new System.Drawing.Size(27, 25);
+            this.dx01bt.TabIndex = 33;
+            this.dx01bt.UseVisualStyleBackColor = true;
+            // 
+            // bt01dx
+            // 
+            this.bt01dx.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.bt01dx.FlatAppearance.BorderSize = 0;
+            this.bt01dx.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
+            this.bt01dx.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(219)))), ((int)(((byte)(251)))));
+            this.bt01dx.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt01dx.IconChar = FontAwesome.Sharp.IconChar.Book;
+            this.bt01dx.IconColor = System.Drawing.Color.Black;
+            this.bt01dx.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.bt01dx.IconSize = 24;
+            this.bt01dx.Location = new System.Drawing.Point(112, 55);
+            this.bt01dx.Margin = new System.Windows.Forms.Padding(2);
+            this.bt01dx.Name = "bt01dx";
+            this.bt01dx.Size = new System.Drawing.Size(27, 25);
+            this.bt01dx.TabIndex = 30;
+            this.bt01dx.UseVisualStyleBackColor = true;
+            // 
+            // sc03
+            // 
+            this.sc03.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.sc03.AutoSize = true;
+            this.sc03.Location = new System.Drawing.Point(144, 82);
+            this.sc03.Name = "sc03";
+            this.sc03.Size = new System.Drawing.Size(122, 36);
+            this.sc03.TabIndex = 32;
+            this.sc03.Text = "Số chương";
+            // 
+            // ttt03
+            // 
+            this.ttt03.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.ttt03.AutoSize = true;
+            this.ttt03.Location = new System.Drawing.Point(144, 44);
+            this.ttt03.Name = "ttt03";
+            this.ttt03.Size = new System.Drawing.Size(133, 36);
+            this.ttt03.TabIndex = 31;
+            this.ttt03.Text = "tên truyện 1";
+            // 
+            // panelAll
+            // 
+            this.panelAll.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelAll.Controls.Add(this.truyen4);
+            this.panelAll.Controls.Add(this.dangxem);
+            this.panelAll.Controls.Add(this.truyen2);
+            this.panelAll.Controls.Add(this.sangtac);
+            this.panelAll.Controls.Add(this.bt02gn);
+            this.panelAll.Controls.Add(this.lbdecu);
+            this.panelAll.Controls.Add(this.truyen5);
+            this.panelAll.Controls.Add(this.lbup);
+            this.panelAll.Controls.Add(this.truyen3);
+            this.panelAll.Controls.Add(this.truyen1);
+            this.panelAll.Location = new System.Drawing.Point(256, 106);
+            this.panelAll.Name = "panelAll";
+            this.panelAll.Size = new System.Drawing.Size(1652, 935);
+            this.panelAll.TabIndex = 8;
             // 
             // truyen4
             // 
@@ -1574,25 +1511,53 @@
             this.truyen4.TabIndex = 26;
             this.truyen4.TabStop = false;
             // 
-            // panelAll
+            // truyen2
             // 
-            this.panelAll.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelAll.Controls.Add(this.truyen4);
-            this.panelAll.Controls.Add(this.dangxem);
-            this.panelAll.Controls.Add(this.truyen2);
-            this.panelAll.Controls.Add(this.sangtac);
-            this.panelAll.Controls.Add(this.bt02gn);
-            this.panelAll.Controls.Add(this.btnRight);
-            this.panelAll.Controls.Add(this.btnLeft);
-            this.panelAll.Controls.Add(this.lbdecu);
-            this.panelAll.Controls.Add(this.truyen5);
-            this.panelAll.Controls.Add(this.lbup);
-            this.panelAll.Controls.Add(this.truyen3);
-            this.panelAll.Controls.Add(this.truyen1);
-            this.panelAll.Location = new System.Drawing.Point(256, 106);
-            this.panelAll.Name = "panelAll";
-            this.panelAll.Size = new System.Drawing.Size(1652, 935);
-            this.panelAll.TabIndex = 8;
+            this.truyen2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(227)))), ((int)(((byte)(243)))));
+            this.truyen2.Location = new System.Drawing.Point(547, 70);
+            this.truyen2.Name = "truyen2";
+            this.truyen2.Size = new System.Drawing.Size(237, 327);
+            this.truyen2.TabIndex = 23;
+            this.truyen2.TabStop = false;
+            // 
+            // truyen5
+            // 
+            this.truyen5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
+            this.truyen5.Location = new System.Drawing.Point(1227, 70);
+            this.truyen5.Name = "truyen5";
+            this.truyen5.Size = new System.Drawing.Size(237, 327);
+            this.truyen5.TabIndex = 25;
+            this.truyen5.TabStop = false;
+            // 
+            // truyen3
+            // 
+            this.truyen3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(227)))), ((int)(((byte)(243)))));
+            this.truyen3.Location = new System.Drawing.Point(887, 70);
+            this.truyen3.Name = "truyen3";
+            this.truyen3.Size = new System.Drawing.Size(237, 327);
+            this.truyen3.TabIndex = 24;
+            this.truyen3.TabStop = false;
+            // 
+            // truyen1
+            // 
+            this.truyen1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(227)))), ((int)(((byte)(243)))));
+            this.truyen1.Location = new System.Drawing.Point(207, 70);
+            this.truyen1.Name = "truyen1";
+            this.truyen1.Size = new System.Drawing.Size(237, 327);
+            this.truyen1.TabIndex = 22;
+            this.truyen1.TabStop = false;
+            // 
+            // pbAvt
+            // 
+            this.pbAvt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(227)))), ((int)(((byte)(243)))));
+            this.pbAvt.BackgroundImage = global::Login.Properties.Resources.avatardefault;
+            this.pbAvt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pbAvt.Location = new System.Drawing.Point(1812, 12);
+            this.pbAvt.Name = "pbAvt";
+            this.pbAvt.Size = new System.Drawing.Size(80, 80);
+            this.pbAvt.TabIndex = 4;
+            this.pbAvt.TabStop = false;
+            this.pbAvt.Click += new System.EventHandler(this.pbAvt_Click);
             // 
             // Trang_chu
             // 
@@ -1620,26 +1585,26 @@
             this.panel4.PerformLayout();
             this.paneltop.ResumeLayout(false);
             this.paneltop.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbAvt)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.truyen1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.truyen3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.truyen5)).EndInit();
             this.bt02gn.ResumeLayout(false);
             this.bt02gn.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tt05)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tt06)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tt05)).EndInit();
             this.sangtac.ResumeLayout(false);
             this.sangtac.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tt01)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tt02)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.truyen2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tt01)).EndInit();
             this.dangxem.ResumeLayout(false);
             this.dangxem.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tt03)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tt04)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.truyen4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tt03)).EndInit();
             this.panelAll.ResumeLayout(false);
             this.panelAll.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.truyen4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.truyen2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.truyen5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.truyen3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.truyen1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAvt)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1733,8 +1698,6 @@
         private FontAwesome.Sharp.IconButton bt01gn;
         private System.Windows.Forms.Label sc05;
         private System.Windows.Forms.Label ttt05;
-        private FontAwesome.Sharp.IconButton btnRight;
-        private FontAwesome.Sharp.IconButton btnLeft;
         private System.Windows.Forms.Label lbdecu;
         private System.Windows.Forms.PictureBox truyen5;
         private System.Windows.Forms.Label lbup;
