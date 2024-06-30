@@ -21,18 +21,39 @@ namespace Login
 
 
         private Form activeForm = null;
+        private Panel panelAll;
+
         private void openChildForm(Form childForm)
         {
+            // Check if there's an active form and close it
             if (activeForm != null)
             {
                 activeForm.Close();
             }
+
+            // Set the new active form
             activeForm = childForm;
+
+            // Prepare the child form for docking
             childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;
             childForm.Dock = DockStyle.Fill;
-            panelFormInsert.Controls.Add(childForm);
-            panelFormInsert.Tag = childForm;
+
+            // Create a panel to hold the child form
+            panelAll = new Panel
+            {
+                Size = new Size(815, 355),
+                Location = new Point(0, 67),
+                Visible = true,
+                AutoScroll = true,
+                AutoSize = false,
+                Anchor = AnchorStyles.Top | AnchorStyles.Left,
+                Tag = childForm
+            };
+
+            // Add the child form to the panel and bring it to the front
+            this.Controls.Add(panelAll);
+            panelAll.Controls.Add(childForm);
             childForm.BringToFront();
             childForm.Show();
         }
@@ -183,19 +204,22 @@ namespace Login
 
         private void btnInserted_Click(object sender, EventArgs e)
         {
-            panelFormInsert.Visible = false;
-            btnInsert.BackColor = Color.FromArgb(220, 247, 253);
-            btnInsert.ForeColor = Color.Black;
-            btnInserted.BackColor = Color.FromArgb(191, 44, 36);
-            btnInserted.ForeColor = Color.White;
-            openChildForm(new Inserted());
+            if (btnInserted.ForeColor == Color.Black)
+            {
+                panelFormInsert.Visible = false;
+                btnInsert.BackColor = Color.FromArgb(220, 247, 253);
+                btnInsert.ForeColor = Color.Black;
+                btnInserted.BackColor = Color.FromArgb(191, 44, 36);
+                btnInserted.ForeColor = Color.White;
+                openChildForm(new Inserted());
+            }  
         }
 
         private void btnInsert_Click(object sender, EventArgs e)
         {
-            
-            if (btnInsert.ForeColor == Color.White)
+            if (btnInsert.ForeColor == Color.Black)
             {
+                panelAll.Visible = false;
                 btnInserted.BackColor = Color.FromArgb(220, 247, 253);
                 btnInserted.ForeColor = Color.Black;
                 btnInsert.BackColor = Color.FromArgb(191, 44, 36);

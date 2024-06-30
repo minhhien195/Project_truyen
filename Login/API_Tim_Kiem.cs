@@ -40,13 +40,18 @@ namespace Login
         [FirestoreProperty("Trang_thai")]
         public int status { get; set; }
     }
+
     public class API_Tim_Kiem
     {
+
         public async Task<List<string>> Search (string tuKhoa)
         {
             string project = "healtruyen";
             FirestoreDb db = FirestoreDb.Create(project);
             List<string> result = new List<string>();
+
+            string[] keyws = tuKhoa.ToUpper().Split(' ');
+
             Query query = db.Collection("Truyen").WhereEqualTo("Tac_gia", tuKhoa.ToUpper());
             Query query1 = db.Collection("Truyen").WhereEqualTo("Ten", tuKhoa.ToUpper());
 
@@ -69,49 +74,105 @@ namespace Login
             return result;
         }
 
-        public async Task<List<string>> advanceSearch(string tuKhoa, string danhGia, string tacGia, string theLoai, string tinhTrang)
+        public async Task<List<string>> AdvanceSearch(string tuKhoa, double danhGia, string tacGia, string theLoai, int tinhTrang)
         {
             string project = "healtruyen";
             FirestoreDb db = FirestoreDb.Create(project);
             List<string> result = new List<string>();
-            Query query = db.Collection("Truyen").WhereEqualTo("Ten", tuKhoa.ToUpper());
+            Query query = db.Collection("Truyen");
 
-            //Xử lý input
-            int rating = 0;
-            int status = -1;
+            bool isName = false;
+            bool isDG = false;
+            bool isTG = false;
+            bool isTL = false;
+            bool isTT = false;
 
-            if (danhGia != "Bất kỳ")
+            if (!string.IsNullOrEmpty(tuKhoa) && tuKhoa.ToUpper() != "TÌM KIẾM")
             {
-                rating = Convert.ToInt32(danhGia[danhGia.Length - 1]);
+                query = query.WhereEqualTo("Ten", tuKhoa.ToUpper());
+                isName = true;
             }
 
-            if (tinhTrang != "Bất kỳ")
+            if (danhGia != -1)
             {
-                status = Convert.ToInt32(tinhTrang);
+                query = query.WhereLessThanOrEqualTo("Danh_gia_Tb", danhGia);
+                isDG = true;
             }
-            
-            // Thực thi truy vấn và lấy kết quả
+
+            if (!string.IsNullOrEmpty(tacGia))
+            {
+                query = query.WhereEqualTo("Tac_gia", tacGia);
+                isTG = true;
+            }
+
+            if (!string.IsNullOrEmpty(theLoai) && theLoai.ToUpper() != "KHÔNG")
+            {
+                query = query.WhereArrayContains("The_loai", theLoai);
+                isTL = true;
+            }
+
+            if (tinhTrang != -1)
+            {
+                query = query.WhereEqualTo("Trang_thai", tinhTrang);
+                isTT = true;
+            }
+
             QuerySnapshot snapshot = await query.GetSnapshotAsync();
 
-            // In kết quả
             foreach (DocumentSnapshot document in snapshot.Documents)
             {
-                Novel novel = document.ConvertTo<Novel>();
-                if (novel.avgRating >= rating)
+                bool allc = true;
+
+                if (isName && !document.GetValue<string>("Ten").ToUpper().Contains(tuKhoa.ToUpper()))
                 {
-                    if (novel.author == tacGia)
+                    allc = false;
+                    continue;
+                }
+
+                if (isDG && document.GetValue<double>("Danh_gia_Tb") > danhGia)
+                {
+                    allc = false;
+                    continue;
+                }
+
+                if (isTG && document.GetValue<string>("Tac_gia") != tacGia)
+                {
+                    allc = false;
+                    continue;
+                }
+
+                if (isTL)
+                {
+                    List<string> theLoaiList = new List<string>();
+
+                    // Assuming "The_loai" is an array in Firebase
+                    foreach (object theLoaiItem in (List<object>)document.GetValue<object>("The_loai"))
                     {
-                        if (novel.type.Contains(theLoai))
-                        {
-                            if (status != -1 && novel.status == status)
-                            {
-                                result.Add(document.Id);
-                            }
-                        }
+                        // Chuyển đổi mỗi phần tử thành string và chuyển thành chữ hoa
+                        theLoaiList.Add(theLoaiItem.ToString().ToUpper());
+                    }
+
+                    // Check if theLoai is in the theLoaiList
+                    bool isInTheLoaiList = theLoaiList.Contains(theLoai.ToUpper());
+
+                    if (!isInTheLoaiList)
+                    {
+                        allc = false;
+                        continue;
                     }
                 }
-            }
 
+                if (isTT && document.GetValue<int>("Trang_thai") != tinhTrang)
+                {
+                    allc = false;
+                    continue;
+                }
+
+                if (allc)
+                {
+                    result.Add(document.Id);
+                }
+            }
             return result;
         }
     }

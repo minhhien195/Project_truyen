@@ -208,6 +208,7 @@
             this.iconButton5.IconChar = FontAwesome.Sharp.IconChar.UserEdit;
             this.iconButton5.IconColor = System.Drawing.Color.Black;
             this.iconButton5.IconFont = FontAwesome.Sharp.IconFont.Auto;
+
             this.iconButton5.Location = new System.Drawing.Point(3, 4);
             this.iconButton5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.iconButton5.Name = "iconButton5";
@@ -230,6 +231,7 @@
             this.iconButton6.IconChar = FontAwesome.Sharp.IconChar.ArrowCircleUp;
             this.iconButton6.IconColor = System.Drawing.Color.Black;
             this.iconButton6.IconFont = FontAwesome.Sharp.IconFont.Auto;
+
             this.iconButton6.Location = new System.Drawing.Point(362, 4);
             this.iconButton6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.iconButton6.Name = "iconButton6";
@@ -313,6 +315,7 @@
             this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
             this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox2.Image = global::Login.Properties.Resources.cover1;
+
             this.pictureBox2.Location = new System.Drawing.Point(3, 4);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox2.Name = "pictureBox2";
@@ -365,6 +368,7 @@
             this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.UserEdit;
             this.iconButton3.IconColor = System.Drawing.Color.Black;
             this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
+
             this.iconButton3.Location = new System.Drawing.Point(3, 4);
             this.iconButton3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.iconButton3.Name = "iconButton3";
@@ -387,6 +391,7 @@
             this.iconButton4.IconChar = FontAwesome.Sharp.IconChar.ArrowCircleUp;
             this.iconButton4.IconColor = System.Drawing.Color.Black;
             this.iconButton4.IconFont = FontAwesome.Sharp.IconFont.Auto;
+
             this.iconButton4.Location = new System.Drawing.Point(362, 4);
             this.iconButton4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.iconButton4.Name = "iconButton4";
@@ -522,10 +527,12 @@
             this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.UserEdit;
             this.iconButton2.IconColor = System.Drawing.Color.Black;
             this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+
             this.iconButton2.Location = new System.Drawing.Point(3, 4);
             this.iconButton2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.iconButton2.Name = "iconButton2";
             this.iconButton2.Size = new System.Drawing.Size(353, 76);
+
             this.iconButton2.TabIndex = 3;
             this.iconButton2.Text = "Kiếm Thần Vô Địch";
             this.iconButton2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -544,10 +551,12 @@
             this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.ArrowCircleUp;
             this.iconButton1.IconColor = System.Drawing.Color.Black;
             this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+
             this.iconButton1.Location = new System.Drawing.Point(362, 4);
             this.iconButton1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.iconButton1.Name = "iconButton1";
             this.iconButton1.Size = new System.Drawing.Size(353, 76);
+
             this.iconButton1.TabIndex = 1;
             this.iconButton1.Text = "30000";
             this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;

@@ -43,7 +43,10 @@ namespace Login
         {
             leftBorderBtn = new Panel();
             leftBorderBtn.Size = new Size(7, 60);
-            panelMenu.Controls.Add(leftBorderBtn);
+            if (panelMenu != null)
+            {
+                panelMenu.Controls.Add(leftBorderBtn);
+            }
             customDesign();
             panelAll.BringToFront();
             this.Controls.SetChildIndex(panelAll, 0);
@@ -364,9 +367,19 @@ namespace Login
 
         private void customDesign()
         {
-            panelTheodoiSubmenu.Visible = false;
-            panelTieudeSubmenu.Visible = false;
-            panelHEALTruyenSubmenu.Visible = false;
+            if (panelTheodoiSubmenu != null)
+            {
+                panelTheodoiSubmenu.Visible = false;
+            }
+            if (panelTieudeSubmenu != null)
+            {
+                panelTieudeSubmenu.Visible = false;
+            }
+            if (panelHEALTruyenSubmenu != null)
+            {
+                panelHEALTruyenSubmenu.Visible = false;
+            }
+            
         }
         private void hideSubMenu()
         {
@@ -495,6 +508,20 @@ namespace Login
         private void btnThongbao_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void pbAvt_Click(object sender, EventArgs e)
+        {
+            setting_up up = new setting_up(user, client, this);
+            up.Left = 1720;
+            up.Top = 120;
+            up.ShowDialog();
+        }
+
+        private void btnsearch_Click(object sender, EventArgs e)
+        {
+            Search tb = new Search(tbsearch.Text);
+            tb.ShowDialog();
         }
     }
 }

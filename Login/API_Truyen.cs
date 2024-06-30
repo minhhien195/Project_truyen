@@ -252,8 +252,12 @@ namespace Novel
                 {
                     { field, Convert.ToInt32(value) }
                 };
-                DocumentReference doc = truyen.Document(id);
-                await doc.UpdateAsync(updates);
+                if (!string.IsNullOrWhiteSpace(id))
+                {
+                    DocumentReference doc = truyen.Document(id);
+                    // Rest of the code
+                    await doc.UpdateAsync(updates);
+                }
             }
             else if (field == "Danh_gia_Tb")
             {

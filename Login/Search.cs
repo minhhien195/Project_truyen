@@ -22,15 +22,17 @@ namespace Login
 {
     public partial class Search : Form
     {
-        public Search()
+        string tentruyen = "";
+        public Search(string name)
         {
             InitializeComponent();
+            tentruyen = name;
         }
        
         private async void Tim_truyen()
         {
             API_Tim_Kiem search = new API_Tim_Kiem();
-            Task<List<string>> truyen = search.Search("TOÀN TRÍ ĐỘC GIẢ");
+            Task<List<string>> truyen = search.Search(tentruyen);
             var tim_truyen = await truyen;
             Panel result = new Panel();
             result.Dock = DockStyle.Top;
@@ -56,7 +58,7 @@ namespace Login
             text_result.Visible = true;
 
             Label search_name = new Label();
-            search_name.Text = "TOÀN TRÍ ĐỘC GIẢ";
+            search_name.Text = tentruyen.ToString();
             search_name.Font = new Font("League Spartan", 12F, FontStyle.Bold);
             search_name.AutoSize = true;
             search_name.Location = new Point(143, 13);

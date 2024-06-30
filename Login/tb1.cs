@@ -10,16 +10,16 @@ using System.Windows.Forms;
 
 namespace Login
 {
-    public partial class Nhan_tin : Form
+    public partial class tb1 : Form
     {
-        public Nhan_tin()
+        public tb1()
         {
             InitializeComponent();
         }
 
-        private void label4_Click(object sender, EventArgs e)
+        private void btnout_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
     }
 }
