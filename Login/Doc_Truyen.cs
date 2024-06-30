@@ -3,13 +3,18 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Net.Mail;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+/*using System.Windows.Controls;*/
 using System.Windows.Forms;
 using Firebase.Auth;
+using Firebase.Auth.Providers;
 using FirebaseAdmin;
 using FirebaseAdmin.Auth;
 using FireSharp.Config;
@@ -21,6 +26,7 @@ using Google.Type;
 using Newtonsoft.Json;
 using Novel;
 using Readinghistory;
+using static Login.Danhgia;
 
 namespace Login
 {
@@ -29,7 +35,7 @@ namespace Login
     public partial class Doc_Truyen : Form
     {
         string nameTruyen;
-        int currentChap = 1;
+        int currentChap;
         int numChap = 1;
         string idTruyen;
         UserCredential user;
@@ -43,9 +49,16 @@ namespace Login
             public string TG_binh_luan { get; set; }
             public bool To_cao {  get; set; }
         }
-        public Doc_Truyen()
+
+        IFirebaseConfig _firebaseConfig = new FirebaseConfig
+        {
+            AuthSecret = "38QvLmnKMHlQtJ9yZzCqqWytxeXimwt06ZnFfSc2",
+            BasePath = "https://healtruyen-default-rtdb.asia-southeast1.firebasedatabase.app/"
+        };
+        public Doc_Truyen(string nameTruyen, UserCredential user, int currentChap)
         {
             InitializeComponent();
+            this.currentChap = currentChap;
             this.nameTruyen = nameTruyen;
             this.user = user;
         }
@@ -56,10 +69,11 @@ namespace Login
             await cRUD_Lsd.Capnhat_lichsudoc(user.User.Uid, nameTruyen, idTruyen);
             this.Close();
         }
-
+        private static readonly string _from = "nguoiduathuH3A1@gmail.com"; // Email của Sender (của bạn)
+        private static readonly string _pass = "wgvohibzrfwgshtf"; // Mật khẩu Email của Sender (của bạn)
         private async void Doc_Truyen_Load(object sender, EventArgs e)
         {
-            string numChapter = "1";
+            string numChapter = currentChap.ToString();
             string project = "healtruyen";
             FirestoreDb db = FirestoreDb.Create(project);
             CollectionReference collectionReference = db.Collection("Truyen");
@@ -70,6 +84,7 @@ namespace Login
             {
                 return;
             }
+            idTruyen = qs.Documents[0].Id;
             string chapId = "";
             int cnt = 4 - numChapter.Length;
             for (int i = 0; i < cnt; i++)
@@ -81,17 +96,16 @@ namespace Login
             DocumentSnapshot snapshot = await collectionRef.GetSnapshotAsync();
             if (snapshot.Exists)
             {
-
-                Interact.Chapter chapter = snapshot.ConvertTo<Interact.Chapter>();
-                contentChap.Text = chapter.Content;
-                labelName.Text = chapter.Title;
-                Task<Interact.Novel> res1 = Interact.getInfoNovel(nameTruyen);
-                Interact.Novel novel = new Interact.Novel();
-                novel = await res1;
-                iconButton2.Text = novel.author;
-                numChap = novel.cntChapter;
+                
+                /*Interact.Chapter chapter = snapshot.ConvertTo<Interact.Chapter>();*/
+                
+                contentChap.Text = snapshot.GetValue<string>("Noi_dung"); ;
+                labelName.Text = snapshot.GetValue<string>("Tieu_de"); ;
+                Task<DocumentSnapshot> res1 = Interact.getInfoNovel(nameTruyen);
+                DocumentSnapshot novel = await res1;
+                iconButton2.Text = novel.GetValue<string>("Tac_gia");
+                numChap = novel.GetValue<int>("So_chuong");
                 Task<string> res2 = Interact.getIdNovel(nameTruyen);
-                idTruyen = await res2;
                 IFirebaseConfig _firebaseConfig = new FirebaseConfig
                 {
                     AuthSecret = "38QvLmnKMHlQtJ9yZzCqqWytxeXimwt06ZnFfSc2",
@@ -110,9 +124,23 @@ namespace Login
                 }
                 for (int i = 1; i <= dem; i++)
                 {
-                    FirebaseResponse res4 = await client.GetAsync("Truyen/" + idTruyen + "/Binh_luan/" + i.ToString());
+                    string dembl = "0";
+                    if (i < 10)
+                    {
+                        dembl += "0" + i.ToString();
+                    }
+                    else if (i < 100)
+                    {
+                        dembl += i.ToString();
+                    }
+                    else
+                    {
+                        dembl = i.ToString();
+                    }
+                    FirebaseResponse res4 = await client.GetAsync("Truyen/" + idTruyen + "/Binh_luan/" + dembl);
 
                     Binhluan binhluan = res4.ResultAs<Binhluan>();
+
 
                     Panel panel = new Panel();
                     panel5.Controls.Add(panel);
@@ -134,9 +162,10 @@ namespace Login
                     tableLayoutPanel.Controls.Add(pictureBox, 0, 0);
                     pictureBox.Dock = DockStyle.Fill;
 
-                    FirebaseResponse res5 = await client.GetAsync("Nguoi_dung/" + user.User.Uid + "/Anh_dai_dien");
+                    FirebaseResponse res5 = await client.GetAsync("Nguoi_dung/" + binhluan.ID_nguoidung + "/Anh_dai_dien");
                     string base64String = res5.ResultAs<string>();
                     byte[] imageBytes = Convert.FromBase64String(base64String);
+                    
                     pictureBox.SizeMode = PictureBoxSizeMode.Zoom;
                     using (MemoryStream memoryStream = new MemoryStream(imageBytes))
                     {
@@ -158,18 +187,20 @@ namespace Login
                     tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20));
                     tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 60));
 
+                    FirebaseResponse res6 = await client.GetAsync("Nguoi_dung/" + binhluan.ID_nguoidung + "/TK_dangnhap");
                     Label labelName = new Label();
                     tableLayoutPanel1.Controls.Add(labelName, 0, 0);
                     labelName.AutoSize = true;
                     labelName.Font = new Font("League Spartan", 16, FontStyle.Regular);
-                    labelName.Text = user.User.Info.DisplayName;
+                    /*var userRecord = await FirebaseAuth.DefaultInstance.GetUserAsync(binhluan.ID_nguoidung);*/
+                    /*var user1 = client.GetAsync(binhluan.ID_nguoidung);*/
+                    labelName.Text = res6.ResultAs<string>();
 
                     Label date = new Label();
                     tableLayoutPanel1.Controls.Add(date, 1, 0);
                     date.AutoSize = true;
                     date.Font = new Font("League Spartan", 16, FontStyle.Regular);
-                    string dateStr = binhluan.TG_binh_luan.Split(' ').First<string>();
-                    dateStr = "0" + dateStr;
+                    string dateStr = binhluan.TG_binh_luan.ToString();
                     System.DateTime dateTime = System.DateTime.Parse(dateStr, CultureInfo.InvariantCulture);
                     System.DateTime dateNow = System.DateTime.Now;
                     TimeSpan elapsedTime = dateNow - dateTime;
@@ -205,20 +236,24 @@ namespace Login
                     }
 
 
-                    Label content = new Label();
-                    panel1.Controls.Add(content);
-                    content.Font = new Font("League Spartan", 14, FontStyle.Regular);
-                    content.Dock = DockStyle.Fill;
-                    content.Text = binhluan.Noi_dung;
+                    
 
                     TableLayoutPanel tableLayoutPanel2 = new TableLayoutPanel();
                     panel1.Controls.Add(tableLayoutPanel2);
                     tableLayoutPanel2.Dock = DockStyle.Bottom;
                     tableLayoutPanel2.RowCount = 1;
                     tableLayoutPanel2.ColumnCount = 3;
-                    tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 76));
-                    tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 12));
-                    tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 12));
+                    tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 76));
+                    tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 12));
+                    tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 12));
+
+                    Label content = new Label();
+                    panel1.Controls.Add(content);
+                    content.AutoSize = true;
+                    content.Font = new Font("League Spartan", 14, FontStyle.Regular);
+                    content.Dock = DockStyle.Top;
+                    content.Text = binhluan.Noi_dung;
+                    content.BringToFront();
 
                     IconButton btnLike = new IconButton();
                     tableLayoutPanel2.Controls.Add(btnLike, 1, 0);
@@ -226,16 +261,26 @@ namespace Login
                     btnLike.Font = new Font("League Spartan", 12, FontStyle.Regular);
                     btnLike.IconChar = IconChar.Heart;
                     btnLike.IconSize = 30;
-                    btnLike.Text = "Thích";
+                    btnLike.Text = binhluan.Luot_thich.ToString() + "\nThích";
                     btnLike.TextAlign = ContentAlignment.MiddleRight;
                     btnLike.TextImageRelation = TextImageRelation.ImageBeforeText;
-                    btnLike.Click += (s, ev) =>
+                    btnLike.Click += async (s, ev) =>
                     {
                         //Hàm click code ở đây
+                        
+                        int so_like = binhluan.Luot_thich;
+                        so_like++;
+                        await client.SetAsync("Truyen/" + idTruyen + "/Binh_luan/" + dembl +"/Luot_thich", so_like);
+                        btnLike.BackColor = System.Drawing.Color.Red;
+                        btnLike.IconColor = System.Drawing.Color.White;
+                        btnLike.Enabled = false;
+                        btnLike.Text = so_like.ToString() + "\nThích";
+                        btnLike.ForeColor = System.Drawing.Color.Red;
                     };
+                    
 
                     IconButton btnReport = new IconButton();
-                    tableLayoutPanel2.Controls.Add(btnLike, 2, 0);
+                    tableLayoutPanel2.Controls.Add(btnReport, 2, 0);
                     btnReport.Dock = DockStyle.Fill;
                     btnReport.Font = new Font("League Spartan", 12, FontStyle.Regular);
                     btnReport.IconChar = IconChar.Flag;
@@ -243,10 +288,51 @@ namespace Login
                     btnReport.Text = "Tố cáo";
                     btnReport.TextAlign = ContentAlignment.MiddleRight;
                     btnReport.TextImageRelation = TextImageRelation.ImageBeforeText;
-                    btnReport.Click += (s, ev) =>
+                    btnReport.Click += async (s, ev) =>
                     {
-                        //Hàm click code ở đây
+                        //Hàm click code ở đây 
+                        if (user.User.Info.Uid != binhluan.ID_nguoidung)
+                        {
+                            await client.SetAsync("Truyen/" + idTruyen + "/Binh_luan/" + dembl + "/To_cao", true);
+                            /*MessageBox.Show("Tố cáo thành công!Bạn hãy đợi Admin xử lý!");*/
+                            btnReport.BackColor = System.Drawing.Color.Yellow;
+                            btnReport.Text = "Bị tố cáo";
+                            try
+                            {
+                                MailMessage mail = new MailMessage();
+                                SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
+
+                                mail.From = new MailAddress(user.User.Info.Email);
+                                mail.To.Add(_from);
+                                mail.Subject = $"Bình luận của người dùng có ID là {binhluan.ID_nguoidung} ";
+                                mail.IsBodyHtml = true;
+                                mail.Body = $"<div> Tên người bình luận: {res6.ResultAs<string>()} </div> <br> " +
+                                $"Bị báo cáo bởi người dùng {user.User.Info.Uid} có tên là {user.User.Info.DisplayName} <br> Hãy kiểm tra nội dung bình luận này trong truyện {nameTruyen} <br> Nội dung bình luận: {binhluan.Noi_dung}";
+
+                                mail.Priority = MailPriority.High;
+
+                                SmtpServer.Port = 587;
+                                SmtpServer.Credentials = new System.Net.NetworkCredential(_from, _pass);
+                                SmtpServer.EnableSsl = true;
+
+                                SmtpServer.Send(mail);
+                                MessageBox.Show("Đã gửi tin nhắn đến quản trị viên.\n\r Vui lòng đợi phản hồi.", "Thành công");
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show($"Lỗi: {ex.ToString()}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        } 
                     };
+                    if (user.User.Info.Uid == binhluan.ID_nguoidung)
+                    {
+                        btnReport.Enabled = false;
+                    }
+                    if (binhluan.To_cao == true)
+                    {
+                        btnReport.BackColor = System.Drawing.Color.Yellow;
+                        btnReport.Text = "Bị tố cáo";
+                    }
 
                 }
             }
@@ -461,6 +547,7 @@ namespace Login
 
         private void iconButtonRate_Click(object sender, EventArgs e)
         {
+
             Form formBackground = new Form();
             iconButtonRate.IconColor = System.Drawing.Color.Black;
             try
@@ -509,10 +596,9 @@ namespace Login
             chapter = await res;
             contentChap.Text = chapter.Content;
             labelName.Text = chapter.Title;
-            Task<Interact.Novel> res1 = Interact.getInfoNovel(nameTruyen);
-            Interact.Novel novel = new Interact.Novel();
-            novel = await res1;
-            iconButton2.Text = novel.author;
+            Task<DocumentSnapshot> res1 = Interact.getInfoNovel(nameTruyen);
+            DocumentSnapshot novel = await res1;
+            iconButton2.Text = novel.GetValue<string>("Tac_gia");
         }
 
         private async void btnPostChap_Click(object sender, EventArgs e)
@@ -527,10 +613,9 @@ namespace Login
             chapter = await res;
             contentChap.Text = chapter.Content;
             labelName.Text = chapter.Title;
-            Task<Interact.Novel> res1 = Interact.getInfoNovel(nameTruyen);
-            Interact.Novel novel = new Interact.Novel();
-            novel = await res1;
-            iconButton2.Text = novel.author;
+            Task<DocumentSnapshot> res1 = Interact.getInfoNovel(nameTruyen);
+            DocumentSnapshot novel = await res1;
+            iconButton2.Text = novel.GetValue<string>("Tac_gia");
         }
 
         private void iconButtonRate_MouseClick(object sender, MouseEventArgs e)
@@ -555,6 +640,111 @@ namespace Login
 
 
         private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private async void btnSendComment_Click(object sender, EventArgs e)
+        {
+            if (textBox1.Text != "")
+            {
+                IFirebaseClient client = new FireSharp.FirebaseClient(_firebaseConfig);
+
+                var config = new FirebaseAuthConfig
+                {
+                    ApiKey = "AIzaSyD4vuUbOi3UxFUXfsmJ1kczNioKwmKaynA",
+                    AuthDomain = "healtruyen.firebaseapp.com",
+                    Providers = new Firebase.Auth.Providers.FirebaseAuthProvider[]
+                {
+                    new EmailProvider()
+                }
+                };
+                var client1 = new FirebaseAuthClient(config);
+                var userId = client1.User.Uid;
+
+                FirebaseResponse res = await client.GetAsync($"Truyen/{idTruyen}/Binh_luan/");
+                var dict = JsonConvert.DeserializeObject<Dictionary<string, Dictionary<string, object>>>(res.Body);
+
+                //show data
+                var dem = 0;
+                foreach (var i in dict)
+                {
+                    dem = Convert.ToInt32(i.Key);
+                }
+                dem++;
+                string dembl = "0";
+                if (dem < 10)
+                {
+                    dembl += "0" + dem.ToString();
+                }
+                else if (dem < 100)
+                {
+                    dembl += dem.ToString();
+                }
+                else
+                {
+                    dembl = dem.ToString();
+                }
+
+                string chapId = "";
+                int cnt = 4 - currentChap.ToString().Length;
+                for (int i = 0; i < cnt; i++)
+                {
+                    chapId += "0";
+                }
+                chapId += currentChap;
+                string idchuong = idTruyen + chapId;
+                string tgbl = System.DateTime.Now.ToString("MM/dd/yyyy hh:mm:ss tt");
+
+                Binhluan binhluan = new Binhluan()
+                {
+                    ID_chuong = idchuong,
+                    ID_nguoidung = user.User.Info.Uid,
+                    Luot_thich = 0,
+                    Noi_dung = textBox1.Text,
+                    TG_binh_luan = tgbl,
+                    To_cao = false
+
+                };
+
+                await client.SetAsync("Truyen/" + idTruyen + "/Binh_luan/" + dembl, binhluan);
+
+                FirestoreDb db = FirestoreDb.Create("healtruyen");
+                CollectionReference truyen = db.Collection("Truyen");
+                nameTruyen = nameTruyen.ToUpper();
+                Query q = truyen.WhereEqualTo("Ten", nameTruyen);
+                QuerySnapshot snapshots = await q.GetSnapshotAsync();
+                string id = "";
+                if (snapshots.Documents.Count > 0)
+                {
+                    id = snapshots.Documents[0].Id;
+                }
+                DocumentReference collectionRef = db.Collection("Truyen").Document(id);
+                DocumentSnapshot snapshot = await collectionRef.GetSnapshotAsync();
+
+                int So_binhluan = snapshot.GetValue<int>("Danh_gia");
+
+                So_binhluan++;
+
+                Dictionary<string, object> updates = new Dictionary<string, object>
+                {
+                    { "Binh_luan", So_binhluan },
+                };
+                DocumentReference doc = truyen.Document(id);
+                await doc.UpdateAsync(updates);
+                textBox1.Text = "";
+                Doc_Truyen form = new Doc_Truyen(nameTruyen, user,currentChap);
+                this.Close();
+                form.Show();
+            }
+            else
+            {
+                MessageBox.Show("Bạn chưa nhập gì cả!");
+            }
+            
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
 
         }

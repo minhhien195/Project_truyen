@@ -3,27 +3,69 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
+using System.Globalization;
+using System.IO;
 using System.Linq;
+using System.Net.Mail;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+/*using System.Windows.Controls;*/
 using System.Windows.Forms;
+using Firebase.Auth;
+using Firebase.Auth.Providers;
+using FirebaseAdmin;
+using FirebaseAdmin.Auth;
+using FireSharp.Config;
+using FireSharp.Interfaces;
+using FireSharp.Response;
+using FontAwesome.Sharp;
+using Google.Cloud.Firestore;
+using Newtonsoft.Json;
+using Novel;
+using Readinghistory;
 
 namespace Login
 {
     public partial class Chi_Tiet_Truyen : Form
     {
-        public Chi_Tiet_Truyen()
+        string nameTruyen;
+        int currentChap;
+        int numChap = 1;
+        string idTruyen;
+        IFirebaseConfig _firebaseConfig = new FirebaseConfig
+        {
+            AuthSecret = "38QvLmnKMHlQtJ9yZzCqqWytxeXimwt06ZnFfSc2",
+            BasePath = "https://healtruyen-default-rtdb.asia-southeast1.firebasedatabase.app/"
+        };
+        UserCredential user;
+        public Chi_Tiet_Truyen(string nameTruyen, UserCredential user)
         {
             InitializeComponent();
+            this.nameTruyen = nameTruyen;
+            this.user = user;
         }
+
 
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
 
-        private void Chi_Tiet_Truyen_Load(object sender, EventArgs e)
+        private async void Chi_Tiet_Truyen_Load(object sender, EventArgs e)
         {
+            string project = "healtruyen";
+            FirestoreDb db = FirestoreDb.Create(project);
+            CollectionReference collectionReference = db.Collection("Truyen");
+            nameTruyen = nameTruyen.ToUpper();
+            Query q = collectionReference.WhereEqualTo("Ten", nameTruyen);
+            QuerySnapshot qs = await q.GetSnapshotAsync();
+            if (qs.Documents.Count == 0)
+            {
+                return;
+            }
+            idTruyen = qs.Documents[0].Id;
             tableLayoutPanel2.Width = this.Width / 2;
             panelChildForm.Width = (int)(this.Width * 0.9);
             introContent.Width = (int)(panelChildForm.Width * 0.6);
@@ -117,6 +159,35 @@ namespace Login
                 (panel6.Width - label12.Width) / 2, // Tính toán vị trí theo trục X
                 pictureBox17.Location.Y + pictureBox17.Height + 20 // Tính toán vị trí theo trục Y
             );
+            Dictionary<string, object> novel = qs.Documents[0].ToDictionary();
+            byte[] imageBytes = Convert.FromBase64String(novel["Anh"].ToString());
+
+            using (MemoryStream memoryStream = new MemoryStream(imageBytes))
+            {
+                Bitmap bitmap = new Bitmap(memoryStream);
+                coverBookImg.Image = bitmap;
+                coverBookImg.SizeMode = PictureBoxSizeMode.Zoom;
+            }
+            labelAuthor.Text = novel["Tac_gia"].ToString();
+            nameBook.Text = novel["Ten"].ToString();
+            labelShortName.Text = novel["Tac_gia"].ToString();
+            if (novel["Trang_thai"].ToString() == "0")  
+                labelStatus.Text = "Dừng cập nhật";
+            else if (novel["Trang_thai"].ToString() == "1")
+                labelStatus.Text = "Đang ra";
+            else labelStatus.Text = "Hoàn thành";
+            object typeList = novel["The_loai"];
+            if (typeList is List<object> typeList1)
+            {
+                List<string> typeStringList = typeList1.Select(j => j.ToString()).ToList();
+                labelType.Text = typeStringList[0];
+            }
+            labelNumChapter.Text = novel["So_chuong"].ToString();
+            label5.Text = novel["De_cu"].ToString();
+            labelRating.Text = novel["Danh_gia_Tb"].ToString();
+            introContent.Text = novel["Tom_tat"].ToString();
+            labelremNum.Text = novel["De_cu"].ToString();
+            labelLike.Text = novel["Luot_thich"].ToString();
         }
 
         private Form activeForm = null;
@@ -142,8 +213,11 @@ namespace Login
 
         private void btnNumChapMenu_Click(object sender, EventArgs e)
         {
+            string project = "healtruyen";
+            FirestoreDb db = FirestoreDb.Create(project);
+            CollectionReference collectionReference = db.Collection("Truyen").Document(idTruyen).Collection("Chuong");
             panel6.Visible = false;
-            openChildForm(new Danh_Sach_Chuong_CTT());
+            openChildForm(new Danh_Sach_Chuong_CTT(collectionReference));
             btnNumChapMenu.ForeColor = Color.Red;
             btnNumChapMenu.Font = new Font("League Spartan", 16, FontStyle.Regular);
 
@@ -188,7 +262,8 @@ namespace Login
         private void btnCommentMenu_Click(object sender, EventArgs e)
         {
             panel2.Visible = false;
-            /*openChildForm(new Binh_Luan_CTT());*/
+            openChildForm(new Binh_Luan_CTT(nameTruyen,user,idTruyen));
+
             btnNumChapMenu.ForeColor = Color.Black;
             btnNumChapMenu.Font = new Font("League Spartan", 16, FontStyle.Regular);
 

@@ -164,9 +164,9 @@ namespace Login
             }
         }
 
-        private void btnOut_Click(object sender, EventArgs e)
+        private void panel3_Paint(object sender, PaintEventArgs e)
         {
-            this.Close();
+
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)

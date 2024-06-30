@@ -50,7 +50,7 @@
             this.ptrNotsame = new System.Windows.Forms.PictureBox();
             this.lbemailKhonghople = new System.Windows.Forms.Label();
             this.ptrWarning = new System.Windows.Forms.PictureBox();
-            this.btnOut = new FontAwesome.Sharp.IconButton();
+
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -375,29 +375,12 @@
             this.ptrWarning.TabStop = false;
             this.ptrWarning.Visible = false;
             // 
-            // btnOut
-            // 
-            this.btnOut.FlatAppearance.BorderSize = 0;
-            this.btnOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOut.Font = new System.Drawing.Font("League Spartan", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOut.IconChar = FontAwesome.Sharp.IconChar.ArrowAltCircleLeft;
-            this.btnOut.IconColor = System.Drawing.Color.Black;
-            this.btnOut.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnOut.Location = new System.Drawing.Point(5, 10);
-            this.btnOut.Name = "btnOut";
-            this.btnOut.Size = new System.Drawing.Size(277, 50);
-            this.btnOut.TabIndex = 1;
-            this.btnOut.Text = "Cài đăt người dùng";
-            this.btnOut.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnOut.UseVisualStyleBackColor = true;
-            this.btnOut.Click += new System.EventHandler(this.btnOut_Click);
-            // 
             // Setting
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
-            this.ClientSize = new System.Drawing.Size(1426, 839);
+            this.ClientSize = new System.Drawing.Size(1902, 1033);
             this.Controls.Add(this.lbemailKhonghople);
             this.Controls.Add(this.ptrWarning);
             this.Controls.Add(this.ptrNotsame);
@@ -451,6 +434,5 @@
         private System.Windows.Forms.PictureBox ptrNotsame;
         private System.Windows.Forms.Label lbemailKhonghople;
         private System.Windows.Forms.PictureBox ptrWarning;
-        private FontAwesome.Sharp.IconButton btnOut;
     }
 }
