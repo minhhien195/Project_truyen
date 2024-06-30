@@ -31,22 +31,35 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.panelShowRating1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panelRatingEvent = new System.Windows.Forms.Panel();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.richTextBoxRatingComment = new System.Windows.Forms.RichTextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBoxRatingPoint = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.ibtnStar5 = new FontAwesome.Sharp.IconButton();
+            this.ibtnStar1 = new FontAwesome.Sharp.IconButton();
+            this.ibtnStar4 = new FontAwesome.Sharp.IconButton();
+            this.ibtnStar2 = new FontAwesome.Sharp.IconButton();
+            this.ibtnStar3 = new FontAwesome.Sharp.IconButton();
+            this.richTextBoxRatingComment = new System.Windows.Forms.RichTextBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             this.panelRatingEvent.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.tableLayoutPanel3.SuspendLayout();
+            this.tableLayoutPanel4.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -66,7 +79,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(800, 57);
+            this.panel1.Size = new System.Drawing.Size(1354, 57);
             this.panel1.TabIndex = 3;
             // 
             // button1
@@ -76,7 +89,7 @@
             this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button1.Font = new System.Drawing.Font("League Spartan", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.button1.Image = global::Login.Properties.Resources.newratingicon;
-            this.button1.Location = new System.Drawing.Point(653, 3);
+            this.button1.Location = new System.Drawing.Point(1207, 3);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(144, 54);
             this.button1.TabIndex = 2;
@@ -84,119 +97,272 @@
             this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.button1.UseVisualStyleBackColor = true;
             // 
+            // panelShowRating1
+            // 
+            this.panelShowRating1.AutoScroll = true;
+            this.panelShowRating1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelShowRating1.Location = new System.Drawing.Point(0, 223);
+            this.panelShowRating1.Name = "panelShowRating1";
+            this.panelShowRating1.Size = new System.Drawing.Size(1354, 534);
+            this.panelShowRating1.TabIndex = 8;
+            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.panelShowRating1);
-            this.panel2.Controls.Add(this.panelRatingEvent);
+            this.panel2.Controls.Add(this.tableLayoutPanel1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 57);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(800, 393);
+            this.panel2.Size = new System.Drawing.Size(1354, 679);
             this.panel2.TabIndex = 4;
             // 
-            // panelShowRating1
+            // tableLayoutPanel1
             // 
-            this.panelShowRating1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelShowRating1.Location = new System.Drawing.Point(0, 207);
-            this.panelShowRating1.Name = "panelShowRating1";
-            this.panelShowRating1.Size = new System.Drawing.Size(800, 124);
-            this.panelShowRating1.TabIndex = 8;
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 90.49255F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.507445F));
+            this.tableLayoutPanel1.Controls.Add(this.panelRatingEvent, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.panel3, 1, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1354, 223);
+            this.tableLayoutPanel1.TabIndex = 9;
             // 
             // panelRatingEvent
             // 
-            this.panelRatingEvent.Controls.Add(this.pictureBox3);
-            this.panelRatingEvent.Controls.Add(this.richTextBoxRatingComment);
-            this.panelRatingEvent.Controls.Add(this.pictureBox1);
-            this.panelRatingEvent.Controls.Add(this.pictureBox2);
-            this.panelRatingEvent.Controls.Add(this.label3);
-            this.panelRatingEvent.Controls.Add(this.textBoxRatingPoint);
-            this.panelRatingEvent.Controls.Add(this.label1);
-            this.panelRatingEvent.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelRatingEvent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(227)))), ((int)(((byte)(243)))));
+            this.panelRatingEvent.Controls.Add(this.tableLayoutPanel2);
+            this.panelRatingEvent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelRatingEvent.Location = new System.Drawing.Point(0, 0);
+            this.panelRatingEvent.Margin = new System.Windows.Forms.Padding(0);
             this.panelRatingEvent.Name = "panelRatingEvent";
-            this.panelRatingEvent.Size = new System.Drawing.Size(800, 207);
-            this.panelRatingEvent.TabIndex = 7;
+            this.panelRatingEvent.Size = new System.Drawing.Size(1225, 223);
+            this.panelRatingEvent.TabIndex = 8;
             // 
-            // pictureBox3
+            // tableLayoutPanel2
             // 
-            this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.pictureBox3.Image = global::Login.Properties.Resources.sendicon;
-            this.pictureBox3.Location = new System.Drawing.Point(31, 125);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(30, 30);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 7;
-            this.pictureBox3.TabStop = false;
-            // 
-            // richTextBoxRatingComment
-            // 
-            this.richTextBoxRatingComment.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBoxRatingComment.Font = new System.Drawing.Font("League Spartan", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.richTextBoxRatingComment.Location = new System.Drawing.Point(101, 46);
-            this.richTextBoxRatingComment.Name = "richTextBoxRatingComment";
-            this.richTextBoxRatingComment.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Horizontal;
-            this.richTextBoxRatingComment.Size = new System.Drawing.Size(676, 118);
-            this.richTextBoxRatingComment.TabIndex = 0;
-            this.richTextBoxRatingComment.Text = "";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Login.Properties.Resources.staricon;
-            this.pictureBox1.Location = new System.Drawing.Point(341, 19);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(16, 16);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 6;
-            this.pictureBox1.TabStop = false;
+            this.tableLayoutPanel2.ColumnCount = 2;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19.6F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80.4F));
+            this.tableLayoutPanel2.Controls.Add(this.pictureBox2, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel3, 1, 0);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 1;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1225, 223);
+            this.tableLayoutPanel2.TabIndex = 3;
             // 
             // pictureBox2
             // 
+            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox2.Image = global::Login.Properties.Resources.avatardefault;
-            this.pictureBox2.Location = new System.Drawing.Point(1, 3);
+            this.pictureBox2.Location = new System.Drawing.Point(3, 3);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(94, 94);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.Size = new System.Drawing.Size(234, 217);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 2;
             this.pictureBox2.TabStop = false;
+            // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.ColumnCount = 1;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel4, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.richTextBoxRatingComment, 0, 1);
+            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(243, 3);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 2;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 29.03226F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 70.96774F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(979, 217);
+            this.tableLayoutPanel3.TabIndex = 3;
+            // 
+            // tableLayoutPanel4
+            // 
+            this.tableLayoutPanel4.ColumnCount = 2;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30.60897F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 69.39103F));
+            this.tableLayoutPanel4.Controls.Add(this.label3, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.panel4, 1, 0);
+            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            this.tableLayoutPanel4.RowCount = 1;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(973, 57);
+            this.tableLayoutPanel4.TabIndex = 0;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("League Spartan", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label3.Location = new System.Drawing.Point(101, 8);
+            this.label3.Location = new System.Drawing.Point(0, 0);
             this.label3.Margin = new System.Windows.Forms.Padding(0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(156, 35);
             this.label3.TabIndex = 5;
             this.label3.Text = "Nhập đánh giá";
             // 
-            // textBoxRatingPoint
+            // panel4
             // 
-            this.textBoxRatingPoint.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxRatingPoint.Font = new System.Drawing.Font("League Spartan", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.textBoxRatingPoint.Location = new System.Drawing.Point(260, 8);
-            this.textBoxRatingPoint.Multiline = true;
-            this.textBoxRatingPoint.Name = "textBoxRatingPoint";
-            this.textBoxRatingPoint.Size = new System.Drawing.Size(52, 34);
-            this.textBoxRatingPoint.TabIndex = 3;
-            this.textBoxRatingPoint.Text = "5.5";
+            this.panel4.Controls.Add(this.ibtnStar5);
+            this.panel4.Controls.Add(this.ibtnStar1);
+            this.panel4.Controls.Add(this.ibtnStar4);
+            this.panel4.Controls.Add(this.ibtnStar2);
+            this.panel4.Controls.Add(this.ibtnStar3);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel4.Location = new System.Drawing.Point(300, 3);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(670, 51);
+            this.panel4.TabIndex = 6;
             // 
-            // label1
+            // ibtnStar5
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("League Spartan", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label1.Location = new System.Drawing.Point(306, 7);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 35);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "/5";
+            this.ibtnStar5.AutoSize = true;
+            this.ibtnStar5.FlatAppearance.BorderSize = 0;
+            this.ibtnStar5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(227)))), ((int)(((byte)(243)))));
+            this.ibtnStar5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(227)))), ((int)(((byte)(243)))));
+            this.ibtnStar5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ibtnStar5.IconChar = FontAwesome.Sharp.IconChar.Star;
+            this.ibtnStar5.IconColor = System.Drawing.Color.Linen;
+            this.ibtnStar5.IconFont = FontAwesome.Sharp.IconFont.Regular;
+            this.ibtnStar5.IconSize = 40;
+            this.ibtnStar5.Location = new System.Drawing.Point(342, 0);
+            this.ibtnStar5.Name = "ibtnStar5";
+            this.ibtnStar5.Size = new System.Drawing.Size(76, 54);
+            this.ibtnStar5.TabIndex = 12;
+            this.ibtnStar5.UseVisualStyleBackColor = true;
+            this.ibtnStar5.Click += new System.EventHandler(this.ibtnStar5_Click);
+            this.ibtnStar5.MouseLeave += new System.EventHandler(this.ibtnStar5_MouseLeave);
+            this.ibtnStar5.MouseHover += new System.EventHandler(this.ibtnStar5_MouseHover);
+            // 
+            // ibtnStar1
+            // 
+            this.ibtnStar1.AutoSize = true;
+            this.ibtnStar1.FlatAppearance.BorderSize = 0;
+            this.ibtnStar1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(227)))), ((int)(((byte)(243)))));
+            this.ibtnStar1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(227)))), ((int)(((byte)(243)))));
+            this.ibtnStar1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ibtnStar1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.ibtnStar1.IconChar = FontAwesome.Sharp.IconChar.Star;
+            this.ibtnStar1.IconColor = System.Drawing.Color.Linen;
+            this.ibtnStar1.IconFont = FontAwesome.Sharp.IconFont.Regular;
+            this.ibtnStar1.IconSize = 40;
+            this.ibtnStar1.Location = new System.Drawing.Point(14, -3);
+            this.ibtnStar1.Name = "ibtnStar1";
+            this.ibtnStar1.Size = new System.Drawing.Size(76, 54);
+            this.ibtnStar1.TabIndex = 8;
+            this.ibtnStar1.UseVisualStyleBackColor = true;
+            this.ibtnStar1.Click += new System.EventHandler(this.ibtnStar1_Click);
+            this.ibtnStar1.MouseLeave += new System.EventHandler(this.ibtnStar1_MouseLeave);
+            this.ibtnStar1.MouseHover += new System.EventHandler(this.ibtnStar1_MouseHover);
+            // 
+            // ibtnStar4
+            // 
+            this.ibtnStar4.AutoSize = true;
+            this.ibtnStar4.FlatAppearance.BorderSize = 0;
+            this.ibtnStar4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(227)))), ((int)(((byte)(243)))));
+            this.ibtnStar4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(227)))), ((int)(((byte)(243)))));
+            this.ibtnStar4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ibtnStar4.IconChar = FontAwesome.Sharp.IconChar.Star;
+            this.ibtnStar4.IconColor = System.Drawing.Color.Linen;
+            this.ibtnStar4.IconFont = FontAwesome.Sharp.IconFont.Regular;
+            this.ibtnStar4.IconSize = 40;
+            this.ibtnStar4.Location = new System.Drawing.Point(260, 0);
+            this.ibtnStar4.Name = "ibtnStar4";
+            this.ibtnStar4.Size = new System.Drawing.Size(76, 54);
+            this.ibtnStar4.TabIndex = 11;
+            this.ibtnStar4.UseVisualStyleBackColor = true;
+            this.ibtnStar4.Click += new System.EventHandler(this.ibtnStar4_Click);
+            this.ibtnStar4.MouseLeave += new System.EventHandler(this.ibtnStar4_MouseLeave);
+            this.ibtnStar4.MouseHover += new System.EventHandler(this.ibtnStar4_MouseHover);
+            // 
+            // ibtnStar2
+            // 
+            this.ibtnStar2.AutoSize = true;
+            this.ibtnStar2.FlatAppearance.BorderSize = 0;
+            this.ibtnStar2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(227)))), ((int)(((byte)(243)))));
+            this.ibtnStar2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(227)))), ((int)(((byte)(243)))));
+            this.ibtnStar2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ibtnStar2.IconChar = FontAwesome.Sharp.IconChar.Star;
+            this.ibtnStar2.IconColor = System.Drawing.Color.Linen;
+            this.ibtnStar2.IconFont = FontAwesome.Sharp.IconFont.Regular;
+            this.ibtnStar2.IconSize = 40;
+            this.ibtnStar2.Location = new System.Drawing.Point(96, -3);
+            this.ibtnStar2.Name = "ibtnStar2";
+            this.ibtnStar2.Size = new System.Drawing.Size(76, 54);
+            this.ibtnStar2.TabIndex = 9;
+            this.ibtnStar2.UseVisualStyleBackColor = true;
+            this.ibtnStar2.Click += new System.EventHandler(this.ibtnStar2_Click);
+            this.ibtnStar2.MouseLeave += new System.EventHandler(this.ibtnStar2_MouseLeave);
+            this.ibtnStar2.MouseHover += new System.EventHandler(this.ibtnStar2_MouseHover);
+            // 
+            // ibtnStar3
+            // 
+            this.ibtnStar3.AutoSize = true;
+            this.ibtnStar3.FlatAppearance.BorderSize = 0;
+            this.ibtnStar3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(227)))), ((int)(((byte)(243)))));
+            this.ibtnStar3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(227)))), ((int)(((byte)(243)))));
+            this.ibtnStar3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ibtnStar3.IconChar = FontAwesome.Sharp.IconChar.Star;
+            this.ibtnStar3.IconColor = System.Drawing.Color.Linen;
+            this.ibtnStar3.IconFont = FontAwesome.Sharp.IconFont.Regular;
+            this.ibtnStar3.IconSize = 40;
+            this.ibtnStar3.Location = new System.Drawing.Point(178, -3);
+            this.ibtnStar3.Name = "ibtnStar3";
+            this.ibtnStar3.Size = new System.Drawing.Size(76, 54);
+            this.ibtnStar3.TabIndex = 10;
+            this.ibtnStar3.UseVisualStyleBackColor = true;
+            this.ibtnStar3.Click += new System.EventHandler(this.ibtnStar3_Click);
+            this.ibtnStar3.MouseLeave += new System.EventHandler(this.ibtnStar3_MouseLeave);
+            this.ibtnStar3.MouseHover += new System.EventHandler(this.ibtnStar3_MouseHover);
+            // 
+            // richTextBoxRatingComment
+            // 
+            this.richTextBoxRatingComment.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBoxRatingComment.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richTextBoxRatingComment.Font = new System.Drawing.Font("League Spartan", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.richTextBoxRatingComment.Location = new System.Drawing.Point(3, 66);
+            this.richTextBoxRatingComment.Name = "richTextBoxRatingComment";
+            this.richTextBoxRatingComment.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Horizontal;
+            this.richTextBoxRatingComment.Size = new System.Drawing.Size(973, 148);
+            this.richTextBoxRatingComment.TabIndex = 0;
+            this.richTextBoxRatingComment.Text = "";
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(227)))), ((int)(((byte)(243)))));
+            this.panel3.Controls.Add(this.pictureBox3);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(1225, 0);
+            this.panel3.Margin = new System.Windows.Forms.Padding(0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(129, 223);
+            this.panel3.TabIndex = 9;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::Login.Properties.Resources.sendicon;
+            this.pictureBox3.Location = new System.Drawing.Point(46, 120);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(37, 40);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 7;
+            this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
             // Danh_Gia_CTT
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1354, 736);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "Danh_Gia_CTT";
@@ -205,11 +371,17 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
             this.panelRatingEvent.ResumeLayout(false);
-            this.panelRatingEvent.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.tableLayoutPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.tableLayoutPanel3.ResumeLayout(false);
+            this.tableLayoutPanel4.ResumeLayout(false);
+            this.tableLayoutPanel4.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -218,15 +390,23 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.RichTextBox richTextBoxRatingComment;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBoxRatingPoint;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel panelShowRating1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Panel panelRatingEvent;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private FontAwesome.Sharp.IconButton ibtnStar5;
+        private FontAwesome.Sharp.IconButton ibtnStar4;
+        private FontAwesome.Sharp.IconButton ibtnStar1;
+        private System.Windows.Forms.RichTextBox richTextBoxRatingComment;
+        private FontAwesome.Sharp.IconButton ibtnStar3;
+        private FontAwesome.Sharp.IconButton ibtnStar2;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
+        private System.Windows.Forms.Panel panel4;
     }
 }

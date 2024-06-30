@@ -1,4 +1,43 @@
 <<<<<<< HEAD
+D:\code\C#\Project_truyen\Login\obj\Debug\App.csproj.App.config
+D:\code\C#\Project_truyen\Login\obj\Debug\App.csproj.AssemblyReference.cache
+D:\code\C#\Project_truyen\Login\obj\Debug\Login.AccountInfo.resources
+D:\code\C#\Project_truyen\Login\obj\Debug\Login.AlbumTruyen.resources
+D:\code\C#\Project_truyen\Login\obj\Debug\Login.Announcement.resources
+D:\code\C#\Project_truyen\Login\obj\Debug\Login.Bang_Xep_Hang.resources
+D:\code\C#\Project_truyen\Login\obj\Debug\Login.Binh_Luan_CTT.resources
+D:\code\C#\Project_truyen\Login\obj\Debug\Login.Bookmark.resources
+D:\code\C#\Project_truyen\Login\obj\Debug\Login.BXH_De_Cu.resources
+D:\code\C#\Project_truyen\Login\obj\Debug\Login.BXH_Doc_Nhieu.resources
+D:\code\C#\Project_truyen\Login\obj\Debug\Login.Change_Password.resources
+D:\code\C#\Project_truyen\Login\obj\Debug\Login.Danhgia.resources
+D:\code\C#\Project_truyen\Login\obj\Debug\Login.Doc_Truyen.resources
+D:\code\C#\Project_truyen\Login\obj\Debug\Login.Duyet_Truyen.resources
+D:\code\C#\Project_truyen\Login\obj\Debug\Login.Fix.resources
+D:\code\C#\Project_truyen\Login\obj\Debug\Login.Chi_Tiet_Truyen.resources
+D:\code\C#\Project_truyen\Login\obj\Debug\Login.Danh_Gia_CTT.resources
+D:\code\C#\Project_truyen\Login\obj\Debug\Login.Danh_Sach_Chuong_CTT.resources
+D:\code\C#\Project_truyen\Login\obj\Debug\Login.Forget_Password.resources
+D:\code\C#\Project_truyen\Login\obj\Debug\Login.HomePage.resources
+D:\code\C#\Project_truyen\Login\obj\Debug\Login.Hotro_baoloi.resources
+D:\code\C#\Project_truyen\Login\obj\Debug\Login.InsertChapter.resources
+D:\code\C#\Project_truyen\Login\obj\Debug\Login.Inserted.resources
+D:\code\C#\Project_truyen\Login\obj\Debug\Login.InsertNovel.resources
+D:\code\C#\Project_truyen\Login\obj\Debug\Login.Login.resources
+D:\code\C#\Project_truyen\Login\obj\Debug\Login.Nhan_tin.resources
+D:\code\C#\Project_truyen\Login\obj\Debug\Login.NvUpdate.resources
+D:\code\C#\Project_truyen\Login\obj\Debug\Login.Properties.Resources.resources
+D:\code\C#\Project_truyen\Login\obj\Debug\Login.Reading_History.resources
+D:\code\C#\Project_truyen\Login\obj\Debug\Login.Setting.resources
+D:\code\C#\Project_truyen\Login\obj\Debug\Login.Search.resources
+D:\code\C#\Project_truyen\Login\obj\Debug\Login.Signup.resources
+D:\code\C#\Project_truyen\Login\obj\Debug\Login.Trang_chu.resources
+D:\code\C#\Project_truyen\Login\obj\Debug\Login.Trogiup_baoloi.resources
+D:\code\C#\Project_truyen\Login\obj\Debug\Login.Signup.vi-VN.resources
+D:\code\C#\Project_truyen\Login\obj\Debug\App.csproj.GenerateResource.cache
+D:\code\C#\Project_truyen\Login\obj\Debug\App.csproj.CoreCompileInputs.cache
+=======
+<<<<<<< HEAD
 D:\ProJect-LTMCB\Project_truyen\Login\bin\Debug\grpc_csharp_ext.x86.dll
 D:\ProJect-LTMCB\Project_truyen\Login\bin\Debug\grpc_csharp_ext.x64.dll
 D:\ProJect-LTMCB\Project_truyen\Login\bin\Debug\libgrpc_csharp_ext.x64.so
@@ -482,6 +521,7 @@ D:\GitHub\Login\obj\Debug\App.csproj.Up2Date
 D:\GitHub\Login\obj\Debug\Login.exe
 D:\GitHub\Login\obj\Debug\Login.pdb
 =======
+>>>>>>> 0a6231b14d3c94b0ace8bf6bbc2b73003ebedaaa
 D:\code\C#\Project_truyen\Login\bin\Debug\grpc_csharp_ext.x86.dll
 D:\code\C#\Project_truyen\Login\bin\Debug\grpc_csharp_ext.x64.dll
 D:\code\C#\Project_truyen\Login\bin\Debug\libgrpc_csharp_ext.x64.so
@@ -602,61 +642,12 @@ D:\code\C#\Project_truyen\Login\bin\Debug\System.Text.Encodings.Web.xml
 D:\code\C#\Project_truyen\Login\bin\Debug\System.Text.Json.xml
 D:\code\C#\Project_truyen\Login\bin\Debug\System.Threading.Tasks.Extensions.xml
 D:\code\C#\Project_truyen\Login\bin\Debug\System.ValueTuple.xml
-D:\code\C#\Project_truyen\Login\obj\Debug\App.csproj.App.config
-D:\code\C#\Project_truyen\Login\obj\Debug\App.csproj.AssemblyReference.cache
-D:\code\C#\Project_truyen\Login\obj\Debug\Login.AccountInfo.resources
-D:\code\C#\Project_truyen\Login\obj\Debug\Login.AlbumTruyen.resources
-D:\code\C#\Project_truyen\Login\obj\Debug\Login.Announcement.resources
->>>>>>> 51d498b35ea9d920795e1d0939a400af0c607cf7
-D:\code\C#\Project_truyen\Login\obj\Debug\Login.Bang_Xep_Hang.resources
-D:\code\C#\Project_truyen\Login\obj\Debug\Login.Bookmark.resources
-D:\code\C#\Project_truyen\Login\obj\Debug\Login.BXH_De_Cu.resources
-D:\code\C#\Project_truyen\Login\obj\Debug\Login.BXH_Doc_Nhieu.resources
-D:\code\C#\Project_truyen\Login\obj\Debug\Login.Change_Password.resources
-D:\code\C#\Project_truyen\Login\obj\Debug\Login.Danhgia.resources
-D:\code\C#\Project_truyen\Login\obj\Debug\Login.Doc_Truyen.resources
-D:\code\C#\Project_truyen\Login\obj\Debug\Login.Duyet_Truyen.resources
-D:\code\C#\Project_truyen\Login\obj\Debug\Login.Fix.resources
-D:\code\C#\Project_truyen\Login\obj\Debug\Login.Chi_Tiet_Truyen.resources
-D:\code\C#\Project_truyen\Login\obj\Debug\Login.Danh_Gia_CTT.resources
-D:\code\C#\Project_truyen\Login\obj\Debug\Login.Danh_Sach_Chuong_CTT.resources
-D:\code\C#\Project_truyen\Login\obj\Debug\Login.Forget_Password.resources
-D:\code\C#\Project_truyen\Login\obj\Debug\Login.HomePage.resources
-D:\code\C#\Project_truyen\Login\obj\Debug\Login.Hotro_baoloi.resources
-D:\code\C#\Project_truyen\Login\obj\Debug\Login.InsertChapter.resources
-D:\code\C#\Project_truyen\Login\obj\Debug\Login.Inserted.resources
-D:\code\C#\Project_truyen\Login\obj\Debug\Login.InsertNovel.resources
-D:\code\C#\Project_truyen\Login\obj\Debug\Login.Login.resources
-D:\code\C#\Project_truyen\Login\obj\Debug\Login.Nhan_tin.resources
-D:\code\C#\Project_truyen\Login\obj\Debug\Login.NvUpdate.resources
-D:\code\C#\Project_truyen\Login\obj\Debug\Login.Properties.Resources.resources
-D:\code\C#\Project_truyen\Login\obj\Debug\Login.Reading_History.resources
-D:\code\C#\Project_truyen\Login\obj\Debug\Login.Setting.resources
-<<<<<<< HEAD
-D:\code\C#\Project_truyen\Login\obj\Debug\Login.Announcement.resources
-=======
-<<<<<<< HEAD
-=======
-C:\TLHT\HK2_2023-2024\LapTrinhMangCanBan\HealTruyen\src\Login\obj\Debug\Login.Duyet_Truyen.resources
-C:\TLHT\HK2_2023-2024\LapTrinhMangCanBan\HealTruyen\src\Login\obj\Debug\Login.Doc_Truyen.resources
-=======
->>>>>>> c0e74c3a0d2968325974a256e350ea6b0a9f5cbf
->>>>>>> 3adbc24c7b90b7ddee866d6ba6f3ab2f3a90c14f
->>>>>>> 40f96957b5a6b61d8ce6a068700f4d5a392996ab
->>>>>>> 1f714e08c4567446662ac8126aeb7e763cdeaf79
->>>>>>> 5693b9a42bdaccbaa777e982de86c3ac6419c80c
->>>>>>> 68497be5081d98cf101310909abf30d77e26f8d6
-=======
-D:\code\C#\Project_truyen\Login\obj\Debug\Login.Search.resources
-D:\code\C#\Project_truyen\Login\obj\Debug\Login.Signup.resources
-D:\code\C#\Project_truyen\Login\obj\Debug\Login.Trang_chu.resources
-D:\code\C#\Project_truyen\Login\obj\Debug\Login.Trogiup_baoloi.resources
-D:\code\C#\Project_truyen\Login\obj\Debug\Login.Signup.vi-VN.resources
-D:\code\C#\Project_truyen\Login\obj\Debug\App.csproj.GenerateResource.cache
-D:\code\C#\Project_truyen\Login\obj\Debug\App.csproj.CoreCompileInputs.cache
 D:\code\C#\Project_truyen\Login\obj\Debug\vi-VN\Login.resources.dll
 D:\code\C#\Project_truyen\Login\obj\Debug\App.csproj.Up2Date
 D:\code\C#\Project_truyen\Login\obj\Debug\Login.exe
 D:\code\C#\Project_truyen\Login\obj\Debug\Login.pdb
+<<<<<<< HEAD
+=======
 >>>>>>> 51d498b35ea9d920795e1d0939a400af0c607cf7
 >>>>>>> a3ada17aabdc6fb3c9cf38dad256c61a48c2533c
+>>>>>>> 0a6231b14d3c94b0ace8bf6bbc2b73003ebedaaa

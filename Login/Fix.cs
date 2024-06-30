@@ -89,6 +89,7 @@ namespace Login
             {
                 string username = Username.Text;
                 await client.User.ChangeDisplayNameAsync(username);
+                await ifclient.SetAsync("Nguoi_dung/" + ID + "/TK_dangnhap", Username.Text);
                 cntChange++;
             }
             if (cntChange != 0)

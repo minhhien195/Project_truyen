@@ -105,6 +105,7 @@
             this.label20.Size = new System.Drawing.Size(948, 41);
             this.label20.TabIndex = 20;
             this.label20.Text = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
+            this.label20.Visible = false;
             // 
             // label19
             // 
@@ -116,6 +117,7 @@
             this.label19.Size = new System.Drawing.Size(779, 50);
             this.label19.TabIndex = 19;
             this.label19.Text = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
+            this.label19.Visible = false;
             // 
             // label18
             // 
@@ -127,6 +129,7 @@
             this.label18.Size = new System.Drawing.Size(779, 50);
             this.label18.TabIndex = 18;
             this.label18.Text = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
+            this.label18.Visible = false;
             // 
             // label17
             // 
@@ -138,6 +141,7 @@
             this.label17.Size = new System.Drawing.Size(779, 50);
             this.label17.TabIndex = 17;
             this.label17.Text = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
+            this.label17.Visible = false;
             // 
             // label16
             // 
@@ -149,6 +153,7 @@
             this.label16.Size = new System.Drawing.Size(779, 50);
             this.label16.TabIndex = 16;
             this.label16.Text = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
+            this.label16.Visible = false;
             // 
             // label15
             // 
@@ -160,6 +165,7 @@
             this.label15.Size = new System.Drawing.Size(779, 50);
             this.label15.TabIndex = 15;
             this.label15.Text = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
+            this.label15.Visible = false;
             // 
             // label14
             // 
@@ -171,6 +177,7 @@
             this.label14.Size = new System.Drawing.Size(779, 50);
             this.label14.TabIndex = 14;
             this.label14.Text = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
+            this.label14.Visible = false;
             // 
             // label13
             // 
@@ -182,6 +189,7 @@
             this.label13.Size = new System.Drawing.Size(779, 50);
             this.label13.TabIndex = 13;
             this.label13.Text = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
+            this.label13.Visible = false;
             // 
             // label12
             // 
@@ -193,6 +201,7 @@
             this.label12.Size = new System.Drawing.Size(779, 50);
             this.label12.TabIndex = 12;
             this.label12.Text = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
+            this.label12.Visible = false;
             // 
             // label11
             // 
@@ -204,6 +213,7 @@
             this.label11.Size = new System.Drawing.Size(779, 50);
             this.label11.TabIndex = 11;
             this.label11.Text = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
+            this.label11.Visible = false;
             // 
             // label10
             // 
@@ -215,6 +225,7 @@
             this.label10.Size = new System.Drawing.Size(779, 50);
             this.label10.TabIndex = 10;
             this.label10.Text = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
+            this.label10.Visible = false;
             // 
             // label9
             // 
@@ -226,6 +237,7 @@
             this.label9.Size = new System.Drawing.Size(779, 50);
             this.label9.TabIndex = 9;
             this.label9.Text = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
+            this.label9.Visible = false;
             // 
             // label8
             // 
@@ -237,6 +249,7 @@
             this.label8.Size = new System.Drawing.Size(779, 50);
             this.label8.TabIndex = 8;
             this.label8.Text = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
+            this.label8.Visible = false;
             // 
             // label7
             // 
@@ -248,6 +261,7 @@
             this.label7.Size = new System.Drawing.Size(779, 50);
             this.label7.TabIndex = 7;
             this.label7.Text = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
+            this.label7.Visible = false;
             // 
             // label6
             // 
@@ -259,6 +273,7 @@
             this.label6.Size = new System.Drawing.Size(779, 50);
             this.label6.TabIndex = 6;
             this.label6.Text = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
+            this.label6.Visible = false;
             // 
             // label5
             // 
@@ -270,6 +285,7 @@
             this.label5.Size = new System.Drawing.Size(779, 50);
             this.label5.TabIndex = 5;
             this.label5.Text = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
+            this.label5.Visible = false;
             // 
             // label4
             // 
@@ -281,6 +297,7 @@
             this.label4.Size = new System.Drawing.Size(779, 50);
             this.label4.TabIndex = 4;
             this.label4.Text = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
+            this.label4.Visible = false;
             // 
             // label3
             // 
@@ -292,6 +309,7 @@
             this.label3.Size = new System.Drawing.Size(779, 50);
             this.label3.TabIndex = 3;
             this.label3.Text = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
+            this.label3.Visible = false;
             // 
             // label2
             // 
@@ -306,6 +324,7 @@
             this.label2.Text = "aatttttaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabbbbbbbb" +
     "bbbbbbbbbbbbbbbbbbbb";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label2.Visible = false;
             // 
             // Danh_Sach_Chuong_CTT
             // 
