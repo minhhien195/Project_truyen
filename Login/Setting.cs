@@ -164,6 +164,11 @@ namespace Login
             }
         }
 
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 

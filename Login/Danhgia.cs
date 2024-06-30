@@ -13,7 +13,9 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.UI.WebControls;
 using System.Windows.Forms;
+using System.Windows.Media.Media3D;
 using thongbao;
 
 namespace Login
@@ -30,11 +32,9 @@ namespace Login
         public class Danh_Gia
         {
             public string ID_nguoidung {  get; set; }
-            public int Luot_thich {  get; set; }
             public string Noi_dung { get; set; }
             public int Sao_danh_gia { get; set; }
             public string TG_danhgia { get; set; }
-            public bool To_cao { get; set; }
         }
         bool rtb = false;
         
@@ -376,9 +376,9 @@ namespace Login
 
         private async void button1_Click(object sender, EventArgs e)
         {
-            if (ibtnStar1.ForeColor == Color.DarkOrange || ibtnStar2.ForeColor == Color.DarkOrange
-                || ibtnStar3.ForeColor == Color.DarkOrange || ibtnStar4.ForeColor == Color.DarkOrange
-                || ibtnStar5.ForeColor == Color.DarkOrange || richTextBox1.ForeColor == Color.Black) 
+            if (ibtnStar1.IconColor == Color.DarkOrange || ibtnStar2.IconColor == Color.DarkOrange
+                || ibtnStar3.IconColor == Color.DarkOrange || ibtnStar4.IconColor == Color.DarkOrange
+                || ibtnStar5.IconColor == Color.DarkOrange) 
             {
                 IFirebaseClient client = new FireSharp.FirebaseClient(_firebaseConfig);
 
@@ -394,8 +394,8 @@ namespace Login
                 var client1 = new FirebaseAuthClient(config);
                 var userId = client1.User.Uid;
 
-                FirebaseResponse res = await client.GetAsync($"Truyen/{idtruyen}/Danh_gia");
-                var dict = JsonConvert.DeserializeObject<Dictionary<string, object>>(res.Body);
+                FirebaseResponse res = await client.GetAsync($"Truyen/{idtruyen}/Danh_gia/");
+                var dict = JsonConvert.DeserializeObject<Dictionary<string, Dictionary<string, object>>>(res.Body);
 
                 //show data
                 var dem = 0;
@@ -407,38 +407,52 @@ namespace Login
 
                 int Star = 0;
 
-                if (ibtnStar1.ForeColor == Color.DarkOrange)
+                if (ibtnStar1.IconColor == Color.DarkOrange)
                 {
                     Star = 1;
                 }
-                if (ibtnStar2.ForeColor == Color.DarkOrange)
+                if (ibtnStar2.IconColor == Color.DarkOrange)
                 {
                     Star = 2;
                 }
-                if (ibtnStar3.ForeColor == Color.DarkOrange)
+                if (ibtnStar3.IconColor == Color.DarkOrange)
                 {
                     Star = 3;
                 }
-                if (ibtnStar4.ForeColor == Color.DarkOrange)
+                if (ibtnStar4.IconColor == Color.DarkOrange)
                 {
                     Star = 4;
                 }
-                if (ibtnStar5.ForeColor == Color.DarkOrange)
+                if (ibtnStar5.IconColor == Color.DarkOrange)
                 {
                     Star = 5;
                 }
 
+                string demdg = "0";
+                if (dem < 10)
+                {
+                    demdg += "0" + dem.ToString(); 
+                }
+                else if (dem < 99)
+                {
+                    demdg += dem.ToString();
+                }
+                else
+                {
+                    demdg = dem.ToString();
+                }
+
+                string tgdg = System.DateTime.Now.ToString("MM/dd/yyyy hh:mm:ss tt");
+
                 Danh_Gia danh_Gia = new Danh_Gia()
                 {
                     ID_nguoidung = userId,
-                    Luot_thich = 0,
                     Noi_dung = richTextBox1.Text,
                     Sao_danh_gia = Star,
-                    TG_danhgia = DateTime.UtcNow.ToString(),
-                    To_cao = false
+                    TG_danhgia = tgdg
                 };
 
-                await client.SetAsync("Truyen/" + idtruyen + "Danh_gia/" + dem, danh_Gia);
+                await client.SetAsync("Truyen/" + idtruyen + "/Danh_gia/" + demdg, danh_Gia);
 
                 FirestoreDb db = FirestoreDb.Create("healtruyen");
                 CollectionReference truyen = db.Collection("Truyen");
@@ -455,27 +469,28 @@ namespace Login
 
                 int So_danhgia = snapshot.GetValue<int>("Danh_gia");
                 int Tong_danhgia = snapshot.GetValue<int>("Diem_danhgia");
-                double danhgia_tb = snapshot.GetValue<double>("Danh_gia_tb");
+                double danhgia_tb = snapshot.GetValue<double>("Danh_gia_Tb");
 
                 So_danhgia++;
                 Tong_danhgia += Star;
-                danhgia_tb = Tong_danhgia / So_danhgia;
-                danhgia_tb = Math.Round(danhgia_tb, 1);
+                danhgia_tb = (double)Tong_danhgia / So_danhgia;
+                danhgia_tb = Math.Round(danhgia_tb, 2);
 
                 Dictionary<string, object> updates = new Dictionary<string, object>
                 {
                     { "Danh_gia", So_danhgia },
                     { "Diem_danhgia", Tong_danhgia },
-                    { "Danh_gia_tb", danhgia_tb },
+                    { "Danh_gia_Tb", danhgia_tb },
                 };
                 DocumentReference doc = truyen.Document(id);
                 await doc.UpdateAsync(updates);
-
+                
             }
             else
             {
                 MessageBox.Show("Lỗi! Vui lòng nhập đầy đủ thông tin đánh giá.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }    
+            }
+            this.Close();
         }
 
         private void ibtnClose_Click(object sender, EventArgs e)

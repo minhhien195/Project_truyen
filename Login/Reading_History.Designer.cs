@@ -135,6 +135,7 @@
             this.btnDoctiep1.TabIndex = 8;
             this.btnDoctiep1.Text = "Đọc tiếp";
             this.btnDoctiep1.UseVisualStyleBackColor = false;
+            this.btnDoctiep1.Click += new System.EventHandler(this.btnDoctiep1_Click);
             // 
             // lbSochuong1
             // 
@@ -194,7 +195,7 @@
             this.lbTenTruyen1.Font = new System.Drawing.Font("League Spartan SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTenTruyen1.Location = new System.Drawing.Point(181, 14);
             this.lbTenTruyen1.Name = "lbTenTruyen1";
-            this.lbTenTruyen1.Size = new System.Drawing.Size(575, 36);
+            this.lbTenTruyen1.Size = new System.Drawing.Size(487, 30);
             this.lbTenTruyen1.TabIndex = 1;
             this.lbTenTruyen1.Text = "Theo Giang Hồ Bắt Đầu, Liều Thành Võ Đạo Chân Quân";
             // 

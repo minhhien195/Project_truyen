@@ -97,7 +97,7 @@ namespace Novel
             }
         }
 
-        public async static Task<Novel> getInfoNovel(string nameNovel)
+        public async static Task<DocumentSnapshot> getInfoNovel(string nameNovel)
         {
             string project = "healtruyen";
             FirestoreDb db = FirestoreDb.Create(project);
@@ -114,8 +114,8 @@ namespace Novel
             if (snapshot.Exists)
             {
 
-                Novel novel = snapshot.ConvertTo<Novel>();
-                return novel;
+                /*Novel novel = snapshot.ConvertTo<Novel>();*/
+                return snapshot;
             }
             else
             {

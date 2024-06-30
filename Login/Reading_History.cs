@@ -383,5 +383,10 @@ namespace Login
         {
 
         }
+
+        private void btnDoctiep1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

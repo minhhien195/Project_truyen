@@ -116,6 +116,7 @@
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(1320, 216);
             this.panel6.TabIndex = 0;
+            this.panel6.Visible = false;
             // 
             // tableLayoutPanel4
             // 
@@ -143,6 +144,8 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Visible = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // panel7
             // 
@@ -293,6 +296,7 @@
             this.btnSendComment.TabIndex = 1;
             this.btnSendComment.Text = "Send";
             this.btnSendComment.UseVisualStyleBackColor = false;
+            this.btnSendComment.Click += new System.EventHandler(this.btnSendComment_Click);
             // 
             // tableLayoutPanel2
             // 

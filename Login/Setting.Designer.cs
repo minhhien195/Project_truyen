@@ -51,7 +51,6 @@
             this.ptrNotsame = new System.Windows.Forms.PictureBox();
             this.lbemailKhonghople = new System.Windows.Forms.Label();
             this.ptrWarning = new System.Windows.Forms.PictureBox();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -381,20 +380,12 @@
             this.ptrWarning.TabStop = false;
             this.ptrWarning.Visible = false;
             // 
-            // panel3
-            // 
-            this.panel3.Location = new System.Drawing.Point(3, 78);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(200, 35);
-            this.panel3.TabIndex = 30;
-            // 
             // Setting
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
             this.ClientSize = new System.Drawing.Size(1902, 1033);
-            this.Controls.Add(this.panel3);
             this.Controls.Add(this.lbemailKhonghople);
             this.Controls.Add(this.ptrWarning);
             this.Controls.Add(this.ptrNotsame);
@@ -451,6 +442,5 @@
         private System.Windows.Forms.PictureBox ptrNotsame;
         private System.Windows.Forms.Label lbemailKhonghople;
         private System.Windows.Forms.PictureBox ptrWarning;
-        private System.Windows.Forms.Panel panel3;
     }
 }
