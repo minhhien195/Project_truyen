@@ -340,7 +340,7 @@
             this.panelVandethuonggap.Controls.Add(this.paneNoidungvande);
             this.panelVandethuonggap.Controls.Add(this.lbVande);
             this.panelVandethuonggap.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelVandethuonggap.Location = new System.Drawing.Point(0, 325);
+            this.panelVandethuonggap.Location = new System.Drawing.Point(0, 309);
             this.panelVandethuonggap.Margin = new System.Windows.Forms.Padding(2);
             this.panelVandethuonggap.Name = "panelVandethuonggap";
             this.panelVandethuonggap.Size = new System.Drawing.Size(883, 2252);
@@ -2618,6 +2618,7 @@
             this.panelNoidungcaithien.Location = new System.Drawing.Point(0, 50);
             this.panelNoidungcaithien.Margin = new System.Windows.Forms.Padding(2);
             this.panelNoidungcaithien.Name = "panelNoidungcaithien";
+
             this.panelNoidungcaithien.Size = new System.Drawing.Size(883, 337);
             this.panelNoidungcaithien.TabIndex = 5;
             // 
@@ -2629,6 +2630,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 206);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
+
             this.panel1.Size = new System.Drawing.Size(883, 85);
             this.panel1.TabIndex = 16;
             // 
@@ -2641,11 +2643,12 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65F));
             this.tableLayoutPanel2.Controls.Add(this.btnHuy, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.btnXacnhan, 1, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(474, 34);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(395, 4);
             this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+
             this.tableLayoutPanel2.Size = new System.Drawing.Size(326, 44);
             this.tableLayoutPanel2.TabIndex = 9;
             // 
@@ -2658,9 +2661,10 @@
             this.btnHuy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHuy.Font = new System.Drawing.Font("League Spartan", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHuy.ForeColor = System.Drawing.Color.Transparent;
-            this.btnHuy.Location = new System.Drawing.Point(32, 2);
+            this.btnHuy.Location = new System.Drawing.Point(2, 2);
             this.btnHuy.Margin = new System.Windows.Forms.Padding(2);
             this.btnHuy.Name = "btnHuy";
+
             this.btnHuy.Size = new System.Drawing.Size(61, 39);
             this.btnHuy.TabIndex = 7;
             this.btnHuy.Text = "Hủy";

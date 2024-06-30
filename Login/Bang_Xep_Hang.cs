@@ -67,38 +67,44 @@ namespace Login
 
         private void iconButtonRead_Click(object sender, EventArgs e)
         {
-            panelList1.Visible = false;
-            iconButtonRead.BackColor = Color.FromArgb(191, 44, 36);
-            iconButtonRead.ForeColor = Color.White;
-            iconButtonRead.IconColor = Color.White;
+            if (iconButtonRead.ForeColor == Color.Black)
+            {
+                panelList1.Visible = false;
+                iconButtonRead.BackColor = Color.FromArgb(191, 44, 36);
+                iconButtonRead.ForeColor = Color.White;
+                iconButtonRead.IconColor = Color.White;
 
-            iconButtonTrend.BackColor = Color.White;
-            iconButtonTrend.ForeColor = Color.Black;
-            iconButtonTrend.IconColor = Color.Black;
+                iconButtonTrend.BackColor = Color.White;
+                iconButtonTrend.ForeColor = Color.Black;
+                iconButtonTrend.IconColor = Color.Black;
 
-            iconButtonRecom.BackColor = Color.White;
-            iconButtonRecom.ForeColor = Color.Black;
-            iconButtonRecom.IconColor = Color.Black;
+                iconButtonRecom.BackColor = Color.White;
+                iconButtonRecom.ForeColor = Color.Black;
+                iconButtonRecom.IconColor = Color.Black;
 
-            openChildForm(new BXH_Doc_Nhieu());
+                openChildForm(new BXH_Doc_Nhieu());
+            }
         }
 
         private void iconButtonRecom_Click(object sender, EventArgs e)
         {
-            panelList1.Visible = false;
-            iconButtonRecom.BackColor = Color.FromArgb(191, 44, 36);
-            iconButtonRecom.ForeColor = Color.White;
-            iconButtonRecom.IconColor = Color.White;
+            if (iconButtonRecom.ForeColor == Color.Black)
+            {
+                panelList1.Visible = false;
+                iconButtonRecom.BackColor = Color.FromArgb(191, 44, 36);
+                iconButtonRecom.ForeColor = Color.White;
+                iconButtonRecom.IconColor = Color.White;
 
-            iconButtonTrend.BackColor = Color.White;
-            iconButtonTrend.ForeColor = Color.Black;
-            iconButtonTrend.IconColor = Color.Black;
+                iconButtonTrend.BackColor = Color.White;
+                iconButtonTrend.ForeColor = Color.Black;
+                iconButtonTrend.IconColor = Color.Black;
 
-            iconButtonRead.BackColor = Color.White;
-            iconButtonRead.ForeColor = Color.Black;
-            iconButtonRead.IconColor = Color.Black;
+                iconButtonRead.BackColor = Color.White;
+                iconButtonRead.ForeColor = Color.Black;
+                iconButtonRead.IconColor = Color.Black;
 
-            openChildForm(new BXH_De_Cu());
+                openChildForm(new BXH_De_Cu());
+            }
         }
 
         private void iconButton3_MouseEnter(object sender, EventArgs e)
@@ -136,7 +142,7 @@ namespace Login
             hdLabel.Text = "Bảng xếp hạng đọc nhiều";*/
 
             CollectionReference collection = db.Collection("Truyen");
-            Query q = collection.OrderByDescending("Luot_thich");
+            Query q = collection.OrderByDescending("Danh_gia_TB");
             QuerySnapshot qs = await collection.GetSnapshotAsync();
 
 
@@ -252,10 +258,10 @@ namespace Login
                     recom.FlatStyle = FlatStyle.Flat;
                     recom.FlatAppearance.BorderSize = 0;
                     recom.Font = new Font("League Spartan", 14, FontStyle.Regular);
-                    recom.IconChar = IconChar.ArrowCircleUp;
+                    recom.IconChar = IconChar.Star;
                     recom.IconFont = IconFont.Auto;
                     recom.IconSize = 48;
-                    recom.Text = novel["De_cu"].ToString();
+                    recom.Text = novel["Danh_gia_Tb"].ToString();
                     recom.TextAlign = ContentAlignment.MiddleRight;
                     recom.TextImageRelation = TextImageRelation.ImageBeforeText;
 

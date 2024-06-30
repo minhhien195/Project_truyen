@@ -144,6 +144,7 @@ namespace Login
         private void button3_Click(object sender, EventArgs e)
         {
             this.Hide();
+
             Doc_Truyen form = new Doc_Truyen("TOÀN TRÍ ĐỘC GIẢ",user,2);
             form.Show();
         }

@@ -45,13 +45,13 @@
             this.label4 = new System.Windows.Forms.Label();
             this.cbdanhgia = new System.Windows.Forms.ComboBox();
             this.pnAll2 = new System.Windows.Forms.Panel();
-            this.lbSearchby = new System.Windows.Forms.Label();
             this.pnAll.SuspendLayout();
             this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnAll
             // 
+            this.pnAll.AutoSize = true;
             this.pnAll.Controls.Add(this.label7);
             this.pnAll.Controls.Add(this.panel4);
             this.pnAll.Controls.Add(this.btnReset);
@@ -66,9 +66,10 @@
             this.pnAll.Controls.Add(this.cbTheloai);
             this.pnAll.Controls.Add(this.label4);
             this.pnAll.Controls.Add(this.cbdanhgia);
+            this.pnAll.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnAll.Location = new System.Drawing.Point(0, 0);
             this.pnAll.Name = "pnAll";
-            this.pnAll.Size = new System.Drawing.Size(900, 323);
+            this.pnAll.Size = new System.Drawing.Size(900, 316);
             this.pnAll.TabIndex = 18;
             // 
             // label7
@@ -76,7 +77,7 @@
             this.label7.BackColor = System.Drawing.Color.Black;
             this.label7.Location = new System.Drawing.Point(0, 315);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(900, 1);
+            this.label7.Size = new System.Drawing.Size(1800, 1);
             this.label7.TabIndex = 34;
             this.label7.Text = "1";
             // 
@@ -137,6 +138,7 @@
             this.btnBack.Text = " Tìm kiếm nâng cao";
             this.btnBack.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // tbtacgia
             // 
@@ -198,7 +200,7 @@
             this.label1.BackColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(0, 59);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(900, 1);
+            this.label1.Size = new System.Drawing.Size(1800, 1);
             this.label1.TabIndex = 21;
             // 
             // label6
@@ -307,21 +309,11 @@
             // pnAll2
             // 
             this.pnAll2.AutoScroll = true;
-            this.pnAll2.Location = new System.Drawing.Point(0, 360);
+            this.pnAll2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnAll2.Location = new System.Drawing.Point(0, 316);
             this.pnAll2.Name = "pnAll2";
-            this.pnAll2.Size = new System.Drawing.Size(900, 331);
+            this.pnAll2.Size = new System.Drawing.Size(900, 404);
             this.pnAll2.TabIndex = 19;
-            // 
-            // lbSearchby
-            // 
-            this.lbSearchby.AutoSize = true;
-            this.lbSearchby.Font = new System.Drawing.Font("League Spartan", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSearchby.Location = new System.Drawing.Point(27, 326);
-            this.lbSearchby.Name = "lbSearchby";
-            this.lbSearchby.Size = new System.Drawing.Size(168, 31);
-            this.lbSearchby.TabIndex = 20;
-            this.lbSearchby.Text = "Kết quả tìm kiếm: ";
-            this.lbSearchby.Visible = false;
             // 
             // Pro_search
             // 
@@ -329,7 +321,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
             this.ClientSize = new System.Drawing.Size(900, 720);
-            this.Controls.Add(this.lbSearchby);
             this.Controls.Add(this.pnAll2);
             this.Controls.Add(this.pnAll);
             this.Font = new System.Drawing.Font("League Spartan", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -366,6 +357,5 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cbdanhgia;
         private System.Windows.Forms.Panel pnAll2;
-        private System.Windows.Forms.Label lbSearchby;
     }
 }

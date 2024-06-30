@@ -77,8 +77,6 @@ namespace Login
 
         private void reset_panel()
         {
-            lbSearchby.Text = "Kết quả tìm kiếm: ";
-            lbSearchby.Visible = false;
             foreach (Control control in pnAll2.Controls)
             {
                 control.Visible = false;
@@ -88,12 +86,6 @@ namespace Login
         private async void Output(Task<List<string>> output, bool c_t, string name)
         {
             reset_panel();
-
-            lbSearchby.Visible = true;
-            if (string.IsNullOrEmpty(name) && name.ToUpper() != "TÌM KIẾM") 
-            {
-                lbSearchby.Text = "Kết quả tìm kiếm: " + name.ToUpper();
-            }
 
             var truyen = await output;
 
@@ -485,6 +477,11 @@ namespace Login
                     return originalText.Substring(0, maxSummaryLength) + "...";
                 }
             }
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

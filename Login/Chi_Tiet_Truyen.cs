@@ -263,6 +263,7 @@ namespace Login
         {
             panel2.Visible = false;
             openChildForm(new Binh_Luan_CTT(nameTruyen,user,idTruyen));
+
             btnNumChapMenu.ForeColor = Color.Black;
             btnNumChapMenu.Font = new Font("League Spartan", 16, FontStyle.Regular);
 

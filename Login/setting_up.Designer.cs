@@ -43,6 +43,7 @@
             this.btnDX = new FontAwesome.Sharp.IconButton();
             this.lbvaitro = new System.Windows.Forms.Label();
             this.btnKick = new FontAwesome.Sharp.IconButton();
+            this.btnDuyet = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.pbAvt)).BeginInit();
             this.SuspendLayout();
             // 
@@ -111,6 +112,7 @@
             this.btnuser.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnuser.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnuser.UseVisualStyleBackColor = true;
+            this.btnuser.Click += new System.EventHandler(this.btnuser_Click);
             // 
             // btnlsd
             // 
@@ -130,6 +132,7 @@
             this.btnlsd.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnlsd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnlsd.UseVisualStyleBackColor = true;
+            this.btnlsd.Click += new System.EventHandler(this.btnlsd_Click);
             // 
             // btnalbum
             // 
@@ -149,6 +152,7 @@
             this.btnalbum.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnalbum.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnalbum.UseVisualStyleBackColor = true;
+            this.btnalbum.Click += new System.EventHandler(this.btnalbum_Click);
             // 
             // btndangt
             // 
@@ -168,6 +172,7 @@
             this.btndangt.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btndangt.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btndangt.UseVisualStyleBackColor = true;
+            this.btndangt.Click += new System.EventHandler(this.btndangt_Click);
             // 
             // btntbao
             // 
@@ -187,6 +192,7 @@
             this.btntbao.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btntbao.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btntbao.UseVisualStyleBackColor = true;
+            this.btntbao.Click += new System.EventHandler(this.btntbao_Click);
             // 
             // btnloi
             // 
@@ -206,6 +212,7 @@
             this.btnloi.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnloi.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnloi.UseVisualStyleBackColor = true;
+            this.btnloi.Click += new System.EventHandler(this.btnloi_Click);
             // 
             // label4
             // 
@@ -233,6 +240,7 @@
             this.btnsetting.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnsetting.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnsetting.UseVisualStyleBackColor = true;
+            this.btnsetting.Click += new System.EventHandler(this.btnsetting_Click);
             // 
             // btnDX
             // 
@@ -284,12 +292,34 @@
             this.btnKick.UseVisualStyleBackColor = true;
             this.btnKick.Click += new System.EventHandler(this.btnKick_Click);
             // 
+            // btnDuyet
+            // 
+            this.btnDuyet.FlatAppearance.BorderSize = 0;
+            this.btnDuyet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDuyet.Font = new System.Drawing.Font("League Spartan", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDuyet.IconChar = FontAwesome.Sharp.IconChar.ArrowAltCircleUp;
+            this.btnDuyet.IconColor = System.Drawing.Color.Black;
+            this.btnDuyet.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnDuyet.IconSize = 26;
+            this.btnDuyet.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDuyet.Location = new System.Drawing.Point(0, 390);
+            this.btnDuyet.Name = "btnDuyet";
+            this.btnDuyet.Size = new System.Drawing.Size(200, 40);
+            this.btnDuyet.TabIndex = 20;
+            this.btnDuyet.Text = " Duyệt truyện";
+            this.btnDuyet.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDuyet.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnDuyet.UseVisualStyleBackColor = true;
+            this.btnDuyet.Visible = false;
+            this.btnDuyet.Click += new System.EventHandler(this.btDuyet_Click);
+            // 
             // setting_up
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(227)))), ((int)(((byte)(243)))));
             this.ClientSize = new System.Drawing.Size(200, 600);
+            this.Controls.Add(this.btnDuyet);
             this.Controls.Add(this.btnKick);
             this.Controls.Add(this.btnDX);
             this.Controls.Add(this.btnsetting);
@@ -335,5 +365,6 @@
         private FontAwesome.Sharp.IconButton btnDX;
         private System.Windows.Forms.Label lbvaitro;
         private FontAwesome.Sharp.IconButton btnKick;
+        private FontAwesome.Sharp.IconButton btnDuyet;
     }
 }

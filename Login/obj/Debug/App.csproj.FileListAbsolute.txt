@@ -1,4 +1,6 @@
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
 D:\code\C#\Project_truyen\Login\obj\Debug\App.csproj.App.config
 D:\code\C#\Project_truyen\Login\obj\Debug\App.csproj.AssemblyReference.cache
 D:\code\C#\Project_truyen\Login\obj\Debug\Login.AccountInfo.resources
@@ -38,6 +40,7 @@ D:\code\C#\Project_truyen\Login\obj\Debug\App.csproj.GenerateResource.cache
 D:\code\C#\Project_truyen\Login\obj\Debug\App.csproj.CoreCompileInputs.cache
 =======
 <<<<<<< HEAD
+>>>>>>> c58ad609f2b9ef69df5f407ee43c26ad1579babd
 D:\ProJect-LTMCB\Project_truyen\Login\bin\Debug\grpc_csharp_ext.x86.dll
 D:\ProJect-LTMCB\Project_truyen\Login\bin\Debug\grpc_csharp_ext.x64.dll
 D:\ProJect-LTMCB\Project_truyen\Login\bin\Debug\libgrpc_csharp_ext.x64.so
@@ -183,12 +186,16 @@ D:\ProJect-LTMCB\Project_truyen\Login\obj\Debug\Login.Inserted.resources
 D:\ProJect-LTMCB\Project_truyen\Login\obj\Debug\Login.InsertNovel.resources
 D:\ProJect-LTMCB\Project_truyen\Login\obj\Debug\Login.Login.resources
 D:\ProJect-LTMCB\Project_truyen\Login\obj\Debug\Login.NvUpdate.resources
-D:\ProJect-LTMCB\Project_truyen\Login\obj\Debug\Login.Popup.resources
 D:\ProJect-LTMCB\Project_truyen\Login\obj\Debug\Login.Properties.Resources.resources
+D:\ProJect-LTMCB\Project_truyen\Login\obj\Debug\Login.Pro_search.resources
 D:\ProJect-LTMCB\Project_truyen\Login\obj\Debug\Login.Reading_History.resources
 D:\ProJect-LTMCB\Project_truyen\Login\obj\Debug\Login.Setting.resources
 D:\ProJect-LTMCB\Project_truyen\Login\obj\Debug\Login.Search.resources
+D:\ProJect-LTMCB\Project_truyen\Login\obj\Debug\Login.setting_up.resources
 D:\ProJect-LTMCB\Project_truyen\Login\obj\Debug\Login.Signup.resources
+D:\ProJect-LTMCB\Project_truyen\Login\obj\Debug\Login.tb1.resources
+D:\ProJect-LTMCB\Project_truyen\Login\obj\Debug\Login.tb2.resources
+D:\ProJect-LTMCB\Project_truyen\Login\obj\Debug\Login.tb3.resources
 D:\ProJect-LTMCB\Project_truyen\Login\obj\Debug\Login.Trang_chu.resources
 D:\ProJect-LTMCB\Project_truyen\Login\obj\Debug\Login.Trogiup_baoloi.resources
 D:\ProJect-LTMCB\Project_truyen\Login\obj\Debug\Login.Signup.vi-VN.resources
@@ -198,6 +205,8 @@ D:\ProJect-LTMCB\Project_truyen\Login\obj\Debug\vi-VN\Login.resources.dll
 D:\ProJect-LTMCB\Project_truyen\Login\obj\Debug\App.csproj.Up2Date
 D:\ProJect-LTMCB\Project_truyen\Login\obj\Debug\Login.exe
 D:\ProJect-LTMCB\Project_truyen\Login\obj\Debug\Login.pdb
+<<<<<<< HEAD
+=======
 D:\ProJect-LTMCB\Project_truyen\Login\obj\Debug\Login.setting_up.resources
 D:\ProJect-LTMCB\Project_truyen\Login\obj\Debug\Login.Pro_search.resources
 D:\ProJect-LTMCB\Project_truyen\Login\obj\Debug\Login.tb1.resources
@@ -651,3 +660,4 @@ D:\code\C#\Project_truyen\Login\obj\Debug\Login.pdb
 >>>>>>> 51d498b35ea9d920795e1d0939a400af0c607cf7
 >>>>>>> a3ada17aabdc6fb3c9cf38dad256c61a48c2533c
 >>>>>>> 0a6231b14d3c94b0ace8bf6bbc2b73003ebedaaa
+>>>>>>> c58ad609f2b9ef69df5f407ee43c26ad1579babd
