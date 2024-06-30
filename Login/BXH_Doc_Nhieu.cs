@@ -32,7 +32,7 @@ namespace Login
             header.AutoSize = true;
 
             CollectionReference collection = db.Collection("Truyen");
-            Query q = collection.OrderByDescending("Luot_thich");
+            Query q = collection.OrderByDescending("Luot_xem");
             QuerySnapshot qs = await collection.GetSnapshotAsync();
 
 
@@ -151,7 +151,7 @@ namespace Login
                     recom.IconChar = IconChar.Eye;
                     recom.IconFont = IconFont.Auto;
                     recom.IconSize = 48;
-                    recom.Text = novel["De_cu"].ToString();
+                    recom.Text = novel["Luot_xem"].ToString();
                     recom.TextAlign = ContentAlignment.MiddleRight;
                     recom.TextImageRelation = TextImageRelation.ImageBeforeText;
 

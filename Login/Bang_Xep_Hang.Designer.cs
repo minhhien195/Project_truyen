@@ -583,6 +583,7 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(858, 190);
             this.tableLayoutPanel2.TabIndex = 1;
+            this.tableLayoutPanel2.Visible = false;
             // 
             // pictureBox1
             // 
@@ -730,6 +731,7 @@
             this.labelrank1.Size = new System.Drawing.Size(65, 28);
             this.labelrank1.TabIndex = 0;
             this.labelrank1.Text = "Hạng 1";
+            this.labelrank1.Visible = false;
             // 
             // Bang_Xep_Hang
             // 

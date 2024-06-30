@@ -2,13 +2,16 @@
 using FireSharp.Config;
 using FireSharp.Interfaces;
 using FireSharp.Response;
+using FontAwesome.Sharp;
 using Google.Cloud.Firestore;
+using Google.Cloud.Location;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.IO;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Windows.Forms;
 using static Login.Signup;
 
@@ -29,6 +32,8 @@ namespace Login
         // private IconButton currentBtn;
         private Panel leftBorderBtn;
         // private Form currentChildForm
+
+        public Panel panelAll1;
 
         public Trang_chu(UserCredential userCredential, FirebaseAuthClient firebaseAuthClient)
         {
@@ -92,9 +97,9 @@ namespace Login
 
         private string format_out(string s)
         {
-            if (s.Length > 16)
+            if (s.Length > 20)
             {
-                return s.Substring(0, 16) + "...";
+                return s.Substring(0, 20) + "...";
             }
             else
             {
@@ -455,6 +460,47 @@ namespace Login
             }
         }
 
+        public void change_color()
+        {
+            foreach (Button btn in panelTheodoiSubmenu.Controls.OfType<Button>().Where(btn => btn.BackColor == Color.FromArgb(191, 44, 36)))
+            {
+                btn.BackColor = Color.FromArgb(170, 236, 250);
+                btn.ForeColor = SystemColors.ControlText;
+            }
+            foreach (Button btn in panelTieudeSubmenu.Controls.OfType<Button>().Where(btn => btn.BackColor == Color.FromArgb(191, 44, 36)))
+            {
+                btn.BackColor = Color.FromArgb(170, 236, 250);
+                btn.ForeColor = SystemColors.ControlText;
+            }
+            foreach (Button btn in panelHEALTruyenSubmenu.Controls.OfType<Button>().Where(btn => btn.BackColor == Color.FromArgb(191, 44, 36)))
+            {
+                btn.BackColor = Color.FromArgb(170, 236, 250);
+                btn.ForeColor = SystemColors.ControlText;
+            }
+            foreach (IconButton ibtn in panelMenu.Controls.OfType<IconButton>().Where(ibtn => ibtn.BackColor == Color.FromArgb(191, 44, 36)))
+            {
+                ibtn.BackColor = Color.FromArgb(155, 227, 243);
+                ibtn.ForeColor = SystemColors.ControlText;
+                ibtn.IconColor = SystemColors.ControlText;
+            }
+        }
+
+        private Form activeForm = null;
+        public void openChildForm(Form childForm)
+        {
+            if (activeForm != null)
+            {
+                activeForm.Close();
+            }
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            panelAll.Controls.Add(childForm);
+            panelAll.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+        }
 
         private void ibtnTheodoi_Click(object sender, EventArgs e)
         {
@@ -463,17 +509,35 @@ namespace Login
 
         private void btnAlbum_Click(object sender, EventArgs e)
         {
-
+            if (btnAlbum.BackColor == Color.FromArgb(170, 236, 250))
+            {
+                change_color();
+                btnAlbum.BackColor = Color.FromArgb(191, 44, 36);
+                btnAlbum.ForeColor = Color.White;
+                openChildForm(new AlbumTruyen(user));
+            }
         }
 
         private void btnBookmark_Click(object sender, EventArgs e)
         {
-
+            if (btnBookmark.BackColor == Color.FromArgb(170, 236, 250))
+            {
+                change_color();
+                btnBookmark.BackColor = Color.FromArgb(191, 44, 36);
+                btnBookmark.ForeColor = Color.White;
+                openChildForm(new Bookmark(user));
+            }
         }
 
-        private void btnLichsudoc_Click(object sender, EventArgs e)
+        public void btnLichsudoc_Click(object sender, EventArgs e)
         {
-
+            if (btnLichsudoc.BackColor == Color.FromArgb(170, 236, 250))
+            {
+                change_color();
+                btnLichsudoc.BackColor = Color.FromArgb(191, 44, 36);
+                btnLichsudoc.ForeColor = Color.White;
+                openChildForm(new Reading_History());
+            }
         }
 
         private void ibtnTieude_Click(object sender, EventArgs e)
@@ -483,11 +547,23 @@ namespace Login
 
         private void btnadvancedsearch_Click(object sender, EventArgs e)
         {
-
+            if (btnadvancedsearch.BackColor == Color.FromArgb(170, 236, 250))
+            {
+                change_color();
+                btnadvancedsearch.BackColor = Color.FromArgb(191, 44, 36);
+                btnadvancedsearch.ForeColor = Color.White;
+                openChildForm(new Pro_search());
+            }
         }
         private void btnBXH_Click(object sender, EventArgs e)
         {
-
+            if (btnBXH.BackColor == Color.FromArgb(170, 236, 250))
+            {
+                change_color();
+                btnBXH.BackColor = Color.FromArgb(191, 44, 36);
+                btnBXH.ForeColor = Color.White;
+                openChildForm(new Bang_Xep_Hang());
+            }
         }
 
         private void ibtnHEALTruyen_Click(object sender, EventArgs e)
@@ -495,19 +571,39 @@ namespace Login
             showSubMenu(panelHEALTruyenSubmenu);
         }
 
-        private void btnHelpandError_Click(object sender, EventArgs e)
+        public void btnHelpandError_Click(object sender, EventArgs e)
         {
-
+            if (btnHelpandError.BackColor == Color.FromArgb(170, 236, 250))
+            {
+                change_color();
+                btnHelpandError.BackColor = Color.FromArgb(191, 44, 36);
+                btnHelpandError.ForeColor = Color.White;
+                openChildForm(new Hotro_baoloi(user));
+            }
         }
 
-        private void btnChat_Click(object sender, EventArgs e)
+        public void btnThongbao_Click(object sender, EventArgs e)
         {
-
+            if (btnThongbao.BackColor == Color.FromArgb(170, 236, 250))
+            {
+                change_color();
+                btnThongbao.BackColor = Color.FromArgb(191, 44, 36);
+                btnThongbao.ForeColor = Color.White;
+                openChildForm(new Announcement());
+            }
         }
 
-        private void btnThongbao_Click(object sender, EventArgs e)
+        private void ibtnTrangchu_Click(object sender, EventArgs e)
         {
-
+            if (ibtnTrangchu.BackColor == Color.FromArgb(155, 227, 243))
+            {
+                change_color();
+                ibtnTrangchu.BackColor = Color.FromArgb(191, 44, 36);
+                ibtnTrangchu.ForeColor = Color.White;
+                ibtnTrangchu.IconColor = Color.White;
+                panelAll.Visible = true;
+                activeForm.Close();
+            }
         }
 
         private void pbAvt_Click(object sender, EventArgs e)
@@ -523,5 +619,99 @@ namespace Login
             Search tb = new Search(tbsearch.Text);
             tb.ShowDialog();
         }
+
+        private void truyen01_Click(object sender, EventArgs e)
+        {
+            change_color();
+            openChildForm(new Chi_Tiet_Truyen());
+        }
+
+        private void truyen02_Click(object sender, EventArgs e)
+        {
+            change_color();
+            openChildForm(new Chi_Tiet_Truyen());
+        }
+
+        private void truyen03_Click(object sender, EventArgs e)
+        {
+            change_color();
+            openChildForm(new Chi_Tiet_Truyen());
+        }
+
+        private void truyen04_Click(object sender, EventArgs e)
+        {
+            change_color();
+            openChildForm(new Chi_Tiet_Truyen());
+        }
+
+        private void truyen05_Click(object sender, EventArgs e)
+        {
+            change_color();
+            openChildForm(new Chi_Tiet_Truyen());
+        }
+
+        private void truyen06_Click(object sender, EventArgs e)
+        {
+            change_color();
+            openChildForm(new Chi_Tiet_Truyen());
+        }
+
+        private void truyen1_Click(object sender, EventArgs e)
+        {
+            change_color();
+            openChildForm(new Chi_Tiet_Truyen());
+        }
+
+        private void truyen2_Click(object sender, EventArgs e)
+        {
+            change_color();
+            openChildForm(new Chi_Tiet_Truyen());
+        }
+
+        private void truyen3_Click(object sender, EventArgs e)
+        {
+            change_color();
+            openChildForm(new Chi_Tiet_Truyen());
+        }
+
+        private void truyen4_Click(object sender, EventArgs e)
+        {
+            change_color();
+            openChildForm(new Chi_Tiet_Truyen());
+        }
+
+        private void truyen5_Click(object sender, EventArgs e)
+        {
+            change_color();
+            openChildForm(new Chi_Tiet_Truyen());
+        }
+
+        private void mouse_enter(object sender, EventArgs e)
+        {
+            if (sender is Panel panel)
+            {
+                panel.BackColor = Color.FromArgb(37, 150, 190);
+            }
+            else if (sender is PictureBox pictureBox)
+            {
+                pictureBox.Size = new Size(251, 341);
+                pictureBox.Left -= 7;
+                pictureBox.Top -= 7;
+            }
+        }
+        private void mouse_leave(object sender, EventArgs e)
+        {
+            if (sender is Panel panel)
+            {
+                panel.BackColor = Color.FromArgb(155, 227, 243);
+            }
+            else if (sender is PictureBox ptb)
+            {
+                ptb.Size = new Size(237, 327);
+                ptb.Left += 7;
+                ptb.Top += 7;
+            }
+        }
+
     }
 }

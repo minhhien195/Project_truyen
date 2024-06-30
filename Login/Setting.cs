@@ -164,6 +164,11 @@ namespace Login
             }
         }
 
+        private void btnOut_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 

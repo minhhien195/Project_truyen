@@ -31,7 +31,7 @@ namespace Login
             header.AutoSize = true;
 
             CollectionReference collection = db.Collection("Truyen");
-            Query q = collection.OrderByDescending("Luot_thich");
+            Query q = collection.OrderByDescending("De_cu");
             QuerySnapshot qs = await collection.GetSnapshotAsync();
 
 

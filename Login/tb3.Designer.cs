@@ -40,6 +40,7 @@
             // btnyes
             // 
             this.btnyes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(44)))), ((int)(((byte)(36)))));
+            this.btnyes.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnyes.Font = new System.Drawing.Font("League Spartan", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnyes.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnyes.Location = new System.Drawing.Point(12, 149);
@@ -74,6 +75,7 @@
             // btnno
             // 
             this.btnno.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(44)))), ((int)(((byte)(36)))));
+            this.btnno.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnno.Font = new System.Drawing.Font("League Spartan", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnno.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnno.Location = new System.Drawing.Point(228, 149);
@@ -110,7 +112,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(227)))), ((int)(((byte)(243)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(400, 200);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnno);

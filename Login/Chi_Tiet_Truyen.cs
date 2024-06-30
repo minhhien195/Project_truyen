@@ -188,7 +188,7 @@ namespace Login
         private void btnCommentMenu_Click(object sender, EventArgs e)
         {
             panel2.Visible = false;
-            openChildForm(new Binh_Luan_CTT());
+            /*openChildForm(new Binh_Luan_CTT());*/
             btnNumChapMenu.ForeColor = Color.Black;
             btnNumChapMenu.Font = new Font("League Spartan", 16, FontStyle.Regular);
 

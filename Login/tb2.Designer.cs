@@ -38,13 +38,14 @@
             // btnout
             // 
             this.btnout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(44)))), ((int)(((byte)(36)))));
+            this.btnout.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnout.Font = new System.Drawing.Font("League Spartan", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnout.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnout.Location = new System.Drawing.Point(4, 149);
             this.btnout.Name = "btnout";
             this.btnout.Size = new System.Drawing.Size(393, 51);
             this.btnout.TabIndex = 7;
-            this.btnout.Text = "Thoát";
+            this.btnout.Text = "Đã hiểu!";
             this.btnout.UseVisualStyleBackColor = false;
             this.btnout.Click += new System.EventHandler(this.btnout_Click);
             // 
@@ -61,7 +62,7 @@
             // 
             this.Error.AutoSize = true;
             this.Error.Font = new System.Drawing.Font("League Spartan SemiBold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Error.ForeColor = System.Drawing.Color.ForestGreen;
+            this.Error.ForeColor = System.Drawing.Color.GreenYellow;
             this.Error.Location = new System.Drawing.Point(12, 9);
             this.Error.Name = "Error";
             this.Error.Size = new System.Drawing.Size(244, 40);
@@ -83,7 +84,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(227)))), ((int)(((byte)(243)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(400, 200);
             this.Controls.Add(this.btnout);
             this.Controls.Add(this.label1);

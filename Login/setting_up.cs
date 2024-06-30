@@ -31,7 +31,7 @@ namespace Login
         };
 
 
-        Trang_chu tc;
+        private Trang_chu tc;
 
         public setting_up(UserCredential userCredential, FirebaseAuthClient firebaseAuthClient, Trang_chu trangchu)
         {
@@ -40,6 +40,7 @@ namespace Login
             this.user = userCredential;
             this.client = firebaseAuthClient;
             tc = trangchu;
+
         }
 
         private void btnout_Click(object sender, EventArgs e)
@@ -72,35 +73,17 @@ namespace Login
                     {
                         lbvaitro.Text = "Người dùng";
                         btnloi.Visible = true;
+                        btnDuyet.Visible = false;
                     }
                     else if (vaitro == 0)
                     {
                         lbvaitro.Text = "Adminstration";
                         btnloi.Visible = false;
-                        IconButton btDuyet = new IconButton()
-                        {
-                            Name = "btnDuyet",
-                            Font = new Font("League Spartan", 16f, FontStyle.Regular),
-                            AutoSize = false,
-                            FlatAppearance = {
-                                BorderSize = 0,
-                            },
-                            FlatStyle = FlatStyle.Flat,
-                            Location = new Point(-10, 390),
-                            Size = new Size(210, 40),
-                            Margin = new Padding(3, 3, 3, 3),
-                            Text = " Duyệt truyện",
-                            IconChar = IconChar.ArrowAltCircleUp,
-                            IconColor = Color.Black,
-                            IconSize = 26,
-                            IconFont = IconFont.Auto,
-                            TextAlign = ContentAlignment.MiddleLeft,
-                            TextImageRelation = TextImageRelation.ImageBeforeText,
-                        };
-                        this.Controls.Add(btDuyet);
+                        btnDuyet.Visible = true;
                     }
                 }
-                catch(Exception ex) {
+                catch (Exception ex)
+                {
 
                     MessageBox.Show(ex.ToString());
                 }
@@ -133,7 +116,7 @@ namespace Login
                 this.Close();
                 tc.Close();
                 tb.Show();
-                
+
             }
             catch (Exception ex)
             {
@@ -145,6 +128,59 @@ namespace Login
         {
             tb3 tb = new tb3();
             tb.ShowDialog();
+        }
+
+        private void btnsetting_Click(object sender, EventArgs e)
+        {
+            tc.change_color();
+            this.Close();
+            tc.openChildForm(new Setting(user, client));
+        }
+
+        private void btnuser_Click(object sender, EventArgs e)
+        {
+            tc.change_color();
+            this.Close();
+            tc.openChildForm(new AccountInfo(user, client));
+        }
+
+        private void btnlsd_Click(object sender, EventArgs e)
+        {
+            tc.btnLichsudoc_Click(sender, e);
+            this.Close();
+        }
+
+        private void btnalbum_Click(object sender, EventArgs e)
+        {
+            tc.change_color();
+            this.Close();
+            tc.openChildForm(new AlbumTruyen(user));
+        }
+
+        private void btndangt_Click(object sender, EventArgs e)
+        {
+            tc.change_color();
+            this.Close();
+            tc.openChildForm(new InsertNovel());
+        }
+
+        private void btntbao_Click(object sender, EventArgs e)
+        {
+            tc.btnThongbao_Click(sender, e);
+            this.Close();
+        }
+
+        private void btnloi_Click(object sender, EventArgs e)
+        {
+            tc.btnHelpandError_Click(sender, e);
+            this.Close();
+        }
+
+        private void btDuyet_Click(object sender, EventArgs e)
+        {
+            tc.change_color();
+            this.Close();
+            tc.openChildForm(new Duyet_Truyen(user));
         }
     }
 }

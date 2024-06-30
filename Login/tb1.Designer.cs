@@ -65,7 +65,7 @@
             this.btnout.Name = "btnout";
             this.btnout.Size = new System.Drawing.Size(395, 51);
             this.btnout.TabIndex = 3;
-            this.btnout.Text = "Thoát";
+            this.btnout.Text = "Đã hiểu!";
             this.btnout.UseVisualStyleBackColor = false;
             this.btnout.Click += new System.EventHandler(this.btnout_Click);
             // 
@@ -84,13 +84,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(227)))), ((int)(((byte)(243)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(400, 200);
             this.Controls.Add(this.btnout);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Error);
             this.Controls.Add(this.pb1);
+            this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Font = new System.Drawing.Font("League Spartan", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);

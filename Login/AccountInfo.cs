@@ -94,39 +94,8 @@ namespace Login
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Form formPopup = new Form();
-            try
-            {
-                using (Fix fixForm = new Fix(user,client))
-                {
-                    formPopup.StartPosition = FormStartPosition.CenterScreen;
-                    formPopup.FormBorderStyle = FormBorderStyle.None;
-                    formPopup.Opacity = .70d;
-                    formPopup.BackColor = Color.Black;
-                    /*formPopup.WindowState = FormWindowState.Maximized;*/
-                    formPopup.TopMost = true;
-                    formPopup.Location = this.Location;
-                    formPopup.ShowInTaskbar = false;
-                    formPopup.Show();
-
-                    fixForm.Owner = formPopup;
-                    fixForm.StartPosition = FormStartPosition.CenterScreen;
-                    fixForm.ShowDialog();
-
-                    formPopup.Dispose();
-                }
-            }
-            catch (Exception ex )
-            {
-                throw;
-            }
-            finally
-            {
-                formPopup.Dispose();
-                AccountInfo form = new AccountInfo(user,client);
-                this.Close();
-                form.ShowDialog();
-            }
+            Fix form = new Fix(user, client);
+            form.ShowDialog();
         }
 
         private void label5_Click(object sender, EventArgs e)

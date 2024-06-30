@@ -44,16 +44,15 @@ namespace Login
     public class API_Tim_Kiem
     {
 
-        public async Task<List<string>> Search (string tuKhoa)
+        public async Task<List<string>> Search(string tuKhoa)
         {
             string project = "healtruyen";
             FirestoreDb db = FirestoreDb.Create(project);
             List<string> result = new List<string>();
 
-            string[] keyws = tuKhoa.ToUpper().Split(' ');
+            Query query = db.Collection("Truyen").WhereArrayContainsAny("Tac_gia", tuKhoa.ToUpper());
 
-            Query query = db.Collection("Truyen").WhereEqualTo("Tac_gia", tuKhoa.ToUpper());
-            Query query1 = db.Collection("Truyen").WhereEqualTo("Ten", tuKhoa.ToUpper());
+            Query query1 = db.Collection("Truyen").WhereArrayContainsAny("Ten", tuKhoa.ToUpper());
 
             // Thực thi truy vấn và lấy kết quả
             QuerySnapshot snapshot = await query.GetSnapshotAsync();
