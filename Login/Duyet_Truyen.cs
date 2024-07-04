@@ -39,17 +39,17 @@ namespace Login
             string project = "healtruyen";
             FirestoreDb db = FirestoreDb.Create(project);
 
-            Panel childFormPanel = new Panel();
+            /*Panel childFormPanel = new Panel();
             this.Controls.Add(childFormPanel);
             childFormPanel.Dock = DockStyle.Fill;
             childFormPanel.AutoSize = true;
-            childFormPanel.AutoScroll = true;
+            childFormPanel.AutoScroll = true;*/
 
             Panel header = new Panel();
             childFormPanel.Controls.Add(header);
             header.Dock = DockStyle.Top;
             header.AutoSize = true;
-            
+
             Label hdLabel = new Label();
             header.Controls.Add(hdLabel);
             hdLabel.Dock = DockStyle.Top;
@@ -57,7 +57,7 @@ namespace Login
             hdLabel.Font = new Font("League Spartan", 20, FontStyle.Bold);
             hdLabel.Text = "Duyệt Truyện";
 
-            CollectionReference collection = db.Collection("Dang_Truyen");
+            CollectionReference collection = db.Collection("Dang_truyen");
             QuerySnapshot qs = await collection.GetSnapshotAsync();
 
             CollectionReference collection1 = db.Collection("Truyen");
@@ -130,6 +130,9 @@ namespace Login
                     panelRight.Controls.Add(description);
                     description.Dock = DockStyle.Top;
                     description.AutoSize = false;
+                    description.Enabled = false;
+                    description.AllowDrop = true;
+
                     description.Text = novel["Tom_tat"].ToString();
                     description.Height = 126;
                     description.Font = new Font("League Spartan", 14, FontStyle.Regular);
@@ -141,9 +144,9 @@ namespace Login
                     info.AutoSize = false;
                     info.RowCount = 1;
                     info.ColumnCount = 3;
-                    info.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33));
-                    info.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33));
-                    info.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 34));
+                    info.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25));
+                    info.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25));
+                    info.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25));
                     info.BringToFront();
 
                     IconButton author = new IconButton();
@@ -151,7 +154,7 @@ namespace Login
                     author.Dock = DockStyle.Fill;
                     author.FlatStyle = FlatStyle.Flat;
                     author.FlatAppearance.BorderSize = 0;
-                    author.Font = new Font("League Spartan", 14, FontStyle.Regular);
+                    author.Font = new Font("League Spartan", 16, FontStyle.Regular);
                     author.IconChar = IconChar.UserEdit;
                     author.IconFont = IconFont.Auto;
                     author.IconSize = 48;
@@ -164,7 +167,7 @@ namespace Login
                     recom.Dock = DockStyle.Fill;
                     recom.FlatStyle = FlatStyle.Flat;
                     recom.FlatAppearance.BorderSize = 0;
-                    recom.Font = new Font("League Spartan", 14, FontStyle.Regular);
+                    recom.Font = new Font("League Spartan", 16, FontStyle.Regular);
                     recom.IconChar = IconChar.ArrowCircleUp;
                     recom.IconFont = IconFont.Auto;
                     recom.IconSize = 48;
@@ -177,7 +180,7 @@ namespace Login
                     type.Dock = DockStyle.Fill;
                     type.FlatStyle = FlatStyle.Flat;
                     type.FlatAppearance.BorderSize = 0;
-                    type.Font = new Font("League Spartan", 14, FontStyle.Regular);
+                    type.Font = new Font("League Spartan", 16, FontStyle.Regular);
                     object typeList = novel["The_loai"];
                     int sizeArray = 0;
                     if (typeList is List<object> typeList1)
@@ -200,9 +203,9 @@ namespace Login
                     btn.AutoSize = false;
                     btn.RowCount = 1;
                     btn.ColumnCount = 3;
-                    btn.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50));
-                    btn.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25));
-                    btn.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25));
+                    btn.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 80));
+                    btn.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 10));
+                    btn.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 10));
 
                     Button cancel = new Button();
                     btn.Controls.Add(cancel, 1, 0);
@@ -210,12 +213,16 @@ namespace Login
                     cancel.FlatStyle = FlatStyle.Flat;
                     cancel.FlatAppearance.BorderSize = 0;
                     cancel.BackColor = Color.Silver;
+
                     cancel.Text = "Từ chối";
+                    cancel.Size = new Size(100, 60);
+                    cancel.Font = new Font("League Spartan", 16, FontStyle.Regular);
                     cancel.Margin = new Padding(10);
                     cancel.Click += (s, ev) =>
                     {
-                        Interact.deleteNovel(novel["Ten"].ToString(), "Duyet_truyen");
+                        Interact.deleteNovel(novel["Ten"].ToString(), "Dang_truyen");
                         MessageBox.Show("Từ chối duyệt truyện thành công");
+                        panelList.Visible = false;
                     };
 
                     Button confirm = new Button();
@@ -225,10 +232,14 @@ namespace Login
                     confirm.FlatAppearance.BorderSize = 0;
                     confirm.BackColor = Color.FromArgb(191, 44, 36);
                     confirm.Text = "Xác nhận";
+                    confirm.ForeColor = Color.White;
+                    confirm.Size = new Size(100, 60);
+                    confirm.Font = new Font("League Spartan", 16, FontStyle.Regular);
                     confirm.Margin = new Padding(10);
                     
                     confirm.Click += async (s, ev) =>
                     {
+                        confirm.Enabled = false;
                         Task<string> res = Interact.createNovel(
                             novel["Anh"].ToString(), 
                             novel["So_chuong"].ToString(),
@@ -238,16 +249,26 @@ namespace Login
                             novel["Tom_tat"].ToString(),
                             "Truyen"
                             );
-                        string novelid = res.Result;
-                        FirebaseResponse resf = await client.GetAsync("Nguoi_dung/" + user.User.Uid + "/Duyentruyen");
-                        string idChuongDangDoc = resf.ResultAs<string>();
-                        idChuongDangDoc = idChuongDangDoc + "," + novelid;
-                        FirebaseResponse response = await client.UpdateAsync("Nguoi_dung/" + user.User.Uid + "/Duyentruyen", idChuongDangDoc);
+                        string novelid = await res;
+                        FirebaseResponse resf = await client.GetAsync("Nguoi_dung/" + user.User.Uid + "/Truyen_dang");
+                        Dictionary<string, string> truyendang = resf.ResultAs<Dictionary<string, string>>();
+                        truyendang.Add(novelid, novel["Ten"].ToString());
+                        FirebaseResponse response = await client.UpdateAsync("Nguoi_dung/" + user.User.Uid + "/Truyen_dang", truyendang);
+                        Interact.deleteNovel(novel["Ten"].ToString().ToUpper(), "Dang_truyen");
+                        MessageBox.Show("Đăng truyện thành công!");
+
+                        confirm.Enabled = true;
+                        panelList.Visible = false;
                     };
 
                 }
                 
             }
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
 
         }
     }

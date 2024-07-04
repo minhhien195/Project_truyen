@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.panelTenAlbum = new System.Windows.Forms.Panel();
-            this.lbLSD = new System.Windows.Forms.Label();
-            this.lbduongke = new System.Windows.Forms.Label();
             this.panelLsdTruyen = new System.Windows.Forms.Panel();
             this.panelTruyen1 = new System.Windows.Forms.Panel();
             this.ibtnXoa1 = new FontAwesome.Sharp.IconButton();
@@ -40,7 +38,6 @@
             this.ibtnThoigian1 = new FontAwesome.Sharp.IconButton();
             this.lbTenTruyen1 = new System.Windows.Forms.Label();
             this.ptrAnh1 = new System.Windows.Forms.PictureBox();
-            this.panelTenAlbum.SuspendLayout();
             this.panelLsdTruyen.SuspendLayout();
             this.panelTruyen1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptrAnh1)).BeginInit();
@@ -48,35 +45,11 @@
             // 
             // panelTenAlbum
             // 
-            this.panelTenAlbum.Controls.Add(this.lbLSD);
-            this.panelTenAlbum.Controls.Add(this.lbduongke);
             this.panelTenAlbum.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTenAlbum.Location = new System.Drawing.Point(0, 0);
             this.panelTenAlbum.Name = "panelTenAlbum";
-            this.panelTenAlbum.Size = new System.Drawing.Size(1898, 73);
+            this.panelTenAlbum.Size = new System.Drawing.Size(984, 73);
             this.panelTenAlbum.TabIndex = 19;
-            // 
-            // lbLSD
-            // 
-            this.lbLSD.AutoSize = true;
-            this.lbLSD.Font = new System.Drawing.Font("League Spartan SemiBold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbLSD.Location = new System.Drawing.Point(9, 19);
-            this.lbLSD.Name = "lbLSD";
-            this.lbLSD.Size = new System.Drawing.Size(128, 36);
-            this.lbLSD.TabIndex = 1;
-            this.lbLSD.Text = "Lịch sử đọc";
-            this.lbLSD.Click += new System.EventHandler(this.lbLSD_Click);
-            // 
-            // lbduongke
-            // 
-            this.lbduongke.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lbduongke.Enabled = false;
-            this.lbduongke.Font = new System.Drawing.Font("League Spartan", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbduongke.ForeColor = System.Drawing.Color.Black;
-            this.lbduongke.Location = new System.Drawing.Point(10, 60);
-            this.lbduongke.Name = "lbduongke";
-            this.lbduongke.Size = new System.Drawing.Size(1804, 1);
-            this.lbduongke.TabIndex = 0;
             // 
             // panelLsdTruyen
             // 
@@ -85,7 +58,7 @@
             this.panelLsdTruyen.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLsdTruyen.Location = new System.Drawing.Point(0, 73);
             this.panelLsdTruyen.Name = "panelLsdTruyen";
-            this.panelLsdTruyen.Size = new System.Drawing.Size(1898, 947);
+            this.panelLsdTruyen.Size = new System.Drawing.Size(984, 947);
             this.panelLsdTruyen.TabIndex = 20;
             this.panelLsdTruyen.Visible = false;
             // 
@@ -102,7 +75,7 @@
             this.panelTruyen1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTruyen1.Location = new System.Drawing.Point(0, 0);
             this.panelTruyen1.Name = "panelTruyen1";
-            this.panelTruyen1.Size = new System.Drawing.Size(1898, 202);
+            this.panelTruyen1.Size = new System.Drawing.Size(984, 202);
             this.panelTruyen1.TabIndex = 0;
             // 
             // ibtnXoa1
@@ -143,7 +116,7 @@
             this.lbSochuong1.Font = new System.Drawing.Font("League Spartan SemiBold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbSochuong1.Location = new System.Drawing.Point(182, 132);
             this.lbSochuong1.Name = "lbSochuong1";
-            this.lbSochuong1.Size = new System.Drawing.Size(53, 26);
+            this.lbSochuong1.Size = new System.Drawing.Size(45, 21);
             this.lbSochuong1.TabIndex = 7;
             this.lbSochuong1.Text = "51/151";
             // 
@@ -195,7 +168,7 @@
             this.lbTenTruyen1.Font = new System.Drawing.Font("League Spartan SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTenTruyen1.Location = new System.Drawing.Point(181, 14);
             this.lbTenTruyen1.Name = "lbTenTruyen1";
-            this.lbTenTruyen1.Size = new System.Drawing.Size(487, 30);
+            this.lbTenTruyen1.Size = new System.Drawing.Size(392, 23);
             this.lbTenTruyen1.TabIndex = 1;
             this.lbTenTruyen1.Text = "Theo Giang Hồ Bắt Đầu, Liều Thành Võ Đạo Chân Quân";
             // 
@@ -211,21 +184,18 @@
             // 
             // Reading_History
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 30F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
-            this.ClientSize = new System.Drawing.Size(1898, 1024);
+            this.ClientSize = new System.Drawing.Size(984, 761);
             this.Controls.Add(this.panelLsdTruyen);
             this.Controls.Add(this.panelTenAlbum);
             this.Font = new System.Drawing.Font("League Spartan SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Reading_History";
             this.Text = "Reading_History";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Reading_History_Load);
-            this.panelTenAlbum.ResumeLayout(false);
-            this.panelTenAlbum.PerformLayout();
             this.panelLsdTruyen.ResumeLayout(false);
             this.panelTruyen1.ResumeLayout(false);
             this.panelTruyen1.PerformLayout();
@@ -237,8 +207,6 @@
         #endregion
 
         private System.Windows.Forms.Panel panelTenAlbum;
-        private System.Windows.Forms.Label lbLSD;
-        private System.Windows.Forms.Label lbduongke;
         private System.Windows.Forms.Panel panelLsdTruyen;
         private System.Windows.Forms.Panel panelTruyen1;
         private FontAwesome.Sharp.IconButton ibtnXoa1;

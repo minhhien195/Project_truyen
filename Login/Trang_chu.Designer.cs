@@ -572,7 +572,6 @@
             this.tbsearch.Name = "tbsearch";
             this.tbsearch.Size = new System.Drawing.Size(429, 44);
             this.tbsearch.TabIndex = 2;
-            this.tbsearch.Text = "Tìm kiếm";
             // 
             // paneltop
             // 

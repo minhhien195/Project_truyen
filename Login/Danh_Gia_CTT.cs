@@ -36,9 +36,12 @@ namespace Login
             AuthSecret = "38QvLmnKMHlQtJ9yZzCqqWytxeXimwt06ZnFfSc2",
             BasePath = "https://healtruyen-default-rtdb.asia-southeast1.firebasedatabase.app/"
         };
-        public Danh_Gia_CTT()
+        public Danh_Gia_CTT(string Idtruyen, string nametruyen, UserCredential userCredential)
         {
             InitializeComponent();
+            this.idTruyen = Idtruyen;
+            this.nameTruyen = nametruyen;
+            this.user = userCredential;
         }
         public class Danh_Gia
         {
@@ -50,8 +53,6 @@ namespace Login
 
         private async void Danh_Gia_CTT_Load(object sender, EventArgs e)
         {
-            idTruyen = "001";
-            nameTruyen = "TOÀN TRÍ ĐỘC GIẢ";
             pictureBox2.Width = (int)(0.1175 * panelRatingEvent.Width);
             pictureBox2.Height = pictureBox2.Width;
             richTextBoxRatingComment.Width = (int)(0.845 * panelRatingEvent.Width);
@@ -66,7 +67,7 @@ namespace Login
             FirebaseResponse res = await client.GetAsync("Truyen/" + idTruyen + "/Danh_gia/");
             var dict = JsonConvert.DeserializeObject<Dictionary<string, object>>(res.Body);
 
-            if (dict.Count == 0) return;
+            if (dict is null) return;
             //show data
             label2.Text = dict.Count.ToString() + " đánh giá"; 
             var dem = 0;
@@ -530,9 +531,12 @@ namespace Login
 
                 //show data
                 var dem = 0;
-                foreach (var i in dict)
+                if (!(dict is null))
                 {
-                    dem = Convert.ToInt32(i.Key);
+                    foreach (var i in dict)
+                    {
+                        dem = Convert.ToInt32(i.Key);
+                    }
                 }
                 dem++;
 

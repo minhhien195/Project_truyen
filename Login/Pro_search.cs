@@ -89,6 +89,12 @@ namespace Login
 
             var truyen = await output;
 
+            if (truyen is null)
+            {
+                MessageBox.Show("Không có");
+                return;
+            }
+
             foreach (var idtruyen in truyen)
             {
                 FirestoreDb db = FirestoreDb.Create("healtruyen");

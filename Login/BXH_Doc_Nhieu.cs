@@ -35,9 +35,13 @@ namespace Login
             Query q = collection.OrderByDescending("Luot_xem");
             QuerySnapshot qs = await collection.GetSnapshotAsync();
 
+            List<DocumentSnapshot> documents = qs.Documents.ToList();
+
+            // Sắp xếp danh sách theo trường "Luot_xem" giảm dần
+            documents.Sort((x, y) => ((int)y.GetValue<int>("Luot_xem")).CompareTo((int)x.GetValue<int>("Luot_xem")));
 
 
-            if (qs.Documents.Count <= 0)
+            if (documents.Count <= 0)
             {
                 Panel panelList = new Panel();
                 panelList.Dock = DockStyle.Top;
@@ -55,7 +59,7 @@ namespace Login
             else
             {
                 int i = 1;
-                foreach (var item in qs.Documents)
+                foreach (var item in documents)
                 {
                     Dictionary<string, object> novel = item.ToDictionary();
                     Panel panelList = new Panel();

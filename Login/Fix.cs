@@ -109,7 +109,12 @@ namespace Login
             this.Close();
         }
 
-        private async void Changeavt_Click(object sender, EventArgs e)
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            Username.ReadOnly = false;
+        }
+
+        private void iconButton2_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.Filter = "Image Files (*.png;*.jpg)|*.png;*.jpg";
@@ -122,11 +127,5 @@ namespace Login
                 pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             }
         }
-
-        private void Changename_Click(object sender, EventArgs e)
-        {
-            Username.ReadOnly = false;
-        }
-
     }
 }

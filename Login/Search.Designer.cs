@@ -58,8 +58,9 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1149, 66);
+            this.panel1.Size = new System.Drawing.Size(749, 43);
             this.panel1.TabIndex = 0;
             this.panel1.Visible = false;
             // 
@@ -67,18 +68,20 @@
             // 
             this.label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label2.Location = new System.Drawing.Point(0, 49);
+            this.label2.Location = new System.Drawing.Point(0, 32);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(1149, 1);
+            this.label2.Size = new System.Drawing.Size(766, 1);
             this.label2.TabIndex = 3;
             // 
             // lbAlbum
             // 
             this.lbAlbum.AutoSize = true;
             this.lbAlbum.Font = new System.Drawing.Font("League Spartan", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbAlbum.Location = new System.Drawing.Point(143, 13);
+            this.lbAlbum.Location = new System.Drawing.Point(95, 8);
+            this.lbAlbum.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbAlbum.Name = "lbAlbum";
-            this.lbAlbum.Size = new System.Drawing.Size(86, 36);
+            this.lbAlbum.Size = new System.Drawing.Size(58, 23);
             this.lbAlbum.TabIndex = 2;
             this.lbAlbum.Text = "Võ đạo";
             // 
@@ -86,9 +89,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("League Spartan", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(13, 13);
+            this.label1.Location = new System.Drawing.Point(9, 8);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(136, 36);
+            this.label1.Size = new System.Drawing.Size(91, 23);
             this.label1.TabIndex = 0;
             this.label1.Text = "Kết quả cho:";
             // 
@@ -96,9 +100,10 @@
             // 
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 66);
+            this.panel2.Location = new System.Drawing.Point(0, 43);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1149, 508);
+            this.panel2.Size = new System.Drawing.Size(749, 330);
             this.panel2.TabIndex = 1;
             this.panel2.Visible = false;
             // 
@@ -111,17 +116,19 @@
             this.panel3.Controls.Add(this.panel4);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1149, 183);
+            this.panel3.Size = new System.Drawing.Size(749, 119);
             this.panel3.TabIndex = 0;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("League Spartan", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(164, 43);
+            this.label3.Location = new System.Drawing.Point(109, 28);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(890, 30);
+            this.label3.Size = new System.Drawing.Size(606, 21);
             this.label3.TabIndex = 16;
             this.label3.Text = "Ngủ một giấc tỉnh, Phương Tuyên trở thành Bình Giang huyện một giới lưu manh, bác" +
     "h tính trong miệng... ";
@@ -139,9 +146,10 @@
             this.ibtnsochuong1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.ibtnsochuong1.IconSize = 32;
             this.ibtnsochuong1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ibtnsochuong1.Location = new System.Drawing.Point(164, 78);
+            this.ibtnsochuong1.Location = new System.Drawing.Point(109, 51);
+            this.ibtnsochuong1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ibtnsochuong1.Name = "ibtnsochuong1";
-            this.ibtnsochuong1.Size = new System.Drawing.Size(198, 38);
+            this.ibtnsochuong1.Size = new System.Drawing.Size(132, 38);
             this.ibtnsochuong1.TabIndex = 15;
             this.ibtnsochuong1.Text = "  151 chương";
             this.ibtnsochuong1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -152,9 +160,10 @@
             // 
             this.lbTenTruyen1.AutoSize = true;
             this.lbTenTruyen1.Font = new System.Drawing.Font("League Spartan SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTenTruyen1.Location = new System.Drawing.Point(164, 3);
+            this.lbTenTruyen1.Location = new System.Drawing.Point(109, 2);
+            this.lbTenTruyen1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbTenTruyen1.Name = "lbTenTruyen1";
-            this.lbTenTruyen1.Size = new System.Drawing.Size(575, 36);
+            this.lbTenTruyen1.Size = new System.Drawing.Size(392, 23);
             this.lbTenTruyen1.TabIndex = 14;
             this.lbTenTruyen1.Text = "Theo Giang Hồ Bắt Đầu, Liều Thành Võ Đạo Chân Quân";
             // 
@@ -164,9 +173,10 @@
             this.panel5.Controls.Add(this.btnTacgia1);
             this.panel5.Controls.Add(this.btnTinhtrang1);
             this.panel5.Controls.Add(this.btnTheloai1);
-            this.panel5.Location = new System.Drawing.Point(164, 119);
+            this.panel5.Location = new System.Drawing.Point(109, 77);
+            this.panel5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(564, 61);
+            this.panel5.Size = new System.Drawing.Size(376, 46);
             this.panel5.TabIndex = 13;
             // 
             // btnTacgia1
@@ -178,10 +188,10 @@
             this.btnTacgia1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTacgia1.Font = new System.Drawing.Font("League Spartan SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTacgia1.ForeColor = System.Drawing.Color.Red;
-            this.btnTacgia1.Location = new System.Drawing.Point(3, 13);
-            this.btnTacgia1.Margin = new System.Windows.Forms.Padding(3, 3, 10, 3);
+            this.btnTacgia1.Location = new System.Drawing.Point(2, 8);
+            this.btnTacgia1.Margin = new System.Windows.Forms.Padding(2, 2, 7, 2);
             this.btnTacgia1.Name = "btnTacgia1";
-            this.btnTacgia1.Size = new System.Drawing.Size(138, 45);
+            this.btnTacgia1.Size = new System.Drawing.Size(95, 36);
             this.btnTacgia1.TabIndex = 12;
             this.btnTacgia1.Text = "Chân Một Túy";
             this.btnTacgia1.UseVisualStyleBackColor = true;
@@ -195,10 +205,10 @@
             this.btnTinhtrang1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTinhtrang1.Font = new System.Drawing.Font("League Spartan SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTinhtrang1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(110)))), ((int)(((byte)(0)))));
-            this.btnTinhtrang1.Location = new System.Drawing.Point(154, 13);
-            this.btnTinhtrang1.Margin = new System.Windows.Forms.Padding(3, 3, 10, 3);
+            this.btnTinhtrang1.Location = new System.Drawing.Point(103, 8);
+            this.btnTinhtrang1.Margin = new System.Windows.Forms.Padding(2, 2, 7, 2);
             this.btnTinhtrang1.Name = "btnTinhtrang1";
-            this.btnTinhtrang1.Size = new System.Drawing.Size(109, 45);
+            this.btnTinhtrang1.Size = new System.Drawing.Size(73, 36);
             this.btnTinhtrang1.TabIndex = 11;
             this.btnTinhtrang1.Text = "Đang ra";
             this.btnTinhtrang1.UseVisualStyleBackColor = true;
@@ -212,9 +222,10 @@
             this.btnTheloai1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTheloai1.Font = new System.Drawing.Font("League Spartan SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTheloai1.ForeColor = System.Drawing.Color.Blue;
-            this.btnTheloai1.Location = new System.Drawing.Point(276, 13);
+            this.btnTheloai1.Location = new System.Drawing.Point(184, 8);
+            this.btnTheloai1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnTheloai1.Name = "btnTheloai1";
-            this.btnTheloai1.Size = new System.Drawing.Size(147, 45);
+            this.btnTheloai1.Size = new System.Drawing.Size(98, 36);
             this.btnTheloai1.TabIndex = 10;
             this.btnTheloai1.Text = "Huyền huyễn";
             this.btnTheloai1.UseVisualStyleBackColor = true;
@@ -223,8 +234,9 @@
             // 
             this.panel4.Controls.Add(this.pictureBox1);
             this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(149, 183);
+            this.panel4.Size = new System.Drawing.Size(99, 119);
             this.panel4.TabIndex = 0;
             // 
             // pictureBox1
@@ -232,20 +244,23 @@
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Image = global::Login.Properties.Resources.Album_truyen;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(149, 183);
+            this.pictureBox1.Size = new System.Drawing.Size(99, 119);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
             // Search
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
-            this.ClientSize = new System.Drawing.Size(1149, 572);
+            this.ClientSize = new System.Drawing.Size(766, 372);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Search";
             this.Text = "Search";
             this.Load += new System.EventHandler(this.Search_Load);

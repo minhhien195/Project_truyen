@@ -16,6 +16,8 @@ using FireSharp.Interfaces;
 using FireSharp.Response;
 using System.Drawing.Drawing2D;
 using Google.Protobuf.WellKnownTypes;
+using Newtonsoft.Json;
+using System.Windows.Documents;
 
 namespace Login
 {
@@ -67,6 +69,38 @@ namespace Login
                 pictureBox2.Image = bitmap;
                 pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             }
+
+            string path_vaitro = "Nguoi_dung/" + ID + "/Vaitro";
+            FirebaseResponse res2 = await ifclient.GetAsync(path_vaitro);
+            int vaitro = res2.ResultAs<int>();
+            if (vaitro == 1)
+            {
+                label5.Text = "Người dùng";
+            }
+            else if (vaitro == 0)
+            {
+                label5.Text = "Adminstration";
+            }
+
+            string path_truyen = "Nguoi_dung/" + ID + "/Truyen_dang";
+            FirebaseResponse res = await ifclient.GetAsync(path_truyen);
+            if (res != null)
+            {
+                Dictionary<string, string> data = JsonConvert.DeserializeObject<Dictionary<string, string>>(res.Body);
+
+                // Đếm số lượng phần tử trong Dictionary
+                int count = data.Count;
+
+                // Làm gì đó với số lượng dữ 
+                if (count > 0)
+                {
+                    label7.Text = count.ToString();
+                }
+                else
+                {
+                    label7.Text = "0";
+                }
+            }
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -89,7 +123,16 @@ namespace Login
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            if (button1.ForeColor == SystemColors.ControlText)
+            {
+                tableLayoutPanel2.Visible = true;
+                tableLayoutPanel2.BringToFront();
+                button1.ForeColor = Color.White;
+                button1.BackColor = Color.FromArgb(191, 44, 36);
+                button2.ForeColor = SystemColors.ControlText;
+                button2.BackColor = Color.FromArgb(155, 227, 243);
+                activeForm.Close();
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -113,11 +156,19 @@ namespace Login
 
         }
 
+        private Panel panelList;
+
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            NvUpdate Form = new NvUpdate(user, client);
-            Form.Show();
+            if (button2.ForeColor == SystemColors.ControlText)
+            {
+                tableLayoutPanel2.Visible = false;
+                button2.ForeColor = Color.White;
+                button2.BackColor = Color.FromArgb(191, 44, 36);
+                button1.ForeColor = SystemColors.ControlText;
+                button1.BackColor = Color.FromArgb(155, 227, 243);
+                openChildForm(new NVupdate(user, client));
+            }
         }
 
         private void btnBaocao_Click(object sender, EventArgs e)
@@ -128,6 +179,23 @@ namespace Login
         private void label2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private Form activeForm = null;
+        public void openChildForm(Form childForm)
+        {
+            if (activeForm != null)
+            {
+                activeForm.Close();
+            }
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            panel1.Controls.Add(childForm);
+            panel1.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
         }
     }
 

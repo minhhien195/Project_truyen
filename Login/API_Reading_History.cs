@@ -24,13 +24,17 @@ namespace Readinghistory
     public class Lich_su_doc
     {
         public string ten_truyen { get; set; }
-        public int Chuong_doccuoi { get; set; }
+        public int Chuong_doc_cuoi { get; set; }
         public string TG_doccuoi { get; set; }
         public int tong_chuong { get; set; }
         public string Tacgia { get; set; }
         public string image { get; set; }
 
+
     }
+
+    [FirestoreData]
+
     public class Novel
     {
         [FirestoreProperty("Anh")]
@@ -101,7 +105,7 @@ namespace Readinghistory
              TimeSpan timeDif = System.DateTime.UtcNow - dateTime;
              //xử lý chuôi TimeSpan 2:03:02:32 là 2 ngày, 3 giờ, 2 phút, 32 giây.*/
             IFirebaseClient client = new FireSharp.FirebaseClient(_firebaseConfig);
-            var path = "Nguoi_dung/" + userId + "lichsudoc/";
+            var path = "Nguoi_dung/" + userId + "/lichsudoc/";
             FirebaseResponse res = await client.GetAsync(path);
             // Chuyển đổi dữ liệu trả về thành Dictionary<string, Dictionary<string, object>>
             Dictionary<string, Dictionary<string, object>> readingHistory = new Dictionary<string, Dictionary<string, object>>();
@@ -117,7 +121,7 @@ namespace Readinghistory
             return readingHistory;
         }
 
-        public async Task Capnhat_lichsudoc(string userId, string idchuong, string idtruyen)
+        public async Task Capnhat_lichsudoc(string userId, int idchuong, string idtruyen)
         {
             IFirebaseClient client = new FireSharp.FirebaseClient(_firebaseConfig);
             FirestoreDb db = FirestoreDb.Create("healtruyen");
@@ -125,7 +129,7 @@ namespace Readinghistory
             DocumentReference docReference = db.Collection("Truyen").Document(idtruyen);
             //lấy dữ liệu truyện ra
             DocumentSnapshot snapshot = await docReference.GetSnapshotAsync();
-            var sochuong = 0;
+            int sochuong = 0;
             var tentruyen = "";
             var tacgia = "";
             var anh = "";
@@ -138,7 +142,7 @@ namespace Readinghistory
                 anh = novel.coverImg;
             }
             // Get the current time
-            System.DateTime currentTime = System.DateTime.UtcNow;
+            System.DateTime currentTime = System.DateTime.Now;
             // Convert the current time to a Unix timestamp
             string timestamp = DateTime.Now.ToString();
 
@@ -146,7 +150,7 @@ namespace Readinghistory
             Lich_su_doc lsd = new Lich_su_doc()
             {
                 ten_truyen = tentruyen,
-                Chuong_doccuoi = Convert.ToInt32(idchuong),
+                Chuong_doc_cuoi = idchuong,
                 TG_doccuoi = timestamp,
                 tong_chuong = sochuong,
                 Tacgia = tacgia,

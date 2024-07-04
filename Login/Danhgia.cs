@@ -399,9 +399,12 @@ namespace Login
 
                 //show data
                 var dem = 0;
-                foreach (var i in dict)
-                {
-                    dem = Convert.ToInt32(i.Key);
+                
+                if (!(dict is null)){
+                    foreach (var i in dict)
+                    {
+                        dem = Convert.ToInt32(i.Key);
+                    }
                 }
                 dem++;
 

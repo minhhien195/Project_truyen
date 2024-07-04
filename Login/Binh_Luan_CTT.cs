@@ -41,7 +41,7 @@ namespace Login
             AuthSecret = "38QvLmnKMHlQtJ9yZzCqqWytxeXimwt06ZnFfSc2",
             BasePath = "https://healtruyen-default-rtdb.asia-southeast1.firebasedatabase.app/"
         };
-        public Binh_Luan_CTT(string nameTruyen,UserCredential user,string idTruyen)
+        public Binh_Luan_CTT(string nameTruyen,UserCredential user, string idTruyen)
         {
             InitializeComponent();
             this.nameTruyen = nameTruyen;
@@ -61,12 +61,11 @@ namespace Login
         private static readonly string _pass = "wgvohibzrfwgshtf"; // Mật khẩu Email của Sender (của bạn)
         private async void Binh_Luan_CTT_Load(object sender, EventArgs e)
         {
-            idTruyen = "001";
             IFirebaseClient client = new FireSharp.FirebaseClient(_firebaseConfig);
             FirebaseResponse res = await client.GetAsync("Truyen/" + idTruyen + "/Binh_luan/");
             var dict = JsonConvert.DeserializeObject<Dictionary<string, object>>(res.Body);
 
-            if (dict.Count == 0) return;
+            if (dict is null) return;
             //show data
             var dem = 0;
             foreach (var i in dict)
@@ -311,11 +310,15 @@ namespace Login
 
                 //show data
                 var dem = 0;
-                foreach (var i in dict)
-                {
-                    dem = Convert.ToInt32(i.Key);
+                if (!(dict is null)) {
+                    foreach (var i in dict)
+                    {
+                        dem = Convert.ToInt32(i.Key);    
+                    }
                 }
+                
                 dem++;
+
                 string dembl = "0";
                 if (dem < 10)
                 {

@@ -165,11 +165,11 @@
             this.txtTentruyen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(227)))), ((int)(((byte)(243)))));
             this.txtTentruyen.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtTentruyen.Font = new System.Drawing.Font("League Spartan", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTentruyen.Location = new System.Drawing.Point(12, 25);
+            this.txtTentruyen.Location = new System.Drawing.Point(12, 23);
             this.txtTentruyen.Margin = new System.Windows.Forms.Padding(2, 2, 2, 10);
             this.txtTentruyen.Multiline = true;
             this.txtTentruyen.Name = "txtTentruyen";
-            this.txtTentruyen.Size = new System.Drawing.Size(779, 23);
+            this.txtTentruyen.Size = new System.Drawing.Size(779, 30);
             this.txtTentruyen.TabIndex = 6;
             this.txtTentruyen.TextChanged += new System.EventHandler(this.txtTentruyen_TextChanged);
             // 
@@ -183,7 +183,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(832, 67);
+            this.panel1.Size = new System.Drawing.Size(886, 67);
             this.panel1.TabIndex = 7;
             // 
             // ibtnDangtruyen
@@ -219,7 +219,7 @@
             this.panel2.Location = new System.Drawing.Point(0, 74);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(832, 74);
+            this.panel2.Size = new System.Drawing.Size(886, 74);
             this.panel2.TabIndex = 8;
             // 
             // ptrTentruyen
@@ -261,7 +261,7 @@
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(832, 74);
+            this.panel3.Size = new System.Drawing.Size(886, 74);
             this.panel3.TabIndex = 9;
             // 
             // ptrTacgia
@@ -297,11 +297,11 @@
             this.txtTacgia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(227)))), ((int)(((byte)(243)))));
             this.txtTacgia.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtTacgia.Font = new System.Drawing.Font("League Spartan", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTacgia.Location = new System.Drawing.Point(12, 25);
+            this.txtTacgia.Location = new System.Drawing.Point(12, 23);
             this.txtTacgia.Margin = new System.Windows.Forms.Padding(2, 2, 2, 10);
             this.txtTacgia.Multiline = true;
             this.txtTacgia.Name = "txtTacgia";
-            this.txtTacgia.Size = new System.Drawing.Size(779, 23);
+            this.txtTacgia.Size = new System.Drawing.Size(779, 30);
             this.txtTacgia.TabIndex = 6;
             this.txtTacgia.TextChanged += new System.EventHandler(this.txtTacgia_TextChanged);
             // 
@@ -327,7 +327,7 @@
             this.panel4.Location = new System.Drawing.Point(0, 148);
             this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(832, 77);
+            this.panel4.Size = new System.Drawing.Size(886, 77);
             this.panel4.TabIndex = 10;
             // 
             // ptrTheloai
@@ -403,7 +403,7 @@
             this.panel5.Location = new System.Drawing.Point(0, 381);
             this.panel5.Margin = new System.Windows.Forms.Padding(2);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(832, 132);
+            this.panel5.Size = new System.Drawing.Size(886, 132);
             this.panel5.TabIndex = 14;
             // 
             // ptrGioithieu
@@ -438,7 +438,7 @@
             // 
             this.rtbGioithieu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(227)))), ((int)(((byte)(243)))));
             this.rtbGioithieu.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.rtbGioithieu.Font = new System.Drawing.Font("League Spartan", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtbGioithieu.Font = new System.Drawing.Font("League Spartan", 14F);
             this.rtbGioithieu.Location = new System.Drawing.Point(12, 25);
             this.rtbGioithieu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 10);
             this.rtbGioithieu.Name = "rtbGioithieu";
@@ -470,7 +470,7 @@
             this.panel6.Location = new System.Drawing.Point(0, 513);
             this.panel6.Margin = new System.Windows.Forms.Padding(2);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(832, 68);
+            this.panel6.Size = new System.Drawing.Size(886, 68);
             this.panel6.TabIndex = 12;
             // 
             // ptrThemanh
@@ -552,7 +552,7 @@
             this.panel7.Location = new System.Drawing.Point(0, 225);
             this.panel7.Margin = new System.Windows.Forms.Padding(2);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(832, 79);
+            this.panel7.Size = new System.Drawing.Size(886, 79);
             this.panel7.TabIndex = 11;
             // 
             // ptrBoicanh
@@ -653,7 +653,7 @@
             this.panel8.Location = new System.Drawing.Point(0, 304);
             this.panel8.Margin = new System.Windows.Forms.Padding(2);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(832, 77);
+            this.panel8.Size = new System.Drawing.Size(886, 77);
             this.panel8.TabIndex = 12;
             // 
             // ptrLuuphai
@@ -755,7 +755,7 @@
             this.panelFormInsert.Location = new System.Drawing.Point(0, 67);
             this.panelFormInsert.Margin = new System.Windows.Forms.Padding(2);
             this.panelFormInsert.Name = "panelFormInsert";
-            this.panelFormInsert.Size = new System.Drawing.Size(832, 581);
+            this.panelFormInsert.Size = new System.Drawing.Size(886, 581);
             this.panelFormInsert.TabIndex = 15;
             // 
             // InsertNovel
@@ -765,7 +765,7 @@
             this.AutoScroll = true;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
-            this.ClientSize = new System.Drawing.Size(849, 547);
+            this.ClientSize = new System.Drawing.Size(886, 682);
             this.Controls.Add(this.panelFormInsert);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(2);

@@ -41,9 +41,9 @@ namespace Login
             ifclient = new FireSharp.FirebaseClient(config);
             this.user = userCredential;
             this.client = firebaseAuthClient;
-
         }
 
+        public string[] nametruyen = new string[12];
         public Trang_chu()
         {
             leftBorderBtn = new Panel();
@@ -56,6 +56,7 @@ namespace Login
             panelAll.BringToFront();
             this.Controls.SetChildIndex(panelAll, 0);
             this.Controls.SetChildIndex(panelClose, 1);
+            nametruyen[0] = "Hahaha";
             // Make sure panelAll is on top of PanelMenu and PanelClose
             /*  Form
                 this.Text = string.Empty;
@@ -126,6 +127,7 @@ namespace Login
                 int i = 1;
                 foreach (var item in qs.Documents)
                 {
+
                     if (i <= 5) // Chỉ xử lý đến PictureBox truyen5
                     {
                         Dictionary<string, object> novel = item.ToDictionary();
@@ -143,6 +145,7 @@ namespace Login
                                 pictureBox.SizeMode = PictureBoxSizeMode.Zoom;
                             }
                         }
+                        nametruyen[i] = item.Id;
                         i++;
                     }
                     else
@@ -173,6 +176,7 @@ namespace Login
                 {
                     if (i <= 2)
                     {
+                        
                         Dictionary<string, object> novel = item.ToDictionary();
                         byte[] imageBytes = Convert.FromBase64String(novel["Anh"].ToString());
 
@@ -206,6 +210,7 @@ namespace Login
                         Label dg = Controls.Find("ps0" + i, true).FirstOrDefault() as Label;
                         dg.Text = DanhGia;
 
+                        nametruyen[i + 5] = item.Id;
                         i++;
                     }
                     else
@@ -234,8 +239,10 @@ namespace Login
                 int i = 3;
                 foreach (var item in qs.Documents)
                 {
+                    
                     if (i <= 4)
                     {
+                        
                         Dictionary<string, object> novel = item.ToDictionary();
                         byte[] imageBytes = Convert.FromBase64String(novel["Anh"].ToString());
 
@@ -268,6 +275,7 @@ namespace Login
                         Label dg = Controls.Find("ps0" + i, true).FirstOrDefault() as Label;
                         dg.Text = Luotxem;
 
+                        nametruyen[i + 5] = item.Id;
                         i++;
                     }
                     else
@@ -321,6 +329,7 @@ namespace Login
                 {
                     if (i <= 6)
                     {
+                        
                         Dictionary<string, object> storyData = story.ToDictionary();
                         Dictionary<string, object> chapterData = chapter.ToDictionary();
 
@@ -359,6 +368,8 @@ namespace Login
                         string chuongmoi = chapterData.ContainsKey("Tieu_de") ? chapter.GetValue<string>("Tieu_de") : "N/A";
                         Label ps = Controls.Find("ps0" + i, true).FirstOrDefault() as Label;
                         ps.Text = format_out(chuongmoi);
+
+                        nametruyen[i + 5] = story.Id;
 
                         i++;
                     }
@@ -536,7 +547,7 @@ namespace Login
                 change_color();
                 btnLichsudoc.BackColor = Color.FromArgb(191, 44, 36);
                 btnLichsudoc.ForeColor = Color.White;
-                openChildForm(new Reading_History());
+                openChildForm(new Reading_History(user, this));
             }
         }
 
@@ -616,74 +627,74 @@ namespace Login
 
         private void btnsearch_Click(object sender, EventArgs e)
         {
-            Search tb = new Search(tbsearch.Text);
-            tb.ShowDialog();
+            change_color();
+            openChildForm(new Search(tbsearch.Text.ToUpper()));
         }
 
         private void truyen01_Click(object sender, EventArgs e)
         {
             change_color();
-            openChildForm(new Chi_Tiet_Truyen());
+            openChildForm(new Chi_Tiet_Truyen(nametruyen[6], user, client, this));
         }
 
         private void truyen02_Click(object sender, EventArgs e)
         {
             change_color();
-            openChildForm(new Chi_Tiet_Truyen());
+            openChildForm(new Chi_Tiet_Truyen(nametruyen[7], user, client, this));
         }
 
         private void truyen03_Click(object sender, EventArgs e)
         {
             change_color();
-            openChildForm(new Chi_Tiet_Truyen());
+            openChildForm(new Chi_Tiet_Truyen(nametruyen[8], user, client, this));
         }
 
         private void truyen04_Click(object sender, EventArgs e)
         {
             change_color();
-            openChildForm(new Chi_Tiet_Truyen());
+            openChildForm(new Chi_Tiet_Truyen(nametruyen[9], user, client, this));
         }
 
         private void truyen05_Click(object sender, EventArgs e)
         {
             change_color();
-            openChildForm(new Chi_Tiet_Truyen());
+            openChildForm(new Chi_Tiet_Truyen(nametruyen[10], user, client, this));
         }
 
         private void truyen06_Click(object sender, EventArgs e)
         {
             change_color();
-            openChildForm(new Chi_Tiet_Truyen());
+            openChildForm(new Chi_Tiet_Truyen(nametruyen[11], user, client, this));
         }
 
         private void truyen1_Click(object sender, EventArgs e)
         {
             change_color();
-            openChildForm(new Chi_Tiet_Truyen());
+            openChildForm(new Chi_Tiet_Truyen(nametruyen[1], user, client, this));
         }
 
         private void truyen2_Click(object sender, EventArgs e)
         {
             change_color();
-            openChildForm(new Chi_Tiet_Truyen());
+            openChildForm(new Chi_Tiet_Truyen(nametruyen[2], user, client, this));
         }
 
         private void truyen3_Click(object sender, EventArgs e)
         {
             change_color();
-            openChildForm(new Chi_Tiet_Truyen());
+            openChildForm(new Chi_Tiet_Truyen(nametruyen[3], user, client, this));
         }
 
         private void truyen4_Click(object sender, EventArgs e)
         {
             change_color();
-            openChildForm(new Chi_Tiet_Truyen());
+            openChildForm(new Chi_Tiet_Truyen(nametruyen[4], user, client, this));
         }
 
         private void truyen5_Click(object sender, EventArgs e)
         {
             change_color();
-            openChildForm(new Chi_Tiet_Truyen());
+            openChildForm(new Chi_Tiet_Truyen(nametruyen[5], user, client, this));
         }
 
         private void mouse_enter(object sender, EventArgs e)

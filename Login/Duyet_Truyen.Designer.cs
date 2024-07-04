@@ -140,6 +140,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(860, 250);
             this.panel2.TabIndex = 1;
+            this.panel2.Visible = false;
             // 
             // tableLayoutPanel1
             // 
@@ -174,6 +175,7 @@
             this.button5.TabIndex = 3;
             this.button5.Text = "Xác nhận";
             this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // btnCancel
             // 
@@ -301,6 +303,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1016, 40);
             this.panel1.TabIndex = 2;
+            this.panel1.Visible = false;
             // 
             // labelrank1
             // 
@@ -314,6 +317,7 @@
             this.labelrank1.Size = new System.Drawing.Size(173, 40);
             this.labelrank1.TabIndex = 0;
             this.labelrank1.Text = "Duyệt Truyện";
+            this.labelrank1.Visible = false;
             // 
             // Duyet_Truyen
             // 
