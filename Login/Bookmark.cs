@@ -21,7 +21,6 @@ namespace Login
     public partial class Bookmark : Form
     {
         
-
         UserCredential user;
         IFirebaseClient client;
         IFirebaseConfig config = new FirebaseConfig
@@ -52,7 +51,7 @@ namespace Login
                 DocumentSnapshot snapshot = await doc.GetSnapshotAsync();
                 
                 string imgBase64 = snapshot.GetValue<string>("Anh");
-                FirebaseResponse res = await client.GetAsync("Nguoi_dung/" + user.User.Uid + "/Bookmark/" + idTruyen + "/Chuong_Da_Doc");
+                FirebaseResponse res = await client.GetAsync("Nguoi_dung/" + user.User.Uid + "/Bookmark/" + idTruyen + "/Chuong_Dang_Doc");
                 string idChuongDangDoc = res.ResultAs<string>();
                 int tongChuong = snapshot.GetValue<int>("So_chuong");
                 Panel panel = new Panel();

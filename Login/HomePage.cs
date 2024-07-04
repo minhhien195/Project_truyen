@@ -145,15 +145,15 @@ namespace Login
         {
             this.Hide();
 
-            Doc_Truyen form = new Doc_Truyen("TOÀN TRÍ ĐỘC GIẢ",user,2);
-            form.Show();
+            /*   Doc_Truyen form = new Doc_Truyen("TOÀN TRÍ ĐỘC GIẢ",user,2);
+               form.Show();
+           }*/
         }
-
         private void button4_Click(object sender, EventArgs e)
         {
             this.Close();
-            Chi_Tiet_Truyen form = new Chi_Tiet_Truyen("TOÀN TRÍ ĐỘC GIẢ", user);
-            form.Show();
+            /*Chi_Tiet_Truyen form = new Chi_Tiet_Truyen("TOÀN TRÍ ĐỘC GIẢ", user);
+            form.Show();*/
         }
     }
 }

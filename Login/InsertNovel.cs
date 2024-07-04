@@ -7,12 +7,27 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Firebase.Auth;
+using FireSharp.Config;
+using FireSharp.Interfaces;
+using Google.Cloud.Firestore;
+using Google.Cloud.Firestore.V1;
 using Novel;
 
 namespace Login
 {
     public partial class InsertNovel : Form
     {
+
+        UserCredential user;
+        FirebaseAuthClient client;
+        IFirebaseClient ifclient;
+        IFirebaseConfig config = new FirebaseConfig
+        {
+            AuthSecret = "38QvLmnKMHlQtJ9yZzCqqWytxeXimwt06ZnFfSc2",
+            BasePath = "https://healtruyen-default-rtdb.asia-southeast1.firebasedatabase.app/"
+        };
+
         string base64Text = "";
         public InsertNovel()
         {
@@ -123,7 +138,9 @@ namespace Login
                 && lbBC.Visible == false && lbLP.Visible == false && lbTT.Visible == false)
             {
                 string[] theloai = new string[] { cbTheloai.Text, cbBoicanh.Text, cbLuuphai.Text };
-                Interact.createNovel(base64Text, "0", txtTacgia.Text, txtTentruyen.Text, theloai, rtbGioithieu.Text, "Dang_truyen");
+                Interact.createNovel(base64Text, "0", txtTacgia.Text, txtTentruyen.Text.ToUpper(), theloai, rtbGioithieu.Text, "Dang_truyen");
+
+                upload_realtime();
 
                 panelFormInsert.Visible = false;
                 btnInsert.BackColor = Color.FromArgb(220, 247, 253);
@@ -133,6 +150,26 @@ namespace Login
                 openChildForm(new Inserted());
             }
             
+
+        }
+
+        private async void upload_realtime()
+        {
+            FirestoreDb db = FirestoreDb.Create("healtruyen");
+
+            CollectionReference truyen2 = db.Collection("Truyen");
+            QuerySnapshot qs2 = await truyen2.GetSnapshotAsync();
+            int order = qs2.Count + 1;
+            string novelId = "";
+            for (int i = 0; i < 3 - order.ToString().Length; i++)
+            {
+                novelId += "0";
+            }
+            novelId += order.ToString();
+            Dictionary<string, string> noidung_up = new Dictionary<string, string>();
+            noidung_up.Add(novelId, txtTentruyen.Text);
+
+
 
         }
 
@@ -239,8 +276,6 @@ namespace Login
                 activeForm.Close();
                 panelFormInsert.Visible = true;
             }
-            
-            
         }
 
         private void ibtnDangtruyen_Click(object sender, EventArgs e)

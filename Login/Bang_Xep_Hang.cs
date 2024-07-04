@@ -30,6 +30,7 @@ namespace Login
 
         }
 
+        private Panel panelAll;
         private Form activeForm = null;
         private void openChildForm(Form childForm)
         {
@@ -49,20 +50,23 @@ namespace Login
 
         private void iconButtonTrend_Click(object sender, EventArgs e)
         {
-            iconButtonTrend.BackColor = Color.FromArgb(191, 44, 36);
-            iconButtonTrend.ForeColor = Color.White;
-            iconButtonTrend.IconColor = Color.White;
+            if (iconButtonTrend.ForeColor == Color.Black)
+            {
+                iconButtonTrend.BackColor = Color.FromArgb(191, 44, 36);
+                iconButtonTrend.ForeColor = Color.White;
+                iconButtonTrend.IconColor = Color.White;
 
-            iconButtonRead.BackColor = Color.White;
-            iconButtonRead.ForeColor = Color.Black;
-            iconButtonRead.IconColor = Color.Black;
+                iconButtonRead.BackColor = Color.White;
+                iconButtonRead.ForeColor = Color.Black;
+                iconButtonRead.IconColor = Color.Black;
 
-            iconButtonRecom.BackColor = Color.White;
-            iconButtonRecom.ForeColor = Color.Black;
-            iconButtonRecom.IconColor = Color.Black;
+                iconButtonRecom.BackColor = Color.White;
+                iconButtonRecom.ForeColor = Color.Black;
+                iconButtonRecom.IconColor = Color.Black;
 
-            activeForm.Close();
-            panelList1.Visible = true;
+                activeForm.Close();
+                panelList1.Visible = true;
+            }
         }
 
         private void iconButtonRead_Click(object sender, EventArgs e)
@@ -90,7 +94,6 @@ namespace Login
         {
             if (iconButtonRecom.ForeColor == Color.Black)
             {
-                panelList1.Visible = false;
                 iconButtonRecom.BackColor = Color.FromArgb(191, 44, 36);
                 iconButtonRecom.ForeColor = Color.White;
                 iconButtonRecom.IconColor = Color.White;
@@ -103,6 +106,7 @@ namespace Login
                 iconButtonRead.ForeColor = Color.Black;
                 iconButtonRead.IconColor = Color.Black;
 
+                panelList1.Visible = false;
                 openChildForm(new BXH_De_Cu());
             }
         }
@@ -116,7 +120,6 @@ namespace Login
         {
             iconButton3.BackColor = Color.Transparent;
         }
-
         async private void Bang_Xep_Hang_Load(object sender, EventArgs e)
         {
             string project = "healtruyen";
@@ -142,18 +145,32 @@ namespace Login
             hdLabel.Text = "Bảng xếp hạng đọc nhiều";*/
 
             CollectionReference collection = db.Collection("Truyen");
-            Query q = collection.OrderByDescending("Danh_gia_TB");
+            Query q = collection.OrderByDescending("Danh_gia_Tb");
             QuerySnapshot qs = await collection.GetSnapshotAsync();
 
+            List<DocumentSnapshot> documents = qs.Documents.ToList();
+
+            // Sắp xếp danh sách theo trường "Luot_xem" giảm dần
+            documents.Sort((x, y) => (y.GetValue<double>("Danh_gia_Tb")).CompareTo(x.GetValue<double>("Danh_gia_Tb")));
 
 
-            if (qs.Documents.Count <= 0)
+
+            if (documents.Count <= 0)
             {
+                /*panelAll = new Panel()
+                {
+                    Dock = DockStyle.Top,
+                    AutoScroll = true,
+                    AutoSize = true,
+                    Location = new Point(0, 0),
+                    Visible = true,
+                };
+                childFormPanel.Controls.Add(panelAll);*/
                 Panel panelList = new Panel();
                 panelList.Dock = DockStyle.Top;
                 panelList.AutoSize = true;
                 panelList.BringToFront();
-                childFormPanel.Controls.Add(panelList);
+                panelList1.Controls.Add(panelList);
 
                 Label noti = new Label();
                 panelList.Controls.Add(noti);
@@ -165,14 +182,25 @@ namespace Login
             else
             {
                 int i = 1;
-                foreach (var item in qs.Documents)
+                panelList1.Visible = true;
+                foreach (var item in documents)
                 {
+                    /*panelAll = new Panel()
+                    {
+                        Dock = DockStyle.Top,
+                        AutoScroll = true,
+                        AutoSize = true,
+                        Location = new Point(0, 0),
+                        Visible = true,
+                    };
+                    childFormPanel.Controls.Add(panelAll);
+                    panelAll.BringToFront();
+*/                  
                     Dictionary<string, object> novel = item.ToDictionary();
                     Panel panelList = new Panel();
                     panelList.Dock = DockStyle.Top;
                     panelList.AutoSize = true;
-                    panelList.BringToFront();
-                    childFormPanel.Controls.Add(panelList);
+                    panelList1.Controls.Add(panelList);
                     panelList.BringToFront();
 
                     Label rank = new Label();
@@ -284,5 +312,7 @@ namespace Login
                 }
             }
         }
+
+
     }
 }

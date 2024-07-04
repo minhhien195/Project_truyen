@@ -11,8 +11,10 @@ using System.Net.Mail;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
-/*using System.Windows.Controls;*/
+using System.Windows.Controls;
 using System.Windows.Forms;
+using System.Windows.Media.Animation;
+using AlbumTruyen;
 using Firebase.Auth;
 using Firebase.Auth.Providers;
 using FirebaseAdmin;
@@ -34,19 +36,25 @@ namespace Login
         int currentChap;
         int numChap = 1;
         string idTruyen;
+        FirebaseAuthClient client;
+        IFirebaseClient ifclient;
         IFirebaseConfig _firebaseConfig = new FirebaseConfig
         {
             AuthSecret = "38QvLmnKMHlQtJ9yZzCqqWytxeXimwt06ZnFfSc2",
             BasePath = "https://healtruyen-default-rtdb.asia-southeast1.firebasedatabase.app/"
         };
         UserCredential user;
-        public Chi_Tiet_Truyen(string nameTruyen, UserCredential user)
+
+        private Trang_chu tc;
+        public Chi_Tiet_Truyen(string idTruyen, UserCredential userCredential, FirebaseAuthClient firebaseAuthClient, Trang_chu trangchu)
         {
             InitializeComponent();
-            this.nameTruyen = nameTruyen;
-            this.user = user;
+            this.idTruyen = idTruyen;
+            ifclient = new FireSharp.FirebaseClient(_firebaseConfig);
+            this.user = userCredential;
+            this.client = firebaseAuthClient;
+            tc = trangchu;
         }
-
 
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
@@ -55,23 +63,12 @@ namespace Login
 
         private async void Chi_Tiet_Truyen_Load(object sender, EventArgs e)
         {
-            string project = "healtruyen";
-            FirestoreDb db = FirestoreDb.Create(project);
-            CollectionReference collectionReference = db.Collection("Truyen");
-            nameTruyen = nameTruyen.ToUpper();
-            Query q = collectionReference.WhereEqualTo("Ten", nameTruyen);
-            QuerySnapshot qs = await q.GetSnapshotAsync();
-            if (qs.Documents.Count == 0)
-            {
-                return;
-            }
-            idTruyen = qs.Documents[0].Id;
             tableLayoutPanel2.Width = this.Width / 2;
             panelChildForm.Width = (int)(this.Width * 0.9);
             introContent.Width = (int)(panelChildForm.Width * 0.6);
-            panel6.Width = (int)(panelChildForm.Width * 0.37);
+            /*panel6.Width = (int)(panelChildForm.Width * 0.37);
             pictureAuthorIntro.Width = panel6.Width / 4;
-            pictureAuthorIntro.Height = pictureAuthorIntro.Width;
+            pictureAuthorIntro.Height = pictureAuthorIntro.Width;*/
 
             labelShortName.Location = new Point(
                 (panelShortName.Width - labelShortName.Width) / 2, // Tính toán vị trí theo trục X
@@ -91,7 +88,7 @@ namespace Login
             );
             labelStatus.Anchor = AnchorStyles.None;
 
-            pictureAuthorIntro.Location = new Point(
+            /*pictureAuthorIntro.Location = new Point(
                 (panel6.Width - pictureAuthorIntro.Width) / 2, // Tính toán vị trí theo trục X
                 70 // Tính toán vị trí theo trục Y
             );
@@ -120,6 +117,8 @@ namespace Login
                 360 // Tính toán vị trí theo trục Y
             );
             labelBookAuthorInfo.Anchor = AnchorStyles.None;
+
+            
 
             pictureBox16.Location = new Point(
                 ((panel6.Width - pictureBox16.Width) * 3) / 4, // Tính toán vị trí theo trục X
@@ -158,8 +157,14 @@ namespace Login
             label12.Location = new Point(
                 (panel6.Width - label12.Width) / 2, // Tính toán vị trí theo trục X
                 pictureBox17.Location.Y + pictureBox17.Height + 20 // Tính toán vị trí theo trục Y
-            );
-            Dictionary<string, object> novel = qs.Documents[0].ToDictionary();
+            );*/
+
+            string project = "healtruyen";
+            FirestoreDb db = FirestoreDb.Create(project);
+            DocumentReference collection = db.Collection("Truyen").Document(idTruyen);
+
+            DocumentSnapshot qs = await collection.GetSnapshotAsync();
+            Dictionary<string, object> novel = qs.ToDictionary();
             byte[] imageBytes = Convert.FromBase64String(novel["Anh"].ToString());
 
             using (MemoryStream memoryStream = new MemoryStream(imageBytes))
@@ -170,7 +175,14 @@ namespace Login
             }
             labelAuthor.Text = novel["Tac_gia"].ToString();
             nameBook.Text = novel["Ten"].ToString();
-            labelShortName.Text = novel["Tac_gia"].ToString();
+            nameTruyen = nameBook.Text.ToUpper();
+            List<char> shortname = new List<char>();
+            foreach(var i in novel["Ten"].ToString().Split(' '))
+            {
+                shortname.Add(i[0]);
+            }
+
+            labelShortName.Text = string.Join("", shortname);
             if (novel["Trang_thai"].ToString() == "0")  
                 labelStatus.Text = "Dừng cập nhật";
             else if (novel["Trang_thai"].ToString() == "1")
@@ -191,6 +203,7 @@ namespace Login
         }
 
         private Form activeForm = null;
+
         private void openChildForm (Form childForm)
         {
             if (activeForm != null )
@@ -216,8 +229,8 @@ namespace Login
             string project = "healtruyen";
             FirestoreDb db = FirestoreDb.Create(project);
             CollectionReference collectionReference = db.Collection("Truyen").Document(idTruyen).Collection("Chuong");
-            panel6.Visible = false;
-            openChildForm(new Danh_Sach_Chuong_CTT(collectionReference));
+/*            panel6.Visible = false;
+*/            openChildForm(new Danh_Sach_Chuong_CTT(collectionReference, tc, user, idTruyen));
             btnNumChapMenu.ForeColor = Color.Red;
             btnNumChapMenu.Font = new Font("League Spartan", 16, FontStyle.Regular);
 
@@ -247,7 +260,7 @@ namespace Login
         private void btnRatingMenu_Click(object sender, EventArgs e)
         {
             panel2.Visible = false;
-            openChildForm(new Danh_Gia_CTT());
+            openChildForm(new Danh_Gia_CTT(idTruyen, nameTruyen, user));
             btnNumChapMenu.ForeColor = Color.Black;
             btnNumChapMenu.Font = new Font("League Spartan", 16, FontStyle.Regular);
 
@@ -273,6 +286,54 @@ namespace Login
             btnCommentMenu.Font = new Font("League Spartan", 16, FontStyle.Regular);
             btnRatingMenu.ForeColor = Color.Black;
             btnRatingMenu.Font = new Font("League Spartan", 16, FontStyle.Regular);
+        }
+        private void labelType_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void btnRead_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            tc.openChildForm(new Doc_Truyen(idTruyen, user, 1, tc));
+        }
+
+        private async void btnBookMark_Click(object sender, EventArgs e)
+        {
+
+            IFirebaseClient client = new FireSharp.FirebaseClient(_firebaseConfig);
+
+            //insert data into path Information/[data.Id]
+            SetResponse response = await client.SetAsync("Nguoi_dung/" + user.User.Uid + "/Bookmark/" + idTruyen + "/Chuong_Dang_Doc", 1);
+        }
+
+        private async void btnAddAlbum_Click(object sender, EventArgs e)
+        {
+            CRUD_album album = new CRUD_album();
+            await album.Capnhat_album(user.User.Uid, 1, idTruyen, false);
+        }
+
+        private async void btnRecom_Click(object sender, EventArgs e)
+        {
+            if (btnRecom.ForeColor == Color.FromArgb(255, 6, 6))
+            {
+                FirestoreDb db = FirestoreDb.Create("healtruyen");
+                CollectionReference truyen = db.Collection("Truyen");
+
+                DocumentReference collectionRef = db.Collection("Truyen").Document(idTruyen);
+                DocumentSnapshot snapshot = await collectionRef.GetSnapshotAsync();
+
+                int Decu = snapshot.GetValue<int>("De_cu");
+                Decu++;
+
+                Dictionary<string, object> updates = new Dictionary<string, object>
+                {
+                    { "De_cu", Decu },
+                };
+                DocumentReference doc = truyen.Document(idTruyen);
+                await doc.UpdateAsync(updates);
+                btnRecom.ForeColor = Color.FromArgb(255, 0, 0);
+                MessageBox.Show("Bạn đã đề cử thành công!");
+            }
         }
     }
 }

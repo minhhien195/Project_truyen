@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 using Google.Cloud.Firestore;
 using Firebase.Database;
 using Firebase.Auth;
+using System.Runtime.InteropServices.ComTypes;
+using DocumentFormat.OpenXml.Drawing.Diagrams;
+using DocumentFormat.OpenXml.Office2019.Presentation;
 
 namespace Login
 {
@@ -50,24 +53,21 @@ namespace Login
             FirestoreDb db = FirestoreDb.Create(project);
             List<string> result = new List<string>();
 
-            Query query = db.Collection("Truyen").WhereArrayContainsAny("Tac_gia", tuKhoa.ToUpper());
+            QuerySnapshot ds = await db.Collection("Truyen").GetSnapshotAsync();
 
-            Query query1 = db.Collection("Truyen").WhereArrayContainsAny("Ten", tuKhoa.ToUpper());
+            Dictionary<string, string> dsach = new Dictionary<string, string>();
 
-            // Thực thi truy vấn và lấy kết quả
-            QuerySnapshot snapshot = await query.GetSnapshotAsync();
-
-            // In kết quả
-            foreach (DocumentSnapshot document in snapshot.Documents)
+            foreach (var item in ds.Documents)
             {
-                result.Add(document.Id);
+                dsach.Add(item.Id, item.GetValue<string>("Ten"));
             }
 
-            snapshot = await query1.GetSnapshotAsync();
-
-            foreach (DocumentSnapshot document in snapshot.Documents)
+            foreach(var item in dsach)
             {
-                result.Add(document.Id);
+                if (item.Value.Contains(tuKhoa.ToUpper()))
+                {
+                    result.Add(item.Key);
+                }
             }
 
             return result;
@@ -76,103 +76,153 @@ namespace Login
         public async Task<List<string>> AdvanceSearch(string tuKhoa, double danhGia, string tacGia, string theLoai, int tinhTrang)
         {
             string project = "healtruyen";
-            FirestoreDb db = FirestoreDb.Create(project);
+            FirestoreDb db = FirestoreDb.Create(project);   
             List<string> result = new List<string>();
+
+            QuerySnapshot ds = await db.Collection("Truyen").GetSnapshotAsync();
+
+            Dictionary<string, string> dsach = new Dictionary<string, string>();
+
             Query query = db.Collection("Truyen");
 
-            bool isName = false;
-            bool isDG = false;
-            bool isTG = false;
-            bool isTL = false;
-            bool isTT = false;
-
-            if (!string.IsNullOrEmpty(tuKhoa) && tuKhoa.ToUpper() != "TÌM KIẾM")
+            bool isName = false, isTG = false;
+            if (tuKhoa.ToUpper() == "TÌM KIẾM")
             {
-                query = query.WhereEqualTo("Ten", tuKhoa.ToUpper());
+                tuKhoa = null;
+            }
+            if (!string.IsNullOrEmpty(tuKhoa) && string.IsNullOrEmpty(tacGia))
+            {
+                foreach (var item in ds.Documents)
+                {
+                    if (item.GetValue<string>("Ten").Contains(tuKhoa.ToUpper()))
+                    dsach.Add(item.Id, item.GetValue<string>("Ten"));
+                }
+                isName = true;
+            } else if (string.IsNullOrEmpty(tuKhoa) && !string.IsNullOrEmpty(tacGia)) {
+                foreach (var item in ds.Documents)
+                {
+                    if (item.GetValue<string>("Tac_gia").ToUpper().Contains(tacGia.ToUpper()))
+                        dsach.Add(item.Id, item.GetValue<string>("Tac_gia"));
+                }
+                isTG = true;
+            } else if (!string.IsNullOrEmpty(tuKhoa) && !string.IsNullOrEmpty(tacGia)) {
+                foreach (var item in ds.Documents)
+                {
+                    if (item.GetValue<string>("Ten").Contains(tuKhoa.ToUpper()) 
+                            && item.GetValue<string>("Tac_gia").ToUpper().Contains(tacGia.ToUpper()))
+                        dsach.Add(item.Id, item.GetValue<string>("Ten"));
+                }
+                isTG = true;
                 isName = true;
             }
-
-            if (danhGia != -1)
+            if (theLoai.ToUpper() == "KHÔNG")
+            {
+                theLoai = "";
+            }
+            if (danhGia != -1 && string.IsNullOrEmpty(theLoai) && tinhTrang == -1)
             {
                 query = query.WhereLessThanOrEqualTo("Danh_gia_Tb", danhGia);
-                isDG = true;
-            }
-
-            if (!string.IsNullOrEmpty(tacGia))
-            {
-                query = query.WhereEqualTo("Tac_gia", tacGia);
-                isTG = true;
-            }
-
-            if (!string.IsNullOrEmpty(theLoai) && theLoai.ToUpper() != "KHÔNG")
-            {
-                query = query.WhereArrayContains("The_loai", theLoai);
-                isTL = true;
-            }
-
-            if (tinhTrang != -1)
+            } 
+            else if (danhGia == -1 && string.IsNullOrEmpty(theLoai) && tinhTrang != -1)
             {
                 query = query.WhereEqualTo("Trang_thai", tinhTrang);
-                isTT = true;
+            }
+            else if (danhGia == -1 && !string.IsNullOrEmpty(theLoai) && tinhTrang == -1)
+            {
+                query = query.WhereArrayContains("The_loai", theLoai);
+            }
+            else if (danhGia != -1 && string.IsNullOrEmpty(theLoai) && tinhTrang != -1)
+            {
+                query = query.WhereLessThanOrEqualTo("Danh_gia_Tb", danhGia)
+                            .WhereEqualTo("Trang_thai", tinhTrang);
+            }
+            else if (danhGia == -1 && !string.IsNullOrEmpty(theLoai) && tinhTrang != -1) 
+            {
+                query = query.WhereArrayContains("The_loai", theLoai)
+                            .WhereEqualTo("Trang_thai", tinhTrang);
+            }
+            else if (danhGia != -1 && !string.IsNullOrEmpty(theLoai) && tinhTrang == -1) 
+            {
+                query = query.WhereLessThanOrEqualTo("Danh_gia_Tb", danhGia)
+                            .WhereEqualTo("Trang_thai", tinhTrang);
+            }
+            else if (danhGia != -1 && !string.IsNullOrEmpty(theLoai) && tinhTrang != -1)
+            {
+                query = query.WhereLessThanOrEqualTo("Danh_gia_Tb", danhGia)
+                            .WhereEqualTo("Trang_thai", tinhTrang)
+                            .WhereArrayContains("The_loai", theLoai);
             }
 
             QuerySnapshot snapshot = await query.GetSnapshotAsync();
 
-            foreach (DocumentSnapshot document in snapshot.Documents)
+            foreach (var item in dsach)
+            {
+                    result.Add(item.Key);   
+            }
+
+            /*foreach (var item in dsach2)
+            {
+                    if (isTG && !result.Contains(item.Key))
+                        result.Add(item.Key);
+            }*/
+
+            List<string> idsn = new List<string>();
+            foreach (var i in snapshot.Documents) idsn.Add(i.Id);
+
+            List<string> result1 = new List<string>();
+
+            foreach (var j in result)
+            {
+                if(idsn.Contains(j) && !result1.Contains(j)) { 
+                    result1.Add(j);
+                }
+            }
+
+            /*foreach (DocumentSnapshot document in snapshot.Documents)
             {
                 bool allc = true;
-
-                if (isName && !document.GetValue<string>("Ten").ToUpper().Contains(tuKhoa.ToUpper()))
+                if (result.Contains(document.Id))
                 {
-                    allc = false;
-                    continue;
-                }
-
-                if (isDG && document.GetValue<double>("Danh_gia_Tb") > danhGia)
-                {
-                    allc = false;
-                    continue;
-                }
-
-                if (isTG && document.GetValue<string>("Tac_gia") != tacGia)
-                {
-                    allc = false;
-                    continue;
-                }
-
-                if (isTL)
-                {
-                    List<string> theLoaiList = new List<string>();
-
-                    // Assuming "The_loai" is an array in Firebase
-                    foreach (object theLoaiItem in (List<object>)document.GetValue<object>("The_loai"))
-                    {
-                        // Chuyển đổi mỗi phần tử thành string và chuyển thành chữ hoa
-                        theLoaiList.Add(theLoaiItem.ToString().ToUpper());
-                    }
-
-                    // Check if theLoai is in the theLoaiList
-                    bool isInTheLoaiList = theLoaiList.Contains(theLoai.ToUpper());
-
-                    if (!isInTheLoaiList)
+                    if (isDG && document.GetValue<double>("Danh_gia_Tb") > danhGia)
                     {
                         allc = false;
                         continue;
                     }
-                }
 
-                if (isTT && document.GetValue<int>("Trang_thai") != tinhTrang)
-                {
-                    allc = false;
-                    continue;
-                }
+                    if (isTL)
+                    {
+                        List<string> theLoaiList = new List<string>();
 
-                if (allc)
-                {
-                    result.Add(document.Id);
+                        // Assuming "The_loai" is an array in Firebase
+                        foreach (object theLoaiItem in (List<object>)document.GetValue<object>("The_loai"))
+                        {
+                            // Chuyển đổi mỗi phần tử thành string và chuyển thành chữ hoa
+                            theLoaiList.Add(theLoaiItem.ToString().ToUpper());
+                        }
+
+                        // Check if theLoai is in the theLoaiList
+                        bool isInTheLoaiList = theLoaiList.Contains(theLoai.ToUpper());
+
+                        if (!isInTheLoaiList)
+                        {
+                            allc = false;
+                            continue;
+                        }
+                    }
+
+                    if (isTT && document.GetValue<int>("Trang_thai") != tinhTrang)
+                    {
+                        allc = false;
+                        continue;
+                    }
+
+                    if (allc)
+                    {
+                        result.Add(document.Id);
+                    }
                 }
-            }
-            return result;
+            }*/
+            return result1;
         }
     }
 }

@@ -120,12 +120,6 @@
   <metadata name="btnBookMark.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
   </metadata>
-  <metadata name="btnRecom.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <metadata name="btnAddAlbum.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
   <data name="introContent.Text" xml:space="preserve">
     <value>Quân Tiêu Dao xuyên qua Huyền Huyễn thế giới, trở thành Hoang Cổ thế gia Thần tử, ủng có vô địch bối cảnh, kinh thế thiên phú, càng đạt được đánh dấu hệ thống, bắt đầu đánh dấu một bộ đại thành Hoang Cổ thánh thể.
 

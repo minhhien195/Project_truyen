@@ -35,6 +35,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DocumentFormat.OpenXml, Version=3.0.2.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocumentFormat.OpenXml.3.0.2\lib\net46\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml.Framework, Version=3.0.2.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocumentFormat.OpenXml.Framework.3.0.2\lib\net46\DocumentFormat.OpenXml.Framework.dll</HintPath>
+    </Reference>
     <Reference Include="Firebase, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\FirebaseDatabase.net.4.2.0\lib\netstandard2.0\Firebase.dll</HintPath>
     </Reference>
@@ -201,6 +207,12 @@
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="WindowsBase" />
+    <Reference Include="Xceed.Document.NET, Version=3.0.24152.12190, Culture=neutral, PublicKeyToken=ba83ff368b7563c6, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xceed.Document.NET.3.0.24152.1219\lib\net40\Xceed.Document.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Pdf, Version=3.0.24152.12190, Culture=neutral, PublicKeyToken=ba83ff368b7563c6, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xceed.Pdf.3.0.24152.1219\lib\net40\Xceed.Pdf.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccountInfo.cs">
@@ -232,6 +244,12 @@
     </Compile>
     <Compile Include="Bang_Xep_Hang.Designer.cs">
       <DependentUpon>Bang_Xep_Hang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Binh_Luan_CTT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Binh_Luan_CTT.Designer.cs">
+      <DependentUpon>Binh_Luan_CTT.cs</DependentUpon>
     </Compile>
     <Compile Include="Bookmark.cs">
       <SubType>Form</SubType>
@@ -341,11 +359,11 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="NvUpdate.cs">
+    <Compile Include="NVupdate.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NvUpdate.Designer.cs">
-      <DependentUpon>NvUpdate.cs</DependentUpon>
+    <Compile Include="NVupdate.Designer.cs">
+      <DependentUpon>NVupdate.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -432,6 +450,9 @@
     <EmbeddedResource Include="Bang_Xep_Hang.resx">
       <DependentUpon>Bang_Xep_Hang.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Binh_Luan_CTT.resx">
+      <DependentUpon>Binh_Luan_CTT.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Bookmark.resx">
       <DependentUpon>Bookmark.cs</DependentUpon>
     </EmbeddedResource>
@@ -486,8 +507,8 @@
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NvUpdate.resx">
-      <DependentUpon>NvUpdate.cs</DependentUpon>
+    <EmbeddedResource Include="NVupdate.resx">
+      <DependentUpon>NVupdate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

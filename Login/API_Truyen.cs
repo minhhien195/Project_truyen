@@ -19,6 +19,7 @@ namespace Novel
 
     public static class Interact
     {
+        [FirestoreData]
         public class Chapter
         {
             [FirestoreProperty("ID_Truyen")]
@@ -30,7 +31,7 @@ namespace Novel
             [FirestoreProperty("Tieu_de")]
             public string Title { get; set; }
         }
-
+        [FirestoreData]
         public class Novel
         {
             [FirestoreProperty("Anh")]
@@ -219,9 +220,13 @@ namespace Novel
                 description = tom_tat,
                 status = 1
             };
+
             CollectionReference truyen = db.Collection(dbString);
             QuerySnapshot qs = await truyen.GetSnapshotAsync();
-            int order = qs.Count + 1;
+            
+            CollectionReference truyen2 = db.Collection("Truyen");
+            QuerySnapshot qs2 = await truyen2.GetSnapshotAsync();
+            int order = qs2.Count + 1;
             string novelId = "";
             for (int i = 0; i < 3 - order.ToString().Length; i++)
             {
@@ -230,6 +235,7 @@ namespace Novel
             novelId += order.ToString();
             DocumentReference novelUp = truyen.Document(novelId);
             await novelUp.CreateAsync(novel);
+
             return novelId;
         }
 

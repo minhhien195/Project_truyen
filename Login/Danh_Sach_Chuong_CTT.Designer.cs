@@ -90,9 +90,9 @@
             this.panelListChap.Controls.Add(this.label2);
             this.panelListChap.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelListChap.Location = new System.Drawing.Point(0, 48);
-            this.panelListChap.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelListChap.Margin = new System.Windows.Forms.Padding(2);
             this.panelListChap.Name = "panelListChap";
-            this.panelListChap.Size = new System.Drawing.Size(600, 318);
+            this.panelListChap.Size = new System.Drawing.Size(600, 329);
             this.panelListChap.TabIndex = 1;
             // 
             // label20
@@ -350,10 +350,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
-            this.ClientSize = new System.Drawing.Size(600, 366);
+            this.ClientSize = new System.Drawing.Size(600, 377);
             this.Controls.Add(this.panelListChap);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Danh_Sach_Chuong_CTT";
             this.Text = "Danh_Sach_Chuong";
             this.Load += new System.EventHandler(this.Danh_Sach_Chuong_Load);

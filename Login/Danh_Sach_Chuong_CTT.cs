@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Firebase.Auth;
 using Google.Cloud.Firestore;
 using Novel;
 
@@ -26,15 +27,23 @@ namespace Login
             public string Title { get; set; }
         }
         CollectionReference chapter;
-        public Danh_Sach_Chuong_CTT(CollectionReference chapter)
+
+        private Trang_chu trangchu;
+        private UserCredential userCredential;
+        private string Idtruyen;
+
+        public Danh_Sach_Chuong_CTT(CollectionReference chapter, Trang_chu tc, UserCredential user, string ID)
         {
             InitializeComponent();
             this.chapter = chapter;
+            this.trangchu = tc;
+            this.userCredential = user;
+            this.Idtruyen = ID;
         }
 
         private async void Danh_Sach_Chuong_Load(object sender, EventArgs e)
         {
-            QuerySnapshot qs = await chapter.GetSnapshotAsync();
+            QuerySnapshot qs = await chapter.Limit(30).GetSnapshotAsync();
             foreach (var item in qs)
             {
                 if (item != null)
@@ -49,6 +58,19 @@ namespace Login
                     label.AutoSize = true;
                     label.Font = new Font("League Spartan", 16, FontStyle.Regular);
                     label.Name = "labelChapter" + Convert.ToInt32(item.Id).ToString();
+                    label.Click += (S, ev) =>
+                    {
+                        trangchu.change_color();
+                        trangchu.openChildForm(new Doc_Truyen(Idtruyen, userCredential, Convert.ToInt32(item.Id), trangchu));
+                    };
+                    label.MouseEnter += (S, ev) =>
+                    {
+                        label.ForeColor = Color.Red;
+                    };
+                    label.MouseLeave += (S, ev) =>
+                    {
+                        label.ForeColor = Color.Black;
+                    };
                     // Thêm label vào Controls của Form
                     /*this.Controls.Add(label);*/
                     label.BringToFront();

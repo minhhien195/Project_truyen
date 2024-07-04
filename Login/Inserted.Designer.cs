@@ -70,7 +70,7 @@
             "Đang Tiến Hành",
             "Hoàn Thành"});
             this.comboBox1.Location = new System.Drawing.Point(639, 8);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(148, 31);
             this.comboBox1.TabIndex = 3;
@@ -129,7 +129,7 @@
             this.panel1.Controls.Add(this.lbTrangthai);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(815, 29);
             this.panel1.TabIndex = 6;
@@ -142,7 +142,7 @@
             this.panel2.Controls.Add(this.comboBox1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(815, 41);
             this.panel2.TabIndex = 7;
@@ -154,7 +154,7 @@
             this.panelTruyendang.Controls.Add(this.panel2);
             this.panelTruyendang.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTruyendang.Location = new System.Drawing.Point(0, 29);
-            this.panelTruyendang.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelTruyendang.Margin = new System.Windows.Forms.Padding(2);
             this.panelTruyendang.Name = "panelTruyendang";
             this.panelTruyendang.Size = new System.Drawing.Size(815, 41);
             this.panelTruyendang.TabIndex = 8;
@@ -165,7 +165,7 @@
             this.panel4.Controls.Add(this.tableLayoutPanel1);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 70);
-            this.panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(815, 58);
             this.panel4.TabIndex = 9;
@@ -178,11 +178,11 @@
             this.tableLayoutPanel1.Controls.Add(this.btnInsertChap, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnUpdate, 1, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(557, 4);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 52F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(229, 52);
             this.tableLayoutPanel1.TabIndex = 4;
             // 
@@ -195,12 +195,13 @@
             this.btnInsertChap.Font = new System.Drawing.Font("League Spartan", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInsertChap.ForeColor = System.Drawing.SystemColors.Control;
             this.btnInsertChap.Location = new System.Drawing.Point(2, 2);
-            this.btnInsertChap.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnInsertChap.Margin = new System.Windows.Forms.Padding(2);
             this.btnInsertChap.Name = "btnInsertChap";
             this.btnInsertChap.Size = new System.Drawing.Size(110, 48);
             this.btnInsertChap.TabIndex = 1;
             this.btnInsertChap.Text = "Thêm chương";
             this.btnInsertChap.UseVisualStyleBackColor = false;
+            this.btnInsertChap.Click += new System.EventHandler(this.btnInsertChap_Click);
             // 
             // btnUpdate
             // 
@@ -211,7 +212,7 @@
             this.btnUpdate.Font = new System.Drawing.Font("League Spartan", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.Color.Black;
             this.btnUpdate.Location = new System.Drawing.Point(116, 2);
-            this.btnUpdate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(2);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(111, 48);
             this.btnUpdate.TabIndex = 2;
@@ -229,7 +230,7 @@
             this.Controls.Add(this.panelTruyendang);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Inserted";
             this.Text = "Inserted";
             this.Load += new System.EventHandler(this.Inserted_Load);

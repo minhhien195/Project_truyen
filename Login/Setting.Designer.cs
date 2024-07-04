@@ -63,7 +63,6 @@
             // panel1
             // 
             this.panel1.AutoSize = true;
-            this.panel1.Controls.Add(this.btnOut);
             this.panel1.Location = new System.Drawing.Point(21, 14);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";

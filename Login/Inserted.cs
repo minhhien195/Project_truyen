@@ -16,6 +16,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Media.Media3D;
 
 namespace Login
 {
@@ -33,11 +34,13 @@ namespace Login
 
         private void Inserted_Load(object sender, EventArgs e)
         {
-            dsTruyen();
+            dangTruyen();
         }
-        string userId = "";
+
+        List<string> list = new List<string>();
+
         Dictionary<string, string> trangthai_id = new Dictionary<string, string>();
-        private async Task<string> dangTruyen()
+        private async void dangTruyen()
         {
             var config = new FirebaseAuthConfig
             {
@@ -49,162 +52,152 @@ namespace Login
                 }
             };
             var client = new FirebaseAuthClient(config);
-            /*userId = client.User.Uid;*/
-            userId = "GUV1i10T8CMza3pmH93anGS9WUg1";
+            string userId = client.User.Uid;
             IFirebaseClient client1 = new FireSharp.FirebaseClient(_firebaseConfig);
-            var path = "Nguoi_dung/" + userId;
+            var path = "Nguoi_dung/" + userId + "/Truyen_dang";
             FirebaseResponse res = await client1.GetAsync(path);
-            Dictionary<string, object> user = new Dictionary<string, object>();
-            if (res.Body != "null")
+
+            Dictionary<string, object> data = JsonConvert.DeserializeObject<Dictionary<string, object>>(res.Body);
+            if (data.Count <= 0)
             {
-                user = JsonConvert.DeserializeObject<Dictionary<string, object>>(res.Body);
+                MessageBox.Show("Không có truyện nào đã đăng!");
+                return;
             }
-            foreach (var item in user)
+            else
             {
-                if (item.Key == "Dangtruyen")
+                foreach (var id in data.Keys)
                 {
-                    return item.Value.ToString();
+                    list.Add(id.ToString());
                 }
             }
-            return null;
-
+            dsTruyen();
         }
         private async void dsTruyen()
-        {
-            string truyen = "001";
-            Task<string> dstruyen = dangTruyen();
-            var result = await dstruyen;
-            if (result != null)
-            {
-                truyen = result;
-            }
-            string[] ds = truyen.Split(',');
-            foreach (string s in ds)
-            {
-                FirestoreDb db = FirestoreDb.Create("healtruyen");
-                string docPath = "Truyen/" + s;
-                DocumentReference docRef = db.Document(docPath);
-                DocumentSnapshot snapshot = await docRef.GetSnapshotAsync();
+        {   
+            FirestoreDb db = FirestoreDb.Create("healtruyen");
+            CollectionReference collection = db.Collection("Truyen");
 
-                if (snapshot.Exists)
+            List<DocumentSnapshot> documents = new List<DocumentSnapshot>();
+            foreach (string id in list)
+            {
+                DocumentSnapshot document = await collection.Document(id).GetSnapshotAsync();
+                if (document.Exists)
                 {
-                    Panel panel = new Panel();
-                    panel.Dock = DockStyle.Top;
-                    panel.AutoSize = true;
-                    panel.Size = new Size(1223, 59);
-                    panel.Anchor = AnchorStyles.Top | AnchorStyles.Left;
-                    panel.Visible = true;
-                    panel.Margin = new Padding(0, 0, 0, 50);
-                    panel.Tag = snapshot.GetValue<string>("Ten");
-                    panelTruyendang.Controls.Add(panel);
-
-                    Label tentruyen = new Label();
-                    tentruyen.AutoSize = true;
-                    tentruyen.Location = new Point(12, 12);
-                    tentruyen.Text = snapshot.GetValue<string>("Ten");
-                    tentruyen.Visible = true;
-                    tentruyen.Anchor = AnchorStyles.Top | AnchorStyles.Left;
-                    tentruyen.Font = new Font("League Spartan", 12F, FontStyle.Regular);
-
-                    Label chuong = new Label();
-                    chuong.AutoSize = true;
-                    chuong.Location = new Point(408, 12);
-                    chuong.Text = snapshot.GetValue<int>("So_chuong") + " chuong";
-                    chuong.Visible = true;
-                    chuong.Anchor = AnchorStyles.Top | AnchorStyles.Left;
-                    chuong.Font = new Font("League Spartan", 12F, FontStyle.Regular);
-
-                    ComboBox trangthai = new ComboBox();
-                    trangthai.AutoSize = true;
-                    trangthai.Font = new Font("League Spartan", 12F, FontStyle.Regular);
-                    trangthai.BackColor = Color.FromArgb(155, 227, 243);
-                    trangthai.FlatStyle = FlatStyle.Flat;
-                    trangthai.Anchor = AnchorStyles.Top | AnchorStyles.Left;
-                    trangthai.Location = new Point(639, 12);
-                    trangthai.Items.Add("Tạm dừng");
-                    trangthai.Items.Add("Đang Tiến Hành");
-                    trangthai.Items.Add("Hoàn thành");
-                    trangthai.SelectedIndex = 0;
-                    trangthai.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
-                    int tt = snapshot.GetValue<int>("Trang_thai");
-                    if (tt == 0)
-                    {
-                        trangthai.Text = "Tạm dừng";
-                    }
-                    else if (tt == 1)
-                    {
-                        trangthai.Text = "Đang tiến hành";
-                    }
-                    else
-                    {
-                        trangthai.Text = "Hoàn thành";
-                    }
-                    
-                    
-
-                    panel.Controls.Add(tentruyen);
-                    panel.Controls.Add(chuong);
-                    panel.Controls.Add(trangthai);
+                    documents.Add(document);
                 }
+            }
+
+            foreach (var id in documents)
+            {
+                Dictionary<string, object> novel = id.ToDictionary();
+
+                Panel panel = new Panel();
+                panel.Dock = DockStyle.Top;
+                panel.AutoSize = true;
+                panel.Size = new Size(1223, 59);
+                panel.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+                panel.Visible = true;
+                panel.Margin = new Padding(0, 0, 0, 50);
+                panel.Tag = novel["Ten"];
+                panelTruyendang.Controls.Add(panel);
+
+                Label tentruyen = new Label();
+                tentruyen.AutoSize = true;
+                tentruyen.Location = new Point(12, 12);
+                tentruyen.Text = novel["Ten"].ToString();
+                tentruyen.Visible = true;
+                tentruyen.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+                tentruyen.Font = new Font("League Spartan", 12F, FontStyle.Regular);
+
+                Label chuong = new Label();
+                chuong.AutoSize = true;
+                chuong.Location = new Point(408, 12);
+                chuong.Text = novel["So_chuong"].ToString() + " chuong";
+                chuong.Visible = true;
+                chuong.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+                chuong.Font = new Font("League Spartan", 12F, FontStyle.Regular);
+
+                ComboBox trangthai = new ComboBox();
+                trangthai.AutoSize = true;
+                trangthai.Font = new Font("League Spartan", 12F, FontStyle.Regular);
+                trangthai.BackColor = Color.FromArgb(155, 227, 243);
+                trangthai.FlatStyle = FlatStyle.Flat;
+                trangthai.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+                trangthai.Location = new Point(639, 12);
+                trangthai.Items.Add("Tạm dừng");
+                trangthai.Items.Add("Đang tiến hành");
+                trangthai.Items.Add("Hoàn thành");
+                trangthai.SelectedIndex = Convert.ToInt32(novel["Trang_thai"]);
+/*                trangthai.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
+*/                trangthai.SelectedValueChanged += comboBox1_SelectedIndexChanged;
+                int tt = Convert.ToInt32(novel["Trang_thai"]);
+                if (tt == 0)
+                {
+                    trangthai.Text = "Tạm dừng";
+                }
+                else if (tt == 1)
+                {
+                    trangthai.Text = "Đang tiến hành";
+                }
+                else
+                {
+                    trangthai.Text = "Hoàn thành";
+                }
+
+                trangthai_id.Add(novel["Ten"].ToString(), trangthai.Text);
+
+                panel.Controls.Add(tentruyen);
+                panel.Controls.Add(chuong);
+                panel.Controls.Add(trangthai);
             }
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
-        {
+        {   
             foreach (var item in trangthai_id)
             {
-                if (item.Key == "Tạm dừng")
+                int tt = 2;
+                if (item.Value == "Tạm dừng")
                 {
-                    Interact.editNovel(item.Value, "Trang_thai", "0");
+                    tt = 0;
                 }
-                else if (item.Key == "Đang tiến hành")
+                else if (item.Value == "Đang tiến hành")
                 {
-                    Interact.editNovel(item.Value, "Trang_thai", "1");
-                }
-                else if (item.Key == "Hoàn thành")
-                {
-                    Interact.editNovel(item.Value, "Trang_thai", "2");
-                }
+                    tt = 1;
+                }    
+
+                Interact.editNovel(item.Key, "Trang_thai",tt.ToString());
             }
             tb2 tb = new tb2();
             tb.ShowDialog();
+            btnUpdate.BackColor = Color.FromArgb(220, 247, 253);
+            btnUpdate.ForeColor = Color.Black;
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            btnInsertChap.BackColor = Color.FromArgb(220, 247, 253);
-            btnInsertChap.ForeColor = Color.Black;
-            btnUpdate.BackColor = Color.FromArgb(191, 44, 36);
-            btnUpdate.ForeColor = Color.White;
             ComboBox comboBox = (ComboBox)sender;
-            System.Windows.Forms.Panel panel = comboBox.Parent as System.Windows.Forms.Panel;
+            Panel panel1 = comboBox.Parent as System.Windows.Forms.Panel;
             string ten = "";
-            if (panel != null && panel.Tag != null)
+            if (panel1 != null && panel1.Tag != null)
             {
-                ten = panel.Tag as string;
+                ten = panel1.Tag as string;
                 // Rest of the code
             }
-            if (comboBox.SelectedIndex == 0)
+
+            if (comboBox.Text != trangthai_id[ten])
             {
-                if (!trangthai_id.ContainsKey("Tạm dừng"))
-                {
-                    trangthai_id.Add("Tạm dừng", ten);
-                }
+                trangthai_id[ten] = comboBox.Text;
             }
-            else if (comboBox.SelectedIndex == 1)
-            {
-                if (!trangthai_id.ContainsKey("Đang tiến hành"))
-                {
-                    trangthai_id.Add("Đang tiến hành", ten);
-                }
-            }
-            else
-            {
-                if (!trangthai_id.ContainsKey("Hoàn thành"))
-                {
-                    trangthai_id.Add("Hoàn thành", ten);
-                }
-            }
+
+            btnUpdate.BackColor = Color.FromArgb(191, 44, 36);
+            btnUpdate.ForeColor = Color.White;
+        }
+
+        private void btnInsertChap_Click(object sender, EventArgs e)
+        {
+            InsertChapter form = new InsertChapter();
+            form.ShowDialog();
         }
     }
 }

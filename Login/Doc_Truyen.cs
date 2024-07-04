@@ -11,6 +11,8 @@ using System.Net.Mail;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Caching;
+
 /*using System.Windows.Controls;*/
 using System.Windows.Forms;
 using Firebase.Auth;
@@ -55,18 +57,22 @@ namespace Login
             AuthSecret = "38QvLmnKMHlQtJ9yZzCqqWytxeXimwt06ZnFfSc2",
             BasePath = "https://healtruyen-default-rtdb.asia-southeast1.firebasedatabase.app/"
         };
-        public Doc_Truyen(string nameTruyen, UserCredential user, int currentChap)
+
+        private Trang_chu tc;
+        public Doc_Truyen(string idTruyen, UserCredential user, int currentChap, Trang_chu trangchu)
         {
             InitializeComponent();
             this.currentChap = currentChap;
-            this.nameTruyen = nameTruyen;
+            this.idTruyen = idTruyen;
             this.user = user;
+            tc = trangchu;
         }
 
+        int so_chuong = 0;
         private async void btnExit_Click(object sender, EventArgs e)
         {
             CRUD_lsd cRUD_Lsd = new CRUD_lsd();
-            await cRUD_Lsd.Capnhat_lichsudoc(user.User.Uid, nameTruyen, idTruyen);
+            await cRUD_Lsd.Capnhat_lichsudoc(user.User.Uid, currentChap, idTruyen) ;
             this.Close();
         }
         private static readonly string _from = "nguoiduathuH3A1@gmail.com"; // Email của Sender (của bạn)
@@ -77,14 +83,6 @@ namespace Login
             string project = "healtruyen";
             FirestoreDb db = FirestoreDb.Create(project);
             CollectionReference collectionReference = db.Collection("Truyen");
-            nameTruyen = nameTruyen.ToUpper();
-            Query q = collectionReference.WhereEqualTo("Ten", nameTruyen);
-            QuerySnapshot qs = await q.GetSnapshotAsync();
-            if (qs.Documents.Count == 0)
-            {
-                return;
-            }
-            idTruyen = qs.Documents[0].Id;
             string chapId = "";
             int cnt = 4 - numChapter.Length;
             for (int i = 0; i < cnt; i++)
@@ -92,19 +90,25 @@ namespace Login
                 chapId += "0";
             }
             chapId += numChapter;
-            DocumentReference collectionRef = db.Collection("Truyen").Document(qs.Documents[0].Id).Collection("Chuong").Document(chapId);
+            DocumentReference collectionRef = db.Collection("Truyen").Document(idTruyen).Collection("Chuong").Document(chapId);
             DocumentSnapshot snapshot = await collectionRef.GetSnapshotAsync();
+            DocumentReference truyen = db.Collection("Truyen").Document(idTruyen);
+            DocumentSnapshot name = await truyen.GetSnapshotAsync();
+            nameTruyen = name.GetValue<string>("Ten");
             if (snapshot.Exists)
             {
-                
+                comboBox1.Text = "Chương " + chapId;
+
+
                 /*Interact.Chapter chapter = snapshot.ConvertTo<Interact.Chapter>();*/
-                
+
                 contentChap.Text = snapshot.GetValue<string>("Noi_dung"); ;
                 labelName.Text = snapshot.GetValue<string>("Tieu_de"); ;
                 Task<DocumentSnapshot> res1 = Interact.getInfoNovel(nameTruyen);
                 DocumentSnapshot novel = await res1;
                 iconButton2.Text = novel.GetValue<string>("Tac_gia");
                 numChap = novel.GetValue<int>("So_chuong");
+                so_chuong = numChap;
                 Task<string> res2 = Interact.getIdNovel(nameTruyen);
                 IFirebaseConfig _firebaseConfig = new FirebaseConfig
                 {
@@ -115,7 +119,7 @@ namespace Login
                 FirebaseResponse res3 = await client.GetAsync("Truyen/" + idTruyen + "/Binh_luan/");
                 var dict = JsonConvert.DeserializeObject<Dictionary<string, object>>(res3.Body);
 
-                if (dict.Count == 0) return;
+                if (dict is null) return;
                 //show data
                 var dem = 0;
                 foreach (var i in dict)
@@ -141,6 +145,9 @@ namespace Login
 
                     Binhluan binhluan = res4.ResultAs<Binhluan>();
 
+                    string id_chuong = idTruyen + chapId;
+
+                    if (binhluan.ID_chuong != id_chuong) continue;
 
                     Panel panel = new Panel();
                     panel5.Controls.Add(panel);
@@ -165,7 +172,7 @@ namespace Login
                     FirebaseResponse res5 = await client.GetAsync("Nguoi_dung/" + binhluan.ID_nguoidung + "/Anh_dai_dien");
                     string base64String = res5.ResultAs<string>();
                     byte[] imageBytes = Convert.FromBase64String(base64String);
-                    
+
                     pictureBox.SizeMode = PictureBoxSizeMode.Zoom;
                     using (MemoryStream memoryStream = new MemoryStream(imageBytes))
                     {
@@ -236,7 +243,7 @@ namespace Login
                     }
 
 
-                    
+
 
                     TableLayoutPanel tableLayoutPanel2 = new TableLayoutPanel();
                     panel1.Controls.Add(tableLayoutPanel2);
@@ -267,17 +274,17 @@ namespace Login
                     btnLike.Click += async (s, ev) =>
                     {
                         //Hàm click code ở đây
-                        
+
                         int so_like = binhluan.Luot_thich;
                         so_like++;
-                        await client.SetAsync("Truyen/" + idTruyen + "/Binh_luan/" + dembl +"/Luot_thich", so_like);
+                        await client.SetAsync("Truyen/" + idTruyen + "/Binh_luan/" + dembl + "/Luot_thich", so_like);
                         btnLike.BackColor = System.Drawing.Color.Red;
                         btnLike.IconColor = System.Drawing.Color.White;
                         btnLike.Enabled = false;
                         btnLike.Text = so_like.ToString() + "\nThích";
                         btnLike.ForeColor = System.Drawing.Color.Red;
                     };
-                    
+
 
                     IconButton btnReport = new IconButton();
                     tableLayoutPanel2.Controls.Add(btnReport, 2, 0);
@@ -322,7 +329,7 @@ namespace Login
                             {
                                 MessageBox.Show($"Lỗi: {ex.ToString()}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
-                        } 
+                        }
                     };
                     if (user.User.Info.Uid == binhluan.ID_nguoidung)
                     {
@@ -340,193 +347,19 @@ namespace Login
             {
                 return;
             }
-            /*Task<Interact.Chapter> res = Interact.getNovel(nameTruyen, "1");*/
-            /*Interact.Chapter chapter = new Interact.Chapter();*/
-            /*var chapter = await res;*/
-            /*contentChap.Text = chapter.Content;
-            labelName.Text = chapter.Title;
-            Task<Interact.Novel> res1 = Interact.getInfoNovel(nameTruyen);
-            Interact.Novel novel = new Interact.Novel();
-            novel = await res1;
-            iconButton2.Text = novel.author;
-            numChap = novel.cntChapter;
-            Task<string> res2 = Interact.getIdNovel(nameTruyen);
-            idTruyen = await res2;
-            IFirebaseConfig _firebaseConfig = new FirebaseConfig
-            {
-                AuthSecret = "38QvLmnKMHlQtJ9yZzCqqWytxeXimwt06ZnFfSc2",
-                BasePath = "https://healtruyen-default-rtdb.asia-southeast1.firebasedatabase.app/"
-            };
-            IFirebaseClient client = new FireSharp.FirebaseClient(_firebaseConfig);
-            FirebaseResponse res3 = await client.GetAsync("Truyen/" + idTruyen + "/Binh_luan/");
-            var dict = JsonConvert.DeserializeObject<Dictionary<string, object>>(res3.Body);
-
-            if (dict.Count == 0) return;
-            //show data
-            var dem = 0;
-            foreach (var i in dict)
-            {
-                dem = Convert.ToInt32(i.Key);
-            }
-            for (int i = 1; i <= dem; i++)
-            {
-                FirebaseResponse res4 = await client.GetAsync("Truyen/" + idTruyen + "/Binh_luan/" + i.ToString());
-                
-                Binhluan binhluan = res4.ResultAs<Binhluan>();
-                
-                Panel panel = new Panel();
-                panel5.Controls.Add(panel);
-                panel.Dock = DockStyle.Top;
-                panel.BringToFront();
-                panel.Height = 216;
-
-                TableLayoutPanel tableLayoutPanel = new TableLayoutPanel();
-                panel.Controls.Add(tableLayoutPanel);
-                tableLayoutPanel.Dock = DockStyle.Fill;
-                tableLayoutPanel.RowCount = 1;
-                tableLayoutPanel.ColumnCount = 2;
-                tableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 10));
-                tableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 90));
-
-                
-
-                PictureBox pictureBox = new PictureBox();
-                tableLayoutPanel.Controls.Add(pictureBox, 0, 0);
-                pictureBox.Dock = DockStyle.Fill;
-
-                FirebaseResponse res5 = await client.GetAsync("Nguoi_dung/" + user.User.Uid + "/Anh_dai_dien");
-                string base64String = res5.ResultAs<string>();
-                byte[] imageBytes = Convert.FromBase64String(base64String);
-                pictureBox.SizeMode = PictureBoxSizeMode.Zoom;
-                using (MemoryStream memoryStream = new MemoryStream(imageBytes))
-                {
-                    Bitmap bitmap = new Bitmap(memoryStream);
-                    pictureBox.Image = bitmap;
-                }
-
-                Panel panel1 = new Panel();
-                tableLayoutPanel.Controls.Add(panel1);
-                panel1.Dock = DockStyle.Fill;
-
-                TableLayoutPanel tableLayoutPanel1 = new TableLayoutPanel();
-                panel1.Controls.Add(tableLayoutPanel1);
-                tableLayoutPanel1.Dock = DockStyle.Top;
-                tableLayoutPanel1.BringToFront();
-                tableLayoutPanel1.RowCount = 1;
-                tableLayoutPanel1.ColumnCount = 3;
-                tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20));
-                tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20));
-                tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 60));
-
-                Label labelName = new Label();
-                tableLayoutPanel1.Controls.Add(labelName, 0, 0);
-                labelName.AutoSize = true;
-                labelName.Font = new Font("League Spartan", 16, FontStyle.Regular);
-                labelName.Text = user.User.Info.DisplayName;
-                
-                Label date = new Label();
-                tableLayoutPanel1.Controls.Add(date, 1, 0);
-                date.AutoSize = true;
-                date.Font = new Font("League Spartan", 16, FontStyle.Regular);
-                string dateStr = binhluan.TG_binh_luan.Split(' ').First<string>();
-                dateStr = "0" + dateStr;
-                System.DateTime dateTime = System.DateTime.Parse(dateStr, CultureInfo.InvariantCulture);
-                System.DateTime dateNow = System.DateTime.Now;
-                TimeSpan elapsedTime = dateNow - dateTime;
-                int elapsedSeconds = (int)elapsedTime.TotalSeconds;
-                int elapsedMinutes = (int)elapsedTime.TotalMinutes;
-                int elapsedHours = (int)elapsedTime.TotalHours;
-                int elapsedDays = (int)elapsedTime.TotalDays;
-                int elapsedMonth = elapsedDays / 30;
-                int elapsedYear = elapsedMonth / 12;
-                if (elapsedYear > 0)
-                {
-                    date.Text = elapsedYear.ToString() + " năm trước";
-                }
-                else if (elapsedMonth > 0)
-                {
-                    date.Text = elapsedMonth.ToString() + " tháng trước";
-                }
-                else if (elapsedDays > 0)
-                {
-                    date.Text = elapsedDays.ToString() + " ngày trước";
-                }
-                else if (elapsedHours > 0)
-                {
-                    date.Text = elapsedHours.ToString() + " giờ trước";
-                }
-                else if (elapsedMinutes > 0)
-                {
-                    date.Text = elapsedMinutes.ToString() + " phút trước";
-                }
-                else
-                {
-                    date.Text = elapsedSeconds.ToString() + " giây trước";
-                }
-
-
-                Label content = new Label();
-                panel1.Controls.Add(content);
-                content.Font = new Font("League Spartan", 14, FontStyle.Regular);
-                content.Dock = DockStyle.Fill;
-                content.Text = binhluan.Noi_dung;
-
-                TableLayoutPanel tableLayoutPanel2 = new TableLayoutPanel();
-                panel1.Controls.Add(tableLayoutPanel2);
-                tableLayoutPanel2.Dock = DockStyle.Bottom;
-                tableLayoutPanel2.RowCount = 1;
-                tableLayoutPanel2.ColumnCount = 3;
-                tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 76));
-                tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 12));
-                tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 12));
-
-                IconButton btnLike = new IconButton();
-                tableLayoutPanel2 .Controls.Add(btnLike, 1, 0);
-                btnLike.Dock = DockStyle.Fill;
-                btnLike.Font = new Font("League Spartan", 12, FontStyle.Regular);
-                btnLike.IconChar = IconChar.Heart;
-                btnLike.IconSize = 30;
-                btnLike.Text = "Thích";
-                btnLike.TextAlign = ContentAlignment.MiddleRight;
-                btnLike.TextImageRelation = TextImageRelation.ImageBeforeText;
-                btnLike.Click += (s, ev) =>
-                {
-                    //Hàm click code ở đây
-                };
-
-                IconButton btnReport = new IconButton();
-                tableLayoutPanel2.Controls.Add(btnLike, 2, 0);
-                btnReport.Dock = DockStyle.Fill;
-                btnReport.Font = new Font("League Spartan", 12, FontStyle.Regular);
-                btnReport.IconChar = IconChar.Flag;
-                btnReport.IconSize = 30;
-                btnReport.Text = "Tố cáo";
-                btnReport.TextAlign = ContentAlignment.MiddleRight;
-                btnReport.TextImageRelation = TextImageRelation.ImageBeforeText;
-                btnReport.Click += (s, ev) =>
-                {
-                    //Hàm click code ở đây
-                };
-            }*/
-            
-            
+  
         }
 
         private async void iconButtonRecom_Click(object sender, EventArgs e)
         {
-            if (iconButtonRecom.IconColor == System.Drawing.Color.Black)
+            if (iconButtonRecom.BackColor == System.Drawing.Color.Transparent)
             {
+                
+
                 FirestoreDb db = FirestoreDb.Create("healtruyen");
                 CollectionReference truyen = db.Collection("Truyen");
-                nameTruyen = nameTruyen.ToUpper();
-                Query q = truyen.WhereEqualTo("Ten", nameTruyen);
-                QuerySnapshot snapshots = await q.GetSnapshotAsync();
-                string id = "";
-                if (snapshots.Documents.Count > 0)
-                {
-                    id = snapshots.Documents[0].Id;
-                }
-                DocumentReference collectionRef = db.Collection("Truyen").Document(id);
+                
+                DocumentReference collectionRef = db.Collection("Truyen").Document(idTruyen);
                 DocumentSnapshot snapshot = await collectionRef.GetSnapshotAsync();
 
                 int Decu = snapshot.GetValue<int>("De_cu");
@@ -536,8 +369,10 @@ namespace Login
                 {
                     { "De_cu", Decu },
                 };
-                DocumentReference doc = truyen.Document(id);
+                DocumentReference doc = truyen.Document(idTruyen);
                 await doc.UpdateAsync(updates);
+                iconButtonRecom.BackColor = System.Drawing.Color.FromArgb(220, 247, 253);
+                MessageBox.Show("Bạn đã đề cử thành công!");
             }
             else
             {
@@ -586,11 +421,20 @@ namespace Login
 
         private async void btnPrevChap_Click(object sender, EventArgs e)
         {
+            panel5.Controls.Clear();
             if (currentChap == 1)
             {
                 return;
             }
             currentChap--;
+            string outp = "";
+            for (int i = 0; i < 4 - currentChap.ToString().Length; i++)
+            {
+                outp += "0";
+            }
+            comboBox1.Text = "Chương " + outp + currentChap.ToString();
+            /*this.Close();
+            tc.openChildForm(new Doc_Truyen(idTruyen, user, currentChap, tc));*/
             Task<Interact.Chapter> res = Interact.getNovel(nameTruyen, currentChap.ToString());
             Interact.Chapter chapter = new Interact.Chapter();
             chapter = await res;
@@ -599,15 +443,259 @@ namespace Login
             Task<DocumentSnapshot> res1 = Interact.getInfoNovel(nameTruyen);
             DocumentSnapshot novel = await res1;
             iconButton2.Text = novel.GetValue<string>("Tac_gia");
+
+            IFirebaseClient client = new FireSharp.FirebaseClient(_firebaseConfig);
+            FirebaseResponse res3 = await client.GetAsync("Truyen/" + idTruyen + "/Binh_luan/");
+            var dict = JsonConvert.DeserializeObject<Dictionary<string, object>>(res3.Body);
+
+            if (dict is null) return;
+            //show data
+            var dem = 0;
+            foreach (var i in dict)
+            {
+                dem = Convert.ToInt32(i.Key);
+            }
+            for (int i = 1; i <= dem; i++)
+            {
+                string dembl = "0";
+                if (i < 10)
+                {
+                    dembl += "0" + i.ToString();
+                }
+                else if (i < 100)
+                {
+                    dembl += i.ToString();
+                }
+                else
+                {
+                    dembl = i.ToString();
+                }
+                FirebaseResponse res4 = await client.GetAsync("Truyen/" + idTruyen + "/Binh_luan/" + dembl);
+
+                Binhluan binhluan = res4.ResultAs<Binhluan>();
+                string chapId = "";
+                int cnt = 4 - currentChap.ToString().Length;
+                for (int id = 0; id < cnt; id++)
+                {
+                    chapId += "0";
+                }
+                chapId += currentChap.ToString();
+
+                string id_chuong = idTruyen + chapId;
+
+                if (binhluan.ID_chuong != id_chuong) continue;
+
+                Panel panel = new Panel();
+                panel5.Controls.Add(panel);
+                panel.Dock = DockStyle.Top;
+                panel.BringToFront();
+                panel.Height = 216;
+
+                TableLayoutPanel tableLayoutPanel = new TableLayoutPanel();
+                panel.Controls.Add(tableLayoutPanel);
+                tableLayoutPanel.Dock = DockStyle.Fill;
+                tableLayoutPanel.RowCount = 1;
+                tableLayoutPanel.ColumnCount = 2;
+                tableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 10));
+                tableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 90));
+
+
+
+                PictureBox pictureBox = new PictureBox();
+                tableLayoutPanel.Controls.Add(pictureBox, 0, 0);
+                pictureBox.Dock = DockStyle.Fill;
+
+                FirebaseResponse res5 = await client.GetAsync("Nguoi_dung/" + binhluan.ID_nguoidung + "/Anh_dai_dien");
+                string base64String = res5.ResultAs<string>();
+                byte[] imageBytes = Convert.FromBase64String(base64String);
+
+                pictureBox.SizeMode = PictureBoxSizeMode.Zoom;
+                using (MemoryStream memoryStream = new MemoryStream(imageBytes))
+                {
+                    Bitmap bitmap = new Bitmap(memoryStream);
+                    pictureBox.Image = bitmap;
+                }
+
+                Panel panel1 = new Panel();
+                tableLayoutPanel.Controls.Add(panel1);
+                panel1.Dock = DockStyle.Fill;
+
+                TableLayoutPanel tableLayoutPanel1 = new TableLayoutPanel();
+                panel1.Controls.Add(tableLayoutPanel1);
+                tableLayoutPanel1.Dock = DockStyle.Top;
+                tableLayoutPanel1.BringToFront();
+                tableLayoutPanel1.RowCount = 1;
+                tableLayoutPanel1.ColumnCount = 3;
+                tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20));
+                tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20));
+                tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 60));
+
+                FirebaseResponse res6 = await client.GetAsync("Nguoi_dung/" + binhluan.ID_nguoidung + "/TK_dangnhap");
+                Label labelName = new Label();
+                tableLayoutPanel1.Controls.Add(labelName, 0, 0);
+                labelName.AutoSize = true;
+                labelName.Font = new Font("League Spartan", 16, FontStyle.Regular);
+                /*var userRecord = await FirebaseAuth.DefaultInstance.GetUserAsync(binhluan.ID_nguoidung);*/
+                /*var user1 = client.GetAsync(binhluan.ID_nguoidung);*/
+                labelName.Text = res6.ResultAs<string>();
+
+                Label date = new Label();
+                tableLayoutPanel1.Controls.Add(date, 1, 0);
+                date.AutoSize = true;
+                date.Font = new Font("League Spartan", 16, FontStyle.Regular);
+                string dateStr = binhluan.TG_binh_luan.ToString();
+                System.DateTime dateTime = System.DateTime.Parse(dateStr, CultureInfo.InvariantCulture);
+                System.DateTime dateNow = System.DateTime.Now;
+                TimeSpan elapsedTime = dateNow - dateTime;
+                int elapsedSeconds = (int)elapsedTime.TotalSeconds;
+                int elapsedMinutes = (int)elapsedTime.TotalMinutes;
+                int elapsedHours = (int)elapsedTime.TotalHours;
+                int elapsedDays = (int)elapsedTime.TotalDays;
+                int elapsedMonth = elapsedDays / 30;
+                int elapsedYear = elapsedMonth / 12;
+                if (elapsedYear > 0)
+                {
+                    date.Text = elapsedYear.ToString() + " năm trước";
+                }
+                else if (elapsedMonth > 0)
+                {
+                    date.Text = elapsedMonth.ToString() + " tháng trước";
+                }
+                else if (elapsedDays > 0)
+                {
+                    date.Text = elapsedDays.ToString() + " ngày trước";
+                }
+                else if (elapsedHours > 0)
+                {
+                    date.Text = elapsedHours.ToString() + " giờ trước";
+                }
+                else if (elapsedMinutes > 0)
+                {
+                    date.Text = elapsedMinutes.ToString() + " phút trước";
+                }
+                else
+                {
+                    date.Text = elapsedSeconds.ToString() + " giây trước";
+                }
+
+
+
+
+                TableLayoutPanel tableLayoutPanel2 = new TableLayoutPanel();
+                panel1.Controls.Add(tableLayoutPanel2);
+                tableLayoutPanel2.Dock = DockStyle.Bottom;
+                tableLayoutPanel2.RowCount = 1;
+                tableLayoutPanel2.ColumnCount = 3;
+                tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 76));
+                tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 12));
+                tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 12));
+
+                Label content = new Label();
+                panel1.Controls.Add(content);
+                content.AutoSize = true;
+                content.Font = new Font("League Spartan", 14, FontStyle.Regular);
+                content.Dock = DockStyle.Top;
+                content.Text = binhluan.Noi_dung;
+                content.BringToFront();
+
+                IconButton btnLike = new IconButton();
+                tableLayoutPanel2.Controls.Add(btnLike, 1, 0);
+                btnLike.Dock = DockStyle.Fill;
+                btnLike.Font = new Font("League Spartan", 12, FontStyle.Regular);
+                btnLike.IconChar = IconChar.Heart;
+                btnLike.IconSize = 30;
+                btnLike.Text = binhluan.Luot_thich.ToString() + "\nThích";
+                btnLike.TextAlign = ContentAlignment.MiddleRight;
+                btnLike.TextImageRelation = TextImageRelation.ImageBeforeText;
+                btnLike.Click += async (s, ev) =>
+                {
+                    //Hàm click code ở đây
+
+                    int so_like = binhluan.Luot_thich;
+                    so_like++;
+                    await client.SetAsync("Truyen/" + idTruyen + "/Binh_luan/" + dembl + "/Luot_thich", so_like);
+                    btnLike.BackColor = System.Drawing.Color.Red;
+                    btnLike.IconColor = System.Drawing.Color.White;
+                    btnLike.Enabled = false;
+                    btnLike.Text = so_like.ToString() + "\nThích";
+                    btnLike.ForeColor = System.Drawing.Color.Red;
+                };
+
+
+                IconButton btnReport = new IconButton();
+                tableLayoutPanel2.Controls.Add(btnReport, 2, 0);
+                btnReport.Dock = DockStyle.Fill;
+                btnReport.Font = new Font("League Spartan", 12, FontStyle.Regular);
+                btnReport.IconChar = IconChar.Flag;
+                btnReport.IconSize = 30;
+                btnReport.Text = "Tố cáo";
+                btnReport.TextAlign = ContentAlignment.MiddleRight;
+                btnReport.TextImageRelation = TextImageRelation.ImageBeforeText;
+                btnReport.Click += async (s, ev) =>
+                {
+                    //Hàm click code ở đây 
+                    if (user.User.Info.Uid != binhluan.ID_nguoidung)
+                    {
+                        await client.SetAsync("Truyen/" + idTruyen + "/Binh_luan/" + dembl + "/To_cao", true);
+                        /*MessageBox.Show("Tố cáo thành công!Bạn hãy đợi Admin xử lý!");*/
+                        btnReport.BackColor = System.Drawing.Color.Yellow;
+                        btnReport.Text = "Bị tố cáo";
+                        try
+                        {
+                            MailMessage mail = new MailMessage();
+                            SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
+
+                            mail.From = new MailAddress(user.User.Info.Email);
+                            mail.To.Add(_from);
+                            mail.Subject = $"Bình luận của người dùng có ID là {binhluan.ID_nguoidung} ";
+                            mail.IsBodyHtml = true;
+                            mail.Body = $"<div> Tên người bình luận: {res6.ResultAs<string>()} </div> <br> " +
+                            $"Bị báo cáo bởi người dùng {user.User.Info.Uid} có tên là {user.User.Info.DisplayName} <br> Hãy kiểm tra nội dung bình luận này trong truyện {nameTruyen} <br> Nội dung bình luận: {binhluan.Noi_dung}";
+
+                            mail.Priority = MailPriority.High;
+
+                            SmtpServer.Port = 587;
+                            SmtpServer.Credentials = new System.Net.NetworkCredential(_from, _pass);
+                            SmtpServer.EnableSsl = true;
+
+                            SmtpServer.Send(mail);
+                            MessageBox.Show("Đã gửi tin nhắn đến quản trị viên.\n\r Vui lòng đợi phản hồi.", "Thành công");
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show($"Lỗi: {ex.ToString()}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                };
+                if (user.User.Info.Uid == binhluan.ID_nguoidung)
+                {
+                    btnReport.Enabled = false;
+                }
+                if (binhluan.To_cao == true)
+                {
+                    btnReport.BackColor = System.Drawing.Color.Yellow;
+                    btnReport.Text = "Bị tố cáo";
+                }
+
+            }
         }
 
         private async void btnPostChap_Click(object sender, EventArgs e)
         {
+            panel5.Controls.Clear();
             if (currentChap == numChap)
             {
                 return;
             }
             currentChap++;
+            string outp = "";
+            for (int i = 0; i < 4 - currentChap.ToString().Length; i++)
+            {
+                outp += "0";
+            }
+            comboBox1.Text = "Chương " + outp + currentChap.ToString();
+            /*this.Close();
+            tc.openChildForm(new Doc_Truyen(idTruyen, user, currentChap, tc));*/
             Task<Interact.Chapter> res = Interact.getNovel(nameTruyen, currentChap.ToString());
             Interact.Chapter chapter = new Interact.Chapter();
             chapter = await res;
@@ -616,6 +704,243 @@ namespace Login
             Task<DocumentSnapshot> res1 = Interact.getInfoNovel(nameTruyen);
             DocumentSnapshot novel = await res1;
             iconButton2.Text = novel.GetValue<string>("Tac_gia");
+
+            IFirebaseClient client = new FireSharp.FirebaseClient(_firebaseConfig);
+            FirebaseResponse res3 = await client.GetAsync("Truyen/" + idTruyen + "/Binh_luan/");
+            var dict = JsonConvert.DeserializeObject<Dictionary<string, object>>(res3.Body);
+
+            if (dict is null) return;
+            //show data
+            var dem = 0;
+            foreach (var i in dict)
+            {
+                dem = Convert.ToInt32(i.Key);
+            }
+            for (int i = 1; i <= dem; i++)
+            {
+                string dembl = "0";
+                if (i < 10)
+                {
+                    dembl += "0" + i.ToString();
+                }
+                else if (i < 100)
+                {
+                    dembl += i.ToString();
+                }
+                else
+                {
+                    dembl = i.ToString();
+                }
+                FirebaseResponse res4 = await client.GetAsync("Truyen/" + idTruyen + "/Binh_luan/" + dembl);
+
+                Binhluan binhluan = res4.ResultAs<Binhluan>();
+                string chapId = "";
+                int cnt = 4 - currentChap.ToString().Length;
+                for (int id = 0; id < cnt; id++)
+                {
+                    chapId += "0";
+                }
+                chapId += currentChap.ToString();
+
+                string id_chuong = idTruyen + chapId;
+                
+                if (binhluan.ID_chuong != id_chuong) continue;
+                
+                Panel panel = new Panel();
+                panel5.Controls.Add(panel);
+                panel.Dock = DockStyle.Top;
+                panel.BringToFront();
+                panel.Height = 216;
+
+                TableLayoutPanel tableLayoutPanel = new TableLayoutPanel();
+                panel.Controls.Add(tableLayoutPanel);
+                tableLayoutPanel.Dock = DockStyle.Fill;
+                tableLayoutPanel.RowCount = 1;
+                tableLayoutPanel.ColumnCount = 2;
+                tableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 10));
+                tableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 90));
+
+
+
+                PictureBox pictureBox = new PictureBox();
+                tableLayoutPanel.Controls.Add(pictureBox, 0, 0);
+                pictureBox.Dock = DockStyle.Fill;
+
+                FirebaseResponse res5 = await client.GetAsync("Nguoi_dung/" + binhluan.ID_nguoidung + "/Anh_dai_dien");
+                string base64String = res5.ResultAs<string>();
+                byte[] imageBytes = Convert.FromBase64String(base64String);
+
+                pictureBox.SizeMode = PictureBoxSizeMode.Zoom;
+                using (MemoryStream memoryStream = new MemoryStream(imageBytes))
+                {
+                    Bitmap bitmap = new Bitmap(memoryStream);
+                    pictureBox.Image = bitmap;
+                }
+
+                Panel panel1 = new Panel();
+                tableLayoutPanel.Controls.Add(panel1);
+                panel1.Dock = DockStyle.Fill;
+
+                TableLayoutPanel tableLayoutPanel1 = new TableLayoutPanel();
+                panel1.Controls.Add(tableLayoutPanel1);
+                tableLayoutPanel1.Dock = DockStyle.Top;
+                tableLayoutPanel1.BringToFront();
+                tableLayoutPanel1.RowCount = 1;
+                tableLayoutPanel1.ColumnCount = 3;
+                tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20));
+                tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20));
+                tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 60));
+
+                FirebaseResponse res6 = await client.GetAsync("Nguoi_dung/" + binhluan.ID_nguoidung + "/TK_dangnhap");
+                Label labelName = new Label();
+                tableLayoutPanel1.Controls.Add(labelName, 0, 0);
+                labelName.AutoSize = true;
+                labelName.Font = new Font("League Spartan", 16, FontStyle.Regular);
+                /*var userRecord = await FirebaseAuth.DefaultInstance.GetUserAsync(binhluan.ID_nguoidung);*/
+                /*var user1 = client.GetAsync(binhluan.ID_nguoidung);*/
+                labelName.Text = res6.ResultAs<string>();
+
+                Label date = new Label();
+                tableLayoutPanel1.Controls.Add(date, 1, 0);
+                date.AutoSize = true;
+                date.Font = new Font("League Spartan", 16, FontStyle.Regular);
+                string dateStr = binhluan.TG_binh_luan.ToString();
+                System.DateTime dateTime = System.DateTime.Parse(dateStr, CultureInfo.InvariantCulture);
+                System.DateTime dateNow = System.DateTime.Now;
+                TimeSpan elapsedTime = dateNow - dateTime;
+                int elapsedSeconds = (int)elapsedTime.TotalSeconds;
+                int elapsedMinutes = (int)elapsedTime.TotalMinutes;
+                int elapsedHours = (int)elapsedTime.TotalHours;
+                int elapsedDays = (int)elapsedTime.TotalDays;
+                int elapsedMonth = elapsedDays / 30;
+                int elapsedYear = elapsedMonth / 12;
+                if (elapsedYear > 0)
+                {
+                    date.Text = elapsedYear.ToString() + " năm trước";
+                }
+                else if (elapsedMonth > 0)
+                {
+                    date.Text = elapsedMonth.ToString() + " tháng trước";
+                }
+                else if (elapsedDays > 0)
+                {
+                    date.Text = elapsedDays.ToString() + " ngày trước";
+                }
+                else if (elapsedHours > 0)
+                {
+                    date.Text = elapsedHours.ToString() + " giờ trước";
+                }
+                else if (elapsedMinutes > 0)
+                {
+                    date.Text = elapsedMinutes.ToString() + " phút trước";
+                }
+                else
+                {
+                    date.Text = elapsedSeconds.ToString() + " giây trước";
+                }
+
+
+
+
+                TableLayoutPanel tableLayoutPanel2 = new TableLayoutPanel();
+                panel1.Controls.Add(tableLayoutPanel2);
+                tableLayoutPanel2.Dock = DockStyle.Bottom;
+                tableLayoutPanel2.RowCount = 1;
+                tableLayoutPanel2.ColumnCount = 3;
+                tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 76));
+                tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 12));
+                tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 12));
+
+                Label content = new Label();
+                panel1.Controls.Add(content);
+                content.AutoSize = true;
+                content.Font = new Font("League Spartan", 14, FontStyle.Regular);
+                content.Dock = DockStyle.Top;
+                content.Text = binhluan.Noi_dung;
+                content.BringToFront();
+
+                IconButton btnLike = new IconButton();
+                tableLayoutPanel2.Controls.Add(btnLike, 1, 0);
+                btnLike.Dock = DockStyle.Fill;
+                btnLike.Font = new Font("League Spartan", 12, FontStyle.Regular);
+                btnLike.IconChar = IconChar.Heart;
+                btnLike.IconSize = 30;
+                btnLike.Text = binhluan.Luot_thich.ToString() + "\nThích";
+                btnLike.TextAlign = ContentAlignment.MiddleRight;
+                btnLike.TextImageRelation = TextImageRelation.ImageBeforeText;
+                btnLike.Click += async (s, ev) =>
+                {
+                    //Hàm click code ở đây
+
+                    int so_like = binhluan.Luot_thich;
+                    so_like++;
+                    await client.SetAsync("Truyen/" + idTruyen + "/Binh_luan/" + dembl + "/Luot_thich", so_like);
+                    btnLike.BackColor = System.Drawing.Color.Red;
+                    btnLike.IconColor = System.Drawing.Color.White;
+                    btnLike.Enabled = false;
+                    btnLike.Text = so_like.ToString() + "\nThích";
+                    btnLike.ForeColor = System.Drawing.Color.Red;
+                };
+
+
+                IconButton btnReport = new IconButton();
+                tableLayoutPanel2.Controls.Add(btnReport, 2, 0);
+                btnReport.Dock = DockStyle.Fill;
+                btnReport.Font = new Font("League Spartan", 12, FontStyle.Regular);
+                btnReport.IconChar = IconChar.Flag;
+                btnReport.IconSize = 30;
+                btnReport.Text = "Tố cáo";
+                btnReport.TextAlign = ContentAlignment.MiddleRight;
+                btnReport.TextImageRelation = TextImageRelation.ImageBeforeText;
+                btnReport.Click += async (s, ev) =>
+                {
+                    //Hàm click code ở đây 
+                    if (user.User.Info.Uid != binhluan.ID_nguoidung)
+                    {
+                        await client.SetAsync("Truyen/" + idTruyen + "/Binh_luan/" + dembl + "/To_cao", true);
+                        /*MessageBox.Show("Tố cáo thành công!Bạn hãy đợi Admin xử lý!");*/
+                        btnReport.BackColor = System.Drawing.Color.Yellow;
+                        btnReport.Text = "Bị tố cáo";
+                        try
+                        {
+                            MailMessage mail = new MailMessage();
+                            SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
+
+                            mail.From = new MailAddress(user.User.Info.Email);
+                            mail.To.Add(_from);
+                            mail.Subject = $"Bình luận của người dùng có ID là {binhluan.ID_nguoidung} ";
+                            mail.IsBodyHtml = true;
+                            mail.Body = $"<div> Tên người bình luận: {res6.ResultAs<string>()} </div> <br> " +
+                            $"Bị báo cáo bởi người dùng {user.User.Info.Uid} có tên là {user.User.Info.DisplayName} <br> Hãy kiểm tra nội dung bình luận này trong truyện {nameTruyen} <br> Nội dung bình luận: {binhluan.Noi_dung}";
+
+                            mail.Priority = MailPriority.High;
+
+                            SmtpServer.Port = 587;
+                            SmtpServer.Credentials = new System.Net.NetworkCredential(_from, _pass);
+                            SmtpServer.EnableSsl = true;
+
+                            SmtpServer.Send(mail);
+                            MessageBox.Show("Đã gửi tin nhắn đến quản trị viên.\n\r Vui lòng đợi phản hồi.", "Thành công");
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show($"Lỗi: {ex.ToString()}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                };
+                if (user.User.Info.Uid == binhluan.ID_nguoidung)
+                {
+                    btnReport.Enabled = false;
+                }
+                if (binhluan.To_cao == true)
+                {
+                    btnReport.BackColor = System.Drawing.Color.Yellow;
+                    btnReport.Text = "Bị tố cáo";
+                }
+
+            }
+
+
         }
 
         private void iconButtonRate_MouseClick(object sender, MouseEventArgs e)
@@ -667,9 +992,12 @@ namespace Login
 
                 //show data
                 var dem = 0;
-                foreach (var i in dict)
+                if (!(dict is null))
                 {
-                    dem = Convert.ToInt32(i.Key);
+                    foreach (var i in dict)
+                    {
+                        dem = Convert.ToInt32(i.Key);
+                    }
                 }
                 dem++;
                 string dembl = "0";
@@ -733,9 +1061,196 @@ namespace Login
                 DocumentReference doc = truyen.Document(id);
                 await doc.UpdateAsync(updates);
                 textBox1.Text = "";
-                Doc_Truyen form = new Doc_Truyen(nameTruyen, user,currentChap);
-                this.Close();
-                form.Show();
+
+                Panel panel = new Panel();
+                panel5.Controls.Add(panel);
+                panel.Dock = DockStyle.Top;
+                panel.BringToFront();
+                panel.Height = 216;
+
+                TableLayoutPanel tableLayoutPanel = new TableLayoutPanel();
+                panel.Controls.Add(tableLayoutPanel);
+                tableLayoutPanel.Dock = DockStyle.Fill;
+                tableLayoutPanel.RowCount = 1;
+                tableLayoutPanel.ColumnCount = 2;
+                tableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 10));
+                tableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 90));
+
+
+
+                PictureBox pictureBox = new PictureBox();
+                tableLayoutPanel.Controls.Add(pictureBox, 0, 0);
+                pictureBox.Dock = DockStyle.Fill;
+
+                FirebaseResponse res5 = await client.GetAsync("Nguoi_dung/" + binhluan.ID_nguoidung + "/Anh_dai_dien");
+                string base64String = res5.ResultAs<string>();
+                byte[] imageBytes = Convert.FromBase64String(base64String);
+
+                pictureBox.SizeMode = PictureBoxSizeMode.Zoom;
+                using (MemoryStream memoryStream = new MemoryStream(imageBytes))
+                {
+                    Bitmap bitmap = new Bitmap(memoryStream);
+                    pictureBox.Image = bitmap;
+                }
+
+                Panel panel1 = new Panel();
+                tableLayoutPanel.Controls.Add(panel1);
+                panel1.Dock = DockStyle.Fill;
+
+                TableLayoutPanel tableLayoutPanel1 = new TableLayoutPanel();
+                panel1.Controls.Add(tableLayoutPanel1);
+                tableLayoutPanel1.Dock = DockStyle.Top;
+                tableLayoutPanel1.BringToFront();
+                tableLayoutPanel1.RowCount = 1;
+                tableLayoutPanel1.ColumnCount = 3;
+                tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20));
+                tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20));
+                tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 60));
+
+                FirebaseResponse res6 = await client.GetAsync("Nguoi_dung/" + binhluan.ID_nguoidung + "/TK_dangnhap");
+                Label labelName = new Label();
+                tableLayoutPanel1.Controls.Add(labelName, 0, 0);
+                labelName.AutoSize = true;
+                labelName.Font = new Font("League Spartan", 16, FontStyle.Regular);
+                /*var userRecord = await FirebaseAuth.DefaultInstance.GetUserAsync(binhluan.ID_nguoidung);*/
+                /*var user1 = client.GetAsync(binhluan.ID_nguoidung);*/
+                labelName.Text = res6.ResultAs<string>();
+
+                Label date = new Label();
+                tableLayoutPanel1.Controls.Add(date, 1, 0);
+                date.AutoSize = true;
+                date.Font = new Font("League Spartan", 16, FontStyle.Regular);
+                string dateStr = binhluan.TG_binh_luan.ToString();
+                System.DateTime dateTime = System.DateTime.Parse(dateStr, CultureInfo.InvariantCulture);
+                System.DateTime dateNow = System.DateTime.Now;
+                TimeSpan elapsedTime = dateNow - dateTime;
+                int elapsedSeconds = (int)elapsedTime.TotalSeconds;
+                int elapsedMinutes = (int)elapsedTime.TotalMinutes;
+                int elapsedHours = (int)elapsedTime.TotalHours;
+                int elapsedDays = (int)elapsedTime.TotalDays;
+                int elapsedMonth = elapsedDays / 30;
+                int elapsedYear = elapsedMonth / 12;
+                if (elapsedYear > 0)
+                {
+                    date.Text = elapsedYear.ToString() + " năm trước";
+                }
+                else if (elapsedMonth > 0)
+                {
+                    date.Text = elapsedMonth.ToString() + " tháng trước";
+                }
+                else if (elapsedDays > 0)
+                {
+                    date.Text = elapsedDays.ToString() + " ngày trước";
+                }
+                else if (elapsedHours > 0)
+                {
+                    date.Text = elapsedHours.ToString() + " giờ trước";
+                }
+                else if (elapsedMinutes > 0)
+                {
+                    date.Text = elapsedMinutes.ToString() + " phút trước";
+                }
+                else
+                {
+                    date.Text = elapsedSeconds.ToString() + " giây trước";
+                }
+
+
+                TableLayoutPanel tableLayoutPanel2 = new TableLayoutPanel();
+                panel1.Controls.Add(tableLayoutPanel2);
+                tableLayoutPanel2.Dock = DockStyle.Bottom;
+                tableLayoutPanel2.RowCount = 1;
+                tableLayoutPanel2.ColumnCount = 3;
+                tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 76));
+                tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 12));
+                tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 12));
+
+                Label content = new Label();
+                panel1.Controls.Add(content);
+                content.AutoSize = true;
+                content.Font = new Font("League Spartan", 14, FontStyle.Regular);
+                content.Dock = DockStyle.Top;
+                content.Text = binhluan.Noi_dung;
+                content.BringToFront();
+
+                IconButton btnLike = new IconButton();
+                tableLayoutPanel2.Controls.Add(btnLike, 1, 0);
+                btnLike.Dock = DockStyle.Fill;
+                btnLike.Font = new Font("League Spartan", 12, FontStyle.Regular);
+                btnLike.IconChar = IconChar.Heart;
+                btnLike.IconSize = 30;
+                btnLike.Text = binhluan.Luot_thich.ToString() + "\nThích";
+                btnLike.TextAlign = ContentAlignment.MiddleRight;
+                btnLike.TextImageRelation = TextImageRelation.ImageBeforeText;
+                btnLike.Click += async (s, ev) =>
+                {
+                    //Hàm click code ở đây
+
+                    int so_like = binhluan.Luot_thich;
+                    so_like++;
+                    await client.SetAsync("Truyen/" + idTruyen + "/Binh_luan/" + dembl + "/Luot_thich", so_like);
+                    btnLike.BackColor = System.Drawing.Color.Red;
+                    btnLike.IconColor = System.Drawing.Color.White;
+                    btnLike.Enabled = false;
+                    btnLike.Text = so_like.ToString() + "\nThích";
+                    btnLike.ForeColor = System.Drawing.Color.Red;
+                };
+
+
+                IconButton btnReport = new IconButton();
+                tableLayoutPanel2.Controls.Add(btnReport, 2, 0);
+                btnReport.Dock = DockStyle.Fill;
+                btnReport.Font = new Font("League Spartan", 12, FontStyle.Regular);
+                btnReport.IconChar = IconChar.Flag;
+                btnReport.IconSize = 30;
+                btnReport.Text = "Tố cáo";
+                btnReport.TextAlign = ContentAlignment.MiddleRight;
+                btnReport.TextImageRelation = TextImageRelation.ImageBeforeText;
+                btnReport.Click += async (s, ev) =>
+                {
+                    //Hàm click code ở đây 
+                    if (user.User.Info.Uid != binhluan.ID_nguoidung)
+                    {
+                        await client.SetAsync("Truyen/" + idTruyen + "/Binh_luan/" + dembl + "/To_cao", true);
+                        /*MessageBox.Show("Tố cáo thành công!Bạn hãy đợi Admin xử lý!");*/
+                        btnReport.BackColor = System.Drawing.Color.Yellow;
+                        btnReport.Text = "Bị tố cáo";
+                        try
+                        {
+                            MailMessage mail = new MailMessage();
+                            SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
+
+                            mail.From = new MailAddress(user.User.Info.Email);
+                            mail.To.Add(_from);
+                            mail.Subject = $"Bình luận của người dùng có ID là {binhluan.ID_nguoidung} ";
+                            mail.IsBodyHtml = true;
+                            mail.Body = $"<div> Tên người bình luận: {res6.ResultAs<string>()} </div> <br> " +
+                            $"Bị báo cáo bởi người dùng {user.User.Info.Uid} có tên là {user.User.Info.DisplayName} <br> Hãy kiểm tra nội dung bình luận này trong truyện {nameTruyen} <br> Nội dung bình luận: {binhluan.Noi_dung}";
+
+                            mail.Priority = MailPriority.High;
+
+                            SmtpServer.Port = 587;
+                            SmtpServer.Credentials = new System.Net.NetworkCredential(_from, _pass);
+                            SmtpServer.EnableSsl = true;
+
+                            SmtpServer.Send(mail);
+                            MessageBox.Show("Đã gửi tin nhắn đến quản trị viên.\n\r Vui lòng đợi phản hồi.", "Thành công");
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show($"Lỗi: {ex.ToString()}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                };
+                if (user.User.Info.Uid == binhluan.ID_nguoidung)
+                {
+                    btnReport.Enabled = false;
+                }
+                if (binhluan.To_cao == true)
+                {
+                    btnReport.BackColor = System.Drawing.Color.Yellow;
+                    btnReport.Text = "Bị tố cáo";
+                }
             }
             else
             {
@@ -747,6 +1262,56 @@ namespace Login
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private async void btnBookMark_Click(object sender, EventArgs e)
+        {
+          
+            IFirebaseClient client = new FireSharp.FirebaseClient(_firebaseConfig);
+
+            //insert data into path Information/[data.Id]
+            SetResponse response = await client.SetAsync("Nguoi_dung/" + user.User.Uid + "/Bookmark/" + idTruyen + "/Chuong_Dang_Doc", currentChap);
+            MessageBox.Show("Data is inserted!");
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            for (int i = 1; i <= so_chuong; i++)
+            {
+                if (i.ToString().Length == 1)
+                    comboBox1.Items.Add("Chương 000" + i.ToString());
+                else if (i.ToString().Length == 2)
+                    comboBox1.Items.Add("Chương 00" + i.ToString());
+                else if (i.ToString().Length == 3)
+                    comboBox1.Items.Add("Chương 0" + i.ToString());
+                else if (i.ToString().Length == 4)
+                    comboBox1.Items.Add("Chương " + i.ToString());
+            }
+        }
+
+        private void Enter_click(object sender, EventArgs e)
+        {
+            if (sender is ComboBox cb)
+            {
+                this.Close();
+                string[] cbText = comboBox1.SelectedItem.ToString().Split(' ');
+                currentChap = int.Parse(cbText[1]);
+                tc.openChildForm(new Doc_Truyen(idTruyen, user, currentChap, tc));
+            }
+        }
+
+        private async void btnExit_Click(object sender, FormClosedEventArgs e)
+        {
+            CRUD_lsd cRUD_Lsd = new CRUD_lsd();
+            await cRUD_Lsd.Capnhat_lichsudoc(user.User.Uid, currentChap, idTruyen);
+            this.Close();
+        }
+
+        private async void Doc_Truyen_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            CRUD_lsd cRUD_Lsd = new CRUD_lsd();
+            await cRUD_Lsd.Capnhat_lichsudoc(user.User.Uid, currentChap, idTruyen);
+            this.Close();
         }
     }
 }

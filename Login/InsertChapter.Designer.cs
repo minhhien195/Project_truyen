@@ -69,8 +69,9 @@
             this.panel1.Controls.Add(this.lbspace);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1223, 53);
+            this.panel1.Size = new System.Drawing.Size(815, 48);
             this.panel1.TabIndex = 8;
             // 
             // ibtnDangtruyen
@@ -84,9 +85,10 @@
             this.ibtnDangtruyen.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.ibtnDangtruyen.IconSize = 38;
             this.ibtnDangtruyen.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ibtnDangtruyen.Location = new System.Drawing.Point(3, 3);
+            this.ibtnDangtruyen.Location = new System.Drawing.Point(2, 2);
+            this.ibtnDangtruyen.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ibtnDangtruyen.Name = "ibtnDangtruyen";
-            this.ibtnDangtruyen.Size = new System.Drawing.Size(201, 46);
+            this.ibtnDangtruyen.Size = new System.Drawing.Size(148, 44);
             this.ibtnDangtruyen.TabIndex = 0;
             this.ibtnDangtruyen.Text = "Thêm chương";
             this.ibtnDangtruyen.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -98,9 +100,10 @@
             // 
             this.lbspace.BackColor = System.Drawing.Color.Gray;
             this.lbspace.Font = new System.Drawing.Font("League Spartan", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbspace.Location = new System.Drawing.Point(-6, 52);
+            this.lbspace.Location = new System.Drawing.Point(-4, 34);
+            this.lbspace.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbspace.Name = "lbspace";
-            this.lbspace.Size = new System.Drawing.Size(1186, 1);
+            this.lbspace.Size = new System.Drawing.Size(791, 1);
             this.lbspace.TabIndex = 4;
             // 
             // panel3
@@ -111,9 +114,10 @@
             this.panel3.Controls.Add(this.txtTruyen);
             this.panel3.Controls.Add(this.lbTacgia);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 53);
+            this.panel3.Location = new System.Drawing.Point(0, 48);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1223, 107);
+            this.panel3.Size = new System.Drawing.Size(815, 71);
             this.panel3.TabIndex = 10;
             // 
             // ptrTruyen
@@ -121,10 +125,10 @@
             this.ptrTruyen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(227)))), ((int)(((byte)(243)))));
             this.ptrTruyen.Image = global::Login.Properties.Resources.exclamation;
             this.ptrTruyen.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.ptrTruyen.Location = new System.Drawing.Point(20, 83);
-            this.ptrTruyen.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ptrTruyen.Location = new System.Drawing.Point(13, 54);
+            this.ptrTruyen.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.ptrTruyen.Name = "ptrTruyen";
-            this.ptrTruyen.Size = new System.Drawing.Size(22, 22);
+            this.ptrTruyen.Size = new System.Drawing.Size(15, 14);
             this.ptrTruyen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ptrTruyen.TabIndex = 26;
             this.ptrTruyen.TabStop = false;
@@ -136,9 +140,10 @@
             this.lbT.Font = new System.Drawing.Font("League Spartan SemiBold", 8F, System.Drawing.FontStyle.Bold);
             this.lbT.ForeColor = System.Drawing.Color.IndianRed;
             this.lbT.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lbT.Location = new System.Drawing.Point(46, 83);
+            this.lbT.Location = new System.Drawing.Point(31, 54);
+            this.lbT.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbT.Name = "lbT";
-            this.lbT.Size = new System.Drawing.Size(183, 23);
+            this.lbT.Size = new System.Drawing.Size(126, 17);
             this.lbT.TabIndex = 25;
             this.lbT.Text = "Vui lòng nhập tên truyện";
             this.lbT.Visible = false;
@@ -148,11 +153,11 @@
             this.txtTruyen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(227)))), ((int)(((byte)(243)))));
             this.txtTruyen.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtTruyen.Font = new System.Drawing.Font("League Spartan", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTruyen.Location = new System.Drawing.Point(18, 38);
-            this.txtTruyen.Margin = new System.Windows.Forms.Padding(3, 3, 3, 15);
+            this.txtTruyen.Location = new System.Drawing.Point(12, 25);
+            this.txtTruyen.Margin = new System.Windows.Forms.Padding(2, 2, 2, 10);
             this.txtTruyen.Multiline = true;
             this.txtTruyen.Name = "txtTruyen";
-            this.txtTruyen.Size = new System.Drawing.Size(1168, 35);
+            this.txtTruyen.Size = new System.Drawing.Size(779, 23);
             this.txtTruyen.TabIndex = 6;
             this.txtTruyen.TextChanged += new System.EventHandler(this.txtTruyen_TextChanged);
             // 
@@ -160,9 +165,10 @@
             // 
             this.lbTacgia.AutoSize = true;
             this.lbTacgia.Font = new System.Drawing.Font("League Spartan Medium", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTacgia.Location = new System.Drawing.Point(12, 3);
+            this.lbTacgia.Location = new System.Drawing.Point(8, 2);
+            this.lbTacgia.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbTacgia.Name = "lbTacgia";
-            this.lbTacgia.Size = new System.Drawing.Size(77, 32);
+            this.lbTacgia.Size = new System.Drawing.Size(52, 22);
             this.lbTacgia.TabIndex = 5;
             this.lbTacgia.Text = "Truyện";
             // 
@@ -174,9 +180,10 @@
             this.panel2.Controls.Add(this.txtChuong);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 160);
+            this.panel2.Location = new System.Drawing.Point(0, 119);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1223, 110);
+            this.panel2.Size = new System.Drawing.Size(815, 73);
             this.panel2.TabIndex = 11;
             // 
             // ptrSochuong
@@ -184,10 +191,10 @@
             this.ptrSochuong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(227)))), ((int)(((byte)(243)))));
             this.ptrSochuong.Image = global::Login.Properties.Resources.exclamation;
             this.ptrSochuong.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.ptrSochuong.Location = new System.Drawing.Point(20, 86);
-            this.ptrSochuong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ptrSochuong.Location = new System.Drawing.Point(13, 56);
+            this.ptrSochuong.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.ptrSochuong.Name = "ptrSochuong";
-            this.ptrSochuong.Size = new System.Drawing.Size(22, 22);
+            this.ptrSochuong.Size = new System.Drawing.Size(15, 14);
             this.ptrSochuong.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ptrSochuong.TabIndex = 26;
             this.ptrSochuong.TabStop = false;
@@ -199,9 +206,10 @@
             this.lbSC.Font = new System.Drawing.Font("League Spartan SemiBold", 8F, System.Drawing.FontStyle.Bold);
             this.lbSC.ForeColor = System.Drawing.Color.IndianRed;
             this.lbSC.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lbSC.Location = new System.Drawing.Point(46, 86);
+            this.lbSC.Location = new System.Drawing.Point(31, 56);
+            this.lbSC.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbSC.Name = "lbSC";
-            this.lbSC.Size = new System.Drawing.Size(182, 23);
+            this.lbSC.Size = new System.Drawing.Size(128, 17);
             this.lbSC.TabIndex = 25;
             this.lbSC.Text = "Vui lòng nhập số chương";
             this.lbSC.Visible = false;
@@ -211,11 +219,11 @@
             this.txtChuong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(227)))), ((int)(((byte)(243)))));
             this.txtChuong.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtChuong.Font = new System.Drawing.Font("League Spartan", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtChuong.Location = new System.Drawing.Point(18, 38);
-            this.txtChuong.Margin = new System.Windows.Forms.Padding(3, 3, 3, 15);
+            this.txtChuong.Location = new System.Drawing.Point(12, 25);
+            this.txtChuong.Margin = new System.Windows.Forms.Padding(2, 2, 2, 10);
             this.txtChuong.Multiline = true;
             this.txtChuong.Name = "txtChuong";
-            this.txtChuong.Size = new System.Drawing.Size(1168, 35);
+            this.txtChuong.Size = new System.Drawing.Size(779, 23);
             this.txtChuong.TabIndex = 6;
             this.txtChuong.TextChanged += new System.EventHandler(this.txtChuong_TextChanged);
             // 
@@ -223,9 +231,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("League Spartan Medium", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 3);
+            this.label1.Location = new System.Drawing.Point(8, 2);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(112, 32);
+            this.label1.Size = new System.Drawing.Size(78, 22);
             this.label1.TabIndex = 5;
             this.label1.Text = "Số chương";
             // 
@@ -237,9 +246,10 @@
             this.panel4.Controls.Add(this.txtTen);
             this.panel4.Controls.Add(this.label2);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(0, 270);
+            this.panel4.Location = new System.Drawing.Point(0, 192);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1223, 110);
+            this.panel4.Size = new System.Drawing.Size(815, 73);
             this.panel4.TabIndex = 12;
             // 
             // ptrTenchuong
@@ -247,10 +257,10 @@
             this.ptrTenchuong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(227)))), ((int)(((byte)(243)))));
             this.ptrTenchuong.Image = global::Login.Properties.Resources.exclamation;
             this.ptrTenchuong.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.ptrTenchuong.Location = new System.Drawing.Point(20, 86);
-            this.ptrTenchuong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ptrTenchuong.Location = new System.Drawing.Point(13, 56);
+            this.ptrTenchuong.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.ptrTenchuong.Name = "ptrTenchuong";
-            this.ptrTenchuong.Size = new System.Drawing.Size(22, 22);
+            this.ptrTenchuong.Size = new System.Drawing.Size(15, 14);
             this.ptrTenchuong.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ptrTenchuong.TabIndex = 26;
             this.ptrTenchuong.TabStop = false;
@@ -262,9 +272,10 @@
             this.lbTC.Font = new System.Drawing.Font("League Spartan SemiBold", 8F, System.Drawing.FontStyle.Bold);
             this.lbTC.ForeColor = System.Drawing.Color.IndianRed;
             this.lbTC.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lbTC.Location = new System.Drawing.Point(46, 86);
+            this.lbTC.Location = new System.Drawing.Point(31, 56);
+            this.lbTC.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbTC.Name = "lbTC";
-            this.lbTC.Size = new System.Drawing.Size(190, 23);
+            this.lbTC.Size = new System.Drawing.Size(132, 17);
             this.lbTC.TabIndex = 25;
             this.lbTC.Text = "Vui lòng nhập tên chương";
             this.lbTC.Visible = false;
@@ -274,11 +285,11 @@
             this.txtTen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(227)))), ((int)(((byte)(243)))));
             this.txtTen.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtTen.Font = new System.Drawing.Font("League Spartan", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTen.Location = new System.Drawing.Point(18, 38);
-            this.txtTen.Margin = new System.Windows.Forms.Padding(3, 3, 3, 15);
+            this.txtTen.Location = new System.Drawing.Point(12, 25);
+            this.txtTen.Margin = new System.Windows.Forms.Padding(2, 2, 2, 10);
             this.txtTen.Multiline = true;
             this.txtTen.Name = "txtTen";
-            this.txtTen.Size = new System.Drawing.Size(1168, 35);
+            this.txtTen.Size = new System.Drawing.Size(779, 23);
             this.txtTen.TabIndex = 6;
             this.txtTen.TextChanged += new System.EventHandler(this.txtTen_TextChanged);
             // 
@@ -286,9 +297,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("League Spartan Medium", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(12, 3);
+            this.label2.Location = new System.Drawing.Point(8, 2);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(125, 32);
+            this.label2.Size = new System.Drawing.Size(87, 22);
             this.label2.TabIndex = 5;
             this.label2.Text = "Tên Chương";
             // 
@@ -300,9 +312,10 @@
             this.panel6.Controls.Add(this.btnAdd);
             this.panel6.Controls.Add(this.ibtninsertDoc);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel6.Location = new System.Drawing.Point(0, 380);
+            this.panel6.Location = new System.Drawing.Point(0, 265);
+            this.panel6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1223, 100);
+            this.panel6.Size = new System.Drawing.Size(815, 68);
             this.panel6.TabIndex = 13;
             // 
             // ptrThemchuongmoi
@@ -310,10 +323,10 @@
             this.ptrThemchuongmoi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(227)))), ((int)(((byte)(243)))));
             this.ptrThemchuongmoi.Image = global::Login.Properties.Resources.exclamation;
             this.ptrThemchuongmoi.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.ptrThemchuongmoi.Location = new System.Drawing.Point(20, 74);
-            this.ptrThemchuongmoi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ptrThemchuongmoi.Location = new System.Drawing.Point(13, 48);
+            this.ptrThemchuongmoi.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.ptrThemchuongmoi.Name = "ptrThemchuongmoi";
-            this.ptrThemchuongmoi.Size = new System.Drawing.Size(22, 22);
+            this.ptrThemchuongmoi.Size = new System.Drawing.Size(15, 14);
             this.ptrThemchuongmoi.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ptrThemchuongmoi.TabIndex = 26;
             this.ptrThemchuongmoi.TabStop = false;
@@ -325,9 +338,10 @@
             this.lbTCM.Font = new System.Drawing.Font("League Spartan SemiBold", 8F, System.Drawing.FontStyle.Bold);
             this.lbTCM.ForeColor = System.Drawing.Color.IndianRed;
             this.lbTCM.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lbTCM.Location = new System.Drawing.Point(46, 74);
+            this.lbTCM.Location = new System.Drawing.Point(31, 48);
+            this.lbTCM.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbTCM.Name = "lbTCM";
-            this.lbTCM.Size = new System.Drawing.Size(192, 23);
+            this.lbTCM.Size = new System.Drawing.Size(135, 17);
             this.lbTCM.TabIndex = 25;
             this.lbTCM.Text = "Vui lòng thêm chương mới";
             this.lbTCM.Visible = false;
@@ -340,9 +354,10 @@
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("League Spartan Medium", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnAdd.Location = new System.Drawing.Point(1043, 54);
+            this.btnAdd.Location = new System.Drawing.Point(695, 35);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(142, 43);
+            this.btnAdd.Size = new System.Drawing.Size(103, 31);
             this.btnAdd.TabIndex = 2;
             this.btnAdd.Text = "Thêm Chương";
             this.btnAdd.UseVisualStyleBackColor = false;
@@ -360,9 +375,10 @@
             this.ibtninsertDoc.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.ibtninsertDoc.IconSize = 38;
             this.ibtninsertDoc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ibtninsertDoc.Location = new System.Drawing.Point(18, 16);
+            this.ibtninsertDoc.Location = new System.Drawing.Point(12, 10);
+            this.ibtninsertDoc.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ibtninsertDoc.Name = "ibtninsertDoc";
-            this.ibtninsertDoc.Size = new System.Drawing.Size(371, 48);
+            this.ibtninsertDoc.Size = new System.Drawing.Size(262, 44);
             this.ibtninsertDoc.TabIndex = 0;
             this.ibtninsertDoc.Text = "Thêm chương(.doc, .docx, .txt)";
             this.ibtninsertDoc.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -372,15 +388,16 @@
             // 
             // InsertChapter
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
-            this.ClientSize = new System.Drawing.Size(1223, 476);
+            this.ClientSize = new System.Drawing.Size(815, 357);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "InsertChapter";
             this.Text = "InsertChapter";
             this.panel1.ResumeLayout(false);

@@ -17,26 +17,46 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Readinghistory;
 using Google.Protobuf;
+using FireSharp.Response;
+using Newtonsoft.Json.Linq;
+using System.Globalization;
+using System.Drawing.Design;
 
 namespace Login
 {
+
     public partial class Reading_History : Form
     {
-        public Reading_History()
+
+        public class Lich_su_doc
+        {
+            public string ten_truyen { get; set; }
+            public int Chuong_doccuoi { get; set; }
+            public string TG_doccuoi { get; set; }
+            public int tong_chuong { get; set; }
+            public string Tacgia { get; set; }
+            public string image { get; set; }
+
+        }
+
+        UserCredential user;
+        private Trang_chu tc;
+
+
+        public Reading_History(UserCredential user, Trang_chu trang_chu)
         {
             InitializeComponent();
+            this.user = user;
+            tc = trang_chu;
         }
         private void Reading_History_Load(object sender, EventArgs e)
         {
-            Danhsach_album();
-            Khoi_tao_album();
-            Album();
+            Danhsach_lsd();
         }
-        Dictionary<string, Dictionary<string, object>> lsdtruyen = new Dictionary<string, Dictionary<string, object>>();
-        List<Dictionary<string, object>> noidung_lsd = new List<Dictionary<string, object>>();
+        Dictionary<string, object> noidung_lsd = new Dictionary<string, object>();
         List<string> idtruyen = new List<string>();
         string uid;
-        private async void Danhsach_album()
+        private async void Danhsach_lsd()
         {
             var config = new FirebaseAuthConfig
             {
@@ -54,7 +74,7 @@ namespace Login
                 BasePath = "https://healtruyen-default-rtdb.asia-southeast1.firebasedatabase.app/"
             };
             IFirebaseClient client1 = new FireSharp.FirebaseClient(Config);
-            uid = client.User.Uid;
+            /*uid = client.User.Uid;
             CRUD_lsd lsd = new CRUD_lsd();
             Task<Dictionary<string, Dictionary<string, object>>> lsd1 = lsd.Lay_lichsudoc(uid);
 
@@ -69,25 +89,41 @@ namespace Login
             {
                 TextBox textBox = new TextBox();
                 Font font = new Font("League Spartan SemiBold", 24.0f, FontStyle.Bold);
-                textBox.Text = "Lỗi! Không thể tải Album truyện.";
+                textBox.Text = "Lỗi! Không thể tải lịch sử đọc.";
                 textBox.Font = font;
                 textBox.ForeColor = Color.Red;
             }
+*/
+            uid = client.User.Uid;
 
-        }
-        private void Khoi_tao_album()
-        {
-            // Truy xuất từ điển trong mỗi phần tử
-            foreach (var dictionary in lsdtruyen)
+            string path = "Nguoi_dung/" + uid + "/lichsudoc";
+
+            FirebaseResponse res = await client1.GetAsync(path);
+            if (res.Body == "null")
             {
-                idtruyen.Add(dictionary.Key);
-                // Truy xuất giá trị từ điển thông qua khóa
-                Dictionary<string, object> innerDictionary = dictionary.Value;
-                //xem xem có bao nhiêu truyện được lưu trong album
-                noidung_lsd.Add(innerDictionary);
+                return;
+            }
+            else
+            {
+                JObject data = JObject.Parse(res.Body);
+                if (data.Count == 0)
+                {
+                    TextBox textBox = new TextBox();
+                    Font font = new Font("League Spartan SemiBold", 24.0f, FontStyle.Bold);
+                    textBox.Text = "Lỗi! Không thể tải lịch sử truyện;";
+                    textBox.Font = font;
+                    textBox.ForeColor = Color.Red;
+                    return;
+                }
+                foreach (JProperty property in data.Properties())
+                {
+                    idtruyen.Add(property.Name);
+                    noidung_lsd.Add(property.Name, property.Value);
+                }
+                LSD();
             }
         }
-        private async void Album()
+        private async void LSD()
         {
             int sl_truyen = noidung_lsd.Count;
             if (sl_truyen != 0)
@@ -135,29 +171,43 @@ namespace Login
                     DocumentSnapshot snapshot = await docReference.GetSnapshotAsync();
                     if (snapshot.Exists)
                     {
-                        string datetime = noidung_lsd[i]["TG_doccuoi"].ToString();
+                        JObject outerDict = (JObject)noidung_lsd[idtruyen];
+                        string datetime = outerDict["TG_doccuoi"].ToString();
                         DateTime startDateTime = DateTime.Parse(datetime);
                         DateTime currentDateTime = DateTime.Now;
+                        
+                        string text_clock = "";
+
                         TimeSpan elapsedTime = currentDateTime - startDateTime;
+                        int elapsedSeconds = (int)elapsedTime.TotalSeconds;
                         int elapsedMinutes = (int)elapsedTime.TotalMinutes;
                         int elapsedHours = (int)elapsedTime.TotalHours;
                         int elapsedDays = (int)elapsedTime.TotalDays;
-
                         int elapsedMonth = elapsedDays / 30;
-
-                        string text_clock = "";
-
-                        if(elapsedMonth > 0)
+                        int elapsedYear = elapsedMonth / 12;
+                        if (elapsedYear > 0)
                         {
-                            text_clock = elapsedDays.ToString() + "tháng trước";
+                            text_clock = elapsedYear.ToString() + " năm trước";
                         }
-                        else if (elapsedDays != 0)
+                        else if (elapsedMonth > 0)
                         {
-                            text_clock = elapsedDays.ToString() + "ngày trước";
+                            text_clock = elapsedMonth.ToString() + " tháng trước";
                         }
-                        else if (elapsedHours != 0)
+                        else if (elapsedDays > 0)
                         {
-                            text_clock = elapsedHours.ToString() + "giờ trước";
+                            text_clock = elapsedDays.ToString() + " ngày trước";
+                        }
+                        else if (elapsedHours > 0)
+                        {
+                            text_clock = elapsedHours.ToString() + " giờ trước";
+                        }
+                        else if (elapsedMinutes > 0)
+                        {
+                            text_clock = elapsedMinutes.ToString() + " phút trước";
+                        }
+                        else
+                        {
+                            text_clock = elapsedSeconds.ToString() + " giây trước";
                         }
 
                         Panel panel = new Panel();
@@ -209,7 +259,7 @@ namespace Login
                         ten_truyen.Text = snapshot.GetValue<string>("Ten");
                         ten_truyen.AutoSize = true;
                         ten_truyen.Location = new Point(anh.Width + 25, 3);
-                        ten_truyen.Font = new Font("League Spartan", 12F, FontStyle.Bold);
+                        ten_truyen.Font = new Font("League Spartan", 18F, FontStyle.Bold);
                         ten_truyen.Anchor = AnchorStyles.Top | AnchorStyles.Left;
                         ten_truyen.Visible = true;
 
@@ -220,7 +270,7 @@ namespace Login
                         tacgia.FlatAppearance.MouseDownBackColor = Color.FromArgb(220, 247, 253);
                         tacgia.FlatAppearance.MouseOverBackColor = Color.FromArgb(220, 247, 253);
                         tacgia.FlatStyle = FlatStyle.Flat;
-                        tacgia.Font = new Font("League Spartan SemiBold", 10F, FontStyle.Bold);
+                        tacgia.Font = new Font("League Spartan SemiBold", 14F, FontStyle.Bold);
                         tacgia.IconChar = IconChar.UserEdit;
                         tacgia.IconColor = Color.Black;
                         tacgia.IconSize = 32;
@@ -228,15 +278,15 @@ namespace Login
                         tacgia.ImageAlign = ContentAlignment.MiddleLeft;
                         tacgia.TextAlign = ContentAlignment.MiddleLeft;
                         tacgia.TextImageRelation = TextImageRelation.ImageBeforeText;
-                        tacgia.Location = new Point(anh.Width + 25, 54);
+                        tacgia.Location = new Point(anh.Width + 25, 35);
                         tacgia.Anchor = AnchorStyles.Top | AnchorStyles.Left;
                         tacgia.Visible = true;
 
                         Label chuong = new Label();
-                        chuong.Text = snapshot.GetValue<int>("So_chuong").ToString() + "/" + noidung_lsd[i]["Chuong_doccuoi"].ToString();
-                        chuong.Font = new Font("League Spartan SemiBold", 10F, FontStyle.Bold);
+                        chuong.Text =  outerDict["Chuong_doccuoi"].ToString() + "/" + snapshot.GetValue<int>("So_chuong").ToString() + " chương";
+                        chuong.Font = new Font("League Spartan SemiBold", 14F, FontStyle.Bold);
                         chuong.AutoSize = true;
-                        chuong.Location = new Point(9, 19);
+                        chuong.Location = new Point(anh.Width + 25, 75);
                         chuong.Anchor = AnchorStyles.Top | AnchorStyles.Left;
                         chuong.Visible = true;
 
@@ -247,7 +297,7 @@ namespace Login
                         delete.FlatAppearance.MouseDownBackColor = Color.FromArgb(220, 247, 253);
                         delete.FlatAppearance.MouseOverBackColor = Color.FromArgb(220, 247, 253);
                         delete.FlatStyle = FlatStyle.Flat;
-                        delete.Font = new Font("League Spartan", 9F, FontStyle.Regular);
+                        delete.Font = new Font("League Spartan", 14F, FontStyle.Regular);
                         delete.IconChar = IconChar.TrashAlt;
                         delete.IconColor = Color.Black;
                         delete.IconSize = 38;
@@ -255,7 +305,7 @@ namespace Login
                         delete.ImageAlign = ContentAlignment.MiddleCenter;
                         delete.TextAlign = ContentAlignment.MiddleCenter;
                         delete.TextImageRelation = TextImageRelation.Overlay;
-                        delete.Location = new Point(1753, 14);
+                        delete.Location = new Point(900, 3);
                         delete.Anchor = AnchorStyles.Top | AnchorStyles.Left;
                         delete.Click += DeleteButton_Click;
                         delete.Visible = true;
@@ -267,7 +317,7 @@ namespace Login
                         clock.FlatAppearance.MouseDownBackColor = Color.FromArgb(220, 247, 253);
                         clock.FlatAppearance.MouseOverBackColor = Color.FromArgb(220, 247, 253);
                         clock.FlatStyle = FlatStyle.Flat;
-                        clock.Font = new Font("League Spartan SemiBold", 10F, FontStyle.Bold);
+                        clock.Font = new Font("League Spartan SemiBold", 14F, FontStyle.Bold);
                         clock.IconChar = IconChar.ClockFour;
                         clock.IconColor = Color.Black;
                         clock.IconSize = 32;
@@ -275,23 +325,28 @@ namespace Login
                         clock.ImageAlign = ContentAlignment.MiddleLeft;
                         clock.TextAlign = ContentAlignment.MiddleLeft;
                         clock.TextImageRelation = TextImageRelation.ImageBeforeText;
-                        clock.Location = new Point(1635, 55);
+                        clock.Location = new Point(anh.Width + 25, 109);
                         clock.Anchor = AnchorStyles.Top | AnchorStyles.Left;
                         clock.Visible = true;
 
-                        Button Doctiep = new Button();
+                        IconButton Doctiep = new IconButton();
                         Doctiep.AutoSize = true;
                         Doctiep.FlatAppearance.BorderSize = 0;
                         Doctiep.BackColor = Color.FromArgb(186, 31, 31);
                         Doctiep.ForeColor = Color.White;
                         Doctiep.FlatStyle = FlatStyle.Flat;
-                        Doctiep.Font = new Font("League Spartan SemiBold", 10F, FontStyle.Bold);
-                        Doctiep.ForeColor = Color.Red;
-                        Doctiep.Location = new Point(1667, 125);
+                        Doctiep.Font = new Font("League Spartan SemiBold", 14F, FontStyle.Bold);
+                        Doctiep.Size = new Size(140, 60);
+                        Doctiep.Location = new Point(900, 109);
                         Doctiep.Margin = new Padding(3, 3, 3, 3);
                         Doctiep.Anchor = AnchorStyles.Top | AnchorStyles.Left;
                         Doctiep.Visible = true;
                         Doctiep.Name = "btnDoctiep";
+                        Doctiep.Text = "Đọc tiếp";
+                        Doctiep.IconChar = IconChar.History;
+                        Doctiep.IconSize = 32;
+                        Doctiep.IconColor = Color.White;
+                        Doctiep.TextImageRelation = TextImageRelation.ImageBeforeText;
                         Doctiep.Click += btnDoctiep_Click;
 
                         Label space1 = new Label();
@@ -361,16 +416,20 @@ namespace Login
             System.Windows.Forms.Panel panel = button.Parent as System.Windows.Forms.Panel;
             // Lấy thông tin truyện từ panel
             string truyen_id = panel.Tag as string;
-            FirestoreDb db = FirestoreDb.Create("healtruyen");
-            DocumentReference docReference = db.Collection("Truyen").Document(truyen_id);
-            DocumentSnapshot snapshot = await docReference.GetSnapshotAsync();
-            if (snapshot.Exists)
+            IFirebaseConfig Config = new FirebaseConfig
             {
-                string ten_truyen = snapshot.GetValue<string>("Ten");
-                string chuong_dang_doc = snapshot.GetValue<int>("So_chuong").ToString();
-                //Doctruyen doctruyen = new Doctruyen(ten_truyen, truyen_id, chuong_dang_doc);
-                //doctruyen.Show();
-                this.Hide();
+                AuthSecret = "38QvLmnKMHlQtJ9yZzCqqWytxeXimwt06ZnFfSc2",
+                BasePath = "https://healtruyen-default-rtdb.asia-southeast1.firebasedatabase.app/"
+            };
+            IFirebaseClient client = new FireSharp.FirebaseClient(Config);
+            string path = "Nguoi_dung/" + uid + "/lichsudoc/" + truyen_id;
+            FirebaseResponse res = await client.GetAsync(path);
+            if (res.Body != "null")
+            {
+                Lich_su_doc LS = res.ResultAs<Lich_su_doc>();
+                int chuong_dang_doc = LS.Chuong_doccuoi;
+                tc.openChildForm(new Doc_Truyen(truyen_id, user, chuong_dang_doc, tc));                
+                this.Close();
             }
         }
 
