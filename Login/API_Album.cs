@@ -68,7 +68,9 @@ namespace AlbumTruyen
         [FirestoreProperty("Trang_thai")]
         public int status { get; set; }
         [FirestoreProperty("Diem_danhgia")]
-        public int tong_DG { get; set; } 
+        public int tong_DG { get; set; }
+        [FirestoreProperty("ID_nguoi_dang")]
+        public string id_nguoidang { get; set; }
     }
     public class CRUD_album
     {
@@ -88,11 +90,6 @@ namespace AlbumTruyen
             {
                 readingAlbum = JsonConvert.DeserializeObject<Dictionary<string, Dictionary<string, object>>>(res.Body);
             }
-            /* // chuyển từ base64 thành ảnh
-             byte[] imageBytes = Convert.FromBase64String(anh);
-             // Tạo đối tượng hình ảnh từ mảng byte
-             ImageConverter imageConverter = new ImageConverter();
-             Image image = (Image)imageConverter.ConvertFrom(imageBytes);*/
             return readingAlbum;
         }
 
@@ -144,51 +141,6 @@ namespace AlbumTruyen
                 await client.SetAsync(path, alb);
             }
         }
-        /*public async Task Them_album(string userId, string idtruyen, string idchuong, bool thongbao)
-        {
-            IFirebaseClient client = new FireSharp.FirebaseClient(_firebaseConfig);
-            FirestoreDb db = FirestoreDb.Create("healtruyen");
-            //truy xuất đến idtruyen 
-            DocumentReference docReference = db.Collection("Truyen").Document(idtruyen);
-            //lấy dữ liệu truyện ra
-            DocumentSnapshot snapshot = await docReference.GetSnapshotAsync();
-            var sochuong = 0;
-            var tentruyen = "";
-            var tacgia = "";
-            var anh = "";
-            var theloai = "";
-            var status = 0;
-            if (snapshot.Exists)
-            {
-                Novel novel = snapshot.ConvertTo<Novel>();
-                sochuong = novel.cntChapter;
-                tentruyen = novel.nameNovel;
-                tacgia = novel.author;
-                anh = novel.coverImg;
-                theloai = novel.type[0];
-                status = novel.status;
-            }
-            // Get the current time
-            System.DateTime currentTime = System.DateTime.UtcNow;
-            // Convert the current time to a Unix timestamp
-            long timestamp = (long)(currentTime - new System.DateTime(1970, 1, 1)).TotalSeconds;
-
-            // Tạo một đối tượng chứa các giá trị cần cập nhật
-            Album alb = new Album()
-            {
-                Tentruyen = tentruyen,
-                Chuong_dangdoc = Convert.ToInt32(idchuong),
-                TG_them = timestamp,
-                tong_chuong = sochuong,
-                Tacgia = tacgia,
-                image = anh,
-                The_loai = theloai,
-                Thong_bao = thongbao,
-                Trang_thai = status
-            };
-            SetResponse res = await client.SetAsync("Nguoi_dung/" + userId + "Album/" + idtruyen, alb);
-
-        }*/
 
         public async Task xoa_album(string userId, string idtruyen)
         {
@@ -196,8 +148,6 @@ namespace AlbumTruyen
             // Xác định đường dẫn để xóa trong Realtime Database
             var path = $"Nguoi_dung/{userId}/Album/{idtruyen}";
             await client.DeleteAsync(path);
-            //var response = await client.DeleteAsync(path);
-            // return response.StatusCode == HttpStatusCode.OK;
         }
 
     }

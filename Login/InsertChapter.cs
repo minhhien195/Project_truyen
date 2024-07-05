@@ -15,52 +15,29 @@ using DocumentFormat.OpenXml.Wordprocessing;
 using FireSharp.Response;
 using Newtonsoft.Json;
 using thongbao;
+using Firebase.Auth;
+using DocumentFormat.OpenXml.Office2010.Excel;
+using DocumentFormat.OpenXml.Office2013.WebExtension;
+using FireSharp.Interfaces;
+using FireSharp.Config;
 
 
 namespace Login
 {
     public partial class InsertChapter : Form
     {
-
-        public class Novel
-        {
-            [FirestoreProperty("Anh")]
-            public string coverImg { get; set; }
-            [FirestoreProperty("Binh_luan")]
-            public int comment { get; set; }
-            [FirestoreProperty("Danh_gia")]
-            public int numRating { get; set; }
-            [FirestoreProperty("Diem_danhgia")]
-            public int totalRating { get; set; }
-            [FirestoreProperty("Danh_gia_Tb")]
-            public int avgRating { get; set; }
-            [FirestoreProperty("De_cu")]
-            public int recommend { get; set; }
-            [FirestoreProperty("Luot_thich")]
-            public int like { get; set; }
-            [FirestoreProperty("Luot_xem")]
-            public int numRead { get; set; }
-            [FirestoreProperty("So_chuong")]
-            public int cntChapter { get; set; }
-            [FirestoreProperty("TG_Dang")]
-            public Timestamp times { get; set; }
-            [FirestoreProperty("Tac_gia")]
-            public string author { get; set; }
-            [FirestoreProperty("Ten")]
-            public string nameNovel { get; set; }
-            [FirestoreProperty("The_loai")]
-            public string[] type { get; set; }
-            [FirestoreProperty("Tom_tat")]
-            public string description { get; set; }
-            [FirestoreProperty("Trang_thai")]
-            public int status { get; set; }
-        }
-
-        public InsertChapter()
+        UserCredential user;
+        public InsertChapter(UserCredential usercredials)
         {
             InitializeComponent();
+            this.user = usercredials;
         }
         string text = "";
+        IFirebaseConfig _firebaseConfig = new FirebaseConfig
+        {
+            AuthSecret = "38QvLmnKMHlQtJ9yZzCqqWytxeXimwt06ZnFfSc2",
+            BasePath = "https://healtruyen-default-rtdb.asia-southeast1.firebasedatabase.app/"
+        };
         private void ibtninsertDoc_Click(object sender, EventArgs e)
         {
             OpenFileDialog dialog = new OpenFileDialog();
@@ -76,7 +53,7 @@ namespace Login
                     {
                         using (StreamReader sr = new StreamReader(fs))
                         {
-                            string text = sr.ReadToEnd();
+                            text = sr.ReadToEnd();
                             if (text == "")
                             {
                                 ptrThemchuongmoi.Visible = true;
@@ -91,7 +68,7 @@ namespace Login
                     }
                 } else if(dialog.FileName.EndsWith("docx") ||  dialog.FileName.EndsWith("doc"))
                 {
-                    string text = ReadDocx(dialog.FileName);
+                    text = ReadDocx(dialog.FileName);
                     if (text == "")
                     {
                         ptrThemchuongmoi.Visible = true;
@@ -125,6 +102,14 @@ namespace Login
 
         private async void btnAdd_Click(object sender, EventArgs e)
         {
+            IFirebaseClient client = new FireSharp.FirebaseClient(_firebaseConfig);
+            FirebaseResponse re = await client.GetAsync("Nguoi_dung/" + user.User.Uid + "/Truyen_dang");
+
+            if (re.Body == "null")
+            {
+                MessageBox.Show("Bạn không thể thêm chương mới khi không có truyện đã đăng");
+                this.Close();
+            }
             if (ibtninsertDoc.Text == "Thêm chương(.doc, .docx, .txt)" || ibtninsertDoc.Text == "")
             {
                 ptrThemchuongmoi.Visible = true;
@@ -147,42 +132,95 @@ namespace Login
             }
             if (lbTCM.Visible == false && lbT.Visible == false && lbTC.Visible == false && lbSC.Visible == false)
             {
-                Interact.pushChapter(txtTruyen.Text, txtChuong.Text, txtTen.Text, text);
-                DialogResult result = MessageBox.Show("Đã thêm chương mới!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                if (result == DialogResult.OK)
+                var dict1 = JsonConvert.DeserializeObject<Dictionary<string, object>>(re.Body);
+                bool kt = false;
+                foreach (var j in dict1)
                 {
-                    ptrTruyen.Visible = false;
-                    lbT.Visible = false;
-                    ptrSochuong.Visible = false;
-                    lbSC.Visible = false;
-                    ptrTenchuong.Visible = false;
-                    lbTC.Visible = false;
-                    ibtninsertDoc.Text = "Thêm chương(.doc, .docx, .txt)";
+                    if (txtTruyen.Text == j.Value.ToString())
+                    {
+                        kt = true;
+                        break;
+                    }
+                    else
+                    {
+                        kt = false;
+                    }
 
+                }
+                if (kt == true)
+                {
                     FirestoreDb db = FirestoreDb.Create("healtruyen");
                     CollectionReference truyen = db.Collection("Truyen");
                     string tentruyen = txtTruyen.Text.ToUpper();
                     Google.Cloud.Firestore.Query q = truyen.WhereEqualTo("Ten", tentruyen);
                     QuerySnapshot snapshots = await q.GetSnapshotAsync();
+
                     string id = "";
-                    if (snapshots.Documents.Count > 0)
+                    id = snapshots.Documents[0].Id;
+                    CollectionReference collectionReference = truyen.Document(id).Collection("Chuong");
+                    QuerySnapshot snapshots1 = await collectionReference.GetSnapshotAsync();
+                    int value = snapshots1.Documents.Count;
+
+
+                    if (Convert.ToInt32(txtChuong.Text) > value)
                     {
-                        id = snapshots.Documents[0].Id;
-                        CollectionReference collectionReference = truyen.Document(id).Collection("Chuong");
-                        QuerySnapshot snapshots1 = await collectionReference.GetSnapshotAsync();
-                        int value = snapshots1.Documents.Count;
-                        Dictionary<string, object> updates = new Dictionary<string, object>
+                        Interact.pushChapter(txtTruyen.Text, txtChuong.Text, txtTen.Text, text);
+                        DialogResult result = MessageBox.Show("Đã thêm chương mới!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        if (result == DialogResult.OK)
                         {
-                            { "So_chuong", value }
-                        };
-                        DocumentReference doc = truyen.Document(id);
-                        await doc.UpdateAsync(updates);
-                        Them_Lay_thongbao tb = new Them_Lay_thongbao();
-                        tb.Them_thongbao_album(id);
+                            ptrTruyen.Visible = false;
+                            lbT.Visible = false;
+                            ptrSochuong.Visible = false;
+                            lbSC.Visible = false;
+                            ptrTenchuong.Visible = false;
+                            lbTC.Visible = false;
+                            ibtninsertDoc.Text = "Thêm chương(.doc, .docx, .txt)";
+
+
+                            if (snapshots.Documents.Count > 0)
+                            {
+
+                                Dictionary<string, object> updates = new Dictionary<string, object>
+                                {
+                                    { "So_chuong", value + 1 }
+                                };
+                                DocumentReference doc = truyen.Document(id);
+                                await doc.UpdateAsync(updates);
+                                Them_Lay_thongbao tb = new Them_Lay_thongbao();
+                                await tb.Them_thongbao_album(id, txtChuong.Text, true);
+                            }
+                            txtChuong.Text = "";
+                            txtTen.Text = "";
+                            txtTruyen.Text = "";
+                        }
                     }
-                    txtChuong.Text = "";
-                    txtTen.Text = "";
-                    txtTruyen.Text = "";
+                    else
+                    {
+                        Interact.editChap(txtTruyen.Text, txtChuong.Text, "Noi_dung", text, txtTen.Text);
+                        DialogResult result = MessageBox.Show($"Đã cập nhật chương {txtChuong.Text}!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        if (result == DialogResult.OK)
+                        {
+                            ptrTruyen.Visible = false;
+                            lbT.Visible = false;
+                            ptrSochuong.Visible = false;
+                            lbSC.Visible = false;
+                            ptrTenchuong.Visible = false;
+                            lbTC.Visible = false;
+                            ibtninsertDoc.Text = "Thêm chương(.doc, .docx, .txt)";
+
+                            Them_Lay_thongbao tb = new Them_Lay_thongbao();
+                            await tb.Them_thongbao_album(id, txtChuong.Text, false);
+
+                            txtChuong.Text = "";
+                            txtTen.Text = "";
+                            txtTruyen.Text = "";
+                        }
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Vui lòng nhập đúng tên truyện của bạn");
+                    this.Close();
                 }
             }
 
@@ -218,8 +256,20 @@ namespace Login
         private void ibtnDangtruyen_Click(object sender, EventArgs e)
         {
             this.Close();
-            InsertNovel insertNovel = new InsertNovel();
+            InsertNovel insertNovel = new InsertNovel(user);
             insertNovel.Show();
+        }
+
+        private async void InsertChapter_Load(object sender, EventArgs e)
+        {
+            IFirebaseClient client = new FireSharp.FirebaseClient(_firebaseConfig);
+            FirebaseResponse re = await client.GetAsync("Nguoi_dung/" + user.User.Uid + "/Truyen_dang");
+
+            if (re.Body == "null")
+            {
+                MessageBox.Show("Bạn không thể thêm chương mới khi không có truyện đã đăng");
+                this.Close();
+            }
         }
     }
 }

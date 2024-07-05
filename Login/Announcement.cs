@@ -23,9 +23,12 @@ namespace Login
 {
     public partial class Announcement : Form
     {
-        public Announcement()
+
+        UserCredential user;
+        public Announcement(UserCredential userCredential)
         {
             InitializeComponent();
+            this.user = userCredential;
         }
 
 
@@ -36,7 +39,7 @@ namespace Login
 
         private async void Announcement_Load(object sender, EventArgs e)
         {
-            string ID = "GUV1i10T8CMza3pmH93anGS9WUg1";
+            string ID = user.User.Uid;
             Them_Lay_thongbao thongbao = new Them_Lay_thongbao();
             Task<Dictionary<string, Dictionary<string, object>>> laythongbao = thongbao.Lay_thongbao(ID);
             

@@ -44,7 +44,7 @@ namespace Login
             this.client = firebaseAuthClient;
 
         }
-        private bool isNullCur = false, isNullMK = false, isNULLXNMK = false, isNULLEmail = false, lengthMK = false, changePW = false, changeMail = false;
+        private bool isNullCur = false, isNullMK = false, isNULLXNMK = false, lengthMK = false, changePW = false;
         private string RemoveDiacritics(string text)
         {
             string normalizedText = text.Normalize(NormalizationForm.FormD);
@@ -93,7 +93,7 @@ namespace Login
 
             // Đặt con trỏ văn bản lại vị trí cuối cùng
             tbrenewpw.SelectionStart = tbrenewpw.Text.Length;
-            if (tbrenewpw.Text != tbnewpw.Text || tbnewmail.Text == "")
+            if (tbrenewpw.Text != tbnewpw.Text)
             {
                 ptrNotsame.Visible = true;
                 lbNotsame.Visible = true;
@@ -107,62 +107,8 @@ namespace Login
 
         }
 
-        private void txtEmail_TextChanged(object sender, EventArgs e)
-        {
-            string inputText = tbnewmail.Text;
+       
 
-            // Chuyển đổi văn bản thành mã ký tự không dấu
-            string normalizedText = RemoveDiacritics(inputText);
-
-            // Tắt UTF-8 và cập nhật văn bản trong TextBox
-            byte[] asciiBytes = Encoding.ASCII.GetBytes(normalizedText);
-            string asciiText = Encoding.ASCII.GetString(asciiBytes);
-            tbnewmail.Text = asciiText;
-
-            // Đặt con trỏ văn bản lại vị trí cuối cùng
-            tbnewmail.SelectionStart = tbnewmail.Text.Length;
-            var r = new System.Text.RegularExpressions.Regex(@"[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?");
-            if (r.IsMatch(tbnewmail.Text))
-            {
-                ptrWarning.Visible = false;
-                lbemailKhonghople.Visible = false;
-            }
-            else
-            {
-                ptrWarning.Visible = true;
-                lbemailKhonghople.Visible = true;
-            }
-
-        }
-
-        private void txtEmail_Leave(object sender, EventArgs e)
-        {
-
-
-            if (string.IsNullOrEmpty(tbnewmail.Text))
-            {
-                ptrWarning.Visible = false;
-                lbemailKhonghople.Visible = false;
-            }
-        }
-
-        private void txtEmail_MouseLeave(object sender, EventArgs e)
-        {
-            if (string.IsNullOrEmpty(tbnewmail.Text))
-            {
-                ptrWarning.Visible = false;
-                lbemailKhonghople.Visible = false;
-            }
-        }
-
-        private void txtEmail_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (string.IsNullOrEmpty(tbnewmail.Text))
-            {
-                ptrWarning.Visible = false;
-                lbemailKhonghople.Visible = false;
-            }
-        }
 
         private void panel3_Paint(object sender, PaintEventArgs e)
         {
@@ -177,7 +123,6 @@ namespace Login
         private void Setting_Load(object sender, EventArgs e)
         {
             comboBox1.SelectedIndex = 0;
-            tbnewmail.Text = user.User.Info.Email;
         }
 
         private void label8_Click(object sender, EventArgs e)
@@ -271,14 +216,6 @@ namespace Login
             {
                 isNULLXNMK = false;
             }
-            if (string.IsNullOrEmpty(tbnewmail.Text))
-            {
-                isNULLEmail = true;
-            }
-            else
-            {
-                isNULLEmail = false;
-            }
             if (changePW == true)
             {
                 try
@@ -293,8 +230,8 @@ namespace Login
                     {
                         lengthMK = false;
                     }
-                    if (ptrWarning.Visible == false && ptrNotsame.Visible == false && lbNotsame.Visible == false
-                        && isNullCur == false && isNullMK == false && isNULLXNMK == false && lengthMK == false)
+                    if (ptrNotsame.Visible == false && lbNotsame.Visible == false && isNullCur == false 
+                        && isNullMK == false && isNULLXNMK == false && lengthMK == false)
                     {    
                     
                             await user.User.ChangePasswordAsync(tbnewpw.Text);
@@ -314,26 +251,6 @@ namespace Login
                     MessageBox.Show("Nhập mật khẩu hiện tại sai!Hãy nhập lại!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
-            if (isNULLEmail == false)
-            {
-                if (user.User.Info.Email != tbnewmail.Text)
-                {
-                    var uid = "";
-                    var email = "";
-                    var displayName = "";
-                    uid = client.User.Uid;
-                    email = client.User.Info.Email;
-                    displayName = client.User.Info.DisplayName;
-                    UserRecordArgs userRecordArgs = new UserRecordArgs()
-                    {
-                        Uid = uid,
-                        Email = email,
-                        EmailVerified = true,
-                        DisplayName = displayName,
-                    };
-                    UserRecord userRecord = await FirebaseAuth.DefaultInstance.UpdateUserAsync(userRecordArgs);
-                }
-            } 
         }
     }
 }

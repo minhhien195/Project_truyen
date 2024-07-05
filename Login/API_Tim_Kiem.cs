@@ -42,6 +42,8 @@ namespace Login
         public string description { get; set; }
         [FirestoreProperty("Trang_thai")]
         public int status { get; set; }
+        [FirestoreProperty("ID_nguoi_dang")]
+        public string id_nguoidang { get; set; }
     }
 
     public class API_Tim_Kiem

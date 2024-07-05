@@ -42,7 +42,7 @@
             this.btnsetting = new FontAwesome.Sharp.IconButton();
             this.btnDX = new FontAwesome.Sharp.IconButton();
             this.lbvaitro = new System.Windows.Forms.Label();
-            this.btnKick = new FontAwesome.Sharp.IconButton();
+            this.btnXLVP = new FontAwesome.Sharp.IconButton();
             this.btnDuyet = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.pbAvt)).BeginInit();
             this.SuspendLayout();
@@ -81,7 +81,7 @@
             this.lbname.AutoSize = true;
             this.lbname.Location = new System.Drawing.Point(75, 121);
             this.lbname.Name = "lbname";
-            this.lbname.Size = new System.Drawing.Size(49, 23);
+            this.lbname.Size = new System.Drawing.Size(73, 36);
             this.lbname.TabIndex = 6;
             this.lbname.Text = "Name";
             this.lbname.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -267,30 +267,30 @@
             this.lbvaitro.AutoSize = true;
             this.lbvaitro.Location = new System.Drawing.Point(49, 144);
             this.lbvaitro.Name = "lbvaitro";
-            this.lbvaitro.Size = new System.Drawing.Size(102, 23);
+            this.lbvaitro.Size = new System.Drawing.Size(155, 36);
             this.lbvaitro.TabIndex = 7;
             this.lbvaitro.Text = "Adminstration";
             this.lbvaitro.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // btnKick
+            // btnXLVP
             // 
-            this.btnKick.FlatAppearance.BorderSize = 0;
-            this.btnKick.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnKick.Font = new System.Drawing.Font("League Spartan", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnKick.IconChar = FontAwesome.Sharp.IconChar.ArrowRightFromFile;
-            this.btnKick.IconColor = System.Drawing.Color.Black;
-            this.btnKick.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnKick.IconSize = 26;
-            this.btnKick.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnKick.Location = new System.Drawing.Point(0, 530);
-            this.btnKick.Name = "btnKick";
-            this.btnKick.Size = new System.Drawing.Size(200, 40);
-            this.btnKick.TabIndex = 19;
-            this.btnKick.Text = " Thoát";
-            this.btnKick.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnKick.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnKick.UseVisualStyleBackColor = true;
-            this.btnKick.Click += new System.EventHandler(this.btnKick_Click);
+            this.btnXLVP.FlatAppearance.BorderSize = 0;
+            this.btnXLVP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnXLVP.Font = new System.Drawing.Font("League Spartan", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXLVP.IconChar = FontAwesome.Sharp.IconChar.ArrowRightFromFile;
+            this.btnXLVP.IconColor = System.Drawing.Color.Black;
+            this.btnXLVP.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnXLVP.IconSize = 26;
+            this.btnXLVP.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnXLVP.Location = new System.Drawing.Point(0, 530);
+            this.btnXLVP.Name = "btnXLVP";
+            this.btnXLVP.Size = new System.Drawing.Size(200, 40);
+            this.btnXLVP.TabIndex = 19;
+            this.btnXLVP.Text = " Xử lí VP";
+            this.btnXLVP.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnXLVP.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnXLVP.UseVisualStyleBackColor = true;
+            this.btnXLVP.Click += new System.EventHandler(this.btnXLVP_Click);
             // 
             // btnDuyet
             // 
@@ -315,12 +315,12 @@
             // 
             // setting_up
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 23F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 36F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(227)))), ((int)(((byte)(243)))));
             this.ClientSize = new System.Drawing.Size(200, 600);
             this.Controls.Add(this.btnDuyet);
-            this.Controls.Add(this.btnKick);
+            this.Controls.Add(this.btnXLVP);
             this.Controls.Add(this.btnDX);
             this.Controls.Add(this.btnsetting);
             this.Controls.Add(this.label4);
@@ -364,7 +364,7 @@
         private FontAwesome.Sharp.IconButton btnsetting;
         private FontAwesome.Sharp.IconButton btnDX;
         private System.Windows.Forms.Label lbvaitro;
-        private FontAwesome.Sharp.IconButton btnKick;
+        private FontAwesome.Sharp.IconButton btnXLVP;
         private FontAwesome.Sharp.IconButton btnDuyet;
     }
 }

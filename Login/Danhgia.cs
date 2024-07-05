@@ -487,7 +487,10 @@ namespace Login
                 };
                 DocumentReference doc = truyen.Document(id);
                 await doc.UpdateAsync(updates);
-                
+
+                Them_Lay_thongbao tb = new Them_Lay_thongbao();
+                await tb.Them_thongbao_danhgia(id, 1);
+                MessageBox.Show("Bạn đã đánh giá truyện thành công!");
             }
             else
             {

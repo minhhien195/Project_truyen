@@ -27,7 +27,6 @@ namespace thongbao
     {
         public string Noi_dung { get; set; }
         public string TG_gui { get; set; }
-        public bool Trang_thai { get; set; }
     }
     public class Album
     {
@@ -39,6 +38,7 @@ namespace thongbao
         public bool Thong_bao { get; set; }
         public int Trang_thai { get; set; }
     }
+    [FirestoreData]
     public class Novel
     {
         [FirestoreProperty("Anh")]
@@ -49,6 +49,8 @@ namespace thongbao
         public int numRating { get; set; }
         [FirestoreProperty("Danh_gia_Tb")]
         public int avgRating { get; set; }
+        [FirestoreProperty("Diem_danhgia")]
+        public int tong_DG { get; set; }
         [FirestoreProperty("De_cu")]
         public int recommend { get; set; }
         [FirestoreProperty("Luot_thich")]
@@ -69,7 +71,7 @@ namespace thongbao
         public string description { get; set; }
         [FirestoreProperty("Trang_thai")]
         public int status { get; set; }
-        [FirestoreProperty("ID_nguoidang")]
+        [FirestoreProperty("ID_nguoi_dang")]
         public string id_nguoidang { get; set; }
     }
     public class Them_Lay_thongbao
@@ -80,7 +82,7 @@ namespace thongbao
             AuthSecret = "38QvLmnKMHlQtJ9yZzCqqWytxeXimwt06ZnFfSc2",
             BasePath = "https://healtruyen-default-rtdb.asia-southeast1.firebasedatabase.app/"
         };
-        public async Task<string> Them_thongbao_danhgia(string idtruyen)
+        public async Task<string> Them_thongbao_danhgia(string idtruyen, int dg_decu)
         {
             //Realtime database
             IFirebaseClient client = new FireSharp.FirebaseClient(_firebaseConfig);
@@ -102,16 +104,24 @@ namespace thongbao
             //lấy dữ liệu truyện ra
             DocumentSnapshot snapshot = await docReference.GetSnapshotAsync();
             var ID_ngdang = "";
+            var tentruyen = "";
             var ten_DN = client1.User.Info.DisplayName;
-            string content = $"{ten_DN} đã đánh giá truyện của bạn";
+            string content = "";
             if (snapshot.Exists)
             {
                 Novel novel = snapshot.ConvertTo<Novel>();
                 ID_ngdang = novel.id_nguoidang;
+                tentruyen = novel.nameNovel;
             }
-            System.DateTime currentTime = System.DateTime.UtcNow;
-
-            FirebaseResponse response = await client.GetAsync("Nguoi_dung/" + ID_ngdang + "Thong_bao/");
+            System.DateTime currentTime = System.DateTime.Now;
+            if (dg_decu == 0)
+                content = $"{ten_DN} đã đánh giá truyện {tentruyen} của bạn";
+            else if (dg_decu == 1)
+            {
+                content = $"{ten_DN} đã đề cử truyện {tentruyen} của bạn";
+            }
+            
+            FirebaseResponse response = await client.GetAsync("Nguoi_dung/" + ID_ngdang + "/Thong_bao");
             var dictionary = JsonConvert.DeserializeObject<Dictionary<string, object>>(response.Body);
             //show data
             var dem = "000";
@@ -138,14 +148,14 @@ namespace thongbao
             Thong_Bao thong_bao = new Thong_Bao()
             {
                 Noi_dung = content,
-                TG_gui = currentTime.ToString(),
-                Trang_thai = false
+                TG_gui = currentTime.ToString()
             };
 
-            await client.SetAsync("Nguoi_dung/" + ID_ngdang + "Thong_bao/" + dem, thong_bao);
+            await client.SetAsync("Nguoi_dung/" + ID_ngdang + "/Thong_bao/" + dem, thong_bao);
             return dem;
         }
-        public async Task<string> Them_thongbao_trlbinhluan(string id_ng_binhluan)
+        
+        public async Task<string> Thongbao_Duyettruyen(string idtruyen, bool tc_xn)
         {
             //Realtime database
             IFirebaseClient client = new FireSharp.FirebaseClient(_firebaseConfig);
@@ -160,10 +170,29 @@ namespace thongbao
                 }
             };
             var client1 = new FirebaseAuthClient(config);
-            var ten_DN = client1.User.Info.DisplayName;
-            string content = $"{ten_DN} đã trả lời bình luận của bạn";
-            System.DateTime currentTime = System.DateTime.UtcNow;
-            FirebaseResponse response = await client.GetAsync("Nguoi_dung/" + id_ng_binhluan + "Thong_bao/");
+            // Firestore
+            FirestoreDb db = FirestoreDb.Create("healtruyen");
+            //truy xuất đến idtruyen 
+            DocumentReference docReference = db.Collection("Dang_truyen").Document(idtruyen);
+            //lấy dữ liệu truyện ra
+            DocumentSnapshot snapshot = await docReference.GetSnapshotAsync();
+            var ID_ngdang = "";
+            var tentruyen = "";
+            string content = "";
+            if (snapshot.Exists)
+            {
+                Novel novel = snapshot.ConvertTo<Novel>();
+                ID_ngdang = novel.id_nguoidang;
+                tentruyen = novel.nameNovel;
+            }
+            System.DateTime currentTime = System.DateTime.Now;
+            if (tc_xn == false)
+                content = $"Admin đã từ chối thông qua truyện {tentruyen} của bạn";
+            else
+            {
+                content = $"Admin đã thông qua truyện {tentruyen} của bạn";
+            }
+            FirebaseResponse response = await client.GetAsync("Nguoi_dung/" + ID_ngdang + "/Thong_bao");
             var dictionary = JsonConvert.DeserializeObject<Dictionary<string, object>>(response.Body);
             //show data
             var dem = "000";
@@ -190,11 +219,52 @@ namespace thongbao
             Thong_Bao thong_bao = new Thong_Bao()
             {
                 Noi_dung = content,
-                TG_gui = currentTime.ToString(),
-                Trang_thai = false
+                TG_gui = currentTime.ToString()
             };
 
-            await client.SetAsync("Nguoi_dung/" + id_ng_binhluan + "Thong_bao/" + dem, thong_bao);
+            await client.SetAsync("Nguoi_dung/" + ID_ngdang + "/Thong_bao/" + dem, thong_bao);
+            return dem;
+        }
+        public async Task<string> Them_thongbao_canhcao(string id_ngvipham, int slVipham)
+        {
+            //Realtime database
+            IFirebaseClient client = new FireSharp.FirebaseClient(_firebaseConfig);
+
+            System.DateTime currentTime = System.DateTime.Now;
+            string content = "";
+            content = $"Bạn đã vi phạm điều lệ sử dụng ứng dụng đọc truyện chung. Cảnh cáo lần {slVipham}";
+
+            FirebaseResponse response = await client.GetAsync("Nguoi_dung/" + id_ngvipham + "/Thong_bao");
+            var dictionary = JsonConvert.DeserializeObject<Dictionary<string, object>>(response.Body);
+            //show data
+            var dem = "000";
+            foreach (var i in dictionary)
+            {
+                dem = i.Key;
+            }
+            var dem1 = Convert.ToInt32(dem);
+            dem1 += 1;
+            int cnt = 0;
+            if (dem1 >= 0 && dem1 < 10)
+                cnt = 2;
+            else if (dem1 >= 10 && dem1 <= 99)
+                cnt = 1;
+            else
+                cnt = 0;
+            dem = "";
+            for (int i = 0; i < cnt; i++)
+            {
+                dem += "0";
+            }
+            dem += dem1;
+
+            Thong_Bao thong_bao = new Thong_Bao()
+            {
+                Noi_dung = content,
+                TG_gui = currentTime.ToString()
+            };
+
+            await client.SetAsync("Nguoi_dung/" + id_ngvipham + "/Thong_bao/" + dem, thong_bao);
             return dem;
 
         }
@@ -215,7 +285,7 @@ namespace thongbao
             var client1 = new FirebaseAuthClient(config);
             var ten_DN = client1.User.Info.DisplayName;
             string content = $"{ten_DN} đã thich bình luận của bạn";
-            System.DateTime currentTime = System.DateTime.UtcNow;
+            System.DateTime currentTime = System.DateTime.Now;
             FirebaseResponse response = await client.GetAsync("Nguoi_dung/" + id_ng_binhluan + "Thong_bao/");
             var dictionary = JsonConvert.DeserializeObject<Dictionary<string, object>>(response.Body);
             //show data
@@ -243,24 +313,26 @@ namespace thongbao
             Thong_Bao thong_bao = new Thong_Bao()
             {
                 Noi_dung = content,
-                TG_gui = currentTime.ToString(),
-                Trang_thai = false
+                TG_gui = currentTime.ToString()
             };
 
             await client.SetAsync("Nguoi_dung/" + id_ng_binhluan + "Thong_bao/" + dem, thong_bao);
             return dem;
 
         }
-        public async Task Them_thongbao_album(string idtruyen)
+        public async Task Them_thongbao_album(string idtruyen, string idchuong, bool capnhat_dangmoi)
         {
             //Realtime database
             IFirebaseClient client = new FireSharp.FirebaseClient(_firebaseConfig);
             FirebaseResponse response = await client.GetAsync("Nguoi_dung/Thong_bao_album/" + idtruyen);
             var dictionary = JsonConvert.DeserializeObject<Dictionary<string, object>>(response.Body);
             List<string> id_nguoidung = new List<string>();
-            foreach (var item in dictionary.Keys)
+            if (dictionary != null)
             {
-                id_nguoidung.Add(item);
+                foreach (var item in dictionary.Keys)
+                {
+                    id_nguoidung.Add(item);
+                }
             }
             string ten_truyen = "";
             // Firestore
@@ -274,7 +346,11 @@ namespace thongbao
                 Novel novel = snapshot.ConvertTo<Novel>();
                 ten_truyen = novel.nameNovel;
             }
-            string content = $"Truyện {ten_truyen} đã đăng chương mới";
+            string content = "";
+            if (capnhat_dangmoi == true)
+                content = $"Truyện {ten_truyen} đã đăng chương mới";
+            else
+                content = $"Truyện {ten_truyen} đã cập nhật chương {idchuong}";
             System.DateTime currentTime = System.DateTime.Now;
             
             foreach(var item in id_nguoidung)
@@ -282,32 +358,26 @@ namespace thongbao
                 Thong_Bao thong_bao = new Thong_Bao()
                 {
                     Noi_dung = content,
-                    TG_gui = currentTime.ToString(),
-                    Trang_thai = false
+                    TG_gui = currentTime.ToString()
                 };
                 FirebaseResponse res = await client.GetAsync("Nguoi_dung/" + item + "/Thong_bao/");
                 var dict = JsonConvert.DeserializeObject<Dictionary<string, object>>(res.Body);
-                //show data
-                var dem = "000";
-                foreach (var i in dict)
+
+                // Đếm số thông báo hiện có
+                int dem1 = 0;
+                if (dict != null)
                 {
-                    dem = i.Key;
+                    foreach (var i in dict)
+                    {
+                        if (int.TryParse(i.Key, out int currentKey))
+                        {
+                            dem1 = Math.Max(dem1, currentKey);
+                        }
+                    }
                 }
-                var dem1 = Convert.ToInt32(dem);
+
                 dem1 += 1;
-                int cnt = 0;
-                if (dem1 >= 0 && dem1 < 10)
-                    cnt = 2;
-                else if (dem1 >= 10 && dem1 <= 99)
-                    cnt = 1;
-                else
-                    cnt = 0;
-                dem = "";
-                for (int i = 0; i < cnt; i++)
-                {
-                    dem += "0";
-                }
-                dem += dem1;
+                string dem = dem1.ToString("D3"); // Chuyển đổi sang dạng "000", "001", ...
                 await client.SetAsync("Nguoi_dung/" + item + "/Thong_bao/" + dem, thong_bao);
             }    
         }
@@ -320,7 +390,6 @@ namespace thongbao
             // Get the current time
             System.DateTime currentTime = System.DateTime.Now;
             // Convert the current time to a Unix timestamp
-           // long timestamp = (long)(currentTime - new System.DateTime(1970, 1, 1)).TotalSeconds;
             Album alb = new Album()
             {
                 Chuong_dang_doc = Convert.ToInt32(idchuong),
@@ -333,7 +402,7 @@ namespace thongbao
         public async Task<Dictionary<string, Dictionary<string, object>>> Lay_thongbao(string userId)
         {
             IFirebaseClient client = new FireSharp.FirebaseClient(_firebaseConfig);
-            var path = "Nguoi_dung/" + userId + "/Thong_bao/";
+            var path = "Nguoi_dung/" + userId + "/Thong_bao";
             FirebaseResponse res = await client.GetAsync(path);
             // Chuyển đổi dữ liệu trả về thành Dictionary<string, Dictionary<string, object>>
             Dictionary<string, Dictionary<string, object>> thongbao = new Dictionary<string, Dictionary<string, object>>();
