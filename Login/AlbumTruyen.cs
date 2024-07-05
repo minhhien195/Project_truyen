@@ -42,6 +42,7 @@ namespace Login
         private void AlbumTruyen_Load(object sender, EventArgs e)
         {
             Album();
+            label1.Width = panelAlbumTruyen.Width;
         }
         Dictionary<string, object> noidung_album = new Dictionary<string, object>();
         List<string> idtruyen = new List<string>();
@@ -151,7 +152,7 @@ namespace Login
                             panel2.Controls.Add(anh);
 
                             Label ten_truyen = new Label();
-                            ten_truyen.Text = snapshot.GetValue<string>("Ten");
+                            ten_truyen.Text = UpdateSummaryText(snapshot.GetValue<string>("Ten"), ten_truyen.Font, this.Width - 300);
                             ten_truyen.AutoSize = true;
                             ten_truyen.Location = new Point(anh.Width + 25, 3);
                             ten_truyen.Font = new Font("League Spartan", 20F, FontStyle.Bold);
@@ -270,7 +271,7 @@ namespace Login
                             delete.ImageAlign = ContentAlignment.MiddleCenter;
                             delete.TextAlign = ContentAlignment.MiddleCenter;
                             delete.TextImageRelation = TextImageRelation.Overlay;
-                            delete.Location = new Point(1000, 3);
+                            delete.Location = new Point(this.Width - 150, 3);
                             delete.Anchor = AnchorStyles.Top | AnchorStyles.Left;
                             delete.Click += deleteButton_Click;
                             delete.MouseEnter += mouse_enter;
@@ -292,7 +293,7 @@ namespace Login
                             thong_bao_tat.ImageAlign = ContentAlignment.MiddleCenter;
                             thong_bao_tat.TextAlign = ContentAlignment.MiddleCenter;
                             thong_bao_tat.TextImageRelation = TextImageRelation.Overlay;
-                            thong_bao_tat.Location = new Point(950, 3);
+                            thong_bao_tat.Location = new Point(this.Width - 200, 3);
                             thong_bao_tat.Anchor = AnchorStyles.Top | AnchorStyles.Left;
                             thong_bao_tat.Click += Notification_turnoff_Click;
                             thong_bao_tat.MouseEnter += mouse_enter;
@@ -316,7 +317,7 @@ namespace Login
                             thong_bao_bat.ImageAlign = ContentAlignment.MiddleCenter;
                             thong_bao_bat.TextAlign = ContentAlignment.MiddleCenter;
                             thong_bao_bat.TextImageRelation = TextImageRelation.Overlay;
-                            thong_bao_bat.Location = new Point(950, 3);
+                            thong_bao_bat.Location = new Point(this.Width - 200, 3);
                             thong_bao_bat.Anchor = AnchorStyles.Top | AnchorStyles.Left;
                             thong_bao_bat.Click += Notification_turnon_Click;
                             thong_bao_bat.MouseEnter += mouse_enter;
@@ -360,7 +361,47 @@ namespace Login
             }
         }
 
+        private string UpdateSummaryText(string ten, Font label, int width)
+        {
+            return GetSummaryText(ten, label, width);
+        }
 
+        private string GetSummaryText(string originalText, Font font, int maxWidth)
+        {
+            // Tạo đối tượng đồ họa ảo để đo kích thước văn bản
+            using (Bitmap bmp = new Bitmap(1, 1))
+            using (Graphics g = Graphics.FromImage(bmp))
+            {
+                // Thiết lập các thông số vẽ văn bản
+                StringFormat format = StringFormat.GenericDefault;
+
+                // Kiểm tra kích thước văn bản
+                SizeF textSize = g.MeasureString(originalText, font);
+                if (textSize.Width <= maxWidth)
+                {
+                    // Trả về toàn bộ văn bản nếu nó vừa với Label
+                    return originalText;
+                }
+                else
+                {
+                    // Tìm độ dài tối đa của tên
+                    int maxSummaryLength = originalText.Length;
+                    for (int i = originalText.Length - 1; i >= 0; i--)
+                    {
+                        string summary = originalText.Substring(0, i) + "...";
+                        SizeF summarySize = g.MeasureString(summary, font);
+                        if (summarySize.Width <= maxWidth)
+                        {
+                            maxSummaryLength = i;
+                            break;
+                        }
+                    }
+
+                    // Trả về tên
+                    return originalText.Substring(0, maxSummaryLength) + "...";
+                }
+            }
+        }
 
         private void deleteButton_Click(object sender, EventArgs e)
         {
@@ -644,7 +685,7 @@ namespace Login
                         panel2.Controls.Add(anh);
 
                         Label ten_truyen = new Label();
-                        ten_truyen.Text = snapshot.GetValue<string>("Ten");
+                        ten_truyen.Text = UpdateSummaryText(snapshot.GetValue<string>("Ten"), ten_truyen.Font, this.Width - 300);
                         ten_truyen.AutoSize = true;
                         ten_truyen.Location = new Point(anh.Width + 25, 3);
                         ten_truyen.Font = new Font("League Spartan", 20F, FontStyle.Bold);
@@ -763,7 +804,7 @@ namespace Login
                         delete.ImageAlign = ContentAlignment.MiddleCenter;
                         delete.TextAlign = ContentAlignment.MiddleCenter;
                         delete.TextImageRelation = TextImageRelation.Overlay;
-                        delete.Location = new Point(1000, 3);
+                        delete.Location = new Point(this.Width - 150, 3);
                         delete.Anchor = AnchorStyles.Top | AnchorStyles.Left;
                         delete.Click += deleteButton_Click;
                         delete.MouseEnter += mouse_enter;
@@ -785,7 +826,7 @@ namespace Login
                         thong_bao_tat.ImageAlign = ContentAlignment.MiddleCenter;
                         thong_bao_tat.TextAlign = ContentAlignment.MiddleCenter;
                         thong_bao_tat.TextImageRelation = TextImageRelation.Overlay;
-                        thong_bao_tat.Location = new Point(950, 3);
+                        thong_bao_tat.Location = new Point(this.Width - 200, 3);
                         thong_bao_tat.Anchor = AnchorStyles.Top | AnchorStyles.Left;
                         thong_bao_tat.Click += Notification_turnoff_Click;
                         thong_bao_tat.MouseEnter += mouse_enter;

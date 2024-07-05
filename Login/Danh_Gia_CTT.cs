@@ -21,6 +21,7 @@ using FontAwesome.Sharp;
 using Google.Cloud.Firestore;
 using Novel;
 using Readinghistory;
+using thongbao;
 
 namespace Login
 {
@@ -67,7 +68,23 @@ namespace Login
             FirebaseResponse res = await client.GetAsync("Truyen/" + idTruyen + "/Danh_gia/");
             var dict = JsonConvert.DeserializeObject<Dictionary<string, object>>(res.Body);
 
-            if (dict is null) return;
+            if (dict is null)
+            {
+                Panel panel = new Panel();
+                this.panelShowRating1.Controls.Add(panel);
+                panel.Dock = DockStyle.Top;
+                panel.BringToFront();
+                panel.Height = 216;
+                panel.AutoSize = true;
+
+                Label danhgia0 = new Label();
+                danhgia0.Text = "Hiện không tồn tại đánh giá của người dùng. Bạn hãy đánh giá truyện nhé!";
+                danhgia0.Font = new Font("League Spartan", 16, FontStyle.Regular);
+                danhgia0.AutoSize = true;
+
+                panel.Controls.Add(danhgia0);
+                return;
+            }
             //show data
             label2.Text = dict.Count.ToString() + " đánh giá"; 
             var dem = 0;
@@ -619,6 +636,11 @@ namespace Login
                 };
                 DocumentReference doc = truyen.Document(id);
                 await doc.UpdateAsync(updates);
+
+                Them_Lay_thongbao tb = new Them_Lay_thongbao();
+                await tb.Them_thongbao_danhgia(id, 1);
+                MessageBox.Show("Bạn đã đánh giá truyện thành công!");
+
                 ibtnStar1.IconColor = Color.Linen;
                 ibtnStar2.IconColor = Color.Linen;
                 ibtnStar3.IconColor = Color.Linen;

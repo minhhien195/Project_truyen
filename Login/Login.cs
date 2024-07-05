@@ -16,6 +16,9 @@ using FirebaseAdmin.Auth;
 using FirebaseAdmin.Messaging;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 using System.Globalization;
+using FireSharp.Config;
+using FireSharp.Interfaces;
+using FireSharp.Response;
 
 namespace Login
 {
@@ -30,6 +33,14 @@ namespace Login
         {
 
         }
+
+        static IFirebaseConfig _firebaseConfig = new FirebaseConfig
+        {
+            AuthSecret = "38QvLmnKMHlQtJ9yZzCqqWytxeXimwt06ZnFfSc2",
+            BasePath = "https://healtruyen-default-rtdb.asia-southeast1.firebasedatabase.app/"
+        };
+
+        static FireSharp.FirebaseClient client1 = new FireSharp.FirebaseClient(_firebaseConfig);
         private void Login_Load(object sender, EventArgs e)
         {
             linkLabel1.LinkBehavior = LinkBehavior.NeverUnderline;
@@ -98,16 +109,29 @@ namespace Login
 
             try
             {
+                
                 UserCredential userCredential = await SignIn( client, txtEmail.Text, txtMK.Text);
                 if (userCredential != null)
                 {
-                    this.Hide();
+                    FirebaseResponse r = await client1.GetAsync("Nguoi_dung/" + userCredential.User.Uid + "/disable");
+                    bool disable = r.ResultAs<bool>();
+                    if (!disable)
+                    {
+                        this.Hide();
 
-                    /*HomePage form = new HomePage(userCredential, client);*/
-                    Trang_chu form = new Trang_chu(userCredential, client);
+                        /*HomePage form = new HomePage(userCredential, client);*/
 
-/*                    InsertNovel form = new InsertNovel();
-*/                    form.Show();   
+                        Trang_chu form = new Trang_chu(userCredential, client);
+
+                        /*                    InsertNovel form = new InsertNovel();
+                        */
+                        form.Show();
+                    } else
+                    {
+                        MessageBox.Show("Tài khoản đã bị vô hiệu hóa!");
+                    }
+
+                     
 
                 }
                 else

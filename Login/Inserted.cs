@@ -22,9 +22,11 @@ namespace Login
 {
     public partial class Inserted : Form
     {
-        public Inserted()
+        UserCredential usercredials;
+        public Inserted(UserCredential usercredials)
         {
             InitializeComponent();
+            this.usercredials = usercredials;
         }
         IFirebaseConfig _firebaseConfig = new FirebaseConfig
         {
@@ -58,7 +60,7 @@ namespace Login
             FirebaseResponse res = await client1.GetAsync(path);
 
             Dictionary<string, object> data = JsonConvert.DeserializeObject<Dictionary<string, object>>(res.Body);
-            if (data.Count <= 0)
+            if (data is null)
             {
                 MessageBox.Show("Không có truyện nào đã đăng!");
                 return;
@@ -196,7 +198,7 @@ namespace Login
 
         private void btnInsertChap_Click(object sender, EventArgs e)
         {
-            InsertChapter form = new InsertChapter();
+            InsertChapter form = new InsertChapter(usercredials);
             form.ShowDialog();
         }
     }

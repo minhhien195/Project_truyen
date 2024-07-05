@@ -600,7 +600,7 @@ namespace Login
                 change_color();
                 btnThongbao.BackColor = Color.FromArgb(191, 44, 36);
                 btnThongbao.ForeColor = Color.White;
-                openChildForm(new Announcement());
+                openChildForm(new Announcement(user));
             }
         }
 

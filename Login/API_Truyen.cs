@@ -64,6 +64,8 @@ namespace Novel
             public string description { get; set; }
             [FirestoreProperty("Trang_thai")]
             public int status { get; set; }
+            [FirestoreProperty("ID_nguoi_dang")]
+            public string id_nguoidang { get; set; }
         }
         public async static Task<Chapter> getNovel(string nameNovel, string numChapter)
         {
@@ -124,11 +126,11 @@ namespace Novel
             }
         }
 
-        public async static Task<string> getIdNovel(string nameNovel)
+        public async static Task<string> getIdNovel(string nameNovel, string dbstring)
         {
             string project = "healtruyen";
             FirestoreDb db = FirestoreDb.Create(project);
-            CollectionReference collectionReference = db.Collection("Truyen");
+            CollectionReference collectionReference = db.Collection(dbstring);
             nameNovel = nameNovel.ToUpper();
             Query q = collectionReference.WhereEqualTo("Ten", nameNovel);
             QuerySnapshot qs = await q.GetSnapshotAsync();
@@ -198,7 +200,7 @@ namespace Novel
 
         }
 
-        public static async Task<string> createNovel(string bia_sach, string so_luong_chuong, string tac_gia, string ten_truyen, string[] the_loai, string tom_tat, string dbString)
+        public static async Task<string> createNovel(string bia_sach, string so_luong_chuong, string tac_gia, string ten_truyen, string[] the_loai, string tom_tat, string dbString, string userid)
 
         {
             FirestoreDb db = FirestoreDb.Create("healtruyen");
@@ -218,7 +220,8 @@ namespace Novel
                 nameNovel = ten_truyen,
                 type = the_loai,
                 description = tom_tat,
-                status = 1
+                status = 1,
+                id_nguoidang = userid
             };
 
             CollectionReference truyen = db.Collection(dbString);
@@ -286,7 +289,7 @@ namespace Novel
             
         }
 
-        public async static void editChap(string nameNovel, string numChap, string field, string value)
+        public async static void editChap(string nameNovel, string numChap, string field, string value, string title)
         {
             FirestoreDb db = FirestoreDb.Create("healtruyen");
             CollectionReference truyen = db.Collection("Truyen");
@@ -312,7 +315,9 @@ namespace Novel
 
             Dictionary<string, object> updates = new Dictionary<string, object>
             {
-                { field, value }
+                { field, value },
+                {"TG_dangtai", DateTime.UtcNow},
+                {"Tieu_de", title}
             };
             DocumentReference doc = truyen.Document(id).Collection("Chuong").Document(chapID);
             await doc.UpdateAsync(updates);

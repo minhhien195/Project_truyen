@@ -15,6 +15,7 @@ using Google.Cloud.Firestore;
 using Firebase.Auth;
 using Novel;
 using FireSharp.Response;
+using thongbao;
 
 namespace Login
 {
@@ -80,6 +81,7 @@ namespace Login
             } 
             else
             {
+                
                 foreach (var item in  qs.Documents)
                 {
                     Dictionary<string, object> novel = item.ToDictionary();
@@ -218,9 +220,15 @@ namespace Login
                     cancel.Size = new Size(100, 60);
                     cancel.Font = new Font("League Spartan", 16, FontStyle.Regular);
                     cancel.Margin = new Padding(10);
-                    cancel.Click += (s, ev) =>
+                    cancel.Click += async (s, ev) =>
                     {
+                        string idtruyen = await Interact.getIdNovel(tenTruyen.Text, "Dang_truyen");
+
                         Interact.deleteNovel(novel["Ten"].ToString(), "Dang_truyen");
+
+                        Them_Lay_thongbao tb = new Them_Lay_thongbao();
+                        await tb.Thongbao_Duyettruyen(idtruyen, false);
+
                         MessageBox.Show("Từ chối duyệt truyện thành công");
                         panelList.Visible = false;
                     };
@@ -239,6 +247,9 @@ namespace Login
                     
                     confirm.Click += async (s, ev) =>
                     {
+
+                        string idtruyen = await Interact.getIdNovel(tenTruyen.Text, "Dang_truyen");
+                        var ID_ngdang = novel["ID_nguoi_dang"].ToString();
                         confirm.Enabled = false;
                         Task<string> res = Interact.createNovel(
                             novel["Anh"].ToString(), 
@@ -247,14 +258,29 @@ namespace Login
                             novel["Ten"].ToString(),
                             typeStringArray,
                             novel["Tom_tat"].ToString(),
-                            "Truyen"
+                            "Truyen",
+                            ID_ngdang
                             );
                         string novelid = await res;
-                        FirebaseResponse resf = await client.GetAsync("Nguoi_dung/" + user.User.Uid + "/Truyen_dang");
+                        FirebaseResponse resf = await client.GetAsync("Nguoi_dung/" + ID_ngdang + "/Truyen_dang");
                         Dictionary<string, string> truyendang = resf.ResultAs<Dictionary<string, string>>();
-                        truyendang.Add(novelid, novel["Ten"].ToString());
-                        FirebaseResponse response = await client.UpdateAsync("Nguoi_dung/" + user.User.Uid + "/Truyen_dang", truyendang);
+                        if (truyendang is null)
+                        {
+                            Dictionary<string, string> truyen_dang = new Dictionary<string, string>();
+                            truyen_dang.Add(novelid, novel["Ten"].ToString());
+                            FirebaseResponse response1 = await client.SetAsync("Nguoi_dung/" + ID_ngdang + "/Truyen_dang", truyen_dang);
+                        }
+                        else
+                        {
+                            truyendang.Add(novelid, novel["Ten"].ToString());
+                            FirebaseResponse response = await client.UpdateAsync("Nguoi_dung/" + ID_ngdang + "/Truyen_dang", truyendang);
+                        }
+                        
                         Interact.deleteNovel(novel["Ten"].ToString().ToUpper(), "Dang_truyen");
+
+                        Them_Lay_thongbao tb = new Them_Lay_thongbao();
+                        await tb.Thongbao_Duyettruyen(idtruyen, true);
+
                         MessageBox.Show("Đăng truyện thành công!");
 
                         confirm.Enabled = true;

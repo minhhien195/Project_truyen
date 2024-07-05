@@ -15,6 +15,7 @@ using System.Web.Caching;
 
 /*using System.Windows.Controls;*/
 using System.Windows.Forms;
+using DocumentFormat.OpenXml.Office2010.Excel;
 using Firebase.Auth;
 using Firebase.Auth.Providers;
 using FirebaseAdmin;
@@ -50,6 +51,44 @@ namespace Login
             public string Noi_dung { get; set; }
             public string TG_binh_luan { get; set; }
             public bool To_cao {  get; set; }
+        }
+
+        [FirestoreData]
+
+        public class Novel
+        {
+            [FirestoreProperty("Anh")]
+            public string coverImg { get; set; }
+            [FirestoreProperty("Binh_luan")]
+            public int comment { get; set; }
+            [FirestoreProperty("Danh_gia")]
+            public int numRating { get; set; }
+            [FirestoreProperty("Danh_gia_Tb")]
+            public int avgRating { get; set; }
+            [FirestoreProperty("De_cu")]
+            public int recommend { get; set; }
+            [FirestoreProperty("Luot_thich")]
+            public int like { get; set; }
+            [FirestoreProperty("Luot_xem")]
+            public int numRead { get; set; }
+            [FirestoreProperty("So_chuong")]
+            public int cntChapter { get; set; }
+            [FirestoreProperty("TG_Dang")]
+            public Timestamp times { get; set; }
+            [FirestoreProperty("Tac_gia")]
+            public string author { get; set; }
+            [FirestoreProperty("Ten")]
+            public string nameNovel { get; set; }
+            [FirestoreProperty("The_loai")]
+            public string[] type { get; set; }
+            [FirestoreProperty("Tom_tat")]
+            public string description { get; set; }
+            [FirestoreProperty("Trang_thai")]
+            public int status { get; set; }
+            [FirestoreProperty("Diem_danhgia")]
+            public int tong_DG { get; set; }
+            [FirestoreProperty("ID_nguoi_dang")]
+            public string id_nguoidang { get; set; }
         }
 
         IFirebaseConfig _firebaseConfig = new FirebaseConfig
@@ -109,7 +148,7 @@ namespace Login
                 iconButton2.Text = novel.GetValue<string>("Tac_gia");
                 numChap = novel.GetValue<int>("So_chuong");
                 so_chuong = numChap;
-                Task<string> res2 = Interact.getIdNovel(nameTruyen);
+                Task<string> res2 = Interact.getIdNovel(nameTruyen, "Truyen");
                 IFirebaseConfig _firebaseConfig = new FirebaseConfig
                 {
                     AuthSecret = "38QvLmnKMHlQtJ9yZzCqqWytxeXimwt06ZnFfSc2",
@@ -119,7 +158,23 @@ namespace Login
                 FirebaseResponse res3 = await client.GetAsync("Truyen/" + idTruyen + "/Binh_luan/");
                 var dict = JsonConvert.DeserializeObject<Dictionary<string, object>>(res3.Body);
 
-                if (dict is null) return;
+                if (dict is null)
+                {
+                    Panel panel = new Panel();
+                    panel5.Controls.Add(panel);
+                    panel.Dock = DockStyle.Top;
+                    panel.BringToFront();
+                    panel.Height = 216;
+                    panel.AutoSize = true;
+
+                    Label binhluan = new Label();
+                    binhluan.Text = "Hiện không tồn tại bình luận của người dùng. Bạn hãy bình luận giúp truyện nhé!";
+                    binhluan.Font = new Font("League Spartan", 16, FontStyle.Regular);
+                    binhluan.AutoSize = true;
+
+                    panel.Controls.Add(binhluan);
+                    return;
+                }
                 //show data
                 var dem = 0;
                 foreach (var i in dict)
@@ -145,6 +200,7 @@ namespace Login
 
                     Binhluan binhluan = res4.ResultAs<Binhluan>();
 
+                    if (binhluan is null) continue;
                     string id_chuong = idTruyen + chapId;
 
                     if (binhluan.ID_chuong != id_chuong) continue;
@@ -249,8 +305,9 @@ namespace Login
                     panel1.Controls.Add(tableLayoutPanel2);
                     tableLayoutPanel2.Dock = DockStyle.Bottom;
                     tableLayoutPanel2.RowCount = 1;
-                    tableLayoutPanel2.ColumnCount = 3;
-                    tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 76));
+                    tableLayoutPanel2.ColumnCount = 4;
+                    tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 64));
+                    tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 12));
                     tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 12));
                     tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 12));
 
@@ -263,7 +320,7 @@ namespace Login
                     content.BringToFront();
 
                     IconButton btnLike = new IconButton();
-                    tableLayoutPanel2.Controls.Add(btnLike, 1, 0);
+                    tableLayoutPanel2.Controls.Add(btnLike, 2, 0);
                     btnLike.Dock = DockStyle.Fill;
                     btnLike.Font = new Font("League Spartan", 12, FontStyle.Regular);
                     btnLike.IconChar = IconChar.Heart;
@@ -285,9 +342,56 @@ namespace Login
                         btnLike.ForeColor = System.Drawing.Color.Red;
                     };
 
+                    IconButton btndelete = new IconButton();
+                    tableLayoutPanel2.Controls.Add(btndelete, 1, 0);
+                    btndelete.Dock = DockStyle.Fill;
+                    btndelete.Font = new Font("League Spartan", 12, FontStyle.Regular);
+                    btndelete.IconChar = IconChar.Trash;
+                    btndelete.IconSize = 30;
+                    btndelete.Text = "Xóa";
+                    btndelete.TextAlign = ContentAlignment.MiddleRight;
+                    btndelete.TextImageRelation = TextImageRelation.ImageBeforeText;
+                    btndelete.Click += async (s, ev) =>
+                    {
+                        int role = 0;
+                        FirebaseResponse res7 = await client.GetAsync("Nguoi_dung/" + user.User.Uid + "/Vaitro");
+                        role = res7.ResultAs<int>();
+                        if (role == 0)
+                        {
+                            await client.DeleteAsync("Truyen/" + idTruyen + "/Binh_luan/" + dembl);
+                            FirestoreDb dbs = FirestoreDb.Create("healtruyen");
+                            CollectionReference truyens = dbs.Collection("Truyen");
+                            nameTruyen = nameTruyen.ToUpper();
+                            Query q = truyens.WhereEqualTo("Ten", nameTruyen);
+                            QuerySnapshot snapshots = await q.GetSnapshotAsync();
+                            string id = "";
+                            if (snapshots.Documents.Count > 0)
+                            {
+                                id = snapshots.Documents[0].Id;
+                            }
+                            DocumentReference collectionRefs = dbs.Collection("Truyen").Document(id);
+                            DocumentSnapshot ss = await collectionRefs.GetSnapshotAsync();
+
+                            int So_binhluan = ss.GetValue<int>("Binh_luan");
+
+                            So_binhluan++;
+
+                            Dictionary<string, object> updates = new Dictionary<string, object>
+                            {
+                                { "Binh_luan", So_binhluan },
+                            };
+                            DocumentReference doc = truyens.Document(id);
+                            await doc.UpdateAsync(updates);
+                            panel.Visible = false;
+                        }
+                        else
+                        {
+                            MessageBox.Show("Bạn không có quyền xóa bình luận!");
+                        }
+                    };
 
                     IconButton btnReport = new IconButton();
-                    tableLayoutPanel2.Controls.Add(btnReport, 2, 0);
+                    tableLayoutPanel2.Controls.Add(btnReport, 3, 0);
                     btnReport.Dock = DockStyle.Fill;
                     btnReport.Font = new Font("League Spartan", 12, FontStyle.Regular);
                     btnReport.IconChar = IconChar.Flag;
@@ -323,6 +427,43 @@ namespace Login
                                 SmtpServer.EnableSsl = true;
 
                                 SmtpServer.Send(mail);
+                                FirebaseResponse re = await client.GetAsync("Vi_pham/");
+                                if (re.Body == "null")
+                                {
+                                    Dictionary<string, string> data = new Dictionary<string, string> {
+                                    {"Id_bi_tocao", binhluan.ID_nguoidung.ToString() },
+                                    {"Noi_dung_to_cao", "Tên người bình luận: " + res6.ResultAs<string>() +
+                                        "bị báo cáo bởi người dùng " + user.User.Info.Uid + " có tên là " + user.User.Info.DisplayName + ". Hãy kiểm tra nội " +
+                                            $"dung bình luận này trong " +
+                                            "truyện " + nameTruyen + ". Nội dung bình luận: " + binhluan.Noi_dung },
+                                    {"So_lan_canh_cao", "0" }
+                                };
+                                    await client.SetAsync("Vi_pham/001", data);
+                                }
+                                else
+                                {
+                                    var dict1 = JsonConvert.DeserializeObject<Dictionary<string, object>>(re.Body);
+                                    int dem1 = 0;
+                                    foreach (var j in dict1)
+                                    {
+                                        dem1 = Convert.ToInt32(j.Key);
+                                    }
+                                    string report = "";
+                                    for (int j = 0; j < 3 - dem1.ToString().Length; j++)
+                                    {
+                                        report += "0";
+                                    }
+                                    report += dem1.ToString();
+                                    Dictionary<string, string> data = new Dictionary<string, string> {
+                                    {"Id_bi_tocao", binhluan.ID_nguoidung.ToString() },
+                                    {"Noi_dung_to_cao", "Tên người bình luận: " + res6.ResultAs<string>() +
+                                        "bị báo cáo bởi người dùng " + user.User.Info.Uid + " có tên là " + user.User.Info.DisplayName + ". Hãy kiểm tra nội " +
+                                            $"dung bình luận này trong " +
+                                            "truyện " + nameTruyen + ". Nội dung bình luận: " + binhluan.Noi_dung },
+                                    {"So_lan_canh_cao", "0" }
+                                };
+                                    await client.SetAsync("Vi_pham/" + report, data);
+                                }
                                 MessageBox.Show("Đã gửi tin nhắn đến quản trị viên.\n\r Vui lòng đợi phản hồi.", "Thành công");
                             }
                             catch (Exception ex)
@@ -448,7 +589,23 @@ namespace Login
             FirebaseResponse res3 = await client.GetAsync("Truyen/" + idTruyen + "/Binh_luan/");
             var dict = JsonConvert.DeserializeObject<Dictionary<string, object>>(res3.Body);
 
-            if (dict is null) return;
+            if (dict is null)
+            {
+                Panel panel = new Panel();
+                panel5.Controls.Add(panel);
+                panel.Dock = DockStyle.Top;
+                panel.BringToFront();
+                panel.Height = 216;
+                panel.AutoSize = true;
+
+                Label binhluan = new Label();
+                binhluan.Text = "Hiện không tồn tại bình luận của người dùng. Bạn hãy bình luận giúp truyện nhé!";
+                binhluan.Font = new Font("League Spartan", 16, FontStyle.Regular);
+                binhluan.AutoSize = true;
+
+                panel.Controls.Add(binhluan);
+                return;
+            }
             //show data
             var dem = 0;
             foreach (var i in dict)
@@ -473,6 +630,7 @@ namespace Login
                 FirebaseResponse res4 = await client.GetAsync("Truyen/" + idTruyen + "/Binh_luan/" + dembl);
 
                 Binhluan binhluan = res4.ResultAs<Binhluan>();
+                if (binhluan is null) continue;
                 string chapId = "";
                 int cnt = 4 - currentChap.ToString().Length;
                 for (int id = 0; id < cnt; id++)
@@ -585,8 +743,9 @@ namespace Login
                 panel1.Controls.Add(tableLayoutPanel2);
                 tableLayoutPanel2.Dock = DockStyle.Bottom;
                 tableLayoutPanel2.RowCount = 1;
-                tableLayoutPanel2.ColumnCount = 3;
-                tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 76));
+                tableLayoutPanel2.ColumnCount = 4;
+                tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 64));
+                tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 12));
                 tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 12));
                 tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 12));
 
@@ -599,7 +758,7 @@ namespace Login
                 content.BringToFront();
 
                 IconButton btnLike = new IconButton();
-                tableLayoutPanel2.Controls.Add(btnLike, 1, 0);
+                tableLayoutPanel2.Controls.Add(btnLike, 2, 0);
                 btnLike.Dock = DockStyle.Fill;
                 btnLike.Font = new Font("League Spartan", 12, FontStyle.Regular);
                 btnLike.IconChar = IconChar.Heart;
@@ -621,9 +780,56 @@ namespace Login
                     btnLike.ForeColor = System.Drawing.Color.Red;
                 };
 
+                IconButton btndelete = new IconButton();
+                tableLayoutPanel2.Controls.Add(btndelete, 1, 0);
+                btndelete.Dock = DockStyle.Fill;
+                btndelete.Font = new Font("League Spartan", 12, FontStyle.Regular);
+                btndelete.IconChar = IconChar.Trash;
+                btndelete.IconSize = 30;
+                btndelete.Text = "Xóa";
+                btndelete.TextAlign = ContentAlignment.MiddleRight;
+                btndelete.TextImageRelation = TextImageRelation.ImageBeforeText;
+                btndelete.Click += async (s, ev) =>
+                {
+                    int role = 0;
+                    FirebaseResponse res7 = await client.GetAsync("Nguoi_dung/" + user.User.Uid + "/Vaitro");
+                    role = res7.ResultAs<int>();
+                    if (role == 0)
+                    {
+                        await client.DeleteAsync("Truyen/" + idTruyen + "/Binh_luan/" + dembl);
+                        FirestoreDb db = FirestoreDb.Create("healtruyen");
+                        CollectionReference truyen = db.Collection("Truyen");
+                        nameTruyen = nameTruyen.ToUpper();
+                        Query q = truyen.WhereEqualTo("Ten", nameTruyen);
+                        QuerySnapshot snapshots = await q.GetSnapshotAsync();
+                        string id = "";
+                        if (snapshots.Documents.Count > 0)
+                        {
+                            id = snapshots.Documents[0].Id;
+                        }
+                        DocumentReference collectionRef = db.Collection("Truyen").Document(id);
+                        DocumentSnapshot snapshot = await collectionRef.GetSnapshotAsync();
+
+                        int So_binhluan = snapshot.GetValue<int>("Binh_luan");
+
+                        So_binhluan++;
+
+                        Dictionary<string, object> updates = new Dictionary<string, object>
+                        {
+                            { "Binh_luan", So_binhluan },
+                        };
+                        DocumentReference doc = truyen.Document(id);
+                        await doc.UpdateAsync(updates);
+                        panel.Visible = false;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Bạn không có quyền xóa bình luận!");
+                    }
+                };
 
                 IconButton btnReport = new IconButton();
-                tableLayoutPanel2.Controls.Add(btnReport, 2, 0);
+                tableLayoutPanel2.Controls.Add(btnReport, 3, 0);
                 btnReport.Dock = DockStyle.Fill;
                 btnReport.Font = new Font("League Spartan", 12, FontStyle.Regular);
                 btnReport.IconChar = IconChar.Flag;
@@ -659,6 +865,43 @@ namespace Login
                             SmtpServer.EnableSsl = true;
 
                             SmtpServer.Send(mail);
+                            FirebaseResponse re = await client.GetAsync("Vi_pham/");
+                            if (re.Body == "null")
+                            {
+                                Dictionary<string, string> data = new Dictionary<string, string> {
+                                    {"Id_bi_tocao", binhluan.ID_nguoidung.ToString() },
+                                    {"Noi_dung_to_cao", "Tên người bình luận: " + res6.ResultAs<string>() +
+                                        "bị báo cáo bởi người dùng " + user.User.Info.Uid + " có tên là " + user.User.Info.DisplayName + ". Hãy kiểm tra nội " +
+                                            $"dung bình luận này trong " +
+                                            "truyện " + nameTruyen + ". Nội dung bình luận: " + binhluan.Noi_dung },
+                                    {"So_lan_canh_cao", "0" }
+                                };
+                                await client.SetAsync("Vi_pham/001", data);
+                            }
+                            else
+                            {
+                                var dict1 = JsonConvert.DeserializeObject<Dictionary<string, object>>(re.Body);
+                                int dem1 = 0;
+                                foreach (var j in dict1)
+                                {
+                                    dem1 = Convert.ToInt32(j.Key);
+                                }
+                                string report = "";
+                                for (int j = 0; j < 3 - dem1.ToString().Length; j++)
+                                {
+                                    report += "0";
+                                }
+                                report += dem1.ToString();
+                                Dictionary<string, string> data = new Dictionary<string, string> {
+                                    {"Id_bi_tocao", binhluan.ID_nguoidung.ToString() },
+                                    {"Noi_dung_to_cao", "Tên người bình luận: " + res6.ResultAs<string>() +
+                                        "bị báo cáo bởi người dùng " + user.User.Info.Uid + " có tên là " + user.User.Info.DisplayName + ". Hãy kiểm tra nội " +
+                                            $"dung bình luận này trong " +
+                                            "truyện " + nameTruyen + ". Nội dung bình luận: " + binhluan.Noi_dung },
+                                    {"So_lan_canh_cao", "0" }
+                                };
+                                await client.SetAsync("Vi_pham/" + report, data);
+                            }
                             MessageBox.Show("Đã gửi tin nhắn đến quản trị viên.\n\r Vui lòng đợi phản hồi.", "Thành công");
                         }
                         catch (Exception ex)
@@ -677,6 +920,22 @@ namespace Login
                     btnReport.Text = "Bị tố cáo";
                 }
 
+            }
+            if (panel5.Controls.Count == 0)
+            {
+                Panel panel = new Panel();
+                panel5.Controls.Add(panel);
+                panel.Dock = DockStyle.Top;
+                panel.BringToFront();
+                panel.Height = 216;
+                panel.AutoSize = true;
+
+                Label binhluan = new Label();
+                binhluan.Text = "Hiện không tồn tại bình luận của người dùng. Bạn hãy bình luận giúp truyện nhé!";
+                binhluan.Font = new Font("League Spartan", 16, FontStyle.Regular);
+                binhluan.AutoSize = true;
+
+                panel.Controls.Add(binhluan);
             }
         }
 
@@ -709,7 +968,23 @@ namespace Login
             FirebaseResponse res3 = await client.GetAsync("Truyen/" + idTruyen + "/Binh_luan/");
             var dict = JsonConvert.DeserializeObject<Dictionary<string, object>>(res3.Body);
 
-            if (dict is null) return;
+            if (dict is null)
+            {
+                Panel panel = new Panel();
+                panel5.Controls.Add(panel);
+                panel.Dock = DockStyle.Top;
+                panel.BringToFront();
+                panel.Height = 216;
+                panel.AutoSize = true;
+
+                Label binhluan = new Label();
+                binhluan.Text = "Hiện không tồn tại bình luận của người dùng. Bạn hãy bình luận giúp truyện nhé!";
+                binhluan.Font = new Font("League Spartan", 16, FontStyle.Regular);
+                binhluan.AutoSize = true;
+
+                panel.Controls.Add(binhluan);
+                return;
+            }
             //show data
             var dem = 0;
             foreach (var i in dict)
@@ -734,6 +1009,7 @@ namespace Login
                 FirebaseResponse res4 = await client.GetAsync("Truyen/" + idTruyen + "/Binh_luan/" + dembl);
 
                 Binhluan binhluan = res4.ResultAs<Binhluan>();
+                if (binhluan is null) continue;
                 string chapId = "";
                 int cnt = 4 - currentChap.ToString().Length;
                 for (int id = 0; id < cnt; id++)
@@ -846,8 +1122,9 @@ namespace Login
                 panel1.Controls.Add(tableLayoutPanel2);
                 tableLayoutPanel2.Dock = DockStyle.Bottom;
                 tableLayoutPanel2.RowCount = 1;
-                tableLayoutPanel2.ColumnCount = 3;
-                tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 76));
+                tableLayoutPanel2.ColumnCount = 4;
+                tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 64));
+                tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 12));
                 tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 12));
                 tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 12));
 
@@ -860,7 +1137,7 @@ namespace Login
                 content.BringToFront();
 
                 IconButton btnLike = new IconButton();
-                tableLayoutPanel2.Controls.Add(btnLike, 1, 0);
+                tableLayoutPanel2.Controls.Add(btnLike, 2, 0);
                 btnLike.Dock = DockStyle.Fill;
                 btnLike.Font = new Font("League Spartan", 12, FontStyle.Regular);
                 btnLike.IconChar = IconChar.Heart;
@@ -882,9 +1159,56 @@ namespace Login
                     btnLike.ForeColor = System.Drawing.Color.Red;
                 };
 
+                IconButton btndelete = new IconButton();
+                tableLayoutPanel2.Controls.Add(btndelete, 1, 0);
+                btndelete.Dock = DockStyle.Fill;
+                btndelete.Font = new Font("League Spartan", 12, FontStyle.Regular);
+                btndelete.IconChar = IconChar.Trash;
+                btndelete.IconSize = 30;
+                btndelete.Text = "Xóa";
+                btndelete.TextAlign = ContentAlignment.MiddleRight;
+                btndelete.TextImageRelation = TextImageRelation.ImageBeforeText;
+                btndelete.Click += async (s, ev) =>
+                {
+                    int role = 0;
+                    FirebaseResponse res7 = await client.GetAsync("Nguoi_dung/" + user.User.Uid + "/Vaitro");
+                    role = res7.ResultAs<int>();
+                    if (role == 0)
+                    {
+                        await client.DeleteAsync("Truyen/" + idTruyen + "/Binh_luan/" + dembl);
+                        FirestoreDb db = FirestoreDb.Create("healtruyen");
+                        CollectionReference truyen = db.Collection("Truyen");
+                        nameTruyen = nameTruyen.ToUpper();
+                        Query q = truyen.WhereEqualTo("Ten", nameTruyen);
+                        QuerySnapshot snapshots = await q.GetSnapshotAsync();
+                        string id = "";
+                        if (snapshots.Documents.Count > 0)
+                        {
+                            id = snapshots.Documents[0].Id;
+                        }
+                        DocumentReference collectionRef = db.Collection("Truyen").Document(id);
+                        DocumentSnapshot snapshot = await collectionRef.GetSnapshotAsync();
+
+                        int So_binhluan = snapshot.GetValue<int>("Binh_luan");
+
+                        So_binhluan++;
+
+                        Dictionary<string, object> updates = new Dictionary<string, object>
+                        {
+                            { "Binh_luan", So_binhluan },
+                        };
+                        DocumentReference doc = truyen.Document(id);
+                        await doc.UpdateAsync(updates);
+                        panel.Visible = false;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Bạn không có quyền xóa bình luận!");
+                    }
+                };
 
                 IconButton btnReport = new IconButton();
-                tableLayoutPanel2.Controls.Add(btnReport, 2, 0);
+                tableLayoutPanel2.Controls.Add(btnReport, 3, 0);
                 btnReport.Dock = DockStyle.Fill;
                 btnReport.Font = new Font("League Spartan", 12, FontStyle.Regular);
                 btnReport.IconChar = IconChar.Flag;
@@ -920,6 +1244,43 @@ namespace Login
                             SmtpServer.EnableSsl = true;
 
                             SmtpServer.Send(mail);
+                            FirebaseResponse re = await client.GetAsync("Vi_pham/");
+                            if (re.Body == "null")
+                            {
+                                Dictionary<string, string> data = new Dictionary<string, string> {
+                                    {"Id_bi_tocao", binhluan.ID_nguoidung.ToString() },
+                                    {"Noi_dung_to_cao", "Tên người bình luận: " + res6.ResultAs<string>() +
+                                        "bị báo cáo bởi người dùng " + user.User.Info.Uid + " có tên là " + user.User.Info.DisplayName + ". Hãy kiểm tra nội " +
+                                            $"dung bình luận này trong " +
+                                            "truyện " + nameTruyen + ". Nội dung bình luận: " + binhluan.Noi_dung },
+                                    {"So_lan_canh_cao", "0" }
+                                };
+                                await client.SetAsync("Vi_pham/001", data);
+                            }
+                            else
+                            {
+                                var dict1 = JsonConvert.DeserializeObject<Dictionary<string, object>>(re.Body);
+                                int dem1 = 0;
+                                foreach (var j in dict1)
+                                {
+                                    dem1 = Convert.ToInt32(j.Key);
+                                }
+                                string report = "";
+                                for (int j = 0; j < 3 - dem1.ToString().Length; j++)
+                                {
+                                    report += "0";
+                                }
+                                report += dem1.ToString();
+                                Dictionary<string, string> data = new Dictionary<string, string> {
+                                    {"Id_bi_tocao", binhluan.ID_nguoidung.ToString() },
+                                    {"Noi_dung_to_cao", "Tên người bình luận: " + res6.ResultAs<string>() +
+                                        "bị báo cáo bởi người dùng " + user.User.Info.Uid + " có tên là " + user.User.Info.DisplayName + ". Hãy kiểm tra nội " +
+                                            $"dung bình luận này trong " +
+                                            "truyện " + nameTruyen + ". Nội dung bình luận: " + binhluan.Noi_dung },
+                                    {"So_lan_canh_cao", "0" }
+                                };
+                                await client.SetAsync("Vi_pham/" + report, data);
+                            }
                             MessageBox.Show("Đã gửi tin nhắn đến quản trị viên.\n\r Vui lòng đợi phản hồi.", "Thành công");
                         }
                         catch (Exception ex)
@@ -939,7 +1300,22 @@ namespace Login
                 }
 
             }
+            if (panel5.Controls.Count == 0)
+            {
+                Panel panel = new Panel();
+                panel5.Controls.Add(panel);
+                panel.Dock = DockStyle.Top;
+                panel.BringToFront();
+                panel.Height = 216;
+                panel.AutoSize = true;
 
+                Label binhluan = new Label();
+                binhluan.Text = "Hiện không tồn tại bình luận của người dùng. Bạn hãy bình luận giúp truyện nhé!";
+                binhluan.Font = new Font("League Spartan", 16, FontStyle.Regular);
+                binhluan.AutoSize = true;
+
+                panel.Controls.Add(binhluan);
+            }
 
         }
 
@@ -1050,7 +1426,7 @@ namespace Login
                 DocumentReference collectionRef = db.Collection("Truyen").Document(id);
                 DocumentSnapshot snapshot = await collectionRef.GetSnapshotAsync();
 
-                int So_binhluan = snapshot.GetValue<int>("Danh_gia");
+                int So_binhluan = snapshot.GetValue<int>("Binh_luan");
 
                 So_binhluan++;
 
@@ -1160,8 +1536,9 @@ namespace Login
                 panel1.Controls.Add(tableLayoutPanel2);
                 tableLayoutPanel2.Dock = DockStyle.Bottom;
                 tableLayoutPanel2.RowCount = 1;
-                tableLayoutPanel2.ColumnCount = 3;
-                tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 76));
+                tableLayoutPanel2.ColumnCount = 4;
+                tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 64));
+                tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 12));
                 tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 12));
                 tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 12));
 
@@ -1174,7 +1551,7 @@ namespace Login
                 content.BringToFront();
 
                 IconButton btnLike = new IconButton();
-                tableLayoutPanel2.Controls.Add(btnLike, 1, 0);
+                tableLayoutPanel2.Controls.Add(btnLike, 2, 0);
                 btnLike.Dock = DockStyle.Fill;
                 btnLike.Font = new Font("League Spartan", 12, FontStyle.Regular);
                 btnLike.IconChar = IconChar.Heart;
@@ -1196,9 +1573,33 @@ namespace Login
                     btnLike.ForeColor = System.Drawing.Color.Red;
                 };
 
+                IconButton btndelete = new IconButton();
+                tableLayoutPanel2.Controls.Add(btndelete, 1, 0);
+                btndelete.Dock = DockStyle.Fill;
+                btndelete.Font = new Font("League Spartan", 12, FontStyle.Regular);
+                btndelete.IconChar = IconChar.Trash;
+                btndelete.IconSize = 30;
+                btndelete.Text = "Xóa";
+                btndelete.TextAlign = ContentAlignment.MiddleRight;
+                btndelete.TextImageRelation = TextImageRelation.ImageBeforeText;
+                btndelete.Click += async (s, ev) =>
+                {
+                    int role = 0;
+                    FirebaseResponse res7 = await client.GetAsync("Nguoi_dung/" + user.User.Uid + "/Vaitro");
+                    role = res7.ResultAs<int>();
+                    if (role == 0)
+                    {
+                        await client.DeleteAsync("Truyen/" + idTruyen + "/Binh_luan/" + dembl);
+                        panel.Visible = false;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Bạn không có quyền xóa bình luận!");
+                    }
+                };
 
                 IconButton btnReport = new IconButton();
-                tableLayoutPanel2.Controls.Add(btnReport, 2, 0);
+                tableLayoutPanel2.Controls.Add(btnReport, 3, 0);
                 btnReport.Dock = DockStyle.Fill;
                 btnReport.Font = new Font("League Spartan", 12, FontStyle.Regular);
                 btnReport.IconChar = IconChar.Flag;
@@ -1208,6 +1609,7 @@ namespace Login
                 btnReport.TextImageRelation = TextImageRelation.ImageBeforeText;
                 btnReport.Click += async (s, ev) =>
                 {
+                    //Hàm click code ở đây 
                     //Hàm click code ở đây 
                     if (user.User.Info.Uid != binhluan.ID_nguoidung)
                     {
@@ -1234,6 +1636,43 @@ namespace Login
                             SmtpServer.EnableSsl = true;
 
                             SmtpServer.Send(mail);
+                            FirebaseResponse re = await client.GetAsync("Vi_pham/");
+                            if (re.Body == "null")
+                            {
+                                Dictionary<string, string> data = new Dictionary<string, string> {
+                                    {"Id_bi_tocao", binhluan.ID_nguoidung.ToString() },
+                                    {"Noi_dung_to_cao", "Tên người bình luận: " + res6.ResultAs<string>() +
+                                        "bị báo cáo bởi người dùng " + user.User.Info.Uid + " có tên là " + user.User.Info.DisplayName + ". Hãy kiểm tra nội " +
+                                            $"dung bình luận này trong " +
+                                            "truyện " + nameTruyen + ". Nội dung bình luận: " + binhluan.Noi_dung },
+                                    {"So_lan_canh_cao", "0" }
+                                };
+                                await client.SetAsync("Vi_pham/001", data);
+                            }
+                            else
+                            {
+                                var dict1 = JsonConvert.DeserializeObject<Dictionary<string, object>>(re.Body);
+                                int dem1 = 0;
+                                foreach (var j in dict1)
+                                {
+                                    dem1 = Convert.ToInt32(j.Key);
+                                }
+                                string report = "";
+                                for (int j = 0; j < 3 - dem1.ToString().Length; j++)
+                                {
+                                    report += "0";
+                                }
+                                report += dem1.ToString();
+                                Dictionary<string, string> data = new Dictionary<string, string> {
+                                    {"Id_bi_tocao", binhluan.ID_nguoidung.ToString() },
+                                    {"Noi_dung_to_cao", "Tên người bình luận: " + res6.ResultAs<string>() +
+                                        "bị báo cáo bởi người dùng " + user.User.Info.Uid + " có tên là " + user.User.Info.DisplayName + ". Hãy kiểm tra nội " +
+                                            $"dung bình luận này trong " +
+                                            "truyện " + nameTruyen + ". Nội dung bình luận: " + binhluan.Noi_dung },
+                                    {"So_lan_canh_cao", "0" }
+                                };
+                                await client.SetAsync("Vi_pham/" + report, data);
+                            }
                             MessageBox.Show("Đã gửi tin nhắn đến quản trị viên.\n\r Vui lòng đợi phản hồi.", "Thành công");
                         }
                         catch (Exception ex)
@@ -1256,7 +1695,22 @@ namespace Login
             {
                 MessageBox.Show("Bạn chưa nhập gì cả!");
             }
-            
+            if (panel5.Controls.Count == 0)
+            {
+                Panel panel = new Panel();
+                panel5.Controls.Add(panel);
+                panel.Dock = DockStyle.Top;
+                panel.BringToFront();
+                panel.Height = 216;
+                panel.AutoSize = true;
+
+                Label binhluan = new Label();
+                binhluan.Text = "Hiện không tồn tại bình luận của người dùng. Bạn hãy bình luận giúp truyện nhé!";
+                binhluan.Font = new Font("League Spartan", 16, FontStyle.Regular);
+                binhluan.AutoSize = true;
+
+                panel.Controls.Add(binhluan);
+            }
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -1304,6 +1758,24 @@ namespace Login
         {
             CRUD_lsd cRUD_Lsd = new CRUD_lsd();
             await cRUD_Lsd.Capnhat_lichsudoc(user.User.Uid, currentChap, idTruyen);
+            FirestoreDb db = FirestoreDb.Create("healtruyen");
+            //truy xuất đến idtruyen 
+            DocumentReference docReference = db.Collection("Truyen").Document(idTruyen);
+            CollectionReference truyen = db.Collection("Truyen");
+            //lấy dữ liệu truyện ra
+            DocumentSnapshot snapshot = await docReference.GetSnapshotAsync();
+            int soluotxem = 0;
+            if (snapshot.Exists)
+            {
+                Novel novel = snapshot.ConvertTo<Novel>();
+                soluotxem = novel.numRead + 1;
+            }
+            Dictionary<string, object> updates = new Dictionary<string, object>
+            {
+                { "Luot_xem", soluotxem }
+            };
+            DocumentReference doc = truyen.Document(idTruyen);
+            await doc.UpdateAsync(updates);
             this.Close();
         }
 
@@ -1311,6 +1783,24 @@ namespace Login
         {
             CRUD_lsd cRUD_Lsd = new CRUD_lsd();
             await cRUD_Lsd.Capnhat_lichsudoc(user.User.Uid, currentChap, idTruyen);
+            FirestoreDb db = FirestoreDb.Create("healtruyen");
+            //truy xuất đến idtruyen 
+            DocumentReference docReference = db.Collection("Truyen").Document(idTruyen);
+            CollectionReference truyen = db.Collection("Truyen");
+            //lấy dữ liệu truyện ra
+            DocumentSnapshot snapshot = await docReference.GetSnapshotAsync();
+            int soluotxem = 0;
+            if (snapshot.Exists)
+            {
+                Novel novel = snapshot.ConvertTo<Novel>();
+                soluotxem = novel.numRead + 1;
+            }
+            Dictionary<string, object> updates = new Dictionary<string, object>
+            {
+                { "Luot_xem", soluotxem }
+            };
+            DocumentReference doc = truyen.Document(idTruyen);
+            await doc.UpdateAsync(updates);
             this.Close();
         }
     }

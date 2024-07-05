@@ -89,9 +89,9 @@
             this.childFormPanel.Controls.Add(this.panelList1);
             this.childFormPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.childFormPanel.Location = new System.Drawing.Point(0, 0);
-            this.childFormPanel.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.childFormPanel.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.childFormPanel.Name = "childFormPanel";
-            this.childFormPanel.Size = new System.Drawing.Size(875, 523);
+            this.childFormPanel.Size = new System.Drawing.Size(1312, 805);
             this.childFormPanel.TabIndex = 2;
             // 
             // panelList1
@@ -103,9 +103,9 @@
             this.panelList1.Controls.Add(this.labelrank1);
             this.panelList1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelList1.Location = new System.Drawing.Point(0, 0);
-            this.panelList1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.panelList1.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.panelList1.Name = "panelList1";
-            this.panelList1.Size = new System.Drawing.Size(858, 583);
+            this.panelList1.Size = new System.Drawing.Size(1286, 970);
             this.panelList1.TabIndex = 1;
             this.panelList1.Visible = false;
             // 
@@ -117,10 +117,9 @@
             this.panel3.Controls.Add(this.tableLayoutPanel4);
             this.panel3.Controls.Add(this.label6);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 190);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2);
+            this.panel3.Location = new System.Drawing.Point(0, 317);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(858, 393);
+            this.panel3.Size = new System.Drawing.Size(1286, 653);
             this.panel3.TabIndex = 2;
             // 
             // panel5
@@ -130,10 +129,9 @@
             this.panel5.Controls.Add(this.tableLayoutPanel6);
             this.panel5.Controls.Add(this.label9);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel5.Location = new System.Drawing.Point(0, 190);
-            this.panel5.Margin = new System.Windows.Forms.Padding(2);
+            this.panel5.Location = new System.Drawing.Point(0, 317);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(858, 203);
+            this.panel5.Size = new System.Drawing.Size(1286, 336);
             this.panel5.TabIndex = 2;
             // 
             // tableLayoutPanel6
@@ -146,12 +144,12 @@
             this.tableLayoutPanel6.Controls.Add(this.pictureBox3, 0, 0);
             this.tableLayoutPanel6.Controls.Add(this.panel6, 1, 0);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(0, 28);
-            this.tableLayoutPanel6.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(0, 41);
+            this.tableLayoutPanel6.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 1;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(858, 175);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(1286, 295);
             this.tableLayoutPanel6.TabIndex = 1;
             // 
             // pictureBox3
@@ -159,10 +157,9 @@
             this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
             this.pictureBox3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox3.Image = global::Login.Properties.Resources.cover1;
-            this.pictureBox3.Location = new System.Drawing.Point(2, 2);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox3.Location = new System.Drawing.Point(3, 3);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(124, 171);
+            this.pictureBox3.Size = new System.Drawing.Size(186, 289);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 0;
             this.pictureBox3.TabStop = false;
@@ -175,10 +172,10 @@
             this.panel6.Controls.Add(this.label7);
             this.panel6.Controls.Add(this.label8);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel6.Location = new System.Drawing.Point(130, 3);
-            this.panel6.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.panel6.Location = new System.Drawing.Point(195, 5);
+            this.panel6.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(726, 169);
+            this.panel6.Size = new System.Drawing.Size(1088, 285);
             this.panel6.TabIndex = 1;
             // 
             // tableLayoutPanel7
@@ -192,13 +189,12 @@
             this.tableLayoutPanel7.Controls.Add(this.iconButton6, 1, 0);
             this.tableLayoutPanel7.Controls.Add(this.button3, 2, 0);
             this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableLayoutPanel7.Location = new System.Drawing.Point(0, 114);
-            this.tableLayoutPanel7.Margin = new System.Windows.Forms.Padding(2);
+            this.tableLayoutPanel7.Location = new System.Drawing.Point(0, 175);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 1;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 55F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(726, 55);
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 85F));
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(1088, 85);
             this.tableLayoutPanel7.TabIndex = 3;
             // 
             // iconButton5
@@ -213,10 +209,10 @@
             this.iconButton5.IconChar = FontAwesome.Sharp.IconChar.UserEdit;
             this.iconButton5.IconColor = System.Drawing.Color.Black;
             this.iconButton5.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton5.Location = new System.Drawing.Point(2, 3);
-            this.iconButton5.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.iconButton5.Location = new System.Drawing.Point(3, 5);
+            this.iconButton5.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.iconButton5.Name = "iconButton5";
-            this.iconButton5.Size = new System.Drawing.Size(235, 49);
+            this.iconButton5.Size = new System.Drawing.Size(353, 75);
             this.iconButton5.TabIndex = 3;
             this.iconButton5.Text = "Kiếm Thần Vô Địch";
             this.iconButton5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -235,10 +231,10 @@
             this.iconButton6.IconChar = FontAwesome.Sharp.IconChar.ArrowCircleUp;
             this.iconButton6.IconColor = System.Drawing.Color.Black;
             this.iconButton6.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton6.Location = new System.Drawing.Point(241, 3);
-            this.iconButton6.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.iconButton6.Location = new System.Drawing.Point(362, 5);
+            this.iconButton6.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.iconButton6.Name = "iconButton6";
-            this.iconButton6.Size = new System.Drawing.Size(235, 49);
+            this.iconButton6.Size = new System.Drawing.Size(353, 75);
             this.iconButton6.TabIndex = 1;
             this.iconButton6.Text = "30000";
             this.iconButton6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -254,10 +250,9 @@
             this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("League Spartan", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.button3.Location = new System.Drawing.Point(480, 2);
-            this.button3.Margin = new System.Windows.Forms.Padding(2);
+            this.button3.Location = new System.Drawing.Point(721, 3);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(244, 51);
+            this.button3.Size = new System.Drawing.Size(364, 79);
             this.button3.TabIndex = 2;
             this.button3.Text = "Huyền Huyễn";
             this.button3.UseVisualStyleBackColor = false;
@@ -267,10 +262,9 @@
             this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
             this.label7.Dock = System.Windows.Forms.DockStyle.Top;
             this.label7.Font = new System.Drawing.Font("League Spartan", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label7.Location = new System.Drawing.Point(0, 32);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Location = new System.Drawing.Point(0, 49);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(726, 82);
+            this.label7.Size = new System.Drawing.Size(1088, 126);
             this.label7.TabIndex = 1;
             this.label7.Text = resources.GetString("label7.Text");
             // 
@@ -281,9 +275,8 @@
             this.label8.Dock = System.Windows.Forms.DockStyle.Top;
             this.label8.Font = new System.Drawing.Font("League Spartan", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label8.Location = new System.Drawing.Point(0, 0);
-            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(283, 32);
+            this.label8.Size = new System.Drawing.Size(432, 49);
             this.label8.TabIndex = 0;
             this.label8.Text = "Ta Có Thể Phục Chế Thiên Phú";
             // 
@@ -294,9 +287,8 @@
             this.label9.Dock = System.Windows.Forms.DockStyle.Top;
             this.label9.Font = new System.Drawing.Font("League Spartan", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label9.Location = new System.Drawing.Point(0, 0);
-            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(69, 28);
+            this.label9.Size = new System.Drawing.Size(100, 41);
             this.label9.TabIndex = 0;
             this.label9.Text = "Hạng 3";
             // 
@@ -310,12 +302,11 @@
             this.tableLayoutPanel4.Controls.Add(this.pictureBox2, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.panel4, 1, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(0, 28);
-            this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(2);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(0, 41);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(858, 162);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(1286, 276);
             this.tableLayoutPanel4.TabIndex = 1;
             // 
             // pictureBox2
@@ -323,10 +314,10 @@
             this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
             this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox2.Image = global::Login.Properties.Resources.cover1;
-            this.pictureBox2.Location = new System.Drawing.Point(2, 3);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.pictureBox2.Location = new System.Drawing.Point(3, 5);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(124, 156);
+            this.pictureBox2.Size = new System.Drawing.Size(186, 266);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
@@ -339,10 +330,9 @@
             this.panel4.Controls.Add(this.label4);
             this.panel4.Controls.Add(this.label5);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(130, 2);
-            this.panel4.Margin = new System.Windows.Forms.Padding(2);
+            this.panel4.Location = new System.Drawing.Point(195, 3);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(726, 158);
+            this.panel4.Size = new System.Drawing.Size(1088, 270);
             this.panel4.TabIndex = 1;
             // 
             // tableLayoutPanel5
@@ -356,13 +346,12 @@
             this.tableLayoutPanel5.Controls.Add(this.iconButton4, 1, 0);
             this.tableLayoutPanel5.Controls.Add(this.button2, 2, 0);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(0, 114);
-            this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(2);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(0, 175);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 1;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 44F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(726, 44);
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 68F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(1088, 68);
             this.tableLayoutPanel5.TabIndex = 3;
             // 
             // iconButton3
@@ -377,10 +366,10 @@
             this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.UserEdit;
             this.iconButton3.IconColor = System.Drawing.Color.Black;
             this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton3.Location = new System.Drawing.Point(2, 3);
-            this.iconButton3.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.iconButton3.Location = new System.Drawing.Point(3, 5);
+            this.iconButton3.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.iconButton3.Name = "iconButton3";
-            this.iconButton3.Size = new System.Drawing.Size(235, 38);
+            this.iconButton3.Size = new System.Drawing.Size(353, 58);
             this.iconButton3.TabIndex = 3;
             this.iconButton3.Text = "Kiếm Thần Vô Địch";
             this.iconButton3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -399,10 +388,10 @@
             this.iconButton4.IconChar = FontAwesome.Sharp.IconChar.ArrowCircleUp;
             this.iconButton4.IconColor = System.Drawing.Color.Black;
             this.iconButton4.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton4.Location = new System.Drawing.Point(241, 3);
-            this.iconButton4.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.iconButton4.Location = new System.Drawing.Point(362, 5);
+            this.iconButton4.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.iconButton4.Name = "iconButton4";
-            this.iconButton4.Size = new System.Drawing.Size(235, 38);
+            this.iconButton4.Size = new System.Drawing.Size(353, 58);
             this.iconButton4.TabIndex = 1;
             this.iconButton4.Text = "30000";
             this.iconButton4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -418,10 +407,9 @@
             this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("League Spartan", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.button2.Location = new System.Drawing.Point(480, 2);
-            this.button2.Margin = new System.Windows.Forms.Padding(2);
+            this.button2.Location = new System.Drawing.Point(721, 3);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(244, 40);
+            this.button2.Size = new System.Drawing.Size(364, 62);
             this.button2.TabIndex = 2;
             this.button2.Text = "Huyền Huyễn";
             this.button2.UseVisualStyleBackColor = false;
@@ -431,10 +419,9 @@
             this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
             this.label4.Dock = System.Windows.Forms.DockStyle.Top;
             this.label4.Font = new System.Drawing.Font("League Spartan", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label4.Location = new System.Drawing.Point(0, 32);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Location = new System.Drawing.Point(0, 49);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(726, 82);
+            this.label4.Size = new System.Drawing.Size(1088, 126);
             this.label4.TabIndex = 1;
             this.label4.Text = resources.GetString("label4.Text");
             // 
@@ -445,9 +432,8 @@
             this.label5.Dock = System.Windows.Forms.DockStyle.Top;
             this.label5.Font = new System.Drawing.Font("League Spartan", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label5.Location = new System.Drawing.Point(0, 0);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(283, 32);
+            this.label5.Size = new System.Drawing.Size(432, 49);
             this.label5.TabIndex = 0;
             this.label5.Text = "Ta Có Thể Phục Chế Thiên Phú";
             // 
@@ -458,9 +444,8 @@
             this.label6.Dock = System.Windows.Forms.DockStyle.Top;
             this.label6.Font = new System.Drawing.Font("League Spartan", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label6.Location = new System.Drawing.Point(0, 0);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(69, 28);
+            this.label6.Size = new System.Drawing.Size(101, 41);
             this.label6.TabIndex = 0;
             this.label6.Text = "Hạng 2";
             // 
@@ -474,12 +459,11 @@
             this.tableLayoutPanel2.Controls.Add(this.pictureBox1, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.panel2, 1, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 28);
-            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(2);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 41);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(858, 162);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1286, 276);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
             // pictureBox1
@@ -487,10 +471,10 @@
             this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Image = global::Login.Properties.Resources.cover1;
-            this.pictureBox1.Location = new System.Drawing.Point(2, 3);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.pictureBox1.Location = new System.Drawing.Point(3, 5);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(124, 156);
+            this.pictureBox1.Size = new System.Drawing.Size(186, 266);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -503,10 +487,9 @@
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(130, 2);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2);
+            this.panel2.Location = new System.Drawing.Point(195, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(726, 158);
+            this.panel2.Size = new System.Drawing.Size(1088, 270);
             this.panel2.TabIndex = 1;
             // 
             // tableLayoutPanel3
@@ -520,13 +503,12 @@
             this.tableLayoutPanel3.Controls.Add(this.iconButton1, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.button1, 2, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 114);
-            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(2);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 175);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 44F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(726, 44);
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 68F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(1088, 68);
             this.tableLayoutPanel3.TabIndex = 3;
             // 
             // iconButton2
@@ -541,10 +523,10 @@
             this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.UserEdit;
             this.iconButton2.IconColor = System.Drawing.Color.Black;
             this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton2.Location = new System.Drawing.Point(2, 3);
-            this.iconButton2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.iconButton2.Location = new System.Drawing.Point(3, 5);
+            this.iconButton2.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.iconButton2.Name = "iconButton2";
-            this.iconButton2.Size = new System.Drawing.Size(235, 38);
+            this.iconButton2.Size = new System.Drawing.Size(353, 58);
             this.iconButton2.TabIndex = 3;
             this.iconButton2.Text = "Kiếm Thần Vô Địch";
             this.iconButton2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -563,10 +545,10 @@
             this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.ArrowCircleUp;
             this.iconButton1.IconColor = System.Drawing.Color.Black;
             this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.Location = new System.Drawing.Point(241, 3);
-            this.iconButton1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.iconButton1.Location = new System.Drawing.Point(362, 5);
+            this.iconButton1.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(235, 38);
+            this.iconButton1.Size = new System.Drawing.Size(353, 58);
             this.iconButton1.TabIndex = 1;
             this.iconButton1.Text = "30000";
             this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -582,10 +564,9 @@
             this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("League Spartan", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.button1.Location = new System.Drawing.Point(480, 2);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Location = new System.Drawing.Point(721, 3);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(244, 40);
+            this.button1.Size = new System.Drawing.Size(364, 62);
             this.button1.TabIndex = 2;
             this.button1.Text = "Huyền Huyễn";
             this.button1.UseVisualStyleBackColor = false;
@@ -595,10 +576,9 @@
             this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
             this.label3.Dock = System.Windows.Forms.DockStyle.Top;
             this.label3.Font = new System.Drawing.Font("League Spartan", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label3.Location = new System.Drawing.Point(0, 32);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(0, 49);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(726, 82);
+            this.label3.Size = new System.Drawing.Size(1088, 126);
             this.label3.TabIndex = 1;
             this.label3.Text = resources.GetString("label3.Text");
             // 
@@ -609,9 +589,8 @@
             this.label2.Dock = System.Windows.Forms.DockStyle.Top;
             this.label2.Font = new System.Drawing.Font("League Spartan", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label2.Location = new System.Drawing.Point(0, 0);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(283, 32);
+            this.label2.Size = new System.Drawing.Size(432, 49);
             this.label2.TabIndex = 0;
             this.label2.Text = "Ta Có Thể Phục Chế Thiên Phú";
             // 
@@ -622,19 +601,18 @@
             this.labelrank1.Dock = System.Windows.Forms.DockStyle.Top;
             this.labelrank1.Font = new System.Drawing.Font("League Spartan", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.labelrank1.Location = new System.Drawing.Point(0, 0);
-            this.labelrank1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelrank1.Name = "labelrank1";
-            this.labelrank1.Size = new System.Drawing.Size(65, 28);
+            this.labelrank1.Size = new System.Drawing.Size(95, 41);
             this.labelrank1.TabIndex = 0;
             this.labelrank1.Text = "Hạng 1";
             // 
             // BXH_Doc_Nhieu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(875, 523);
+            this.ClientSize = new System.Drawing.Size(1312, 805);
             this.Controls.Add(this.childFormPanel);
-            this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.Name = "BXH_Doc_Nhieu";
             this.Text = "BXH_Doc_Nhieu";
             this.Load += new System.EventHandler(this.BXH_Doc_Nhieu_Load);

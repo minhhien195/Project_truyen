@@ -80,6 +80,7 @@ namespace Login
                         lbvaitro.Text = "Adminstration";
                         btnloi.Visible = false;
                         btnDuyet.Visible = true;
+                        btnXLVP.Visible = true;
                     }
                 }
                 catch (Exception ex)
@@ -124,10 +125,10 @@ namespace Login
             }
         }
 
-        private void btnKick_Click(object sender, EventArgs e)
+        private void btnXLVP_Click(object sender, EventArgs e)
         {
-            tb3 tb = new tb3();
-            tb.ShowDialog();
+            Xuli_vipham vp = new Xuli_vipham();
+            vp.Show();
         }
 
         private void btnsetting_Click(object sender, EventArgs e)
@@ -161,7 +162,7 @@ namespace Login
         {
             tc.change_color();
             this.Close();
-            tc.openChildForm(new InsertNovel());
+            tc.openChildForm(new InsertNovel(user));
         }
 
         private void btntbao_Click(object sender, EventArgs e)

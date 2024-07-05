@@ -29,9 +29,10 @@ namespace Login
         };
 
         string base64Text = "";
-        public InsertNovel()
+        public InsertNovel(UserCredential usercredials)
         {
             InitializeComponent();
+            this.user = usercredials;
         }
 
 
@@ -97,7 +98,7 @@ namespace Login
 
         }
 
-        private void btnDang_Click(object sender, EventArgs e)
+        private async void btnDang_Click(object sender, EventArgs e)
         {
             if (ibtninsertImage.Text == "Thêm ảnh truyện(.jpg, .png)" || ibtninsertImage.Text == "")
             {
@@ -138,7 +139,7 @@ namespace Login
                 && lbBC.Visible == false && lbLP.Visible == false && lbTT.Visible == false)
             {
                 string[] theloai = new string[] { cbTheloai.Text, cbBoicanh.Text, cbLuuphai.Text };
-                Interact.createNovel(base64Text, "0", txtTacgia.Text, txtTentruyen.Text.ToUpper(), theloai, rtbGioithieu.Text, "Dang_truyen");
+                await Interact.createNovel(base64Text, "0", txtTacgia.Text, txtTentruyen.Text.ToUpper(), theloai, rtbGioithieu.Text, "Dang_truyen", user.User.Uid);
 
                 upload_realtime();
 
@@ -147,7 +148,7 @@ namespace Login
                 btnInsert.ForeColor = Color.Black;
                 btnInserted.BackColor = Color.FromArgb(191, 44, 36);
                 btnInserted.ForeColor = Color.White;
-                openChildForm(new Inserted());
+                openChildForm(new Inserted(user));
             }
             
 
@@ -248,7 +249,7 @@ namespace Login
                 btnInsert.ForeColor = Color.Black;
                 btnInserted.BackColor = Color.FromArgb(191, 44, 36);
                 btnInserted.ForeColor = Color.White;
-                openChildForm(new Inserted());
+                openChildForm(new Inserted(user));
             }  
         }
 
