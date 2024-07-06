@@ -154,7 +154,7 @@ namespace Login
                     SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
 
                     mail.From = new MailAddress(_from);
-                    mail.To.Add("22520415@gm.uit.edu.vn");
+                    mail.To.Add("22520080@gm.uit.edu.vn");
                     if (cbBoxchude.Text != "    Chọn chủ đề" && richTextBox1.Text != "Khác..." && richTextBox1.Text != "")
                         mail.Subject = $"{cbBoxchude.Text} - {richTextBox1.Text}";
                     else if (cbBoxchude.Text != "    Chọn chủ đề" && richTextBox1.Text == "Khác..." && richTextBox1.Text == "")

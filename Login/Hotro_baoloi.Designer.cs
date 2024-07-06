@@ -329,7 +329,7 @@
             this.panelHotro_baoloi.Controls.Add(this.panelReturn);
             this.panelHotro_baoloi.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelHotro_baoloi.Location = new System.Drawing.Point(0, 0);
-            this.panelHotro_baoloi.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.panelHotro_baoloi.Margin = new System.Windows.Forms.Padding(1);
             this.panelHotro_baoloi.Name = "panelHotro_baoloi";
             this.panelHotro_baoloi.Size = new System.Drawing.Size(678, 549);
             this.panelHotro_baoloi.TabIndex = 0;
@@ -341,7 +341,7 @@
             this.panelVandethuonggap.Controls.Add(this.lbVande);
             this.panelVandethuonggap.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelVandethuonggap.Location = new System.Drawing.Point(0, 323);
-            this.panelVandethuonggap.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.panelVandethuonggap.Margin = new System.Windows.Forms.Padding(1);
             this.panelVandethuonggap.Name = "panelVandethuonggap";
             this.panelVandethuonggap.Size = new System.Drawing.Size(661, 1808);
             this.panelVandethuonggap.TabIndex = 6;
@@ -360,7 +360,7 @@
             this.paneNoidungvande.Controls.Add(this.ibtnQuanlyTK);
             this.paneNoidungvande.Dock = System.Windows.Forms.DockStyle.Fill;
             this.paneNoidungvande.Location = new System.Drawing.Point(0, 47);
-            this.paneNoidungvande.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.paneNoidungvande.Margin = new System.Windows.Forms.Padding(1);
             this.paneNoidungvande.Name = "paneNoidungvande";
             this.paneNoidungvande.Padding = new System.Windows.Forms.Padding(47, 0, 47, 0);
             this.paneNoidungvande.Size = new System.Drawing.Size(661, 1761);
@@ -373,7 +373,7 @@
             this.panelSubmenuBaocaosuco.Controls.Add(this.ibtnBaocaosuco);
             this.panelSubmenuBaocaosuco.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelSubmenuBaocaosuco.Location = new System.Drawing.Point(47, 1637);
-            this.panelSubmenuBaocaosuco.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.panelSubmenuBaocaosuco.Margin = new System.Windows.Forms.Padding(1);
             this.panelSubmenuBaocaosuco.Name = "panelSubmenuBaocaosuco";
             this.panelSubmenuBaocaosuco.Size = new System.Drawing.Size(567, 124);
             this.panelSubmenuBaocaosuco.TabIndex = 8;
@@ -388,7 +388,7 @@
             this.panelSubmenuHDBaocao.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelSubmenuHDBaocao.Font = new System.Drawing.Font("League Spartan", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelSubmenuHDBaocao.Location = new System.Drawing.Point(0, 38);
-            this.panelSubmenuHDBaocao.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.panelSubmenuHDBaocao.Margin = new System.Windows.Forms.Padding(1);
             this.panelSubmenuHDBaocao.Name = "panelSubmenuHDBaocao";
             this.panelSubmenuHDBaocao.Size = new System.Drawing.Size(567, 86);
             this.panelSubmenuHDBaocao.TabIndex = 20;
@@ -400,7 +400,7 @@
             this.panel63.Controls.Add(this.label2);
             this.panel63.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel63.Location = new System.Drawing.Point(0, 64);
-            this.panel63.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.panel63.Margin = new System.Windows.Forms.Padding(1);
             this.panel63.Name = "panel63";
             this.panel63.Size = new System.Drawing.Size(567, 22);
             this.panel63.TabIndex = 28;
@@ -434,7 +434,7 @@
             this.panel55.Controls.Add(this.label9);
             this.panel55.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel55.Location = new System.Drawing.Point(0, 42);
-            this.panel55.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.panel55.Margin = new System.Windows.Forms.Padding(1);
             this.panel55.Name = "panel55";
             this.panel55.Size = new System.Drawing.Size(567, 22);
             this.panel55.TabIndex = 9;
@@ -467,7 +467,7 @@
             this.panel52.Controls.Add(this.label11);
             this.panel52.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel52.Location = new System.Drawing.Point(0, 21);
-            this.panel52.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.panel52.Margin = new System.Windows.Forms.Padding(1);
             this.panel52.Name = "panel52";
             this.panel52.Size = new System.Drawing.Size(567, 21);
             this.panel52.TabIndex = 9;
@@ -499,7 +499,7 @@
             this.panel53.Controls.Add(this.lbSuco);
             this.panel53.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel53.Location = new System.Drawing.Point(0, 0);
-            this.panel53.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.panel53.Margin = new System.Windows.Forms.Padding(1);
             this.panel53.Name = "panel53";
             this.panel53.Size = new System.Drawing.Size(567, 21);
             this.panel53.TabIndex = 9;
@@ -529,7 +529,7 @@
             this.ibtnBaocaosuco.IconSize = 32;
             this.ibtnBaocaosuco.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.ibtnBaocaosuco.Location = new System.Drawing.Point(0, 0);
-            this.ibtnBaocaosuco.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.ibtnBaocaosuco.Margin = new System.Windows.Forms.Padding(1);
             this.ibtnBaocaosuco.Name = "ibtnBaocaosuco";
             this.ibtnBaocaosuco.Size = new System.Drawing.Size(567, 38);
             this.ibtnBaocaosuco.TabIndex = 19;
@@ -553,7 +553,7 @@
             this.ibtnBaocao.IconSize = 32;
             this.ibtnBaocao.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.ibtnBaocao.Location = new System.Drawing.Point(47, 1599);
-            this.ibtnBaocao.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.ibtnBaocao.Margin = new System.Windows.Forms.Padding(1);
             this.ibtnBaocao.Name = "ibtnBaocao";
             this.ibtnBaocao.Size = new System.Drawing.Size(567, 38);
             this.ibtnBaocao.TabIndex = 7;
@@ -570,7 +570,7 @@
             this.panelSubmenuChat.Controls.Add(this.ibtnSudungChat);
             this.panelSubmenuChat.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelSubmenuChat.Location = new System.Drawing.Point(47, 1497);
-            this.panelSubmenuChat.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.panelSubmenuChat.Margin = new System.Windows.Forms.Padding(1);
             this.panelSubmenuChat.Name = "panelSubmenuChat";
             this.panelSubmenuChat.Size = new System.Drawing.Size(567, 102);
             this.panelSubmenuChat.TabIndex = 6;
@@ -584,7 +584,7 @@
             this.panelSubmenuSudungchat.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelSubmenuSudungchat.Font = new System.Drawing.Font("League Spartan", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelSubmenuSudungchat.Location = new System.Drawing.Point(0, 38);
-            this.panelSubmenuSudungchat.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.panelSubmenuSudungchat.Margin = new System.Windows.Forms.Padding(1);
             this.panelSubmenuSudungchat.Name = "panelSubmenuSudungchat";
             this.panelSubmenuSudungchat.Size = new System.Drawing.Size(567, 64);
             this.panelSubmenuSudungchat.TabIndex = 19;
@@ -596,7 +596,7 @@
             this.panel57.Controls.Add(this.label4);
             this.panel57.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel57.Location = new System.Drawing.Point(0, 42);
-            this.panel57.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.panel57.Margin = new System.Windows.Forms.Padding(1);
             this.panel57.Name = "panel57";
             this.panel57.Size = new System.Drawing.Size(567, 22);
             this.panel57.TabIndex = 9;
@@ -629,7 +629,7 @@
             this.panel56.Controls.Add(this.label6);
             this.panel56.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel56.Location = new System.Drawing.Point(0, 21);
-            this.panel56.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.panel56.Margin = new System.Windows.Forms.Padding(1);
             this.panel56.Name = "panel56";
             this.panel56.Size = new System.Drawing.Size(567, 21);
             this.panel56.TabIndex = 9;
@@ -661,7 +661,7 @@
             this.panel47.Controls.Add(this.label7);
             this.panel47.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel47.Location = new System.Drawing.Point(0, 0);
-            this.panel47.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.panel47.Margin = new System.Windows.Forms.Padding(1);
             this.panel47.Name = "panel47";
             this.panel47.Size = new System.Drawing.Size(567, 21);
             this.panel47.TabIndex = 8;
@@ -691,7 +691,7 @@
             this.ibtnSudungChat.IconSize = 32;
             this.ibtnSudungChat.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.ibtnSudungChat.Location = new System.Drawing.Point(0, 0);
-            this.ibtnSudungChat.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.ibtnSudungChat.Margin = new System.Windows.Forms.Padding(1);
             this.ibtnSudungChat.Name = "ibtnSudungChat";
             this.ibtnSudungChat.Size = new System.Drawing.Size(567, 38);
             this.ibtnSudungChat.TabIndex = 18;
@@ -715,7 +715,7 @@
             this.ibtnChat.IconSize = 32;
             this.ibtnChat.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.ibtnChat.Location = new System.Drawing.Point(47, 1459);
-            this.ibtnChat.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.ibtnChat.Margin = new System.Windows.Forms.Padding(1);
             this.ibtnChat.Name = "ibtnChat";
             this.ibtnChat.Size = new System.Drawing.Size(567, 38);
             this.ibtnChat.TabIndex = 5;
@@ -744,7 +744,7 @@
             this.paneSubmenuTuongtactruyen.Controls.Add(this.ibtnTimkiemtruyen);
             this.paneSubmenuTuongtactruyen.Dock = System.Windows.Forms.DockStyle.Top;
             this.paneSubmenuTuongtactruyen.Location = new System.Drawing.Point(47, 498);
-            this.paneSubmenuTuongtactruyen.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.paneSubmenuTuongtactruyen.Margin = new System.Windows.Forms.Padding(1);
             this.paneSubmenuTuongtactruyen.Name = "paneSubmenuTuongtactruyen";
             this.paneSubmenuTuongtactruyen.Size = new System.Drawing.Size(567, 961);
             this.paneSubmenuTuongtactruyen.TabIndex = 4;
@@ -759,7 +759,7 @@
             this.panelSubmenuLichsudoc.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelSubmenuLichsudoc.Font = new System.Drawing.Font("League Spartan", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelSubmenuLichsudoc.Location = new System.Drawing.Point(0, 876);
-            this.panelSubmenuLichsudoc.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.panelSubmenuLichsudoc.Margin = new System.Windows.Forms.Padding(1);
             this.panelSubmenuLichsudoc.Name = "panelSubmenuLichsudoc";
             this.panelSubmenuLichsudoc.Size = new System.Drawing.Size(567, 85);
             this.panelSubmenuLichsudoc.TabIndex = 18;
@@ -771,7 +771,7 @@
             this.panel65.Controls.Add(this.lbLSDBuoc3);
             this.panel65.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel65.Location = new System.Drawing.Point(0, 64);
-            this.panel65.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.panel65.Margin = new System.Windows.Forms.Padding(1);
             this.panel65.Name = "panel65";
             this.panel65.Size = new System.Drawing.Size(567, 21);
             this.panel65.TabIndex = 29;
@@ -804,7 +804,7 @@
             this.panel54.Controls.Add(this.lbLSDBuoc2);
             this.panel54.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel54.Location = new System.Drawing.Point(0, 42);
-            this.panel54.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.panel54.Margin = new System.Windows.Forms.Padding(1);
             this.panel54.Name = "panel54";
             this.panel54.Size = new System.Drawing.Size(567, 22);
             this.panel54.TabIndex = 9;
@@ -837,7 +837,7 @@
             this.panel51.Controls.Add(this.lbLSDBuoc1);
             this.panel51.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel51.Location = new System.Drawing.Point(0, 21);
-            this.panel51.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.panel51.Margin = new System.Windows.Forms.Padding(1);
             this.panel51.Name = "panel51";
             this.panel51.Size = new System.Drawing.Size(567, 21);
             this.panel51.TabIndex = 9;
@@ -869,7 +869,7 @@
             this.panel50.Controls.Add(this.lbLichsudoc);
             this.panel50.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel50.Location = new System.Drawing.Point(0, 0);
-            this.panel50.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.panel50.Margin = new System.Windows.Forms.Padding(1);
             this.panel50.Name = "panel50";
             this.panel50.Size = new System.Drawing.Size(567, 21);
             this.panel50.TabIndex = 9;
@@ -899,7 +899,7 @@
             this.ibtnLichsudoc.IconSize = 32;
             this.ibtnLichsudoc.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.ibtnLichsudoc.Location = new System.Drawing.Point(0, 838);
-            this.ibtnLichsudoc.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.ibtnLichsudoc.Margin = new System.Windows.Forms.Padding(1);
             this.ibtnLichsudoc.Name = "ibtnLichsudoc";
             this.ibtnLichsudoc.Size = new System.Drawing.Size(567, 38);
             this.ibtnLichsudoc.TabIndex = 17;
@@ -919,7 +919,7 @@
             this.panelSubmenuDanhdau.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelSubmenuDanhdau.Font = new System.Drawing.Font("League Spartan", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelSubmenuDanhdau.Location = new System.Drawing.Point(0, 753);
-            this.panelSubmenuDanhdau.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.panelSubmenuDanhdau.Margin = new System.Windows.Forms.Padding(1);
             this.panelSubmenuDanhdau.Name = "panelSubmenuDanhdau";
             this.panelSubmenuDanhdau.Size = new System.Drawing.Size(567, 85);
             this.panelSubmenuDanhdau.TabIndex = 16;
@@ -931,7 +931,7 @@
             this.panel64.Controls.Add(this.lbDDBuoc3);
             this.panel64.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel64.Location = new System.Drawing.Point(0, 64);
-            this.panel64.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.panel64.Margin = new System.Windows.Forms.Padding(1);
             this.panel64.Name = "panel64";
             this.panel64.Size = new System.Drawing.Size(567, 21);
             this.panel64.TabIndex = 29;
@@ -964,7 +964,7 @@
             this.panel48.Controls.Add(this.lbDDBuoc2);
             this.panel48.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel48.Location = new System.Drawing.Point(0, 43);
-            this.panel48.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.panel48.Margin = new System.Windows.Forms.Padding(1);
             this.panel48.Name = "panel48";
             this.panel48.Size = new System.Drawing.Size(567, 21);
             this.panel48.TabIndex = 9;
@@ -997,7 +997,7 @@
             this.panel49.Controls.Add(this.lbDDBuoc1);
             this.panel49.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel49.Location = new System.Drawing.Point(0, 21);
-            this.panel49.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.panel49.Margin = new System.Windows.Forms.Padding(1);
             this.panel49.Name = "panel49";
             this.panel49.Size = new System.Drawing.Size(567, 22);
             this.panel49.TabIndex = 9;
@@ -1029,7 +1029,7 @@
             this.panel46.Controls.Add(this.lbDanhdau);
             this.panel46.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel46.Location = new System.Drawing.Point(0, 0);
-            this.panel46.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.panel46.Margin = new System.Windows.Forms.Padding(1);
             this.panel46.Name = "panel46";
             this.panel46.Size = new System.Drawing.Size(567, 21);
             this.panel46.TabIndex = 7;
@@ -1059,7 +1059,7 @@
             this.ibtnDanhdau.IconSize = 32;
             this.ibtnDanhdau.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.ibtnDanhdau.Location = new System.Drawing.Point(0, 715);
-            this.ibtnDanhdau.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.ibtnDanhdau.Margin = new System.Windows.Forms.Padding(1);
             this.ibtnDanhdau.Name = "ibtnDanhdau";
             this.ibtnDanhdau.Size = new System.Drawing.Size(567, 38);
             this.ibtnDanhdau.TabIndex = 15;
@@ -1081,7 +1081,7 @@
             this.panelSubmenuThemAlbum.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelSubmenuThemAlbum.Font = new System.Drawing.Font("League Spartan", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelSubmenuThemAlbum.Location = new System.Drawing.Point(0, 577);
-            this.panelSubmenuThemAlbum.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.panelSubmenuThemAlbum.Margin = new System.Windows.Forms.Padding(1);
             this.panelSubmenuThemAlbum.Name = "panelSubmenuThemAlbum";
             this.panelSubmenuThemAlbum.Size = new System.Drawing.Size(567, 138);
             this.panelSubmenuThemAlbum.TabIndex = 14;
@@ -1095,7 +1095,7 @@
             this.panel61.Controls.Add(this.ibtnThongbao);
             this.panel61.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel61.Location = new System.Drawing.Point(0, 105);
-            this.panel61.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.panel61.Margin = new System.Windows.Forms.Padding(1);
             this.panel61.Name = "panel61";
             this.panel61.Size = new System.Drawing.Size(567, 33);
             this.panel61.TabIndex = 26;
@@ -1143,7 +1143,7 @@
             this.ibtnThongbao.IconSize = 25;
             this.ibtnThongbao.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ibtnThongbao.Location = new System.Drawing.Point(101, 1);
-            this.ibtnThongbao.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.ibtnThongbao.Margin = new System.Windows.Forms.Padding(1);
             this.ibtnThongbao.Name = "ibtnThongbao";
             this.ibtnThongbao.Size = new System.Drawing.Size(31, 31);
             this.ibtnThongbao.TabIndex = 12;
@@ -1156,7 +1156,7 @@
             this.panel43.Controls.Add(this.lbTALBuoc4);
             this.panel43.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel43.Location = new System.Drawing.Point(0, 84);
-            this.panel43.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.panel43.Margin = new System.Windows.Forms.Padding(1);
             this.panel43.Name = "panel43";
             this.panel43.Size = new System.Drawing.Size(567, 21);
             this.panel43.TabIndex = 30;
@@ -1189,7 +1189,7 @@
             this.panel42.Controls.Add(this.lbTALBuoc3);
             this.panel42.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel42.Location = new System.Drawing.Point(0, 63);
-            this.panel42.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.panel42.Margin = new System.Windows.Forms.Padding(1);
             this.panel42.Name = "panel42";
             this.panel42.Size = new System.Drawing.Size(567, 21);
             this.panel42.TabIndex = 29;
@@ -1223,7 +1223,7 @@
             this.panel45.Controls.Add(this.lbTALBuoc2);
             this.panel45.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel45.Location = new System.Drawing.Point(0, 42);
-            this.panel45.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.panel45.Margin = new System.Windows.Forms.Padding(1);
             this.panel45.Name = "panel45";
             this.panel45.Size = new System.Drawing.Size(567, 21);
             this.panel45.TabIndex = 31;
@@ -1256,7 +1256,7 @@
             this.panel44.Controls.Add(this.lbTALBuoc1);
             this.panel44.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel44.Location = new System.Drawing.Point(0, 21);
-            this.panel44.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.panel44.Margin = new System.Windows.Forms.Padding(1);
             this.panel44.Name = "panel44";
             this.panel44.Size = new System.Drawing.Size(567, 21);
             this.panel44.TabIndex = 31;
@@ -1288,7 +1288,7 @@
             this.panel41.Controls.Add(this.lbThemAlbum);
             this.panel41.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel41.Location = new System.Drawing.Point(0, 0);
-            this.panel41.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.panel41.Margin = new System.Windows.Forms.Padding(1);
             this.panel41.Name = "panel41";
             this.panel41.Size = new System.Drawing.Size(567, 21);
             this.panel41.TabIndex = 28;
@@ -1318,7 +1318,7 @@
             this.ibtnThemAlbum.IconSize = 32;
             this.ibtnThemAlbum.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.ibtnThemAlbum.Location = new System.Drawing.Point(0, 539);
-            this.ibtnThemAlbum.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.ibtnThemAlbum.Margin = new System.Windows.Forms.Padding(1);
             this.ibtnThemAlbum.Name = "ibtnThemAlbum";
             this.ibtnThemAlbum.Size = new System.Drawing.Size(567, 38);
             this.ibtnThemAlbum.TabIndex = 13;
@@ -1339,7 +1339,7 @@
             this.panelSubmenuDecu.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelSubmenuDecu.Font = new System.Drawing.Font("League Spartan", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelSubmenuDecu.Location = new System.Drawing.Point(0, 432);
-            this.panelSubmenuDecu.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.panelSubmenuDecu.Margin = new System.Windows.Forms.Padding(1);
             this.panelSubmenuDecu.Name = "panelSubmenuDecu";
             this.panelSubmenuDecu.Size = new System.Drawing.Size(567, 107);
             this.panelSubmenuDecu.TabIndex = 12;
@@ -1351,7 +1351,7 @@
             this.panel62.Controls.Add(this.lbDCBuoc4);
             this.panel62.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel62.Location = new System.Drawing.Point(0, 86);
-            this.panel62.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.panel62.Margin = new System.Windows.Forms.Padding(1);
             this.panel62.Name = "panel62";
             this.panel62.Size = new System.Drawing.Size(567, 21);
             this.panel62.TabIndex = 27;
@@ -1384,7 +1384,7 @@
             this.panel38.Controls.Add(this.lbDCBuoc3);
             this.panel38.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel38.Location = new System.Drawing.Point(0, 64);
-            this.panel38.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.panel38.Margin = new System.Windows.Forms.Padding(1);
             this.panel38.Name = "panel38";
             this.panel38.Size = new System.Drawing.Size(567, 22);
             this.panel38.TabIndex = 26;
@@ -1418,7 +1418,7 @@
             this.panel40.Controls.Add(this.lbDCBuoc2);
             this.panel40.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel40.Location = new System.Drawing.Point(0, 42);
-            this.panel40.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.panel40.Margin = new System.Windows.Forms.Padding(1);
             this.panel40.Name = "panel40";
             this.panel40.Size = new System.Drawing.Size(567, 22);
             this.panel40.TabIndex = 27;
@@ -1451,7 +1451,7 @@
             this.panel39.Controls.Add(this.lbDCBuoc1);
             this.panel39.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel39.Location = new System.Drawing.Point(0, 21);
-            this.panel39.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.panel39.Margin = new System.Windows.Forms.Padding(1);
             this.panel39.Name = "panel39";
             this.panel39.Size = new System.Drawing.Size(567, 21);
             this.panel39.TabIndex = 26;
@@ -1483,7 +1483,7 @@
             this.panel36.Controls.Add(this.lbDecu);
             this.panel36.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel36.Location = new System.Drawing.Point(0, 0);
-            this.panel36.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.panel36.Margin = new System.Windows.Forms.Padding(1);
             this.panel36.Name = "panel36";
             this.panel36.Size = new System.Drawing.Size(567, 21);
             this.panel36.TabIndex = 26;
@@ -1513,7 +1513,7 @@
             this.ibtnDecu.IconSize = 32;
             this.ibtnDecu.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.ibtnDecu.Location = new System.Drawing.Point(0, 394);
-            this.ibtnDecu.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.ibtnDecu.Margin = new System.Windows.Forms.Padding(1);
             this.ibtnDecu.Name = "ibtnDecu";
             this.ibtnDecu.Size = new System.Drawing.Size(567, 38);
             this.ibtnDecu.TabIndex = 11;
@@ -1533,7 +1533,7 @@
             this.panelSubmenuDanhgia.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelSubmenuDanhgia.Font = new System.Drawing.Font("League Spartan", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelSubmenuDanhgia.Location = new System.Drawing.Point(0, 308);
-            this.panelSubmenuDanhgia.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.panelSubmenuDanhgia.Margin = new System.Windows.Forms.Padding(1);
             this.panelSubmenuDanhgia.Name = "panelSubmenuDanhgia";
             this.panelSubmenuDanhgia.Size = new System.Drawing.Size(567, 86);
             this.panelSubmenuDanhgia.TabIndex = 10;
@@ -1545,7 +1545,7 @@
             this.panel59.Controls.Add(this.lbDGBuoc3);
             this.panel59.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel59.Location = new System.Drawing.Point(0, 64);
-            this.panel59.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.panel59.Margin = new System.Windows.Forms.Padding(1);
             this.panel59.Name = "panel59";
             this.panel59.Size = new System.Drawing.Size(567, 22);
             this.panel59.TabIndex = 25;
@@ -1578,7 +1578,7 @@
             this.panel34.Controls.Add(this.lbDGBuoc2);
             this.panel34.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel34.Location = new System.Drawing.Point(0, 42);
-            this.panel34.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.panel34.Margin = new System.Windows.Forms.Padding(1);
             this.panel34.Name = "panel34";
             this.panel34.Size = new System.Drawing.Size(567, 22);
             this.panel34.TabIndex = 25;
@@ -1611,7 +1611,7 @@
             this.panel37.Controls.Add(this.lbDGBuoc1);
             this.panel37.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel37.Location = new System.Drawing.Point(0, 21);
-            this.panel37.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.panel37.Margin = new System.Windows.Forms.Padding(1);
             this.panel37.Name = "panel37";
             this.panel37.Size = new System.Drawing.Size(567, 21);
             this.panel37.TabIndex = 26;
@@ -1643,7 +1643,7 @@
             this.panel35.Controls.Add(this.lbDanhgia);
             this.panel35.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel35.Location = new System.Drawing.Point(0, 0);
-            this.panel35.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.panel35.Margin = new System.Windows.Forms.Padding(1);
             this.panel35.Name = "panel35";
             this.panel35.Size = new System.Drawing.Size(567, 21);
             this.panel35.TabIndex = 25;
@@ -1673,7 +1673,7 @@
             this.ibtnDanhgia.IconSize = 32;
             this.ibtnDanhgia.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.ibtnDanhgia.Location = new System.Drawing.Point(0, 270);
-            this.ibtnDanhgia.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.ibtnDanhgia.Margin = new System.Windows.Forms.Padding(1);
             this.ibtnDanhgia.Name = "ibtnDanhgia";
             this.ibtnDanhgia.Size = new System.Drawing.Size(567, 38);
             this.ibtnDanhgia.TabIndex = 9;
@@ -1693,7 +1693,7 @@
             this.panelSubmenuBinhluan.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelSubmenuBinhluan.Font = new System.Drawing.Font("League Spartan", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelSubmenuBinhluan.Location = new System.Drawing.Point(0, 185);
-            this.panelSubmenuBinhluan.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.panelSubmenuBinhluan.Margin = new System.Windows.Forms.Padding(1);
             this.panelSubmenuBinhluan.Name = "panelSubmenuBinhluan";
             this.panelSubmenuBinhluan.Size = new System.Drawing.Size(567, 85);
             this.panelSubmenuBinhluan.TabIndex = 8;
@@ -1705,7 +1705,7 @@
             this.panel60.Controls.Add(this.lbBLBuoc3);
             this.panel60.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel60.Location = new System.Drawing.Point(0, 64);
-            this.panel60.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.panel60.Margin = new System.Windows.Forms.Padding(1);
             this.panel60.Name = "panel60";
             this.panel60.Size = new System.Drawing.Size(567, 21);
             this.panel60.TabIndex = 26;
@@ -1739,7 +1739,7 @@
             this.panel32.Controls.Add(this.lbBLBuoc2);
             this.panel32.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel32.Location = new System.Drawing.Point(0, 42);
-            this.panel32.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.panel32.Margin = new System.Windows.Forms.Padding(1);
             this.panel32.Name = "panel32";
             this.panel32.Size = new System.Drawing.Size(567, 22);
             this.panel32.TabIndex = 24;
@@ -1773,7 +1773,7 @@
             this.panel33.Controls.Add(this.lbBLBuoc1);
             this.panel33.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel33.Location = new System.Drawing.Point(0, 21);
-            this.panel33.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.panel33.Margin = new System.Windows.Forms.Padding(1);
             this.panel33.Name = "panel33";
             this.panel33.Size = new System.Drawing.Size(567, 21);
             this.panel33.TabIndex = 25;
@@ -1805,7 +1805,7 @@
             this.panel31.Controls.Add(this.lbBinhluan);
             this.panel31.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel31.Location = new System.Drawing.Point(0, 0);
-            this.panel31.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.panel31.Margin = new System.Windows.Forms.Padding(1);
             this.panel31.Name = "panel31";
             this.panel31.Size = new System.Drawing.Size(567, 21);
             this.panel31.TabIndex = 23;
@@ -1835,7 +1835,7 @@
             this.ibtnBinhluan.IconSize = 32;
             this.ibtnBinhluan.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.ibtnBinhluan.Location = new System.Drawing.Point(0, 147);
-            this.ibtnBinhluan.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.ibtnBinhluan.Margin = new System.Windows.Forms.Padding(1);
             this.ibtnBinhluan.Name = "ibtnBinhluan";
             this.ibtnBinhluan.Size = new System.Drawing.Size(567, 38);
             this.ibtnBinhluan.TabIndex = 7;
@@ -1856,7 +1856,7 @@
             this.panelSubmenuTimkiem.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelSubmenuTimkiem.Font = new System.Drawing.Font("League Spartan", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelSubmenuTimkiem.Location = new System.Drawing.Point(0, 38);
-            this.panelSubmenuTimkiem.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.panelSubmenuTimkiem.Margin = new System.Windows.Forms.Padding(1);
             this.panelSubmenuTimkiem.Name = "panelSubmenuTimkiem";
             this.panelSubmenuTimkiem.Size = new System.Drawing.Size(567, 109);
             this.panelSubmenuTimkiem.TabIndex = 6;
@@ -1868,7 +1868,7 @@
             this.panel58.Controls.Add(this.lbTKTBuoc4);
             this.panel58.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel58.Location = new System.Drawing.Point(0, 87);
-            this.panel58.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.panel58.Margin = new System.Windows.Forms.Padding(1);
             this.panel58.Name = "panel58";
             this.panel58.Size = new System.Drawing.Size(567, 22);
             this.panel58.TabIndex = 24;
@@ -1901,7 +1901,7 @@
             this.panel30.Controls.Add(this.lbTKTBuoc3);
             this.panel30.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel30.Location = new System.Drawing.Point(0, 65);
-            this.panel30.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.panel30.Margin = new System.Windows.Forms.Padding(1);
             this.panel30.Name = "panel30";
             this.panel30.Size = new System.Drawing.Size(567, 22);
             this.panel30.TabIndex = 23;
@@ -1934,7 +1934,7 @@
             this.panel29.Controls.Add(this.lbNDTKTBuoc2);
             this.panel29.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel29.Location = new System.Drawing.Point(0, 43);
-            this.panel29.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.panel29.Margin = new System.Windows.Forms.Padding(1);
             this.panel29.Name = "panel29";
             this.panel29.Size = new System.Drawing.Size(567, 22);
             this.panel29.TabIndex = 23;
@@ -1967,7 +1967,7 @@
             this.panel26.Controls.Add(this.lbTKTBuoc1);
             this.panel26.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel26.Location = new System.Drawing.Point(0, 21);
-            this.panel26.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.panel26.Margin = new System.Windows.Forms.Padding(1);
             this.panel26.Name = "panel26";
             this.panel26.Size = new System.Drawing.Size(567, 22);
             this.panel26.TabIndex = 22;
@@ -1999,7 +1999,7 @@
             this.panel28.Controls.Add(this.lbTimkiemtruyen);
             this.panel28.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel28.Location = new System.Drawing.Point(0, 0);
-            this.panel28.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.panel28.Margin = new System.Windows.Forms.Padding(1);
             this.panel28.Name = "panel28";
             this.panel28.Size = new System.Drawing.Size(567, 21);
             this.panel28.TabIndex = 23;
@@ -2029,7 +2029,7 @@
             this.ibtnTimkiemtruyen.IconSize = 32;
             this.ibtnTimkiemtruyen.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.ibtnTimkiemtruyen.Location = new System.Drawing.Point(0, 0);
-            this.ibtnTimkiemtruyen.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.ibtnTimkiemtruyen.Margin = new System.Windows.Forms.Padding(1);
             this.ibtnTimkiemtruyen.Name = "ibtnTimkiemtruyen";
             this.ibtnTimkiemtruyen.Size = new System.Drawing.Size(567, 38);
             this.ibtnTimkiemtruyen.TabIndex = 5;
@@ -2044,7 +2044,7 @@
             this.panel3.AutoSize = true;
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(47, 498);
-            this.panel3.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.panel3.Margin = new System.Windows.Forms.Padding(1);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(567, 0);
             this.panel3.TabIndex = 3;
@@ -2063,7 +2063,7 @@
             this.ibtnTuongtactruyen.IconSize = 32;
             this.ibtnTuongtactruyen.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.ibtnTuongtactruyen.Location = new System.Drawing.Point(47, 460);
-            this.ibtnTuongtactruyen.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.ibtnTuongtactruyen.Margin = new System.Windows.Forms.Padding(1);
             this.ibtnTuongtactruyen.Name = "ibtnTuongtactruyen";
             this.ibtnTuongtactruyen.Size = new System.Drawing.Size(567, 38);
             this.ibtnTuongtactruyen.TabIndex = 2;
@@ -2082,7 +2082,7 @@
             this.panelSubmenuQLTK.Controls.Add(this.ibtnDangnhap);
             this.panelSubmenuQLTK.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelSubmenuQLTK.Location = new System.Drawing.Point(47, 38);
-            this.panelSubmenuQLTK.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.panelSubmenuQLTK.Margin = new System.Windows.Forms.Padding(1);
             this.panelSubmenuQLTK.Name = "panelSubmenuQLTK";
             this.panelSubmenuQLTK.Size = new System.Drawing.Size(567, 422);
             this.panelSubmenuQLTK.TabIndex = 1;
@@ -2098,7 +2098,7 @@
             this.panelSubmenuThaydoi.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelSubmenuThaydoi.Font = new System.Drawing.Font("League Spartan", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelSubmenuThaydoi.Location = new System.Drawing.Point(0, 314);
-            this.panelSubmenuThaydoi.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.panelSubmenuThaydoi.Margin = new System.Windows.Forms.Padding(1);
             this.panelSubmenuThaydoi.Name = "panelSubmenuThaydoi";
             this.panelSubmenuThaydoi.Size = new System.Drawing.Size(567, 108);
             this.panelSubmenuThaydoi.TabIndex = 4;
@@ -2110,7 +2110,7 @@
             this.panel27.Controls.Add(this.lbNDTDBuoc4);
             this.panel27.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel27.Location = new System.Drawing.Point(0, 87);
-            this.panel27.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.panel27.Margin = new System.Windows.Forms.Padding(1);
             this.panel27.Name = "panel27";
             this.panel27.Size = new System.Drawing.Size(567, 21);
             this.panel27.TabIndex = 22;
@@ -2143,7 +2143,7 @@
             this.panel25.Controls.Add(this.lbNDTDBuoc3);
             this.panel25.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel25.Location = new System.Drawing.Point(0, 65);
-            this.panel25.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.panel25.Margin = new System.Windows.Forms.Padding(1);
             this.panel25.Name = "panel25";
             this.panel25.Size = new System.Drawing.Size(567, 22);
             this.panel25.TabIndex = 22;
@@ -2176,7 +2176,7 @@
             this.panel24.Controls.Add(this.lbTDBuoc2);
             this.panel24.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel24.Location = new System.Drawing.Point(0, 43);
-            this.panel24.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.panel24.Margin = new System.Windows.Forms.Padding(1);
             this.panel24.Name = "panel24";
             this.panel24.Size = new System.Drawing.Size(567, 22);
             this.panel24.TabIndex = 22;
@@ -2209,7 +2209,7 @@
             this.panel23.Controls.Add(this.lbTDBuoc1);
             this.panel23.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel23.Location = new System.Drawing.Point(0, 21);
-            this.panel23.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.panel23.Margin = new System.Windows.Forms.Padding(1);
             this.panel23.Name = "panel23";
             this.panel23.Size = new System.Drawing.Size(567, 22);
             this.panel23.TabIndex = 21;
@@ -2241,7 +2241,7 @@
             this.panel22.Controls.Add(this.lbThaydoi);
             this.panel22.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel22.Location = new System.Drawing.Point(0, 0);
-            this.panel22.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.panel22.Margin = new System.Windows.Forms.Padding(1);
             this.panel22.Name = "panel22";
             this.panel22.Size = new System.Drawing.Size(567, 21);
             this.panel22.TabIndex = 20;
@@ -2271,7 +2271,7 @@
             this.ibtnTennguoidung.IconSize = 32;
             this.ibtnTennguoidung.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.ibtnTennguoidung.Location = new System.Drawing.Point(0, 276);
-            this.ibtnTennguoidung.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.ibtnTennguoidung.Margin = new System.Windows.Forms.Padding(1);
             this.ibtnTennguoidung.Name = "ibtnTennguoidung";
             this.ibtnTennguoidung.Size = new System.Drawing.Size(567, 38);
             this.ibtnTennguoidung.TabIndex = 3;
@@ -2299,7 +2299,7 @@
             this.panelSubmenuDangnhap.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelSubmenuDangnhap.Font = new System.Drawing.Font("League Spartan", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelSubmenuDangnhap.Location = new System.Drawing.Point(0, 38);
-            this.panelSubmenuDangnhap.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.panelSubmenuDangnhap.Margin = new System.Windows.Forms.Padding(1);
             this.panelSubmenuDangnhap.Name = "panelSubmenuDangnhap";
             this.panelSubmenuDangnhap.Size = new System.Drawing.Size(567, 238);
             this.panelSubmenuDangnhap.TabIndex = 2;
@@ -2311,7 +2311,7 @@
             this.panel21.Controls.Add(this.lbDXBuoc2);
             this.panel21.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel21.Location = new System.Drawing.Point(0, 217);
-            this.panel21.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.panel21.Margin = new System.Windows.Forms.Padding(1);
             this.panel21.Name = "panel21";
             this.panel21.Size = new System.Drawing.Size(567, 21);
             this.panel21.TabIndex = 30;
@@ -2344,7 +2344,7 @@
             this.panel20.Controls.Add(this.lbDXBuoc1);
             this.panel20.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel20.Location = new System.Drawing.Point(0, 196);
-            this.panel20.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.panel20.Margin = new System.Windows.Forms.Padding(1);
             this.panel20.Name = "panel20";
             this.panel20.Size = new System.Drawing.Size(567, 21);
             this.panel20.TabIndex = 29;
@@ -2376,7 +2376,7 @@
             this.panel19.Controls.Add(this.lbDangxuat);
             this.panel19.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel19.Location = new System.Drawing.Point(0, 175);
-            this.panel19.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.panel19.Margin = new System.Windows.Forms.Padding(1);
             this.panel19.Name = "panel19";
             this.panel19.Size = new System.Drawing.Size(567, 21);
             this.panel19.TabIndex = 28;
@@ -2399,7 +2399,7 @@
             this.panel18.Controls.Add(this.lbQMKBuoc3);
             this.panel18.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel18.Location = new System.Drawing.Point(0, 154);
-            this.panel18.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.panel18.Margin = new System.Windows.Forms.Padding(1);
             this.panel18.Name = "panel18";
             this.panel18.Size = new System.Drawing.Size(567, 21);
             this.panel18.TabIndex = 27;
@@ -2430,7 +2430,7 @@
             this.panel17.AutoSize = true;
             this.panel17.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel17.Location = new System.Drawing.Point(0, 154);
-            this.panel17.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.panel17.Margin = new System.Windows.Forms.Padding(1);
             this.panel17.Name = "panel17";
             this.panel17.Size = new System.Drawing.Size(567, 0);
             this.panel17.TabIndex = 26;
@@ -2442,7 +2442,7 @@
             this.panel16.Controls.Add(this.lbQMKBuoc2);
             this.panel16.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel16.Location = new System.Drawing.Point(0, 133);
-            this.panel16.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.panel16.Margin = new System.Windows.Forms.Padding(1);
             this.panel16.Name = "panel16";
             this.panel16.Size = new System.Drawing.Size(567, 21);
             this.panel16.TabIndex = 25;
@@ -2475,7 +2475,7 @@
             this.panel15.Controls.Add(this.lbQMKBuoc1);
             this.panel15.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel15.Location = new System.Drawing.Point(0, 112);
-            this.panel15.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.panel15.Margin = new System.Windows.Forms.Padding(1);
             this.panel15.Name = "panel15";
             this.panel15.Size = new System.Drawing.Size(567, 21);
             this.panel15.TabIndex = 24;
@@ -2507,7 +2507,7 @@
             this.panel14.Controls.Add(this.lbQuenMK);
             this.panel14.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel14.Location = new System.Drawing.Point(0, 91);
-            this.panel14.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.panel14.Margin = new System.Windows.Forms.Padding(1);
             this.panel14.Name = "panel14";
             this.panel14.Size = new System.Drawing.Size(567, 21);
             this.panel14.TabIndex = 23;
@@ -2530,7 +2530,7 @@
             this.panel13.Controls.Add(this.lbDNBuoc3);
             this.panel13.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel13.Location = new System.Drawing.Point(0, 67);
-            this.panel13.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.panel13.Margin = new System.Windows.Forms.Padding(1);
             this.panel13.Name = "panel13";
             this.panel13.Size = new System.Drawing.Size(567, 24);
             this.panel13.TabIndex = 22;
@@ -2563,7 +2563,7 @@
             this.panel12.Controls.Add(this.lbDNBuoc2);
             this.panel12.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel12.Location = new System.Drawing.Point(0, 45);
-            this.panel12.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.panel12.Margin = new System.Windows.Forms.Padding(1);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(567, 22);
             this.panel12.TabIndex = 21;
@@ -2596,7 +2596,7 @@
             this.panel11.Controls.Add(this.lbDNBuoc1);
             this.panel11.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel11.Location = new System.Drawing.Point(0, 21);
-            this.panel11.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.panel11.Margin = new System.Windows.Forms.Padding(1);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(567, 24);
             this.panel11.TabIndex = 20;
@@ -2628,7 +2628,7 @@
             this.panel10.Controls.Add(this.lbHDDangnhap);
             this.panel10.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel10.Location = new System.Drawing.Point(0, 0);
-            this.panel10.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.panel10.Margin = new System.Windows.Forms.Padding(1);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(567, 21);
             this.panel10.TabIndex = 19;
@@ -2658,7 +2658,7 @@
             this.ibtnDangnhap.IconSize = 32;
             this.ibtnDangnhap.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.ibtnDangnhap.Location = new System.Drawing.Point(0, 0);
-            this.ibtnDangnhap.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.ibtnDangnhap.Margin = new System.Windows.Forms.Padding(1);
             this.ibtnDangnhap.Name = "ibtnDangnhap";
             this.ibtnDangnhap.Size = new System.Drawing.Size(567, 38);
             this.ibtnDangnhap.TabIndex = 1;
@@ -2682,7 +2682,7 @@
             this.ibtnQuanlyTK.IconSize = 32;
             this.ibtnQuanlyTK.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.ibtnQuanlyTK.Location = new System.Drawing.Point(47, 0);
-            this.ibtnQuanlyTK.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.ibtnQuanlyTK.Margin = new System.Windows.Forms.Padding(1);
             this.ibtnQuanlyTK.Name = "ibtnQuanlyTK";
             this.ibtnQuanlyTK.Size = new System.Drawing.Size(567, 38);
             this.ibtnQuanlyTK.TabIndex = 0;
@@ -2715,7 +2715,7 @@
             this.panelNoidungcaithien.Controls.Add(this.panel6);
             this.panelNoidungcaithien.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelNoidungcaithien.Location = new System.Drawing.Point(0, 48);
-            this.panelNoidungcaithien.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.panelNoidungcaithien.Margin = new System.Windows.Forms.Padding(1);
             this.panelNoidungcaithien.Name = "panelNoidungcaithien";
             this.panelNoidungcaithien.Size = new System.Drawing.Size(661, 275);
             this.panelNoidungcaithien.TabIndex = 5;
@@ -2726,7 +2726,7 @@
             this.panel1.Controls.Add(this.tableLayoutPanel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 206);
-            this.panel1.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.panel1.Margin = new System.Windows.Forms.Padding(1);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(661, 69);
             this.panel1.TabIndex = 16;
@@ -2741,7 +2741,7 @@
             this.tableLayoutPanel2.Controls.Add(this.btnHuy, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.btnXacnhan, 1, 0);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(294, 3);
-            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(1);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -2758,7 +2758,7 @@
             this.btnHuy.Font = new System.Drawing.Font("League Spartan", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHuy.ForeColor = System.Drawing.Color.Transparent;
             this.btnHuy.Location = new System.Drawing.Point(39, 3);
-            this.btnHuy.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.btnHuy.Margin = new System.Windows.Forms.Padding(1);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(46, 32);
             this.btnHuy.TabIndex = 7;
@@ -2796,7 +2796,7 @@
             this.tableLayoutPanel1.Controls.Add(this.lbChitiet, 0, 3);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(1);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 5;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -2898,7 +2898,7 @@
             this.panel2.AutoSize = true;
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.panel2.Margin = new System.Windows.Forms.Padding(1);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(661, 0);
             this.panel2.TabIndex = 11;
@@ -2908,7 +2908,7 @@
             this.panel4.AutoSize = true;
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 0);
-            this.panel4.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.panel4.Margin = new System.Windows.Forms.Padding(1);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(661, 0);
             this.panel4.TabIndex = 12;
@@ -2918,7 +2918,7 @@
             this.panel6.AutoSize = true;
             this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel6.Location = new System.Drawing.Point(0, 0);
-            this.panel6.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.panel6.Margin = new System.Windows.Forms.Padding(1);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(661, 0);
             this.panel6.TabIndex = 14;
@@ -2930,7 +2930,7 @@
             this.panelReturn.Controls.Add(this.panel8);
             this.panelReturn.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelReturn.Location = new System.Drawing.Point(0, 0);
-            this.panelReturn.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.panelReturn.Margin = new System.Windows.Forms.Padding(1);
             this.panelReturn.Name = "panelReturn";
             this.panelReturn.Size = new System.Drawing.Size(661, 48);
             this.panelReturn.TabIndex = 2;
@@ -2941,7 +2941,7 @@
             this.panel7.Controls.Add(this.ibtnReturn);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel7.Location = new System.Drawing.Point(0, 2);
-            this.panel7.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.panel7.Margin = new System.Windows.Forms.Padding(1);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(661, 46);
             this.panel7.TabIndex = 2;
@@ -2961,7 +2961,7 @@
             this.ibtnReturn.IconSize = 38;
             this.ibtnReturn.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.ibtnReturn.Location = new System.Drawing.Point(6, 1);
-            this.ibtnReturn.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.ibtnReturn.Margin = new System.Windows.Forms.Padding(1);
             this.ibtnReturn.Name = "ibtnReturn";
             this.ibtnReturn.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
             this.ibtnReturn.Size = new System.Drawing.Size(250, 44);
@@ -2978,7 +2978,7 @@
             this.panel8.Controls.Add(this.lbduongke);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel8.Location = new System.Drawing.Point(0, 0);
-            this.panel8.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.panel8.Margin = new System.Windows.Forms.Padding(1);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(661, 2);
             this.panel8.TabIndex = 3;
@@ -3001,7 +3001,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
             this.ClientSize = new System.Drawing.Size(678, 549);
             this.Controls.Add(this.panelHotro_baoloi);
-            this.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.Margin = new System.Windows.Forms.Padding(1);
             this.Name = "Hotro_baoloi";
             this.Text = "Hotro_baoloi";
             this.Load += new System.EventHandler(this.Hotro_baoloi_Load);
