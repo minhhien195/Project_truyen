@@ -29,10 +29,12 @@ namespace Login
         };
 
         string base64Text = "";
-        public InsertNovel(UserCredential usercredials)
+        private Trang_chu tc;
+        public InsertNovel(UserCredential usercredials, Trang_chu tc)
         {
             InitializeComponent();
             this.user = usercredials;
+            this.tc = tc;
         }
 
 
@@ -148,7 +150,7 @@ namespace Login
                 btnInsert.ForeColor = Color.Black;
                 btnInserted.BackColor = Color.FromArgb(191, 44, 36);
                 btnInserted.ForeColor = Color.White;
-                openChildForm(new Inserted(user));
+                openChildForm(new Inserted(user, tc));
             }
             
 
@@ -249,7 +251,7 @@ namespace Login
                 btnInsert.ForeColor = Color.Black;
                 btnInserted.BackColor = Color.FromArgb(191, 44, 36);
                 btnInserted.ForeColor = Color.White;
-                openChildForm(new Inserted(user));
+                openChildForm(new Inserted(user, tc));
             }  
         }
 

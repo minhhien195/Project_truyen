@@ -27,10 +27,12 @@ namespace Login
     public partial class InsertChapter : Form
     {
         UserCredential user;
-        public InsertChapter(UserCredential usercredials)
+        private Trang_chu tc;
+        public InsertChapter(UserCredential usercredials, Trang_chu tc)
         {
             InitializeComponent();
             this.user = usercredials;
+            this.tc = tc;
         }
         string text = "";
         IFirebaseConfig _firebaseConfig = new FirebaseConfig
@@ -256,8 +258,8 @@ namespace Login
         private void ibtnDangtruyen_Click(object sender, EventArgs e)
         {
             this.Close();
-            InsertNovel insertNovel = new InsertNovel(user);
-            insertNovel.Show();
+            tc.change_color();
+            tc.openChildForm(new Duyet_Truyen(user));
         }
 
         private async void InsertChapter_Load(object sender, EventArgs e)

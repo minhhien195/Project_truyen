@@ -133,10 +133,13 @@
     <value>NoControl</value>
   </data>
   <data name="lbMKlonhon5kytu.Location" type="System.Drawing.Point, System.Drawing">
-    <value>75, 271</value>
+    <value>50, 176</value>
+  </data>
+  <data name="lbMKlonhon5kytu.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
   </data>
   <data name="lbMKlonhon5kytu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>221, 23</value>
+    <value>152, 17</value>
   </data>
   <data name="lbMKlonhon5kytu.TabIndex" type="System.Int32, mscorlib">
     <value>26</value>
@@ -163,13 +166,13 @@
     <value>NoControl</value>
   </data>
   <data name="ptrGreater.Location" type="System.Drawing.Point, System.Drawing">
-    <value>47, 272</value>
+    <value>31, 177</value>
   </data>
   <data name="ptrGreater.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
+    <value>2, 1, 2, 1</value>
   </data>
   <data name="ptrGreater.Size" type="System.Drawing.Size, System.Drawing">
-    <value>22, 22</value>
+    <value>15, 14</value>
   </data>
   <data name="ptrGreater.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>StretchImage</value>
@@ -202,10 +205,13 @@
     <value>NoControl</value>
   </data>
   <data name="lbemailKhonghople.Location" type="System.Drawing.Point, System.Drawing">
-    <value>72, 463</value>
+    <value>48, 301</value>
+  </data>
+  <data name="lbemailKhonghople.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
   </data>
   <data name="lbemailKhonghople.Size" type="System.Drawing.Size, System.Drawing">
-    <value>141, 23</value>
+    <value>99, 17</value>
   </data>
   <data name="lbemailKhonghople.TabIndex" type="System.Int32, mscorlib">
     <value>24</value>
@@ -238,10 +244,13 @@
     <value>NoControl</value>
   </data>
   <data name="lbemail.Location" type="System.Drawing.Point, System.Drawing">
-    <value>72, 462</value>
+    <value>48, 300</value>
+  </data>
+  <data name="lbemail.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
   </data>
   <data name="lbemail.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 23</value>
+    <value>85, 17</value>
   </data>
   <data name="lbemail.TabIndex" type="System.Int32, mscorlib">
     <value>23</value>
@@ -265,13 +274,13 @@
     <value>3</value>
   </data>
   <data name="ptrNotsame.Location" type="System.Drawing.Point, System.Drawing">
-    <value>46, 364</value>
+    <value>31, 237</value>
   </data>
   <data name="ptrNotsame.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
+    <value>2, 1, 2, 1</value>
   </data>
   <data name="ptrNotsame.Size" type="System.Drawing.Size, System.Drawing">
-    <value>22, 22</value>
+    <value>15, 14</value>
   </data>
   <data name="ptrNotsame.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>StretchImage</value>
@@ -301,10 +310,13 @@
     <value>League Spartan SemiBold, 7.99999952pt, style=Bold</value>
   </data>
   <data name="lbNotsame.Location" type="System.Drawing.Point, System.Drawing">
-    <value>72, 364</value>
+    <value>48, 237</value>
+  </data>
+  <data name="lbNotsame.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
   </data>
   <data name="lbNotsame.Size" type="System.Drawing.Size, System.Drawing">
-    <value>205, 23</value>
+    <value>140, 17</value>
   </data>
   <data name="lbNotsame.TabIndex" type="System.Int32, mscorlib">
     <value>21</value>
@@ -328,13 +340,13 @@
     <value>5</value>
   </data>
   <data name="ptrWarning.Location" type="System.Drawing.Point, System.Drawing">
-    <value>46, 463</value>
+    <value>31, 301</value>
   </data>
   <data name="ptrWarning.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
+    <value>2, 1, 2, 1</value>
   </data>
   <data name="ptrWarning.Size" type="System.Drawing.Size, System.Drawing">
-    <value>22, 22</value>
+    <value>15, 14</value>
   </data>
   <data name="ptrWarning.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>StretchImage</value>
@@ -361,13 +373,13 @@
     <value>None</value>
   </data>
   <data name="ptrHide1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>533, 321</value>
+    <value>355, 209</value>
   </data>
   <data name="ptrHide1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
+    <value>2, 1, 2, 1</value>
   </data>
   <data name="ptrHide1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>40, 38</value>
+    <value>27, 25</value>
   </data>
   <data name="ptrHide1.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>StretchImage</value>
@@ -391,13 +403,13 @@
     <value>None</value>
   </data>
   <data name="prtHide.Location" type="System.Drawing.Point, System.Drawing">
-    <value>533, 230</value>
+    <value>355, 150</value>
   </data>
   <data name="prtHide.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
+    <value>2, 1, 2, 1</value>
   </data>
   <data name="prtHide.Size" type="System.Drawing.Size, System.Drawing">
-    <value>40, 38</value>
+    <value>27, 25</value>
   </data>
   <data name="prtHide.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>StretchImage</value>
@@ -421,13 +433,13 @@
     <value>None</value>
   </data>
   <data name="ptrView.Location" type="System.Drawing.Point, System.Drawing">
-    <value>533, 231</value>
+    <value>355, 150</value>
   </data>
   <data name="ptrView.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
+    <value>2, 1, 2, 1</value>
   </data>
   <data name="ptrView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>40, 38</value>
+    <value>27, 25</value>
   </data>
   <data name="ptrView.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>StretchImage</value>
@@ -451,13 +463,13 @@
     <value>None</value>
   </data>
   <data name="ptrView1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>534, 321</value>
+    <value>356, 209</value>
   </data>
   <data name="ptrView1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
+    <value>2, 1, 2, 1</value>
   </data>
   <data name="ptrView1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>40, 38</value>
+    <value>27, 25</value>
   </data>
   <data name="ptrView1.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>StretchImage</value>
@@ -484,10 +496,13 @@
     <value>League Spartan SemiBold, 12pt, style=Bold</value>
   </data>
   <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>40, 385</value>
+    <value>27, 250</value>
+  </data>
+  <data name="label5.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
   </data>
   <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>72, 36</value>
+    <value>48, 23</value>
   </data>
   <data name="label5.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
@@ -514,10 +529,13 @@
     <value>League Spartan SemiBold, 12pt, style=Bold</value>
   </data>
   <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>40, 285</value>
+    <value>27, 185</value>
+  </data>
+  <data name="label4.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
   </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>214, 36</value>
+    <value>147, 23</value>
   </data>
   <data name="label4.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
@@ -544,13 +562,13 @@
     <value>League Spartan SemiBold, 12pt, style=Bold</value>
   </data>
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>40, 194</value>
+    <value>27, 126</value>
   </data>
   <data name="label3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>112, 36</value>
+    <value>77, 23</value>
   </data>
   <data name="label3.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
@@ -577,19 +595,19 @@
     <value>League Spartan SemiBold, 12pt, style=Bold</value>
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>40, 109</value>
+    <value>27, 71</value>
   </data>
   <data name="label2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>166, 36</value>
+    <value>104, 23</value>
   </data>
   <data name="label2.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
-    <value>Tên đăng nhập</value>
+    <value>Tên tài khoản</value>
   </data>
   <data name="&gt;&gt;label2.Name" xml:space="preserve">
     <value>label2</value>
@@ -610,10 +628,13 @@
     <value>League Spartan SemiBold, 12pt, style=Bold</value>
   </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>73, 491</value>
+    <value>49, 319</value>
+  </data>
+  <data name="label1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>204, 36</value>
+    <value>138, 23</value>
   </data>
   <data name="label1.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -634,13 +655,13 @@
     <value>15</value>
   </data>
   <data name="btnTick.Location" type="System.Drawing.Point, System.Drawing">
-    <value>40, 498</value>
+    <value>27, 324</value>
   </data>
   <data name="btnTick.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
+    <value>2, 1, 2, 1</value>
   </data>
   <data name="btnTick.Size" type="System.Drawing.Size, System.Drawing">
-    <value>27, 28</value>
+    <value>18, 18</value>
   </data>
   <data name="btnTick.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -661,16 +682,16 @@
     <value>League Spartan, 11pt</value>
   </data>
   <data name="txtEmail.Location" type="System.Drawing.Point, System.Drawing">
-    <value>46, 423</value>
+    <value>31, 275</value>
   </data>
   <data name="txtEmail.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
+    <value>2, 1, 2, 1</value>
   </data>
   <data name="txtEmail.Multiline" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="txtEmail.Size" type="System.Drawing.Size, System.Drawing">
-    <value>539, 38</value>
+    <value>359, 25</value>
   </data>
   <data name="txtEmail.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -691,10 +712,10 @@
     <value>League Spartan, 11pt</value>
   </data>
   <data name="txtXNMK.Location" type="System.Drawing.Point, System.Drawing">
-    <value>46, 321</value>
+    <value>31, 209</value>
   </data>
   <data name="txtXNMK.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
+    <value>2, 1, 2, 1</value>
   </data>
   <data name="txtXNMK.Multiline" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -703,7 +724,7 @@
     <value>*</value>
   </data>
   <data name="txtXNMK.Size" type="System.Drawing.Size, System.Drawing">
-    <value>539, 38</value>
+    <value>359, 25</value>
   </data>
   <data name="txtXNMK.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -724,10 +745,10 @@
     <value>League Spartan, 11pt</value>
   </data>
   <data name="txtMK.Location" type="System.Drawing.Point, System.Drawing">
-    <value>46, 230</value>
+    <value>31, 150</value>
   </data>
   <data name="txtMK.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
+    <value>2, 1, 2, 1</value>
   </data>
   <data name="txtMK.Multiline" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -736,7 +757,7 @@
     <value>*</value>
   </data>
   <data name="txtMK.Size" type="System.Drawing.Size, System.Drawing">
-    <value>539, 38</value>
+    <value>359, 25</value>
   </data>
   <data name="txtMK.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -763,13 +784,16 @@
     <value>TopLeft</value>
   </data>
   <data name="linkLabel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>225, 620</value>
+    <value>150, 403</value>
+  </data>
+  <data name="linkLabel1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
   </data>
   <data name="linkLabel1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>35, 0, 0, 0</value>
+    <value>23, 0, 0, 0</value>
   </data>
   <data name="linkLabel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>218, 30</value>
+    <value>153, 21</value>
   </data>
   <data name="linkLabel1.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -799,13 +823,13 @@
     <value>TopCenter</value>
   </data>
   <data name="btnDKy.Location" type="System.Drawing.Point, System.Drawing">
-    <value>47, 538</value>
+    <value>31, 350</value>
   </data>
   <data name="btnDKy.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
+    <value>2, 1, 2, 1</value>
   </data>
   <data name="btnDKy.Size" type="System.Drawing.Size, System.Drawing">
-    <value>538, 80</value>
+    <value>359, 52</value>
   </data>
   <data name="btnDKy.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -829,16 +853,16 @@
     <value>League Spartan, 11pt</value>
   </data>
   <data name="txtTenDN.Location" type="System.Drawing.Point, System.Drawing">
-    <value>46, 148</value>
+    <value>31, 96</value>
   </data>
   <data name="txtTenDN.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
+    <value>2, 1, 2, 1</value>
   </data>
   <data name="txtTenDN.Multiline" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="txtTenDN.Size" type="System.Drawing.Size, System.Drawing">
-    <value>539, 38</value>
+    <value>359, 25</value>
   </data>
   <data name="txtTenDN.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -865,10 +889,13 @@
     <value>League Spartan, 24pt, style=Bold</value>
   </data>
   <data name="Sign_up_label.Location" type="System.Drawing.Point, System.Drawing">
-    <value>218, 34</value>
+    <value>145, 23</value>
+  </data>
+  <data name="Sign_up_label.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
   </data>
   <data name="Sign_up_label.Size" type="System.Drawing.Size, System.Drawing">
-    <value>202, 71</value>
+    <value>133, 48</value>
   </data>
   <data name="Sign_up_label.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -892,13 +919,13 @@
     <value>League Spartan, 12pt</value>
   </data>
   <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>648, 232</value>
+    <value>432, 151</value>
   </data>
   <data name="panel1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
+    <value>2, 1, 2, 1</value>
   </data>
   <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>623, 650</value>
+    <value>415, 424</value>
   </data>
   <data name="panel1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -919,7 +946,7 @@
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>9, 20</value>
+    <value>6, 13</value>
   </data>
   <data name="$this.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -928,10 +955,10 @@
     <value>Stretch</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1898, 1024</value>
+    <value>1265, 666</value>
   </data>
   <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
+    <value>2, 1, 2, 1</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Signup</value>

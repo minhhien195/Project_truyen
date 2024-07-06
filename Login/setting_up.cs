@@ -74,6 +74,8 @@ namespace Login
                         lbvaitro.Text = "Người dùng";
                         btnloi.Visible = true;
                         btnDuyet.Visible = false;
+                        btnDX.Location = new Point(0, 490);
+                        btnXLVP.Visible = false;
                     }
                     else if (vaitro == 0)
                     {
@@ -127,8 +129,9 @@ namespace Login
 
         private void btnXLVP_Click(object sender, EventArgs e)
         {
-            Xuli_vipham vp = new Xuli_vipham();
-            vp.Show();
+            tc.change_color();
+            this.Close();
+            tc.openChildForm(new Xu_li_vi_pham());
         }
 
         private void btnsetting_Click(object sender, EventArgs e)
@@ -162,7 +165,7 @@ namespace Login
         {
             tc.change_color();
             this.Close();
-            tc.openChildForm(new InsertNovel(user));
+            tc.openChildForm(new InsertNovel(user, tc));
         }
 
         private void btntbao_Click(object sender, EventArgs e)

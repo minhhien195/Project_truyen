@@ -49,7 +49,12 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.ibtDown = new FontAwesome.Sharp.IconButton();
+            this.ibtUp = new FontAwesome.Sharp.IconButton();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.tb1 = new System.Windows.Forms.TextBox();
             this.panelListChap.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -345,12 +350,73 @@
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label2.Visible = false;
             // 
+            // ibtDown
+            // 
+            this.ibtDown.FlatAppearance.BorderSize = 0;
+            this.ibtDown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ibtDown.IconChar = FontAwesome.Sharp.IconChar.AngleDoubleLeft;
+            this.ibtDown.IconColor = System.Drawing.Color.Black;
+            this.ibtDown.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ibtDown.IconSize = 30;
+            this.ibtDown.Location = new System.Drawing.Point(3, 3);
+            this.ibtDown.Name = "ibtDown";
+            this.ibtDown.Size = new System.Drawing.Size(34, 28);
+            this.ibtDown.TabIndex = 2;
+            this.ibtDown.UseVisualStyleBackColor = true;
+            this.ibtDown.Click += new System.EventHandler(this.ibtDown_Click);
+            // 
+            // ibtUp
+            // 
+            this.ibtUp.FlatAppearance.BorderSize = 0;
+            this.ibtUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ibtUp.IconChar = FontAwesome.Sharp.IconChar.AngleDoubleRight;
+            this.ibtUp.IconColor = System.Drawing.Color.Black;
+            this.ibtUp.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ibtUp.IconSize = 30;
+            this.ibtUp.Location = new System.Drawing.Point(163, 3);
+            this.ibtUp.Name = "ibtUp";
+            this.ibtUp.Size = new System.Drawing.Size(34, 28);
+            this.ibtUp.TabIndex = 3;
+            this.ibtUp.UseVisualStyleBackColor = true;
+            this.ibtUp.Click += new System.EventHandler(this.ibtUp_Click);
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 3;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.Controls.Add(this.ibtDown, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.ibtUp, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.tb1, 1, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(301, 13);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(200, 35);
+            this.tableLayoutPanel1.TabIndex = 4;
+            // 
+            // tb1
+            // 
+            this.tb1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
+            this.tb1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tb1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tb1.Font = new System.Drawing.Font("League Spartan", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb1.Location = new System.Drawing.Point(43, 3);
+            this.tb1.Multiline = true;
+            this.tb1.Name = "tb1";
+            this.tb1.Size = new System.Drawing.Size(114, 29);
+            this.tb1.TabIndex = 4;
+            this.tb1.Text = "1";
+            this.tb1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // Danh_Sach_Chuong_CTT
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
             this.ClientSize = new System.Drawing.Size(600, 377);
+            this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.panelListChap);
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -359,6 +425,8 @@
             this.Load += new System.EventHandler(this.Danh_Sach_Chuong_Load);
             this.panelListChap.ResumeLayout(false);
             this.panelListChap.PerformLayout();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -387,5 +455,9 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
+        private FontAwesome.Sharp.IconButton ibtDown;
+        private FontAwesome.Sharp.IconButton ibtUp;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TextBox tb1;
     }
 }

@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Signup));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lbMKlonhon5kytu = new System.Windows.Forms.Label();
+            this.ptrGreater = new System.Windows.Forms.PictureBox();
             this.lbemailKhonghople = new System.Windows.Forms.Label();
             this.lbemail = new System.Windows.Forms.Label();
             this.ptrNotsame = new System.Windows.Forms.PictureBox();
@@ -52,16 +54,14 @@
             this.btnDKy = new System.Windows.Forms.Button();
             this.txtTenDN = new System.Windows.Forms.TextBox();
             this.Sign_up_label = new System.Windows.Forms.Label();
-            this.ptrGreater = new System.Windows.Forms.PictureBox();
-            this.lbMKlonhon5kytu = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptrGreater)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptrNotsame)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptrWarning)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptrHide1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.prtHide)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptrView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptrView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptrGreater)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -95,6 +95,20 @@
             this.panel1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.panel1.Name = "panel1";
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // lbMKlonhon5kytu
+            // 
+            resources.ApplyResources(this.lbMKlonhon5kytu, "lbMKlonhon5kytu");
+            this.lbMKlonhon5kytu.ForeColor = System.Drawing.Color.IndianRed;
+            this.lbMKlonhon5kytu.Name = "lbMKlonhon5kytu";
+            // 
+            // ptrGreater
+            // 
+            this.ptrGreater.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(227)))), ((int)(((byte)(243)))));
+            this.ptrGreater.Image = global::Login.Properties.Resources.exclamation;
+            resources.ApplyResources(this.ptrGreater, "ptrGreater");
+            this.ptrGreater.Name = "ptrGreater";
+            this.ptrGreater.TabStop = false;
             // 
             // lbemailKhonghople
             // 
@@ -254,20 +268,6 @@
             this.Sign_up_label.Name = "Sign_up_label";
             this.Sign_up_label.Click += new System.EventHandler(this.label1_Click);
             // 
-            // ptrGreater
-            // 
-            this.ptrGreater.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(227)))), ((int)(((byte)(243)))));
-            this.ptrGreater.Image = global::Login.Properties.Resources.exclamation;
-            resources.ApplyResources(this.ptrGreater, "ptrGreater");
-            this.ptrGreater.Name = "ptrGreater";
-            this.ptrGreater.TabStop = false;
-            // 
-            // lbMKlonhon5kytu
-            // 
-            resources.ApplyResources(this.lbMKlonhon5kytu, "lbMKlonhon5kytu");
-            this.lbMKlonhon5kytu.ForeColor = System.Drawing.Color.IndianRed;
-            this.lbMKlonhon5kytu.Name = "lbMKlonhon5kytu";
-            // 
             // Signup
             // 
             resources.ApplyResources(this, "$this");
@@ -282,13 +282,13 @@
             this.Load += new System.EventHandler(this.Signup_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptrGreater)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptrNotsame)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptrWarning)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptrHide1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.prtHide)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptrView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptrView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptrGreater)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

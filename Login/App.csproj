@@ -426,11 +426,11 @@
     <Compile Include="tb3.Designer.cs">
       <DependentUpon>tb3.cs</DependentUpon>
     </Compile>
-    <Compile Include="Xuli_vipham.cs">
+    <Compile Include="tb4.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Xuli_vipham.Designer.cs">
-      <DependentUpon>Xuli_vipham.cs</DependentUpon>
+    <Compile Include="tb4.Designer.cs">
+      <DependentUpon>tb4.cs</DependentUpon>
     </Compile>
     <Compile Include="Xu_li_vi_pham.cs">
       <SubType>Form</SubType>
@@ -552,11 +552,11 @@
     <EmbeddedResource Include="tb3.resx">
       <DependentUpon>tb3.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="tb4.resx">
+      <DependentUpon>tb4.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Trang_chu.resx">
       <DependentUpon>Trang_chu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Xuli_vipham.resx">
-      <DependentUpon>Xuli_vipham.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Xu_li_vi_pham.resx">
       <DependentUpon>Xu_li_vi_pham.cs</DependentUpon>
@@ -686,6 +686,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\hearticonden1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hearticon - Copy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Right1.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />

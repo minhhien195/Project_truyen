@@ -339,49 +339,5 @@ namespace Novel
             DocumentReference doc = truyen.Document(id);
             await doc.DeleteAsync();
         }
-
-        public async static void deleteChap(string nameNovel, string numChap)
-        {
-            FirestoreDb db = FirestoreDb.Create("healtruyen");
-            CollectionReference truyen = db.Collection("Truyen");
-            nameNovel = nameNovel.ToUpper();
-
-            // Lấy id của truyện bằng tên
-            Query q = truyen.WhereEqualTo("Ten", nameNovel);
-            QuerySnapshot snapshots = await q.GetSnapshotAsync();
-            string id = "";
-            if (snapshots.Documents.Count > 0)
-            {
-                id = snapshots.Documents[0].Id;
-            }
-
-            //Lấy id của chương
-            string chapID = "";
-            int cnt = 4 - numChap.Length;
-            for (int i = 0; i < cnt; i++)
-            {
-                chapID += "0";
-            }
-            chapID += numChap;
-
-            DocumentReference doc = truyen.Document(id).Collection("Chuong").Document(chapID);
-            await doc.DeleteAsync();
-        }
-        public static void scrapingNovel(string url)
-        {
-            HtmlWeb htmlWeb = new HtmlWeb();
-            htmlWeb.OverrideEncoding = Encoding.UTF8;
-            HtmlAgilityPack.HtmlDocument doc = htmlWeb.Load("https://metruyencv.com/truyen/buc-ta-trong-sinh-dung-khong/chuong-1");
-            HtmlNode chapterContent = doc.DocumentNode.SelectSingleNode("//*[@id=\"js-read__body\"]");
-            //string title_chapter = Encoding.UTF8.GetStringEncoding.Default.GetBytes(chapterContent.SelectSingleNode("//*[@id=\"js-read__body\"]/div[2]").InnerText);
-            //string content_chapter = Encoding.UTF8.GetStringEncoding.Default.GetBytes(chapterContent.SelectSingleNode("//*[@id=\"js-read__body\"]/div[2]").InnerText););
-            var title = chapterContent.SelectSingleNode("//*[@id=\"js-read__body\"]/div[2]").InnerText;
-            var text = chapterContent.SelectSingleNode("//*[@id=\"article\"]").InnerHtml;
-            var subStrRemove = "<div class=\"pt-3 text-center\" style=\"margin-right: " +
-                "-1rem;\"><div class=\"mb-1 fz-13\"><small class=\"text-muted\"><small>&mdash; " +
-                "QUẢNG CÁO &mdash;</small></small></div><div class=\"my-1\"></div></div>";
-            text = text.Replace("<br><br>", "\n\n");
-            text = text.Replace(subStrRemove, "");
-        }
     }
 }

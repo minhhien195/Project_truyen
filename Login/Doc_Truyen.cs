@@ -874,7 +874,6 @@ namespace Login
                                         "bị báo cáo bởi người dùng " + user.User.Info.Uid + " có tên là " + user.User.Info.DisplayName + ". Hãy kiểm tra nội " +
                                             $"dung bình luận này trong " +
                                             "truyện " + nameTruyen + ". Nội dung bình luận: " + binhluan.Noi_dung },
-                                    {"So_lan_canh_cao", "0" }
                                 };
                                 await client.SetAsync("Vi_pham/001", data);
                             }
@@ -898,7 +897,6 @@ namespace Login
                                         "bị báo cáo bởi người dùng " + user.User.Info.Uid + " có tên là " + user.User.Info.DisplayName + ". Hãy kiểm tra nội " +
                                             $"dung bình luận này trong " +
                                             "truyện " + nameTruyen + ". Nội dung bình luận: " + binhluan.Noi_dung },
-                                    {"So_lan_canh_cao", "0" }
                                 };
                                 await client.SetAsync("Vi_pham/" + report, data);
                             }

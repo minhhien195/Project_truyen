@@ -81,7 +81,7 @@
             this.lbname.AutoSize = true;
             this.lbname.Location = new System.Drawing.Point(75, 121);
             this.lbname.Name = "lbname";
-            this.lbname.Size = new System.Drawing.Size(73, 36);
+            this.lbname.Size = new System.Drawing.Size(49, 23);
             this.lbname.TabIndex = 6;
             this.lbname.Text = "Name";
             this.lbname.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -252,7 +252,7 @@
             this.btnDX.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnDX.IconSize = 26;
             this.btnDX.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDX.Location = new System.Drawing.Point(0, 490);
+            this.btnDX.Location = new System.Drawing.Point(0, 530);
             this.btnDX.Name = "btnDX";
             this.btnDX.Size = new System.Drawing.Size(200, 40);
             this.btnDX.TabIndex = 18;
@@ -267,7 +267,7 @@
             this.lbvaitro.AutoSize = true;
             this.lbvaitro.Location = new System.Drawing.Point(49, 144);
             this.lbvaitro.Name = "lbvaitro";
-            this.lbvaitro.Size = new System.Drawing.Size(155, 36);
+            this.lbvaitro.Size = new System.Drawing.Size(102, 23);
             this.lbvaitro.TabIndex = 7;
             this.lbvaitro.Text = "Adminstration";
             this.lbvaitro.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -282,7 +282,7 @@
             this.btnXLVP.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnXLVP.IconSize = 26;
             this.btnXLVP.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXLVP.Location = new System.Drawing.Point(0, 530);
+            this.btnXLVP.Location = new System.Drawing.Point(0, 490);
             this.btnXLVP.Name = "btnXLVP";
             this.btnXLVP.Size = new System.Drawing.Size(200, 40);
             this.btnXLVP.TabIndex = 19;
@@ -315,7 +315,7 @@
             // 
             // setting_up
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 36F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(227)))), ((int)(((byte)(243)))));
             this.ClientSize = new System.Drawing.Size(200, 600);
