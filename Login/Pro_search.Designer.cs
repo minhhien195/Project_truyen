@@ -285,8 +285,7 @@
             "Dưới 2 sao",
             "Dưới 3 sao",
             "Dưới 4 sao",
-            "Dưới 5 sao",
-            "5 Sao"});
+            "Dưới 5 sao"});
             this.cbdanhgia.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cbdanhgia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(227)))), ((int)(((byte)(243)))));
             this.cbdanhgia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -298,8 +297,7 @@
             "Dưới 2 sao",
             "Dưới 3 sao",
             "Dưới 4 sao",
-            "Dưới 5 sao",
-            "5 Sao"});
+            "Dưới 5 sao"});
             this.cbdanhgia.Location = new System.Drawing.Point(34, 174);
             this.cbdanhgia.Name = "cbdanhgia";
             this.cbdanhgia.Size = new System.Drawing.Size(190, 36);

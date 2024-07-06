@@ -12,6 +12,8 @@ using DocumentFormat.OpenXml.Office2019.Presentation;
 
 namespace Login
 {
+
+    [FirestoreData]
     public class Novel
     {
         [FirestoreProperty("Anh")]
@@ -119,13 +121,13 @@ namespace Login
             }
             if (theLoai.ToUpper() == "KHÔNG")
             {
-                theLoai = "";
+                theLoai = string.Empty;
             }
-            if (danhGia != -1 && string.IsNullOrEmpty(theLoai) && tinhTrang == -1)
+            if (danhGia != 5 && string.IsNullOrEmpty(theLoai) && tinhTrang == -1)
             {
                 query = query.WhereLessThanOrEqualTo("Danh_gia_Tb", danhGia);
             } 
-            else if (danhGia == -1 && string.IsNullOrEmpty(theLoai) && tinhTrang != -1)
+            else if (danhGia == 5 && string.IsNullOrEmpty(theLoai) && tinhTrang != -1)
             {
                 query = query.WhereEqualTo("Trang_thai", tinhTrang);
             }
@@ -135,24 +137,24 @@ namespace Login
             }
             else if (danhGia != -1 && string.IsNullOrEmpty(theLoai) && tinhTrang != -1)
             {
-                query = query.WhereLessThanOrEqualTo("Danh_gia_Tb", danhGia)
-                            .WhereEqualTo("Trang_thai", tinhTrang);
+                query = query.WhereLessThanOrEqualTo("Danh_gia_Tb", danhGia).
+                    WhereEqualTo("Trang_thai", tinhTrang);
             }
             else if (danhGia == -1 && !string.IsNullOrEmpty(theLoai) && tinhTrang != -1) 
             {
                 query = query.WhereArrayContains("The_loai", theLoai)
-                            .WhereEqualTo("Trang_thai", tinhTrang);
+                    .WhereEqualTo("Trang_thai", tinhTrang);
             }
             else if (danhGia != -1 && !string.IsNullOrEmpty(theLoai) && tinhTrang == -1) 
             {
                 query = query.WhereLessThanOrEqualTo("Danh_gia_Tb", danhGia)
-                            .WhereEqualTo("Trang_thai", tinhTrang);
+                    .WhereEqualTo("Trang_thai", tinhTrang);
             }
             else if (danhGia != -1 && !string.IsNullOrEmpty(theLoai) && tinhTrang != -1)
             {
                 query = query.WhereLessThanOrEqualTo("Danh_gia_Tb", danhGia)
-                            .WhereEqualTo("Trang_thai", tinhTrang)
-                            .WhereArrayContains("The_loai", theLoai);
+                    .WhereEqualTo("Trang_thai", tinhTrang)
+                    .WhereArrayContains("The_loai", theLoai);
             }
 
             QuerySnapshot snapshot = await query.GetSnapshotAsync();
@@ -173,57 +175,20 @@ namespace Login
 
             List<string> result1 = new List<string>();
 
-            foreach (var j in result)
+            if (isName || isTG)
             {
-                if(idsn.Contains(j) && !result1.Contains(j)) { 
-                    result1.Add(j);
+                foreach (var j in result)
+                {
+                    if (idsn.Contains(j) && !result1.Contains(j))
+                    {
+                        result1.Add(j);
+                    }
                 }
             }
-
-            /*foreach (DocumentSnapshot document in snapshot.Documents)
+            else
             {
-                bool allc = true;
-                if (result.Contains(document.Id))
-                {
-                    if (isDG && document.GetValue<double>("Danh_gia_Tb") > danhGia)
-                    {
-                        allc = false;
-                        continue;
-                    }
-
-                    if (isTL)
-                    {
-                        List<string> theLoaiList = new List<string>();
-
-                        // Assuming "The_loai" is an array in Firebase
-                        foreach (object theLoaiItem in (List<object>)document.GetValue<object>("The_loai"))
-                        {
-                            // Chuyển đổi mỗi phần tử thành string và chuyển thành chữ hoa
-                            theLoaiList.Add(theLoaiItem.ToString().ToUpper());
-                        }
-
-                        // Check if theLoai is in the theLoaiList
-                        bool isInTheLoaiList = theLoaiList.Contains(theLoai.ToUpper());
-
-                        if (!isInTheLoaiList)
-                        {
-                            allc = false;
-                            continue;
-                        }
-                    }
-
-                    if (isTT && document.GetValue<int>("Trang_thai") != tinhTrang)
-                    {
-                        allc = false;
-                        continue;
-                    }
-
-                    if (allc)
-                    {
-                        result.Add(document.Id);
-                    }
-                }
-            }*/
+                return idsn;
+            }
             return result1;
         }
     }
