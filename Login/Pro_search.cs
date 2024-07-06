@@ -418,7 +418,7 @@ namespace Login
         {
             if (danhgia == "Không")
             {
-                return 5;
+                return -1;
             }
             else if (danhgia == "Dưới 1 sao")
             {
@@ -440,7 +440,7 @@ namespace Login
             {
                 return 5;
             }
-            return 0;
+            return -1;
         }
 
         private string UpdateSummaryText(string gthieu, Font label, int width)

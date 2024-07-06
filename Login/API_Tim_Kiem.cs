@@ -123,11 +123,11 @@ namespace Login
             {
                 theLoai = string.Empty;
             }
-            if (danhGia != -1 && string.IsNullOrEmpty(theLoai) && tinhTrang == -1)
+            if (danhGia != 5 && string.IsNullOrEmpty(theLoai) && tinhTrang == -1)
             {
                 query = query.WhereLessThanOrEqualTo("Danh_gia_Tb", danhGia);
             } 
-            else if (danhGia == -1 && string.IsNullOrEmpty(theLoai) && tinhTrang != -1)
+            else if (danhGia == 5 && string.IsNullOrEmpty(theLoai) && tinhTrang != -1)
             {
                 query = query.WhereEqualTo("Trang_thai", tinhTrang);
             }
@@ -137,24 +137,24 @@ namespace Login
             }
             else if (danhGia != -1 && string.IsNullOrEmpty(theLoai) && tinhTrang != -1)
             {
-                query = query.WhereLessThanOrEqualTo("Danh_gia_Tb", danhGia);
-                query = query.WhereEqualTo("Trang_thai", tinhTrang);
+                query = query.WhereLessThanOrEqualTo("Danh_gia_Tb", danhGia).
+                    WhereEqualTo("Trang_thai", tinhTrang);
             }
             else if (danhGia == -1 && !string.IsNullOrEmpty(theLoai) && tinhTrang != -1) 
             {
-                query = query.WhereArrayContains("The_loai", theLoai);
-                query = query.WhereEqualTo("Trang_thai", tinhTrang);
+                query = query.WhereArrayContains("The_loai", theLoai)
+                    .WhereEqualTo("Trang_thai", tinhTrang);
             }
             else if (danhGia != -1 && !string.IsNullOrEmpty(theLoai) && tinhTrang == -1) 
             {
-                query = query.WhereLessThanOrEqualTo("Danh_gia_Tb", danhGia);
-                query = query.WhereEqualTo("Trang_thai", tinhTrang);
+                query = query.WhereLessThanOrEqualTo("Danh_gia_Tb", danhGia)
+                    .WhereEqualTo("Trang_thai", tinhTrang);
             }
             else if (danhGia != -1 && !string.IsNullOrEmpty(theLoai) && tinhTrang != -1)
             {
-                query = query.WhereLessThanOrEqualTo("Danh_gia_Tb", danhGia);
-                query = query.WhereEqualTo("Trang_thai", tinhTrang);
-                query = query.WhereArrayContains("The_loai", theLoai);
+                query = query.WhereLessThanOrEqualTo("Danh_gia_Tb", danhGia)
+                    .WhereEqualTo("Trang_thai", tinhTrang)
+                    .WhereArrayContains("The_loai", theLoai);
             }
 
             QuerySnapshot snapshot = await query.GetSnapshotAsync();
@@ -175,7 +175,7 @@ namespace Login
 
             List<string> result1 = new List<string>();
 
-            if (isName)
+            if (isName || isTG)
             {
                 foreach (var j in result)
                 {
