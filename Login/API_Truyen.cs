@@ -229,7 +229,11 @@ namespace Novel
             
             CollectionReference truyen2 = db.Collection("Truyen");
             QuerySnapshot qs2 = await truyen2.GetSnapshotAsync();
-            int order = qs2.Count + 1;
+
+            CollectionReference truyen3 = db.Collection("Dang_truyen");
+            QuerySnapshot qs3 = await truyen3.GetSnapshotAsync();
+
+            int order = qs2.Count + qs3.Count + 1;
             string novelId = "";
             for (int i = 0; i < 3 - order.ToString().Length; i++)
             {
