@@ -81,11 +81,12 @@ namespace Login
 
                     TableLayoutPanel tb1 = new TableLayoutPanel();
                     panel1.Controls.Add(tb1);
+                    tb1.Location = new Point(0, 10);
                     tb1.RowCount = 2;
                     tb1.ColumnCount = 1;
                     tb1.RowStyles.Add(new ColumnStyle(SizeType.Percent, 50));
                     tb1.RowStyles.Add(new ColumnStyle(SizeType.Percent, 50));
-                    tb1.Height = 200;
+                    tb1.Height = 100;
                     tb1.Dock = DockStyle.Top;
 
                     RichTextBox content = new RichTextBox();
@@ -110,18 +111,24 @@ namespace Login
                     tb.Controls.Add(canhcao, 1, 0);
                     canhcao.Dock = DockStyle.Fill;
                     canhcao.Text = "Cảnh cáo";
-                    canhcao.Font = new Font("League Spartan", 12, FontStyle.Regular);
+                    canhcao.Font = new Font("League Spartan", 18, FontStyle.Regular);
+                    canhcao.BackColor = Color.FromArgb(191, 44, 36);
+                    canhcao.ForeColor = Color.White;
+                    canhcao.IconChar = IconChar.Warning;
+                    canhcao.IconColor = Color.White;
                     canhcao.IconSize = 30;
                     canhcao.AutoSize = true;
                     canhcao.TextAlign = ContentAlignment.MiddleRight;
                     canhcao.TextImageRelation = TextImageRelation.ImageBeforeText;
                     canhcao.Click += async (s, ev) =>
                     {
-                        if (Convert.ToInt32(vipham.So_lan_canh_cao) <= 3)
+                        FirebaseResponse response = await client.GetAsync("Nguoi_dung/" + vipham.Id_bi_tocao + "/so_lan_canh_cao");
+                        string slcc = response.ResultAs<string>();
+                        if (Convert.ToInt32(slcc) <= 3)
                         {
                             Them_Lay_thongbao tbao = new Them_Lay_thongbao();
-                            await tbao.Them_thongbao_canhcao(vipham.Id_bi_tocao, Convert.ToInt32(vipham.So_lan_canh_cao));
-                            await client.UpdateAsync("Vi_pham/" + report + "/So_lan_canh_cao", (Convert.ToInt32(vipham.So_lan_canh_cao) + 1).ToString());
+                            await tbao.Them_thongbao_canhcao(vipham.Id_bi_tocao, Convert.ToInt32(slcc));
+                            await client.UpdateAsync("Nguoi_dung/" + vipham.Id_bi_tocao + "/So_lan_canh_cao", (Convert.ToInt32(slcc) + 1).ToString());
                             MessageBox.Show("Cảnh cáo người dùng thành công");
                         }
                         else
@@ -133,17 +140,21 @@ namespace Login
                                 await client.SetAsync("Nguoi_dung/" + vipham.Id_bi_tocao + "/disable", true);
                             }
                         }
-                        //await client.DeleteAsync("Vi_pham/" + report);
-
+                        await client.DeleteAsync("Vi_pham/" + report);
                     };
 
                     IconButton Ban = new IconButton();
                     tb.Controls.Add(Ban, 2, 0);
                     Ban.Dock = DockStyle.Fill;
                     Ban.Text = "Vô hiệu hóa";
-                    Ban.Font = new Font("League Spartan", 12, FontStyle.Regular);
+                    Ban.BackColor = Color.FromArgb(191, 44, 36);
+                    Ban.ForeColor = Color.White;
+                    Ban.Font = new Font("League Spartan", 18, FontStyle.Regular);
                     Ban.IconSize = 30;
                     Ban.AutoSize = true;
+                    Ban.IconChar = IconChar.Ban;
+                    Ban.IconColor = Color.White;
+                    Ban.IconSize = 30;
                     Ban.TextAlign = ContentAlignment.MiddleRight;
                     Ban.TextImageRelation = TextImageRelation.ImageBeforeText;
                     Ban.Click += async (s, ev) =>

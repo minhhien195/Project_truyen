@@ -93,7 +93,7 @@
             btnBookMark.Location = new System.Drawing.Point(0, 0);
             btnBookMark.Margin = new System.Windows.Forms.Padding(0);
             btnBookMark.Name = "btnBookMark";
-            btnBookMark.Size = new System.Drawing.Size(547, 52);
+            btnBookMark.Size = new System.Drawing.Size(365, 34);
             btnBookMark.TabIndex = 30;
             btnBookMark.Text = " ĐÁNH DẤU";
             btnBookMark.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -111,8 +111,9 @@
             this.panel1.Controls.Add(this.tableLayoutPanel1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1599, 1160);
+            this.panel1.Size = new System.Drawing.Size(1066, 690);
             this.panel1.TabIndex = 0;
             // 
             // panel4
@@ -120,9 +121,10 @@
             this.panel4.Controls.Add(this.panel5);
             this.panel4.Controls.Add(this.tableLayoutPanel3);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(0, 961);
+            this.panel4.Location = new System.Drawing.Point(0, 625);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1573, 380);
+            this.panel4.Size = new System.Drawing.Size(1049, 247);
             this.panel4.TabIndex = 5;
             // 
             // panel5
@@ -130,9 +132,10 @@
             this.panel5.AutoScroll = true;
             this.panel5.Controls.Add(this.panel6);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel5.Location = new System.Drawing.Point(0, 69);
+            this.panel5.Location = new System.Drawing.Point(0, 45);
+            this.panel5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1573, 297);
+            this.panel5.Size = new System.Drawing.Size(1049, 193);
             this.panel5.TabIndex = 0;
             // 
             // panel6
@@ -140,8 +143,9 @@
             this.panel6.Controls.Add(this.tableLayoutPanel4);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel6.Location = new System.Drawing.Point(0, 0);
+            this.panel6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1573, 271);
+            this.panel6.Size = new System.Drawing.Size(1049, 176);
             this.panel6.TabIndex = 0;
             this.panel6.Visible = false;
             // 
@@ -154,10 +158,11 @@
             this.tableLayoutPanel4.Controls.Add(this.panel7, 1, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(1573, 271);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(1049, 176);
             this.tableLayoutPanel4.TabIndex = 0;
             // 
             // pictureBox1
@@ -165,9 +170,10 @@
             this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Image = global::Login.Properties.Resources.cover1;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox1.Location = new System.Drawing.Point(2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(151, 265);
+            this.pictureBox1.Size = new System.Drawing.Size(100, 172);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
@@ -181,9 +187,10 @@
             this.panel7.Controls.Add(this.label3);
             this.panel7.Controls.Add(this.tableLayoutPanel5);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel7.Location = new System.Drawing.Point(160, 3);
+            this.panel7.Location = new System.Drawing.Point(106, 2);
+            this.panel7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(1410, 265);
+            this.panel7.Size = new System.Drawing.Size(941, 172);
             this.panel7.TabIndex = 2;
             // 
             // tableLayoutPanel6
@@ -195,12 +202,13 @@
             this.tableLayoutPanel6.Controls.Add(this.iconButton4, 2, 0);
             this.tableLayoutPanel6.Controls.Add(this.iconButton1, 1, 0);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(0, 210);
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(0, 136);
+            this.tableLayoutPanel6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 1;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 55F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(1410, 55);
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 36F));
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(941, 36);
             this.tableLayoutPanel6.TabIndex = 4;
             // 
             // iconButton4
@@ -211,9 +219,10 @@
             this.iconButton4.IconColor = System.Drawing.Color.Black;
             this.iconButton4.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton4.IconSize = 30;
-            this.iconButton4.Location = new System.Drawing.Point(1243, 3);
+            this.iconButton4.Location = new System.Drawing.Point(829, 2);
+            this.iconButton4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.iconButton4.Name = "iconButton4";
-            this.iconButton4.Size = new System.Drawing.Size(164, 49);
+            this.iconButton4.Size = new System.Drawing.Size(110, 32);
             this.iconButton4.TabIndex = 2;
             this.iconButton4.Text = "Tố cáo";
             this.iconButton4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -228,9 +237,10 @@
             this.iconButton1.IconColor = System.Drawing.Color.Black;
             this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton1.IconSize = 30;
-            this.iconButton1.Location = new System.Drawing.Point(1074, 3);
+            this.iconButton1.Location = new System.Drawing.Point(717, 2);
+            this.iconButton1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(163, 49);
+            this.iconButton1.Size = new System.Drawing.Size(108, 32);
             this.iconButton1.TabIndex = 0;
             this.iconButton1.Text = "Thích";
             this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -241,9 +251,10 @@
             // 
             this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label3.Font = new System.Drawing.Font("League Spartan", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label3.Location = new System.Drawing.Point(0, 54);
+            this.label3.Location = new System.Drawing.Point(0, 35);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(1410, 211);
+            this.label3.Size = new System.Drawing.Size(941, 137);
             this.label3.TabIndex = 3;
             this.label3.Text = resources.GetString("label3.Text");
             this.label3.Click += new System.EventHandler(this.label3_Click);
@@ -258,19 +269,21 @@
             this.tableLayoutPanel5.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel5.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 1;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(1410, 54);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(941, 35);
             this.tableLayoutPanel5.TabIndex = 2;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("League Spartan", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label2.Location = new System.Drawing.Point(285, 0);
+            this.label2.Location = new System.Drawing.Point(190, 0);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(190, 49);
+            this.label2.Size = new System.Drawing.Size(124, 32);
             this.label2.TabIndex = 3;
             this.label2.Text = "1 ngày trước";
             // 
@@ -278,9 +291,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("League Spartan", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label1.Location = new System.Drawing.Point(3, 0);
+            this.label1.Location = new System.Drawing.Point(2, 0);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(150, 49);
+            this.label1.Size = new System.Drawing.Size(98, 32);
             this.label1.TabIndex = 2;
             this.label1.Text = "Tuấn Anh";
             // 
@@ -293,20 +307,22 @@
             this.tableLayoutPanel3.Controls.Add(this.btnSendComment, 1, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(1573, 69);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(1049, 45);
             this.tableLayoutPanel3.TabIndex = 0;
             // 
             // textBox1
             // 
             this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBox1.Font = new System.Drawing.Font("League Spartan", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.textBox1.Location = new System.Drawing.Point(3, 3);
+            this.textBox1.Location = new System.Drawing.Point(2, 2);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(1331, 63);
+            this.textBox1.Size = new System.Drawing.Size(887, 41);
             this.textBox1.TabIndex = 0;
             // 
             // btnSendComment
@@ -317,9 +333,10 @@
             this.btnSendComment.FlatAppearance.BorderSize = 0;
             this.btnSendComment.Font = new System.Drawing.Font("League Spartan", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnSendComment.ForeColor = System.Drawing.Color.White;
-            this.btnSendComment.Location = new System.Drawing.Point(1340, 3);
+            this.btnSendComment.Location = new System.Drawing.Point(893, 2);
+            this.btnSendComment.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSendComment.Name = "btnSendComment";
-            this.btnSendComment.Size = new System.Drawing.Size(230, 63);
+            this.btnSendComment.Size = new System.Drawing.Size(154, 41);
             this.btnSendComment.TabIndex = 1;
             this.btnSendComment.Text = "Send";
             this.btnSendComment.UseVisualStyleBackColor = false;
@@ -335,12 +352,13 @@
             this.tableLayoutPanel2.Controls.Add(this.iconButtonRecom, 2, 0);
             this.tableLayoutPanel2.Controls.Add(this.iconButtonRate, 1, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 895);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 582);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 66F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1573, 66);
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 43F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1049, 43);
             this.tableLayoutPanel2.TabIndex = 6;
             // 
             // iconButtonRecom
@@ -355,10 +373,10 @@
             this.iconButtonRecom.IconChar = FontAwesome.Sharp.IconChar.Sun;
             this.iconButtonRecom.IconColor = System.Drawing.Color.Black;
             this.iconButtonRecom.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButtonRecom.Location = new System.Drawing.Point(786, 0);
+            this.iconButtonRecom.Location = new System.Drawing.Point(524, 0);
             this.iconButtonRecom.Margin = new System.Windows.Forms.Padding(0);
             this.iconButtonRecom.Name = "iconButtonRecom";
-            this.iconButtonRecom.Size = new System.Drawing.Size(393, 66);
+            this.iconButtonRecom.Size = new System.Drawing.Size(262, 43);
             this.iconButtonRecom.TabIndex = 13;
             this.iconButtonRecom.Text = "Đề cử";
             this.iconButtonRecom.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -380,10 +398,10 @@
             this.iconButtonRate.IconChar = FontAwesome.Sharp.IconChar.Star;
             this.iconButtonRate.IconColor = System.Drawing.Color.Black;
             this.iconButtonRate.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButtonRate.Location = new System.Drawing.Point(393, 0);
+            this.iconButtonRate.Location = new System.Drawing.Point(262, 0);
             this.iconButtonRate.Margin = new System.Windows.Forms.Padding(0);
             this.iconButtonRate.Name = "iconButtonRate";
-            this.iconButtonRate.Size = new System.Drawing.Size(393, 66);
+            this.iconButtonRate.Size = new System.Drawing.Size(262, 43);
             this.iconButtonRate.TabIndex = 12;
             this.iconButtonRate.Text = "Đánh giá";
             this.iconButtonRate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -397,10 +415,10 @@
             // 
             this.panel3.Controls.Add(this.contentChap);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 144);
-            this.panel3.Margin = new System.Windows.Forms.Padding(3, 15, 3, 15);
+            this.panel3.Location = new System.Drawing.Point(0, 94);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2, 10, 2, 10);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1573, 751);
+            this.panel3.Size = new System.Drawing.Size(1049, 488);
             this.panel3.TabIndex = 4;
             // 
             // contentChap
@@ -410,9 +428,9 @@
             this.contentChap.Dock = System.Windows.Forms.DockStyle.Fill;
             this.contentChap.Font = new System.Drawing.Font("League Spartan", 16.15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.contentChap.Location = new System.Drawing.Point(0, 0);
-            this.contentChap.Margin = new System.Windows.Forms.Padding(15, 0, 15, 0);
+            this.contentChap.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.contentChap.Name = "contentChap";
-            this.contentChap.Size = new System.Drawing.Size(1573, 751);
+            this.contentChap.Size = new System.Drawing.Size(1049, 488);
             this.contentChap.TabIndex = 1;
             this.contentChap.Text = resources.GetString("contentChap.Text");
             // 
@@ -423,17 +441,19 @@
             this.panel2.Controls.Add(this.iconButton2);
             this.panel2.Controls.Add(this.labelName);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 58);
+            this.panel2.Location = new System.Drawing.Point(0, 38);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1573, 86);
+            this.panel2.Size = new System.Drawing.Size(1049, 56);
             this.panel2.TabIndex = 2;
             // 
             // btnExit
             // 
             this.btnExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnExit.Location = new System.Drawing.Point(1441, 18);
+            this.btnExit.Location = new System.Drawing.Point(961, 12);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(129, 43);
+            this.btnExit.Size = new System.Drawing.Size(86, 28);
             this.btnExit.TabIndex = 0;
             this.btnExit.Text = "Thoát";
             this.btnExit.UseVisualStyleBackColor = true;
@@ -452,10 +472,10 @@
             this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.UserEdit;
             this.iconButton2.IconColor = System.Drawing.Color.Black;
             this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton2.Location = new System.Drawing.Point(1007, 3);
+            this.iconButton2.Location = new System.Drawing.Point(672, 2);
             this.iconButton2.Margin = new System.Windows.Forms.Padding(0);
             this.iconButton2.Name = "iconButton2";
-            this.iconButton2.Size = new System.Drawing.Size(431, 83);
+            this.iconButton2.Size = new System.Drawing.Size(287, 54);
             this.iconButton2.TabIndex = 4;
             this.iconButton2.Text = "Kiếm Thần Vô Địch";
             this.iconButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -465,9 +485,10 @@
             // 
             this.labelName.AutoSize = true;
             this.labelName.Font = new System.Drawing.Font("League Spartan SemiBold", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.labelName.Location = new System.Drawing.Point(10, 18);
+            this.labelName.Location = new System.Drawing.Point(7, 12);
+            this.labelName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelName.Name = "labelName";
-            this.labelName.Size = new System.Drawing.Size(294, 49);
+            this.labelName.Size = new System.Drawing.Size(197, 32);
             this.labelName.TabIndex = 1;
             this.labelName.Text = "TOÀN TRÍ ĐỘC GIẢ";
             // 
@@ -482,10 +503,11 @@
             this.tableLayoutPanel1.Controls.Add(this.panel8, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1573, 58);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1049, 38);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // btnPostChap
@@ -494,9 +516,10 @@
             this.btnPostChap.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnPostChap.Font = new System.Drawing.Font("League Spartan", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnPostChap.ForeColor = System.Drawing.Color.White;
-            this.btnPostChap.Location = new System.Drawing.Point(1339, 3);
+            this.btnPostChap.Location = new System.Drawing.Point(893, 2);
+            this.btnPostChap.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnPostChap.Name = "btnPostChap";
-            this.btnPostChap.Size = new System.Drawing.Size(231, 52);
+            this.btnPostChap.Size = new System.Drawing.Size(154, 34);
             this.btnPostChap.TabIndex = 3;
             this.btnPostChap.Text = "Chương sau";
             this.btnPostChap.UseVisualStyleBackColor = false;
@@ -508,9 +531,10 @@
             this.btnPrevChap.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnPrevChap.Font = new System.Drawing.Font("League Spartan", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnPrevChap.ForeColor = System.Drawing.Color.White;
-            this.btnPrevChap.Location = new System.Drawing.Point(3, 3);
+            this.btnPrevChap.Location = new System.Drawing.Point(2, 2);
+            this.btnPrevChap.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnPrevChap.Name = "btnPrevChap";
-            this.btnPrevChap.Size = new System.Drawing.Size(229, 52);
+            this.btnPrevChap.Size = new System.Drawing.Size(153, 34);
             this.btnPrevChap.TabIndex = 1;
             this.btnPrevChap.Text = "Chương trước";
             this.btnPrevChap.UseVisualStyleBackColor = false;
@@ -520,9 +544,10 @@
             // 
             this.panel8.Controls.Add(this.tableLayoutPanel7);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel8.Location = new System.Drawing.Point(238, 3);
+            this.panel8.Location = new System.Drawing.Point(159, 2);
+            this.panel8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(1095, 52);
+            this.panel8.Size = new System.Drawing.Size(730, 34);
             this.panel8.TabIndex = 4;
             // 
             // tableLayoutPanel7
@@ -534,12 +559,11 @@
             this.tableLayoutPanel7.Controls.Add(this.comboBox1, 1, 0);
             this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel7.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 1;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 52F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(1095, 52);
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 34F));
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(730, 34);
             this.tableLayoutPanel7.TabIndex = 1;
             // 
             // comboBox1
@@ -547,22 +571,22 @@
             this.comboBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.comboBox1.Font = new System.Drawing.Font("League Spartan SemiBold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(551, 5);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.comboBox1.Location = new System.Drawing.Point(368, 3);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(540, 51);
+            this.comboBox1.Size = new System.Drawing.Size(359, 36);
             this.comboBox1.TabIndex = 0;
             this.comboBox1.DropDown += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             this.comboBox1.SelectedValueChanged += new System.EventHandler(this.Enter_click);
             // 
             // Doc_Truyen
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
-            this.ClientSize = new System.Drawing.Size(1599, 1160);
+            this.ClientSize = new System.Drawing.Size(1066, 690);
             this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Doc_Truyen";
             this.Text = "Doc_Truyen";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Doc_Truyen_FormClosing);

@@ -154,7 +154,6 @@ D:\ProJect-LTMCB\Project_truyen\Login\obj\Debug\Login.tb1.resources
 D:\ProJect-LTMCB\Project_truyen\Login\obj\Debug\Login.tb2.resources
 D:\ProJect-LTMCB\Project_truyen\Login\obj\Debug\Login.tb3.resources
 D:\ProJect-LTMCB\Project_truyen\Login\obj\Debug\Login.Trang_chu.resources
-D:\ProJect-LTMCB\Project_truyen\Login\obj\Debug\Login.Trogiup_baoloi.resources
 D:\ProJect-LTMCB\Project_truyen\Login\obj\Debug\Login.Signup.vi-VN.resources
 D:\ProJect-LTMCB\Project_truyen\Login\obj\Debug\App.csproj.GenerateResource.cache
 D:\ProJect-LTMCB\Project_truyen\Login\obj\Debug\App.csproj.CoreCompileInputs.cache
@@ -343,3 +342,5 @@ E:\HK4_UIT\LTMCB\Project\Login\Login\obj\Debug\Login.exe
 E:\HK4_UIT\LTMCB\Project\Login\Login\obj\Debug\Login.pdb
 E:\HK4_UIT\LTMCB\Project\Login\Login\obj\Debug\Login.Xuli_vipham.resources
 E:\HK4_UIT\LTMCB\Project\Login\Login\obj\Debug\Login.Xu_li_vi_pham.resources
+D:\ProJect-LTMCB\Project_truyen\Login\obj\Debug\Login.Xu_li_vi_pham.resources
+D:\ProJect-LTMCB\Project_truyen\Login\obj\Debug\Login.tb4.resources

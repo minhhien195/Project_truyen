@@ -23,10 +23,12 @@ namespace Login
     public partial class Inserted : Form
     {
         UserCredential usercredials;
-        public Inserted(UserCredential usercredials)
+        private Trang_chu tc;
+        public Inserted(UserCredential usercredials, Trang_chu tc)
         {
             InitializeComponent();
             this.usercredials = usercredials;
+            this.tc = tc;
         }
         IFirebaseConfig _firebaseConfig = new FirebaseConfig
         {
@@ -198,8 +200,8 @@ namespace Login
 
         private void btnInsertChap_Click(object sender, EventArgs e)
         {
-            InsertChapter form = new InsertChapter(usercredials);
-            form.ShowDialog();
+            tc.change_color();
+            tc.openChildForm(new InsertChapter(usercredials, tc));
         }
     }
 }
